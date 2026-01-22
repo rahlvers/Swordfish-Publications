@@ -1,6 +1,6 @@
 {
   "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StoragePool.StoragePool",
+  "@odata.context": "/redfish/v1/$metadata#StorageServices/Simple2/StoragePools/BasePool",
   "@odata.id": "/redfish/v1/StorageServices/Simple2/StoragePools/BasePool",
   "@odata.type": "#StoragePool_1_0_0.StoragePool",
   "Id": "BasePool",
@@ -18,16 +18,14 @@
     "Health": "OK",
     "HealthRollUp": "Degraded"
   },
+  "AllocatedPools": [],
+  "AllocatedVolumes": {
+    "Members":[{"@odata.id": "/redfish/v1/StorageServices/Simple2/Volumes/1"}]
+  },
+  "SourceDevices": null,
+  "SourcePools": null,
+  "SourceVolumes": null,
+  "ClassesOfService": null,
   "Links": {
-    "AllocatedPools": [],
-    "AllocatedVolumes": [
-      {
-        "@odata.id": "/redfish/v1/StorageServices/Simple2/Volumes/1"
-      }
-    ],
-    "SourceDevices": [],
-    "SourcePools": [],
-    "SourceVolumes": [],
-    "ClassesOfService": []
   }
 }

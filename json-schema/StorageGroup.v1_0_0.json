@@ -202,47 +202,6 @@
                             "description": "Child StorageGroups.",
                             "longDescription": "An array of references to StorageGroups are incorporated into this StorageGroup"
                         },
-                        "Volumes": {
-                            "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection"},
-                                {"type": "null"}
-                            ],
-                            "readonly": true,
-                            "description": "Volumes in this StorageGroup.",
-                            "longDescription": "An array of references to Volumes managed by this StorageGroup."
-                        },
-                        "ClientEndpointGroups@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "ClientEndpointGroups@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "ClientEndpointGroups": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroup.json#/definitions/EndpointGroup"
-                            },
-                            "readonly": false,
-                            "description": "ClientEndpointGroup in this StorageGroup.",
-                            "longDescription": "An array of references to ClientEndpointGroups that contain the Endpoints that may be used by clients to make requests to the storage exposed by this StorageGroup."
-                        },
-                        "ServerEndpointGroups@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "ServerEndpointGroups@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "ServerEndpointGroups": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroup.json#/definitions/EndpointGroup"
-                            },
-                            "readonly": false,
-                            "description": "ServerEndpointGroups in this StorageGroup.",
-                            "longDescription": "An array of references to ServerEndpointGroups that contain the Endpoints that may be used by the storage service to receive requests from clients for storage exposed by this StorageGroup."
-                        },
                         "ClassOfService": {
                             "anyOf": [
                                 {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
@@ -314,6 +273,33 @@
                     "readonly": true,
                     "description": "The available actions for this resource.",
                     "longDescription": "The Actions property shall contain the available actions for this resource."
+                },
+                "ClientEndpointGroups": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "ClientEndpointGroup in this StorageGroup.",
+                    "longDescription": "An array of references to ClientEndpointGroups that contain the Endpoints that may be used by clients to make requests to the storage exposed by this StorageGroup."
+                },
+                "ServerEndpointGroups": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "ServerEndpointGroups in this StorageGroup.",
+                    "longDescription": "An array of references to ServerEndpointGroups that contain the Endpoints that may be used by the storage service to receive requests from clients for storage exposed by this StorageGroup."
+                },
+                "Volumes": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Volumes in this StorageGroup.",
+                    "longDescription": "An array of references to Volumes managed by this StorageGroup."
                 }
             },
             "required": [

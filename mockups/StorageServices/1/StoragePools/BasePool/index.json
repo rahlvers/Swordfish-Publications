@@ -44,20 +44,10 @@
     "Health": "OK",
     "HealthRollUp": "Degraded"
   },
+  "ClassesOfService": {"@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/ClassesOfService"},
+  "AllocatedPools": [],
+  "AllocatedVolumes": {"@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/Volumes"},
   "Links": {
-    "AllocatedPools": [],
-    "AllocatedVolumes": [
-      {
-        "@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567"
-      }
-    ],
-    "ClassesOfService": [
-      {
-        "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldBoston"
-      },
-      {
-        "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverBoston"
-      }
-    ]
+
   }
 }
