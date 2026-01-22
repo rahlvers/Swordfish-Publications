@@ -1,0 +1,33 @@
+{
+  "@odata.context": "/redfish/v1/$metadata#Drive.Drive",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/9",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+    "@odata.type": "#Drive.v1_2_0.Drive",
+    "Id": "9",
+    "Name": "Drive 9",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "StatusIndicator": "OK",
+    "CapacityBytes": 1000201246474,
+    "FailurePredicted": false,
+    "Protocol": "SATA",
+    "MediaType": "HDD",
+    "Manufacturer": "HDD-Company",
+    "SerialNumber": "Z1W1LGHQ",
+    "PartNumber": "ST1000NM00339ZM",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "300062B202B21843"
+        }
+    ],
+    "BlockSizeBytes": 512,
+    "NegotiatedSpeedGbs": 6,
+    "Links": {
+        "Volumes": {
+            "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/2"
+        }
+    }
+  }

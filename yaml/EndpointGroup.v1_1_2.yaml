@@ -1,0 +1,175 @@
+components:
+  schemas:
+    AccessState:
+      description: Describes the options for the access characteristics of an endpoint.
+      enum:
+      - Optimized
+      - NonOptimized
+      - Standby
+      - Unavailable
+      - Transitioning
+      type: string
+      x-enumDescriptions:
+        NonOptimized: The endpoint(s) are in an Active/NonOptimized state.
+        Optimized: The endpoint(s) are in an Active/Optimized state.
+        Standby: The endpoint(s) are in a Standby state.
+        Transitioning: The endpoint(s) are transitioning to a new AccesState.
+        Unavailable: The endpoint(s) are unavailable.
+      x-enumLongDescriptions:
+        NonOptimized: In the context of this enumeration literal, each endpoint shall
+          be in an Active/NonOptimized state.
+        Optimized: In the context of this enumeration literal, each endpoint shall
+          be in an Active/Optimized state.
+        Standby: In the context of this enumeration literal, each endpoint shall be
+          in a Standby state.
+        Transitioning: In the context of this enumeration literal, at least one endpoint
+          shall be transitioning to a new AccesState.
+        Unavailable: In the context of this enumeration literal, each endpoint shall
+          be in an unavailable state.
+      x-longDescription: Access to all associated resources through all aggregated
+        endpoints shall share this access state.
+    Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        Oem:
+          $ref: '#/components/schemas/OemActions'
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+          description: This property shall specify a valid odata or Redfish property.
+    EndpointGroup:
+      additionalProperties: false
+      description: A group of endpoints that are managed as a unit.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+        AccessState:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.yaml#/components/schemas/AccessState
+          description: Access State for this group.
+          nullable: true
+          readOnly: false
+          x-longDescription: Access to all associated resources through all aggregated
+            endpoints shall share this access state.
+        Actions:
+          $ref: '#/components/schemas/Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          nullable: true
+          readOnly: true
+        Endpoints:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          description: The Endpoints.
+          nullable: true
+          readOnly: false
+          x-longDescription: The value of each entry shall reference an Endpoint resource.
+        GroupType:
+          $ref: '#/components/schemas/GroupType'
+          description: Endpoint group type.
+          nullable: true
+          readOnly: false
+          x-longDescription: The group contains only endpoints of a given type Client/Initiator
+            or Server/Target.  If this endpoint group represents a SCSI target group,
+            the value of GroupType shall be Server.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          readOnly: true
+        Identifier:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
+          description: The value identifies this resource.
+          nullable: true
+          readOnly: true
+          x-longDescription: The value shall be unique within the managed ecosystem.
+        Links:
+          $ref: '#/components/schemas/Links'
+          description: Contains links to other resources that are related to this
+            resource.
+          readOnly: true
+          x-longDescription: This structure shall contain references to resources
+            that are not contained within this resource.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          description: This is the manufacturer/provider specific extension moniker
+            used to divide the Oem object into sections.
+          x-longDescription: The value of this string shall be of the format for the
+            reserved word *Oem*.
+        Preferred:
+          description: Access to resource is preferred.
+          nullable: true
+          readOnly: false
+          type: boolean
+          x-longDescription: A value of True in this property shall indicate that
+            access to the associated resource through the endpoints in this  endpoint
+            group is preferred over access through other endpoints. The default value
+            for this property is false.
+        TargetEndpointGroupIdentifier:
+          description: A defined identifier for this group.
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: If this endpoint group represents a SCSI target group,
+            the value of this property shall contain a SCSI defined identifier for
+            this group, which corresponds to the TARGET PORT GROUP field in the REPORT
+            TARGET PORT GROUPS response and the TARGET PORT GROUP field in an INQUIRY
+            VPD page 85 response, type 5h identifier. See the INCITS SAM-5 specification.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: A group of endpoints that shall be managed as a unit.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+          description: This property shall specify a valid odata or Redfish property.
+    GroupType:
+      enum:
+      - Client
+      - Server
+      type: string
+      x-enumDescriptions:
+        Client: The group contains the client (initiator) endpoints.
+        Server: The group contains the server (target) endpoints.
+    Links:
+      additionalProperties: false
+      description: Contains links to other resources that are related to this resource.
+      properties:
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          description: Oem extension object.
+          x-longDescription: This object represents the Oem property.  All values
+            for resources described by this schema shall comply to the requirements
+            as described in the Redfish specification.
+      type: object
+      x-longDescription: This structure shall contain references to resources that
+        are not contained within this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemActions:
+      additionalProperties: true
+      description: The available OEM specific actions for this resource.
+      properties: {}
+      type: object
+      x-longDescription: This type shall contain any additional OEM actions for this
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#EndpointGroup.v1_1_2.EndpointGroup'
+x-copyright: Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-owningEntity: SNIA

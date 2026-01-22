@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright © 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@Redfish.Copyright": "Copyright 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Chassis.Chassis",
   "@odata.id": "/redfish/v1/Chassis/StorageChassis1",
-  "@odata.type": "#Chassis.1.0.0.Chassis",
+  "@odata.type": "#Chassis.v1_6_0.Chassis",
   "Id": "1",
   "Name": "Storage System Chassis",
   "ChassisType": "RackMount",
@@ -24,32 +24,28 @@
     "@odata.id": "/redfish/v1/Chassis/StorageChassis1/Power"
   },
   "Links": {
-    "StorageSystems": [
-      {
-        "@odata.id": "/redfish/v1/Systems/Simple"
-      },
-	  {
-        "@odata.id": "/redfish/v1/Systems/Complex"
-      }
-    ],
     "ManagedBy": [
       {
         "@odata.id": "/redfish/v1/Managers/StorageManager1"
       }
     ],
 	"Drives": [
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.0"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.1"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.2"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.3"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.4"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.5"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.6"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.7"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.8"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.9"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.10"},
-      {"@odata.id":"/redfish/v1/Chassis/StorageChassis1/Drives/Disk.Bay.11"}
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/1"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/2"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/3"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/4"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/5"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/6"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/7"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/8"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/9"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/10"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/11"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/11"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/12"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/13"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/14"},      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/15"},      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/16"}, {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/17"},   {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/18"},  {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/19"}, {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/20"}, {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/21"}, {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/22"},
+      {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/23"}, {"@odata.id":"/redfish/v1/StorageServices/ISC/Drives/24"}
     ],
     "Oem": {}
   },

@@ -1,8 +1,8 @@
 {
-	"@Redfish.Copyright": "Copyright 2014-2017 SNIA. All rights reserved.",
+	"@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
 	"@odata.context": "/redfish/v1/$metadata#FileShare.FileShare",
-	"@odata.id": "/redfish/v1/StorageServices/FileSystems/FS1/ExportedFileShares/MyShare",
-	"@odata.type": "#FileShare.FileShare",
+	"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ExportedFileShares/MyShare",
+	"@odata.type": "#FileShare.v1_0_0.FileShare",
 	"Id": "MyShare",
 	"Name": "MyShare",
 	"Description": "My File Share.",
@@ -19,9 +19,9 @@
 	"RootAccess": true,
 	"CASupported": true,
 	"Links": {
-	  "EthernetInterfaces": 
-		{"@odata.id": "/redfish/v1/StorageServices/FileServer/EthernetInterfaces/1"},
-	"FileSystem": 
+	  "EthernetInterfaces":
+		{"@odata.id": "/redfish/v1/Systems/FileServer/EthernetInterfaces/1"},
+	"FileSystem":
 		{"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1"}
 	}
 }

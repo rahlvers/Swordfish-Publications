@@ -1,8 +1,8 @@
 {
-	"@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+	"@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
 	"@odata.context": "/redfish/v1/$metadata#DataProtectionLoSCapabilites.DataProtectionLoSCapabilites",
-	"@odata.id": "/redfish/v1/StorageServices/1/DataProtectionLoSCapabilites",
-	"@odata.type": "#DataProtectionLoSCapabilites_1_0_0.DataProtectionLoSCapabilites",
+	"@odata.id": "/redfish/v1/StorageServices/1/DataProtectionLoSCapabilities",
+	"@odata.type": "#DataProtectionLoSCapabilites.v1_0_0.DataProtectionLoSCapabilites",
 	"Name": "DataProtectionLoSCapabilites",
 	"SupportedRecoveryGeographicObjectives": [
       "Server",
@@ -43,7 +43,7 @@
 			"EnabledDaysOfWeek": ["Saturday"]
 		},
 		"ReplicaClassOfService": {
-			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Silver_Providence"
+			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
 		},
 		"ReplicaAccessLocation": {
 			"Country": "",
@@ -85,7 +85,7 @@
 			"EnabledMonthsOfYear": []
 		},
 		"ReplicaClassOfService": {
-			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Storage/Silver_Providence"
+			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
 		},
 		"ReplicaAccessLocation": {
 			"Country": "",
@@ -115,7 +115,7 @@
 		"IsIsolated": true,
 		"Schedule": null,
 		"ReplicaClassOfService": {
-			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Storage/Gold_Providence"
+			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
 		},
 		"ReplicaAccessLocation": {
 			"Country": "",
@@ -136,7 +136,7 @@
 			"OtherLocationInfo": ""
 		},
 		"Links": {
-			
+
 		}
 	},
 	{
@@ -165,7 +165,7 @@
 		},
 		"Links": {
 			"ReplicaOption": {
-				"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Dallas"
+				"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
 			}
 		}
 	},
@@ -195,7 +195,7 @@
 		},
 		"Links": {
 			"ReplicaOption": {
-				"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Providence"
+				"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
 			}
 		}
 	},
@@ -225,7 +225,7 @@
 		},
 		"Links": {
 			"ReplicaOption": {
-				"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Dallas"
+				"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
 			}
 		}
 	},
@@ -238,13 +238,13 @@
 		"IsIsolated": true,
 		"Schedule": null,
 		"ReplicaClassOfService": {
-			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Cambridge"
+			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
 		},
 		"ReplicaAccessLocation": {
 			"Country": "",
 			"Territory": "",
 			"State": "",
-			"City": "Cambridge",
+			"City": "Providence",
 			"Address1": "",
 			"Address2": "",
 			"Address3": "",
@@ -268,7 +268,7 @@
 		"IsIsolated": true,
 		"Schedule": null,
 		"ReplicaClassOfService": {
-			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Dallas"
+			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
 		},
 		"ReplicaAccessLocation": {
 			"Country": "",

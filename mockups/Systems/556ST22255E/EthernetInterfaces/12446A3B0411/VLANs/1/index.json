@@ -1,0 +1,11 @@
+{
+    "@odata.type": "#VLanNetworkInterface.v1_1_0.VLanNetworkInterface",
+    "Id": "1",
+    "Name": "VLAN Network Interface",
+    "Description": "System NIC 1 VLAN",
+    "VLANEnable": true,
+    "VLANId": 101,
+    "@odata.context": "/redfish/v1/$metadata#VLanNetworkInterface.VLanNetworkInterface",
+    "@odata.id": "/redfish/v1/Systems/556ST22255E/EthernetInterfaces/12446A3B0411/VLANs/1",
+    "@Redfish.Copyright": "Copyright 2014-2018 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright."
+}

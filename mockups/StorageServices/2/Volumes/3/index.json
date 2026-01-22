@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageServices/2/Volumes/3",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Volume.Volume",
   "@odata.id": "/redfish/v1/StorageServices/2/Volumes/3",
-  "@odata.type": "#Volume_1_0_0.Volume",
+  "@odata.type": "#Volume.v1_2_0.Volume",
   "Id": "3",
   "Name": "Clone1",
   "Identifiers": [
@@ -29,7 +29,7 @@
   },
   "Links": {
      "SourceVolume": {
-           "@odata.id": "/redfish/v1/StorageServices/2/Volume/1"
+           "@odata.id": "/redfish/v1/StorageServices/2/Volumes/1"
       }
   }
 }

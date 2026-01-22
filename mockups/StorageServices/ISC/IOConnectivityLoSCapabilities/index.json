@@ -1,0 +1,9 @@
+{
+	"@Redfish.Copyright": "Copyright 2017-2018 SNIA. All rights reserved.",
+	"@odata.context": "/redfish/v1/$metadata#IOConnectivityLoSCapabilities.IOConnectivityLoSCapabilities",
+	"@odata.id": "/redfish/v1/StorageServices/ISC/IOConnectivityLoSCapabilities",
+	"@odata.type": "#IOConnectivityLoSCapabilities.v1_0_0.IOConnectivityLoSCapabilities",
+  "Id": "IOConnectivityLoSCapabilities",
+	"Name": "IOConnectivityLoSCapabilities",
+	"SupportedAccessProtocols": ["SAS", "SATA"]
+}

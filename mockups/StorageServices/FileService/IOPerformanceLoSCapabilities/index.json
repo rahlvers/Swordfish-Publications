@@ -1,8 +1,8 @@
 {
-	"@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+	"@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
 	"@odata.context": "/redfish/v1/$metadata#IOPerformanceLoSCapabilities.IOPerformanceLoSCapabilities",
 	"@odata.id": "/redfish/v1/StorageServices/1/IOPerformanceLoSCapabilities",
-	"@odata.type": "#IOPerformanceLoSCapabilities_1_0_0.IOPerformanceLoSCapabilities",
+	"@odata.type": "#IOPerformanceLoSCapabilities.v1_0_0.IOPerformanceLoSCapabilities",
 	"Name": "IOPerformanceLoSCapabilities",
 	"IoOperationsPerSecondLimitingIsSupported": true,
 	"MinSamplePeriod": "PT5S",

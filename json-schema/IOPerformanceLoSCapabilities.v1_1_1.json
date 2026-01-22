@@ -1,18 +1,19 @@
 {
     "$ref": "#/definitions/IOPerformanceLoSCapabilities",
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
             "description": "The available actions for this resource.",
             "longDescription": "This type shall contain the available actions for this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -58,11 +59,12 @@
             "description": "Describe io performance capabilities.",
             "longDescription": "Each instance of IOPerformanceLoSCapabilities shall describe the capabilities of the system to support various IO performance service options.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -72,13 +74,16 @@
             },
             "properties": {
                 "@odata.context": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/context"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/etag"
                 },
                 "@odata.id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/id"
                 },
                 "@odata.type": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/type"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/type"
                 },
                 "Actions": {
                     "$ref": "#/definitions/Actions",
@@ -147,7 +152,7 @@
                     "longDescription": "The value shall be the minimum supported average IO latency in microseconds calculated over the SamplePeriod",
                     "readonly": false,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ],
                     "units": "us"
@@ -178,6 +183,7 @@
                     "type": "array"
                 },
                 "SupportedLinesOfService": {
+                    "autoExpand": true,
                     "description": "Collection of known and supported IOPerformanceLinesOfService.",
                     "items": {
                         "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLineOfService.json#/definitions/IOPerformanceLineOfService"
@@ -187,10 +193,12 @@
                     "type": "array"
                 },
                 "SupportedLinesOfService@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
                 }
             },
             "required": [
+                "@odata.id",
+                "@odata.type",
                 "Id",
                 "Name"
             ],
@@ -201,11 +209,12 @@
             "description": "An IO Workload description.",
             "longDescription": "This structure may be used to describe an IO Workload.  ",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -247,11 +256,12 @@
             "description": "Describe a component of a IO workload.",
             "longDescription": "This structure may be used to describe a component of an IO workload.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -265,7 +275,7 @@
                     "longDescription": "The value shall be the expected average I/O size.",
                     "readonly": false,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ],
                     "units": "By"
@@ -298,7 +308,7 @@
                     "longDescription": "The value shall be the expected percent of the data referenced by the workload that is covered by this component.",
                     "readonly": false,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ],
                     "units": "%"
@@ -308,7 +318,7 @@
                     "longDescription": "The value shall be the expected percent of the total IOPS for this workload that is covered by this component",
                     "readonly": false,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ],
                     "units": "%"
@@ -334,11 +344,12 @@
             "description": "The available OEM specific actions for this resource.",
             "longDescription": "This type shall contain any additional OEM actions for this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -350,5 +361,6 @@
             "type": "object"
         }
     },
+    "owningEntity": "SNIA",
     "title": "#IOPerformanceLoSCapabilities.v1_1_1.IOPerformanceLoSCapabilities"
 }

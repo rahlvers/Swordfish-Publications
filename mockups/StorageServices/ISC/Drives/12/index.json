@@ -1,0 +1,33 @@
+{
+  "@odata.context": "/redfish/v1/$metadata#Drive.Drive",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/12",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+    "@odata.type": "#Drive.v1_2_0.Drive",
+    "Id": "12",
+    "Name": "Drive 12",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "StatusIndicator": "OK",
+    "CapacityBytes": 1000201246474,
+    "FailurePredicted": false,
+    "Protocol": "SATA",
+    "MediaType": "HDD",
+    "Manufacturer": "HDD-Company",
+    "SerialNumber": "Z1W2QYB6",
+    "PartNumber": "ST1000NM00339ZM",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "300062B202B21840"
+        }
+    ],
+    "BlockSizeBytes": 512,
+    "NegotiatedSpeedGbs": 6,
+    "Links": {
+        "Volumes": {
+            "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/2"
+        }
+    }
+}

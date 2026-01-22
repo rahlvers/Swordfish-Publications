@@ -1,6 +1,6 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageSystems/Members/Simple/EthernetInterfaces/Members/1/VLANs/$entity",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#VLanNetworkInterfaceCollection.VLanNetworkInterfaceCollection",
   "@odata.id": "/redfish/v1/Systems/Simple/EthernetInterfaces/1/VLANs",
   "@odata.type": "#VLanNetworkInterfaceCollection.VLanNetworkInterfaceCollection",
   "Name": "VLAN Network Interface Collection",

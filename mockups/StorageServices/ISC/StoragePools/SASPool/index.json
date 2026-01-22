@@ -1,0 +1,60 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StoragePool.StoragePool",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPool",
+  "@odata.type": "#StoragePool.v1_1_0.StoragePool",
+  "Id": "SASPool",
+  "Name": "SASPool",
+  "Description": "SAS storage pool",
+  "BlockSizeBytes": 512,
+  "Capacity": {
+    "Data": {
+      "AllocatedBytes": 1198027440128,
+      "ConsumedBytes": 1198027440128
+    }
+  },
+  "CapacitySources": [{
+    "ProvidedCapacity": {
+      "Data": {
+        "AllocatedBytes": 1198027440128,
+        "ConsumedBytes": 1198027440128
+      }
+    },
+    "ProvidingDrives": [{
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/1"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/2"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/3"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/4"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/5"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/6"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/7"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/8"
+      }
+    ]
+  }],
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "ClassesOfService": [{"@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SAS"}],
+  "AllocatedVolumes": [{
+    "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/1"
+  }],
+  "Links": {
+    "DefaultClassOfService": [ {"@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SAS"}]
+  }
+}

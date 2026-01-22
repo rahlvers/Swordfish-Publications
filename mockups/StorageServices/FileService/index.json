@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#StorageService.StorageService",
   "@odata.id": "/redfish/v1/StorageServices/FileService",
-  "@odata.type": "#StorageService.1.0.0.StorageService",
+  "@odata.type": "#StorageService.v1_1_0.StorageService",
   "Id": "1",
   "Name": "My Storage Service",
   "Description": "Description of storage",
@@ -18,7 +18,6 @@
 	"HostingSystem": {
       "@odata.id": "/redfish/v1/Systems/FileServer"
     },
-    "DataPerformanceLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/DataPerformanceLoSCapabilities"},
     "DataProtectionLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/DataProtectionLoSCapabilities"},
     "DataStorageLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/DataStorageLoSCapabilities"},
     "IOConnectivityLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/IOConnectivityLoSCapabilities"},

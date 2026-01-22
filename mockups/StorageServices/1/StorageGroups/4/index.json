@@ -1,0 +1,42 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageServices/1/Storage/StorageGroups/4",
+  "@odata.id": "/redfish/v1/StorageServices/1/StorageGroups/4",
+  "@odata.type": "#StorageGroup.v1_2_0.StorageGroup",
+  "Id": "4",
+  "Name": "S01_SG00",
+  "Description": "Storage Group example for LUN mapping/masking creation and CHAP information",
+  "Identifier": {
+    "DurableName": "4289a3dd-ba52-41b8-9d3d-38de196e059c",
+    "DurableNameFormat": "UUID"
+  },
+  "AccessState": "Optimized",
+  "MembersAreConsistent": true,
+  "VolumesAreExposed": true,
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "OK"
+  },
+  "ClientEndpointGroups": [
+    { "@odata.id": "/redfish/v1/StorageServices/1/EndpointGroups/CEPG1/index.json" }
+  ],
+  "ServerEndpointGroups": [
+    { "@odata.id": "/redfish/v1/StorageServices/1/EndpointGroups/SEPG1/index.json" }
+  ],
+  "MappedVolumes" : [
+    {
+      "LogicalUnitNumber" : "0",
+      "Volume" : { "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3" }
+    }
+  ],
+  "AuthenticationMethod": "MutualCHAP",
+  "ChapInfo": [
+    {
+      "InitiatorCHAPUser": "iqn.201808.com.snia:production.database",
+      "InitiatorCHAPPassword": "hostsecret",
+      "TargetCHAPUser": "iqn.201801.com.snia:diskarray-sn-s7529046",
+      "TargetPassword": "arraysecret"
+    }
+  ]
+}

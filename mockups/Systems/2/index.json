@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright � 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@Redfish.Copyright": "Copyright  2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#Systems/$entity",
   "@odata.id": "/redfish/v1/Systems/2",
-  "@odata.type": "#ComputerSystem.1.0.0.ComputerSystem",
+  "@odata.type": "#ComputerSystem.v1_5_0.ComputerSystem",
   "Id": "2",
   "Name": "My Computer System",
   "SystemType": "Physical",
@@ -29,22 +29,7 @@
   "Links": {
     "Chassis": [
       {
-        "@odata.id": "/redfish/v1/Chassis/Blade1"
-      }
-    ],
-    "ManagedBy": [
-      {
-        "@odata.id": "/redfish/v1/Managers/1"
-      }
-    ],
-    "PoweredBy": [
-      {
-        "@odata.id": "/redfish/v1/Chassis/Enc1/Power/PowerSupplies/0"
-      }
-    ],
-    "CooledBy": [
-      {
-        "@odata.id": "/redfish/v1/Chassis/Enc1/Thermal/Fans"
+        "@odata.id": "/redfish/v1/Chassis/1"
       }
     ],
     "Oem": {}

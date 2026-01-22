@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#ComputerSystem.ComputerSystem",
   "@odata.id": "/redfish/v1/Systems/1",
-  "@odata.type": "#ComputerSystem.1.0.0.ComputerSystem",
+  "@odata.type": "#ComputerSystem.v1_2_0.ComputerSystem",
   "Id": "1",
   "Name": "My Computer System",
   "SystemType": "Physical",
@@ -64,20 +64,20 @@
     "@odata.id": "/redfish/v1/Systems/1/EthernetInterfaces"
   },
   "SimpleStorage": {
-    "@odata.id": "/redfish/v1/Systems/Members/1/SimpleStorage"
+    "@odata.id": "/redfish/v1/Systems/1/SimpleStorage"
   },
   "LogServices": {
-    "@odata.id": "/redfish/v1/Systems/Members/1/Logs"
+    "@odata.id": "/redfish/v1/Systems/1/LogServices"
   },
   "Links": {
     "Chassis": [
       {
-        "@odata.id": "/redfish/v1/Chassis/Members/1"
+        "@odata.id": "/redfish/v1/Chassis/1"
       }
     ],
     "ManagedBy": [
       {
-        "@odata.id": "/redfish/v1/Managers/Members/1"
+        "@odata.id": "/redfish/v1/Managers/StorageManager1"
       }
     ],
     "Storage": {

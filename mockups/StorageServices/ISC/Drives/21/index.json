@@ -1,0 +1,34 @@
+{
+  "@odata.context": "/redfish/v1/$metadata#Drive.Drive",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/21",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+    "@odata.type": "#Drive.v1_2_0.Drive",
+    "Id": "21",
+    "Name": "Drive 21",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "StatusIndicator": "OK",
+    "CapacityBytes": 300067890136,
+    "FailurePredicted": false,
+    "Protocol": "SAS",
+    "MediaType": "HDD",
+    "Manufacturer": "HDD-Company",
+    "SerialNumber": "0THG65AU",
+    "PartNumber": "HUC156030CSS200",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "5000CCA05B522F79"
+        }
+    ],
+    "RotationSpeedRPM": 15000,
+    "BlockSizeBytes": 512,
+    "NegotiatedSpeedGbs": 12,
+    "Links": {
+        "Volumes": {
+            "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/3"
+          }
+      }
+  }

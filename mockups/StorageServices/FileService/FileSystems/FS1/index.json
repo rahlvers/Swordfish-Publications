@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageGroup.StorageGroup",
-  "@odata.id": "/redfish/v1/Storage/1/Storage/FileSystems/FS1",
-  "@odata.type": "#FileSystem.FileSystem",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#FileSystem.FileSystem",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1",
+  "@odata.type": "#FileSystem.v1_0_0.FileSystem",
   "Id": "FS1",
   "Name": "Root",
   "Description": "Root FileSystem, not replicated.",
@@ -43,8 +43,8 @@
                 "ProvisionedBytes": 0
             }
         },
-        "ProvidedClassOfService": {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"},
-		"ProvidingPools": {"@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool/ProvidingPools"}
+        "ProvidedClassOfService": {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"},
+		"ProvidingPools": {"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ProvidingPools"}
     }
   ],
   "LowSpaceWarningThresholdPercents": [ 60, 90 ],
@@ -57,14 +57,14 @@
   "FileSystemType": "CIFS",
   "FileSystemPersistenceType": "Persistent",
   "ResizeIncrementBytes": 256,
-  "ExportedShares": {"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ExportedFileShares/MyShare"},
+  "ExportedShares": {"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ExportedFileShares"},
   "Status": {
     "State": "Enabled",
     "Health": "OK",
     "HealthRollUp": "OK"
   },
   "ClassOfService": {
-    "Members": [{"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"}]
+    "Members": [{"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"}]
   },
   "Links": {}
 }

@@ -1,0 +1,16 @@
+{
+  "@Redfish.Copyright": "Copyright 2017 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SAS",
+  "@odata.type": "#ClassOfService.v1_1_0.ClassOfService",
+  "Id": "SAS",
+  "Name": "SAS Class of Service",
+  "Description": "SAS Class of Service",
+  "ClassOfServiceVersion": "01.00.00",
+  "LinesOfService": {
+    "IOConnectivityLineOfService": {
+      "Name": "SAS",
+      "AccessProtocol": "SAS"
+    }
+  }
+}

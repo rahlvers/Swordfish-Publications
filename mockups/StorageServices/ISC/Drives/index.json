@@ -1,0 +1,81 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#DriveCollection.DriveCollection",
+  "@odata.type": "#DriveCollection.DriveCollection",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/Drives",
+  "Name": "Drives",
+  "Members@odata.count": 24,
+  "Members": [{
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/1"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/2"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/3"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/4"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/5"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/6"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/7"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/8"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/9"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/10"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/11"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/12"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/13"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/14"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/15"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/16"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/17"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/18"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/19"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/20"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/21"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/22"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/23"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/24"
+    }
+  ]
+}

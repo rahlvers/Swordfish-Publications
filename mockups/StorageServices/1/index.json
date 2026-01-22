@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageServices/1",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageService.StorageService",
   "@odata.id": "/redfish/v1/StorageServices/1",
-  "@odata.type": "#StorageService.1.0.0.StorageService",
+  "@odata.type": "#StorageService.v1_2_0.StorageService",
   "Id": "1",
   "Name": "My Storage Service",
   "Description": "Description of storage",
@@ -11,9 +11,9 @@
     "Health": "OK"
   },
   "ClassesOfService": {"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService"},
-  "Drives": {"@odata.id": "/redfish/v1/StorageServices/1/Drives"},    
+  "Drives": {"@odata.id": "/redfish/v1/StorageServices/1/Drives"},
   "EndpointGroups": {"@odata.id": "/redfish/v1/StorageServices/1/EndpointGroups"},
-  "Endpoints": {"@odata.id": "/redfish/v1/StorageServices/1/Endpoints"}, 
+  "Endpoints": {"@odata.id": "/redfish/v1/StorageServices/1/Endpoints"},
   "StorageGroups": {"@odata.id": "/redfish/v1/StorageServices/1/StorageGroups"},
   "StoragePools": {"@odata.id": "/redfish/v1/StorageServices/1/StoragePools"},
   "Volumes": {"@odata.id": "/redfish/v1/StorageServices/1/Volumes"},

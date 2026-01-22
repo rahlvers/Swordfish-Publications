@@ -1,18 +1,19 @@
 {
     "$ref": "#/definitions/FileSystem",
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
             "description": "The available actions for this resource.",
             "longDescription": "This type shall contain the available actions for this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -102,11 +103,12 @@
             "description": "An instance of a hierarchical namespace of files.",
             "longDescription": "This resource shall be used to represent an instance of a hierarchical namespace of files.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -116,13 +118,16 @@
             },
             "properties": {
                 "@odata.context": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/context"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/etag"
                 },
                 "@odata.id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/id"
                 },
                 "@odata.type": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/type"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/type"
                 },
                 "AccessCapabilities": {
                     "description": "An array of supported IO access capabilities.",
@@ -150,7 +155,7 @@
                     "longDescription": "The value of this property shall be the block size of the file system in bytes.",
                     "readonly": true,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ],
                     "units": "By"
@@ -178,7 +183,7 @@
                     "type": "array"
                 },
                 "CapacitySources@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
                 },
                 "CasePreserved": {
                     "description": "The case of file names is preserved by the file system.",
@@ -220,7 +225,7 @@
                     "minimum": 1,
                     "readonly": false,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ],
                     "units": "By"
@@ -265,14 +270,18 @@
                 "ImportedShares": {
                     "description": "An array of imported file shares.",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.json#/definitions/FileShare"
+                        "anyOf": [
+                            {
+                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.json#/definitions/ImportedShare"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
                     },
                     "longDescription": "The value shall be an array of imported file shares.",
                     "readonly": true,
                     "type": "array"
-                },
-                "ImportedShares@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
                 },
                 "Links": {
                     "$ref": "#/definitions/Links",
@@ -284,7 +293,7 @@
                     "description": "An array of low space warning threshold percentages for the file system.",
                     "items": {
                         "type": [
-                            "number",
+                            "integer",
                             "null"
                         ]
                     },
@@ -301,7 +310,7 @@
                     "minimum": 1,
                     "readonly": false,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ],
                     "units": "By"
@@ -324,6 +333,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "This property is deprecated in favor of the Capacity property.  The RemainingCapacity can be computed from the values of that property, for each of the sub groups xxx: Data, MetaData, and Snapshot.  The RemainingCapacity is xxx/ProvisionedBytes - xxx/ConsumedBytes.",
                     "description": "Remaining capacity allocated to the file system.",
                     "longDescription": "The value of this property shall be the remaining capacity allocated to the file system in bytes.",
                     "readonly": true
@@ -333,7 +343,7 @@
                     "longDescription": "If present, this value shall return  {[(SUM(AllocatedBytes) - SUM(ConsumedBytes)]/SUM(AllocatedBytes)}*100 represented as an integer value.",
                     "readonly": true,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ]
                 },
@@ -352,6 +362,8 @@
                 }
             },
             "required": [
+                "@odata.id",
+                "@odata.type",
                 "Id",
                 "Name"
             ],
@@ -377,60 +389,15 @@
             "longDescription": "The value shall indicate the persistence characteristics of the file system.",
             "type": "string"
         },
-        "ImportedShare": {
-            "additionalProperties": false,
-            "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
-                    "description": "This property shall specify a valid odata or Redfish property.",
-                    "type": [
-                        "array",
-                        "boolean",
-                        "number",
-                        "null",
-                        "object",
-                        "string"
-                    ]
-                }
-            },
-            "properties": {
-                "FileSharePath": {
-                    "description": "A path to a file or directory on this file system where this file share is hosted.",
-                    "longDescription": "The value shall be a path (relative to the file system root) to the importing file or directory.",
-                    "readonly": true,
-                    "type": [
-                        "string",
-                        "null"
-                    ]
-                },
-                "ImportedShare": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.json#/definitions/FileShare"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "description": "Link to imported FileShare.",
-                    "longDescription": "The value shall be a reference to a file share.",
-                    "readonly": true
-                },
-                "Oem": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
-                    "description": "Oem extension object.",
-                    "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
-                }
-            },
-            "type": "object"
-        },
         "Links": {
             "additionalProperties": false,
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -458,6 +425,7 @@
                     "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
                 },
                 "ReplicaCollection": {
+                    "deprecated": "Deprecated in favor of ReplicaTargets.",
                     "description": "An array of links to replicas for this file system.",
                     "items": {
                         "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.json#/definitions/FileSystem"
@@ -467,7 +435,7 @@
                     "type": "array"
                 },
                 "ReplicaCollection@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
                 }
             },
             "type": "object"
@@ -477,11 +445,12 @@
             "description": "The available OEM specific actions for this resource.",
             "longDescription": "This type shall contain any additional OEM actions for this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -493,5 +462,6 @@
             "type": "object"
         }
     },
+    "owningEntity": "SNIA",
     "title": "#FileSystem.v1_1_1.FileSystem"
 }

@@ -1,7 +1,7 @@
 {
     "$ref": "#/definitions/CapacitySource",
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "Capacity": {
             "anyOf": [
@@ -15,7 +15,13 @@
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_2.json#/definitions/Capacity"
                 },
                 {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_3.json#/definitions/Capacity"
+                },
+                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_0.json#/definitions/Capacity"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_1.json#/definitions/Capacity"
                 }
             ],
             "description": "This is the schema definition for the Capacity of a device. It represents the properties for capacity for any data store.",
@@ -33,7 +39,13 @@
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_2.json#/definitions/CapacityInfo"
                 },
                 {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_3.json#/definitions/CapacityInfo"
+                },
+                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_0.json#/definitions/CapacityInfo"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_1.json#/definitions/CapacityInfo"
                 }
             ],
             "description": "The capacity of specific data type in a data store.",
@@ -42,7 +54,7 @@
         "CapacitySource": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"
@@ -54,12 +66,19 @@
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_2.json#/definitions/CapacitySource"
                 },
                 {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_3.json#/definitions/CapacitySource"
+                },
+                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_0.json#/definitions/CapacitySource"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_1.json#/definitions/CapacitySource"
                 }
             ],
             "description": "A description of the type and source of storage.",
             "longDescription": "This type may be used to represent the source and type of storage capacity.  At most one of the ProvidingDrives, ProvidingVolumes or ProvidingPools properties may have a value.  If any of ProvidingDrives, ProvidingVolumes or ProvidingPools reference more than one resource, allocation of capacity across those resources is implementation dependent."
         }
     },
+    "owningEntity": "SNIA",
     "title": "#Capacity.CapacitySource"
 }

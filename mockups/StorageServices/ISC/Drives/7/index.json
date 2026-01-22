@@ -1,0 +1,34 @@
+{
+  "@odata.context": "/redfish/v1/$metadata#Drive.Drive",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/7",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+    "@odata.type": "#Drive.v1_2_0.Drive",
+    "Id": "7",
+    "Name": "Drive 7",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "StatusIndicator": "OK",
+    "CapacityBytes": 300067890136,
+    "FailurePredicted": false,
+    "Protocol": "SAS",
+    "MediaType": "HDD",
+    "Manufacturer": "HDD-Company",
+    "SerialNumber": "0THGXLUP",
+    "PartNumber": "HUC156030CSS200",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "300062B202B2184A"
+        }
+    ],
+    "RotationSpeedRPM": 15000,
+    "BlockSizeBytes": 512,
+    "NegotiatedSpeedGbs": 12,
+    "Links": {
+        "Volumes": {
+            "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/1"
+        }
+    }
+}

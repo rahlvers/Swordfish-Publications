@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#Volume.Volume",
   "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3",
-  "@odata.type": "#Volume_1_0_0.Volume",
+  "@odata.type": "#Volume.v1_3_0.Volume",
   "Name": "Snapshot1",
   "Id": "3",
   "Description": "",
@@ -58,7 +58,7 @@
   "StorageGroups": null,
   "Links": {
 	"ClassofService": {
-		"@odata.id": "/redfish/v1/StorageServices/1/ClassesofService/BostonBunker"
+		"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonBunker"
 	}
   }
 }

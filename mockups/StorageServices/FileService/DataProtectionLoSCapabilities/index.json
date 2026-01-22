@@ -1,9 +1,9 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#DataProtectionLoSCapabilites.DataProtectionLoSCapabilites",
-  "@odata.id": "/redfish/v1/StorageServices/FileServices/DataProtectionLoSCapabilites",
-  "@odata.type": "#DataProtectionLoSCapabilites_1_0_0.DataProtectionLoSCapabilites",
-  "Name": "DataProtectionLoSCapabilites",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#DataProtectionLoSCapabilities.DataProtectionLoSCapabilities",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/DataProtectionLoSCapabilities",
+  "@odata.type": "#DataProtectionLoSCapabilities.v1_0_0.DataProtectionLoSCapabilities",
+  "Name": "DataProtectionLoSCapabilities",
     "SupportedRecoveryGeographicObjectives": [
       "Server",
       "Rack",

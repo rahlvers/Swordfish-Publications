@@ -1,7 +1,7 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
   "@odata.id": "/redfish/v1/Systems/Complex/Processors/1",
-  "@odata.type": "#Processor.1.0.0.Processor",
+  "@odata.type": "#Processor.v1_0_0.Processor",
   "Name": "Processor",
   "Id": "1",
   "Socket": "CPU 1",

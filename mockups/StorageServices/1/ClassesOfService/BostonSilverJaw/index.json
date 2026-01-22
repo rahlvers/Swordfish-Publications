@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageServices/1/ClassesOfService/BostonSilverJaw",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
   "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonSilverJaw",
-  "@odata.type": "#ClassOfService_1_0_0.ClassOfService",
+  "@odata.type": "#ClassOfService.v1_0_0.ClassOfService",
   "Id": "BostonSilverJaw",
   "Name": "BostonSilverJaw",
   "Description": "Silver class of service in Boston with async mirror in Dallas and sync mirror in Providence.",
@@ -34,7 +34,7 @@
           "IsIsolated": true,
           "Schedule": null,
           "ReplicaClassOfService": {
-            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Storage/Gold_Providence"
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
           },
           "ReplicaAccessLocation": {
             "Country": "",
@@ -85,7 +85,7 @@
           "Schedule": null,
           "Links": {
             "ReplicaOption": {
-              "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Dallas"
+              "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
             }
           }
         }

@@ -1,6 +1,7 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "$ref": "#/definitions/StorageReplicaInfo",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "ConsistencyState": {
             "description": "The values of ConsistencyState indicate the consistency type used by the source and its associated target group.",
@@ -61,11 +62,12 @@
             "description": "Defines the characteristics of a replica.",
             "longDescription": "The value shall define the characteristics of a replica.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -149,7 +151,7 @@
                     "longDescription": "Specifies the percent of the work completed to reach synchronization. Shall not be instantiated if implementation is not capable of providing this information.  If related to a group, then PercentSynced shall be an average of the PercentSynced across all members of the group.",
                     "readonly": true,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ],
                     "units": "%"
@@ -157,7 +159,7 @@
                 "Replica": {
                     "anyOf": [
                         {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
                         },
                         {
                             "type": "null"
@@ -228,6 +230,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "ReplicaInfo is only used within a replica target. The Replica property here addresses the source resource.  A TargetReplicas property in each source resource describes the replica targets of a source.",
                     "description": "The source or target role of this replica.",
                     "longDescription": "The ReplicaRole enumeration literal shall represent the source or target role of this replica as known to the containing resource.",
                     "readonly": true
@@ -237,7 +240,7 @@
                     "longDescription": "Applies to Adaptive mode and it describes maximum number of bytes the SyncedElement (target) can be out of sync. If the number of out-of-sync bytes exceeds the skew value, ReplicaUpdateMode shall be switched to synchronous.",
                     "readonly": true,
                     "type": [
-                        "number",
+                        "integer",
                         "null"
                     ],
                     "units": "By"
@@ -519,6 +522,7 @@
             "type": "string"
         },
         "ReplicaRole": {
+            "deprecated": "ReplicaRole is not used.",
             "description": "Values of ReplicaRole specify whether the resource is a source of replication or the target of replication.",
             "enum": [
                 "Source",
@@ -640,6 +644,68 @@
             "longDescription": "The enumeration literals may be used to specify whether the target elements will be updated synchronously or asynchronously.",
             "type": "string"
         },
+        "StorageReplicaInfo": {
+            "additionalProperties": false,
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "description": "This property shall specify a valid odata or Redfish property.",
+                    "type": [
+                        "array",
+                        "boolean",
+                        "integer",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ]
+                }
+            },
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/type"
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                }
+            },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
+            "type": "object"
+        },
         "UndiscoveredElement": {
             "description": "Values of UndiscoveredElement specify whether the source, the target, or both elements involved in a copy operation are undiscovered. An element is considered undiscovered if its object model is not known to the service performing the copy operation.",
             "enum": [
@@ -658,5 +724,6 @@
             "type": "string"
         }
     },
-    "title": "#StorageReplicaInfo.v1_1_0"
+    "owningEntity": "SNIA",
+    "title": "#StorageReplicaInfo.v1_1_0.StorageReplicaInfo"
 }

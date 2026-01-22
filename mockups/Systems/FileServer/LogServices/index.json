@@ -1,5 +1,5 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#StorageSystems/Members/Simple/LogServices/$entity",
   "@odata.id": "/redfish/v1/Systems/Simple/LogServices",
   "@odata.type": "#LogServiceCollection.LogServiceCollection",

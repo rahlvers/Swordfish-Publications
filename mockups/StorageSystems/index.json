@@ -1,6 +1,6 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageSystems",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageSystemCollection.StorageSystemCollection",
   "@odata.id": "/redfish/v1/Systems",
   "@odata.type": "#StorageSystemCollection.StorageSystemCollection",
   "Name": "Storage System Collection",

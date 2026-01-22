@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageServices/Simple1/StorageGroups/2",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageGroup.StorageGroup",
   "@odata.id": "/redfish/v1/StorageServices/Simple1/StorageGroups/2",
-  "@odata.type": "#StorageGroup_1_0_0.StorageGroup",
+  "@odata.type": "#StorageGroup.v1_0_0.StorageGroup",
   "Id": "2",
   "Name": "RG_LOB_SQL",
   "Description": "Replication group for SQL LOB app",
@@ -16,14 +16,7 @@
     "Health": "OK",
     "HealthRollUp": "OK"
   },
-  "ReplicaInfos": [{
-    "ReplicaState": "Synchronized",
-    "ReplicaType": "Snapshot",
-    "ReplicaMethodology": "IncrementalCopy",
-    "ReplicaProgressStatus": "Completed",
-    "Replica": "https://10.12.1.12/redfish/v1/StorageServices/2/Volumes/5",
-    "ReplicaRole": "Source"
-  }],
+  "ReplicaTargets":[{"@odata.id":"https://10.12.1.12/redfish/v1/StorageServices/2/Volumes/5"}],
   "Links": {
     "ParentStorageGroups": [],
     "ChildStorageGroups": [],

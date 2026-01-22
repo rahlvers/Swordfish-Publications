@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#StorageSystems/Members/Simple/EthernetInterfaces/Members/1/VLANs/Members/$entity",
   "@odata.id": "/redfish/v1/Systems/Simple/EthernetInterfaces/1/VLANs/1",
-  "@odata.type": "#VLanNetworkInterface.1.0.0.VLanNetworkInterface",
+  "@odata.type": "#VLanNetworkInterface.v1_0_0.VLanNetworkInterface",
   "Id": "1",
   "Name": "VLAN Network Interface",
   "Description": "System NIC 1 V",

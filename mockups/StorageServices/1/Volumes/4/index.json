@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#Volume.Volume",
   "@odata.id": "/redfish/v1/StorageServices/1/Volumes/4",
-  "@odata.type": "#Volume_1_0_0.Volume",
+  "@odata.type": "#Volume.v1_3_0.Volume",
   "Name": "Volume 4",
   "Id": "4",
   "Description": "Volume with remote replica",
@@ -35,7 +35,7 @@
       },
       "Links": {
         "ClassOfService": {
-          "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldBoston"
+          "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
         },
         "ProvidingPool": {
             "Members": [{"@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool"}]
@@ -56,15 +56,7 @@
       "AllocatedBytes": 536870912
     }
   },
-  "ReplicaInfos": [{
-	"ReplicaState": "Synchronized",
-	"ReplicaProgressStatus": "Completed",
-	"ReplicaRole": "Source",
-	"Replica": {
-	   "@odata.id":	"https://10.1.1.13/redfish/v1/StorageServices/A/Volume/ABC"
-	}
-  }
-  ],
+  "ReplicaSource":[{"@odata.id":	"https://10.1.1.13/redfish/v1/StorageServices/A/Volume/ABC"}],
   "AllocatedPools": null,
   "StorageGroups": {
 		"@odata.id": "/redfish/v1/StorageServices/1/Volumes/4/StorageGroups"

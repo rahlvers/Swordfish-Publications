@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright © 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#Managers/Members/$entity",
+  "@Redfish.Copyright": "Copyright 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Manager.Manager",
   "@odata.id": "/redfish/v1/Managers/StorageManager1",
-  "@odata.type": "#Managers.1.0.0.Manager",
+  "@odata.type": "#Manager.v1_1_0.Manager",
   "Id": "StorageManager1",
   "Name": "Manager",
   "ManagerType": "ManagementController",

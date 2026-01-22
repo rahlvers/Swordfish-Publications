@@ -1,7 +1,7 @@
 {
     "$ref": "#/definitions/FileSystem",
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "FileProtocol": {
             "description": "The file sharing protocols supported by the file system.",
@@ -41,13 +41,16 @@
         "FileSystem": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_0_0.json#/definitions/FileSystem"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_0_1.json#/definitions/FileSystem"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_0_2.json#/definitions/FileSystem"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_1_0.json#/definitions/FileSystem"
@@ -57,11 +60,24 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_1_2.json#/definitions/FileSystem"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_1_3.json#/definitions/FileSystem"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_2_0.json#/definitions/FileSystem"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_2_1.json#/definitions/FileSystem"
                 }
             ],
             "description": "A hierarchical namespace of files.",
             "longDescription": "This resource shall be used to represent a hierarchical namespace of files."
+        },
+        "ImportedShare": {
+            "anyOf": []
         }
     },
+    "owningEntity": "SNIA",
     "title": "#FileSystem.FileSystem"
 }

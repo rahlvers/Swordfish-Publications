@@ -1,6 +1,7 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "$ref": "#/definitions/StorageReplicaInfo",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "ReplicaInfo": {
             "anyOf": [
@@ -8,11 +9,17 @@
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaInfo"
                 },
                 {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_1.json#/definitions/ReplicaInfo"
+                },
+                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_1_0.json#/definitions/ReplicaInfo"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_1_1.json#/definitions/ReplicaInfo"
                 }
             ],
-            "description": "Defines the characteristics of a replica",
-            "longDescription": "The value shall define the characteristics of a replica."
+            "description": "Defines the characteristics of a replica of a source.",
+            "longDescription": "The value shall define the characteristics of a replica of a source."
         },
         "ReplicaType": {
             "description": "Values of ReplicaType describe the intended outcome of the replication.",
@@ -59,7 +66,27 @@
             },
             "longDescription": "The enumeration literals may be used to specify whether the target elements will be updated synchronously or asynchronously.",
             "type": "string"
+        },
+        "StorageReplicaInfo": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_0.json#/definitions/StorageReplicaInfo"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_1.json#/definitions/StorageReplicaInfo"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_1_0.json#/definitions/StorageReplicaInfo"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_1_1.json#/definitions/StorageReplicaInfo"
+                }
+            ]
         }
     },
-    "title": "#StorageReplicaInfo"
+    "owningEntity": "SNIA",
+    "title": "#StorageReplicaInfo.StorageReplicaInfo"
 }

@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageServices/1/ClassesOfService/BostonVMs",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
   "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonVMs",
-  "@odata.type": "#ClassOfService_1_0_0.ClassOfService",
+  "@odata.type": "#ClassOfService.v1_0_0.ClassOfService",
   "Id": "BostonVMs with snaps to Providence",
   "Name": "BostonVMs",
   "Description": "Boston VMs",
@@ -40,7 +40,7 @@
             ]
           },
           "ReplicaClassOfService": {
-            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Silver_Providence"
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
           },
           "ReplicaAccessLocation": {
             "Country": "",
@@ -87,7 +87,7 @@
             "EnabledMonthsOfYear": []
           },
           "ReplicaClassOfService": {
-            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Storage/Silver_Providence"
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
           },
           "ReplicaAccessLocation": {
             "Country": "",

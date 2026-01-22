@@ -1,0 +1,150 @@
+{
+    "@odata.type": "#ComputerSystem.v1_5_0.ComputerSystem",
+    "Id": "556ST22255E",
+    "Name": "WebFrontEnd483",
+    "SystemType": "Physical",
+    "AssetTag": "Chicago-45Z-2381",
+    "Manufacturer": "Contoso",
+    "Model": "3500RX",
+    "SKU": "8675309",
+    "SerialNumber": "556ST22255E",
+    "PartNumber": "224071-J23",
+    "Description": "Web Front End node",
+    "UUID": "38947555-7742-3448-3784-823347823834",
+    "HostName": "web483",
+    "Status": {
+        "@odata.type": "#Resource.Status",
+        "State": "Enabled",
+        "Health": "OK",
+        "HealthRollup": "OK"
+    },
+    "HostingRoles": [
+        "ApplicationServer"
+    ],
+    "IndicatorLED": "Off",
+    "PowerState": "On",
+    "Boot": {
+        "@odata.type": "#ComputerSystem.v1_1_0.Boot",
+        "BootSourceOverrideEnabled": "Once",
+        "BootSourceOverrideTarget": "Pxe",
+        "BootSourceOverrideTarget@Redfish.AllowableValues": [
+            "None",
+            "Pxe",
+            "Cd",
+            "Usb",
+            "Hdd",
+            "BiosSetup",
+            "Utilities",
+            "Diags",
+            "SDCard",
+            "UefiTarget"
+        ],
+        "BootSourceOverrideMode": "UEFI",
+        "UefiTargetBootSourceOverride": "/0x31/0x33/0x01/0x01"
+    },
+    "TrustedModules": [
+        {
+            "@odata.type": "#ComputerSystem.v1_3_0.TrustedModules",
+            "FirmwareVersion": "1.13b",
+            "InterfaceType": "TPM1_2",
+            "Status": {
+                "@odata.type": "#Resource.Status",
+                "State": "Enabled",
+                "Health": "OK"
+            }
+        }
+    ],
+    "Oem": {
+        "Contoso": {
+            "@odata.type": "#Contoso.ComputerSystem",
+            "ProductionLocation": {
+                "@odata.type": "#Contoso.ProductionLocation",
+                "FacilityName": "PacWest Production Facility",
+                "Country": "USA"
+            }
+        },
+        "Chipwise": {
+            "@odata.type": "#Chipwise.ComputerSystem",
+            "Style": "Executive"
+        }
+    },
+    "BiosVersion": "P79 v1.33 (02/28/2015)",
+    "ProcessorSummary": {
+        "@odata.type": "#ComputerSystem.v1_0_0.ProcessorSummary",
+        "Count": 2,
+        "Model": "Multi-Core Intel(R) Xeon(R) processor 7xxx Series",
+        "Status": {
+            "@odata.type": "#Resource.Status",
+            "State": "Enabled",
+            "Health": "OK",
+            "HealthRollup": "OK"
+        }
+    },
+    "MemorySummary": {
+        "@odata.type": "#ComputerSystem.v1_4_0.MemorySummary",
+        "TotalSystemMemoryGiB": 96,
+        "TotalSystemPersistentMemoryGiB": 0,
+        "MemoryMirroring": "None",
+        "Status": {
+            "@odata.type": "#Resource.Status",
+            "State": "Enabled",
+            "Health": "OK",
+            "HealthRollup": "OK"
+        }
+    },
+    "Bios": {
+        "@odata.id": "/redfish/v1/Systems/556ST22255E/BIOS"
+    },
+    "Processors": {
+        "@odata.id": "/redfish/v1/Systems/556ST22255E/Processors"
+    },
+    "Memory": {
+        "@odata.id": "/redfish/v1/Systems/556ST22255E/Memory"
+    },
+    "EthernetInterfaces": {
+        "@odata.id": "/redfish/v1/Systems/556ST22255E/EthernetInterfaces"
+    },
+    "Storage": {
+        "@odata.id": "/redfish/v1/Systems/556ST22255E/Storage"
+    },
+    "LogServices": {
+        "@odata.id": "/redfish/v1/Systems/556ST22255E/LogServices"
+    },
+    "Links": {
+        "@odata.type": "#ComputerSystem.v1_4_0.Links",
+        "Chassis": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/1URack"
+            }
+        ],
+        "ManagedBy": [
+            {
+                "@odata.id": "/redfish/v1/Managers/StorageManager1"
+            }
+        ]
+    },
+    "Actions": {
+        "@odata.type": "#ComputerSystem.v1_0_0.Actions",
+        "#ComputerSystem.Reset": {
+            "target": "/redfish/v1/Systems/556ST22255E/Actions/ComputerSystem.Reset",
+            "ResetType@Redfish.AllowableValues": [
+                "On",
+                "ForceOff",
+                "GracefulShutdown",
+                "GracefulRestart",
+                "ForceRestart",
+                "Nmi",
+                "ForceOn",
+                "PushPowerButton"
+            ]
+        },
+        "Oem": {
+            "#Contoso.Reset": {
+                "target": "/redfish/v1/Systems/556ST22255E/Oem/Contoso/Actions/Contoso.Reset"
+            }
+        }
+    },
+    "@odata.context": "/redfish/v1/$metadata#ComputerSystem.ComputerSystem",
+    "@odata.id": "/redfish/v1/Systems/556ST22255E",
+    "@Redfish.Copyright": "Copyright 2014-2018 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright."
+}

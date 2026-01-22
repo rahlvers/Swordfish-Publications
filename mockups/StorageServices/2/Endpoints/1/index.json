@@ -1,5 +1,5 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#StorageServices/2/Endpoints/1",
   "@odata.id": "/redfish/v1/StorageServices/2/Endpoints/1",
   "@odata.type": "#Endpoint.v1_0_0.Endpoint",

@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageServices/1/ClassesOfService/BostonGoldJaw",
+  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
   "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw",
-  "@odata.type": "#ClassOfService_1_0_0.ClassOfService",
+  "@odata.type": "#ClassOfService.v1_0_0.ClassOfService",
   "Id": "BostonGoldJaw",
   "Name": "BostonGoldJaw",
   "Description": "Boston with Open Jaw config to Providence and Dallas",
@@ -51,7 +51,7 @@
           "Schedule": null,
           "Links": {
             "ReplicaOption": {
-              "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Providence"
+              "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
             }
           }
         },
@@ -81,7 +81,7 @@
           "Schedule": null,
           "Links": {
             "ReplicaOption": {
-              "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Dallas"
+              "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
             }
           }
         }

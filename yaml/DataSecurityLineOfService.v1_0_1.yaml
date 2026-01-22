@@ -1,0 +1,102 @@
+components:
+  schemas:
+    DataSecurityLineOfService:
+      additionalProperties: false
+      description: Describe data security service level requirements.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+        AntivirusEngineProvider:
+          description: AntiVirus provider.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: The value shall specify an AntiVirus provider.
+        AntivirusScanPolicies:
+          description: Policy for triggering an AntiVirus scan.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/AntiVirusScanTrigger
+            nullable: true
+          readOnly: false
+          type: array
+          x-longDescription: The enumeration literal shall specify the policy for
+            triggering an AntiVirus scan.
+        ChannelEncryptionStrength:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/KeySize
+          description: Key size for transport channel encryption.
+          nullable: true
+          readOnly: false
+          x-longDescription: The enumeration literal shall specify a key size in a
+            symmetric encryption algorithm for transport channel encryption.
+        DataSanitizationPolicy:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSanitizationPolicy
+          description: Data sanitization policy.
+          nullable: true
+          readOnly: false
+          x-longDescription: The enumeration literal shall specify the data sanitization
+            policy.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          nullable: true
+          readOnly: true
+        HostAuthenticationType:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/AuthenticationType
+          description: Authentication type for hosts (servers) or initiator endpoints.
+          nullable: true
+          readOnly: false
+          x-longDescription: The enumeration literal shall specify the authentication
+            type for hosts (servers) or initiator endpoints.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          readOnly: true
+        MediaEncryptionStrength:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/KeySize
+          description: Key size for media encryption.
+          nullable: true
+          readOnly: false
+          x-longDescription: The enumeration literal shall specify a key size in a
+            symmetric encryption algorithm for media encryption.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          description: This is the manufacturer/provider specific extension moniker
+            used to divide the Oem object into sections.
+          x-longDescription: The value of this string shall be of the format for the
+            reserved word *Oem*.
+        SecureChannelProtocol:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/SecureChannelProtocol
+          description: Protocol that provide encrypted communication.
+          nullable: true
+          readOnly: false
+          x-longDescription: The enumeration literal shall specify the protocol that
+            provide encrypted communication.
+        UserAuthenticationType:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/AuthenticationType
+          description: Authentication type for users (or programs).
+          nullable: true
+          readOnly: false
+          x-longDescription: The enumeration literal shall specify the authentication
+            type for users (or programs).
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: 'This structure shall be used to describe data security service
+        level requirements. '
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DataSecurityLineOfService.v1_0_1.DataSecurityLineOfService'
+x-copyright: Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-owningEntity: SNIA

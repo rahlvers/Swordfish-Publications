@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright � 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/1/Thermal/$entity",
+  "@Redfish.Copyright": "Copyright  2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Thermal.Thermal",
   "@odata.id": "/redfish/v1/Chassis/1/Thermal",
-  "@odata.type": "#Thermal.1.0.0.Thermal",
+  "@odata.type": "#Thermal.v1_1_0.Thermal",
   "Id": "Thermal",
   "Name": "Thermal",
   "Temperatures": [
@@ -24,12 +24,7 @@
       "LowerThresholdFatal": 42,
       "MinReadingRange": 0,
       "MaxReadingRange": 200,
-      "PhysicalContext": "CPU",
-      "RelatedItem": [
-        {
-          "@odata.id": "/redfish/v1/Systems/1#/Processors/0"
-        }
-      ]
+      "PhysicalContext": "CPU"
     },
     {
       "@odata.id": "/redfish/v1/Chassis/1/Thermal#/Temperatures/1",
@@ -49,12 +44,7 @@
       "LowerThresholdFatal": 42,
       "MinReadingRange": 0,
       "MaxReadingRange": 200,
-      "PhysicalContext": "CPU",
-      "RelatedItem": [
-        {
-          "@odata.id": "/redfish/v1/Systems/1#/Processors/1"
-        }
-      ]
+      "PhysicalContext": "CPU"
     },
     {
       "@odata.id": "/redfish/v1/Chassis/1/Thermal#/Temperatures/2",

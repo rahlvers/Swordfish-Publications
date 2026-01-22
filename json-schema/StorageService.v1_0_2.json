@@ -1,16 +1,17 @@
 {
     "$ref": "#/definitions/StorageService",
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
+    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -31,11 +32,12 @@
         "Links": {
             "additionalProperties": false,
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -53,6 +55,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "Moved up to StorageServices",
                     "description": "The data protection capabilities of this service.",
                     "longDescription": "The value shall reference the data protection capabilities of this service.",
                     "readonly": false
@@ -66,6 +69,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "Moved up to StorageServices",
                     "description": "The data security capabilities of this service.",
                     "longDescription": "The value shall reference the data security capabilities of this service.",
                     "readonly": false
@@ -79,6 +83,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "Moved up to StorageServices",
                     "description": "The data storage capabilities of this service.",
                     "longDescription": "The value shall reference the data storage capabilities of this service.",
                     "readonly": false
@@ -92,6 +97,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "DefaultClassOfService moved outside of Links complex type.",
                     "description": "The default class of service for entities allocated by this storage service.",
                     "longDescription": "If present, this property shall reference the default class of service for entities allocated by this storage service. This default may be overridden by the DefaultClassOfService property values within contained StoragePools.",
                     "readonly": false
@@ -117,6 +123,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "Moved up to StorageServices",
                     "description": "The IO connectivity capabilities of this service.",
                     "longDescription": "The value shall reference the IO connectivity capabilities of this service.",
                     "readonly": false
@@ -130,6 +137,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "Moved up to StorageServices",
                     "description": "The IO performance capabilities of this service.",
                     "longDescription": "The value shall reference the IO performance capabilities of this service.",
                     "readonly": false
@@ -145,11 +153,12 @@
         "OemActions": {
             "additionalProperties": true,
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -172,11 +181,12 @@
                 }
             },
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -202,11 +212,12 @@
             "description": "Collection of resources that are managed and exposed to hosts as a group.",
             "longDescription": "Collection of resources that the system can make available to one or more host systems.  The collection can contain: block, file, or object storage; local system access points through which the collection is made available; hosts, or host access points to which the collection is made available.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
                         "boolean",
+                        "integer",
                         "number",
                         "null",
                         "object",
@@ -216,13 +227,16 @@
             },
             "properties": {
                 "@odata.context": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/context"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/etag"
                 },
                 "@odata.id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/id"
                 },
                 "@odata.type": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/type"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/type"
                 },
                 "Actions": {
                     "$ref": "#/definitions/Actions",
@@ -252,6 +266,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "Deprecated in favor of EndpointGroups. The GroupType property of EndpointGroup already distinguishes between use for Server or Client.",
                     "description": "Client endpoint groups.",
                     "longDescription": "The value of each entry in the array shall reference an EndpointGroup.",
                     "readonly": false
@@ -289,7 +304,7 @@
                 "Endpoints": {
                     "anyOf": [
                         {
-                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointCollection.json#/definitions/EndpointCollection"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/EndpointCollection.json#/definitions/EndpointCollection"
                         },
                         {
                             "type": "null"
@@ -325,6 +340,7 @@
                 "Links": {
                     "$ref": "#/definitions/Links",
                     "description": "Contains links to other resources that are related to this resource.",
+                    "longDescription": "This property shall contain links to other resources related to this resource.",
                     "readonly": true
                 },
                 "Name": {
@@ -337,15 +353,17 @@
                     "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
                 },
                 "Redundancy": {
+                    "autoExpand": true,
                     "description": "Redundancy information for the storage subsystem",
                     "items": {
                         "$ref": "http://redfish.dmtf.org/schemas/v1/Redundancy.json#/definitions/Redundancy"
                     },
+                    "longDescription": "This collection shall contain the redundancy information for the storage subsystem.",
                     "readonly": true,
                     "type": "array"
                 },
                 "Redundancy@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
                 },
                 "ServerEndpointGroups": {
                     "anyOf": [
@@ -356,6 +374,7 @@
                             "type": "null"
                         }
                     ],
+                    "deprecated": "Deprecated in favor of EndpointGroups. The GroupType property of EndpointGroup already distinguishes between use for Server or Client.",
                     "description": "Server endpoint groups.",
                     "longDescription": "The value of each entry in the array shall reference a EndpointGroup.",
                     "readonly": false
@@ -403,11 +422,14 @@
                 }
             },
             "required": [
+                "@odata.id",
+                "@odata.type",
                 "Id",
                 "Name"
             ],
             "type": "object"
         }
     },
+    "owningEntity": "SNIA",
     "title": "#StorageService.v1_0_2.StorageService"
 }
