@@ -42,7 +42,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -76,7 +76,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_FailureDomainScope
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The value specifies the geographic scope of the failure
             domain.
@@ -95,7 +95,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_RecoveryAccessScope
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The value shall be an enumeration that indicates the
             maximum time required to access an alternate replica. In the case that
@@ -119,7 +119,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaType
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The type of replica shall conform to this value.
         Schedule:

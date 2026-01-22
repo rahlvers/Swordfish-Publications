@@ -38,7 +38,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -71,7 +71,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AntiVirusScanTrigger
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify supported policies
@@ -82,7 +82,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify supported key sizes
@@ -93,7 +93,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_DataSanitizationPolicy
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify supported data
@@ -105,7 +105,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify supported authentication
@@ -113,7 +113,7 @@ components:
         SupportedLinesOfService:
           description: Collection of known and supported DataSecurityLinesOfService.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService.yaml#/components/schemas/DataSecurityLineOfService_DataSecurityLineOfService
           readOnly: false
           type: array
           x-autoExpand: true
@@ -127,7 +127,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify supported key sizes
@@ -138,7 +138,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_SecureChannelProtocol
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify supported protocols
@@ -149,7 +149,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify supported authentication

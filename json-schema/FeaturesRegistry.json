@@ -14,6 +14,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FeaturesRegistry.v1_1_1.json#/definitions/FeaturesRegistry"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FeaturesRegistry.v1_2_1.json#/definitions/FeaturesRegistry"
                 }
             ],
             "deletable": false,

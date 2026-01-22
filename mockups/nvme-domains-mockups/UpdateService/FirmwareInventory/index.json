@@ -1,0 +1,15 @@
+{
+    "@odata.type": "#SoftwareInventoryCollection.SoftwareInventoryCollection",
+    "Name": "Firmware Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/NVMeSSD-1.2.5"
+        },
+        {
+            "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/NVMeSSD-1.2.6"
+        }
+    ],
+    "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

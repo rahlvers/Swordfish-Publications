@@ -123,6 +123,9 @@ components:
         named in the ServerEndpointGroups to the initiator endpoints named in the
         ClientEndpointGroups.  The property VolumesAreExposed shall be set to true
         when this action is completed.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     StorageGroup_v1_2_0_HideVolumes:
       additionalProperties: false
       description: Hide the storage volumes of this group.
@@ -149,6 +152,9 @@ components:
       x-longDescription: Hide the storage of this group from the initiator endpoints
         named in the ClientEndpointGroups. The property VolumesAreExposed shall be
         set to false when this action is completed.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     StorageGroup_v1_2_0_Links:
       additionalProperties: false
       description: Contains links to other resources that are related to this resource.
@@ -220,7 +226,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/EndpointGroup.yaml#/components/schemas/EndpointGroup_AccessState
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The value of this property shall describe the access
             characteristics of this storage group. All associated logical units through
@@ -236,7 +242,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageGroup_v1_2_0_AuthenticationMethod'
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The value of this property must be what kind of authentication
             that the endpoints in this StorageGroup understands.
@@ -248,7 +254,7 @@ components:
             oneOf:
             - $ref: '#/components/schemas/StorageGroup_v1_2_0_CHAPInformation'
             - enum:
-              - 'null'
+              - null
           type: array
           x-longDescription: The value of this property must reflect the authentication
             used by this specific endpoint. If this endpoint represents an initiator,
@@ -274,7 +280,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -295,7 +301,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.yaml#/components/schemas/StorageGroup_MappedVolume
             - enum:
-              - 'null'
+              - null
           type: array
           x-longDescription: An array of mapped volumes managed by this storage group.
           x-versionAdded: v1_1_0

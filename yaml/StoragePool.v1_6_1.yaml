@@ -71,6 +71,9 @@ components:
       type: object
       x-longDescription: This action shall be used to add a drive, or set of drives,
         to an underlying capacity source for the storage pool.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     StoragePool_v1_6_1_EndGrpLifetime:
       additionalProperties: false
       description: This contains properties the Endurance Group Lifetime attributes.
@@ -284,7 +287,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StoragePool_v1_6_1_EndGrpLifetime'
           - enum:
-            - 'null'
+            - null
           x-longDescription: This property shall contain any Endurance Group Lifetime
             properties.
           x-versionAdded: v1_4_0
@@ -315,7 +318,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.yaml#/components/schemas/StoragePool_NVMePoolType
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: This property shall indicate whether the StoragePool
             is used as an EnduranceGroup or an NVMSet.
@@ -445,6 +448,9 @@ components:
         a drive cleanup and data reallocation before drive removal from the pool.
         The implementation may impose restrictions on the number of drives removed
         simultaneously.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     StoragePool_v1_6_1_SetCompressionState:
       additionalProperties: false
       description: This action is used to set the compression state of the pool.
@@ -479,6 +485,9 @@ components:
       x-longDescription: This action shall be used to set the compression state of
         the storage pool. This may be both a highly impactful, as well as a long running
         operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     StoragePool_v1_6_1_SetDeduplicationState:
       additionalProperties: false
       description: This action is used to set the dedupe state of the pool.
@@ -513,6 +522,9 @@ components:
       x-longDescription: This action shall be used to set the dedupe state of the
         storage pool. This may be both a highly impactful, as well as a long running
         operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     StoragePool_v1_6_1_SetEncryptionState:
       additionalProperties: false
       description: This action is used to set the encryption state of the pool.
@@ -547,6 +559,9 @@ components:
       x-longDescription: This action shall be used to set the encryption state of
         the storage pool. This may be both a highly impactful, as well as a long running
         operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     StoragePool_v1_6_1_StoragePool:
       additionalProperties: false
       description: A container of data storage.
@@ -712,7 +727,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         Encrypted:
           deprecated: true
@@ -737,7 +752,7 @@ components:
             is enabled on the storage pool.
           x-versionAdded: v1_6_0
         IOStatistics:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_1.yaml#/components/schemas/IOStatistics_v1_0_1_IOStatistics
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.yaml#/components/schemas/IOStatistics_IOStatistics
           description: Statistics for this StoragePool.
           x-longDescription: The value shall represent IO statistics for this StoragePool.
           x-versionAdded: v1_2_0
@@ -788,7 +803,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StoragePool_v1_6_1_NVMeEnduranceGroupProperties'
           - enum:
-            - 'null'
+            - null
           x-longDescription: This property shall contain properties to use when StoragePool
             is used to describe an NVMe Endurance Group.
           x-versionAdded: v1_4_0
@@ -797,7 +812,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StoragePool_v1_6_1_NVMeProperties'
           - enum:
-            - 'null'
+            - null
           x-longDescription: The property shall indicate the type of storage pool.
           x-versionAdded: v1_6_0
         NVMeSetProperties:
@@ -806,7 +821,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StoragePool_v1_6_1_NVMeSetProperties'
           - enum:
-            - 'null'
+            - null
           x-longDescription: This property shall contain properties to use when StoragePool
             is used to describe an NVMe Set.
           x-versionAdded: v1_4_0
@@ -825,7 +840,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.yaml#/components/schemas/StoragePool_PoolType
             - enum:
-              - 'null'
+              - null
           readOnly: true
           type: array
           x-longDescription: The property shall indicate the type of storage pool.
@@ -862,7 +877,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_ProvisioningPolicy
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: This collection shall specify all supported storage allocation
@@ -874,7 +889,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_RAIDType
             - enum:
-              - 'null'
+              - null
           readOnly: true
           type: array
           x-longDescription: This collection shall contain all the RAIDType values

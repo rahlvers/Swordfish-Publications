@@ -44,7 +44,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         IOLimitingIsSupported:
           description: Limiting IOPS is supported.
@@ -101,13 +101,13 @@ components:
             oneOf:
             - $ref: '#/components/schemas/IOPerformanceLoSCapabilities_v1_0_1_IOWorkload'
             - enum:
-              - 'null'
+              - null
           type: array
           x-longDescription: The value shall be a collection of supported workloads.
         SupportedLinesOfService:
           description: Collection of known and supported IOPerformanceLinesOfService.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLineOfService.yaml#/components/schemas/IOPerformanceLineOfService_IOPerformanceLineOfService
           readOnly: false
           type: array
           x-autoExpand: true
@@ -136,7 +136,7 @@ components:
             oneOf:
             - $ref: '#/components/schemas/IOPerformanceLoSCapabilities_v1_0_1_IOWorkloadComponent'
             - enum:
-              - 'null'
+              - null
           type: array
           x-longDescription: The value shall be an array of IO workload component
             descriptions.
@@ -181,7 +181,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/IOPerformanceLoSCapabilities_v1_0_1_IOAccessPattern'
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The enumeration literal shall be the expected access
             pattern.

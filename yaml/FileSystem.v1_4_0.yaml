@@ -75,7 +75,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: This property shall be an array containing entries for
@@ -135,7 +135,7 @@ components:
             oneOf:
             - $ref: '#/components/schemas/FileSystem_v1_4_0_CharacterCodeSet'
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: This property shall be an array containing entries for
@@ -159,7 +159,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         ExportedShares:
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
@@ -169,7 +169,7 @@ components:
             of this file system. Each entry shall define an exported file share of
             this file system.
         IOStatistics:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_1.yaml#/components/schemas/IOStatistics_v1_0_1_IOStatistics
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.yaml#/components/schemas/IOStatistics_IOStatistics
           deprecated: true
           description: Statistics for this FileSystem.
           x-deprecatedReason: This property is deprecated in favor of the IOStatistics
@@ -235,7 +235,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: This property shall contain a link to a resource of type
             FileSystemMetrics that specifies the metrics for this file system. IO

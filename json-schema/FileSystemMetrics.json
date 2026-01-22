@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystemMetrics.v1_0_0.json#/definitions/FileSystemMetrics"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystemMetrics.v1_0_1.json#/definitions/FileSystemMetrics"
                 }
             ],
             "deletable": false,

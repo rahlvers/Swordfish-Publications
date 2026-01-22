@@ -1,0 +1,22 @@
+{
+    "@odata.type": "#SoftwareInventory.v1_9_0.SoftwareInventory",
+    "Id": "NVMeSSD-1.2.5",
+    "Name": "Some Vendor NVMe SSD Firmware",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Updateable": true,
+    "Manufacturer": "Some Vendor",
+    "ReleaseDate": "2022-12-21T12:00:00Z",
+    "Version": "1.2.5",
+    "SoftwareId": "12349DF-5E13-47FC-874A-DF3AFA123",
+    "LowestSupportedVersion": "1.2.4",
+    "RelatedItem": [
+        {
+            "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/NVMeSSD-1.2.5",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

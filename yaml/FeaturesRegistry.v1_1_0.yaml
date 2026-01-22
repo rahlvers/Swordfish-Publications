@@ -40,7 +40,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         Features:
           description: The pattern property indicates that a free-form string is the
@@ -93,7 +93,6 @@ components:
       - RegistryPrefix
       - RegistryVersion
       - OwningEntity
-      - Features
       - '@odata.id'
       - '@odata.type'
       - Id

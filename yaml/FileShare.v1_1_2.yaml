@@ -52,7 +52,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
             - enum:
-              - 'null'
+              - null
           readOnly: true
           type: array
           x-longDescription: The value of this property shall be an array containing
@@ -63,7 +63,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         EthernetInterfaces:
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
@@ -94,7 +94,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/FileShare_v1_1_2_QuotaType'
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: If FileShareQuotaType is present, a value of Soft shall
             specify that quotas are not enforced, and a value of Hard shall specify
@@ -125,7 +125,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.yaml#/components/schemas/FileSystem_FileProtocol
             - enum:
-              - 'null'
+              - null
           readOnly: true
           type: array
           x-longDescription: This property shall be an array containing entries for
@@ -196,7 +196,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaUpdateMode
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The value of this property shall define how writes are
             replicated to the shared source.

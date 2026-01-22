@@ -79,7 +79,7 @@
                     "readonly": true
                 },
                 "IOStatistics": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_1.json#/definitions/IOStatistics",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.json#/definitions/IOStatistics",
                     "description": "Statistics for this file system.",
                     "longDescription": "The value shall represent IO statistics for this file system."
                 },

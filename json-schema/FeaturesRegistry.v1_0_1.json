@@ -129,7 +129,6 @@
                 "RegistryPrefix",
                 "RegistryVersion",
                 "OwningEntity",
-                "Features",
                 "@odata.id",
                 "@odata.type",
                 "Id",

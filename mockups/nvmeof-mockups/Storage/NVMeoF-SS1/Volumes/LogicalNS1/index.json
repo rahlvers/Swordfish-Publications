@@ -5,9 +5,6 @@
     "Status": {
         "State": "Enabled"
     },
-    "ALUA": {
-        "ANAGroupId": 2346
-    },
     "CapacitySources": [
         {
             "@odata.type": "#Capacity.v1_2_0.CapacitySource",

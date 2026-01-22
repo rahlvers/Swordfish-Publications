@@ -1,7 +1,7 @@
 components:
   schemas:
     FeaturesRegistry_FeaturesRegistry:
-      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FeaturesRegistry.v1_1_1.yaml#/components/schemas/FeaturesRegistry_v1_1_1_FeaturesRegistry
+      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FeaturesRegistry.v1_2_1.yaml#/components/schemas/FeaturesRegistry_v1_2_1_FeaturesRegistry
       description: This is the schema definition for all Features Registries.  It
         represents the properties for the registries themselves.  The FeatureId is
         formed per the Redfish specification.  It consists of the RegistryPrefix concatenated

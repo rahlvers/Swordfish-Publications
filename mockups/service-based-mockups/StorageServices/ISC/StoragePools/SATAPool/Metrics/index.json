@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StoragePoolMetrics.v1_0_0.StoragePoolMetrics",
+    "@odata.type": "#StoragePoolMetrics.v1_0_1.StoragePoolMetrics",
     "Name": "StoragePool Metrics",
     "Id": "Metrics",
     "CorrectableIOReadErrorCount": 524,

@@ -823,7 +823,7 @@
                     "versionAdded": "v1_6_0"
                 },
                 "IOStatistics": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_1.json#/definitions/IOStatistics",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.json#/definitions/IOStatistics",
                     "deprecated": "This property has been deprecated in favor of the IOStatistics property in Metrics.",
                     "description": "Statistics for this StoragePool.",
                     "longDescription": "The value shall represent IO statistics for this StoragePool.",

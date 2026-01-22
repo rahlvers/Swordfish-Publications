@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#VolumeMetrics.v1_1_0.VolumeMetrics",
+    "@odata.type": "#VolumeMetrics.v1_1_1.VolumeMetrics",
     "Name": "Volume Metrics",
     "Id": "Metrics",
     "CorrectableIOReadErrorCount": 184,

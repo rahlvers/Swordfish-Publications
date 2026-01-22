@@ -101,7 +101,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ConsistencyState'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The ConsistencyState enumeration literal shall indicate
             the current state of consistency.
@@ -110,7 +110,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ConsistencyStatus'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The ConsistencyStatus enumeration literal shall specify
             the current status of consistency. Consistency may have been disabled
@@ -121,7 +121,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ConsistencyType'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The ConsistencyType enumeration literal shall indicate
             the consistency type used by the source and its associated target group.
@@ -166,7 +166,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaFaultDomain
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The ReplicaFaultDomain enumeration literal shall describe
             the fault domain (local or remote) of the replica relationship.
@@ -177,7 +177,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ReplicaPriority'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The enumeration literal shall specify the priority of
             background copy engine I/O to be managed relative to host I/O operations
@@ -187,7 +187,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ReplicaProgressStatus'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The ReplicaProgressStatus enumeration literal shall specify
             the status of the session with respect to Replication activity.
@@ -197,7 +197,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ReplicaReadOnlyAccess'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The enumeration literal shall specify whether the source,
             the target, or both elements are read only to the host.
@@ -207,7 +207,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ReplicaRecoveryMode'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The enumeration literal shall specify whether the copy
             operation continues after a broken link is restored.
@@ -217,7 +217,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ReplicaRole'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-deprecatedReason: ReplicaInfo is only used within a replica target. The
             Replica property here addresses the source resource.  A TargetReplicas
@@ -242,7 +242,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ReplicaState'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The ReplicaState enumeration literal shall specify the
             state of the relationship with respect to Replication activity.
@@ -251,7 +251,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaType
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The ReplicaType enumeration literal shall describe the
             intended outcome of the replication.
@@ -261,7 +261,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaUpdateMode
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The enumeration literal shall specify whether the target
             elements will be updated synchronously or asynchronously.
@@ -270,7 +270,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_ReplicaState'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The last requested or desired state for the relationship.
             The actual state of the relationship shall be represented by ReplicaState.
@@ -297,7 +297,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageReplicaInfo_v1_3_0_UndiscoveredElement'
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: The enumeration literal shall specify whether the source,
             the target, or both elements involved in a copy operation are undiscovered.
@@ -685,7 +685,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id

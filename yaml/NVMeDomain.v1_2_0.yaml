@@ -112,14 +112,14 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         DomainContents:
           description: Contains the members of the domain.
           oneOf:
           - $ref: '#/components/schemas/NVMeDomain_v1_2_0_DomainContents'
           - enum:
-            - 'null'
+            - null
           x-longDescription: This property shall contain the members of the domain.
           x-versionAdded: v1_2_0
         DomainMembers:

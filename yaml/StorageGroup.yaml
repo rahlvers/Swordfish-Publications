@@ -18,7 +18,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/StorageGroup_AccessCapability'
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: Each entry shall specify the storage access capability
             for this mapped volume.

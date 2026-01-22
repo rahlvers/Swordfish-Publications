@@ -80,6 +80,9 @@ components:
       x-longDescription: This action shall be used to establish a replication relationship
         by assigning an existing volume to serve as a target replica for an existing
         source volume.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_ChangeRAIDLayout:
       additionalProperties: false
       description: Request system change the RAID layout of the volume.
@@ -139,6 +142,9 @@ components:
         number of drives used by the volume, or another configuration change supported
         by the system. Note that usage of this action while online may potentially
         cause data loss if the available capacity is reduced.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_CheckConsistency:
       additionalProperties: false
       description: This action is used to force a check of the Volume's parity or
@@ -165,6 +171,9 @@ components:
       type: object
       x-longDescription: This defines the name of the custom action supported on this
         resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_CreateReplicaTarget:
       additionalProperties: false
       description: This action is used to create a new volume resource to provide
@@ -219,6 +228,9 @@ components:
       x-longDescription: This action shall be used to create a new volume resource
         to provide expanded data protection through a replica relationship with the
         specified source volume.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_ForceEnable:
       additionalProperties: false
       description: Request system force the volume to an enabled state regardless
@@ -246,6 +258,9 @@ components:
       type: object
       x-longDescription: This action shall request the system to force the volume
         to enabled state regardless of data loss scenarios.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_Initialize:
       additionalProperties: false
       description: This action is used to prepare the contents of the volume for use
@@ -293,6 +308,9 @@ components:
         resource. If InitializeMethod is not specified in the request body, but the
         property InitializeMethod is specified, the property InitializeMethod value
         should be used. If neither is specified, the InitializeMethod should be Foreground.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_Links:
       additionalProperties: false
       description: Add ability to manage spare capacity.
@@ -315,7 +333,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: This shall be a pointer to the cache volume source for
             this volume. The corresponding VolumeUsage property shall be set to Data
@@ -388,7 +406,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: This shall be a pointer to the journaling media used
             for this Volume to address the write hole issue. Valid when WriteHoleProtectionPolicy
@@ -501,7 +519,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/Volume_v1_6_2_NamespaceFeatures'
           - enum:
-            - 'null'
+            - null
           x-longDescription: This property shall contain a set of Namespace Features.
           x-versionAdded: v1_5_0
         NamespaceId:
@@ -674,6 +692,9 @@ components:
       x-longDescription: This action shall be used to disable data synchronization
         between a source and target volume, remove the replication relationship, and
         optionally delete the target volume.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_ResumeReplication:
       additionalProperties: false
       description: This action is used to resume the active data synchronization between
@@ -710,6 +731,9 @@ components:
       x-longDescription: This action shall be used to resume the active data synchronization
         between a source and target volume, without otherwise altering the replication
         relationship.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_ReverseReplicationRelationship:
       additionalProperties: false
       description: This action is used to reverse the replication relationship between
@@ -744,6 +768,9 @@ components:
       type: object
       x-longDescription: This action shall be used to reverse the replication relationship
         between a source and target volume.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_SplitReplication:
       additionalProperties: false
       description: This action is used to split the replication relationship and suspend
@@ -778,6 +805,9 @@ components:
       type: object
       x-longDescription: This action shall be used to split the replication relationship
         and suspend data synchronization between a source and target volume.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_SuspendReplication:
       additionalProperties: false
       description: This action is used to suspend active data synchronization between
@@ -814,6 +844,9 @@ components:
       x-longDescription: This action shall be used to suspend active data synchronization
         between a source and target volume, without otherwise altering the replication
         relationship.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     Volume_v1_6_2_Volume:
       additionalProperties: false
       description: Volume contains properties used to describe a volume, virtual disk,
@@ -833,7 +866,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: Each entry shall specify a current storage access capability.
@@ -909,7 +942,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         DisplayName:
           description: A user-configurable string to name the volume.
@@ -943,7 +976,7 @@ components:
             is enabled for the volume.
           x-versionAdded: v1_5_0
         IOStatistics:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_1.yaml#/components/schemas/IOStatistics_v1_0_1_IOStatistics
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.yaml#/components/schemas/IOStatistics_IOStatistics
           description: Statistics for this volume.
           x-longDescription: The value shall represent IO statistics for this volume.
           x-versionAdded: v1_2_0
@@ -963,7 +996,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_InitializeMethod
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: This property shall indicate the initialization method
             used for this volume. If InitializeMethod is not specified, the InitializeMethod
@@ -1043,7 +1076,7 @@ components:
           oneOf:
           - $ref: '#/components/schemas/Volume_v1_6_2_NVMeNamespaceProperties'
           - enum:
-            - 'null'
+            - null
           x-longDescription: This property shall contain properties to use when Volume
             is used to describe an NVMe Namespace.
           x-versionAdded: v1_5_0
@@ -1079,7 +1112,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_ProvisioningPolicy
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: This property shall specify the volume's supported storage
             allocation policy.
@@ -1089,7 +1122,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_RAIDType
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: This property shall contain the RAID type of the associated
             Volume.
@@ -1099,7 +1132,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_ReadCachePolicyType
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: This property shall contain a boolean indicator of the
             read cache policy for the Volume.
@@ -1172,7 +1205,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_VolumeType
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-deprecatedReason: Deprecated in favor of explicit use of RAIDType.
           x-longDescription: This property shall contain the type of the associated
@@ -1182,7 +1215,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_VolumeUsageType
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: This property shall contain the volume usage type for
             the Volume.
@@ -1192,7 +1225,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_WriteCachePolicyType
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: This property shall contain a boolean indicator of the
             write cache policy for the Volume.
@@ -1202,7 +1235,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_WriteCacheStateType
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: This property shall contain the WriteCacheState policy
             setting for the Volume.

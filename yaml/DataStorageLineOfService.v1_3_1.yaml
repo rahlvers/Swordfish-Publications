@@ -35,7 +35,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: Each entry specifies a required storage access capability.
@@ -50,7 +50,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -76,7 +76,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_ProvisioningPolicy
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The enumeration literal shall define the provisioning
             policy for storage.
@@ -98,7 +98,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_RecoveryAccessScope
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The enumeration literal specifies the time after a disaster
             that the client shall regain conformant service level access to the primary

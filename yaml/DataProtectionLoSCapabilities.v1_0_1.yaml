@@ -16,7 +16,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -43,7 +43,7 @@ components:
         SupportedLinesOfService:
           description: Collection of known and supported DataProtectionLinesOfService.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.yaml#/components/schemas/DataProtectionLineOfService_DataProtectionLineOfService
           readOnly: false
           type: array
           x-autoExpand: true
@@ -65,7 +65,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_FailureDomainScope
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The value of each entry shall specify a supported failure
@@ -88,7 +88,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_RecoveryAccessScope
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The value of each entry shall specify an enumerated value
@@ -101,7 +101,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaType
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The value of each entry shall specify a supported replica

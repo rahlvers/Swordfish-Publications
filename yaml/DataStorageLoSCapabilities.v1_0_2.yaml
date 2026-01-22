@@ -16,7 +16,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -40,14 +40,14 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: Each entry specifies a storage access capability.
         SupportedLinesOfService:
           description: Collection of known and supported DataStorageLinesOfService.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.yaml#/components/schemas/DataStorageLineOfService_DataStorageLineOfService
           readOnly: false
           type: array
           x-autoExpand: true
@@ -60,7 +60,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_ProvisioningPolicy
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: This collection specifies supported storage allocation
@@ -72,7 +72,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_RecoveryAccessScope
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: This collection specifies supported expectations for

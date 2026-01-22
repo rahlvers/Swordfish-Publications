@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StorageServiceMetrics.v1_0_0.StorageServiceMetrics",
+    "@odata.type": "#StorageServiceMetrics.v1_0_1.StorageServiceMetrics",
     "Name": "StorageService Metrics",
     "Id": "Metrics",
     "IOStatistics": {

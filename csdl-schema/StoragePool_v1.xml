@@ -43,7 +43,6 @@
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics_v1.xml">
     <edmx:Include Namespace="IOStatistics"/>
-    <edmx:Include Namespace="IOStatistics.v1_0_1"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/SpareResourceSet_v1.xml">
     <edmx:Include Namespace="SpareResourceSet"/>
@@ -355,7 +354,7 @@
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_1_1.StoragePool">
         <Annotation Term="OData.Description" String="A container of data storage."/>
         <Annotation Term="OData.LongDescription" String="A container of data storage capable of providing capacity conforming to one of its supported classes of service. The storage pool does not support IO to its data storage."/>
-        <Property Name="IOStatistics" Type="IOStatistics.v1_0_1.IOStatistics" Nullable="false">
+        <Property Name="IOStatistics" Type="IOStatistics.IOStatistics" Nullable="false">
           <Annotation Term="OData.Description" String="Statistics for this StoragePool."/>
           <Annotation Term="OData.LongDescription" String="The value shall represent IO statistics for this StoragePool."/>
           <Annotation Term="Redfish.Revisions">
@@ -406,6 +405,12 @@
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="OData.Description" String="This version was created to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_2_0.StoragePool"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_2_2">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_2_1.StoragePool"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_3_0">
@@ -500,6 +505,12 @@
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="OData.Description" String="This version was created to fix Redfish Uris issues."/>
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_3_0.StoragePool"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_3_2">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_3_1.StoragePool"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_4_0">
@@ -668,12 +679,23 @@
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_4_0.StoragePool"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_4_2">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_4_1.StoragePool"/>
+    </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_5_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="1.2.1"/>
       <Annotation Term="OData.Description" String="This version was created to add missing URIs for Systems. It also corrects the long description for SetIdentifier in NVMeSetProperties."/>
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_4_0.StoragePool"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_5_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_5_0.StoragePool"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_6_0">
@@ -763,6 +785,12 @@
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_6_0.StoragePool"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_6_2">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_6_1.StoragePool"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_7_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="1.2.3"/>
@@ -794,6 +822,12 @@
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_7_1.StoragePool"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_7_3">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_7_2.StoragePool"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_8_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="1.2.5"/>
@@ -805,6 +839,12 @@
           <Annotation Term="OData.LongDescription" String="The property shall indicate whether or not replication is enabled on the storage pool. If enabled for pool, replication can still be disabled on individual resources (e.g., volumes) within the pool."/>
         </Property>
       </EntityType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_8_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_8_0.StoragePool"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_9_0">
@@ -820,6 +860,12 @@
         </NavigationProperty>
       </EntityType>
     </Schema>
-    
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_9_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_9_0.StoragePool"/>
+    </Schema>
+
   </edmx:DataServices>
 </edmx:Edmx>

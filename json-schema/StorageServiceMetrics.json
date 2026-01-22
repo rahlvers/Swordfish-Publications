@@ -10,7 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageServiceMetrics.v1_0_0.json#/definitions/StorageServiceMetrics"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageServiceMetrics.v1_0_1.json#/definitions/StorageServiceMetrics"
                 }
             ],
             "deletable": false,

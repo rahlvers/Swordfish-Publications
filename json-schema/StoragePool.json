@@ -54,28 +54,28 @@
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_1_3.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_2_1.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_2_2.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_3_1.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_3_2.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_4_1.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_4_2.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_5_0.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_5_1.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_6_1.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_6_2.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_7_2.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_7_3.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_8_0.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_8_1.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_9_0.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_9_1.json#/definitions/StoragePool"
                 }
             ],
             "deletable": true,

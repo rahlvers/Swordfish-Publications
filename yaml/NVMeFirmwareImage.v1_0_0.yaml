@@ -52,7 +52,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         FirmwareVersion:
           description: The firmware version of the available NVMe firmware image.
@@ -69,7 +69,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/NVMeFirmwareImage.yaml#/components/schemas/NVMeFirmwareImage_NVMeDeviceType
           - enum:
-            - 'null'
+            - null
           readOnly: true
           x-longDescription: This property shall specify the type of NVMe device for
             this NVMe firmware image.

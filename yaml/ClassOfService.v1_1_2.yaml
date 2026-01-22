@@ -80,7 +80,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         IOConnectivityLinesOfService:
           description: A collection of IOConnectivity line of service elements.

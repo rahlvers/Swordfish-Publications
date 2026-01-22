@@ -40,7 +40,6 @@
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics_v1.xml">
     <edmx:Include Namespace="IOStatistics"/>
-    <edmx:Include Namespace="IOStatistics.v1_0_1"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/SpareResourceSet_v1.xml">
     <edmx:Include Namespace="SpareResourceSet"/>
@@ -389,7 +388,7 @@
       <EntityType Name="FileSystem" BaseType="FileSystem.v1_1_3.FileSystem">
         <Annotation Term="OData.Description" String="A hierarchical namespace of files."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent a hierarchical namespace of files."/>
-        <Property Name="IOStatistics" Type="IOStatistics.v1_0_1.IOStatistics" Nullable="false">
+        <Property Name="IOStatistics" Type="IOStatistics.IOStatistics" Nullable="false">
           <Annotation Term="OData.Description" String="Statistics for this FileSystem."/>
           <Annotation Term="OData.LongDescription" String="The value shall represent IO statistics for this FileSystem."/>
           <Annotation Term="Redfish.Revisions">
@@ -440,6 +439,12 @@
       <EntityType Name="FileSystem" BaseType="FileSystem.v1_2_1.FileSystem"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_2_3">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_2_1.FileSystem"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_3_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="1.2.5"/>
@@ -451,6 +456,12 @@
           <Annotation Term="OData.LongDescription" String="The property shall indicate whether or not replication is enabled on the file system. This property shall be consistent with the state reflected at the storage pool level."/>
         </Property>
       </EntityType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_3_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_3_0.FileSystem"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_4_0">
@@ -465,6 +476,12 @@
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
       </EntityType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_4_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_4_0.FileSystem"/>
     </Schema>
 
   </edmx:DataServices>

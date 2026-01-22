@@ -1,7 +1,7 @@
 components:
   schemas:
     FileSystemMetrics_FileSystemMetrics:
-      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystemMetrics.v1_0_0.yaml#/components/schemas/FileSystemMetrics_v1_0_0_FileSystemMetrics
+      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystemMetrics.v1_0_1.yaml#/components/schemas/FileSystemMetrics_v1_0_1_FileSystemMetrics
       description: The usage and health statistics for a file system.
       x-longDescription: The FileSystemMetrics schema shall contain the usage and
         health statistics for a file system in a Redfish implementation.

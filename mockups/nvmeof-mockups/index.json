@@ -13,9 +13,6 @@
     "Fabrics": {
         "@odata.id": "/redfish/v1/Fabrics"
     },
-    "NVMeDomains": {
-        "@odata.id": "/redfish/v1/NVMeDomains"
-    },
     "Registries": {
         "@odata.id": "/redfish/v1/Registries"
     },
@@ -27,9 +24,6 @@
     },
     "Systems": {
         "@odata.id": "/redfish/v1/Systems"
-    },
-    "UpdateService": {
-        "@odata.id": "/redfish/v1/UpdateService"
     },
     "Links": {
         "Sessions": {

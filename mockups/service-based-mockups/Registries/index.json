@@ -6,6 +6,9 @@
     "Members": [
         {
             "@odata.id": "/redfish/v1/Registries/AdvertisedFeatures.v1_0_0"
+        },
+        {
+            "@odata.id": "/redfish/v1/Registries/AdvertisedFeatures.v1_1_0"
         }
     ],
     "@odata.id": "/redfish/v1/Registries",

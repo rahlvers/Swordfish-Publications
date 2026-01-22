@@ -24,7 +24,7 @@ components:
             oneOf:
             - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AntiVirusScanTrigger
             - enum:
-              - 'null'
+              - null
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify the policy for
@@ -34,7 +34,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The enumeration literal shall specify a key size in a
             symmetric encryption algorithm for transport channel encryption.
@@ -43,7 +43,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_DataSanitizationPolicy
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The enumeration literal shall specify the data sanitization
             policy.
@@ -51,14 +51,14 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           - enum:
-            - 'null'
+            - null
           readOnly: true
         HostAuthenticationType:
           description: Authentication type for hosts (servers) or initiator endpoints.
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The enumeration literal shall specify the authentication
             type for hosts (servers) or initiator endpoints.
@@ -70,7 +70,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The enumeration literal shall specify a key size in a
             symmetric encryption algorithm for media encryption.
@@ -88,7 +88,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_SecureChannelProtocol
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The enumeration literal shall specify the protocol that
             provide encrypted communication.
@@ -97,7 +97,7 @@ components:
           oneOf:
           - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
           - enum:
-            - 'null'
+            - null
           readOnly: false
           x-longDescription: The enumeration literal shall specify the authentication
             type for users (or programs).
