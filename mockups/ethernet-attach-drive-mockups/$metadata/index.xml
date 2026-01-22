@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015-2023 SNIA. All rights reserved.-->
+<!-- Copyright 2015-2024 SNIA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ActionInfo_v1.xml">
+    <edmx:Include Namespace="ActionInfo"/>
+    <edmx:Include Namespace="ActionInfo.v1_3_0"/>
+  </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Capacity_v1.xml">
     <edmx:Include Namespace="Capacity"/>
@@ -32,7 +37,6 @@
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Drive_v1.xml">
     <edmx:Include Namespace="Drive"/>
     <edmx:Include Namespace="Drive.v1_15_0"/>
-    <edmx:Include Namespace="Drive.v1_15_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/DriveCollection_v1.xml">
@@ -43,7 +47,6 @@
     <edmx:Include Namespace="Event"/>
     <edmx:Include Namespace="Event.v1_6_1"/>
   </edmx:Reference>
-
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FeaturesRegistry_v1.xml">
     <edmx:Include Namespace="FeaturesRegistry"/>
@@ -57,6 +60,15 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/MessageRegistryFileCollection_v1.xml">
     <edmx:Include Namespace="MessageRegistryFileCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/NVMeDomain_v1.xml">
+    <edmx:Include Namespace="NVMeDomain"/>
+    <edmx:Include Namespace="NVMeDomain.v1_2_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/NVMeDomainCollection_v1.xml">
+    <edmx:Include Namespace="NVMeDomainCollection"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Power_v1.xml">
@@ -85,7 +97,8 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Storage_v1.xml">
     <edmx:Include Namespace="Storage"/>
-    <edmx:Include Namespace="Storage.v1_13_0"/>
+    <edmx:Include Namespace="Storage.v1_15_0"/>
+    <edmx:Include Namespace="Storage.v1_15_1"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageCollection_v1.xml">
@@ -94,7 +107,7 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageController_v1.xml">
     <edmx:Include Namespace="StorageController"/>
-    <edmx:Include Namespace="StorageController.v1_6_0"/>
+    <edmx:Include Namespace="StorageController.v1_7_2"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageControllerCollection_v1.xml">
@@ -103,7 +116,7 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool_v1.xml">
     <edmx:Include Namespace="StoragePool"/>
-    <edmx:Include Namespace="StoragePool.v1_8_0"/>
+    <edmx:Include Namespace="StoragePool.v1_9_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StoragePoolCollection_v1.xml">
@@ -121,7 +134,7 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Volume_v1.xml">
     <edmx:Include Namespace="Volume"/>
-    <edmx:Include Namespace="Volume.v1_9_0"/>
+    <edmx:Include Namespace="Volume.v1_10_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection_v1.xml">

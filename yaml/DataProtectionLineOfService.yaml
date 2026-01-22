@@ -1,17 +1,12 @@
 components:
   schemas:
     DataProtectionLineOfService_DataProtectionLineOfService:
-      anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_0_2.yaml#/components/schemas/DataProtectionLineOfService_v1_0_2_DataProtectionLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_1_2.yaml#/components/schemas/DataProtectionLineOfService_v1_1_2_DataProtectionLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_2_1.yaml#/components/schemas/DataProtectionLineOfService_v1_2_1_DataProtectionLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_3_0.yaml#/components/schemas/DataProtectionLineOfService_v1_3_0_DataProtectionLineOfService
+      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_3_0.yaml#/components/schemas/DataProtectionLineOfService_v1_3_0_DataProtectionLineOfService
       description: Describes a data protection service option.
       x-longDescription: This service option describes a replica that protects data
         from loss. The requirements must be met collectively by the communication
         path and the replica.
 title: '#DataProtectionLineOfService.DataProtectionLineOfService'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA

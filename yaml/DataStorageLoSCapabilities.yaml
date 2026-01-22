@@ -1,11 +1,7 @@
 components:
   schemas:
     DataStorageLoSCapabilities_DataStorageLoSCapabilities:
-      anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_0_2.yaml#/components/schemas/DataStorageLoSCapabilities_v1_0_2_DataStorageLoSCapabilities
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_1_3.yaml#/components/schemas/DataStorageLoSCapabilities_v1_1_3_DataStorageLoSCapabilities
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_2_2.yaml#/components/schemas/DataStorageLoSCapabilities_v1_2_2_DataStorageLoSCapabilities
+      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_2_2.yaml#/components/schemas/DataStorageLoSCapabilities_v1_2_2_DataStorageLoSCapabilities
       description: Describe data storage and provisioning capabilities.
       x-longDescription: This resource shall be used to describe storage availability
         and provisioning capabilities.
@@ -56,6 +52,6 @@ components:
       x-longDescription: StorageAccessCapability enumeration literals may be used
         to describe abilities to read or write storage.
 title: '#DataStorageLoSCapabilities.DataStorageLoSCapabilities'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA

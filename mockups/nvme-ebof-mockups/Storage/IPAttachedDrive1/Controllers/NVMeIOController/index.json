@@ -24,7 +24,7 @@
     ],
     "NVMeControllerProperties": {
         "ControllerType": "IO",
-        "NVMeVersion": "1.4",
+        "NVMeVersion": "2.0",
         "NVMeControllerAttributes": {
             "ReportsUUIDList": false,
             "SupportsSQAssociations": false,
@@ -52,5 +52,5 @@
         ]
     },
     "@odata.id": "/redfish/v1/Storage/IPAttachedDrive1/Controllers/NVMeIOController",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

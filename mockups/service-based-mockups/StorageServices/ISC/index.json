@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StorageService.v1_5_0.StorageService",
+    "@odata.type": "#StorageService.v1_7_0.StorageService",
     "Id": "1",
     "Name": "A Direct-attach Swordfish StorageService",
     "Description": "This simple system is connected from StorageController on the HostingSystem, supports limited capabilities in CoS when provisioning storage",
@@ -22,6 +22,9 @@
             "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService"
         }
     ],
+    "Metrics": {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Metrics"
+    },
     "StoragePools": {
         "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools"
     },
@@ -43,5 +46,5 @@
     },
     "Oem": {},
     "@odata.id": "/redfish/v1/StorageServices/ISC",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

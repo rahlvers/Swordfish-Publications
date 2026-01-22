@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
 	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -89,6 +89,9 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ConnectionCollection_v1.xml">
 		<edmx:Include Namespace="ConnectionCollection"/>
 	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageServiceMetrics_v1.xml">
+		<edmx:Include Namespace="StorageServiceMetrics"/>
+	</edmx:Reference>
 
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService">
@@ -98,21 +101,21 @@
 				<Annotation Term="OData.LongDescription" String="This resource shall be used to represent resources that are managed by a storage service."/>
 
 				<Annotation Term="Capabilities.InsertRestrictions">
-				  <Record>
-				    <PropertyValue Property="Insertable" Bool="false"/>
-				  </Record>
+					<Record>
+						<PropertyValue Property="Insertable" Bool="false"/>
+					</Record>
 				</Annotation>
 				<Annotation Term="Capabilities.UpdateRestrictions">
-				  <Record>
-				    <PropertyValue Property="Updatable" Bool="true"/>
-				    <Annotation Term="OData.Description" String="StorageService resources can be updated to change the writable properties."/>
-				  </Record>
+					<Record>
+						<PropertyValue Property="Updatable" Bool="true"/>
+						<Annotation Term="OData.Description" String="StorageService resources can be updated to change the writable properties."/>
+					</Record>
 				</Annotation>
 				<Annotation Term="Capabilities.DeleteRestrictions">
-				  <Record>
-				    <PropertyValue Property="Deletable" Bool="true"/>
-				    <Annotation Term="OData.Description" String="StorageService resources can be deleted by deleting the StorageService resource."/>
-				  </Record>
+					<Record>
+						<PropertyValue Property="Deletable" Bool="true"/>
+						<Annotation Term="OData.Description" String="StorageService resources can be deleted by deleting the StorageService resource."/>
+					</Record>
 				</Annotation>
 
 				<Annotation Term="Redfish.Uris">
@@ -140,9 +143,7 @@
 			<Annotation Term="Redfish.Release" String="1.0.7a"/>
 			<EntityType Name="StorageService" BaseType="StorageService.StorageService">
 				<Annotation Term="OData.Description" String="Collection of resources that are managed and exposed to hosts as a group."/>
-				<Annotation
-					Term="OData.LongDescription"
-					String="Collection of resources that the system can make available to one or more host systems.  The collection can contain: block, file, or object storage; local system access points through which the collection is made available; hosts, or host access points to which the collection is made available."/>
+				<Annotation Term="OData.LongDescription" String="Collection of resources that the system can make available to one or more host systems.  The collection can contain: block, file, or object storage; local system access points through which the collection is made available; hosts, or host access points to which the collection is made available."/>
 				<Property Name="Identifier" Type="Resource.Identifier" Nullable="false">
 					<Annotation Term="OData.Description" String="The value identifies this resource."/>
 					<Annotation Term="OData.LongDescription" String="The value identifies this resource.  The value shall be unique within the managed ecosystem."/>
@@ -248,9 +249,7 @@
 				<NavigationProperty Name="DefaultClassOfService" Type="ClassOfService.ClassOfService" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="The default class of service for entities allocated by this storage service."/>
-					<Annotation
-						Term="OData.LongDescription"
-						String="If present, this property shall reference the default class of service for entities allocated by this storage service. This default may be overridden by the DefaultClassOfService property values within contained StoragePools."/>
+					<Annotation Term="OData.LongDescription" String="If present, this property shall reference the default class of service for entities allocated by this storage service. This default may be overridden by the DefaultClassOfService property values within contained StoragePools."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 					<Annotation Term="Redfish.Deprecated" String="DefaultClassOfService moved outside of Links complex type."/>
 				</NavigationProperty>
@@ -318,9 +317,7 @@
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService.v1_0_2">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
 			<EntityType Name="StorageService" BaseType="StorageService.v1_0_1.StorageService">
-				<Annotation
-					Term="OData.Description"
-					String="Combined Client/ServerEndpointGroups into single EndpointGroups property.  The GroupType property of EndpointGroup already distinguishes between use for Server or Client. Change references to unversioned."/>
+				<Annotation Term="OData.Description" String="Combined Client/ServerEndpointGroups into single EndpointGroups property.  The GroupType property of EndpointGroup already distinguishes between use for Server or Client. Change references to unversioned."/>
 			</EntityType>
 		</Schema>
 
@@ -377,6 +374,15 @@
 				<Property Name="IOStatistics" Type="IOStatistics.IOStatistics" Nullable="false">
 					<Annotation Term="OData.Description" String="Statistics for this StorageService."/>
 					<Annotation Term="OData.LongDescription" String="The value shall represent IO statistics for this StorageService."/>
+					<Annotation Term="Redfish.Revisions">
+						<Collection>
+							<Record>
+								<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Deprecated"/>
+								<PropertyValue Property="Version" String="v1_7_0"/>
+								<PropertyValue Property="Description" String="This property is deprecated in favor of the IOStatistics property in StorageServiceMetrics."/>
+							</Record>
+						</Collection>
+					</Annotation>
 				</Property>
 				<NavigationProperty Name="SpareResourceSets" Type="Collection(SpareResourceSet.SpareResourceSet)" ContainsTarget="true">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
@@ -412,9 +418,7 @@
 				<NavigationProperty Name="DefaultClassOfService" Type="ClassOfService.ClassOfService" Nullable="false">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="The default class of service for entities allocated by this storage service."/>
-					<Annotation
-						Term="OData.LongDescription"
-						String="If present, this property shall reference the default class of service for entities allocated by this storage service. This default may be overridden by the DefaultClassOfService property values within contained StoragePools."/>
+					<Annotation Term="OData.LongDescription" String="If present, this property shall reference the default class of service for entities allocated by this storage service. This default may be overridden by the DefaultClassOfService property values within contained StoragePools."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 			</EntityType>
@@ -503,6 +507,20 @@
 				</NavigationProperty>
 			</EntityType>
 		</Schema>
-		
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService.v1_7_0">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="OData.Description" String="This version deprecates IOStatistics in favor of IOStatistics in StorageServiceMetrics, and adds Metrics."/>
+			<Annotation Term="Redfish.Release" String="1.2.6"/>
+			<EntityType Name="StorageService" BaseType="StorageService.v1_6_0.StorageService">
+				<NavigationProperty Name="Metrics" Type="StorageServiceMetrics.StorageServiceMetrics">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="The link to the metrics for this storage service."/>
+					<Annotation Term="OData.LongDescription" String="This property shall contain a link to a resource of type StorageServiceMetrics that specifies the metrics for this storage service. IO metrics are reported in the IOStatistics property."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</NavigationProperty>
+			</EntityType>
+		</Schema>
+
 	</edmx:DataServices>
 </edmx:Edmx>

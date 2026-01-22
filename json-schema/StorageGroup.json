@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.json",
     "$ref": "#/definitions/StorageGroup",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "AccessCapability": {
             "enum": [
@@ -88,6 +88,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_5_0.json#/definitions/StorageGroup"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_6_0.json#/definitions/StorageGroup"
                 }
             ],
             "deletable": true,
@@ -96,6 +99,12 @@
             "longDescription": "Collection of resources that the system can make available to one or more host systems. The collection can contain: block, file, or object storage; local system access points through which the collection is made available; hosts, or host access points to which the collection is made available.",
             "updatable": true,
             "uris": [
+                "/redfish/v1/StorageServices/{StorageServiceId}/StorageGroups/{StorageGroupId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/StorageGroups/{StorageGroupId}",
+                "/redfish/v1/Storage/{StorageId}/StorageGroups/{StorageGroupId}",
+                "/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/StorageGroups/{StorageGroupId}"
+            ],
+            "urisDeprecated": [
                 "/redfish/v1/StorageServices/{StorageServiceId}/StorageGroups/{StorageGroupId}",
                 "/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/StorageGroups/{StorageGroupId}",
                 "/redfish/v1/Storage/{StorageId}/StorageGroups/{StorageGroupId}",

@@ -1,0 +1,96 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_1_0.json",
+  "ProfileName": "SwordfishBlockMappingMasking",
+  "ProfileVersion": "1.3.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Block Mapping and Masking Feature details.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.4",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+        "CompareProfile": "CoSDiscovery",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    },
+    "CoSDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.4",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+        "CompareProfile": "SwordfishDiscovery",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.6.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.Block.MappingMasking": {}
+      }
+    }
+  },
+  "Resources": {
+    "ConnectionCollection": {
+      "ReadRequirement": "Supported",
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Fabric"]
+      }],
+      "CreateResource": true,
+      "DeleteResource": true,
+      "UpdateResource": true,
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "EndpointCollection": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      },
+      "CreateResource": true,
+      "DeleteResource": true,
+      "UpdateResource": true
+    },
+    "EndpointGroupCollection": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      },
+      "CreateResource": true,
+      "DeleteResource": true,
+      "UpdateResource": true
+    },
+
+    "Connection": {
+      "PropertyRequirements": {
+        "ConnectionType": {},
+        "VolumeInfo": {
+          "PropertyRequirements": {
+            "AccessCapabilities": {},
+            "LUN": {},
+            "Volume": {}
+          }
+        },
+        "Links": {
+          "PropertyRequirements": {
+            "InitiatorEndpointGroups": {},
+            "TargetEndpointGroups": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -37,8 +37,10 @@ components:
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          - enum:
+            - 'null'
           readOnly: true
         Features:
           description: The pattern property indicates that a free-form string is the
@@ -168,7 +170,7 @@ components:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#FeaturesRegistry.v1_0_0.FeaturesRegistry'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
 x-release: 1.1.0

@@ -1,0 +1,29 @@
+{
+    "@odata.type": "#Fabric.v1_2_1.Fabric",
+    "Id": "FC2",
+    "Name": "FC2 Fabric",
+    "FabricType": "FC",
+    "Description": "FC2 Connectivity Model",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Connections": {
+        "@odata.id": "/redfish/v1/Fabrics/FC2/Connections"
+    },
+    "EndpointGroups": {
+        "@odata.id": "/redfish/v1/Fabrics/FC2/EndpointGroups"
+    },
+    "Endpoints": {
+        "@odata.id": "/redfish/v1/Fabrics/FC2/Endpoints"
+    },
+    "Links": {
+        "Oem": {}
+    },
+    "Actions": {
+        "Oem": {}
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Fabrics/FC2",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

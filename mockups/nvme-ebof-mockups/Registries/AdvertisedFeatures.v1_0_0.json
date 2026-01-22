@@ -4,14 +4,14 @@
     "Name": "Global Swordfish Features Registry",
     "Language": "en",
     "RegistryPrefix": "SwordfishFeaturesRegistry",
-    "RegistryVersion": "1.5.0",
+    "RegistryVersion": "1.6.0",
     "OwningEntity": "SNIA",
     "Features": [
         {
             "FeatureName": "SNIA.Swordfish.NVMeEBOF",
             "Description": "Supports the NVMe EBOF Feature set.",
-            "Version": "1.2.0",
-            "CorrespondingProfileDefinition": "SwordfishNVMeEBOF.v1_2_0.json"
+            "Version": "1.2.1",
+            "CorrespondingProfileDefinition": "SwordfishNVMeEBOF.v1_2_1.json"
         }
     ]
 }

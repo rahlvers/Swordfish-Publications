@@ -1,0 +1,15 @@
+{
+    "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
+    "Id": "CEPG1",
+    "Name": "CEPG1",
+    "Description": "Group of client endpoints for 1",
+    "GroupType": "Client",
+    "AccessState": "Standby",
+    "Endpoints": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/FC1/Endpoints/2"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/FC1/EndpointGroups/CEPG1",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

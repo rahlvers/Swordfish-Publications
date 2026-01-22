@@ -21,34 +21,44 @@ components:
         AntivirusScanPolicies:
           description: Policy for triggering an AntiVirus scan.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AntiVirusScanTrigger
-            nullable: true
+            oneOf:
+            - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AntiVirusScanTrigger
+            - enum:
+              - 'null'
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify the policy for
             triggering an AntiVirus scan.
         ChannelEncryptionStrength:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
           description: Key size for transport channel encryption.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The enumeration literal shall specify a key size in a
             symmetric encryption algorithm for transport channel encryption.
         DataSanitizationPolicy:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_DataSanitizationPolicy
           description: Data sanitization policy.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_DataSanitizationPolicy
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The enumeration literal shall specify the data sanitization
             policy.
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          - enum:
+            - 'null'
           readOnly: true
         HostAuthenticationType:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
           description: Authentication type for hosts (servers) or initiator endpoints.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The enumeration literal shall specify the authentication
             type for hosts (servers) or initiator endpoints.
@@ -56,9 +66,11 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         MediaEncryptionStrength:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
           description: Key size for media encryption.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The enumeration literal shall specify a key size in a
             symmetric encryption algorithm for media encryption.
@@ -72,16 +84,20 @@ components:
             values for properties that this object contains shall conform to the Redfish
             Specification-described requirements.
         SecureChannelProtocol:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_SecureChannelProtocol
           description: Protocol that provide encrypted communication.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_SecureChannelProtocol
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The enumeration literal shall specify the protocol that
             provide encrypted communication.
         UserAuthenticationType:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
           description: Authentication type for users (or programs).
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The enumeration literal shall specify the authentication
             type for users (or programs).
@@ -97,7 +113,7 @@ components:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#DataSecurityLineOfService.v1_0_0.DataSecurityLineOfService'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
 x-release: 1.0.6

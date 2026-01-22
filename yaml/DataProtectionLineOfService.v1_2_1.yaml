@@ -76,8 +76,10 @@ components:
             for this resource.
           x-versionAdded: v1_2_0
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          - enum:
+            - 'null'
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -107,9 +109,11 @@ components:
             values for properties that this object contains shall conform to the Redfish
             Specification-described requirements.
         RecoveryGeographicObjective:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_FailureDomainScope
           description: Geographic distribution scopes.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_FailureDomainScope
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The value specifies the geographic scope of the failure
             domain.
@@ -123,10 +127,12 @@ components:
             the maximum time over which source data may be lost on failure. In the
             case that IsIsolated = false, failure of the domain is not a consideration.
         RecoveryTimeObjective:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_RecoveryAccessScope
           description: An enumeration value that indicates the expected time to access
             an alternate replica.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_RecoveryAccessScope
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The value shall be an enumeration that indicates the
             maximum time required to access an alternate replica. In the case that
@@ -146,9 +152,11 @@ components:
           x-longDescription: The value shall reference the class of service that defines
             the required service levels of the replica.
         ReplicaType:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaType
           description: Type of replica.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaType
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The type of replica shall conform to this value.
         Schedule:
@@ -202,7 +210,7 @@ components:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#DataProtectionLineOfService.v1_2_1.DataProtectionLineOfService'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
 x-release: 1.1.0

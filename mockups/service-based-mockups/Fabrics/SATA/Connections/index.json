@@ -1,0 +1,18 @@
+{
+    "@odata.type": "#ConnectionCollection.ConnectionCollection",
+    "Name": "Connection Collection",
+    "Members@odata.count": 3,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/SATA/Connections/SATAStorage1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/SATA/Connections/SATAStorage2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/SATA/Connections/SATAStorage3"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/SATA/Connections",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Volume.v1_9_0.Volume",
+    "@odata.type": "#Volume.v1_10_0.Volume",
     "Id": "1",
     "Name": "Namespace 1",
     "LogicalUnitNumber": 1,
@@ -40,7 +40,7 @@
         },
         "IsShareable": false,
         "MetadataTransferredAtEndOfDataLBA": false,
-        "NVMeVersion": "1.4"
+        "NVMeVersion": "2.0"
     },
     "Links": {
         "Drives": [
@@ -55,5 +55,5 @@
         ]
     },
     "@odata.id": "/redfish/v1/Storage/NVMeDrive2/Volumes/SimpleNamespace",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

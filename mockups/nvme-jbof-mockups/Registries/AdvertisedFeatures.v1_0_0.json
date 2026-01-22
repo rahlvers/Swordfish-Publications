@@ -4,14 +4,14 @@
     "Name": "Global Swordfish Features Registry",
     "Language": "en",
     "RegistryPrefix": "SwordfishFeaturesRegistry",
-    "RegistryVersion": "1.5.0",
+    "RegistryVersion": "1.6.0",
     "OwningEntity": "SNIA",
     "Features": [
         {
             "FeatureName": "SNIA.Swordfish.PCIeJBOF",
             "Description": "Supports the PCIe JBOF Feature set.",
-            "Version": "1.2.0",
-            "CorrespondingProfileDefinition": "SwordfishPCIeJBOF.v1_2_0.json"
+            "Version": "1.2.1",
+            "CorrespondingProfileDefinition": "SwordfishPCIeJBOF.v1_2_1.json"
         }
     ]
 }

@@ -13,7 +13,7 @@
   },
   "Registries": {
     "Features": {
-      "MinVersion": "1.5.1",
+      "MinVersion": "1.6.0",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
       "SupportedFeatures": {
         "SNIA.Swordfish.FabricAccessRights": {}

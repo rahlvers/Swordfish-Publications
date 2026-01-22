@@ -1,0 +1,51 @@
+{
+    "@odata.type": "#Volume.v1_10_0.Volume",
+    "Id": "3",
+    "Name": "Clone1",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "UUID",
+            "DurableName": "123e4567-a12b-12a3-a123-123400000005"
+        }
+    ],
+    "Manufacturer": "SuperDuperSSD",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "ReplicaInfo": {
+        "ReplicaType": "Clone",
+        "ReplicaProgressStatus": "Synchronizing"
+    },
+    "BlockSizeBytes": 512,
+    "Capacity": {
+        "Data": {
+            "AllocatedBytes": 1099511627776,
+            "ConsumedBytes": 1099511627776
+        }
+    },
+    "Metrics": {
+        "@odata.id": "/redfish/v1/StorageServices/2/StoragePools/BasePool/AllocatedVolumes/3/Metrics"
+    },
+    "Actions": {
+        "#Volume.AssignReplicaTarget": {
+            "target": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/3/Actions/Volume.AssignReplicaTarget"
+        },
+        "#Volume.CreateReplicaTarget": {
+            "target": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/3/Actions/Volume.CreateReplicaTarget"
+        }
+    },
+    "CapacitySources": [
+        {
+            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "Id": "Source1",
+            "Name": "Source1",
+            "ProvidingVolumes": {
+                "@odata.id": "/redfish/v1/StorageServices/2/StoragePools/BasePool/AllocatedVolumes/3/CapacitySources/Source1/ProvidingVolumes"
+            },
+            "@odata.id": "/redfish/v1/StorageServices/2/StoragePools/BasePool/AllocatedVolumes/3/CapacitySources/Source1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/2/StoragePools/BasePool/AllocatedVolumes/3",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

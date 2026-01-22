@@ -1,0 +1,14 @@
+{
+    "@odata.type": "#EndpointGroup.v1_0_0.EndpointGroup",
+    "Id": "1",
+    "Name": "Storage service 2 Initiator Endpoints",
+    "Description": "Group of initiator endpoints for storage service 2",
+    "GroupType": "Client",
+    "Endpoints": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/FC3/Endpoints/2"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/FC3/EndpointGroups/1",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

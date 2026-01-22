@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StoragePool.v1_7_1.StoragePool",
+    "@odata.type": "#StoragePool.v1_9_0.StoragePool",
     "Id": "BasePool",
     "Name": "BasePool",
     "Description": "Base storage pool",
@@ -38,23 +38,15 @@
             "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/CapacitySources/Source1"
         }
     ],
-    "IOStatistics": {
-        "ReadIORequests": 107238423,
-        "ReadHitIORequests": 234445346,
-        "ReadIOKiBytes": 234456677,
-        "ReadIORequestTime": "P18S",
-        "WriteIORequests": 98273402234,
-        "WriteHitIORequests": 9723598345,
-        "WriteIOKiBytes": 2345325,
-        "NonIORequests": 23423466,
-        "NonIORequestTime": "P24S"
-    },
     "AllocatedVolumes": {
         "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/AllocatedVolumes"
     },
     "ClassesOfService": {
         "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/ClassesOfService"
     },
+    "Metrics": {
+        "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/Metrics"
+    },
     "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Volume.v1_9_0.Volume",
+    "@odata.type": "#Volume.v1_10_0.Volume",
     "Id": "Volume2-Snap4",
     "Name": "Volume 2 Snap4",
     "Description": "Snapshot of Volume 2 in Midrange System",
@@ -68,5 +68,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap4",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

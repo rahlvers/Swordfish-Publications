@@ -5,17 +5,13 @@
   "OwningEntity": "SNIA.org",
   "Purpose": "Define requirements for resources and relationships that are common to all Swordfish conformant implementations of NVMe Drives.",
   "ContactInfo": "SNIA.org",
-  "RequiredProfiles": {
-
-  },
+  "RequiredProfiles": {},
   "Registries": {
     "Features": {
       "MinVersion": "1.3.0",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
       "SupportedFeatures": {
-        "SNIA.Swordfish.NVMeDrive": {
-
-        }
+        "SNIA.Swordfish.NVMeDrive": {}
       }
     }
   },
@@ -25,12 +21,8 @@
   "Resources": {
     "ServiceRoot": {
       "PropertyRequirements": {
-        "Chassis": {
-
-        },
-        "Storage": {
-
-        },
+        "Chassis": {},
+        "Storage": {},
         "Systems": {
           "Purpose": "If Storage is attached to a ComputerSystem rather than instantiated as a Standalone instance.",
           "ReadRequirement": "IfImplemented"
@@ -56,24 +48,36 @@
       }
     },
     "VolumeCollection": {
-
+      "ConditionalRequirements": [{
+          "Purpose": "If NVMeNamespaceManagement feature is supported, the collection must exist.  If not supported, must have at least one member.",
+          "CompareFeature": "SwordfishNVMeNamespaceManagement",
+          "Comparison": "Present",
+          "CompareProperty": "MinCount",
+          "CompareType": "Equal",
+          "CompareValues": [1],
+          "ReadRequirement": "Mandatory"
+        }]
     },
     "StorageControllerCollection": {
       "PropertyRequirements": {
         "Members": {
-          "MinCount": 1
+          "ConditionalRequirements": [{
+            "Purpose": "If NVMeNamespaceManagement feature is supported, the collection must exist.  If not supported, must have at least one member.",
+            "CompareFeature": "SNIA.Swordfish.NVMeNamespaceManagement",
+            "CompareType": "Present",
+            "MinCount": 1,
+            "ReadRequirement": "Mandatory"
+          }]
         }
       }
     },
     "Assembly": {
-      "ConditionalRequirements": [
-        {
-          "SubordinateToResource": [
-            "Drive"
-          ],
-          "ReadRequirement": "Mandatory"
-        }
-      ],
+      "ConditionalRequirements": [{
+        "SubordinateToResource": [
+          "Drive"
+        ],
+        "ReadRequirement": "Mandatory"
+      }],
       "ReadRequirement": "Recommended",
       "PropertyRequirements": {
         "BinaryDataURI": {
@@ -83,20 +87,16 @@
     },
     "Chassis": {
       "PropertyRequirements": {
-        "Drives": {
-
-        }
+        "Drives": {}
       }
     },
     "Drive": {
-      "ConditionalRequirements": [
-        {
-          "SubordinateToResource": [
-            "Chassis"
-          ],
-          "ReadRequirement": "Mandatory"
-        }
-      ],
+      "ConditionalRequirements": [{
+        "SubordinateToResource": [
+          "Chassis"
+        ],
+        "ReadRequirement": "Mandatory"
+      }],
       "ActionRequirements": {
         "Reset": {
           "Purpose": "This action resets this drive.",
@@ -131,50 +131,30 @@
           "ReadRequirement": "Recommended",
           "Purpose": "The `BinaryDataURI` property within the Assembly resource in Drive is recommended to be implemented to support mapping a binary blob via NVMe-MI to the VPD."
         },
-        "BlockSizeBytes": {
-
-        },
-        "CapableSpeedGbs": {
-
-        },
-        "CapacityBytes": {
-
-        },
-        "Description": {
-
-        },
-        "EncryptionAbility": {
-
-        },
+        "BlockSizeBytes": {},
+        "CapableSpeedGbs": {},
+        "CapacityBytes": {},
+        "Description": {},
+        "EncryptionAbility": {},
         "EncryptionStatus": {
           "ReadRequirement": "None",
-          "ConditionalRequirements": [
-            {
-              "Purpose": "Required when encryption is supported (EncryptionAbility is set to anything other than none).",
-              "CompareProperty": "EncryptionAbility",
-              "CompareType": "NotEqual",
-              "CompareValues": [
-                "None"
-              ],
-              "Comparison": "Present",
-              "ReadRequirement": "Mandatory"
-            }
-          ]
+          "ConditionalRequirements": [{
+            "Purpose": "Required when encryption is supported (EncryptionAbility is set to anything other than none).",
+            "CompareProperty": "EncryptionAbility",
+            "CompareType": "NotEqual",
+            "CompareValues": [
+              "None"
+            ],
+            "Comparison": "Present",
+            "ReadRequirement": "Mandatory"
+          }]
         },
-        "FailurePredicted": {
-
-        },
-        "Id": {
-
-        },
+        "FailurePredicted": {},
+        "Id": {},
         "Identifiers": {
           "PropertyRequirements": {
-            "DurableName": {
-
-            },
-            "DurableNameFormat": {
-
-            }
+            "DurableName": {            },
+            "DurableNameFormat": {            }
           }
         },
         "IndicatorLED": {
@@ -183,9 +163,7 @@
         },
         "Links": {
           "PropertyRequirements": {
-            "Volumes": {
-
-            }
+            "Volumes": {            }
           }
         },
         "Location": {
@@ -195,92 +173,58 @@
         "LocationIndicatorActive": {
           "ReadRequirement": "Recommended"
         },
-        "Manufacturer": {
-
-        },
-        "MediaType": {
-
-        },
-        "Model": {
-
-        },
+        "Manufacturer": {},
+        "MediaType": {},
+        "Model": {},
         "Multipath": {
           "ReadRequirement": "Recommended"
         },
-        "Name": {
-
-        },
-        "NegotiatedSpeedGbs": {
-
-        },
+        "Name": {},
+        "NegotiatedSpeedGbs": {},
         "PhysicalLocation": {
           "PropertyRequirements": {
-            "PartLocation": {
-
-            }
+            "PartLocation": {            }
           }
         },
-        "PredictedMediaLifeLeftPercent": {
-
-        },
-        "Protocol": {
-
-        },
+        "PredictedMediaLifeLeftPercent": {},
+        "Protocol": {},
         "PowerMode": {
           "ReadRequirement": "None",
-          "ConditionalRequirements": [
-            {
-              "Purpose": "Required when MediaType != SSD. If SSD, do not implement.",
-              "CompareProperty": "MediaType",
-              "CompareType": "NotEqual",
-              "CompareValues": [
-                "SSD"
-              ],
-              "Comparison": "Present",
-              "ReadRequirement": "Mandatory"
-            }
-          ]
+          "ConditionalRequirements": [{
+            "Purpose": "Required when MediaType != SSD. If SSD, do not implement.",
+            "CompareProperty": "MediaType",
+            "CompareType": "NotEqual",
+            "CompareValues": [
+              "SSD"
+            ],
+            "Comparison": "Present",
+            "ReadRequirement": "Mandatory"
+          }]
         },
-        "Revision": {
-
-        },
+        "Revision": {},
         "RotationSpeedRPM": {
           "ReadRequirement": "None",
-          "ConditionalRequirements": [
-            {
-              "Purpose": "Required when MediaType != SSD. If SSD, do not implement.",
-              "CompareProperty": "MediaType",
-              "CompareType": "NotEqual",
-              "CompareValues": [
-                "SSD"
-              ],
-              "Comparison": "Present",
-              "ReadRequirement": "Mandatory"
-            }
-          ]
+          "ConditionalRequirements": [{
+            "Purpose": "Required when MediaType != SSD. If SSD, do not implement.",
+            "CompareProperty": "MediaType",
+            "CompareType": "NotEqual",
+            "CompareValues": [
+              "SSD"
+            ],
+            "Comparison": "Present",
+            "ReadRequirement": "Mandatory"
+          }]
         },
-        "SKU": {
-
-        },
-        "SerialNumber": {
-
-        },
+        "SKU": {},
+        "SerialNumber": {},
         "Status": {
           "PropertyRequirements": {
-            "State": {
-
-            },
-            "Health": {
-
-            }
+            "State": {            },
+            "Health": {            }
           }
         },
-        "StatusIndicator": {
-
-        },
-        "WriteCacheEnabled": {
-
-        }
+        "StatusIndicator": {},
+        "WriteCacheEnabled": {}
       }
     },
     "Storage": {
@@ -291,9 +235,7 @@
         }
       },
       "PropertyRequirements": {
-        "Controllers": {
-
-        },
+        "Controllers": {},
         "Description": {
           "Comparison": "Equal",
           "Values": [
@@ -301,20 +243,12 @@
           ],
           "ReadRequirement": "Mandatory"
         },
-        "Drives": {
-
-        },
-        "Id": {
-
-        },
+        "Drives": {},
+        "Id": {},
         "Identifiers": {
           "PropertyRequirements": {
-            "DurableName": {
-
-            },
-            "DurableNameFormat": {
-
-            }
+            "DurableName": {            },
+            "DurableNameFormat": {            }
           }
         },
         "Links": {
@@ -328,21 +262,15 @@
             }
           }
         },
-        "Name": {
-
-        },
+        "Name": {},
         "Status": {
           "PropertyRequirements": {
-            "Health": {
-
-            },
+            "Health": {},
             "State": {
               "ReadRequirement": "None",
               "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
             },
-            "HealthRollup": {
-
-            }
+            "HealthRollup": {            }
           }
         },
         "StorageControllers": {
@@ -353,9 +281,7 @@
           "ReadRequirement": "None",
           "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type. Note that this function has been deprecated and replaced by Connections in Fabrics."
         },
-        "Volumes": {
-
-        }
+        "Volumes": {}
       }
     },
     "StorageController": {
@@ -377,8 +303,7 @@
           "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
         },
         "Description": {
-          "ConditionalRequirements": [
-            {
+          "ConditionalRequirements": [{
               "Purpose": "The Description must be set to the designated string when the  ControllerType is Admin. There is a different specified value for IO and Discovery.",
               "CompareProperty": "NVMeControllerProperties/ControllerType",
               "CompareType": "Equal",
@@ -416,26 +341,22 @@
             }
           ]
         },
-        "FirmwareVersion": {
-
-        },
+        "FirmwareVersion": {},
         "Links": {
           "PropertyRequirements": {
             "AttachedVolumes": {
               "ReadRequirement": "None",
-              "ConditionalRequirements": [
-                {
-                  "Purpose": "AttachedVolumes must be implemented when the ControllerType is IO. Do not implement when ControllerType is Discovery or Admin.",
-                  "CompareProperty": "ControllerType",
-                  "CompareType": "Equal",
-                  "CompareValues": [
-                    "IO"
-                  ],
-                  "Comparison": "Present",
-                  "ReadRequirement": "Mandatory",
-                  "WriteRequirement": "Mandatory"
-                }
-              ]
+              "ConditionalRequirements": [{
+                "Purpose": "AttachedVolumes must be implemented when the ControllerType is IO. Do not implement when ControllerType is Discovery or Admin.",
+                "CompareProperty": "ControllerType",
+                "CompareType": "Equal",
+                "CompareValues": [
+                  "IO"
+                ],
+                "Comparison": "Present",
+                "ReadRequirement": "Mandatory",
+                "WriteRequirement": "Mandatory"
+              }]
             }
           }
         },
@@ -444,8 +365,7 @@
           "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type. Implemented in the 'Drive' object as 'PhysicalLocation'."
         },
         "Manufacturer": {
-          "ConditionalRequirements": [
-            {
+          "ConditionalRequirements": [{
               "Purpose": "Manufacturer must be implemented when the ControllerType is IO. It is recommended to implement when ControllerType is Admin, and may be implemented for a Discovery controller.",
               "CompareProperty": "NVMeControllerProperties/ControllerType",
               "CompareType": "Equal",
@@ -468,8 +388,7 @@
           ]
         },
         "Model": {
-          "ConditionalRequirements": [
-            {
+          "ConditionalRequirements": [{
               "Purpose": "Model must be implemented when the ControllerType is IO. It is recommended to implement when ControllerType is Admin, and may be implemented for a Discovery controller.",
               "CompareProperty": "NVMeControllerProperties/ControllerType",
               "CompareType": "Equal",
@@ -493,43 +412,31 @@
         },
         "NVMeControllerProperties": {
           "PropertyRequirements": {
-            "ControllerType": {
-
-            },
+            "ControllerType": {            },
             "NVMeVersion": {
               "Purpose": "NVMeVersion is required when the underlying NVMe implementation is revision 1.2 or higher.",
               "ReadRequirement": "IfImplemented"
             },
-            "MaxQueueSize": {
-
-            },
+            "MaxQueueSize": {            },
             "NVMeControllerAttributes": {
               "PropertyRequirements": {
                 "ReportsNamespaceGranularity": {
                   "ReadRequirement": "Recommended"
                 },
-                "Supports128BitHostId": {
-
-                }
+                "Supports128BitHostId": {                }
               }
             },
             "NVMeSMARTCriticalWarnings": {
               "PropertyRequirements": {
-                "MediaInReadOnly": {
-
-                },
-                "OverallSubsystemDegraded": {
-
-                },
+                "MediaInReadOnly": {                },
+                "OverallSubsystemDegraded": {                },
                 "PMRUnreliable": {
                   "ReadRequirement": "Recommended"
                 },
                 "PowerBackupFailed": {
                   "ReadRequirement": "Recommended"
                 },
-                "SpareCapacityWornOut": {
-
-                }
+                "SpareCapacityWornOut": {                }
               }
             }
           },
@@ -541,69 +448,47 @@
             "ReadRequirement": "None",
             "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
           },
-          "SupportedControllerProtocols": {
-
-          },
+          "SupportedControllerProtocols": {          },
           "SupportedDeviceProtocols": {
             "ReadRequirement": "None",
             "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
           },
-          "SupportedRAIDTypes": {
-
-          }
+          "SupportedRAIDTypes": {          }
         }
       },
       "PCIeInterface": {
         "Purpose": "This property is required for implementations that connect via PCIe (e.g., do not implement for Ethernet-Attach drives).",
         "ReadRequirement": "IfImplemented",
         "PropertyRequirements": {
-          "PCIeType": {
-
-          },
-          "MaxPCIeType": {
-
-          },
-          "LanesInUse": {
-
-          },
-          "MaxLanes": {
-
-          }
+          "PCIeType": {          },
+          "MaxPCIeType": {          },
+          "LanesInUse": {          },
+          "MaxLanes": {          }
         }
       }
     }
   },
   "Volume": {
-    "ConditionalRequirements": [
-      {
-        "SubordinateToResource": [
-          "Storage",
-          "StorageCollection"
-        ],
-        "ReadRequirement": "Mandatory"
-      }
-    ],
+    "ConditionalRequirements": [{
+      "SubordinateToResource": [
+        "Storage",
+        "StorageCollection"
+      ],
+      "ReadRequirement": "Mandatory"
+    }],
     "PropertyRequirements": {
-      "BlockSizeBytes": {
-
-      },
+      "BlockSizeBytes": {},
       "Capacity": {
         "PropertyRequirements": {
           "Data": {
             "PropertyRequirements": {
-              "AllocatedBytes": {
-
-              },
-              "ConsumedBytes": {
-
-              }
+              "AllocatedBytes": {              },
+              "ConsumedBytes": {              }
             }
           }
         }
       },
-      "DisplayName": {
-
-      },
+      "DisplayName": {},
       "Description": {
         "Comparison": "Equal",
         "Values": [
@@ -611,17 +496,11 @@
         ],
         "ReadRequirement": "Mandatory"
       },
-      "Id": {
-
-      },
+      "Id": {},
       "Identifiers": {
         "PropertyRequirements": {
-          "DurableName": {
-
-          },
-          "DurableNameFormat": {
-
-          }
+          "DurableName": {          },
+          "DurableNameFormat": {          }
         }
       },
       "InitializeMethod": {
@@ -633,40 +512,20 @@
       },
       "NVMeNamespaceProperties": {
         "PropertyRequirements": {
-          "FormattedLBASize": {
-
-          },
-          "IsShareable": {
-
-          },
-          "NVMeVersion": {
-
-          },
+          "FormattedLBASize": {          },
+          "IsShareable": {          },
+          "NVMeVersion": {          },
           "NamespaceFeatures": {
             "PropertyRequirements": {
-              "SupportsDeallocatedOrUnwrittenLBError": {
-
-              },
-              "SupportsNGUIDReuse": {
-
-              },
-              "SupportsAtomicTransactionSize": {
-
-              },
-              "SupportsIOPerformanceHints": {
-
-              }
+              "SupportsDeallocatedOrUnwrittenLBError": {              },
+              "SupportsNGUIDReuse": {              },
+              "SupportsAtomicTransactionSize": {              },
+              "SupportsIOPerformanceHints": {              }
             }
           },
-          "NamespaceId": {
-
-          },
-          "NumberLBAFormats": {
-
-          },
-          "MetadataTransferredAtEndOfDataLBA": {
-
-          }
+          "NamespaceId": {          },
+          "NumberLBAFormats": {          },
+          "MetadataTransferredAtEndOfDataLBA": {          }
         }
       },
       "Links": {
@@ -676,9 +535,7 @@
           }
         }
       },
-      "Name": {
-
-      },
+      "Name": {},
       "OptimumIOSizeBytes": {
         "ReadRequirement": "Recommended"
       },
@@ -686,17 +543,11 @@
         "ReadRequirement": "Recommended",
         "Purpose": "Recommended to implement when device supports thin provisioning."
       },
-      "RAIDType": {
-
-      },
+      "RAIDType": {},
       "Status": {
         "PropertyRequirements": {
-          "Health": {
-
-          },
-          "State": {
-
-          },
+          "Health": {          },
+          "State": {          },
           "HealthRollup": {
             "ReadRequirement": "None",
             "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."

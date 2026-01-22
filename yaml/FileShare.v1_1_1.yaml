@@ -49,8 +49,10 @@ components:
           description: An array of default access capabilities for the file share.
             The types of default access can include Read, Write, and/or Execute.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
-            nullable: true
+            oneOf:
+            - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
+            - enum:
+              - 'null'
           readOnly: true
           type: array
           x-longDescription: The value of this property shall be an array containing
@@ -58,8 +60,10 @@ components:
             shall specify a default access privilege. The types of default access
             can include Read, Write, and/or Execute.
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          - enum:
+            - 'null'
           readOnly: true
         EthernetInterfaces:
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
@@ -86,9 +90,11 @@ components:
             to the file system root) to the exported file or directory on the file
             system where this file share is hosted.
         FileShareQuotaType:
-          $ref: '#/components/schemas/FileShare_v1_1_1_QuotaType'
           description: Specifies the type of quota enforcement.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/FileShare_v1_1_1_QuotaType'
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: If FileShareQuotaType is present, a value of Soft shall
             specify that quotas are not enforced, and a value of Hard shall specify
@@ -116,8 +122,10 @@ components:
         FileSharingProtocols:
           description: An array of file sharing protocols supported by this file share.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.yaml#/components/schemas/FileSystem_FileProtocol
-            nullable: true
+            oneOf:
+            - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.yaml#/components/schemas/FileSystem_FileProtocol
+            - enum:
+              - 'null'
           readOnly: true
           type: array
           x-longDescription: This property shall be an array containing entries for
@@ -184,9 +192,11 @@ components:
           x-longDescription: This value of this property shall indicate the status
             of the file share.
         WritePolicy:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaUpdateMode
           description: Defines how writes are replicated to the shared source.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaUpdateMode
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The value of this property shall define how writes are
             replicated to the shared source.
@@ -259,7 +269,7 @@ components:
         quotas are enabled but not enforced, and a value of Hard shall mean that quotas
         are enabled and enforced.
 title: '#FileShare.v1_1_1.FileShare'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
 x-release: 1.0.5

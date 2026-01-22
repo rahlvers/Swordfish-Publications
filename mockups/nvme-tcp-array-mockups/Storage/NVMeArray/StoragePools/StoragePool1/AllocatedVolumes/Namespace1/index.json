@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Volume.v1_9_0.Volume",
+    "@odata.type": "#Volume.v1_10_0.Volume",
     "Id": "Namespace1",
     "Name": "Namespace 1",
     "Description": "A Namespace is a quantity of non-volatile memory that may be formatted into logical blocks. When formatted, a namespace of size n is a collection of logical blocks with logical block addresses from 0 to (n-1). NVMe systems can support multiple namespaces.",
@@ -73,5 +73,5 @@
         ]
     },
     "@odata.id": "/redfish/v1/Storage/NVMeArray/StoragePools/StoragePool1/AllocatedVolumes/Namespace1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

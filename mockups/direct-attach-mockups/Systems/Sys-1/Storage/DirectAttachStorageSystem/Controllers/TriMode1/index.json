@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StorageController.v1_6_0.StorageController",
+    "@odata.type": "#StorageController.v1_0_0.StorageController",
     "Id": "14",
     "Name": "Storage Controller",
     "Status": {
@@ -20,5 +20,5 @@
         "NVMe"
     ],
     "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Controllers/TriMode1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

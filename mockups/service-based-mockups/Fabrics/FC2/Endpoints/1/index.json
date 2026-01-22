@@ -1,0 +1,25 @@
+{
+    "@odata.type": "#Endpoint.v1_7_0.Endpoint",
+    "Description": "This instance represents a SCSI implemented over FC",
+    "Id": "1",
+    "Name": "SCSI2",
+    "EndpointProtocol": "FC",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "ConnectedEntities": [
+        {
+            "Identifiers": [
+                {
+                    "DurableName": "300062B202B21849",
+                    "DurableNameFormat": "NAA"
+                }
+            ],
+            "EntityType": "Volume",
+            "EntityRole": "Target"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/FC2/Endpoints/1",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

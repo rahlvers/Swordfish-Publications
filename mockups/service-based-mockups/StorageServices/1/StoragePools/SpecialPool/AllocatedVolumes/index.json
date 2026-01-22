@@ -1,12 +1,21 @@
 {
     "@odata.type": "#VolumeCollection.VolumeCollection",
     "Name": "AllocatedVolumes",
-    "Members@odata.count": 1,
+    "Members@odata.count": 3,
     "Members": [
         {
-            "@odata.id": "/redfish/v1/StorageServices/1/Volumes/65456765456761001234876100123487"
+            "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/3"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/4"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/5"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/65456765456761001234876100123487"
         }
     ],
     "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

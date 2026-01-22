@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Volume.v1_9_0.Volume",
+    "@odata.type": "#Volume.v1_10_0.Volume",
     "Id": "Volume2",
     "Name": "Volume 2",
     "Description": "Volume 2 in Midrange System",
@@ -24,9 +24,11 @@
             "AllocatedBytes": 300067890136
         }
     },
-    "StorageGroups": {
-        "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup"
-    },
+    "Connections": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Connections/iSCSIStorageGroup"
+        }
+    ],
     "CapacitySources": [
         {
             "@odata.type": "#Capacity.v1_2_0.CapacitySource",
@@ -46,8 +48,11 @@
     "Links": {
         "OwningStorageResource": {
             "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem"
+        },
+        "ProvidingStoragePool": {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1"
         }
     },
     "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

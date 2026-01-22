@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
 		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -61,6 +61,14 @@
 						<String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/StorageGroups/{StorageGroupId}</String>
 					</Collection>
 				</Annotation>
+				<Annotation Term="Redfish.DeprecatedUris">
+					<Collection>
+						<String>/redfish/v1/StorageServices/{StorageServiceId}/StorageGroups/{StorageGroupId}</String>
+						<String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/StorageGroups/{StorageGroupId}</String>
+						<String>/redfish/v1/Storage/{StorageId}/StorageGroups/{StorageGroupId}</String>
+						<String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/StorageGroups/{StorageGroupId}</String>
+					</Collection>
+				</Annotation>				
 			</EntityType>
 
 			<Action Name="ExposeVolumes" IsBound="true">
@@ -426,6 +434,13 @@
 			<Annotation Term="Redfish.Release" String="1.2.1c"/>
 			<Annotation Term="OData.Description" String="This version was created to change the reference for EndpointGroup_v1 to the Redfish version."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_4_0.StorageGroup"/>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_6_0">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="Redfish.Release" String="1.2.6"/>
+			<Annotation Term="OData.Description" String="This version was created to deprecate the StorageGroup URIs."/>
+			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_5_0.StorageGroup"/>
 		</Schema>
 
 	</edmx:DataServices>

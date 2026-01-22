@@ -70,25 +70,31 @@ components:
             and its associated target replica(s). The default value for this property
             is false.
         ConsistencyState:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ConsistencyState'
           description: The current state of consistency.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ConsistencyState'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The ConsistencyState enumeration literal shall indicate
             the current state of consistency.
         ConsistencyStatus:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ConsistencyStatus'
           description: The current status of consistency.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ConsistencyStatus'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The ConsistencyStatus enumeration literal shall specify
             the current status of consistency. Consistency may have been disabled
             or is experiencing an error condition.
         ConsistencyType:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ConsistencyType'
           description: Indicates the consistency type used by the source and its associated
             target group.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ConsistencyType'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The ConsistencyType enumeration literal shall indicate
             the consistency type used by the source and its associated target group.
@@ -128,42 +134,52 @@ components:
           x-longDescription: Deprecated - Use Source Replica. The value shall reference
             the resource that is the source of this replica.
         ReplicaPriority:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaPriority'
           description: The priority of background copy engine I/O to be managed relative
             to host I/O operations during a sequential background copy operation.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaPriority'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The enumeration literal shall specify the priority of
             background copy engine I/O to be managed relative to host I/O operations
             during a sequential background copy operation.
         ReplicaProgressStatus:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaProgressStatus'
           description: The status of the session with respect to Replication activity.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaProgressStatus'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The ReplicaProgressStatus enumeration literal shall specify
             the status of the session with respect to Replication activity.
         ReplicaReadOnlyAccess:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaReadOnlyAccess'
           description: This property specifies whether the source, the target, or
             both elements are read only to the host.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaReadOnlyAccess'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The enumeration literal shall specify whether the source,
             the target, or both elements are read only to the host.
         ReplicaRecoveryMode:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaRecoveryMode'
           description: Describes whether the copy operation continues after a broken
             link is restored.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaRecoveryMode'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The enumeration literal shall specify whether the copy
             operation continues after a broken link is restored.
         ReplicaRole:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaRole'
           deprecated: true
           description: The source or target role of this replica.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaRole'
+          - enum:
+            - 'null'
           readOnly: true
           x-deprecatedReason: ReplicaInfo is only used within a replica target. The
             Replica property here addresses the source resource.  A TargetReplicas
@@ -183,32 +199,40 @@ components:
             switched to synchronous.
           x-units: By
         ReplicaState:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaState'
           description: ReplicaState describes the state of the relationship with respect
             to Replication activity.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaState'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The ReplicaState enumeration literal shall specify the
             state of the relationship with respect to Replication activity.
         ReplicaType:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaType
           description: ReplicaType describes the intended outcome of the replication.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaType
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The ReplicaType enumeration literal shall describe the
             intended outcome of the replication.
         ReplicaUpdateMode:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaUpdateMode
           description: Describes whether the target elements will be updated synchronously
             or asynchronously.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaUpdateMode
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The enumeration literal shall specify whether the target
             elements will be updated synchronously or asynchronously.
         RequestedReplicaState:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaState'
           description: The last requested or desired state for the relationship.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaState'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The last requested or desired state for the relationship.
             The actual state of the relationship shall be represented by ReplicaState.
@@ -222,10 +246,12 @@ components:
           x-longDescription: If true, Synchronization shall be maintained. The default
             value for this property is false.
         UndiscoveredElement:
-          $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_UndiscoveredElement'
           description: This property specifies whether the source, the target, or
             both elements involved in a copy operation are undiscovered.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageReplicaInfo_v1_1_2_UndiscoveredElement'
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: The enumeration literal shall specify whether the source,
             the target, or both elements involved in a copy operation are undiscovered.
@@ -604,8 +630,10 @@ components:
         '@odata.type':
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          - enum:
+            - 'null'
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -651,7 +679,7 @@ components:
         An element shall be considered undiscovered if its object model is not known
         to the service performing the copy operation.
 title: '#StorageReplicaInfo.v1_1_2.StorageReplicaInfo'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
 x-release: 1.0.6

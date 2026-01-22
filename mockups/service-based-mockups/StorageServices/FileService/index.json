@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StorageService.v1_5_0.StorageService",
+    "@odata.type": "#StorageService.v1_7_0.StorageService",
     "Id": "1",
     "Name": "My Storage Service",
     "Description": "Description of storage",
@@ -22,8 +22,8 @@
     "FileSystems": {
         "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems"
     },
-    "StorageGroups": {
-        "@odata.id": "/redfish/v1/StorageServices/FileService/StorageGroups"
+    "Metrics": {
+        "@odata.id": "/redfish/v1/StorageServices/FileService/Metrics"
     },
     "StoragePools": {
         "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools"
@@ -50,5 +50,5 @@
     },
     "Oem": {},
     "@odata.id": "/redfish/v1/StorageServices/FileService",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

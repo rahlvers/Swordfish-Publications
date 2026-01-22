@@ -216,9 +216,11 @@ components:
         '@odata.type':
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
         AccessState:
-          $ref: http://redfish.dmtf.org/schemas/v1/EndpointGroup.yaml#/components/schemas/EndpointGroup_AccessState
           description: AccessState for this storage group.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/EndpointGroup.yaml#/components/schemas/EndpointGroup_AccessState
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The value of this property shall describe the access
             characteristics of this storage group. All associated logical units through
@@ -229,10 +231,12 @@ components:
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
         AuthenticationMethod:
-          $ref: '#/components/schemas/StorageGroup_v1_2_0_AuthenticationMethod'
           description: The Authentication method used for the Endpoints involved in
             this StorageGroup.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StorageGroup_v1_2_0_AuthenticationMethod'
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The value of this property must be what kind of authentication
             that the endpoints in this StorageGroup understands.
@@ -241,8 +245,10 @@ components:
           description: The credential information used to authenticate the endpoints
             in this StorageGroup.
           items:
-            $ref: '#/components/schemas/StorageGroup_v1_2_0_CHAPInformation'
-            nullable: true
+            oneOf:
+            - $ref: '#/components/schemas/StorageGroup_v1_2_0_CHAPInformation'
+            - enum:
+              - 'null'
           type: array
           x-longDescription: The value of this property must reflect the authentication
             used by this specific endpoint. If this endpoint represents an initiator,
@@ -265,8 +271,10 @@ components:
         ClientEndpointGroups@odata.count:
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          - enum:
+            - 'null'
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -284,8 +292,10 @@ components:
         MappedVolumes:
           description: Mapped Volumes in this storage group.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.yaml#/components/schemas/StorageGroup_MappedVolume
-            nullable: true
+            oneOf:
+            - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.yaml#/components/schemas/StorageGroup_MappedVolume
+            - enum:
+              - 'null'
           type: array
           x-longDescription: An array of mapped volumes managed by this storage group.
           x-versionAdded: v1_1_0
@@ -383,7 +393,7 @@ components:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#StorageGroup.v1_2_0.StorageGroup'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
 x-release: 1.0.7a

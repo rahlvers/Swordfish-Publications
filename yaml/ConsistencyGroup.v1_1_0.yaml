@@ -97,22 +97,28 @@ components:
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
         ConsistencyMethod:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.yaml#/components/schemas/ConsistencyGroup_ApplicationConsistencyMethod
           description: The consistency method used by this group.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.yaml#/components/schemas/ConsistencyGroup_ApplicationConsistencyMethod
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: The property shall set the consistency method used by
             this group.
         ConsistencyType:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.yaml#/components/schemas/ConsistencyGroup_ConsistencyType
           description: The consistency type used by this group.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.yaml#/components/schemas/ConsistencyGroup_ConsistencyType
+          - enum:
+            - 'null'
           readOnly: false
           x-longDescription: This property shall set the consistency type used by
             this group.
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          - enum:
+            - 'null'
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -460,7 +466,7 @@ components:
         between a source and target consistency group, without otherwise altering
         the replication relationship.
 title: '#ConsistencyGroup.v1_1_0.ConsistencyGroup'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
 x-release: 1.2.4a

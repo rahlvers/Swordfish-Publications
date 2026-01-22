@@ -81,11 +81,7 @@ components:
       x-longDescription: The enumberation literals shall specify types of data sanitization
         policies.
     DataSecurityLoSCapabilities_DataSecurityLoSCapabilities:
-      anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_2.yaml#/components/schemas/DataSecurityLoSCapabilities_v1_0_2_DataSecurityLoSCapabilities
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_3.yaml#/components/schemas/DataSecurityLoSCapabilities_v1_1_3_DataSecurityLoSCapabilities
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_2_0.yaml#/components/schemas/DataSecurityLoSCapabilities_v1_2_0_DataSecurityLoSCapabilities
+      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_2_0.yaml#/components/schemas/DataSecurityLoSCapabilities_v1_2_0_DataSecurityLoSCapabilities
       description: Describe data security capabilities.
       x-longDescription: This resource may be used to describe data security capabilities.
     DataSecurityLoSCapabilities_KeySize:
@@ -138,6 +134,6 @@ components:
       x-longDescription: The enumeration literals shall specify types of Secure channel
         protocols.
 title: '#DataSecurityLoSCapabilities.DataSecurityLoSCapabilities'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA

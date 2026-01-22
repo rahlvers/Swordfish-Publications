@@ -1,0 +1,28 @@
+{
+    "@odata.type": "#VolumeMetrics.v1_1_0.VolumeMetrics",
+    "Name": "Volume Metrics",
+    "Id": "Metrics",
+    "CorrectableIOReadErrorCount": 184,
+    "UncorrectableIOReadErrorCount": 0,
+    "CorrectableIOWriteErrorCount": 184,
+    "UncorrectableIOWriteErrorCount": 0,
+    "ConsistencyCheckErrorCount": 0,
+    "ConsistencyCheckCount": 10,
+    "RebuildErrorCount": 0,
+    "StateChangeCount": 20,
+    "IOStatistics": {
+        "ReadIORequests": 107238423,
+        "ReadHitIORequests": 234445346,
+        "ReadIOKiBytes": 234456677,
+        "ReadIORequestTime": "P18S",
+        "WriteIORequests": 98273402234,
+        "WriteHitIORequests": 9723598345,
+        "WriteIOKiBytes": 2345325,
+        "WriteIORequestTime": "P10S",
+        "NonIORequests": 23423466,
+        "NonIORequestTime": "P24S"
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/StorageServices/Simple1/StoragePools/BasePool/AllocatedVolumes/3/Metrics",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

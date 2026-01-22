@@ -1,0 +1,157 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_1_0.json",
+  "ProfileName": "SwordfishCoSDiscovery",
+  "ProfileVersion": "1.2.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines Class Of Service Discovery requirements for service-based Swordfish implementations.",
+  "ContactInfo": "SNIA.org",
+  "Protocol": {
+    "MinVersion": "1.18.0"
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.6.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.CoSDiscovery": {}
+      }
+    }
+  },
+  "Resources": {
+    "StorageServiceCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "ServiceRoot": {
+      "PropertyRequirements": {
+        "StorageServices": {}
+      }
+    },
+    "StorageService": {
+      "PropertyRequirements": {
+        "Identifier": {},
+        "Status": {
+          "PropertyRequirements": {
+            "State": {},
+            "Health": {}
+          }
+        },
+        "ClassesOfService": {},
+        "Volumes": {
+          "ReadRequirement": "Recommended",
+          "ConditionalRequirements": [
+            {
+              "Purpose": "Volumes must exist unless FileSystems exists, in which case it is only Recommended.",
+              "CompareProperty": "FileSystems",
+              "CompareType": "Absent",
+              "ReadRequirement": "Mandatory"
+            }
+          ]
+        },
+        "StoragePools": {},
+        "FileSystems": {
+          "ReadRequirement": "None",
+          "ConditionalRequirements": [
+            {
+              "Purpose": "FileSystems must exist unless Volumes exists, in which case it is only Recommended.",
+              "CompareProperty": "Volumes",
+              "CompareType": "Absent",
+              "ReadRequirement": "Mandatory"
+            }
+          ]
+        },
+        "Links": {
+          "PropertyRequirements": {
+            "DefaultClassOfService": {
+              "Purpose": "When there is at least one class of service instantiated, the DefaultClassOfService property should be set.",
+              "ReadRequirement": "Recommended"
+            },
+            "DataProtectionLoSCapabilities": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [
+                {
+                  "CompareProperties": [
+                    "DataSecurityLoSCapabilities",
+                    "DataStorageLoSCapabilities",
+                    "IOConnectivityLoSCapabilities",
+                    "IOPerformanceLoSCapabilities"
+                  ],
+                  "CompareType": "Absent",
+                  "Purpose": "One or more Line of Service Capabilities must be defined.",
+                  "ReadRequirement": "Mandatory"
+                }
+              ]
+            },
+            "DataSecurityLoSCapabilities": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [
+                {
+                  "CompareProperties": [
+                    "DataProtectionLoSCapabilities",
+                    "DataStorageLoSCapabilities",
+                    "IOConnectivityLoSCapabilities",
+                    "IOPerformanceLoSCapabilities"
+                  ],
+                  "CompareType": "Absent",
+                  "Purpose": "One or more Line of Service Capabilities must be defined.",
+                  "ReadRequirement": "Mandatory"
+                }
+              ]
+            },
+            "DataStorageLoSCapabilities": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [
+                {
+                  "CompareProperties": [
+                    "DataProtectionLoSCapabilities",
+                    "DataSecurityLoSCapabilities",
+                    "IOConnectivityLoSCapabilities",
+                    "IOPerformanceLoSCapabilities"
+                  ],
+                  "CompareType": "Absent",
+                  "Purpose": "One or more Line of Service Capabilities must be defined.",
+                  "ReadRequirement": "Mandatory"
+                }
+              ]
+            },
+            "IOConnectivityLoSCapabilities": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [
+                {
+                  "CompareProperties": [
+                    "DataProtectionLoSCapabilities",
+                    "DataSecurityLoSCapabilities",
+                    "DataStorageLoSCapabilities",
+                    "IOPerformanceLoSCapabilities"
+                  ],
+                  "CompareType": "Absent",
+                  "Purpose": "One or more Line of Service Capabilities must be defined.",
+                  "ReadRequirement": "Mandatory"
+                }
+              ]
+            },
+            "IOPerformanceLoSCapabilities": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [
+                {
+                  "CompareProperties": [
+                    "DataProtectionLoSCapabilities",
+                    "DataSecurityLoSCapabilities",
+                    "IOConnectivityLoSCapabilities",
+                    "DataStorageLoSCapabilities"
+                  ],
+                  "CompareType": "Absent",
+                  "Purpose": "One or more Line of Service Capabilities must be defined.",
+                  "ReadRequirement": "Mandatory"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

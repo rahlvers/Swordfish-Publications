@@ -4,20 +4,20 @@
     "Name": "Global Swordfish Features Registry",
     "Language": "en",
     "RegistryPrefix": "SwordfishFeaturesRegistry",
-    "RegistryVersion": "1.5.0",
+    "RegistryVersion": "1.6.0",
     "OwningEntity": "SNIA",
     "Features": [
         {
             "FeatureName": "SNIA.Swordfish.NVMeDrive",
             "Description": "Supports the Swordfish NVMe Drive Feature.",
-            "Version": "1.2.0",
-            "CorrespondingProfileDefinition": "SwordfishNVMeDrive.v1_2_0.json"
+            "Version": "1.2.1",
+            "CorrespondingProfileDefinition": "SwordfishNVMeDrive.v1_3_0.json"
         },
         {
             "FeatureName": "SNIA.Swordfish.NVMeDriveAdvancedFeatures",
             "Description": "Supports Advanced Features functionality for NVMe Drives.",
-            "Version": "1.1.1",
-            "CorrespondingProfileDefinition": "SwordfishNVMeDriveAdvancedFeatures.v1_1_1.json"
+            "Version": "1.1.2",
+            "CorrespondingProfileDefinition": "SwordfishNVMeDriveAdvancedFeatures.v1_2_0.json"
         }
     ]
 }

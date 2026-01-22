@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#FileSystem.v1_2_2.FileSystem",
+    "@odata.type": "#FileSystem.v1_4_0.FileSystem",
     "Id": "FS1",
     "Name": "Root",
     "Description": "Root FileSystem, not replicated.",
@@ -52,16 +52,8 @@
             "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/CapacitySources/Source1"
         }
     ],
-    "IOStatistics": {
-        "ReadIORequests": 107238423,
-        "ReadHitIORequests": 234445346,
-        "ReadIOKiBytes": 234456677,
-        "ReadIORequestTime": "P18S",
-        "WriteIORequests": 98273402234,
-        "WriteHitIORequests": 9723598345,
-        "WriteIOKiBytes": 2345325,
-        "NonIORequests": 23423466,
-        "NonIORequestTime": "P24S"
+    "Metrics": {
+        "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/Metrics"
     },
     "LowSpaceWarningThresholdPercents": [
         60,
@@ -88,5 +80,5 @@
         }
     },
     "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

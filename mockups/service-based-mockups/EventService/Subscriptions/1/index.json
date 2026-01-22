@@ -9,5 +9,5 @@
     "Context": "WebUser3",
     "Protocol": "Redfish",
     "@odata.id": "/redfish/v1/EventService/Subscriptions/1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

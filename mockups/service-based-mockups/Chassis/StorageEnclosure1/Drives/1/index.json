@@ -25,5 +25,5 @@
     "NegotiatedSpeedGbs": 12,
     "Links": {},
     "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StoragePool.v1_7_1.StoragePool",
+    "@odata.type": "#StoragePool.v1_9_0.StoragePool",
     "Id": "StoragePool1",
     "Name": "Storage Pool for Opaque Array",
     "Description": "Simple Storage Pool for Simple System",
@@ -40,5 +40,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Storage/NVMeArray/StoragePools/StoragePool1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

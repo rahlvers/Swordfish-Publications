@@ -57,5 +57,5 @@
     ],
     "@odata.nextLink": "/redfish/v1/Systems/Simple/LogServices/Log1/Entries?$skiptoken=2",
     "@odata.id": "/redfish/v1/Systems/Simple/LogServices/Log1/Entries",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

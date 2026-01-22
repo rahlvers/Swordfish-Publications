@@ -6,5 +6,5 @@
     "VLANEnable": true,
     "VLANId": 101,
     "@odata.id": "/redfish/v1/Systems/Simple/EthernetInterfaces/1/VLANs/1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

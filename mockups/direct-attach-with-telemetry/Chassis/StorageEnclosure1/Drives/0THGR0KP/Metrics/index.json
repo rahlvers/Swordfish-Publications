@@ -37,7 +37,7 @@
         "NumberOfErrorInformationLogEntries": 100,
         "WarningCompositeTempTimeMinutes": 0,
         "CriticalCompositeTempTimeMinutes": 0,
-        "TempuratureSensorsCelsius": [
+        "TemperatureSensorsCelsius": [
             308,
             308,
             308,
@@ -54,5 +54,5 @@
     },
     "Oem": {},
     "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/0THGR0KP/Metrics",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

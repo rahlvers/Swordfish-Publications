@@ -63,7 +63,7 @@
     "Links": {
         "Endpoints": [
             {
-                "@odata.id": "/redfish/v1/StorageServices/Simple1/Endpoints/2"
+                "@odata.id": "/redfish/v1/Fabrics/FC2/Endpoints/2"
             }
         ],
         "Chassis": [
@@ -93,5 +93,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Systems/Simple",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

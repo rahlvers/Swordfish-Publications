@@ -28,7 +28,7 @@
         {
             "MetricId": "CapacityUtilization",
             "MetricValue": "96",
-            "Timestamp": "2021-04-29T14:25:00-05:00",
+            "Timestamp": "2021-04-29T15:25:00-05:00",
             "MetricProperty": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/Capacity#/Data/RemainingCapacityPercent"
         },
         {
@@ -45,5 +45,5 @@
         }
     ],
     "@odata.id": "/redfish/v1/TelemetryService/MetricReports/CapacityUtilization",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

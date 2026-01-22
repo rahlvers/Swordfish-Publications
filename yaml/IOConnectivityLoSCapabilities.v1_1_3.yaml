@@ -35,8 +35,10 @@ components:
             for this resource.
           x-versionAdded: v1_1_0
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          - enum:
+            - 'null'
           readOnly: true
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
@@ -78,8 +80,10 @@ components:
         SupportedAccessProtocols:
           description: SupportedAccessProtocols.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/Protocol.yaml#/components/schemas/Protocol_Protocol
-            nullable: true
+            oneOf:
+            - $ref: http://redfish.dmtf.org/schemas/v1/Protocol.yaml#/components/schemas/Protocol_Protocol
+            - enum:
+              - 'null'
           readOnly: false
           type: array
           x-longDescription: 'Access protocols supported by this service option. NOTE:
@@ -117,7 +121,7 @@ components:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#IOConnectivityLoSCapabilities.v1_1_3.IOConnectivityLoSCapabilities'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
 x-release: 1.0.5

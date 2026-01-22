@@ -9,9 +9,10 @@
     "SwordfishDiscovery": {
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
       "MinVersion": "1.1.4",
+      "ReadRequirement": "None",
       "ConditionalRequirements": [{
         "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
-        "CompareProfile": "CoSDiscovery",
+        "CompareProfile": "SwordfishCoSDiscovery",
         "CompareType": "Absent",
         "ReadRequirement": "Mandatory"
       }]
@@ -19,6 +20,7 @@
     "CoSDiscovery": {
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
       "MinVersion": "1.1.4",
+      "ReadRequirement": "None",
       "ConditionalRequirements": [{
         "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
         "CompareProfile": "SwordfishDiscovery",
@@ -50,6 +52,7 @@
       }
     },
     "Filesystem":{
+      "ReadRequirement": "IfImplemented",
       "PropertyRequirements": {
         "ExportedShares": {
           "ReadRequirement": "IfImplemented",

@@ -1,0 +1,33 @@
+{
+    "@odata.type": "#UpdateService.v1_11_3.UpdateService",
+    "Id": "UpdateService",
+    "Name": "Update service",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK",
+        "HealthRollup": "OK"
+    },
+    "ServiceEnabled": true,
+    "HttpPushUri": "/FWUpdate",
+    "HttpPushUriOptions": {
+        "HttpPushUriApplyTime": {
+            "ApplyTime": "Immediate",
+            "ApplyTime@Redfish.AllowableValues": [
+                "Immediate",
+                "OnReset"
+            ]
+        }
+    },
+    "HttpPushUriOptionsBusy": false,
+    "FirmwareInventory": {
+        "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory"
+    },
+    "Actions": {
+        "#UpdateService.SimpleUpdate": {
+            "target": "/redfish/v1/UpdateService/Actions/SimpleUpdate",
+            "@Redfish.ActionInfo": "/redfish/v1/UpdateService/SimpleUpdateActionInfo"
+        }
+    },
+    "@odata.id": "/redfish/v1/UpdateService",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

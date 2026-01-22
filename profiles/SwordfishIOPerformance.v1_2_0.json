@@ -1,0 +1,145 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_1_0.json",
+  "ProfileName": "SwordfishIOPerformance",
+  "ProfileVersion": "1.2.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines Swordfish IO Performance requirements.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.4",
+      "ConditionalRequirements": [
+        {
+          "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+          "CompareProfile": "CoSDiscovery",
+          "CompareType": "Absent",
+          "ReadRequirement": "Mandatory"
+        }
+      ]
+    },
+    "CoSDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.2.0",
+      "ConditionalRequirements": [
+        {
+          "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+          "CompareProfile": "SwordfishDiscovery",
+          "CompareType": "Absent",
+          "ReadRequirement": "Mandatory"
+        }
+      ]
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.6.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.IOPerformance": {}
+      }
+    }
+  },
+  "Resources": {
+    "Volume": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "Metrics": {}
+      }
+    },
+    "StoragePool": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "Metrics": {}
+      }
+    },
+    "FileSystem": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "Metrics": {}
+      }
+    },
+    "StorageService": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "Metrics": {}
+      }
+    },
+    "VolumeMetrics": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "IOStatistics": {
+          "PropertyRequirements": {
+            "WriteIORequestTime": {},
+            "WriteIORequests": {},
+            "WriteIOKiBytes": {},
+            "WriteHitIORequests": {},
+            "ReadIORequestTime": {},
+            "ReadIORequests": {},
+            "ReadIOKiBytes": {},
+            "ReadHitIORequests": {},
+            "NonIORequestTime": {},
+            "NonIORequests": {}
+          }
+        }
+      }
+    },
+    "StoragePoolMetrics": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "IOStatistics": {
+          "PropertyRequirements": {
+            "WriteIORequestTime": {},
+            "WriteIORequests": {},
+            "WriteIOKiBytes": {},
+            "WriteHitIORequests": {},
+            "ReadIORequestTime": {},
+            "ReadIORequests": {},
+            "ReadIOKiBytes": {},
+            "ReadHitIORequests": {},
+            "NonIORequestTime": {},
+            "NonIORequests": {}
+          }
+        }
+      }
+    },
+    "StorageServiceMetrics": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "IOStatistics": {
+          "PropertyRequirements": {
+            "WriteIORequestTime": {},
+            "WriteIORequests": {},
+            "WriteIOKiBytes": {},
+            "WriteHitIORequests": {},
+            "ReadIORequestTime": {},
+            "ReadIORequests": {},
+            "ReadIOKiBytes": {},
+            "ReadHitIORequests": {},
+            "NonIORequestTime": {},
+            "NonIORequests": {}
+          }
+        }
+      }
+    },
+    "FileSystemMetrics": {
+      "ReadRequirement": "IfImplemented",
+      "PropertyRequirements": {
+        "IOStatistics": {
+          "PropertyRequirements": {
+            "WriteIORequestTime": {},
+            "WriteIORequests": {},
+            "WriteIOKiBytes": {},
+            "WriteHitIORequests": {},
+            "ReadIORequestTime": {},
+            "ReadIORequests": {},
+            "ReadIOKiBytes": {},
+            "ReadHitIORequests": {},
+            "NonIORequestTime": {},
+            "NonIORequests": {}
+          }
+        }
+      }
+    }
+  }
+}

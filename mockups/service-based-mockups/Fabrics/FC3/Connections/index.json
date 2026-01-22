@@ -1,0 +1,15 @@
+{
+    "@odata.type": "#ConnectionCollection.ConnectionCollection",
+    "Name": "Connection Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/FC3/Connections/FC3Connection"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/FC3/Connections/FC3Connection2"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/FC3/Connections",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

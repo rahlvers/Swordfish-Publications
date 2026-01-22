@@ -1,0 +1,25 @@
+{
+    "@odata.type": "#Connection.v1_2_0.Connection",
+    "Id": "SATAStorage2",
+    "Name": "SATAStorage 2 Connection",
+    "Description": "Connection info for System SATA",
+    "ConnectionType": "Storage",
+    "VolumeInfo": [
+        {
+            "AccessCapabilities": [
+                "Read",
+                "Write"
+            ],
+            "LUN": 3,
+            "Volume": {
+                "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/4"
+            }
+        }
+    ],
+    "Links": {
+        "InitiatorEndpointGroups": [],
+        "TargetEndpointGroups": []
+    },
+    "@odata.id": "/redfish/v1/Fabrics/SATA/Connections/SATAStorage2",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

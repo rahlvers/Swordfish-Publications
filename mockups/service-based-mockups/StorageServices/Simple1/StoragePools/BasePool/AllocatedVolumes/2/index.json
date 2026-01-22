@@ -1,0 +1,41 @@
+{
+    "@odata.type": "#Volume.v1_10_0.Volume",
+    "Id": "2",
+    "Name": "Logical Disk 2",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "UUID",
+            "DurableName": "123e4567-a12b-12a3-a123-123400000000"
+        }
+    ],
+    "Manufacturer": "SuperDuperSSD",
+    "Status": {
+        "State": "Enabled",
+        "Health": "Warning"
+    },
+    "BlockSizeBytes": 512,
+    "Capacity": {
+        "Data": {
+            "AllocatedBytes": 1099511627776,
+            "ConsumedBytes": 1099511627776
+        }
+    },
+    "Connections": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/FC2/Connections/FC2Connection"
+        }
+    ],
+    "Metrics": {
+        "@odata.id": "/redfish/v1/StorageServices/Simple1/StoragePools/BasePool/AllocatedVolumes/2/Metrics"
+    },
+    "Actions": {
+        "#Volume.AssignReplicaTarget": {
+            "target": "/redfish/v1/StorageServices/Simple1/StoragePools/BasePool/AllocatedVolumes/2/Actions/Volume.AssignReplicaTarget"
+        },
+        "#Volume.CreateReplicaTarget": {
+            "target": "/redfish/v1/StorageServices/Simple1/StoragePools/BasePool/AllocatedVolumes/2/Actions/Volume.CreateReplicaTarget"
+        }
+    },
+    "@odata.id": "/redfish/v1/StorageServices/Simple1/StoragePools/BasePool/AllocatedVolumes/2",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

@@ -1,17 +1,34 @@
 {
-    "@odata.type": "#StoragePool.v1_7_1.StoragePool",
+    "@odata.type": "#StoragePool.v1_9_0.StoragePool",
     "Id": "EnduranceGroup0",
     "Name": "Endurance Group 0",
     "Description": "Default Endurance Group",
     "NVMeProperties": {
         "NVMePoolType": "EnduranceGroup"
     },
-    "NVMeEnduranceGroupProperties": {},
+    "NVMeEnduranceGroupProperties": {
+        "EndGrpLifetime": {
+            "DataUnitsRead": 0,
+            "DataUnitsWritten": 0,
+            "EnduranceEstimate": 100,
+            "ErrorInformationLogEntryCount": 0,
+            "HostReadCommandCount": 0,
+            "HostWriteCommandCount": 0,
+            "MediaAndDataIntegrityErrorCount": 0,
+            "MediaUnitsWritten": 0,
+            "PercentUsed": 100
+        },
+        "PredictedMediaLifeLeftPercent": 100
+    },
     "Capacity": {
         "Data": {
             "AllocatedBytes": 10995116277760,
             "ConsumedBytes": 10995116277760
         }
+    },
+    "Identifier": {
+        "DurableName": "0xABC0EF6",
+        "DurableNameFormat": "NQN"
     },
     "CapacitySources": [
         {
@@ -31,6 +48,12 @@
             "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/EnduranceGroup0/CapacitySources/Source1"
         }
     ],
+    "AllocatedPools": {
+        "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/DefaultSet0"
+    },
+    "Links": {
+        "@odata.id": "/redfish/v1/Systems/Sys-1/Storage"
+    },
     "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/EnduranceGroup0",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

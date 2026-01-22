@@ -29,5 +29,5 @@
         }
     },
     "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataProtectionLinesOfService/Providence-Weekly-Snapshot",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

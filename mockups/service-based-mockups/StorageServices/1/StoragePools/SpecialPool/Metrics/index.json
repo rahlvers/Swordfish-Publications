@@ -1,0 +1,27 @@
+{
+    "@odata.type": "#StoragePoolMetrics.v1_0_0.StoragePoolMetrics",
+    "Name": "StoragePool Metrics",
+    "Id": "Metrics",
+    "CorrectableIOReadErrorCount": 524,
+    "CorrectableIOWriteErrorCount": 134,
+    "UncorrectableIOReadErrorCount": 0,
+    "UncorrectableIOWriteErrorCount": 0,
+    "StateChangeCount": 15,
+    "ConsistencyCheckErrorCount": 3,
+    "RebuildErrorCount": 10,
+    "IOStatistics": {
+        "ReadIORequests": 107238423,
+        "ReadHitIORequests": 234445346,
+        "ReadIOKiBytes": 234456677,
+        "ReadIORequestTime": "P18S",
+        "WriteIORequests": 98273402234,
+        "WriteHitIORequests": 9723598345,
+        "WriteIOKiBytes": 2345325,
+        "WriteIORequestTime": "P10S",
+        "NonIORequests": 23423466,
+        "NonIORequestTime": "P24S"
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/Metrics",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

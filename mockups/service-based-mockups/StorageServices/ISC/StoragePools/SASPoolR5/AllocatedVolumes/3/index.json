@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Volume.v1_9_0.Volume",
+    "@odata.type": "#Volume.v1_10_0.Volume",
     "Id": "1",
     "Name": "Logical Disk 3",
     "Identifiers": [
@@ -21,16 +21,8 @@
             "AllocatedBytes": 2096545335869
         }
     },
-    "IOStatistics": {
-        "ReadIORequests": 107238423,
-        "ReadHitIORequests": 234445346,
-        "ReadIOKiBytes": 234456677,
-        "ReadIORequestTime": "P18S",
-        "WriteIORequests": 98273402234,
-        "WriteHitIORequests": 9723598345,
-        "WriteIOKiBytes": 2345325,
-        "NonIORequests": 23423466,
-        "NonIORequestTime": "P24S"
+    "Metrics": {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/AllocatedVolumes/3/Metrics"
     },
     "CapacitySources": [
         {
@@ -51,12 +43,12 @@
     ],
     "Actions": {
         "#Volume.AssignReplicaTarget": {
-            "target": "/redfish/v1/StorageServices/1/Volumes/3/Actions/Volume.AssignReplicaTarget"
+            "target": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/3/Actions/Volume.AssignReplicaTarget"
         },
         "#Volume.CreateReplicaTarget": {
-            "target": "/redfish/v1/StorageServices/1/Volumes/3/Actions/Volume.CreateReplicaTarget"
+            "target": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/3/Actions/Volume.CreateReplicaTarget"
         }
     },
     "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/AllocatedVolumes/3",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

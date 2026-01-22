@@ -1,0 +1,29 @@
+{
+    "@odata.type": "#Fabric.v1_2_1.Fabric",
+    "Id": "FC3",
+    "Name": "FC3 Fabric",
+    "FabricType": "FC",
+    "Description": "FC3 Connectivity Model for StorageService 2",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Connections": {
+        "@odata.id": "/redfish/v1/Fabrics/FC3/Connections"
+    },
+    "EndpointGroups": {
+        "@odata.id": "/redfish/v1/Fabrics/FC3/EndpointGroups"
+    },
+    "Endpoints": {
+        "@odata.id": "/redfish/v1/Fabrics/FC3/Endpoints"
+    },
+    "Links": {
+        "Oem": {}
+    },
+    "Actions": {
+        "Oem": {}
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Fabrics/FC3",
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+}

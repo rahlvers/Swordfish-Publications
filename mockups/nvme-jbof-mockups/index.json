@@ -4,6 +4,9 @@
     "Name": "Root Service",
     "RedfishVersion": "1.18.0",
     "UUID": "92384634-2938-2342-8820-489239905423",
+    "AccountService": {
+        "@odata.id": "/redfish/v1/AccountService"
+    },
     "Chassis": {
         "@odata.id": "/redfish/v1/Chassis"
     },
@@ -22,5 +25,5 @@
         }
     },
     "@odata.id": "/redfish/v1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

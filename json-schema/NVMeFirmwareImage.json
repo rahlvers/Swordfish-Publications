@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/NVMeFirmwareImage.json",
     "$ref": "#/definitions/NVMeFirmwareImage",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "NVMeDeviceType": {
             "enum": [
@@ -32,16 +32,21 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/NVMeFirmwareImage.v1_1_0.json#/definitions/NVMeFirmwareImage"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/NVMeFirmwareImage.v1_2_0.json#/definitions/NVMeFirmwareImage"
                 }
             ],
             "deletable": true,
+            "deprecated": "This schema has been deprecated in favor of the SoftwareInventory schema.",
             "description": "This is the schema definition for NVMe Domain firmware image properties.",
             "insertable": false,
             "longDescription": "This resource shall be used to represent a the NVMe Domain firmware image properties.",
             "updatable": false,
             "uris": [
                 "/redfish/v1/NVMeDomains/{DomainId}/AvailableFirmwareImages/{FirmwareImageId}"
-            ]
+            ],
+            "versionDeprecated": "v1_2_0"
         }
     },
     "owningEntity": "SNIA",

@@ -1,30 +1,33 @@
 {
-    "@odata.type": "#NVMeDomain.v1_1_0.NVMeDomain",
+    "@odata.type": "#NVMeDomain.v1_2_0.NVMeDomain",
     "Id": "NVMeDomain1",
     "Name": "NVMeDomain 1",
     "Description": "NVMeDomain contains NVMe I/O controllers from two devices",
-    "DomainMembers": [
-        {
-            "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Controllers/NVMeIOController"
-        },
-        {
-            "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Volumes/Namespace1"
-        }
-    ],
+    "DomainContents": {
+        "Controllers": [
+            {
+                "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Controllers/NVMeIOController"
+            }
+        ],
+        "Namespaces": [
+            {
+                "@odata.id": "/redfish/v1/Storage/NVMeoF-SS1/Volumes/LogicalNS1"
+            }
+        ]
+    },
+    "ANAGroupId": 2346,
     "TotalDomainCapacityBytes": 8575650934756566,
     "UnallocatedDomainCapacityBytes": 0,
     "MaximumCapacityPerEnduranceGroupBytes": 4287825467378283,
-    "AvailableFirmwareImages": [
+    "MaxNamespacesSupportedPerController": 10,
+    "FirmwareImages": [
         {
-            "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1/AvailableFirmwareImages/0"
+            "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/NVMeSSD-1.2.5"
         },
         {
-            "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1/AvailableFirmwareImages/1"
-        },
-        {
-            "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1/AvailableFirmwareImages/2"
+            "@odata.id": "/redfish/v1/UpdateService/FirmwareInventory/NVMeSSD-1.2.6"
         }
     ],
     "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

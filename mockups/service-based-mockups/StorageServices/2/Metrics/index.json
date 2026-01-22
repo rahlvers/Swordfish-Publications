@@ -1,0 +1,20 @@
+{
+    "@odata.type": "#StorageServiceMetrics.v1_0_0.StorageServiceMetrics",
+    "Name": "StorageService Metrics",
+    "Id": "Metrics",
+    "IOStatistics": {
+        "ReadIORequests": 107238423,
+        "ReadHitIORequests": 234445346,
+        "ReadIOKiBytes": 234456677,
+        "ReadIORequestTime": "P18S",
+        "WriteIORequests": 98273402234,
+        "WriteHitIORequests": 9723598345,
+        "WriteIOKiBytes": 2345325,
+        "WriteIORequestTime": "P10S",
+        "NonIORequests": 23423466,
+        "NonIORequestTime": "P24S"
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/StorageServices/2/Metrics",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

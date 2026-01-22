@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -19,10 +19,19 @@
     <edmx:Include Namespace="Resource"/>
     <edmx:Include Namespace="Resource.v1_0_0"/>
   </edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/NVMeFirmwareImage_v1.xml">
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/NVMeFirmwareImage_v1.xml">
     <edmx:Include Namespace="NVMeFirmwareImage"/>
   </edmx:Reference>
-
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/SoftwareInventory_v1.xml">
+    <edmx:Include Namespace="SoftwareInventory"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Volume_v1.xml">
+    <edmx:Include Namespace="Volume"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageController_v1.xml">
+    <edmx:Include Namespace="StorageController"/>
+  </edmx:Reference>
+    
   <edmx:DataServices>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="NVMeDomain">
@@ -141,6 +150,49 @@
       <Annotation Term="Redfish.Release" String="1.2.2"/>
       <Annotation Term="OData.Description" String="This version was created to move the NVMeFirmwareImage into a separate namespace."/>
       <EntityType Name="NVMeDomain" BaseType="NVMeDomain.v1_0_0.NVMeDomain"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="NVMeDomain.v1_2_0">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="1.2.6"/>
+      <Annotation Term="OData.Description" String="This version was created to add MaxNamespacesPerController, ANAGroupId, DomainContents, and FirmwareImages. It deprecates the use of DomainMembers and AvailableFirmwareImages."/>
+      <EntityType Name="NVMeDomain" BaseType="NVMeDomain.v1_1_0.NVMeDomain">
+        <Property Name="MaxNamespacesSupportedPerController" Type="Edm.Decimal">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The maximum number of namespace attachments of this NVMe Domain."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the maximum number of namespace attachments supported in this NVMe Domain. If there are no limits imposed, this property should not be implemented."/>
+        </Property>
+        <Property Name="ANAGroupId" Type="Edm.Decimal">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The ANA group id for all namespaces within the domain."/>
+          <Annotation Term="OData.LongDescription" String="This shall contain the ANA group id which applies to all namespaces within the domain.  This corresponds to the value in the ANAGroupId field in volume."/>
+        </Property>
+        <Property Name="DomainContents" Type="NVMeDomain.v1_2_0.DomainContents">
+          <Annotation Term="OData.Description" String="Contains the members of the domain."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain the members of the domain."/>
+        </Property>
+        <NavigationProperty Name="FirmwareImages" Type="Collection(SoftwareInventory.SoftwareInventory)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="Contains an array of pointers to available firmware images."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain an array of pointers to available firmware images."/>
+        </NavigationProperty>
+      </EntityType>
+
+      <ComplexType Name="DomainContents">
+        <Annotation Term="OData.Description" String="This structure contains properties that define the contents of the domain."/>
+        <Annotation Term="OData.LongDescription" String="This structure shall contain properties that define the contents of the domain."/>
+        <NavigationProperty Name="Controllers" Type="Collection(StorageController.StorageController)">
+          <Annotation Term="OData.Description" String="Contains the current controllers that are part of this domain. These can be IO, Admin, or discovery controllers."/>
+          <Annotation Term="OData.LongDescription" String="Contains the current controllers that are part of this domain. These can be IO, Admin, or discovery controllers."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="Namespaces" Type="Collection(Volume.Volume)">
+          <Annotation Term="OData.Description" String="Contains the current namespaces that are part of this domain. These can be IO, Admin, or discovery controllers."/>
+          <Annotation Term="OData.LongDescription" String="Contains the current namespaces that are part of this domain. These can be IO, Admin, or discovery controllers."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+      </ComplexType>
+
     </Schema>
 
   </edmx:DataServices>

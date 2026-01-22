@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StoragePool.v1_7_1.StoragePool",
+    "@odata.type": "#StoragePool.v1_9_0.StoragePool",
     "Id": "1",
     "Name": "Endurance Group 1",
     "Description": "Single Endurance Group",
@@ -46,5 +46,5 @@
         }
     ],
     "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

@@ -5,13 +5,13 @@
     "Members@odata.count": 2,
     "Members": [
         {
-            "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3"
+            "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/3"
         },
         {
-            "@odata.id": "/redfish/v1/StorageServices/1/Volumes/4"
+            "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/4"
         }
     ],
     "Oem": {},
     "@odata.id": "/redfish/v1/Systems/Complex/Storage/HBA1/Volumes",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

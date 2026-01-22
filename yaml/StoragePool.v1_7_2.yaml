@@ -280,9 +280,11 @@ components:
         an NVMe Endurance Group.
       properties:
         EndGrpLifetime:
-          $ref: '#/components/schemas/StoragePool_v1_7_2_EndGrpLifetime'
           description: This property contains the Endurance Group Lifetime properties.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StoragePool_v1_7_2_EndGrpLifetime'
+          - enum:
+            - 'null'
           x-longDescription: This property shall contain any Endurance Group Lifetime
             properties.
           x-versionAdded: v1_4_0
@@ -308,10 +310,12 @@ components:
         an NVMe construct.
       properties:
         NVMePoolType:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.yaml#/components/schemas/StoragePool_NVMePoolType
           description: Indicates whether the StoragePool is used as an EnduranceGroup
             or an NVMSet.
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.yaml#/components/schemas/StoragePool_NVMePoolType
+          - enum:
+            - 'null'
           readOnly: true
           x-longDescription: This property shall indicate whether the StoragePool
             is used as an EnduranceGroup or an NVMSet.
@@ -705,8 +709,10 @@ components:
             set on the create request.
           x-versionAdded: v1_6_0
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
-          nullable: true
+          oneOf:
+          - $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          - enum:
+            - 'null'
           readOnly: true
         Encrypted:
           deprecated: true
@@ -777,24 +783,30 @@ components:
           x-units: By
           x-versionAdded: v1_1_1
         NVMeEnduranceGroupProperties:
-          $ref: '#/components/schemas/StoragePool_v1_7_2_NVMeEnduranceGroupProperties'
           description: This property contains properties to use when StoragePool is
             used to describe an NVMe Endurance Group.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StoragePool_v1_7_2_NVMeEnduranceGroupProperties'
+          - enum:
+            - 'null'
           x-longDescription: This property shall contain properties to use when StoragePool
             is used to describe an NVMe Endurance Group.
           x-versionAdded: v1_4_0
         NVMeProperties:
-          $ref: '#/components/schemas/StoragePool_v1_7_2_NVMeProperties'
           description: NVMe properties for this storage pool.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StoragePool_v1_7_2_NVMeProperties'
+          - enum:
+            - 'null'
           x-longDescription: The property shall indicate the type of storage pool.
           x-versionAdded: v1_6_0
         NVMeSetProperties:
-          $ref: '#/components/schemas/StoragePool_v1_7_2_NVMeSetProperties'
           description: This property contains properties to use when StoragePool is
             used to describe an NVMe Set.
-          nullable: true
+          oneOf:
+          - $ref: '#/components/schemas/StoragePool_v1_7_2_NVMeSetProperties'
+          - enum:
+            - 'null'
           x-longDescription: This property shall contain properties to use when StoragePool
             is used to describe an NVMe Set.
           x-versionAdded: v1_4_0
@@ -811,8 +823,10 @@ components:
           deprecated: true
           description: Pool usage type for this storage pool.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.yaml#/components/schemas/StoragePool_PoolType
-            nullable: true
+            oneOf:
+            - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.yaml#/components/schemas/StoragePool_PoolType
+            - enum:
+              - 'null'
           readOnly: true
           type: array
           x-deprecatedReason: This property has been deprecated in favor of the SupportedPoolTypes
@@ -848,8 +862,10 @@ components:
         SupportedPoolTypes:
           description: A collection of the Pool Types supported by the storage pool.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.yaml#/components/schemas/StoragePool_PoolType
-            nullable: true
+            oneOf:
+            - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.yaml#/components/schemas/StoragePool_PoolType
+            - enum:
+              - 'null'
           readOnly: true
           type: array
           x-longDescription: This collection shall contain all the PoolType values
@@ -859,8 +875,10 @@ components:
           description: This collection specifies all supported storage allocation
             properties for the Storage Pool.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_ProvisioningPolicy
-            nullable: true
+            oneOf:
+            - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_ProvisioningPolicy
+            - enum:
+              - 'null'
           readOnly: false
           type: array
           x-longDescription: This collection shall specify all supported storage allocation
@@ -869,8 +887,10 @@ components:
         SupportedRAIDTypes:
           description: A collection of the RAID Types supported by the storage pool.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_RAIDType
-            nullable: true
+            oneOf:
+            - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_RAIDType
+            - enum:
+              - 'null'
           readOnly: true
           type: array
           x-longDescription: This collection shall contain all the RAIDType values
@@ -889,7 +909,7 @@ components:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#StoragePool.v1_7_2.StoragePool'
-x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
 x-release: 1.2.3

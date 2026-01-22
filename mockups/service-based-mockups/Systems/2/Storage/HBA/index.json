@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Storage.v1_13_0.Storage",
+    "@odata.type": "#Storage.v1_15_1.Storage",
     "Id": "2",
     "Name": "Simple HBA",
     "Description": "Simple HBA Connected to Storage Systems",
@@ -38,5 +38,5 @@
     "Links": {},
     "Actions": {},
     "@odata.id": "/redfish/v1/Systems/2/Storage/HBA",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }

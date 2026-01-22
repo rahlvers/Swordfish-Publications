@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StorageService.v1_5_0.StorageService",
+    "@odata.type": "#StorageService.v1_7_0.StorageService",
     "Id": "2",
     "Name": "My Simple Storage Service",
     "Description": "This simple system does not support service levels when provisioning storage",
@@ -14,14 +14,8 @@
         "State": "Enabled",
         "Health": "OK"
     },
-    "StorageGroups": {
-        "@odata.id": "/redfish/v1/StorageServices/2/StorageGroups"
-    },
-    "EndpointGroups": {
-        "@odata.id": "/redfish/v1/StorageServices/2/EndpointGroups"
-    },
-    "Endpoints": {
-        "@odata.id": "/redfish/v1/StorageServices/2/Endpoints"
+    "Metrics": {
+        "@odata.id": "/redfish/v1/StorageServices/2/Metrics"
     },
     "StoragePools": {
         "@odata.id": "/redfish/v1/StorageServices/2/StoragePools"
@@ -48,5 +42,5 @@
     },
     "Oem": {},
     "@odata.id": "/redfish/v1/StorageServices/2",
-    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
 }
