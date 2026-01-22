@@ -1,13 +1,12 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/Systems/1/SimpleStorage",
-  "@odata.type": "#SimpleStorageCollection.SimpleStorageCollection",
-  "Name": "Simple Storage Collection",
-  "Members@odata.count": 1,
-  "Members": [
-    {
-      "@odata.id": "/redfish/v1/Systems/1/SimpleStorage/1"
-    }
-  ]
+    "@odata.type": "#SimpleStorageCollection.SimpleStorageCollection",
+    "Name": "Simple Storage Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/1/SimpleStorage/1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Systems/1/SimpleStorage",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

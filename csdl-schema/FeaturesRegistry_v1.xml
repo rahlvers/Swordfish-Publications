@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2019 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <!---->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
@@ -43,11 +43,6 @@
             <PropertyValue Property="Deletable" Bool="false"/>
           </Record>
         </Annotation>
-        <Annotation Term="Redfish.Uris">
-          <Collection>
-            <String>/redfish/v1/Registries</String>
-          </Collection>
-        </Annotation>
       </EntityType>
 
     </Schema>
@@ -80,7 +75,7 @@
           <Annotation Term="OData.LongDescription" String="The value of this property shall be a string that represents the publisher of this registry."/>
           <Annotation Term="Redfish.Required"/>
         </Property>
-        <Property Name="Features" Type="FeaturesRegistry.v1_0_0.FeaturesRegistryProperty" Nullable="false">
+        <Property Name="Features" Type="Collection(FeaturesRegistry.v1_0_0.SupportedFeature)" Nullable="false">
           <Annotation Term="OData.Description" String="The pattern property indicates that a free-form string is the unique identifier for the feature within the registry."/>
           <Annotation Term="OData.LongDescription" String="The pattern property shall represent the suffix to be used in the FeatureId and shall be unique within this message registry."/>
           <Annotation Term="Redfish.Required"/>
@@ -154,11 +149,23 @@
 
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FeaturesRegistry.v1_0_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was added to correct 'Features' to a collection."/>
+      <EntityType Name="FeaturesRegistry" BaseType="FeaturesRegistry.v1_0_0.FeaturesRegistry"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FeaturesRegistry.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
       <Annotation Term="OData.Description" String="This version was added to fix CSDL Capability Annotations."/>
       <EntityType Name="FeaturesRegistry" BaseType="FeaturesRegistry.v1_0_0.FeaturesRegistry"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FeaturesRegistry.v1_1_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was added to correct 'Features' to a collection."/>
+      <EntityType Name="FeaturesRegistry" BaseType="FeaturesRegistry.v1_1_0.FeaturesRegistry"/>
     </Schema>
 
   </edmx:DataServices>

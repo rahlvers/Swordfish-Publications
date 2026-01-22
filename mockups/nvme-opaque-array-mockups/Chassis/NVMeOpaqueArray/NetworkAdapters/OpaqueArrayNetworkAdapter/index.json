@@ -1,0 +1,38 @@
+{
+    "@odata.type": "#NetworkAdapter.v1_9_0.NetworkAdapter",
+    "Id": "9fa725a1",
+    "Name": "Network Adapter View",
+    "Description": "Embedded Network Adapter in opaque array.",
+    "Controllers": [
+        {
+            "ControllerCapabilities": {
+                "NetworkPortCount": 2,
+                "NetworkDeviceFunctionCount": 8,
+                "DataCenterBridging": {
+                    "Capable": true
+                }
+            },
+            "Links": {
+                "Ports": [
+                    {
+                        "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/1"
+                    }
+                ],
+                "NetworkDeviceFunctions": [
+                    {
+                        "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/NetworkDeviceFunctions/11100"
+                    }
+                ]
+            }
+        }
+    ],
+    "NetworkDeviceFunctions": {
+        "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/NetworkDeviceFunctions"
+    },
+    "Ports": {
+        "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports"
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

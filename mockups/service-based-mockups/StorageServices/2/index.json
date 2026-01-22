@@ -1,46 +1,45 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/2",
-  "@odata.type": "#StorageService.v1_3_0.StorageService",
-  "Id": "2",
-  "Name": "My Simple Storage Service",
-  "Description": "This simple system does not support service levels when provisioning storage",
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK"
-  },
-  "StorageGroups": {
-    "@odata.id": "/redfish/v1/StorageServices/2/StorageGroups"
-  },
-  "EndpointGroups": {
-    "@odata.id": "/redfish/v1/StorageServices/2/EndpointGroups"
-  },
-  "Endpoints": {
-    "@odata.id": "/redfish/v1/StorageServices/2/Endpoints"
-  },
-  "StoragePools": {
-    "@odata.id": "/redfish/v1/StorageServices/2/StoragePools"
-  },
-  "Volumes": {
-    "@odata.id": "/redfish/v1/StorageServices/2/Volumes"
-  },
-  "Links": {
-    "HostingSystem": {
-      "@odata.id": "/redfish/v1/Systems/Complex"
+    "@odata.type": "#StorageService.v1_5_0.StorageService",
+    "Id": "2",
+    "Name": "My Simple Storage Service",
+    "Description": "This simple system does not support service levels when provisioning storage",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
     },
-    "DataProtectionLoSCapabilities": {
-      "@odata.id": "/redfish/v1/StorageServices/FileService/DataProtectionLoSCapabilities"
+    "StorageGroups": {
+        "@odata.id": "/redfish/v1/StorageServices/2/StorageGroups"
     },
-    "DataStorageLoSCapabilities": {
-      "@odata.id": "/redfish/v1/StorageServices/FileService/DataStorageLoSCapabilities"
+    "EndpointGroups": {
+        "@odata.id": "/redfish/v1/StorageServices/2/EndpointGroups"
     },
-    "IOConnectivityLoSCapabilities": {
-      "@odata.id": "/redfish/v1/StorageServices/FileService/IOConnectivityLoSCapabilities"
+    "Endpoints": {
+        "@odata.id": "/redfish/v1/StorageServices/2/Endpoints"
     },
-    "IOPerformanceLoSCapabilities": {
-      "@odata.id": "/redfish/v1/StorageServices/FileService/IOPerformanceLoSCapabilities"
-    }
-  },
-  "Oem": {}
+    "StoragePools": {
+        "@odata.id": "/redfish/v1/StorageServices/2/StoragePools"
+    },
+    "Volumes": {
+        "@odata.id": "/redfish/v1/StorageServices/2/Volumes"
+    },
+    "Links": {
+        "HostingSystem": {
+            "@odata.id": "/redfish/v1/Systems/Complex"
+        },
+        "DataProtectionLoSCapabilities": {
+            "@odata.id": "/redfish/v1/StorageServices/FileService/DataProtectionLoSCapabilities"
+        },
+        "DataStorageLoSCapabilities": {
+            "@odata.id": "/redfish/v1/StorageServices/FileService/DataStorageLoSCapabilities"
+        },
+        "IOConnectivityLoSCapabilities": {
+            "@odata.id": "/redfish/v1/StorageServices/FileService/IOConnectivityLoSCapabilities"
+        },
+        "IOPerformanceLoSCapabilities": {
+            "@odata.id": "/redfish/v1/StorageServices/FileService/IOPerformanceLoSCapabilities"
+        }
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/StorageServices/2",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

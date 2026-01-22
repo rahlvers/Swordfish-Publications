@@ -1,9 +1,10 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService/IOConnectivityLinesOfService/SAS",
-  "@odata.type": "#IOConnectivityLineOfService.v1_2_0.IOConnectivityLineOfService",
-
-  "Name": "SAS",
-  "AccessProtocols": ["SAS"]
+    "@odata.type": "#IOConnectivityLineOfService.v1_2_1.IOConnectivityLineOfService",
+    "Id": "SAS",
+    "Name": "SAS",
+    "AccessProtocols": [
+        "SAS"
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService/IOConnectivityLinesOfService/SAS",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

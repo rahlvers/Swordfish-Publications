@@ -12,7 +12,6 @@
     "Sessions": {
         "@odata.id": "/redfish/v1/SessionService/Sessions"
     },
-   
     "@odata.id": "/redfish/v1/SessionService",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

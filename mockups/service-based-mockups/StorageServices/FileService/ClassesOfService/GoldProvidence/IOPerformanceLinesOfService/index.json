@@ -1,11 +1,12 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence/IOPerformanceLinesOfService",
-  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
-  "Name": "IOPerformanceLinesOfService Collection",
-  "Members@odata.count": 1,
-  "Members": [
-        { "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/IOPerformanceLinesOfService/Lite-OLTP-HDD"}
-     ]
+    "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+    "Name": "IOPerformanceLinesOfService Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/IOPerformanceLinesOfService/Lite-OLTP-HDD"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence/IOPerformanceLinesOfService",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

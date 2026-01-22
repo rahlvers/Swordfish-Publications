@@ -1,11 +1,12 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverProvidence/IOConnectivityLinesOfService",
-  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
-  "Name": "IOConnectivityLinesOfService Collection",
-  "Members@odata.count": 1,
-  "Members": [
-        { "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/IOConnectivityLinesOfService/FC"}
-     ]
+    "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+    "Name": "IOConnectivityLinesOfService Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/IOConnectivityLinesOfService/FC"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverProvidence/IOConnectivityLinesOfService",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

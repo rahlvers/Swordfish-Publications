@@ -1,21 +1,25 @@
 {
-  "@odata.type": "#Thermal.v1_7_0.Thermal",
-  "Id": "Thermal",
-  "Name": "NVMeDrive1 Thermal",
-  "Temperatures": [{
-    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Thermal#/Temperatures/0",
-    "MemberId": "0",
-    "Name": "Aggregate Temp",
-    "Status": {
-      "State": "Enabled",
-      "Health": "OK"
-    },
-    "ReadingCelsius": 62,
-    "PhysicalContext": "StorageDevice",
-    "RelatedItem": [{
-      "@odata.id": "/redfish/v1/Storage/NVMeJBOF"
-    }]
-  }],
-  "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Thermal",
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@odata.type": "#Thermal.v1_7_1.Thermal",
+    "Id": "Thermal",
+    "Name": "NVMeDrive1 Thermal",
+    "Temperatures": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Thermal#/Temperatures/0",
+            "MemberId": "0",
+            "Name": "Aggregate Temp",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "ReadingCelsius": 62,
+            "PhysicalContext": "StorageDevice",
+            "RelatedItem": [
+                {
+                    "@odata.id": "/redfish/v1/Storage/NVMeJBOF"
+                }
+            ]
+        }
+    ],
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Thermal",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

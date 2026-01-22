@@ -1,8 +1,5 @@
 {
-  "@odata.context": "/redfish/v1/$metadata#Drive.Drive",
-  "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/1",
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
-    "@odata.type": "#Drive.v1_2_0.Drive",
+    "@odata.type": "#Drive.v1_15_0.Drive",
     "Id": "1",
     "Name": "Drive 1",
     "Status": {
@@ -25,5 +22,7 @@
     ],
     "RotationSpeedRPM": 15000,
     "BlockSizeBytes": 512,
-    "NegotiatedSpeedGbs": 12
+    "NegotiatedSpeedGbs": 12,
+    "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

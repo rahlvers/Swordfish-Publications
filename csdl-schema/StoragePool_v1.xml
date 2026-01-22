@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2021 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -104,7 +104,7 @@
         </Annotation>
       </EntityType>
 
-      <Action Name="AddDrives">
+      <Action Name="AddDrives" IsBound="true">
         <Parameter Name="StoragePool" Type="StoragePool.v1_3_0.Actions"/>
         <Annotation Term="OData.Description" String="This action is used to add an additional drive, or set of drives, to a capacity source for the storage pool."/>
         <Annotation Term="OData.LongDescription" String="This action shall be used to add a drive, or set of drives, to an underlying capacity source for the storage pool."/>
@@ -122,7 +122,7 @@
         </Parameter>
       </Action>
 
-      <Action Name="RemoveDrives">
+      <Action Name="RemoveDrives" IsBound="true">
         <Parameter Name="StoragePool" Type="StoragePool.v1_3_0.Actions"/>
         <Annotation Term="OData.Description" String="This action is used to remove drive(s) from the capacity source for the StoragePool."/>
         <Annotation
@@ -134,7 +134,7 @@
         </Parameter>
       </Action>
 
-      <Action Name="SetDeduplicationState">
+      <Action Name="SetDeduplicationState" IsBound="true">
         <Parameter Name="StoragePool" Type="StoragePool.v1_3_0.Actions"/>
         <Annotation Term="OData.Description" String="This action is used to set the dedupe state of the pool."/>
         <Annotation Term="OData.LongDescription" String="This action shall be used to set the dedupe state of the storage pool. This may be both a highly impactful, as well as a long running operation."/>
@@ -144,7 +144,7 @@
         </Parameter>
       </Action>
 
-      <Action Name="SetCompressionState">
+      <Action Name="SetCompressionState" IsBound="true">
         <Parameter Name="StoragePool" Type="StoragePool.v1_3_0.Actions"/>
         <Annotation Term="OData.Description" String="This action is used to set the compression state of the pool."/>
         <Annotation Term="OData.LongDescription" String="This action shall be used to set the compression state of the storage pool. This may be both a highly impactful, as well as a long running operation."/>
@@ -154,7 +154,7 @@
         </Parameter>
       </Action>
 
-      <Action Name="SetEncryptionState">
+      <Action Name="SetEncryptionState" IsBound="true">
         <Parameter Name="StoragePool" Type="StoragePool.v1_3_0.Actions"/>
         <Annotation Term="OData.Description" String="This action is used to set the encryption state of the pool."/>
         <Annotation Term="OData.LongDescription" String="This action shall be used to set the encryption state of the storage pool. This may be both a highly impactful, as well as a long running operation."/>
@@ -705,6 +705,15 @@
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Pool usage type for this storage pool."/>
           <Annotation Term="OData.LongDescription" String="The property shall indicate the type of storage pool."/>
+          <Annotation Term="Redfish.Revisions">
+            <Collection>
+              <Record>
+                <PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Deprecated"/>
+                <PropertyValue Property="Version" String="v1_7_0"/>
+                <PropertyValue Property="Description" String="This property has been deprecated in favor of the SupportedPoolTypes property."/>
+              </Record>
+            </Collection>
+          </Annotation>
         </Property>
         <Property Name="NVMeProperties" Type="StoragePool.v1_6_0.NVMeProperties">
           <Annotation Term="OData.Description" String="NVMe properties for this storage pool."/>
@@ -722,6 +731,29 @@
         </Property>
       </ComplexType>
 
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_7_0">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="WIP v1.2.3"/>
+      <Annotation
+        Term="OData.Description"
+        String="This version was created to add SupportedPoolTypes."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_6_0.StoragePool">
+        <Property Name="SupportedPoolTypes" Type="Collection(StoragePool.PoolType)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A collection of the Pool Types supported by the storage pool."/>
+          <Annotation Term="OData.LongDescription" String="This collection shall contain all the PoolType values supported by the storage pool."/>
+        </Property>
+      </EntityType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_7_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation
+        Term="OData.Description"
+        String="This version was created to add IsBound=true to Actions where missing."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_7_0.StoragePool"/>
     </Schema>
 
   </edmx:DataServices>

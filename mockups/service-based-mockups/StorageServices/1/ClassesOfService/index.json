@@ -1,0 +1,33 @@
+{
+    "@odata.type": "#ClassOfServiceCollection.ClassOfServiceCollection",
+    "Name": "ClassesOfService",
+    "Members@odata.count": 8,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonBunker"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonSilverJaw"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonVMs"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverBoston"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

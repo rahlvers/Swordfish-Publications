@@ -1,11 +1,12 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonGoldJaw/DataSecurityLinesOfService",
-  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
-  "Name": "DataSecurityLinesOfService Collection",
-  "Members@odata.count": 1,
-  "Members": [
-        { "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataSecurityLinesOfService/SecureData"}
-     ]
+    "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+    "Name": "DataSecurityLinesOfService Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataSecurityLinesOfService/SecureData"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonGoldJaw/DataSecurityLinesOfService",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

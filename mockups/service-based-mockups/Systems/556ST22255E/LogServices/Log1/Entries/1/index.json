@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#LogEntry.v1_2_0.LogEntry",
+    "@odata.type": "#LogEntry.v1_12_0.LogEntry",
     "Id": "1",
     "Name": "Log Entry 1",
     "EntryType": "Event",
@@ -18,8 +18,6 @@
         "Oem": {}
     },
     "Oem": {},
-
-   
     "@odata.id": "/redfish/v1/Systems/556ST22255E/LogServices/Log1/Entries/1",
-    "@Redfish.Copyright": "Copyright 2014-2018 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright."
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

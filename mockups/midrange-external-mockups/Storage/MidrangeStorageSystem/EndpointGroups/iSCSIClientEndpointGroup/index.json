@@ -1,14 +1,15 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/iSCSIClientEndpointGroup",
-  "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
-  "Name": "iSCSI  client (initiator) Endpoint group",
-  "Description": "Group of initiator endpoints for the midrange storage system",
-  "AccessState": "Optimized",
-
-  "GroupType": "Client",
-
-  "Endpoints": [{
-    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/InitiatorEndpoint1"
-  }]
+    "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
+    "Id": "iSCSIClientEndpointGroup",
+    "Name": "iSCSI  client (initiator) Endpoint group",
+    "Description": "Group of initiator endpoints for the midrange storage system",
+    "AccessState": "Optimized",
+    "GroupType": "Client",
+    "Endpoints": [
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/InitiatorEndpoint1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/iSCSIClientEndpointGroup",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

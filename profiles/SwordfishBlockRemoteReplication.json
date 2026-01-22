@@ -1,20 +1,19 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_1.json",
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
   "ProfileName": "SwordfishBlockLocalReplication",
-  "ProfileVersion": "1.1.0",
+  "ProfileVersion": "1.1.2",
   "OwningEntity": "SNIA.org",
   "Purpose": "Define remote replication block requirements for service-based Swordfish conformant implementations.",
   "ContactInfo": "SNIA.org",
   "RequiredProfiles": {
     "SwordfishBlockProvisioning": {
-      "OwningEntity": "SNIA.org",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-      "MinVersion": "1.1.0"
+      "MinVersion": "1.2.0"
     }
   },
   "Registries": {
     "Features": {
-      "MinVersion": "1.0.2",
+      "MinVersion": "1.2.0",
       "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
       "SupportedFeatures": {
         "SNIA.Swordfish.Block.RemoteReplication": {}
@@ -29,10 +28,9 @@
             "ReplicaInfo": {
               "PropertyRequirements": {
                 "ReplicaFaultDomain": {
-                  "ConditionalRequirements": [{
-                    "Purpose": "The ReplicaFaultDomain type must be set to Remote.",
-                    "CompareValues": "Remote"
-                  }]
+                  "Purpose": "The ReplicaFaultDomain type must be set to Remote.",
+                  "Comparison": "AnyOf",
+                  "Values": ["Remote"]
                 }
               }
             }

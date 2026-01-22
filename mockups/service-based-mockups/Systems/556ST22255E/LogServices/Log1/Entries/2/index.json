@@ -1,24 +1,23 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2018 Distributed Management Task Force, Inc. (DMTF). For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright.",
- 
-  "@odata.id": "/redfish/v1/Systems/556ST22255E/LogServices/Log1/Entries/2",
-  "@odata.type": "#LogEntry.v1_2_0.LogEntry",
-  "Id": "2",
-  "Name": "Log Entry 2",
-  "EntryType": "Event",
-  "Severity": "Critical",
-  "Created": "2012-03-07T14:44:00Z",
-  "SensorNumber": 2,
-  "Message": "System May be Melting",
-  "MessageId": "Event.1.0.TempWayTooHot",
-  "MessageArgs": [
-      "88"
-  ],
-  "Links": {
-      "OriginOfCondition": {
-          "@odata.id": "/redfish/v1/Chassis/1URack/Thermal"
-      },
-      "Oem": {}
-  },
-  "Oem": {}
+    "@odata.type": "#LogEntry.v1_12_0.LogEntry",
+    "Id": "2",
+    "Name": "Log Entry 2",
+    "EntryType": "Event",
+    "Severity": "Critical",
+    "Created": "2012-03-07T14:44:00Z",
+    "SensorNumber": 2,
+    "Message": "System May be Melting",
+    "MessageId": "Event.1.0.TempWayTooHot",
+    "MessageArgs": [
+        "88"
+    ],
+    "Links": {
+        "OriginOfCondition": {
+            "@odata.id": "/redfish/v1/Chassis/1URack/Thermal"
+        },
+        "Oem": {}
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Systems/556ST22255E/LogServices/Log1/Entries/2",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

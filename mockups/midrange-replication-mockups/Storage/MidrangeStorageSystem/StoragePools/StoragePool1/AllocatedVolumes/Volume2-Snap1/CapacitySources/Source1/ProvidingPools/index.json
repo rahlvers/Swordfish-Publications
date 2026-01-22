@@ -1,11 +1,12 @@
 {
-  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StoragePoolCollection.StoragePoolCollection",
-  "@odata.type": "#StoragePoolCollection.StoragePoolCollection",
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap1/CapacitySources/Source1/ProvidingPools",
-  "Members@odata.count": 1,
-  "Members": [{
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1"
-    }
-  ]
+    "@odata.type": "#StoragePoolCollection.StoragePoolCollection",
+    "Name": "Storage Pool Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap1/CapacitySources/Source1/ProvidingPools",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

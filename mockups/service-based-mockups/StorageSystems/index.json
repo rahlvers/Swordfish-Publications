@@ -1,19 +1,18 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-
-  "@odata.id": "/redfish/v1/StorageSystems",
-  "@odata.type": "#StorageSystemCollection.StorageSystemCollection",
-  "Name": "Storage System Collection",
-  "Members@odata.count": 3,
-  "Members": [
-    {
-      "@odata.id": "/redfish/v1/Systems/Simple"
-    },
-    {
-      "@odata.id": "/redfish/v1/Systems/Complex"
-    },
-    {
-      "@odata.id": "/redfish/v1/Systems/FileServer"
-    }
-  ]
+    "@odata.type": "#StorageSystemCollection.StorageSystemCollection",
+    "Name": "Storage System Collection",
+    "Members@odata.count": 3,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Simple"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/Complex"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/FileServer"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageSystems",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

@@ -1,0 +1,16 @@
+{
+    "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+    "Name": "Source1",
+    "Id": "Source1",
+    "Description": "Capacity Source for NVM Set",
+    "ProvidedCapacity": {
+        "Data": {
+            "AllocatedBytes": 10737418240
+        }
+    },
+    "ProvidingPools": {
+        "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet1/CapacitySources/Source1/ProvidingPools"
+    },
+    "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet1/CapacitySources/Source1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

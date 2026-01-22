@@ -6,7 +6,7 @@
     "Language": "en",
     "Description": "This registry defines the event messages for Swordfish",
     "RegistryPrefix": "Swordfish",
-    "RegistryVersion":  "1.0.0",
+    "RegistryVersion": "1.0.0",
     "OwningEntity": "SNIA",
     "Messages": {
         "LowSpaceWarningThresholdTriggered": {
@@ -14,7 +14,10 @@
             "Message": "The LowSpaceWarningThreshold %1 has been triggered on %2. See ExtendedInfo for more information.",
             "Severity": "Warning",
             "NumberOfArgs": 2,
-            "ParamTypes": [ "number", "string" ],
+            "ParamTypes": [
+                "number",
+                "string"
+            ],
             "Resolution": "See ExtendedInfo for more information."
         },
         "LowSpaceWarningThresholdCleared": {
@@ -22,7 +25,10 @@
             "Message": "The LowSpaceWarningThreshold %1 has been cleared on %2.",
             "Severity": "OK",
             "NumberOfArgs": 2,
-            "ParamTypes": [ "number", "string" ],
+            "ParamTypes": [
+                "number",
+                "string"
+            ],
             "Resolution": "None."
         },
         "SearchFailed": {
@@ -30,7 +36,9 @@
             "Message": "Object %1 not found that matched requested parameters.",
             "Severity": "Warning",
             "NumberOfArgs": 1,
-            "ParamTypes": [ "string" ],
+            "ParamTypes": [
+                "string"
+            ],
             "Resolution": "Retry search with different parameters."
         },
         "NoDefaultValue": {
@@ -38,7 +46,9 @@
             "Message": "No default value has been set for property %1.",
             "Severity": "Warning",
             "NumberOfArgs": 1,
-            "ParamTypes": [ "string" ],
+            "ParamTypes": [
+                "string"
+            ],
             "Resolution": "Assign a default value for the property."
         }
     }

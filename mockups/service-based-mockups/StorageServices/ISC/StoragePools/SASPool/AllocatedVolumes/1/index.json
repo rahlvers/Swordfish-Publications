@@ -1,0 +1,43 @@
+{
+    "@odata.type": "#Volume.v1_8_0.Volume",
+    "Id": "1",
+    "Name": "Logical Disk 1",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "UUID",
+            "DurableName": "123e4567-a12b-12a3-a123-123456789000"
+        }
+    ],
+    "Manufacturer": "BEST ChipCo",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "BlockSizeBytes": 512,
+    "VolumeType": "Mirrored",
+    "Capacity": {
+        "Data": {
+            "ConsumedBytes": 1099511627776,
+            "AllocatedBytes": 1198027440128
+        }
+    },
+    "CapacitySources": [
+        {
+          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+          "Id": "Source1",
+          "Name": "Source1",
+          "ProvidedCapacity": {
+              "Data": {
+                  "AllocatedBytes": 1198027440128,
+                  "ConsumedBytes": 1198027440128
+              }
+          },
+          "ProvidingPools": {
+              "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPool/AllocatedVolumes/1/CapacitySources/Source1/ProvidingPools"
+          },
+          "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPool/AllocatedVolumes/1/CapacitySources/Source1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPool/AllocatedVolumes/1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

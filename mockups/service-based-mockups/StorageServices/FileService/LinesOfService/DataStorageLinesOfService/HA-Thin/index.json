@@ -1,11 +1,11 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataStorageLinesOfService/HA-Thin",
-  "@odata.type": "#DataStorageLineOfService.v1_0_0.DataStorageLineOfService",
+    "@odata.type": "#DataStorageLineOfService.v1_3_1.DataStorageLineOfService",
+    "Id": "HA-Thin",
+    "Name": "HA-Thin",
 
-  "Name": "HA-Thin",
-  "RecoveryTimeObjectives": "OnlineActive",
-  "ProvisioningPolicy": "Thin",
-  "IsSpaceEfficient": true
+    "RecoveryTimeObjectives": "OnlineActive",
+    "ProvisioningPolicy": "Thin",
+    "IsSpaceEfficient": true,
+    "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataStorageLinesOfService/HA-Thin",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

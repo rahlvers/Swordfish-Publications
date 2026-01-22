@@ -1,15 +1,16 @@
 {
-  "@odata.type": "#StorageGroupCollection.StorageGroupCollection",
-  "Name": "Storage Group Collection",
-  "Description": "Storage Group Collection",
-  "Members@odata.count": 2,
-  "Members": [{
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/BackupServer"
-    }
-  ],
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups",
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@odata.type": "#StorageGroupCollection.StorageGroupCollection",
+    "Name": "Storage Group Collection",
+    "Description": "Storage Group Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/BackupServer"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

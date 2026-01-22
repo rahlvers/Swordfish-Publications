@@ -1,0 +1,21 @@
+{
+    "@odata.type": "#MetricReportDefinitionCollection.MetricReportDefinitionCollection",
+    "Name": "MetricReportDefinitions",
+    "Members@odata.count": 4,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/ConsumedCapacity"
+        },
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/ProvisionedCapacity"
+        },
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/TotalAllocatedCapacity"
+        },
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/CapacityUtilization"
+        }
+    ],
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

@@ -1,8 +1,5 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-   
-    "@odata.id": "/redfish/v1/Systems/Complex/Storage/HBA1",
-    "@odata.type": "#Storage.v1_3_0.Storage",
+    "@odata.type": "#Storage.v1_13_0.Storage",
     "Id": "HBA1",
     "Name": "Simple HBA",
     "Description": "Simple HBA Connected to Storage Systems",
@@ -14,19 +11,16 @@
     "StorageControllers": [
         {
             "@odata.id": "/redfish/v1/Systems/Complex/Storage/HBA1#/StorageControllers/0",
-            "@odata.type": "#Storage.v1_0_0.StorageController",
-            "Id": "0",
-            "Name": "HBA",
-            "Description": "HBA",
+            "MemberId": "0",
             "Status": {
                 "State": "Enabled",
                 "Health": "OK"
             },
             "Manufacturer": "ManufacturerName",
             "Model": "ProductModelName",
-            "SKU": "",
+            "SKU": "N/A",
             "SerialNumber": "12345678",
-            "PartNumber": "",
+            "PartNumber": "N/A",
             "AssetTag": "CustomerWritableThingy",
             "SpeedGbps": 14,
             "SupportedControllerProtocols": [
@@ -37,9 +31,11 @@
             ]
         }
     ],
-    "Volumes": {"@odata.id": "/redfish/v1/Systems/Complex/Storage/HBA1/Volumes"},
-    "Links": {
+    "Volumes": {
+        "@odata.id": "/redfish/v1/Systems/Complex/Storage/HBA1/Volumes"
     },
-    "Actions": {
-    }
+    "Links": {},
+    "Actions": {},
+    "@odata.id": "/redfish/v1/Systems/Complex/Storage/HBA1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

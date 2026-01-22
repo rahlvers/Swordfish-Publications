@@ -1,0 +1,67 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishNVMeoF",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish NVMe over Fabrics Requirements.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.2"
+    },
+    "SwordfishBlockProvisioning": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.2.0"
+    },
+    "SwordfishFabricConnectivityRightsforEthernet": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishFabricConnectivityRightsforEthernet or SwordfishFabricConnectivityRightsforRDMA must be supported.",
+        "CompareProfile": "SwordfishFabricConnectivityRightsforRDMA",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    },
+    "SwordfishFabricConnectivityRightsforRDMA": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishFabricConnectivityRightsforEthernet or SwordfishFabricConnectivityRightsforRDMA must be supported.",
+        "CompareProfile": "SwordfishFabricConnectivityRightsforEthernet",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    },
+    "SwordfishFabricAccessRightsforEthernet": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishFabricAccessRightsforEthernet or SwordfishFabricAccessRightsforRDMA must be supported.",
+        "CompareProfile": "SwordfishFabricAccessRightsforRDMA",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    },
+    "SwordfishFabricAccessRightsforRDMA": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishFabricAccessRightsforEthernet or SwordfishFabricAccessRightsforRDMA must be supported.",
+        "CompareProfile": "SwordfishFabricAccessRightsforEthernet",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    },
+    "Registries": {
+      "Features": {
+        "MinVersion": "1.3.0",
+        "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+        "SupportedFeatures": {
+          "SNIA.Swordfish.NVMeoF": {}
+        }
+      }
+    }
+  }
+}

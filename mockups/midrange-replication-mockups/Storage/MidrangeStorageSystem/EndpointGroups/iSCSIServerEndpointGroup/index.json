@@ -1,25 +1,25 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/iSCSIServerEndpointGroup",
-  "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
-  "Name": "iSCSI  Server (target) Endpoint group",
-  "Description": "Group of target endpoints for the midrange storage system",
-
-  "AccessState": "Optimized",
-  "TargetEndpointGroupIdentifier": 3,
-
-  "GroupType": "Server",
-  "Endpoints": [{
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint1"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint2"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint3"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint4"
-    }
-  ]
+    "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
+    "Name": "iSCSI Server (target) Endpoint group",
+    "Id": "iSCSIServerEndpointGroup",
+    "Description": "Group of target endpoints for the midrange storage system",
+    "AccessState": "Optimized",
+    "TargetEndpointGroupIdentifier": 3,
+    "GroupType": "Server",
+    "Endpoints": [
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint4"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/iSCSIServerEndpointGroup",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

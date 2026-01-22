@@ -1,0 +1,25 @@
+    {
+      "@odata.type": "#StorageController.v1_6_0.StorageController",
+      "Id": "TriMode1",
+      "Name": "Storage Controller",
+      "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+      },
+      "Id": "14",
+      "Manufacturer": "Best Storage Vendor",
+      "Model": "Simple Storage Device",
+      "SerialNumber": "SS123456",
+      "PartNumber": "SS44",
+      "FirmwareVersion": "1.0.0",
+      "SupportedControllerProtocols": [
+        "PCIe"
+      ],
+      "SupportedDeviceProtocols": [
+        "SAS",
+        "SATA",
+        "NVMe"
+      ],
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Controllers/TriMode1",
+      "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    }

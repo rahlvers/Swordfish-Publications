@@ -1,12 +1,14 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/2/EndpointGroups/1",
-  "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
-  "Name": "Client/Initiator EP group",
-  "Description": "Group of initiator endpoints for 2",
-  "GroupType": "Client",
-  "Endpoints": [{
-      "@odata.id": "/redfish/v1/StorageServices/2/Endpoints/2"
-    }]
+    "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
+    "Id": "1",
+    "Name": "Client/Initiator EP group",
+    "Description": "Group of initiator endpoints for 2",
+    "GroupType": "Client",
+    "Endpoints": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/2/Endpoints/2"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/2/EndpointGroups/1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

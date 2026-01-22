@@ -1,16 +1,32 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-
-	"@odata.id": "/redfish/v1/StorageServices/FileService/DataStorageLoSCapabilities",
-	"@odata.type": "#DataStorageLoSCapabilities.v1_0_0.DataStorageLoSCapabilities",
-	"Name": "DataStorageLoSCapabilities",
-	"SupportedAccessCapabilities": ["Read",
-	"Write"],
-	"SupportedRecoveryTimeObjectives": ["OnlineActive",
-	"Nearline",
-	"Offline"],
-	"SupportsSpaceEfficiency": true,
-	"SupportedLinesOfService": [
-		{"@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataSecurityLinesOfService"}
-		]
+    "@odata.type": "#DataStorageLoSCapabilities.v1_2_2.DataStorageLoSCapabilities",
+    "Name": "DataStorageLoSCapabilities",
+    "Id": "DataStorageLoSCapabilities",
+    "SupportedAccessCapabilities": [
+        "Read",
+        "Write"
+    ],
+    "SupportedRecoveryTimeObjectives": [
+        "OnlineActive",
+        "Nearline",
+        "Offline"
+    ],
+    "SupportsSpaceEfficiency": true,
+    "SupportedLinesOfService": [
+        {
+          "@odata.type": "#DataSecurityLineOfService.v1_1_1.DataSecurityLineOfService",
+          "Id": "SecureData",
+          "Name": "SecureData",
+          "MediaEncryptionStrength": "Bits_256",
+          "ChannelEncryptionStrength": "Bits_128",
+          "HostAuthenticationType": "Ticket",
+          "UserAuthenticationType": "Password",
+          "SecureChannelProtocol": "TLS",
+          "AntivirusScanPolicies": [],
+          "DataSanitizationPolicy": "CryptographicErase",
+          "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataSecurityLinesOfService/SecureData"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/FileService/DataStorageLoSCapabilities",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

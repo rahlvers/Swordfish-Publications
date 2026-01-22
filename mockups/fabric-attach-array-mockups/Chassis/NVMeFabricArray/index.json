@@ -1,5 +1,5 @@
-  {
-    "@odata.type": "#Chassis.v1_15_0.Chassis",
+{
+    "@odata.type": "#Chassis.v1_20_0.Chassis",
     "Id": "NVMeFabricArray",
     "Name": "NVMeFabricArray Controller",
     "ChassisType": "Module",
@@ -8,44 +8,45 @@
     "SKU": "FAB-14260",
     "SerialNumber": "FA-9450R6",
     "PartNumber": "FA-S23",
-
     "PowerState": "On",
-    "IndicatorLED": "Off",
+
     "Status": {
-      "State": "Enabled",
-      "Health": "OK"
+        "State": "Enabled",
+        "Health": "OK"
     },
     "Links": {
-      "Drives": [{
-          "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive1"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive2"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive3"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive4"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive5"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive6"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive7"
+        "Drives": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive1"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive2"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive3"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive4"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive5"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive6"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive7"
+            }
+        ],
+        "Storage": [
+            {
+                "@odata.id": "/redfish/v1/Storage/FabricAttachArray"
+            }
+        ],
+        "ContainedBy": {
+            "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
         }
-      ],
-      "Storage": [{
-        "@odata.id": "/redfish/v1/Storage/FabricAttachArray"
-      }],
-
-      "ContainedBy": {
-        "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
-      }
     },
     "@odata.id": "/redfish/v1/Chassis/NVMeFabricArray",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
-  }
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

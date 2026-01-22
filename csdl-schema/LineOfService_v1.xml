@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!---->
-<!-- Copyright 2015-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- -->
+<!-- Copyright 2015-2021 Storage Networking Industry Association (SNIA), USA. All rights reserved. -->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
 		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -18,9 +17,7 @@
 		<edmx:Include Namespace="Resource"/>
 		<edmx:Include Namespace="Resource.v1_0_0"/>
 	</edmx:Reference>
-
 	<edmx:DataServices>
-
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="LineOfService">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
 			<EntityType Name="LineOfService" BaseType="Resource.v1_0_0.Resource" Abstract="true">
@@ -44,7 +41,6 @@
 				</Annotation>
 			</EntityType>
 		</Schema>
-
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="LineOfService.v1_0_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
 			<Annotation Term="Redfish.Release" String="WIP v1.1.0"/>
@@ -53,13 +49,11 @@
 				<Annotation Term="OData.LongDescription" String="This service option is the abstract base class for other ClassOfService and concrete lines of service."/>
 			</EntityType>
 		</Schema>
-
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="LineOfService.v1_1_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
 			<Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
-	    <Annotation Term="OData.Description" String="This version was added to fix CSDL Capability Annotations."/>
+			<Annotation Term="OData.Description" String="This version was added to fix CSDL Capability Annotations."/>
 			<EntityType Name="LineOfService" BaseType="LineOfService.v1_0_0.LineOfService"/>
 		</Schema>
-
 	</edmx:DataServices>
 </edmx:Edmx>

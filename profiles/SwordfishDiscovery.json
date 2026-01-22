@@ -1,23 +1,30 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_1.json",
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
   "ProfileName": "SwordfishDiscovery",
-  "ProfileVersion": "1.1.0",
+  "ProfileVersion": "1.1.2",
   "OwningEntity": "SNIA.org",
   "Purpose": "Define requirements for discovery of resources and relationships that are common to all Swordfish conformant implementations.",
   "ContactInfo": "SNIA.org",
   "RequiredProfiles": {},
   "Registries": {
     "Features": {
-      "MinVersion": "1.0.2",
+      "MinVersion": "1.3.0",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
       "SupportedFeatures": {
         "SNIA.Swordfish.Discovery": {}
       }
     }
   },
+  "Protocol": {
+    "MinVersion": "1.14.0"
+  },
   "Resources": {
     "ServiceRoot": {
       "PropertyRequirements": {
+        "Chassis": {
+          "Purpose": "If Drives are used as capacity sources, these must be in Chassis/<ChassisId>/Drives.",
+          "ReadRequirement": "IfImplemented"
+        },
         "Storage": {},
         "Systems": {
           "Purpose": "If Storage is attached to a ComputerSystem rather than instantiated as a Standalone instance.",
@@ -27,53 +34,53 @@
           "Purpose": "If Storage is attached to a ComputerSystem rather than instantiated as a Standalone instance.",
           "ReadRequirement": "IfImplemented"
         }
-      },
-      "StorageCollection": {
-        "PropertyRequirements": {
-          "Members": {
-            "MinCount": 1
-          }
+      }
+    },
+    "DriveCollection": {},
+    "StorageCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
         }
-      },
-      "StoragePoolCollection": {
-        "PropertyRequirements": {
-          "Members": {
-            "MinCount": 0
-          }
+      }
+    },
+    "StoragePoolCollection": {},
+    "VolumeCollection": {},
+
+    "Chassis": {
+      "PropertyRequirements": {
+        "Drives": {
+          "ReadRequirement": "IfImplemented",
+          "Purpose": "If Drives provide the capacity source for the related Storage object, Drives are required to be in at least on Chassis representation.  As physical configurations can be represented by multiple Chassis instances, not all Chassis instances must include a Drives collection."
         }
-      },
-      "VolumeCollection": {
-        "PropertyRequirements": {
-          "Members": {
-            "MinCount": 0
-          }
+      }
+    },
+
+    "Storage": {
+      "PropertyRequirements": {
+        "Volumes": {},
+        "StoragePools": {
+          "ReadRequirement": "IfImplemented",
+          "Purpose": "StoragePools must be implemented in primary Storage object instances.  For Storage objects modeling embedded or back-end devices (e.g., NVMe drives), StoragePools are not required to be modeled."
+        },
+        "Drives": {
+          "ReadRequirement": "Recommended",
+          "ConditionalRequirements": [{
+            "Purpose": "There are two requirements for Drives.  The first is encapsulated in a custom test, as it cannot be well specified in the profile language.  1: The implementation must choose at least one selected media container (appropriate for the system's selected media type) and instantiate a collection for it.  This may be instantiated as a CapacitySources structure to feed a StoragePool, FileSystem, or Volume.  When drives are used, the Drives Collection in either Storage or, when implementing the ClassOfService Feature, StorageServices shall be implemented. 2: When drives are used, the Drives Collection in Chassis shall be implemented.",
+            "CompareType": "Present",
+            "ReadRequirement": "Mandatory",
+            "Comparison": "AnyOf",
+            "CompareProperty": "Chassis/Drives"
+          }]
         }
-      },
-      "Storage": {
-        "PropertyRequirements": {
-          "Volumes": {},
-          "StoragePools": {},
-          "Drives": {
-            "ReadRequirement": "Recommended",
-            "ConditionalRequirements": [{
-              "Purpose": "ConditionalRequirements: The implementation must choose at least one selected media container (appropriate for the system's selected media type) and instantiate a collection for it.  This may be instantiated as a CapacitySources structure to feed a StoragePool, FileSystem, or Volume.  When drives are used, the Drives Collection in either Storage or, when implementing the ClassOfService Feature, StorageServices shall be implemented.",
-              "CompareType": "Absent",
-              "ReadRequirement": "Mandatory",
-              "Comparison": "AnyOf",
-              "CompareValues": ["StoragePool/CapacitySource", "FileSystem/CapacitySource", "Volume/CapacitySource"]
-            }]
-          }
-        }
-      },
-      "ComputerSystem": {
-        "PropertyRequirements": {
-          "HostingRoles": {
-            "ConditionalRequirements": [{
-              "Purpose": "Swordfish implementations must specify a hosting role type of StorageServer.",
-              "CompareValues": "StorageServer"
-            }]
-          },
-          "Storage": {}
+      }
+    },
+    "ComputerSystem": {
+      "PropertyRequirements": {
+        "HostingRoles": {
+          "Purpose": "Swordfish implementations must specify a hosting role type of StorageServer.",
+          "Comparison": "AnyOf",
+          "Values": ["StorageServer"]
         }
       }
     }

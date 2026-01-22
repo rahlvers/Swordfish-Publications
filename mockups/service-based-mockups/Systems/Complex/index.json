@@ -1,91 +1,95 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-
-  "@odata.id": "/redfish/v1/Systems/Complex",
-  "@odata.type": "#ComputerSystem.v1_5_0.ComputerSystem",
-  "Id": "Complex",
-  "Name": "My Storage System",
-  "SystemType": "Physical",
-  "AssetTag": "free form asset tag",
-  "Manufacturer": "Manufacturer Name",
-  "Model": "Model Name",
-  "SKU": "",
-  "SerialNumber": "2M220100SL",
-  "PartNumber": "",
-  "Description": "Description of server",
-  "UUID": "00000000-0000-0000-0000-000000001234",
-  "HostName": "storsrv89",
-  "HostingRoles": ["StorageServer"],
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK",
-    "HealthRollup": "OK"
-  },
-  "Storage": {
-    "@odata.id": "/redfish/v1/Systems/Complex/Storage"
-  },
-  "IndicatorLED": "Lit",
-  "PowerState": "On",
-  "Boot": {
-    "BootSourceOverrideEnabled": "Once",
-    "BootSourceOverrideTarget": "Pxe",
-    "BootSourceOverrideTarget@Redfish.AllowableValues": [
-      "None",
-      "BiosSetup",
-      "UefiTarget"
+    "@odata.type": "#ComputerSystem.v1_18_0.ComputerSystem",
+    "Id": "Complex",
+    "Name": "My Storage System",
+    "SystemType": "Physical",
+    "AssetTag": "free form asset tag",
+    "Manufacturer": "Manufacturer Name",
+    "Model": "Model Name",
+    "SKU": "N/A",
+    "SerialNumber": "2M220100SL",
+    "PartNumber": "N/A",
+    "Description": "Description of server",
+    "UUID": "00000000-0000-0000-0000-000000001234",
+    "HostName": "storsrv89",
+    "HostingRoles": [
+        "StorageServer"
     ],
-    "UefiTargetBootSourceOverride": "uefi device path"
-  },
-  "BiosVersion": "Xxxx",
-  "ProcessorSummary": {
-    "Count": 2,
-    "Model": "Multi-Core Broadcom(R) ARM processor Xxxx Series",
     "Status": {
-      "State": "Enabled",
-      "Health": "OK",
-      "HealthRollup": "OK"
-    }
-  },
-  "MemorySummary": {
-    "TotalSystemMemoryGiB": 16,
-    "Status": {
-      "State": "Enabled",
-      "Health": "OK",
-      "HealthRollup": "OK"
-    }
-  },
-  "Processors": {
-    "@odata.id": "/redfish/v1/Systems/Complex/Processors"
-  },
-  "EthernetInterfaces": {
-    "@odata.id": "/redfish/v1/Systems/Complex/EthernetInterfaces"
-  },
-  "LogServices": {
-    "@odata.id": "/redfish/v1/Systems/Complex/LogServices"
-  },
-  "HostedServices": {
-    "@odata.id": "/redfish/v1/Systems/Complex/HostedServices"
-  },
-  "Links": {
-    "Chassis": [{
-      "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
-    }],
-    "ManagedBy": [{
-      "@odata.id": "/redfish/v1/Managers/StorageManager1"
-    }],
-    "Oem": {}
-  },
-  "Actions": {
-    "#ComputerSystem.Reset": {
-      "target": "/redfish/v1/Systems/Complex/Actions/ComputerSystem.Reset",
-      "ResetType@Redfish.AllowableValues": [
-        "On",
-        "ForceOff",
-        "GracefulShutdown",
-        "ForceRestart",
-        "PushPowerButton"
-      ]
-    }
-  },
-  "Oem": {}
+        "State": "Enabled",
+        "Health": "OK",
+        "HealthRollup": "OK"
+    },
+    "Storage": {
+        "@odata.id": "/redfish/v1/Systems/Complex/Storage"
+    },
+     "PowerState": "On",
+    "Boot": {
+        "BootSourceOverrideEnabled": "Once",
+        "BootSourceOverrideTarget": "Pxe",
+        "BootSourceOverrideTarget@Redfish.AllowableValues": [
+            "None",
+            "BiosSetup",
+            "UefiTarget"
+        ],
+        "UefiTargetBootSourceOverride": "uefi device path"
+    },
+    "BiosVersion": "Xxxx",
+    "ProcessorSummary": {
+        "Count": 2,
+        "Model": "Multi-Core Broadcom(R) ARM processor Xxxx Series",
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK",
+            "HealthRollup": "OK"
+        }
+    },
+    "MemorySummary": {
+        "TotalSystemMemoryGiB": 16,
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK",
+            "HealthRollup": "OK"
+        }
+    },
+    "Processors": {
+        "@odata.id": "/redfish/v1/Systems/Complex/Processors"
+    },
+    "EthernetInterfaces": {
+        "@odata.id": "/redfish/v1/Systems/Complex/EthernetInterfaces"
+    },
+    "LogServices": {
+        "@odata.id": "/redfish/v1/Systems/Complex/LogServices"
+    },
+    "HostedServices": {
+        "@odata.id": "/redfish/v1/Systems/Complex/HostedServices"
+    },
+    "Links": {
+        "Chassis": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
+            }
+        ],
+        "ManagedBy": [
+            {
+                "@odata.id": "/redfish/v1/Managers/StorageManager1"
+            }
+        ],
+        "Oem": {}
+    },
+    "Actions": {
+        "#ComputerSystem.Reset": {
+            "target": "/redfish/v1/Systems/Complex/Actions/ComputerSystem.Reset",
+            "ResetType@Redfish.AllowableValues": [
+                "On",
+                "ForceOff",
+                "GracefulShutdown",
+                "ForceRestart",
+                "PushPowerButton"
+            ]
+        }
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Systems/Complex",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

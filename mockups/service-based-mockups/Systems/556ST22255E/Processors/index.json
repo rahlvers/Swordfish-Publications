@@ -10,7 +10,6 @@
             "@odata.id": "/redfish/v1/Systems/556ST22255E/Processors/CPU2"
         }
     ],
-   
     "@odata.id": "/redfish/v1/Systems/556ST22255E/Processors",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

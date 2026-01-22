@@ -1,34 +1,21 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Dallas-Asynchronous-Mirror",
-  "@odata.type": "#DataProtectionLineOfService.v1_2_0.DataProtectionLineOfService",
+    "@odata.type": "#DataProtectionLineOfService.v1_3_0.DataProtectionLineOfService",
+    "Name": "Dallas-Asynchronous-Mirror",
+    "Id": "Dallas-Asynchronous-Mirror",
 
-  "Name": "Dallas-Asynchronous-Mirror",
-  "RecoveryGeographicObjective": "Region",
-  "RecoveryPointObjectiveTime": "PT4S",
-  "RecoveryTimeObjective": "Nearline",
-  "ReplicaType": "Mirror",
-  "IsIsolated": true,
-  "ReplicaClassOfService": {
-    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"
-  },
-  "ReplicaAccessLocation": {
-    "PostalAddress": {
-      "Country": "",
-      "Territory": "",
-      "City": "Dallas",
-      "LeadingStreetDirection": "",
-      "Street": "",
-      "TrailingStreetSuffix": "",
-      "PostalCode": "",
-      "Building": "",
-      "Room": "",
-      "GPSCoords": ""
+    "RecoveryGeographicObjective": "Region",
+    "RecoveryPointObjectiveTime": "PT4S",
+    "RecoveryTimeObjective": "Nearline",
+    "ReplicaType": "Mirror",
+    "IsIsolated": true,
+    "ReplicaClassOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"
     },
-    "Placement": {
-      "Row": "",
-      "Rack": ""
-    }
-  }
+    "ReplicaAccessLocation": {
+        "PostalAddress": {
+            "City": "Dallas"
+          }
+    },
+    "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Dallas-Asynchronous-Mirror",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

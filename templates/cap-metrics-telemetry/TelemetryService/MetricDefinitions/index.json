@@ -1,0 +1,21 @@
+{
+    "@odata.type": "#MetricDefinitionCollection.MetricDefinitionCollection",
+    "Name": "MetricDefinitions",
+    "Members@odata.count": 4,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions/AllocatedBytes"
+        },
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions/CapacityUtilization"
+        },
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions/ConsumedBytes"
+        },
+        {
+            "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions/ProvisionedBytes"
+        }
+    ],
+    "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions",
+    "@Redfish.Copyright": "Copyright 2014-2021 SNIA. All rights reserved."
+}

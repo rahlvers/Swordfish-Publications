@@ -1,30 +1,35 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint1",
-  "@odata.type": "#Endpoint.v1_4_0.Endpoint",
-  "Id": "TargetEndpoint1",
-  "Name": "TargetEndpoint1",
-  "Description": "iSCSI target Endpoint 1",
-  "Identifiers": [{
-    "DurableName": "4289a3dd-ba52-41b8-9d3d-38de196e059c",
-    "DurableNameFormat": "UUID"
-  }],
-  "ConnectedEntities": [{
-    "EntityType": "Volume",
-    "EntityRole": "Target",
-    "EntityLink": {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4"
-    }
-  }],
-
-  "EndpointProtocol": "iSCSI",
-  "IPTransportDetails": [{
-    "IPv4Address": {
-      "Address": "192.168.1.66"
-    }
-  }],
-  "Status": {
-    "State": "Disabled",
-    "Health": "OK"
-  }
+    "@odata.type": "#Endpoint.v1_7_0.Endpoint",
+    "Id": "TargetEndpoint1",
+    "Name": "TargetEndpoint1",
+    "Description": "iSCSI target Endpoint 1",
+    "Identifiers": [
+        {
+            "DurableName": "4289a3dd-ba52-41b8-9d3d-38de196e059c",
+            "DurableNameFormat": "UUID"
+        }
+    ],
+    "ConnectedEntities": [
+        {
+            "EntityType": "Volume",
+            "EntityRole": "Target",
+            "EntityLink": {
+                "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4"
+            }
+        }
+    ],
+    "EndpointProtocol": "iSCSI",
+    "IPTransportDetails": [
+        {
+            "IPv4Address": {
+                "Address": "192.168.1.66"
+            }
+        }
+    ],
+    "Status": {
+        "State": "Disabled",
+        "Health": "OK"
+    },
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

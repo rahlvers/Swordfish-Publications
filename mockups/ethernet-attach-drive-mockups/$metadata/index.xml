@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2014-2021 DMTF. For the full DMTF copyright policy, see http://www.dmtf.org/about/policies/copyright.-->
+<!-- Copyright 2015-2022 SNIA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Capacity_v1.xml">
@@ -13,7 +13,7 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Chassis_v1.xml">
     <edmx:Include Namespace="Chassis"/>
-    <edmx:Include Namespace="Chassis.v1_15_0"/>
+    <edmx:Include Namespace="Chassis.v1_20_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ChassisCollection_v1.xml">
@@ -22,7 +22,7 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
     <edmx:Include Namespace="ComputerSystem"/>
-    <edmx:Include Namespace="ComputerSystem.v1_8_0"/>
+    <edmx:Include Namespace="ComputerSystem.v1_18_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection_v1.xml">
@@ -31,7 +31,8 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Drive_v1.xml">
     <edmx:Include Namespace="Drive"/>
-    <edmx:Include Namespace="Drive.v1_12_0"/>
+    <edmx:Include Namespace="Drive.v1_15_0"/>
+    <edmx:Include Namespace="Drive.v1_15_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/DriveCollection_v1.xml">
@@ -43,9 +44,24 @@
     <edmx:Include Namespace="Event.v1_6_1"/>
   </edmx:Reference>
 
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FeaturesRegistry_v1.xml">
+    <edmx:Include Namespace="FeaturesRegistry"/>
+    <edmx:Include Namespace="FeaturesRegistry.v1_1_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/MessageRegistryFile_v1.xml">
+    <edmx:Include Namespace="MessageRegistryFile"/>
+    <edmx:Include Namespace="MessageRegistryFile.v1_1_3"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/MessageRegistryFileCollection_v1.xml">
+    <edmx:Include Namespace="MessageRegistryFileCollection"/>
+  </edmx:Reference>
+
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Power_v1.xml">
     <edmx:Include Namespace="Power"/>
-    <edmx:Include Namespace="Power.v1_7_0"/>
+    <edmx:Include Namespace="Power.v1_7_1"/>
   </edmx:Reference>
 
     <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ServiceRoot_v1.xml">
@@ -55,7 +71,7 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Session_v1.xml">
     <edmx:Include Namespace="Session"/>
-    <edmx:Include Namespace="Session.v1_3_0"/>
+    <edmx:Include Namespace="Session.v1_4_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/SessionCollection_v1.xml">
@@ -69,7 +85,7 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Storage_v1.xml">
     <edmx:Include Namespace="Storage"/>
-    <edmx:Include Namespace="Storage.v1_10_0"/>
+    <edmx:Include Namespace="Storage.v1_13_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageCollection_v1.xml">
@@ -78,7 +94,7 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageController_v1.xml">
     <edmx:Include Namespace="StorageController"/>
-    <edmx:Include Namespace="StorageController.v1_1_0"/>
+    <edmx:Include Namespace="StorageController.v1_6_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageControllerCollection_v1.xml">
@@ -87,7 +103,7 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool_v1.xml">
     <edmx:Include Namespace="StoragePool"/>
-    <edmx:Include Namespace="StoragePool.v1_5_0"/>
+    <edmx:Include Namespace="StoragePool.v1_7_1"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StoragePoolCollection_v1.xml">
@@ -100,12 +116,12 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Thermal_v1.xml">
     <edmx:Include Namespace="Thermal"/>
-    <edmx:Include Namespace="Thermal.v1_7_0"/>
+    <edmx:Include Namespace="Thermal.v1_7_1"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Volume_v1.xml">
     <edmx:Include Namespace="Volume"/>
-    <edmx:Include Namespace="Volume.v1_5_0"/>
+    <edmx:Include Namespace="Volume.v1_8_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection_v1.xml">
@@ -122,17 +138,17 @@
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/NetworkAdapter_v1.xml">
     <edmx:Include Namespace="NetworkAdapter"/>
-    <edmx:Include Namespace="NetworkAdapter.v1_6_0"/>
+    <edmx:Include Namespace="NetworkAdapter.v1_9_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/NetworkDeviceFunction_v1.xml">
     <edmx:Include Namespace="NetworkDeviceFunction"/>
-    <edmx:Include Namespace="NetworkDeviceFunction.v1_5_1"/>
+    <edmx:Include Namespace="NetworkDeviceFunction.v1_8_0"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Port_v1.xml">
     <edmx:Include Namespace="Port"/>
-    <edmx:Include Namespace="Port.v1_3_1"/>
+    <edmx:Include Namespace="Port.v1_6_1"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PortCollection_v1.xml">
@@ -142,6 +158,16 @@
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
     <edmx:Include Namespace="Resource"/>
     <edmx:Include Namespace="Resource.v1_0_0"/>
+  </edmx:Reference>
+
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/MessageRegistryFile_v1.xml">
+    <edmx:Include Namespace="MessageRegistryFile"/>
+    <edmx:Include Namespace="MessageRegistryFile.v1_1_3"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/MessageRegistryFileCollection_v1.xml">
+    <edmx:Include Namespace="MessageRegistryFileCollection"/>
   </edmx:Reference>
 
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">

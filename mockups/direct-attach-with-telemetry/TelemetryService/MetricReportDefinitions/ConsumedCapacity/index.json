@@ -1,0 +1,66 @@
+{
+    "@odata.type": "#MetricReportDefinition.v1_3_0.MetricReportDefinition",
+    "Id": "ConsumedCapacity",
+    "Name": "Consumed Capacity",
+    "MetricReportDefinitionType": "Periodic",
+    "MetricReportDefinitionEnabled": true,
+    "Schedule": {
+        "RecurrenceInterval": "PT1H"
+    },
+    "ReportActions": [
+        "LogToMetricReportsCollection"
+    ],
+    "ReportUpdates": "NewReport",
+    "MetricReport": {
+        "@odata.id": "/redfish/v1/TelemetryService/MetricReports/ConsumedCapacity"
+    },
+    "Status": {
+        "State": "Enabled"
+    },
+  "Wildcards": [{
+      "Name": "SystemID"
+    },
+    {
+      "Name": "StorageSystemID"
+    },
+    {
+      "Name": "SystemStoragePoolID"
+    },
+    {
+      "Name": "SystemVolumeID"
+    },
+    {
+      "Name": "StorageID"
+    },
+    {
+      "Name": "StoragePoolID"
+    },
+    {
+      "Name": "VolumeID"
+    },
+    {
+      "Name": "FileSystemID"
+    }
+  ],
+    "Metrics": [
+        {
+            "MetricId": "ConsumedCapacity",
+            "MetricProperties": [
+              "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/StoragePools/{SystemStoragePoolID}/AllocatedVolumes/{SystemVolumeID}/Capacity#/Data/ConsumedBytes",
+              "/redfish/v1/Storage/{StorageID}/StoragePools/{StoragePoolID}/AllocatedVolumes/{VolumeID}/Capacity#/Data/ConsumedBytes",
+              "/redfish/v1/StorageServices/{StorageServiceID}/StoragePools/{ServiceStoragePoolID}/AllocatedVolumes/{ServiceVolumeID}/Capacity#/Data/ConsumedBytes",
+              "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/Capacity#/Data/ConsumedBytes",
+              "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/Capacity#/Data/ConsumedBytes",
+              "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/Capacity#/Data/ConsumedBytes",
+              "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/RemainingCapacity#/Data/ConsumedBytes",
+              "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacity#/Data/ConsumedBytes",
+              "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacity#/Data/ConsumedBytes"
+            ],
+            "CollectionFunction": "Maximum",
+            "CollectionTimeScope": "Point",
+            "CollectionDuration": "PT1H"
+        }
+    ],
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/ConsumedCapacity",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

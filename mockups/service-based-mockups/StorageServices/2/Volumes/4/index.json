@@ -1,33 +1,32 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/2/Volumes/4",
-  "@odata.type": "#Volume.v1_4_0.Volume",
-  "Id": "4",
-  "Name": "Logical Disk 2",
-  "Identifiers": [
-    {
-      "DurableNameFormat": "UUID",
-      "DurableName": "123e4567-a12b-12a3-a123-123400044000"
-    }
-  ],
-  "Manufacturer": "SuperDuperSSD",
-  "Status": {
-    "State": "Enabled",
-    "Health": "Warning"
-  },
-  "BlockSizeBytes": 512,
-  "Capacity": {
-    "Data": {
-      "AllocatedBytes": 1099511627776,
-      "ConsumedBytes": 1099511627776
-    }
-  },
+    "@odata.type": "#Volume.v1_8_0.Volume",
+    "Id": "4",
+    "Name": "Logical Disk 2",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "UUID",
+            "DurableName": "123e4567-a12b-12a3-a123-123400044000"
+        }
+    ],
+    "Manufacturer": "SuperDuperSSD",
+    "Status": {
+        "State": "Enabled",
+        "Health": "Warning"
+    },
+    "BlockSizeBytes": 512,
+    "Capacity": {
+        "Data": {
+            "AllocatedBytes": 1099511627776,
+            "ConsumedBytes": 1099511627776
+        }
+    },
     "Links": {
-    "StorageGroups": [
-      {
-        "@odata.id": "/redfish/v1/StorageServices/2/StorageGroups/2"
-      }
-    ]
-  }
+        "StorageGroups": [
+            {
+                "@odata.id": "/redfish/v1/StorageServices/2/StorageGroups/2"
+            }
+        ]
+    },
+    "@odata.id": "/redfish/v1/StorageServices/2/Volumes/4",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

@@ -1,46 +1,27 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-  "@odata.id": "/redfish/v1/StorageServices/1/Volumes/65456765456761001234876100123487",
-  "@odata.type": "#Volume.v1_4_0.Volume",
-  "Name": "Volume 2",
-  "Id": "Volumes/65456765456761001234876100123487/",
-  "Description": "Excel Data",
-  "Identifiers": [{
-    "DurableNameFormat": "NAA",
-    "DurableName": "Volumes/65456765456761001234876100123487/"
-  }],
-  "Manufacturer": "SuperDuperSSD",
-  "Model": "Drive Model string",
-  "Status": {
-    "State": "Enabled",
-    "Health": "Warning"
-  },
-  "AccessCapabilities": [
-    "Read",
-    "Write",
-    "Append",
-    "Streaming"
-  ],
-  "BlockSizeBytes": 512,
-  "CapacitySources": [{
-    "@odata.id": "/redfish/v1/StorageServices/1/Volumes/65456765456761001234876100123487/CapacitySources/Source1"
-  }],
-  "Capacity": {
-    "Data": {
-      "ConsumedBytes": 0,
-      "AllocatedBytes": 10737418240,
-      "GuaranteedBytes": 536870912,
-      "ProvisionedBytes": 1099511627776
-    },
-    "Metadata": {
-      "ConsumedBytes": 536870912,
-      "AllocatedBytes": 536870912
-    },
-    "Snapshot": {
-      "ConsumedBytes": 0,
-      "AllocatedBytes": 21474836480,
-      "GuaranteedBytes": 536870912,
-      "ProvisionedBytes": 2199023255552
-    }
-  }
+    "@odata.type": "#ClassOfServiceCollection.ClassOfServiceCollection",
+    "Name": "ClassesOfService",
+    "Members@odata.count": 6,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonBunker"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonSilverJaw"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonVMs"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverBoston"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

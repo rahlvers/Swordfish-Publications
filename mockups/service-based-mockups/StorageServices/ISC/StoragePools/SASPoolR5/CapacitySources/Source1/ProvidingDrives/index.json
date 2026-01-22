@@ -1,33 +1,33 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#DriveCollection.DriveCollection",
-  "@odata.type": "#DriveCollection.DriveCollection",
-  "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/CapacitySources/Source1/ProvidingDrives",
-  "Name": "Drives",
-  "Members@odata.count": 8,
-  "Members": [{
-      "@odata.id": "/redfish/v1/Chassis/1URack/Drives/17"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/1URack/Drives/18"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/1URack/Drives/19"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/1URack/Drives/20"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/1URack/Drives/21"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/1URack/Drives/22"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/1URack/Drives/23"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/1URack/Drives/24"
-    }
-  ]
+    "@odata.type": "#DriveCollection.DriveCollection",
+    "Name": "Drives",
+    "Members@odata.count": 8,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/1URack/Drives/17"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1URack/Drives/18"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1URack/Drives/19"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1URack/Drives/20"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1URack/Drives/21"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1URack/Drives/22"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1URack/Drives/23"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/1URack/Drives/24"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/CapacitySources/Source1/ProvidingDrives",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

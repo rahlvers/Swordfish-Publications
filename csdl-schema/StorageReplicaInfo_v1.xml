@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -643,8 +643,8 @@
       <ComplexType Name="ReplicaInfo" BaseType="StorageReplicaInfo.v1_1_0.ReplicaInfo">
         <NavigationProperty Name="SourceReplica" Type="Resource.Item" Nullable="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-          <Annotation Term="OData.Description" String="The resource that is the source of this replica."/>
-          <Annotation Term="OData.LongDescription" String="The value shall reference the resource that is the source of this replica."/>
+          <Annotation Term="OData.Description" String="The URI to the source replica when located on a different Swordfish service instance."/>
+          <Annotation Term="OData.LongDescription" String="The value shall contain the URI to the source replica when located on a different Swordfish service instance."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
       </ComplexType>
@@ -658,6 +658,21 @@
 
       <ComplexType Name="ReplicaInfo" BaseType="StorageReplicaInfo.v1_2_0.ReplicaInfo">
         <Property Name="ReplicaFaultDomain" Type="StorageReplicaInfo.ReplicaFaultDomain">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="ReplicaFaultDomain describes the fault domain (local or remote) of the replica relationship."/>
+          <Annotation Term="OData.LongDescription" String="The ReplicaFaultDomain enumeration literal shall describe the fault domain (local or remote) of the replica relationship."/>
+        </Property>
+      </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo.v1_4_0">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="WIP v1.2.5"/>
+      <Annotation Term="OData.Description" String="This version adds the RemoteSourceReplica property to the ReplicaInfo structure."/>
+      <EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.v1_3_0.StorageReplicaInfo"/>
+
+      <ComplexType Name="ReplicaInfo" BaseType="StorageReplicaInfo.v1_3_0.ReplicaInfo">
+        <Property Name="RemoteSourceReplica" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="ReplicaFaultDomain describes the fault domain (local or remote) of the replica relationship."/>
           <Annotation Term="OData.LongDescription" String="The ReplicaFaultDomain enumeration literal shall describe the fault domain (local or remote) of the replica relationship."/>

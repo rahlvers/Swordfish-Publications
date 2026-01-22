@@ -1,0 +1,336 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishFabricConnectivityRightsforEthernet",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Connectivity Rights requirements using Fabrics, for implementations using Ethernet.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishFabricConnectivityRights": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.3.0",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.FabricConnectivityRightsforEthernet": {}
+      }
+    }
+  },
+  "Protocol": {
+    "MinVersion": "1.14.0"
+  },
+  "Resources": {
+    "ServiceRoot": {
+      "PropertyRequirements": {
+        "Chassis": {}
+      }
+    },
+    "Chassis": {
+      "PropertyRequirements": {
+        "NetworkAdapters": {}
+      }
+    },
+    "ChassisCollection": {},
+    "Endpoint": {
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Fabric", "EndpointCollection"],
+        "ReadRequirement": "Mandatory"
+      }],
+      "PropertyRequirements": {
+        "IPTransportDetails": {
+          "PropertyRequirements": {
+            "TransportProtocol": {
+              "ReadRequirement": "Mandatory",
+              "Purpose": "TransportProtocol must exist and be set to 'Ethernet'",
+              "Comparison": "Equal",
+              "Values": ["Ethernet"]
+            }
+          }
+        },
+        "Port": {
+          "ReadRequirement": "Recommended"
+        }
+      }
+    },
+    "EthernetInterface": {
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Manager", "EthernetInterfaceCollection"],
+        "ReadRequirement": "Mandatory"
+      }],
+      "PropertyRequirements": {
+        "DHCPv4": {
+          "ReadRequirement": "Recommended"
+        },
+        "DHCPv6": {
+          "ReadRequirement": "Recommended"
+        },
+        "Description": {},
+        "FQDN": {},
+        "HostName": {},
+        "IPv4Addresses": {},
+        "IPv4StaticAddresses": {},
+        "IPv6Addresses": {
+          "ReadRequirement": "Recommended"
+        },
+        "IPv6DefaultGateway": {
+          "ReadRequirement": "Recommended",
+          "ConditionalRequirements": [{
+            "Purpose": "If IPv6Addresses is implemented, then IPv6DefaultGateway is required.",
+            "CompareProperty": "IPv6Addresses",
+            "CompareType": "Present",
+            "ReadRequirement": "Mandatory"
+          }]
+        },
+        "IPv6StaticAddresses": {
+          "ReadRequirement": "Recommended",
+          "ConditionalRequirements": [{
+            "Purpose": "If IPv6Addresses is implemented, then IPv6StaticAddresses is required.",
+            "CompareProperty": "IPv6Addresses",
+            "CompareType": "Present",
+            "ReadRequirement": "Mandatory"
+          }]
+        },
+        "IPv6StaticDefaultGateways": {
+          "ReadRequirement": "Recommended",
+          "ConditionalRequirements": [{
+            "Purpose": "If IPv6Addresses is implemented, then IPv6StaticDefaultGateways is required.",
+            "CompareProperty": "IPv6Addresses",
+            "CompareType": "Present",
+            "ReadRequirement": "Mandatory"
+          }]
+        },
+        "Id": {},
+        "LinkStatus": {},
+        "Links": {
+          "PropertyRequirements": {
+            "Chassis": {}
+          }
+        },
+        "MACAddress": {},
+        "Name": {},
+        "PermanentMACAddress": {
+          "ReadRequirement": "Recommended"
+        },
+        "StatelessAddressAutoConfig": {
+          "ReadRequirement": "Recommended"
+        },
+        "Status": {
+          "PropertyRequirements": {
+            "Health": {},
+            "State": {}
+          }
+        }
+      }
+    },
+    "EthernetInterfaceCollection": {},
+    "NetworkAdapter": {
+      "PropertyRequirements": {
+        "Controllers": {
+          "PropertyRequirements": {
+            "ControllerCapabilities": {
+              "PropertyRequirements": {
+                "NetworkDeviceFunctionCount": {},
+                "NetworkPortCount": {}
+              }
+            },
+            "Links": {
+              "PropertyRequirements": {
+                "Ports": {
+                  "ReadRequirement": "Recommended"
+                }
+              }
+            }
+          }
+        },
+        "Description": {},
+        "Id": {},
+        "Manufacturer": {},
+        "Measurements": {
+          "ReadRequirement": "None",
+          "Purpose": "Deprecated, do not implement."
+        },
+        "Model": {},
+        "Name": {},
+        "NetworkDeviceFunctions": {},
+        "NetworkPorts": {
+          "ReadRequirement": "None",
+          "Purpose": "Deprecated, do not implement."
+        },
+        "PartNumber": {},
+        "Ports": {},
+        "SKU": {
+          "ReadRequirement": "Recommended"
+        },
+        "SerialNumber": {}
+      }
+    },
+    "NetworkAdapterCollection": {},
+    "NetworkDeviceFunction": {
+      "PropertyRequirements": {
+        "AssignablePhysicalNetworkPorts": {},
+        "BootMode": {},
+        "DeviceEnabled": {},
+        "Ethernet": {
+          "PropertyRequirements": {
+            "EthernetInterfaces": {},
+            "MACAddress": {},
+            "MTUSize": {},
+            "MUTSizeMaximum": {
+              "ReadRequirement": "Recommended"
+            },
+            "PermanentMACAddress": {}
+          }
+        },
+        "Id": {},
+        "Links": {
+          "PropertyRequirements": {
+            "PhysicalNetworkPortAssignment": {}
+          }
+        },
+        "MaxVirtualFunctions": {},
+        "NetDevFuncCapabilities": {},
+
+        "VirtualFunctionsEnabled": {}
+      }
+    },
+    "NetworkDeviceFunctionCollection": {},
+    "Port": {
+      "ConditionalRequirements": [{
+          "SubordinateToResource": ["NetworkAdapter"],
+          "ReadRequirement": "Mandatory"
+        },
+        {
+          "SubordinateToResource": ["Switch"],
+          "ReadRequirement": "Mandatory"
+        }
+      ],
+      "Purpose": "The Port object is used by both NetworkAdapter and Switch. Requirements for both are represented in this set of property requirements.",
+      "PropertyRequirements": {
+        "CurrentSpeedGbps": {},
+        "Ethernet": {
+          "PropertyRequirements": {
+            "AssociatedMACAddresses": {
+              "Purpose": "Optional for NetworkAdapter ports, Required for Switch ports.",
+              "ConditionalRequirements": [{
+                  "SubordinateToResource": ["NetworkAdapter"],
+                  "ReadRequirement": "None"
+                },
+                {
+                  "SubordinateToResource": ["Switch"],
+                  "ReadRequirement": "Recommended"
+                }
+              ]
+            },
+            "EEEEnabled": {
+              "Purpose": "Required for NetworkAdapter ports, optional for Switch ports.",
+              "ConditionalRequirements": [{
+                  "SubordinateToResource": ["NetworkAdapter"],
+                  "ReadRequirement": "Mandatory"
+                },
+                {
+                  "SubordinateToResource": ["Switch"],
+                  "ReadRequirement": "Recommended"
+                }
+              ]
+            },
+            "FlowControlConfiguration": {
+              "Purpose": "Required for NetworkAdapter ports, recommended for Switch ports.",
+              "ConditionalRequirements": [{
+                  "SubordinateToResource": ["NetworkAdapter"],
+                  "ReadRequirement": "Mandatory"
+                },
+                {
+                  "SubordinateToResource": ["Switch"],
+                  "ReadRequirement": "Recommended"
+                }
+              ]
+            },
+            "FlowControlStatus": {
+              "Purpose": "Required for NetworkAdapter ports, recommended for Switch ports.",
+              "ConditionalRequirements": [{
+                  "SubordinateToResource": ["NetworkAdapter"],
+                  "ReadRequirement": "Mandatory"
+                },
+                {
+                  "SubordinateToResource": ["Switch"],
+                  "ReadRequirement": "Recommended"
+                }
+              ]
+            },
+            "SupportedEthernetCapabilities": {
+              "Purpose": "Deprecated.  Do not implement.",
+              "ReadRequirement": "None"
+            },
+            "WakeOnLANEnabled": {
+              "Purpose": "Required for NetworkAdapter ports, Optional for Switch ports.",
+              "ConditionalRequirements": [{
+                  "SubordinateToResource": ["NetworkAdapter"],
+                  "ReadRequirement": "Mandatory"
+                },
+                {
+                  "SubordinateToResource": ["Switch"],
+                  "ReadRequirement": "None"
+                }
+              ]
+            }
+          }
+        },
+        "Id": {},
+        "InterfaceEnabled": {},
+        "LinkConfiguration": {
+          "PropertyRequirements": {
+            "AutoSpeedNegotiationCapable": {},
+            "AutoSpeedNegotiationEnabled": {},
+            "CapableLinkSpeedGbps": {},
+            "ConfiguredNetworkLinks": {}
+          }
+        },
+        "LinkNetworkTechnology": {},
+        "LinkState": {},
+        "LinkStatus": {},
+        "Links": {
+          "PropertyRequirements": {
+            "AssociatedEndpoints": {}
+          }
+        },
+        "LocationIndicatorActive": {
+          "ReadRequirement": "Recommended"
+        },
+        "MaxFrameSize": {
+          "ReadRequirement": "Recommended"
+        },
+        "MaxSpeedGbps": {},
+        "Name": {},
+        "PortId": {},
+        "PortProtocol": {
+          "Purpose": "PortProtocol must exist and be set to 'Ethernet'",
+          "ReadRequirement": "Mandatory",
+          "Comparison": "Equal",
+          "Values": ["Ethernet"]
+        },
+        "SFP": {
+          "ReadRequirement": "IfImplemented",
+          "PropertyRequirements": {
+            "Status": {
+              "PropertyRequirements": {
+                "State": {}
+              },
+              "Type": {}
+            }
+          }
+        },
+        "Width": {}
+      }
+    },
+    "PortCollection": {},
+    "Switch": {
+      "PropertyRequirements": {
+        "DomainID": {}
+      }
+    }
+  }
+}

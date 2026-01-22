@@ -1,25 +1,34 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas",
-  "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
-  "Id": "GoldDallas",
-  "Name": "GoldDallas",
-  "Description": "Gold class of service in Dallas",
-  "ClassOfServiceVersion": "01.20.00",
-  "DataProtectionLinesOfService": [{
-    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/DataProtectionLinesOfService"
-  }],
-  "DataSecurityLinesOfService": [{
-    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/DataSecurityLinesOfService"
-  }],
-  "DataStorageLinesOfService": [{
-    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/DataStorageLinesOfService"
-  }],
-  "IOConnectivityLinesOfService": [{
-    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/IOConnectivityLinesOfService"
-  }],
-  "IOPerformanceLinesOfService": [{
-    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/IOPerformanceLinesOfService"
-  }]
+    "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
+    "Id": "GoldDallas",
+    "Name": "GoldDallas",
+    "Description": "Gold class of service in Dallas",
+    "ClassOfServiceVersion": "01.20.00",
+    "DataProtectionLinesOfService": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/DataProtectionLinesOfService"
+        }
+    ],
+    "DataSecurityLinesOfService": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/DataSecurityLinesOfService"
+        }
+    ],
+    "DataStorageLinesOfService": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/DataStorageLinesOfService"
+        }
+    ],
+    "IOConnectivityLinesOfService": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/IOConnectivityLinesOfService"
+        }
+    ],
+    "IOPerformanceLinesOfService": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/IOPerformanceLinesOfService"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

@@ -1,37 +1,38 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/ISC",
-  "@odata.type": "#StorageService.v1_4_0.StorageService",
-  "Id": "1",
-  "Name": "A Direct-attach Swordfish StorageService",
-  "Description": "This simple system is connected from StorageController on the HostingSystem, supports limited capabilities in CoS when provisioning storage",
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK"
-  },
-  "ClassesOfService": {
-    "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService"
-  },
-  "Drives": {
-    "@odata.id": "/redfish/v1/StorageServices/ISC/Drives"
-  },
-  "LinesOfService": [{
-    "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService"
-  }],
-  "StoragePools": {
-    "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools"
-  },
-  "Volumes": {
-    "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes"
-  },
-  "StorageSubsystems": {
-    "@odata.id": "/redfish/v1/Systems/556ST22255E/Storage/1"
-  },
-  "Links": {
-    "IOConnectivityLoSCapabilities": {
-      "@odata.id": "/redfish/v1/StorageServices/ISC/IOConnectivityLoSCapabilities"
-    }
-  },
-  "Oem": {}
+    "@odata.type": "#StorageService.v1_5_0.StorageService",
+    "Id": "1",
+    "Name": "A Direct-attach Swordfish StorageService",
+    "Description": "This simple system is connected from StorageController on the HostingSystem, supports limited capabilities in CoS when provisioning storage",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "ClassesOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService"
+    },
+    "Drives": {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives"
+    },
+    "LinesOfService": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService"
+        }
+    ],
+    "StoragePools": {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools"
+    },
+    "Volumes": {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes"
+    },
+    "StorageSubsystems": {
+        "@odata.id": "/redfish/v1/Systems/556ST22255E/Storage/1"
+    },
+    "Links": {
+        "IOConnectivityLoSCapabilities": {
+            "@odata.id": "/redfish/v1/StorageServices/ISC/IOConnectivityLoSCapabilities"
+        }
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/StorageServices/ISC",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

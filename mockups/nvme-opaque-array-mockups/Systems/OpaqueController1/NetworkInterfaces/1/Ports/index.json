@@ -1,0 +1,21 @@
+{
+    "@odata.type": "#PortCollection.PortCollection",
+    "Name": "Port Collection",
+    "Members@odata.count": 4,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/4"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Systems/OpaqueController1/NetworkInterfaces/1/Ports",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

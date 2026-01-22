@@ -12,7 +12,6 @@
         }
     ],
     "Oem": {},
-   
     "@odata.id": "/redfish/v1/Systems/556ST22255E/EthernetInterfaces",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

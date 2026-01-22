@@ -1,38 +1,53 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Controllers/NVMeAdminController",
-  "@odata.type": "#StorageController.v1_1_0.StorageController",
+    "@odata.type": "#StorageController.v1_3_0.StorageController",
+    "Name": "NVMe Admin Controller",
+    "Description": "Single NVMe Admin Controller for in-band admin command access.",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "Id": "NVMeAdminController",
+    "Manufacturer": "Best NVMe Vendor",
+    "Model": "NVMe Connect Array",
+    "SerialNumber": "NVME123456",
+    "PartNumber": "NVM44",
+    "FirmwareVersion": "1.0.0",
+    "SupportedControllerProtocols": [
+        "PCIe"
+    ],
+    "NVMeControllerProperties": {
+        "ControllerType": "Admin",
+        "NVMeVersion": "1.3",
+        "NVMeControllerAttributes": {
+            "SupportsSQAssociations": false,
+            "SupportsTrafficBasedKeepAlive": false,
+            "SupportsExceedingPowerOfNonOperationalState": false,
+            "Supports128BitHostId": false
+        },
+      "NVMeSMARTCriticalWarnings": {
+        "MediaInReadOnly": false,
+        "OverallSubsystemDegraded": false,
+        "SpareCapacityWornOut": false
+      },
+      "MaxQueueSize": 1
+    },
 
-  "Name": "NVMe Admin Controller",
-  "Description": "Single NVMe Admin Controller for in-band admin command access.",
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK"
-  },
-  "Id": "NVMeAdminController",
-  "Manufacturer": "Best NVMe Vendor",
-
-  "Model": "NVMe Connect Array",
-  "SerialNumber": "NVME123456",
-  "PartNumber": "NVM44",
-  "FirmwareVersion": "1.0.0",
-  "SupportedControllerProtocols": [
-    "PCIe"
-  ],
-  "NVMeControllerProperties": {
-    "ControllerType": "Admin",
-    "NVMeVersion": "1.3",
-    "NVMeControllerAttributes": {
-      "ReportsUUIDList": false,
-      "SupportsSQAssociations": false,
-      "ReportsNamespaceGranularity": false,
-      "SupportsTrafficBasedKeepAlive": false,
-      "SupportsPredictableLatencyMode": false,
-      "SupportsEnduranceGroups": false,
-      "SupportsReadRecoveryLevels": false,
-      "SupportsNVMSets": false,
-      "SupportsExceedingPowerOfNonOperationalState": false,
-      "Supports128BitHostId": false
-    }
-  }
+    "Links": {
+        "NetworkDeviceFunctions": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/NetworkDeviceFunctions/11100"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/NetworkDeviceFunctions/11101"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/NetworkDeviceFunctions/11102"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/NetworkDeviceFunctions/11103"
+            }
+        ]
+    },
+    "@odata.id": "/redfish/v1/Storage/OpaqueArray/Controllers/NVMeAdminController",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

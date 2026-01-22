@@ -1,0 +1,60 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishFabricAccessRightsforEthernet",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Access Rights requirements using Fabrics, for implementations using Ethernet.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishFabricAccessRights": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.3.0",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.FabricAccessRightsforEthernet": {}
+      }
+    }
+  },
+  "Protocol": {
+    "MinVersion": "1.14.0"
+  },
+  "Resources": {
+    "Endpoint": {
+      "ConditionalRequirements": [{
+          "SubordinateToResource": ["Fabric", "EndpointCollection"],
+          "ReadRequirement": "Mandatory"
+      }],
+      "PropertyRequirements": {
+        "IPTransportDetails": {
+          "PropertyRequirements": {
+            "TransportProtocol": {},
+            "IPv4Address": {
+              "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Either IPv4Address or IPv6Address must be supported.",
+                "CompareProperty": "IPv6Address",
+                "CompareType": "Absent",
+                "ReadRequirement": "Mandatory"
+              }]
+            },
+            "IPv6Address": {
+              "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Either IPv4Address or IPv6Address must be supported.",
+                "CompareProperty": "IPv4Address",
+                "CompareType": "Absent",
+                "ReadRequirement": "Mandatory"
+              }]
+            },
+            "Port": {}
+          }
+        }
+      }
+    }
+  }
+}

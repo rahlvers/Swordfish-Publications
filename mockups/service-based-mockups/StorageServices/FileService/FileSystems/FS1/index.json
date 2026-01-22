@@ -1,45 +1,81 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1",
-  "@odata.type": "#FileSystem.v1_1_0.FileSystem",
-  "Id": "FS1",
-  "Name": "Root",
-  "Description": "Root FileSystem, not replicated.",
-  "BlockSizeBytes": 8192,
-  "Capacity": {
-    "Data": {
-      "ConsumedBytes": 500000000000,
-      "AllocatedBytes": 1000000000000,
-      "ProvisionedBytes": 3000000000000
+    "@odata.type": "#FileSystem.v1_2_2.FileSystem",
+    "Id": "FS1",
+    "Name": "Root",
+    "Description": "Root FileSystem, not replicated.",
+    "BlockSizeBytes": 8192,
+    "Capacity": {
+        "Data": {
+            "ConsumedBytes": 500000000000,
+            "AllocatedBytes": 1000000000000,
+            "ProvisionedBytes": 3000000000000
+        },
+        "Metadata": {
+            "ConsumedBytes": 0,
+            "AllocatedBytes": 0,
+            "ProvisionedBytes": 0
+        },
+        "Snapshot": {
+            "ConsumedBytes": 0,
+            "AllocatedBytes": 0,
+            "ProvisionedBytes": 0
+        }
     },
-    "Metadata": {
-      "ConsumedBytes": 0,
-      "AllocatedBytes": 0,
-      "ProvisionedBytes": 0
+    "CapacitySources": [
+        {
+          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+          "Id": "Source1",
+          "Name": "Source1",
+          "ProvidedCapacity": {
+              "Data": {
+                  "ConsumedBytes": 500000000000,
+                  "AllocatedBytes": 1000000000000,
+                  "ProvisionedBytes": 3000000000000
+              },
+              "Metadata": {
+                  "ConsumedBytes": 0,
+                  "AllocatedBytes": 0,
+                  "ProvisionedBytes": 0
+              },
+              "Snapshot": {
+                  "ConsumedBytes": 0,
+                  "AllocatedBytes": 0,
+                  "ProvisionedBytes": 0
+              }
+          },
+          "ProvidedClassOfService": {
+              "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"
+          },
+          "ProvidingPools": {
+              "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/CapacitySources/Source1/ProvidingPools"
+          },
+          "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/CapacitySources/Source1"
+        }
+    ],
+    "LowSpaceWarningThresholdPercents": [
+        60,
+        90
+    ],
+    "AccessCapabilities": [
+        "Read",
+        "Write"
+    ],
+    "CaseSensitive": false,
+    "CasePreserved": false,
+    "CharacterCodeSet": [
+        "ASCII",
+        "Unicode"
+    ],
+    "MaxFileNameLengthBytes": 256,
+    "ClusterSizeBytes": 256,
+    "ExportedShares": {
+        "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ExportedFileShares"
     },
-    "Snapshot": {
-      "ConsumedBytes": 0,
-      "AllocatedBytes": 0,
-      "ProvisionedBytes": 0
-    }
-  },
-  "CapacitySources": [{
-    "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/CapacitySources/Source1"
-  }],
-  "LowSpaceWarningThresholdPercents": [60, 90],
-  "AccessCapabilities": ["Read", "Write"],
-  "CaseSensitive": false,
-  "CasePreserved": false,
-  "CharacterCodeSet": ["ASCII", "Unicode"],
-  "MaxFileNameLengthBytes": 256,
-  "ClusterSizeBytes": 256,
-  "ExportedShares": {
-    "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ExportedFileShares"
-  },
-  "Links": {
-    "ClassOfService": {
-      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"
-    }
-  }
+    "Links": {
+        "ClassOfService": {
+            "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"
+        }
+    },
+    "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

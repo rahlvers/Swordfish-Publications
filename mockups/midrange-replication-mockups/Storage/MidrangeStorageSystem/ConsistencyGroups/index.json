@@ -1,12 +1,13 @@
 {
-  "@odata.type": "#ConsistencyGroupCollection.ConsistencyGroupCollection",
-  "Name": "Consistency Group Collection",
-  "Description": "Consistency Group Collection",
-  "Members@odata.count": 1,
-  "Members": [{
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/ConsistencyGroups/ConsistencyGroup1"
-    }
-  ],
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/ConsistencyGroups",
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@odata.type": "#ConsistencyGroupCollection.ConsistencyGroupCollection",
+    "Name": "Consistency Group Collection",
+    "Description": "Consistency Group Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/ConsistencyGroups/ConsistencyGroup1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/ConsistencyGroups",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

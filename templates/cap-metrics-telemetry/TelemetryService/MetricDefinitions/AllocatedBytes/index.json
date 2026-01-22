@@ -1,0 +1,47 @@
+{
+  "@odata.type": "#MetricDefinition.v1_3_0.MetricDefinition",
+  "Id": "AllocatedBytes",
+  "Name": "Allocated Bytes Metric Definition",
+  "MetricType": "Numeric",
+  "MetricDataType": "Integer",
+  "LogicalContext": ["Capacity", "Storage"],
+  "Units": "Bytes",
+  "Wildcards": [{
+      "Name": "SystemID"
+    },
+    {
+      "Name": "StorageSystemID"
+    },
+    {
+      "Name": "SystemStoragePoolID"
+    },
+    {
+      "Name": "SystemVolumeID"
+    },
+    {
+      "Name": "StorageID"
+    },
+    {
+      "Name": "StoragePoolID"
+    },
+    {
+      "Name": "VolumeID"
+    },
+    {
+      "Name": "FileSystemID"
+    }
+  ],
+  "MetricProperties": [
+    "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/StoragePools/{SystemStoragePoolID}/AllocatedVolumes/{SystemVolumeID}/Capacity#/Data/AllocatedBytes",
+    "/redfish/v1/Storage/{StorageID}/StoragePools/{StoragePoolID}/AllocatedVolumes/{VolumeID}/Capacity#/Data/AllocatedBytes",
+    "/redfish/v1/StorageServices/{StorageServiceID}/StoragePools/{ServiceStoragePoolID}/AllocatedVolumes/{ServiceVolumeID}/Capacity#/Data/AllocatedBytes",
+    "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/Capacity#/Data/AllocatedBytes",
+    "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/Capacity#/Data/AllocatedBytes",
+    "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/Capacity#/Data/AllocatedBytes",
+    "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/RemainingCapacity#/Data/AllocatedBytes",
+    "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacity#/Data/AllocatedBytes",
+    "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacity#/Data/AllocatedBytes"
+  ],
+  "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions/AllocatedBytes",
+  "@Redfish.Copyright": "Copyright 2014-2021 SNIA. All rights reserved."
+}

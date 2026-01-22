@@ -1,28 +1,29 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/1/StorageGroups/1",
-  "@odata.type": "#StorageGroup.v1_2_1.StorageGroup",
-  "Id": "1",
-  "Name": "SG_abc_005",
-  "Description": "System SATA",
-  "VolumesAreExposed": false,
-  "AccessState": "Optimized",
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK",
-    "HealthRollup": "OK"
-  },
-  "MappedVolumes": [{
-      "LogicalUnitNumber": "1",
-      "Volume": {
-        "@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567"
-      }
+    "@odata.type": "#StorageGroup.v1_5_0.StorageGroup",
+    "Id": "1",
+    "Name": "SG_abc_005",
+    "Description": "System SATA",
+    "VolumesAreExposed": false,
+    "AccessState": "Optimized",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK",
+        "HealthRollup": "OK"
     },
-    {
-      "LogicalUnitNumber": "2",
-      "Volume": {
-        "@odata.id": "/redfish/v1/StorageServices/1/Volumes/65456765456761001234876100123487"
-      }
-    }]
+    "MappedVolumes": [
+        {
+            "LogicalUnitNumber": "1",
+            "Volume": {
+                "@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567"
+            }
+        },
+        {
+            "LogicalUnitNumber": "2",
+            "Volume": {
+                "@odata.id": "/redfish/v1/StorageServices/1/Volumes/65456765456761001234876100123487"
+            }
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/1/StorageGroups/1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

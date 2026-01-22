@@ -1,34 +1,35 @@
 {
-  "@odata.type": "#VolumeCollection.VolumeCollection",
-  "Name": "Storage Volume Collection",
-  "Description": "Storage Volume Collection",
-  "Members@odata.count": 8,
-  "Members": [{
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume1"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2"
-    },
-     {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume3"
-    },
-     {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap1"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap2"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap3"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap4"
-    }
-  ],
-  "Oem": {},
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Volumes",
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@odata.type": "#VolumeCollection.VolumeCollection",
+    "Name": "Storage Volume Collection",
+    "Description": "Storage Volume Collection",
+    "Members@odata.count": 8,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap4"
+        }
+    ],
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Volumes",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

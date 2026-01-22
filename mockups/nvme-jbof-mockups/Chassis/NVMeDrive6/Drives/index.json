@@ -1,10 +1,12 @@
 {
-  "@odata.type": "#DriveCollection.DriveCollection",
-  "Name": "Drive Collection",
-  "Members@odata.count": 1,
-  "Members": [{
-    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6/Drives/NVMeDrive6"
-  }],
-  "@odata.id": "/redfish/v1/Chassis/NVMeDrive6/Drives",
-  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved."
+    "@odata.type": "#DriveCollection.DriveCollection",
+    "Name": "Drive Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/NVMeDrive6/Drives/NVMeDrive6"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6/Drives",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

@@ -1,22 +1,21 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/2/Volumes",
-  "@odata.type": "#VolumeCollection.VolumeCollection",
-  "Name": "Volumes",
-  "Members@odata.count": 4,
-  "Members": [
-    {
-      "@odata.id": "/redfish/v1/StorageServices/2/Volumes/1"
-    },
-    {
-      "@odata.id": "/redfish/v1/StorageServices/2/Volumes/2"
-    },
-    {
-      "@odata.id": "/redfish/v1/StorageServices/2/Volumes/3"
-    },
-    {
-      "@odata.id": "/redfish/v1/StorageServices/2/Volumes/4"
-    }
-  ]
+    "@odata.type": "#VolumeCollection.VolumeCollection",
+    "Name": "Volumes",
+    "Members@odata.count": 4,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/2/Volumes/1"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/2/Volumes/2"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/2/Volumes/3"
+        },
+        {
+            "@odata.id": "/redfish/v1/StorageServices/2/Volumes/4"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/2/Volumes",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

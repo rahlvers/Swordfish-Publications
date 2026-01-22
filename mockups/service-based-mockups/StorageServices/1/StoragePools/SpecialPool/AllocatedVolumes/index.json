@@ -1,0 +1,12 @@
+{
+    "@odata.type": "#VolumeCollection.VolumeCollection",
+    "Name": "AllocatedVolumes",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/Volumes/65456765456761001234876100123487"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

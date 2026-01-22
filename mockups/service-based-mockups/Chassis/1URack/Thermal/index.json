@@ -10,7 +10,7 @@
             "Name": "CPU1 Temp",
             "SensorNumber": 5,
             "Status": {
-                "@odata.type": "#Resource.Status",
+
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -18,8 +18,6 @@
             "UpperThresholdNonCritical": 42,
             "UpperThresholdCritical": 45,
             "UpperThresholdFatal": 48,
-            "MinReadingRangeTemp": 0,
-            "MaxReadingRangeTemp": 60,
             "PhysicalContext": "CPU",
             "RelatedItem": [
                 {
@@ -34,7 +32,7 @@
             "Name": "CPU2 Temp",
             "SensorNumber": 6,
             "Status": {
-                "@odata.type": "#Resource.Status",
+
                 "State": "Disabled"
             },
             "UpperThresholdNonCritical": 42,
@@ -56,7 +54,7 @@
             "Name": "Chassis Intake Temp",
             "SensorNumber": 9,
             "Status": {
-                "@odata.type": "#Resource.Status",
+
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -88,7 +86,7 @@
             "Name": "BaseBoard System Fan",
             "PhysicalContext": "Backplane",
             "Status": {
-                "@odata.type": "#Resource.Status",
+
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -118,7 +116,7 @@
             "Name": "BaseBoard System Fan Backup",
             "PhysicalContext": "Backplane",
             "Status": {
-                "@odata.type": "#Resource.Status",
+
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -158,7 +156,7 @@
             ],
             "Mode": "N+m",
             "Status": {
-                "@odata.type": "#Resource.Status",
+
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -166,7 +164,6 @@
             "MaxNumSupported": 2
         }
     ],
-   
     "@odata.id": "/redfish/v1/Chassis/1URack/Thermal",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

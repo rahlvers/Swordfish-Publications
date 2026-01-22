@@ -1,30 +1,32 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#ServiceRoot.ServiceRoot",
-  "@odata.id": "/redfish/v1/",
-  "@odata.type": "#ServiceRoot.v1_9_0.ServiceRoot",
-  "Id": "RootService",
-  "Name": "Root Service",
-  "RedfishVersion": "1.12.0",
-  "UUID": "92384634-2938-2342-8820-489239905423",
-  "Chassis": {
-    "@odata.id": "/redfish/v1/Chassis"
-  },
-  "SessionService": {
-    "@odata.id": "/redfish/v1/SessionService"
-  },
-  "Storage": {
-    "@odata.id": "/redfish/v1/Storage"
-  },
-  "StorageSystems": {
-    "@odata.id": "/redfish/v1/StorageSystems"
-  },
-  "Systems": {
-    "@odata.id": "/redfish/v1/Systems"
-  },
-  "Links": {
-      "Sessions": {
-          "@odata.id": "/redfish/v1/SessionService/Sessions"
-      }
-  }
+    "@odata.type": "#ServiceRoot.v1_14_0.ServiceRoot",
+    "Id": "RootService",
+    "Name": "Root Service",
+    "RedfishVersion": "1.14.0",
+    "UUID": "92384634-2938-2342-8820-489239905423",
+    "Chassis": {
+        "@odata.id": "/redfish/v1/Chassis"
+    },
+    "Registries": {
+        "@odata.id": "/redfish/v1/Registries"
+    },
+    "SessionService": {
+        "@odata.id": "/redfish/v1/SessionService"
+    },
+    "Storage": {
+        "@odata.id": "/redfish/v1/Storage"
+    },
+    "StorageSystems": {
+        "@odata.id": "/redfish/v1/StorageSystems"
+    },
+    "Systems": {
+        "@odata.id": "/redfish/v1/Systems"
+    },
+    "Links": {
+        "Sessions": {
+            "@odata.id": "/redfish/v1/SessionService/Sessions"
+        }
+    },
+    "@odata.id": "/redfish/v1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

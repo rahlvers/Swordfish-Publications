@@ -1,30 +1,31 @@
 {
-  "@odata.type": "#EndpointCollection.EndpointCollection",
-  "Name": "Endpoint Collection",
-  "Description": "Endpoint Collection",
-  "Members@odata.count": 7,
-  "Members": [{
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/InitiatorEndpoint1"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/InitiatorEndpoint2"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint1"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint2"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint3"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint4"
-    },
-    {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint5"
-    }
-  ],
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints",
-  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved."
+    "@odata.type": "#EndpointCollection.EndpointCollection",
+    "Name": "Endpoint Collection",
+    "Description": "Endpoint Collection",
+    "Members@odata.count": 7,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/InitiatorEndpoint1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/InitiatorEndpoint2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint4"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint5"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

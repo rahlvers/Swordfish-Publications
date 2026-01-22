@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#ComputerSystem.v1_8_0.ComputerSystem",
+    "@odata.type": "#ComputerSystem.v1_18_0.ComputerSystem",
     "Id": "Sys-1",
     "Name": "WebFrontEnd483",
     "SystemType": "Physical",
@@ -20,12 +20,9 @@
     "HostingRoles": [
         "StorageServer"
     ],
-
-
     "Storage": {
         "@odata.id": "/redfish/v1/Systems/Sys-1/Storage"
     },
-
     "Links": {
         "Chassis": [
             {
@@ -33,7 +30,6 @@
             }
         ]
     },
-
     "@odata.id": "/redfish/v1/Systems/Sys-1",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

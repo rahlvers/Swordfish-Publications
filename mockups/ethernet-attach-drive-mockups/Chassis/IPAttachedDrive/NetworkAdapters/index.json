@@ -1,6 +1,4 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2019 DMTF. All rights reserved.",
-    "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters",
     "@odata.type": "#NetworkAdapterCollection.NetworkAdapterCollection",
     "Name": "Network Adapter Collection",
     "Members@odata.count": 1,
@@ -8,5 +6,7 @@
         {
             "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters/8fd725a1"
         }
-    ]
+    ],
+    "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

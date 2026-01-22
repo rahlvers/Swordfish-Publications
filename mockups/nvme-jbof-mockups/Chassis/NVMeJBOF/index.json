@@ -1,5 +1,5 @@
-  {
-    "@odata.type": "#Chassis.v1_15_0.Chassis",
+{
+    "@odata.type": "#Chassis.v1_20_0.Chassis",
     "Id": "NVMeJBOF",
     "Name": "NVMeJBOF Enclosure",
     "ChassisType": "StorageEnclosure",
@@ -8,69 +8,71 @@
     "SKU": "JBOF-14260",
     "SerialNumber": "JB-9450R6",
     "PartNumber": "JB480-S23",
-
     "PowerState": "On",
-    "IndicatorLED": "Off",
+
     "Status": {
-      "State": "Enabled",
-      "Health": "OK"
+        "State": "Enabled",
+        "Health": "OK"
     },
     "Power": {
-      "@odata.id": "/redfish/v1/Chassis/NVMeJBOF/Power"
+        "@odata.id": "/redfish/v1/Chassis/NVMeJBOF/Power"
     },
     "Thermal": {
-      "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Thermal"
+        "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Thermal"
     },
     "Links": {
-      "Drives": [{
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Drives/NVMeDrive1"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive2/Drives/NVMeDrive2"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive3/Drives/NVMeDrive3"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive4/Drives/NVMeDrive4"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive5/Drives/NVMeDrive5"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive6/Drives/NVMeDrive6"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive7/Drives/NVMeDrive7"
-        }
-      ],
-      "Storage": [{
-        "@odata.id": "/redfish/v1/Storage/NVMeJBOF"
-      }],
-
-      "Contains": [{
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
-        },
-        {
-          "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
-        }
-      ]
+        "Drives": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Drives/NVMeDrive1"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive2/Drives/NVMeDrive2"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive3/Drives/NVMeDrive3"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive4/Drives/NVMeDrive4"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive5/Drives/NVMeDrive5"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive6/Drives/NVMeDrive6"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive7/Drives/NVMeDrive7"
+            }
+        ],
+        "Storage": [
+            {
+                "@odata.id": "/redfish/v1/Storage/NVMeJBOF"
+            }
+        ],
+        "Contains": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
+            },
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
+            }
+        ]
     },
     "@odata.id": "/redfish/v1/Chassis/NVMeJBOF",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
-  }
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

@@ -1,11 +1,12 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SATA/IOConnectivityLinesOfService",
-  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
-  "Name": "IOConnectivityLinesOfService Collection",
-  "Members@odata.count": 1,
-  "Members": [
-        { "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService/IOConnectivityLinesOfService/SATA"}
-     ]
+    "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+    "Name": "IOConnectivityLinesOfService Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService/IOConnectivityLinesOfService/SATA"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SATA/IOConnectivityLinesOfService",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

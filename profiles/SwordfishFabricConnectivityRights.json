@@ -1,0 +1,228 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishFabricConnectivityRights",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Connectivity Rights implementation requirements using Fabrics.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.2"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.3.0",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.FabricConnectivityRights": {}
+      }
+    }
+  },
+  "Protocol": {
+    "MinVersion": "1.14.0"
+  },
+  "Resources": {
+    "ServiceRoot": {
+      "PropertyRequirements": {
+        "Fabrics": {}
+      }
+    },
+    "FabricCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "SwitchCollection": {},
+    "ZoneCollection": {},
+    "EndpointCollection": {},
+    "Fabric": {
+      "PropertyRequirements": {
+        "Description": {},
+        "EndpointGroups": {
+          "ReadRequirement": "Recommended"
+        },
+        "Endpoints": {},
+        "FabricType": {},
+        "Id": {},
+        "Name": {},
+        "MaxZones": {
+          "ReadRequirement": "Recommended"
+        },
+        "Status": {
+          "PropertyRequirements": {
+            "Conditions": {
+              "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Reports Conditions when HealthRollup is not 'OK'.",
+                "CompareProperty": "HealthRollup",
+                "CompareType": "AnyOf",
+                "CompareValues": ["Warning", "Critical"],
+                "ReadRequirement": "Mandatory"
+              }]
+            },
+            "HealthRollup": {
+              "ReadRequirement": "Recommended"
+            },
+            "Health": {},
+            "State": {}
+          }
+        },
+        "Switches": {
+          "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Required when Connections not defined for the fabric (connections are required only for access rights management).",
+                "CompareProperty": "Connections",
+                "CompareType": "Absent",
+                "ReadRequirement": "Mandatory"
+              }]
+            },
+        "Zones": {
+          "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Required when Connections not defined for the fabric (connections are required only for access rights management).",
+                "CompareProperty": "Connections",
+                "CompareType": "Absent",
+                "ReadRequirement": "Mandatory"
+              }]
+        }
+      }
+    },
+    "Endpoint": {
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Fabric", "EndpointCollection"],
+        "ReadRequirement": "Mandatory"
+      }],
+      "PropertyRequirements": {
+        "ConnectedEntities": {
+          "PropertyRequirements": {
+            "EntityLink": {
+              "ReadRequirement": "Recommended"
+            },
+            "EntityRole": {},
+            "EntityType": {}
+          }
+        },
+        "EndpointProtocol": {},
+        "Identifiers": {
+          "PropertyRequirements": {
+            "DurableName": {},
+            "DurableNameFormat": {}
+          }
+        },
+        "Links": {
+          "PropertyRequirements": {
+            "Ports": {
+              "ReadRequirement": "Recommended"
+            },
+            "Zones": {
+              "ReadRequirement": "Recommended"
+            }
+          }
+        }
+      }
+    },
+    "EndpointGroup": {
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Fabric", "EndpointGroupCollection"],
+        "ReadRequirement": "Mandatory"
+      }],
+      "PropertyRequirements": {
+        "GroupType": {},
+        "Id": {},
+        "Links": {
+          "PropertyRequirements": {
+            "Endpoints": {},
+            "Connections": {}
+          }
+        }
+      }
+    },
+    "Port": {
+      "ConditionalRequirements": [{
+          "SubordinateToResource": ["NetworkAdapter"],
+          "ReadRequirement": "Mandatory"
+        },
+        {
+          "SubordinateToResource": ["Switch"],
+          "ReadRequirement": "Mandatory"
+        }
+      ],
+      "PropertyRequirements": {
+        "CurrentSpeedGbps": {},
+        "Id": {},
+        "Links": {
+          "PropertyRequirements": {
+            "AssociatedEndpoints": {}
+          }
+        },
+        "MaxSpeedGbps": {},
+        "Name": {},
+        "PortId": {},
+        "PortProtocol": {},
+        "Status": {
+          "PropertyRequirements": {
+            "State": {}
+          }
+        }
+      }
+    },
+    "Switch": {
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Fabric", "SwitchCollection"],
+        "ReadRequirement": "Mandatory"
+      }],
+      "PropertyRequirements": {
+        "Description": {},
+        "FirmwareVersion": {},
+        "Id": {},
+        "IndicatorLED": {
+          "ReadRequirement": "None",
+          "Purpose": "Do not implement IndicatorLED"
+        },
+        "IsManaged": {},
+        "Links": {
+          "PropertyRequirements": {
+            "Chassis": {}
+          }
+        },
+        "Location": {
+          "ReadRequirement": "Recommended"
+        },
+        "Manufacturer": {},
+        "Model": {},
+        "Name": {},
+        "PartNumber": {},
+        "Ports": {},
+        "SerialNumber": {},
+        "SupportedProtocols": {},
+        "SwitchType": {}
+      }
+    },
+    "Zone": {
+      "PropertyRequirements": {
+        "Description": {},
+        "ExternalAccessibility": {},
+        "Id": {},
+        "Links": {
+          "PropertyRequirements": {
+            "Endpoints": {},
+            "InvolvedSwitches": {
+              "ReadRequirement": "Recommended"
+            }
+          }
+        },
+        "Name": {},
+        "Status": {
+          "PropertyRequirements": {
+            "State": {}
+          }
+        },
+        "ZoneType": {}
+      }
+    }
+  }
+}

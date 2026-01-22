@@ -1,0 +1,31 @@
+{
+    "@odata.type": "#DriveCollection.DriveCollection",
+    "Name": "Storage Controller Collection",
+    "Description": "Storage Controller Collection",
+    "Members@odata.count": 7,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive4"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive5"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive6"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive7"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

@@ -1,19 +1,22 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_1.json",
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
   "ProfileName": "SwordfishNVMeDrive",
-  "ProfileVersion": "1.0.0",
+  "ProfileVersion": "1.1.0",
   "OwningEntity": "SNIA.org",
   "Purpose": "Define requirements for resources and relationships that are common to all Swordfish conformant implementations of NVMe Drives.",
   "ContactInfo": "SNIA.org",
   "RequiredProfiles": {},
   "Registries": {
     "Features": {
-      "MinVersion": "1.1.0",
+      "MinVersion": "1.3.0",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
       "SupportedFeatures": {
         "SNIA.Swordfish.NVMeDrive": {}
       }
     }
+  },
+  "Protocol": {
+    "MinVersion": "1.14.0"
   },
   "Resources": {
     "ServiceRoot": {
@@ -53,6 +56,10 @@
       }
     },
     "Assembly": {
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Drive"],
+        "ReadRequirement": "Mandatory"
+      }],
       "ReadRequirement": "Recommended",
       "PropertyRequirements": {
         "BinaryDataURI": {
@@ -66,16 +73,28 @@
       }
     },
     "Drive": {
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Chassis"],
+        "ReadRequirement": "Mandatory"
+      }],
       "ActionRequirements": {
         "Reset": {
           "Purpose": "This action resets this drive.",
           "Parameters": {
             "ResetType": {
-              "ParameterValues": ["ForceOff", "GracefulShutdown", "ForceRestart"]
+              "ParameterValues": ["ForceOff", "GracefulShutdown", "ForceRestart"],
+              "RecommendedValues": ["PowerCycle"]
             }
           }
         },
-        "SecureErase": {}
+        "SecureErase": {
+          "Purpose": "This action securely erases the contents of the drive.",
+          "Parameters": {
+            "SanitizationType": {
+              "RecommendedValues": ["BlockErase", "CryptographicErase", "Overwrite"]
+            }
+          }
+        }
       },
       "PropertyRequirements": {
         "Assembly": {
@@ -123,6 +142,7 @@
           "ReadRequirement": "Recommended"
         },
         "Manufacturer": {},
+        "MediaType": {},
         "Model": {},
         "Multipath": {
           "ReadRequirement": "Recommended"
@@ -136,6 +156,17 @@
         },
         "PredictedMediaLifeLeftPercent": {},
         "Protocol": {},
+        "PowerMode": {
+          "ReadRequirement": "None",
+          "ConditionalRequirements": [{
+            "Purpose": "Required when MediaType != SSD. If SSD, do not implement.",
+            "CompareProperty": "MediaType",
+            "CompareType": "NotEqual",
+            "CompareValues": ["SSD"],
+            "Comparison": "Present",
+            "ReadRequirement": "Mandatory"
+          }]
+        },
         "Revision": {},
         "RotationSpeedRPM": {
           "ReadRequirement": "None",
@@ -211,9 +242,9 @@
         "StorageGroups": {
           "ReadRequirement": "None",
           "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type. Note that this function has been deprecated and replaced by Connections in Fabrics."
-        }
-      },
-      "Volumes": {}
+        },
+        "Volumes": {}
+      }
     },
     "StorageController": {
       "PropertyRequirements": {
@@ -316,29 +347,29 @@
           "PropertyRequirements": {
             "ControllerType": {},
             "NVMeVersion": {
-                "Purpose": "NVMeVersion is required when the underlying NVMe implementation is revision 1.2 or higher.",
-                "ReadRequirement": "IfImplemented"
+              "Purpose": "NVMeVersion is required when the underlying NVMe implementation is revision 1.2 or higher.",
+              "ReadRequirement": "IfImplemented"
             },
             "MaxQueueSize": {},
             "NVMeControllerAttributes": {
               "PropertyRequirements": {
-                "NVMeSMARTCriticalWarnings": {
-                  "PropertyRequirements": {
-                    "MediaInReadOnly": {},
-                    "OverallSubsystemDegraded": {},
-                    "PMRUnreliable": {
-                      "ReadRequirement": "Recommended"
-                    },
-                    "PowerBackupFailed": {
-                      "ReadRequirement": "Recommended"
-                    },
-                    "SpareCapacityWornOut": {}
-                  }
-                },
                 "ReportsNamespaceGranularity": {
                   "ReadRequirement": "Recommended"
                 },
                 "Supports128BitHostId": {}
+              }
+            },
+            "NVMeSMARTCriticalWarnings": {
+              "PropertyRequirements": {
+                "MediaInReadOnly": {},
+                "OverallSubsystemDegraded": {},
+                "PMRUnreliable": {
+                  "ReadRequirement": "Recommended"
+                },
+                "PowerBackupFailed": {
+                  "ReadRequirement": "Recommended"
+                },
+                "SpareCapacityWornOut": {}
               }
             }
           },
@@ -356,107 +387,111 @@
             "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
           },
           "SupportedRAIDTypes": {}
-        },
-        "PCIeInterface": {
-          "Purpose": "This property is required for implementations that connect via PCIe (e.g., do not implement for Ethernet-Attach drives).",
-          "ReadRequirement": "IfImplemented",
-          "PropertyRequirements": {
-            "PCIeType": {},
-            "MaxPCIeType": {},
-            "LanesInUse": {},
-            "MaxLanes": {}
-          }
+        }
+      },
+      "PCIeInterface": {
+        "Purpose": "This property is required for implementations that connect via PCIe (e.g., do not implement for Ethernet-Attach drives).",
+        "ReadRequirement": "IfImplemented",
+        "PropertyRequirements": {
+          "PCIeType": {},
+          "MaxPCIeType": {},
+          "LanesInUse": {},
+          "MaxLanes": {}
         }
       }
-    },
-    "Volume": {
-      "PropertyRequirements": {
-        "BlockSizeBytes": {},
-        "Capacity": {
-          "PropertyRequirements": {
-            "Data": {
-              "PropertyRequirements": {
-                "AllocatedBytes": {},
-                "ConsumedBytes": {}
-              }
+    }
+  },
+  "Volume": {
+    "ConditionalRequirements": [{
+      "SubordinateToResource": ["Storage", "StorageCollection"],
+      "ReadRequirement": "Mandatory"
+    }],
+    "PropertyRequirements": {
+      "BlockSizeBytes": {},
+      "Capacity": {
+        "PropertyRequirements": {
+          "Data": {
+            "PropertyRequirements": {
+              "AllocatedBytes": {},
+              "ConsumedBytes": {}
             }
           }
-        },
-        "DisplayName": {},
-        "Description": {
-          "Comparison": "Equal",
-          "Values": ["A Namespace is a quantity of non-volatile memory that may be formatted into logical blocks. When formatted, a namespace of size n is a collection of logical blocks with logical block addresses from 0 to (n-1). NVMe systems can support multiple namespaces."],
-          "ReadRequirement": "Mandatory"
-        },
-        "Id": {},
-        "Identifiers": {
-          "PropertyRequirements": {
-            "DurableName": {},
-            "DurableNameFormat": {}
-          }
-        },
-        "InitializeMethod": {
-          "ReadRequirement": "Recommended"
-        },
-        "LogicalUnitNumber": {
-          "ReadRequirement": "None",
-          "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
-        },
-        "NVMeNamespaceProperties": {
-          "PropertyRequirements": {
-            "FormattedLBASize": {},
-            "IsShareable": {},
-            "NVMeVersion": {},
-            "NamespaceFeatures": {
-              "PropertyRequirements": {
-                "SupportsDeallocatedOrUnwrittenLBError": {},
-                "SupportsNGUIDReuse": {},
-                "SupportsAtomicTransactionSize": {},
-                "SupportsIOPerformanceHints": {}
-              }
-            },
-            "NamespaceId": {},
-            "NumberLBAFormats": {},
-            "MetadataTransferredAtEndOfDataLBA": {}
-          }
-        },
-        "Links": {
-          "PropertyRequirements": {
-            "Drives": {
-              "Purpose": "This resource shall contain the link to the Drive object."
-            }
-          }
-        },
-        "Name": {},
-        "OptimumIOSizeBytes": {
-          "ReadRequirement": "Recommended"
-        },
-        "ProvisioningPolicy": {
-          "ReadRequirement": "Recommended",
-          "Purpose": "Recommended to implement when device supports thin provisioning."
-        },
-        "RAIDType": {},
-        "Status": {
-          "PropertyRequirements": {
-            "Health": {},
-            "State": {},
-            "HealthRollup": {
-              "ReadRequirement": "None",
-              "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
-            }
-          }
-        },
-        "StorageGroups": {
-          "ReadRequirement": "None",
-          "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type. Note that this function has been deprecated and replaced by Connections in Fabrics."
-        },
-        "VolumeType": {
-          "ReadRequirement": "None",
-          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type. It has been deprecated and replaced by RAIDType."
-        },
-        "WriteCachePolicy": {
-          "ReadRequirement": "Recommended"
         }
+      },
+      "DisplayName": {},
+      "Description": {
+        "Comparison": "Equal",
+        "Values": ["A Namespace is a quantity of non-volatile memory that may be formatted into logical blocks. When formatted, a namespace of size n is a collection of logical blocks with logical block addresses from 0 to (n-1). NVMe systems can support multiple namespaces."],
+        "ReadRequirement": "Mandatory"
+      },
+      "Id": {},
+      "Identifiers": {
+        "PropertyRequirements": {
+          "DurableName": {},
+          "DurableNameFormat": {}
+        }
+      },
+      "InitializeMethod": {
+        "ReadRequirement": "Recommended"
+      },
+      "LogicalUnitNumber": {
+        "ReadRequirement": "None",
+        "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
+      },
+      "NVMeNamespaceProperties": {
+        "PropertyRequirements": {
+          "FormattedLBASize": {},
+          "IsShareable": {},
+          "NVMeVersion": {},
+          "NamespaceFeatures": {
+            "PropertyRequirements": {
+              "SupportsDeallocatedOrUnwrittenLBError": {},
+              "SupportsNGUIDReuse": {},
+              "SupportsAtomicTransactionSize": {},
+              "SupportsIOPerformanceHints": {}
+            }
+          },
+          "NamespaceId": {},
+          "NumberLBAFormats": {},
+          "MetadataTransferredAtEndOfDataLBA": {}
+        }
+      },
+      "Links": {
+        "PropertyRequirements": {
+          "Drives": {
+            "Purpose": "This resource shall contain the link to the Drive object."
+          }
+        }
+      },
+      "Name": {},
+      "OptimumIOSizeBytes": {
+        "ReadRequirement": "Recommended"
+      },
+      "ProvisioningPolicy": {
+        "ReadRequirement": "Recommended",
+        "Purpose": "Recommended to implement when device supports thin provisioning."
+      },
+      "RAIDType": {},
+      "Status": {
+        "PropertyRequirements": {
+          "Health": {},
+          "State": {},
+          "HealthRollup": {
+            "ReadRequirement": "None",
+            "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+          }
+        }
+      },
+      "StorageGroups": {
+        "ReadRequirement": "None",
+        "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type. Note that this function has been deprecated and replaced by Connections in Fabrics."
+      },
+      "VolumeType": {
+        "ReadRequirement": "None",
+        "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type. It has been deprecated and replaced by RAIDType."
+      },
+      "WriteCachePolicy": {
+        "ReadRequirement": "Recommended"
       }
     }
   }

@@ -1,0 +1,47 @@
+{
+    "@odata.type": "#NetworkDeviceFunction.v1_8_0.NetworkDeviceFunction",
+    "Id": "1",
+    "Name": "Network Device Function",
+    "DeviceEnabled": true,
+
+    "InfiniBand": {
+      "PermanentNodeGUID": "000C:299A:98ED:5678",
+      "PermanentPortGUID": "000C:299A:98ED:1234",
+      "PermanentSystemGUID": "000C:299A:98ED:9ABC",
+      "NodeGUID": "000C:299A:98ED:3189",
+      "PortGUID": "000C:299A:98ED:8142",
+      "SystemGUID": "000C:299A:98ED:9ABC",
+      "MTUSize": 1024,
+      "SupportedMTUSizes": [
+            256,
+            512,
+            1024,
+            2048,
+            4096
+          ]
+    },
+    "AssignablePhysicalNetworkPorts": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/Sys-1Chassis/NetworkAdapters/1/Ports/1"
+        }
+    ],
+    "Links": {
+        "PhysicalNetworkPortAssignment": {
+            "@odata.id": "/redfish/v1/Chassis/Sys-1Chassis/NetworkAdapters/1/Ports/1"
+        },
+        "Endpoints": [
+            {
+                "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeSubsystemEndpoint"
+            }
+        ]
+    },
+    "NetDevFuncType": "InfiniBand",
+    "NetDevFuncCapabilities": [
+        "InfiniBand"
+    ],
+    "MaxVirtualFunctions": 1,
+    "VirtualFunctionsEnabled": false,
+    "BootMode": "Disabled",
+    "@odata.id": "/redfish/v1/Chassis/Sys-1Chassis/NetworkAdapters/1/NetworkDeviceFunctions/1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

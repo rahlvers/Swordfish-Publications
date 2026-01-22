@@ -1,0 +1,47 @@
+{
+  "@odata.type": "#MetricDefinition.v1_3_0.MetricDefinition",
+  "Id": "ProvisionedBytes",
+  "Name": "Provisioned Bytes Metric Definition",
+  "MetricType": "Numeric",
+  "MetricDataType": "Integer",
+  "LogicalContext": ["Capacity", "Storage"],
+  "Units": "Bytes",
+  "Wildcards": [{
+      "Name": "SystemID"
+    },
+    {
+      "Name": "StorageSystemID"
+    },
+    {
+      "Name": "SystemStoragePoolID"
+    },
+    {
+      "Name": "SystemVolumeID"
+    },
+    {
+      "Name": "StorageID"
+    },
+    {
+      "Name": "StoragePoolID"
+    },
+    {
+      "Name": "VolumeID"
+    },
+    {
+      "Name": "FileSystemID"
+    }
+  ],
+  "MetricProperties": [
+    "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/StoragePools/{SystemStoragePoolID}/AllocatedVolumes/{SystemVolumeID}/Capacity#/Data/ProvisionedBytes",
+    "/redfish/v1/Storage/{StorageID}/StoragePools/{StoragePoolID}/AllocatedVolumes/{VolumeID}/Capacity#/Data/ProvisionedBytes",
+    "/redfish/v1/StorageServices/{StorageServiceID}/StoragePools/{ServiceStoragePoolID}/AllocatedVolumes/{ServiceVolumeID}/Capacity#/Data/ProvisionedBytes",
+    "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/Capacity#/Data/ProvisionedBytes",
+    "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/Capacity#/Data/ProvisionedBytes",
+    "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/Capacity#/Data/ProvisionedBytes",
+    "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/RemainingCapacity#/Data/ProvisionedBytes",
+    "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacity#/Data/ProvisionedBytes",
+    "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacity#/Data/ProvisionedBytes"
+  ],
+  "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions/ProvisionedBytes",
+  "@Redfish.Copyright": "Copyright 2014-2021 SNIA. All rights reserved."
+}

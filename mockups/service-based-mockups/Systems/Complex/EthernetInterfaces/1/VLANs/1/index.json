@@ -1,11 +1,10 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/Systems/Complex/EthernetInterfaces/1/VLANs/1",
-  "@odata.type": "#VLanNetworkInterface.v1_0_0.VLanNetworkInterface",
-  "Id": "1",
-  "Name": "VLAN Network Interface",
-  "Description": "System NIC 1 V",
-  "VLANEnable": true,
-  "VLANId": 101
+    "@odata.type": "#VLanNetworkInterface.v1_0_0.VLanNetworkInterface",
+    "Id": "1",
+    "Name": "VLAN Network Interface",
+    "Description": "System NIC 1 V",
+    "VLANEnable": true,
+    "VLANId": 101,
+    "@odata.id": "/redfish/v1/Systems/Complex/EthernetInterfaces/1/VLANs/1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

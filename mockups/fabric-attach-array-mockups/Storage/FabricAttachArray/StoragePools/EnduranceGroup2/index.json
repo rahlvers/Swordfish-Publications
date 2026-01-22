@@ -1,35 +1,50 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
-  "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup2",
-  "@odata.type": "#StoragePool.v1_6_0.StoragePool",
-  "Id": "1",
-  "Name": "Endurance Group 1",
-  "Description": "Single Endurance Group",
-  "NVMeProperties": {
-    "NVMePoolType": "EnduranceGroup"
-  },
-  "NVMeEnduranceGroupProperties": {
-    "EndGrpLifetime": {
-      "PercentUsed": 0,
-      "EnduranceEstimate": 0,
-      "DataUnitsRead": 0,
-      "DataUnitsWritten": 0,
-      "MediaUnitsWritten": 0,
-      "HostReadCommandCount": 0,
-      "HostWriteCommandCount": 0,
-      "MediaAndDataIntegrityErrorCount": 0,
-      "ErrorInformationLogEntryCount": 0
-    }
-  },
-
-  "Capacity": {
-    "Data": {
-      "AllocatedBytes": 10995116277760,
-      "ConsumedBytes": 10995116277760
-    }
-  },
-
-  "CapacitySources": [{
-    "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup2/CapacitySources/Source1"
-  }]
+    "@odata.type": "#StoragePool.v1_7_1.StoragePool",
+    "Id": "EnduranceGroup2",
+    "Name": "Endurance Group 2",
+    "Description": "Single Endurance Group",
+    "NVMeProperties": {
+        "NVMePoolType": "EnduranceGroup"
+    },
+    "NVMeEnduranceGroupProperties": {
+        "EndGrpLifetime": {
+            "PercentUsed": 0,
+            "EnduranceEstimate": 0,
+            "DataUnitsRead": 0,
+            "DataUnitsWritten": 0,
+            "MediaUnitsWritten": 0,
+            "HostReadCommandCount": 0,
+            "HostWriteCommandCount": 0,
+            "MediaAndDataIntegrityErrorCount": 0,
+            "ErrorInformationLogEntryCount": 0
+        }
+    },
+    "Capacity": {
+        "Data": {
+            "AllocatedBytes": 10995116277760,
+            "ConsumedBytes": 10995116277760
+        }
+    },
+    "CapacitySources": [
+        {
+          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+          "Id": "Source1",
+          "Name": "Source1",
+          "ProvidedCapacity": {
+              "Data": {
+                  "ConsumedBytes": 10995116277760,
+                  "AllocatedBytes": 10995116277760
+              }
+          },
+          "ProvidingDrives": {
+              "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup2/CapacitySources/Source1/ProvidingDrives"
+          },
+          "ProvidingPools": {
+              "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup2/CapacitySources/Source1/ProvidingPools"
+          },
+          "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup2/CapacitySources/Source1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup2",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

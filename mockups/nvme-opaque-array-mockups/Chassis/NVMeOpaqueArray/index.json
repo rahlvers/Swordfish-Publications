@@ -1,5 +1,5 @@
-  {
-    "@odata.type": "#Chassis.v1_15_0.Chassis",
+{
+    "@odata.type": "#Chassis.v1_20_0.Chassis",
     "Id": "NVMeOpaqueArray",
     "Name": "NVMeOpaqueArray Controller",
     "ChassisType": "Module",
@@ -8,22 +8,22 @@
     "SKU": "FAB-14260",
     "SerialNumber": "FA-9450R6",
     "PartNumber": "FA-S23",
-
     "PowerState": "On",
-    "IndicatorLED": "Off",
+
     "Status": {
-      "State": "Enabled",
-      "Health": "OK"
+        "State": "Enabled",
+        "Health": "OK"
     },
     "Links": {
-      "Storage": [{
-        "@odata.id": "/redfish/v1/Storage/OpaqueArray"
-      }],
-
-      "ContainedBy": {
-        "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure"
-      }
+        "Storage": [
+            {
+                "@odata.id": "/redfish/v1/Storage/OpaqueArray"
+            }
+        ],
+        "ContainedBy": {
+            "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure"
+        }
     },
     "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
-  }
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

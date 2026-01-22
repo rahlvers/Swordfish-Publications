@@ -1,0 +1,66 @@
+{
+    "@odata.type": "#MetricReportDefinition.v1_3_0.MetricReportDefinition",
+    "Id": "TotalAllocatedCapacity",
+    "Name": "Total Allocated Capacity",
+    "MetricReportDefinitionType": "Periodic",
+    "MetricReportDefinitionEnabled": true,
+    "Schedule": {
+        "RecurrenceInterval": "PT1H"
+    },
+    "ReportActions": [
+        "LogToMetricReportsCollection"
+    ],
+    "ReportUpdates": "NewReport",
+    "MetricReport": {
+        "@odata.id": "/redfish/v1/TelemetryService/MetricReports/TotalAllocatedCapacity"
+    },
+    "Status": {
+        "State": "Enabled"
+    },
+    "Wildcards": [{
+        "Name": "SystemID"
+      },
+      {
+        "Name": "StorageSystemID"
+      },
+      {
+        "Name": "SystemStoragePoolID"
+      },
+      {
+        "Name": "SystemVolumeID"
+      },
+      {
+        "Name": "StorageID"
+      },
+      {
+        "Name": "StoragePoolID"
+      },
+      {
+        "Name": "VolumeID"
+      },
+      {
+        "Name": "FileSystemID"
+      }
+    ],
+    "Metrics": [
+        {
+            "MetricId": "AllocatedCapacity",
+            "MetricProperties": [
+              "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/StoragePools/{SystemStoragePoolID}/AllocatedVolumes/{SystemVolumeID}/Capacity#/Data/AllocatedBytes",
+              "/redfish/v1/Storage/{StorageID}/StoragePools/{StoragePoolID}/AllocatedVolumes/{VolumeID}/Capacity#/Data/AllocatedBytes",
+              "/redfish/v1/StorageServices/{StorageServiceID}/StoragePools/{ServiceStoragePoolID}/AllocatedVolumes/{ServiceVolumeID}/Capacity#/Data/AllocatedBytes",
+              "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/Capacity#/Data/AllocatedBytes",
+              "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/Capacity#/Data/AllocatedBytes",
+              "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/Capacity#/Data/AllocatedBytes",
+              "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/RemainingCapacity#/Data/AllocatedBytes",
+              "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacity#/Data/AllocatedBytes",
+              "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacity#/Data/AllocatedBytes"
+            ],
+            "CollectionFunction": "Maximum",
+            "CollectionTimeScope": "Point",
+            "CollectionDuration": "PT1H"
+        }
+    ],
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/TotalAllocatedCapacity",
+    "@Redfish.Copyright": "Copyright 2014-2021 SNIA. All rights reserved."
+}

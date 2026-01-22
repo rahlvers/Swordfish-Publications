@@ -1,0 +1,47 @@
+{
+  "@odata.type": "#MetricDefinition.v1_3_0.MetricDefinition",
+  "Id": "CapacityUtilization",
+  "Name": "Capacity Utilization Metric Definition",
+  "MetricType": "Numeric",
+  "MetricDataType": "Integer",
+  "LogicalContexts": ["Capacity", "Storage"],
+  "Units": "Bytes",
+  "Wildcards": [{
+      "Name": "SystemID"
+    },
+    {
+      "Name": "StorageSystemID"
+    },
+    {
+      "Name": "SystemStoragePoolID"
+    },
+    {
+      "Name": "SystemVolumeID"
+    },
+    {
+      "Name": "StorageID"
+    },
+    {
+      "Name": "StoragePoolID"
+    },
+    {
+      "Name": "VolumeID"
+    },
+    {
+      "Name": "FileSystemID"
+    }
+  ],
+  "MetricProperties": [
+    "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/StoragePools/{SystemStoragePoolID}/AllocatedVolumes/{SystemVolumeID}/RemainingCapacityPercent",
+    "/redfish/v1/Storage/{StorageID}/StoragePools/{StoragePoolID}/AllocatedVolumes/{VolumeID}/RemainingCapacityPercent",
+    "/redfish/v1/StorageServices/{StorageServiceID}/StoragePools/{ServiceStoragePoolID}/AllocatedVolumes/{ServiceVolumeID}/RemainingCapacityPercent",
+    "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/RemainingCapacityPercent",
+    "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacityPercent",
+    "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacityPercent",
+    "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}RemainingCapacityPercent",
+    "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacityPercent",
+    "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacityPercent"
+  ],
+  "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions/CapacityUtilization",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

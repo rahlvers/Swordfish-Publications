@@ -1,0 +1,10 @@
+{
+  "@odata.type": "#NVMeFirmwareImage.v1_1_0.NVMeFirmwareImage",
+  "Id": "1",
+  "Name": "JBOF Image",
+
+  "Vendor": "No, We're the Best Co",
+  "NVMeDeviceType": "JBOF",
+  "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1#/AvailableFirmwareImages/1",
+  "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

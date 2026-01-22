@@ -1,28 +1,26 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/Systems/Simple/LogServices/Log1/Entries/2",
-  "@odata.type": "#LogEntry.v1_1_0.LogEntry",
-  "Id": "2",
-  "Name": "Log Entry 2",
-  "EntryType": "SEL",
-  "OemRecordFormat": "CompanyX",
-  "Id": "2",
-  "Severity": "Critical",
-  "Created": "2012-03-07T14:45",
-  "EntryCode": "Assert",
-  "SensorType": "Temperature",
-  "SensorNumber": 2,
-  "Message": "Message for Event, Description for SEL, OEM depends",
-  "MessageId": "Event.1.0.TempAssert",
-  "MessageArgs": [
-    "ArrayOfMessageArgs"
-  ],
-  "Links": {
-    "OriginOfCondition": {
-      "@odata.id": "/redfish/v1/Chassis/1/Thermal"
+    "@odata.type": "#LogEntry.v1_12_0.LogEntry",
+    "Id": "2",
+    "Name": "Log Entry 2",
+    "EntryType": "SEL",
+    "OemRecordFormat": "CompanyX",
+    "Severity": "Critical",
+    "Created": "2012-03-07T14:44:00Z",
+    "EntryCode": "Assert",
+    "SensorType": "Temperature",
+    "SensorNumber": 2,
+    "Message": "Message for Event, Description for SEL, OEM depends",
+    "MessageId": "Event.1.0.TempAssert",
+    "MessageArgs": [
+        "ArrayOfMessageArgs"
+    ],
+    "Links": {
+        "OriginOfCondition": {
+            "@odata.id": "/redfish/v1/Chassis/1/Thermal"
+        },
+        "Oem": {}
     },
-    "Oem": {}
-  },
-  "Oem": {}
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Systems/Simple/LogServices/Log1/Entries/2",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

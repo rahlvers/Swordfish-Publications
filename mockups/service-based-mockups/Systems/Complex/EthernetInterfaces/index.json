@@ -1,15 +1,14 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/Systems/Complex/EthernetInterfaces",
-  "@odata.type": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
-  "Name": "Ethernet  Interface Collection",
-  "Description": "Complex Network Collection",
-  "Members@odata.count": 1,
-  "Members": [
-    {
-      "@odata.id": "/redfish/v1/Systems/Complex/EthernetInterfaces/1"
-    }
-  ],
-  "Oem": {}
+    "@odata.type": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
+    "Name": "Ethernet  Interface Collection",
+    "Description": "Complex Network Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Complex/EthernetInterfaces/1"
+        }
+    ],
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Systems/Complex/EthernetInterfaces",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

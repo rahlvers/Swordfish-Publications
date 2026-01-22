@@ -1,21 +1,25 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/1/Endpoints/2",
-  "@odata.type": "#Endpoint.v1_5_1.Endpoint",
-  "Description": "This instance represents a SCSI implemented over FC",
-  "Name": "SCSI2",
-  "EndpointProtocol": "FC",
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK"
-  },
-  "ConnectedEntities": [{
-    "EntityType": "StorageInitiator",
-    "EntityRole": "Initiator",
-    "Identifiers": [{
-      "DurableName": "60123456789abcdef60123456789qwerty",
-      "DurableNameFormat": "NAA"
-    }]
-  }]
+    "@odata.type": "#Endpoint.v1_7_0.Endpoint",
+    "Description": "This instance represents a SCSI implemented over FC",
+    "Id": "2",    
+    "Name": "SCSI2",
+    "EndpointProtocol": "FC",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "ConnectedEntities": [
+        {
+            "EntityType": "StorageInitiator",
+            "EntityRole": "Initiator",
+            "Identifiers": [
+                {
+                    "DurableName": "300062B202B21849",
+                    "DurableNameFormat": "NAA"
+                }
+            ]
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/1/Endpoints/2",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

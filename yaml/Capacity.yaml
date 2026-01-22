@@ -31,6 +31,6 @@ components:
         or ProvidingPools reference more than one resource, allocation of capacity
         across those resources is implementation dependent.
 title: '#Capacity.CapacitySource'
-x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
-  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-copyright: Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved.
 x-owningEntity: SNIA

@@ -5,10 +5,9 @@
     "Socket": "CPU 2",
     "ProcessorType": "CPU",
     "Status": {
-        "@odata.type": "#Resource.Status",
+         
         "State": "Absent"
     },
-   
     "@odata.id": "/redfish/v1/Systems/556ST22255E/Processors/CPU2",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

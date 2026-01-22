@@ -1,0 +1,34 @@
+{
+  "@odata.type": "#TelemetryService.v1_3_0.TelemetryService",
+  "Id": "TelemetryService",
+  "Name": "Telemetry Service",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "ServiceEnabled": true,
+  "SupportedCollectionFunctions": [
+    "Average",
+    "Minimum",
+    "Maximum"
+  ],
+  "MetricDefinitions": {
+    "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions"
+  },
+  "MetricReportDefinitions": {
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions"
+  },
+  "MetricReports": {
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReports"
+  },
+  "Actions": {
+    "#TelemetryService.ClearMetricReports": {
+      "target": "/redfish/v1/TelemetryService/Actions/TelemetryService.ClearMetricReports"
+    },
+    "#TelemetryService.ResetMetricReportDefinitionsToDefaults": {
+      "target": "/redfish/v1/TelemetryService/Actions/TelemetryService.ResetMetricReportDefinitionsToDefaults"
+    }
+  },
+  "@odata.id": "/redfish/v1/TelemetryService",
+  "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

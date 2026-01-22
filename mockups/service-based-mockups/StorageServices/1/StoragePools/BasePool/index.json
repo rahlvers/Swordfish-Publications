@@ -1,37 +1,49 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool",
-  "@odata.type": "#StoragePool.v1_2_0.StoragePool",
-  "Id": "BasePool",
-  "Name": "BasePool",
-  "Description": "Base storage pool",
-  "BlockSizeBytes": 8192,
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK",
-    "HealthRollup": "Warning"
-  },
-  "LowSpaceWarningThresholdPercents": [
-    70,
-    80,
-    90
-  ],
-  "Capacity": {
-    "Data": {
-      "ConsumedBytes": 0,
-      "AllocatedBytes": 0,
-      "GuaranteedBytes": 0,
-      "ProvisionedBytes": 0
-    }
-  },
-  "CapacitySources": [{
-    "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/CapacitySources/Source1"
-  }],
-  "AllocatedVolumes": {
-    "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/AllocatedVolumes"
-  },
-  "ClassesOfService": {
-    "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/ClassesOfService"
-  }
+    "@odata.type": "#StoragePool.v1_7_1.StoragePool",
+    "Id": "BasePool",
+    "Name": "BasePool",
+    "Description": "Base storage pool",
+    "BlockSizeBytes": 8192,
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK",
+        "HealthRollup": "Warning"
+    },
+    "LowSpaceWarningThresholdPercents": [
+        70,
+        80,
+        90
+    ],
+    "Capacity": {
+        "Data": {
+            "ConsumedBytes": 0,
+            "AllocatedBytes": 0,
+            "GuaranteedBytes": 0,
+            "ProvisionedBytes": 0
+        }
+    },
+    "CapacitySources": [
+        {
+          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+          "Id": "Source1",
+          "Name": "Source1",
+          "ProvidedCapacity": {
+              "Data": {
+                  "ConsumedBytes": 70368744177664,
+                  "AllocatedBytes": 140737488355328,
+                  "GuaranteedBytes": 17592186044416,
+                  "ProvisionedBytes": 562949953421312
+              }
+          },
+          "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/CapacitySources/Source1"
+        }
+    ],
+    "AllocatedVolumes": {
+        "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/AllocatedVolumes"
+    },
+    "ClassesOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/ClassesOfService"
+    },
+    "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

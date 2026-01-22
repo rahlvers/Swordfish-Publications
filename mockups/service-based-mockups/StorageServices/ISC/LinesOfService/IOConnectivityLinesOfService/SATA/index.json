@@ -1,9 +1,10 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService/IOConnectivityLinesOfService/SATA",
-  "@odata.type": "#IOConnectivityLineOfService.v1_2_0.IOConnectivityLineOfService",
-
-  "Name": "SATA",
-    "AccessProtocols": ["SATA"]
+    "@odata.type": "#IOConnectivityLineOfService.v1_2_1.IOConnectivityLineOfService",
+    "Id": "SATA",
+    "Name": "SATA",
+    "AccessProtocols": [
+        "SATA"
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService/IOConnectivityLinesOfService/SATA",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

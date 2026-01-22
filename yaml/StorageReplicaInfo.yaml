@@ -25,6 +25,7 @@ components:
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_1_2.yaml#/components/schemas/StorageReplicaInfo_v1_1_2_ReplicaInfo
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_2_0.yaml#/components/schemas/StorageReplicaInfo_v1_2_0_ReplicaInfo
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_3_0.yaml#/components/schemas/StorageReplicaInfo_v1_3_0_ReplicaInfo
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_4_0.yaml#/components/schemas/StorageReplicaInfo_v1_4_0_ReplicaInfo
       description: Defines the characteristics of a replica of a source.
       x-longDescription: The value shall define the characteristics of a replica of
         a source.
@@ -83,9 +84,10 @@ components:
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_1_2.yaml#/components/schemas/StorageReplicaInfo_v1_1_2_StorageReplicaInfo
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_2_0.yaml#/components/schemas/StorageReplicaInfo_v1_2_0_StorageReplicaInfo
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_3_0.yaml#/components/schemas/StorageReplicaInfo_v1_3_0_StorageReplicaInfo
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_4_0.yaml#/components/schemas/StorageReplicaInfo_v1_4_0_StorageReplicaInfo
       description: Defines the characteristics of a Storage Replica.
       x-longDescription: This entity shall define the characteristics of a replica.
 title: '#StorageReplicaInfo.StorageReplicaInfo'
-x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
-  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-copyright: Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved.
 x-owningEntity: SNIA

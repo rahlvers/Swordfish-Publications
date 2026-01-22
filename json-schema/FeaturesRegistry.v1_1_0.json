@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/FeaturesRegistry.v1_1_0.json",
     "$ref": "#/definitions/FeaturesRegistry",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -79,9 +79,12 @@
                     "readonly": true
                 },
                 "Features": {
-                    "$ref": "#/definitions/FeaturesRegistryProperty",
                     "description": "The pattern property indicates that a free-form string is the unique identifier for the feature within the registry.",
-                    "longDescription": "The pattern property shall represent the suffix to be used in the FeatureId and shall be unique within this message registry."
+                    "items": {
+                        "$ref": "#/definitions/SupportedFeature"
+                    },
+                    "longDescription": "The pattern property shall represent the suffix to be used in the FeatureId and shall be unique within this message registry.",
+                    "type": "array"
                 },
                 "Id": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",

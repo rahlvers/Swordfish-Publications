@@ -1,7 +1,5 @@
 {
-  "@odata.id": "/redfish/v1/Chassis/1URack/Drives/24",
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
-    "@odata.type": "#Drive.v1_12_0.Drive",
+    "@odata.type": "#Drive.v1_15_0.Drive",
     "Id": "24",
     "Name": "Drive 24",
     "Status": {
@@ -26,8 +24,12 @@
     "BlockSizeBytes": 512,
     "NegotiatedSpeedGbs": 12,
     "Links": {
-        "Volumes": [{
-            "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/3"
-        }]
-    }
+        "Volumes": [
+            {
+                "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/AllocatedVolumes/3"
+            }
+        ]
+    },
+    "@odata.id": "/redfish/v1/Chassis/1URack/Drives/24",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

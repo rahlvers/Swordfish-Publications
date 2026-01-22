@@ -1,22 +1,24 @@
 {
-	"@odata.type": "#Event.v1_4_1.Event",
-	"Id": "1",
-	"Name": "Event Array",
-	"Description": "If set to  to 1, then all namespaces in the Endurance Group have been placed in read only mode for reasons other than a change in the write protect state of the namespace. The controller shall not set this bit to 1 if the read-only condition on the Endurance Group is a result of a change in the write protection state of all namespaces in the Endurance Group.  2  If set to 1, then the Endurance Group reliability has been degraded due to significant media related errors or any internal error that degrades NVM subsystem reliability.  0 If set to 1, then the available spare capacity of the Endurance Group has fallen below the threshold.",
-	"Context": "ABCDEFGH",
-	"Events": [{
-		"EventType": "Alert",
-		"EventId": "ABC132489713478812346",
-		"Severity": "Critical",
-		"Message": "The state of resource Endurance Group 0 has changed to Degraded.",
-		"MessageId": "ResourceEvent.1.0.2.ResourceStatusChangedCritical",
-		"MessageArgs": [
-			"Endurance Group 0",
-			"Degraded"
-		],
-		"OriginOfCondition": {
-			"@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/EnduranceGroup0"
-		},
-		"Context": "The Endurance Group reliability has been degraded due to significant media related errors or any internal error that degrades NVM subsystem reliability."
-	}]
+    "@odata.type": "#Event.v1_4_1.Event",
+    "Id": "1",
+    "Name": "Event Array",
+    "Description": "If set to  to 1, then all namespaces in the Endurance Group have been placed in read only mode for reasons other than a change in the write protect state of the namespace. The controller shall not set this bit to 1 if the read-only condition on the Endurance Group is a result of a change in the write protection state of all namespaces in the Endurance Group.  2  If set to 1, then the Endurance Group reliability has been degraded due to significant media related errors or any internal error that degrades NVM subsystem reliability.  0 If set to 1, then the available spare capacity of the Endurance Group has fallen below the threshold.",
+    "Context": "ABCDEFGH",
+    "Events": [
+        {
+            "EventType": "Alert",
+            "EventId": "ABC132489713478812346",
+            "Severity": "Critical",
+            "Message": "The state of resource Endurance Group 0 has changed to Degraded.",
+            "MessageId": "ResourceEvent.1.0.2.ResourceStatusChangedCritical",
+            "MessageArgs": [
+                "Endurance Group 0",
+                "Degraded"
+            ],
+            "OriginOfCondition": {
+                "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/EnduranceGroup0"
+            },
+            "Context": "The Endurance Group reliability has been degraded due to significant media related errors or any internal error that degrades NVM subsystem reliability."
+        }
+    ]
 }

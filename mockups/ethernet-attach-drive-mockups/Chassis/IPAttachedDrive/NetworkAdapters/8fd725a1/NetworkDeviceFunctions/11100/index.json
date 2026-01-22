@@ -1,7 +1,5 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2019 DMTF. All rights reserved.",
-  "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters/8fd725a1/NetworkDeviceFunctions/11100",
-  "@odata.type": "#NetworkDeviceFunction.v1_5_1.NetworkDeviceFunction",
+  "@odata.type": "#NetworkDeviceFunction.v1_8_0.NetworkDeviceFunction",
   "Id": "11100",
   "Name": "Network Device Function View",
   "Description": "Network Device function for IP Attach drive.",
@@ -19,10 +17,13 @@
     "Ethernet"
   ],
   "NetDevFuncType": "Ethernet",
-  "PhysicalNetworkPortAssignment": {
-    "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters/8fd725a1/Ports/1"
-  },
+
   "Links": {
+    "PhysicalNetworkPortAssignment": {
+      "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters/8fd725a1/Ports/1"
+    },
     "Endpoints": []
-  }
+  },
+  "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters/8fd725a1/NetworkDeviceFunctions/11100",
+  "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

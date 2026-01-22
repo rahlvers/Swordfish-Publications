@@ -259,7 +259,7 @@ components:
         quotas are enabled but not enforced, and a value of Hard shall mean that quotas
         are enabled and enforced.
 title: '#FileShare.v1_1_1.FileShare'
-x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
-  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-copyright: Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved.
 x-owningEntity: SNIA
 x-release: WIP v1.0.5

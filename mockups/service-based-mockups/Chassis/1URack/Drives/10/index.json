@@ -1,7 +1,5 @@
 {
-  "@odata.id": "/redfish/v1/Chassis/1URack/Drives/10",
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
-    "@odata.type": "#Drive.v1_12_0.Drive",
+    "@odata.type": "#Drive.v1_15_0.Drive",
     "Id": "10",
     "Name": "Drive 10",
     "Status": {
@@ -25,8 +23,12 @@
     "BlockSizeBytes": 512,
     "NegotiatedSpeedGbs": 6,
     "Links": {
-        "Volumes": [{
-            "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/2"
-        }]
-    }
+        "Volumes": [
+            {
+                "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/AllocatedVolumes/2"
+            }
+        ]
+    },
+    "@odata.id": "/redfish/v1/Chassis/1URack/Drives/10",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

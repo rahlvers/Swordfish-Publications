@@ -243,10 +243,11 @@ components:
             null.
         SourceReplica:
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
-          description: The resource that is the source of this replica.
+          description: The URI to the source replica when located on a different Swordfish
+            service instance.
           readOnly: true
-          x-longDescription: The value shall reference the resource that is the source
-            of this replica.
+          x-longDescription: The value shall contain the URI to the source replica
+            when located on a different Swordfish service instance.
           x-versionAdded: v1_2_0
         SyncMaintained:
           description: Synchronization is maintained.
@@ -691,7 +692,7 @@ components:
         An element shall be considered undiscovered if its object model is not known
         to the service performing the copy operation.
 title: '#StorageReplicaInfo.v1_2_0.StorageReplicaInfo'
-x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
-  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-copyright: Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved.
 x-owningEntity: SNIA
 x-release: WIP v1.1.0

@@ -1,30 +1,47 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5",
-  "@odata.type": "#StoragePool.v1_1_0.StoragePool",
-  "Id": "SASPoolR5",
-  "Name": "SASPoolR5",
-  "Description": "SAS storage pool for RAID 5 volume (Striped with Parity)",
-  "BlockSizeBytes": 512,
-  "Capacity": {
-    "Data": {
-      "AllocatedBytes": 2096545335869,
-      "ConsumedBytes": 2096545335869
-    }
-  },
-  "CapacitySources": [{
-    "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/CapacitySources/Source1"
-  }],
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK"
-  },
-  "ClassesOfService": {"@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/ClassesOfService"},
-  "AllocatedVolumes": {
-    "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/AllocatedVolumes"
-  },
-  "Links": {
-    "DefaultClassOfService":  {"@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SAS"}
-  }
+    "@odata.type": "#StoragePool.v1_7_1.StoragePool",
+    "Id": "SASPoolR5",
+    "Name": "SASPoolR5",
+    "Description": "SAS storage pool for RAID 5 volume (Striped with Parity)",
+    "BlockSizeBytes": 512,
+    "Capacity": {
+        "Data": {
+            "AllocatedBytes": 2096545335869,
+            "ConsumedBytes": 2096545335869
+        }
+    },
+    "CapacitySources": [
+        {
+          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+          "Id": "Source1",
+          "Name": "Source1",
+          "ProvidedCapacity": {
+              "Data": {
+                  "AllocatedBytes": 2096545335869,
+                  "ConsumedBytes": 2096545335869
+              }
+          },
+          "ProvidingDrives": {
+              "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/CapacitySources/Source1/ProvidingDrives"
+          },
+          "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/CapacitySources/Source1"
+        }
+    ],
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "ClassesOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/ClassesOfService"
+    },
+    "AllocatedVolumes": {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5/AllocatedVolumes"
+    },
+    "Links": {
+        "DefaultClassOfService": {
+            "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SAS"
+        }
+    },
+    "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

@@ -1,15 +1,14 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/Managers/StorageManager1/EthernetInterfaces",
-  "@odata.type": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
-  "Name": "Ethernet Network Interface Collection",
-  "Description": "Collection of EthernetInterfaces for this Manager",
-  "Members@odata.count": 1,
-  "Members": [
-    {
-      "@odata.id": "/redfish/v1/Managers/StorageManager1/EthernetInterfaces/1"
-    }
-  ],
-  "Oem": {}
+    "@odata.type": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
+    "Name": "Ethernet Network Interface Collection",
+    "Description": "Collection of EthernetInterfaces for this Manager",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Managers/StorageManager1/EthernetInterfaces/1"
+        }
+    ],
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Managers/StorageManager1/EthernetInterfaces",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

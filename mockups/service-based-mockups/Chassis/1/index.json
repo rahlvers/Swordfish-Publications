@@ -1,43 +1,41 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/Chassis/1",
-  "@odata.type": "#Chassis.v1_15_0.Chassis",
-  "Id": "1",
-  "Name": "Computer System Chassis",
-  "ChassisType": "RackMount",
-  "Manufacturer": "ManufacturerName",
-  "Model": "ProductModelName",
-  "SKU": "",
-  "SerialNumber": "2M220100SL",
-  "PartNumber": "",
-  "AssetTag": "CustomerWritableThingy",
-  "IndicatorLED": "Lit",
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK"
-  },
-  "Thermal": {
-    "@odata.id": "/redfish/v1/Chassis/1/Thermal"
-  },
-  "Power": {
-    "@odata.id": "/redfish/v1/Chassis/1/Power"
-  },
-  "Links": {
-    "ComputerSystems": [
-      {
-        "@odata.id": "/redfish/v1/Systems/1"
-      }
-    ],
-    "ContainedBy": {
-      "@odata.id": "/redfish/v1/Chassis/1URack"
+    "@odata.type": "#Chassis.v1_20_0.Chassis",
+    "Id": "1",
+    "Name": "Computer System Chassis",
+    "ChassisType": "RackMount",
+    "Manufacturer": "ManufacturerName",
+    "Model": "ProductModelName",
+    "SKU": "N/A",
+    "SerialNumber": "2M220100SL",
+    "PartNumber": "N/A",
+    "AssetTag": "CustomerWritableThingy",
+     "Status": {
+        "State": "Enabled",
+        "Health": "OK"
     },
-    "ManagedBy": [
-      {
-        "@odata.id": "/redfish/v1/Managers/StorageManager1"
-      }
-    ],
-    "Oem": {}
-  },
-  "Oem": {}
+    "Thermal": {
+        "@odata.id": "/redfish/v1/Chassis/1/Thermal"
+    },
+    "Power": {
+        "@odata.id": "/redfish/v1/Chassis/1/Power"
+    },
+    "Links": {
+        "ComputerSystems": [
+            {
+                "@odata.id": "/redfish/v1/Systems/1"
+            }
+        ],
+        "ContainedBy": {
+            "@odata.id": "/redfish/v1/Chassis/1URack"
+        },
+        "ManagedBy": [
+            {
+                "@odata.id": "/redfish/v1/Managers/StorageManager1"
+            }
+        ],
+        "Oem": {}
+    },
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Chassis/1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

@@ -1,0 +1,10 @@
+{
+  "@odata.type": "#NVMeFirmwareImage.v1_1_0.NVMeFirmwareImage",
+  "Id": "2",
+  "Name": "Array Image",
+
+  "Vendor": "ReallytheBestInc",
+  "NVMeDeviceType": "FabricAttachArray",
+  "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1#/AvailableFirmwareImages/2",
+  "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

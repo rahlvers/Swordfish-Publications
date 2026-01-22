@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
 		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -20,7 +20,7 @@
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo_v1.xml">
 		<edmx:Include Namespace="StorageReplicaInfo"/>
-		<edmx:Include Namespace="StorageReplicaInfo.v1_3_0"/>
+		<edmx:Include Namespace="StorageReplicaInfo.v1_4_0"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -31,31 +31,31 @@
 				<Annotation
 					Term="OData.LongDescription"
 					String="A collection of volumes grouped together to ensure write order consistency across all those volumes. A management operation on a consistency group, such as configuring replication properties, applies to all the volumes within the consistency group."/>
-					<Annotation Term="Capabilities.InsertRestrictions">
-					  <Record>
-					    <PropertyValue Property="Insertable" Bool="false"/>
-					  </Record>
-					</Annotation>
-					<Annotation Term="Capabilities.UpdateRestrictions">
-					  <Record>
-					    <PropertyValue Property="Updatable" Bool="true"/>
-					    <Annotation Term="OData.Description" String="ConsistencyGroup resources can be updated to change the writable properties."/>
-					  </Record>
-					</Annotation>
-					<Annotation Term="Capabilities.DeleteRestrictions">
-					  <Record>
-					    <PropertyValue Property="Deletable" Bool="true"/>
-					    <Annotation Term="OData.Description" String="ConsistencyGroup resources can be deleted by deleting the ConsistencyGroup resource."/>
-					  </Record>
-          </Annotation>
-					<Annotation Term="Redfish.Uris">
-						<Collection>
-							<String>/redfish/v1/Storage/{StorageId}/ConsistencyGroups/{ConsistencyGroupId}</String>
-							<String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/ConsistencyGroups/{ConsistencyGroupId}</String>
-							<String>/redfish/v1/StorageServices/{StorageServiceId}/ConsistencyGroups/{ConsistencyGroupId}</String>
-							<String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/ConsistencyGroups/{ConsistencyGroupId}</String>
-						</Collection>
-					</Annotation>
+				<Annotation Term="Capabilities.InsertRestrictions">
+					<Record>
+						<PropertyValue Property="Insertable" Bool="false"/>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.UpdateRestrictions">
+					<Record>
+						<PropertyValue Property="Updatable" Bool="true"/>
+						<Annotation Term="OData.Description" String="ConsistencyGroup resources can be updated to change the writable properties."/>
+					</Record>
+				</Annotation>
+				<Annotation Term="Capabilities.DeleteRestrictions">
+					<Record>
+						<PropertyValue Property="Deletable" Bool="true"/>
+						<Annotation Term="OData.Description" String="ConsistencyGroup resources can be deleted by deleting the ConsistencyGroup resource."/>
+					</Record>
+				</Annotation>
+				<Annotation Term="Redfish.Uris">
+					<Collection>
+						<String>/redfish/v1/Storage/{StorageId}/ConsistencyGroups/{ConsistencyGroupId}</String>
+						<String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/ConsistencyGroups/{ConsistencyGroupId}</String>
+						<String>/redfish/v1/StorageServices/{StorageServiceId}/ConsistencyGroups/{ConsistencyGroupId}</String>
+						<String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/ConsistencyGroups/{ConsistencyGroupId}</String>
+					</Collection>
+				</Annotation>
 			</EntityType>
 
 			<EnumType Name="ConsistencyType">
@@ -114,7 +114,7 @@
 					<Annotation Term="OData.Description" String="The property contains the status of the ConsistencyGroup."/>
 					<Annotation Term="OData.LongDescription" String="The property shall contain the status of the ConsistencyGroup."/>
 				</Property>
-				<Property Name="ReplicaInfo" Type="StorageReplicaInfo.v1_3_0.ReplicaInfo" Nullable="false">
+				<Property Name="ReplicaInfo" Type="StorageReplicaInfo.v1_4_0.ReplicaInfo" Nullable="false">
 					<Annotation Term="OData.Description" String="Describes this storage group in its role as a target for replication."/>
 					<Annotation Term="OData.LongDescription" String="This property shall describe the replication relationship between this storage group and a corresponding source storage group."/>
 				</Property>
@@ -260,6 +260,20 @@
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
 			<Annotation Term="OData.Description" String="This version was created to update the reference to StorageReplicaInfo to version 1.3.0. It also adds Redfish.Release annotations."/>
 			<EntityType Name="ConsistencyGroup" BaseType="ConsistencyGroup.v1_0_0.ConsistencyGroup"/>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ConsistencyGroup.v1_1_0">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="OData.Description" String="This version adds RemoteReplicaTargets, and updates the reference to StorageReplicaInfo to version 1.4.0."/>
+			<Annotation Term="Redfish.Release" String="TP 1.2.4a"/>
+			<EntityType Name="ConsistencyGroup" BaseType="ConsistencyGroup.v1_0_1.ConsistencyGroup">
+				<Property Name="RemoteReplicaTargets" Type="Collection(Edm.String)">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Description" String="URIs to the resources that are remote target replicas of this source."/>
+					<Annotation Term="OData.LongDescription" String="The value shall reference the URIs to the remote target replicas that are sourced by this replica. Remote indicates that the replica is managed by a separate Swordfish service instance."/>
+					<Annotation Term="OData.AutoExpandReferences"/>
+				</Property>
+			</EntityType>
 		</Schema>
 
 	</edmx:DataServices>

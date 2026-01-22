@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2015-2022 SNIA. All rights reserved.-->
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Capacity_v1.xml">
+    <edmx:Include Namespace="Capacity"/>
+    <edmx:Include Namespace="Capacity.v1_2_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/CapacitySourceCollection_v1.xml">
+    <edmx:Include Namespace="CapacitySourceCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Chassis_v1.xml">
+    <edmx:Include Namespace="Chassis"/>
+    <edmx:Include Namespace="Chassis.v1_20_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ChassisCollection_v1.xml">
+    <edmx:Include Namespace="ChassisCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService_v1.xml">
+    <edmx:Include Namespace="ClassOfService"/>
+    <edmx:Include Namespace="ClassOfService.v1_2_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfServiceCollection_v1.xml">
+    <edmx:Include Namespace="ClassOfServiceCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystem_v1.xml">
+    <edmx:Include Namespace="ComputerSystem"/>
+    <edmx:Include Namespace="ComputerSystem.v1_18_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ComputerSystemCollection_v1.xml">
+    <edmx:Include Namespace="ComputerSystemCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService_v1.xml">
+    <edmx:Include Namespace="DataProtectionLineOfService"/>
+    <edmx:Include Namespace="DataProtectionLineOfService.v1_3_0"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="DataProtectionLoSCapabilities"/>
+    <edmx:Include Namespace="DataProtectionLoSCapabilities.v1_2_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService_v1.xml">
+    <edmx:Include Namespace="DataSecurityLineOfService"/>
+    <edmx:Include Namespace="DataSecurityLineOfService.v1_1_1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="DataSecurityLoSCapabilities"/>
+    <edmx:Include Namespace="DataSecurityLoSCapabilities.v1_2_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService_v1.xml">
+    <edmx:Include Namespace="DataStorageLineOfService"/>
+    <edmx:Include Namespace="DataStorageLineOfService.v1_3_1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="DataStorageLoSCapabilities"/>
+    <edmx:Include Namespace="DataStorageLoSCapabilities.v1_2_2"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService_v1.xml">
+    <edmx:Include Namespace="IOConnectivityLineOfService"/>
+    <edmx:Include Namespace="IOConnectivityLineOfService.v1_2_1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="IOConnectivityLoSCapabilities"/>
+    <edmx:Include Namespace="IOConnectivityLoSCapabilities.v1_2_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLineOfService_v1.xml">
+    <edmx:Include Namespace="IOPerformanceLineOfService"/>
+    <edmx:Include Namespace="IOPerformanceLineOfService.v1_1_1"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="IOPerformanceLoSCapabilities"/>
+    <edmx:Include Namespace="IOPerformanceLoSCapabilities.v1_3_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/LineOfService_v1.xml">
+    <edmx:Include Namespace="LineOfService"/>
+    <edmx:Include Namespace="LineOfService.v1_0_0"/>
+    <edmx:Include Namespace="LineOfService.v1_1_0"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/LineOfServiceCollection_v1.xml">
+    <edmx:Include Namespace="LineOfServiceCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Drive_v1.xml">
+    <edmx:Include Namespace="Drive"/>
+    <edmx:Include Namespace="Drive.v1_15_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/DriveCollection_v1.xml">
+    <edmx:Include Namespace="DriveCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Endpoint_v1.xml">
+    <edmx:Include Namespace="Endpoint"/>
+    <edmx:Include Namespace="Endpoint.v1_7_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EndpointCollection_v1.xml">
+    <edmx:Include Namespace="EndpointCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EndpointGroup_v1.xml">
+    <edmx:Include Namespace="EndpointGroup"/>
+    <edmx:Include Namespace="EndpointGroup.v1_2_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EndpointGroupCollection_v1.xml">
+    <edmx:Include Namespace="EndpointGroupCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterface_v1.xml">
+    <edmx:Include Namespace="EthernetInterface"/>
+    <edmx:Include Namespace="EthernetInterface.v1_7_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterfaceCollection_v1.xml">
+    <edmx:Include Namespace="EthernetInterfaceCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Event_v1.xml">
+    <edmx:Include Namespace="Event"/>
+    <edmx:Include Namespace="Event.v1_6_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FeaturesRegistry_v1.xml">
+    <edmx:Include Namespace="FeaturesRegistry"/>
+    <edmx:Include Namespace="FeaturesRegistry.v1_1_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FileShare_v1.xml">
+    <edmx:Include Namespace="FileShare"/>
+    <edmx:Include Namespace="FileShare.v1_2_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FileShareCollection_v1.xml">
+    <edmx:Include Namespace="FileShareCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem_v1.xml">
+    <edmx:Include Namespace="FileSystem"/>
+    <edmx:Include Namespace="FileSystem.v1_2_2"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FileSystemCollection_v1.xml">
+    <edmx:Include Namespace="FileSystemCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/HostedStorageServices_v1.xml">
+    <edmx:Include Namespace="HostedStorageServices"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/LogEntry_v1.xml">
+    <edmx:Include Namespace="LogEntry"/>
+    <edmx:Include Namespace="LogEntry.v1_12_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/LogEntryCollection_v1.xml">
+    <edmx:Include Namespace="LogEntryCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/LogService_v1.xml">
+    <edmx:Include Namespace="LogService"/>
+    <edmx:Include Namespace="LogService.v1_3_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/LogServiceCollection_v1.xml">
+    <edmx:Include Namespace="LogServiceCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Manager_v1.xml">
+    <edmx:Include Namespace="Manager"/>
+    <edmx:Include Namespace="Manager.v1_15_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ManagerCollection_v1.xml">
+    <edmx:Include Namespace="ManagerCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ManagerNetworkProtocol_v1.xml">
+    <edmx:Include Namespace="ManagerNetworkProtocol"/>
+    <edmx:Include Namespace="ManagerNetworkProtocol.v1_8_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/NetworkAdapterCollection_v1.xml">
+    <edmx:Include Namespace="NetworkAdapterCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/NetworkDeviceFunctionCollection_v1.xml">
+    <edmx:Include Namespace="NetworkDeviceFunctionCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/NetworkAdapter_v1.xml">
+    <edmx:Include Namespace="NetworkAdapter"/>
+    <edmx:Include Namespace="NetworkAdapter.v1_9_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/NetworkDeviceFunction_v1.xml">
+    <edmx:Include Namespace="NetworkDeviceFunction"/>
+    <edmx:Include Namespace="NetworkDeviceFunction.v1_8_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Port_v1.xml">
+    <edmx:Include Namespace="Port"/>
+    <edmx:Include Namespace="Port.v1_6_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/PortCollection_v1.xml">
+    <edmx:Include Namespace="PortCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Power_v1.xml">
+    <edmx:Include Namespace="Power"/>
+    <edmx:Include Namespace="Power.v1_7_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0"/>
+    <edmx:Include Namespace="Resource.v1_14_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
+    <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/ServiceRoot_v1.xml">
+    <edmx:Include Namespace="ServiceRoot"/>
+    <edmx:Include Namespace="ServiceRoot.v1_14_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Session_v1.xml">
+    <edmx:Include Namespace="Session"/>
+    <edmx:Include Namespace="Session.v1_4_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/SessionCollection_v1.xml">
+    <edmx:Include Namespace="SessionCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/SessionService_v1.xml">
+    <edmx:Include Namespace="SessionService"/>
+    <edmx:Include Namespace="SessionService.v1_1_8"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/SimpleStorage_v1.xml">
+    <edmx:Include Namespace="SimpleStorage"/>
+    <edmx:Include Namespace="SimpleStorage.v1_3_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Storage_v1.xml">
+    <edmx:Include Namespace="Storage"/>
+    <edmx:Include Namespace="Storage.v1_10_0"/>
+    <edmx:Include Namespace="Storage.v1_13_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageCollection_v1.xml">
+    <edmx:Include Namespace="StorageCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageController_v1.xml">
+    <edmx:Include Namespace="StorageController"/>
+    <edmx:Include Namespace="StorageController.v1_6_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageControllerCollection_v1.xml">
+    <edmx:Include Namespace="StorageControllerCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup_v1.xml">
+    <edmx:Include Namespace="StorageGroup"/>
+    <edmx:Include Namespace="StorageGroup.v1_5_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroupCollection_v1.xml">
+    <edmx:Include Namespace="StorageGroupCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool_v1.xml">
+    <edmx:Include Namespace="StoragePool"/>
+    <edmx:Include Namespace="StoragePool.v1_7_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StoragePoolCollection_v1.xml">
+    <edmx:Include Namespace="StoragePoolCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageService_v1.xml">
+    <edmx:Include Namespace="StorageService"/>
+    <edmx:Include Namespace="StorageService.v1_5_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageServiceCollection_v1.xml">
+    <edmx:Include Namespace="StorageServiceCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageSystemCollection_v1.xml">
+    <edmx:Include Namespace="StorageSystemCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Switch_v1.xml">
+    <edmx:Include Namespace="Switch"/>
+    <edmx:Include Namespace="Switch.v1_8_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/SwitchCollection_v1.xml">
+    <edmx:Include Namespace="SwitchCollection"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Thermal_v1.xml">
+    <edmx:Include Namespace="Thermal"/>
+    <edmx:Include Namespace="Thermal.v1_7_1"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Volume_v1.xml">
+    <edmx:Include Namespace="Volume"/>
+    <edmx:Include Namespace="Volume.v1_8_0"/>
+  </edmx:Reference>
+
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection_v1.xml">
+    <edmx:Include Namespace="VolumeCollection"/>
+  </edmx:Reference>
+
+  <edmx:DataServices>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Service">
+      <EntityContainer Name="Service" Extends="ServiceRoot.v1_14_0.ServiceContainer"/>
+    </Schema>
+
+  </edmx:DataServices>
+</edmx:Edmx>

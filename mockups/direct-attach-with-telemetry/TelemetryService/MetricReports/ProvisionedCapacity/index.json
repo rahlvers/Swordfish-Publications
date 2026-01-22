@@ -1,0 +1,49 @@
+{
+  "@odata.type": "#MetricReport.v1_4_2.MetricReport",
+  "Id": "ProvisionedCapacity",
+  "Name": "Provisioned Capacity Performance Metric Report",
+  "ReportSequence": "17",
+  "MetricReportDefinition": {
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/ProvisionedCapacity"    
+  },
+  "MetricValues": [
+    {
+      "MetricId": "ProvisionedCapacity",
+      "MetricValue": "300067890136",
+      "Timestamp": "2021-04-29T12:25:00-05:00",
+      "MetricProperty": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/Capacity#/Data/ProvisionedBytes"
+    },
+    {
+      "MetricId": "ProvisionedCapacity",
+      "MetricValue": "300067890136",
+      "Timestamp": "2021-04-29T12:25:00-05:00",
+      "MetricProperty": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/Capacity#/Data/ProvisionedBytes"
+    },
+    {
+      "MetricId": "ProvisionedCapacity",
+      "MetricValue": "300067890136",
+      "Timestamp": "2021-04-29T12:25:00-05:00",
+      "MetricProperty": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/Capacity#/Data/ProvisionedBytes"
+    },
+    {
+      "MetricId": "ProvisionedCapacity",
+      "MetricValue": "300067890136",
+      "Timestamp": "2021-04-29T12:30:00-05:00",
+      "MetricProperty": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/Capacity#/Data/ProvisionedBytes"
+    },
+    {
+      "MetricId": "ProvisionedCapacity",
+      "MetricValue": "300067890136",
+      "Timestamp": "2021-04-29T12:35:00-05:00",
+      "MetricProperty": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/Capacity#/Data/ProvisionedBytes"
+    },
+    {
+      "MetricId": "ProvisionedCapacity",
+      "MetricValue": "300067890136",
+      "Timestamp": "2021-04-29T12:40:00-05:00",
+      "MetricProperty": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/Capacity#/Data/ProvisionedBytes"
+    }
+  ],
+  "@odata.id": "/redfish/v1/TelemetryService/MetricReports/ProvisionedCapacity",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

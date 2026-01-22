@@ -1,0 +1,21 @@
+{
+  "@odata.type": "#Connection.v1_0_0.Connection",
+  "Id": "NVMe-oF-SubsystemConnection",
+  "Name": "Connection info for NVMe-oFSubsystem Unrestricted access",
+  "Description": "Connection info for NVMeSubsystemEndpoint",
+  "ConnectionType": "Storage",
+  "VolumeInfo": [{
+    "AccessCapabilities": ["Read", "Write"],
+    "Volume": {
+      "@odata.id": "/redfish/v1/Storage/NVMeoF-SS1/Volumes/LogicalNS1"
+    }
+  }],
+  "Links": {
+    "InitiatorEndpoints": [],
+    "TargetEndpoints": [{
+        "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeSubsystemEndpoint"
+    }]
+  },
+  "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Connections/NVMe-oF-SubsystemConnection1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

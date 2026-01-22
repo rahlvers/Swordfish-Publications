@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#LogService.v1_0_4.LogService",
+    "@odata.type": "#LogService.v1_3_1.LogService",
     "Id": "Log1",
     "Name": "System Log Service",
     "MaxNumberOfRecords": 1000,
@@ -8,13 +8,12 @@
     "DateTimeLocalOffset": "+06:00",
     "ServiceEnabled": true,
     "Status": {
-        "@odata.type": "#Resource.Status",
+
         "State": "Enabled",
         "Health": "OK"
     },
     "Oem": {},
     "Actions": {
-        "@odata.type": "#LogService.v1_0_0.Actions",
         "#LogService.ClearLog": {
             "target": "/redfish/v1/Systems/556ST22255E/LogServices/Log1/Actions/LogService.Reset"
         },
@@ -23,7 +22,6 @@
     "Entries": {
         "@odata.id": "/redfish/v1/Systems/556ST22255E/LogServices/Log1/Entries"
     },
-   
     "@odata.id": "/redfish/v1/Systems/556ST22255E/LogServices/Log1",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

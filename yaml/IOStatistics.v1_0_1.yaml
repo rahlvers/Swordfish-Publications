@@ -10,7 +10,8 @@ components:
           readOnly: false
           type: string
           x-longDescription: The value shall be an ISO 8601 conformant duration describing
-            the time that the resource is busy processing non IO requests.
+            the time that the resource is busy processing non IO requests from the
+            time of last reset or wrap.
         NonIORequests:
           description: Count of non IO requests.
           format: int64
@@ -44,7 +45,8 @@ components:
           readOnly: false
           type: string
           x-longDescription: The value shall be an ISO 8601 conformant duration describing
-            the time that the resource is busy processing read requests.
+            the time that the resource is busy processing read requests from the time
+            of last reset or wrap.
         ReadIORequests:
           description: Count of read IO requests.
           format: int64
@@ -79,7 +81,8 @@ components:
           readOnly: false
           type: string
           x-longDescription: The value shall be an ISO 8601 conformant duration describing
-            the time that the resource is busy processing write requests.
+            the time that the resource is busy processing write requests from the
+            time of last reset or wrap.
         WriteIORequests:
           description: Count of write IO requests.
           format: int64
@@ -96,7 +99,7 @@ components:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#IOStatistics.v1_0_1'
-x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
-  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-copyright: Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved.
 x-owningEntity: SNIA
 x-release: WIP v1.0.5

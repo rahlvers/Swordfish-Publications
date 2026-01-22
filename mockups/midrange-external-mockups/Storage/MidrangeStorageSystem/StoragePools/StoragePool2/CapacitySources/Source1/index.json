@@ -1,16 +1,16 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/CapacitySources/Source1",
-  "@odata.type": "#Capacity.v1_1_2.CapacitySource",
-
-  "ProvidedCapacity": {
-    "Data": {
-      "ConsumedBytes": 300067890136,
-      "AllocatedBytes": 600135780272
-    }
-  },
-
-  "ProvidingDrives": {
-    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/CapacitySources/Source1/ProvidingDrives"
-  }
+    "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+    "Id": "Source1",
+    "Name": "Source1",
+    "ProvidedCapacity": {
+        "Data": {
+            "ConsumedBytes": 300067890136,
+            "AllocatedBytes": 600135780272
+        }
+    },
+    "ProvidingDrives": {
+        "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/CapacitySources/Source1/ProvidingDrives"
+    },
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/CapacitySources/Source1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

@@ -1,46 +1,58 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap4",
-  "@odata.type": "#Volume.v1_5_0.Volume",
-  "Id": "Volume2-Snap4",
-  "Name": "Volume 2 Snap4",
-  "Description": "Snapshot of Volume 2 in Midrange System",
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK"
-  },
-  "RAIDType": "RAID0",
-  "Identifiers": [{
-    "DurableNameFormat": "NAA",
-    "DurableName": "6545671545176100124407610013560"
-  }],
-  "ReplicaInfo": {
-    "ReplicaType": "Snapshot",
-    "SourceReplica": {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2"
-    }
-  },
-
-  "BlockSizeBytes": 512,
-  "Encrypted": false,
-  "DisplayName": "This is my user/client set friendly name.",
-
-  "Capacity": {
-    "Data": {
-      "AllocatedBytes": 300067890136
-    }
-  },
-  "StorageGroups": {
-    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup"
-  },
-
-  "CapacitySources": [{
-    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap4/CapacitySources/Source1"
-  }],
-
-  "Links": {
-    "OwningStorageResource": {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem"
-    }
-  }
+    "@odata.type": "#Volume.v1_8_0.Volume",
+    "Id": "Volume2-Snap4",
+    "Name": "Volume 2 Snap4",
+    "Description": "Snapshot of Volume 2 in Midrange System",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "RAIDType": "RAID0",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "6A4A67154517610012440761001234AB"
+        }
+    ],
+    "ReplicaInfo": {
+        "ReplicaType": "Snapshot",
+        "ReplicaFaultDomain": "Local",        
+        "SourceReplica": {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2"
+        }
+    },
+    "BlockSizeBytes": 512,
+    "Encrypted": false,
+    "DisplayName": "This is my user/client set friendly name.",
+    "Capacity": {
+        "Data": {
+            "AllocatedBytes": 300067890136
+        }
+    },
+    "StorageGroups": {
+        "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup"
+    },
+    "CapacitySources": [
+        {
+          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+          "Id": "Source1",
+          "Name": "Source1",
+          "ProvidedCapacity": {
+              "Data": {
+                  "AllocatedBytes": 300067890136
+              }
+          },
+          "ProvidingPools": {
+              "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap4/CapacitySources/Source1/ProvidingPools"
+          },
+          "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap4/CapacitySources/Source1"
+        }
+    ],
+    "Links": {
+        "OwningStorageResource": {
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem"
+        }
+    },
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap4",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

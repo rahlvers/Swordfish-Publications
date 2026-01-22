@@ -1,0 +1,173 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishFabricAccessRights",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Access Rights implementation requirements using Fabrics.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.2"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.3.0",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.FabricAccessRights": {}
+      }
+    }
+  },
+  "Protocol": {
+    "MinVersion": "1.14.0"
+  },
+  "Resources": {
+    "ServiceRoot": {
+      "PropertyRequirements": {
+        "Fabrics": {}
+      }
+    },
+    "FabricCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "ConnectionCollection": {},
+    "EndpointCollection": {},
+    "Fabric": {
+      "PropertyRequirements": {
+        "Connections": {
+          "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Required when Switches not defined for the fabric (switches are required for connectivity rights management).",
+                "CompareProperty": "Switches",
+                "CompareType": "Absent",
+                "ReadRequirement": "Mandatory"
+              }]
+        },
+        "Description": {},
+        "EndpointGroups": {
+          "ReadRequirement": "Recommended"
+        },
+        "Endpoints": {},
+        "FabricType": {},
+        "Id": {},
+        "Name": {},
+        "Status": {
+          "PropertyRequirements": {
+            "State": {}
+          }
+        }
+      }
+    },
+    "Connection": {
+      "PropertyRequirements": {
+        "ConnectionType": {},
+        "Description": {},
+        "Id": {},
+        "Links": {
+          "PropertyRequirements": {
+            "InitiatorEndpointGroups": {
+              "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Either InitiatorEndpointGroups or InitiatorEndpoints must be supported.",
+                "CompareProperty": "InitiatorEndpoints",
+                "CompareType": "Absent",
+                "ReadRequirement": "Mandatory"
+              }]
+            },
+            "InitiatorEndpoints": {
+              "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Either InitiatorEndpoints or InitiatorEndpointGroups must be supported.",
+                "CompareProperty": "InitiatorEndpointGroups",
+                "CompareType": "Absent",
+                "ReadRequirement": "Mandatory"
+              }]
+            },
+            "TargetEndpointGroups": {
+              "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Either TargetEndpointGroups or TargetEndpoints must be supported.",
+                "CompareProperty": "TargetEndpoints",
+                "CompareType": "Absent",
+                "ReadRequirement": "Mandatory"
+              }]
+            },
+            "TargetEndpoints": {
+              "ReadRequirement": "Recommended",
+              "ConditionalRequirements": [{
+                "Purpose": "Either TargetEndpoints or TargetEndpointGroups must be supported.",
+                "CompareProperty": "TargetEndpointGroups",
+                "CompareType": "Absent",
+                "ReadRequirement": "Mandatory"
+              }]
+            }
+          }
+        },
+        "Name": {},
+        "VolumeInfo": {
+          "PropertyRequirements": {
+            "AccessCapabilities": {},
+            "Volume": {}
+          }
+        }
+      }
+    },
+    "Endpoint": {
+      "PropertyRequirements": {
+        "ConnectedEntities": {
+          "PropertyRequirements": {
+            "EntityLink": {
+              "ReadRequirement": "Recommended"
+            },
+            "EntityRole": {},
+            "EntityType": {}
+          }
+        },
+        "EndpointProtocol": {},
+        "Identifiers": {
+          "PropertyRequirements": {
+            "DurableName": {},
+            "DurableNameFormat": {}
+          }
+        },
+        "Links": {
+          "PropertyRequirements": {
+            "Connections": {
+              "ReadRequirement": "Recommended"
+            }
+          }
+        }
+      }
+    },
+    "EndpointGroup": {
+      "PropertyRequirements": {
+        "AccessState": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement'. This property has been deprecated."
+        },
+        "Endpoints": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement'. This property has been deprecated."
+        },
+        "GroupType": {},
+        "Id": {},
+        "Links": {
+          "PropertyRequirements": {
+            "Endpoints": {},
+            "Connections": {}
+          }
+        },
+        "Preferred": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement'. This property has been deprecated."
+        }
+      }
+    }
+  }
+}

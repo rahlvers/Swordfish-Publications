@@ -1,0 +1,36 @@
+{
+    "@odata.type": "#Port.v1_6_1.Port",
+    "Id": "3",
+    "Name": "Port View",
+    "CurrentSpeedGbps": 12,
+    "Description": "Port in embedded network interface for opaque array.",
+    "Ethernet": {
+        "EEEEnabled": false,
+        "FlowControlStatus": "None",
+        "FlowControlConfiguration": "None",
+        "WakeOnLANEnabled": false
+    },
+    "LinkConfiguration": [
+        {
+            "CapableLinkSpeedGbps": [
+                10000
+            ],
+            "AutoSpeedNegotiationCapable": true,
+            "AutoSpeedNegotiationEnabled": false,
+            "ConfiguredNetworkLinks": [
+                {
+                    "ConfiguredLinkSpeedGbps": 12
+                }
+            ]
+        }
+    ],
+    "LinkNetworkTechnology": "Ethernet",
+    "LinkState": "Enabled",
+    "LinkStatus": "LinkUp",
+    "MaxFrameSize": 1518,
+    "MaxSpeedGbps": 100,
+    "PortMedium": "Electrical",
+    "SignalDetected": true,
+    "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/3",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

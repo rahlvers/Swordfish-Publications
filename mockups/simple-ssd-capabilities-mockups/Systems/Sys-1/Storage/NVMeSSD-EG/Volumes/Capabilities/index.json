@@ -1,0 +1,20 @@
+{
+    "@odata.type": "#Volume.v1_8_0.Volume",
+    "Id": "Capabilities",
+    "Name": "Capabilities for the Volume",
+    "Name@Redfish.RequiredOnCreate": true,
+    "Name@Redfish.SetOnlyOnCreate": true,
+    "Description@Redfish.OptionalOnCreate": true,
+    "Description@Redfish.SetOnlyOnCreate": true,
+
+    "NVMeNamespaceProperties": {
+        "LBAFormatsSupported@Redfish.AllowableValues": [
+            "LBAFormat0",
+            "LBAFormat1",
+            "LBAFormat2",
+            "LBAFormat3"
+        ]
+    },
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Volumes/Capabilities",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+}

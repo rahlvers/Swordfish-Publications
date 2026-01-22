@@ -1,50 +1,66 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3",
-  "@odata.type": "#Volume.v1_4_0.Volume",
-  "Name": "Snapshot1",
-  "Id": "3",
-  "Description": "",
-  "Identifiers": [{
-    "DurableNameFormat": "NAA",
-    "DurableName": "65456765456761001234076100123487"
-  }],
-  "Manufacturer": "SuperDuperSSD",
-  "Model": "Drive Model string",
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK"
-  },
-  "AccessCapabilities": [
-    "Read",
-    "Write",
-    "Append",
-    "Streaming"
-  ],
-  "BlockSizeBytes": 512,
-  "CapacitySources": [{
-    "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3/CapacitySources/Source1"
-
-  }],
-  "Capacity": {
-    "Data": {
-      "ConsumedBytes": 0,
-      "AllocatedBytes": 10737418240,
-      "GuaranteedBytes": 1099511627776,
-      "ProvisionedBytes": 1099511627776
+    "@odata.type": "#Volume.v1_8_0.Volume",
+    "Name": "Snapshot1",
+    "Id": "3",
+    "Description": "Volume 3",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "65456765456761001234076100123487"
+        }
+    ],
+    "Manufacturer": "SuperDuperSSD",
+    "Model": "Drive Model string",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
     },
-    "Metadata": {
-      "ConsumedBytes": 536870912,
-      "AllocatedBytes": 536870912
-    }
-  },
-  "Links": {
-    "OwningStorageService": {
-      "@odata.id": "/redfish/v1/StorageServices/1"
+    "AccessCapabilities": [
+        "Read",
+        "Write",
+        "Append",
+        "Streaming"
+    ],
+    "BlockSizeBytes": 512,
+    "CapacitySources": [
+        {
+          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+          "Id": "Source1",
+          "Name": "Source1",
+          "ProvidedCapacity": {
+              "Data": {
+                  "ConsumedBytes": 0,
+                  "AllocatedBytes": 10737418240,
+                  "GuaranteedBytes": 536870912,
+                  "ProvisionedBytes": 1099511627776
+              }
+          },
+          "ProvidingPools": {
+              "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3/CapacitySources/Source1/ProvidingPools"
+          },
+          "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3/CapacitySources/Source1"
+        }
+    ],
+    "Capacity": {
+        "Data": {
+            "ConsumedBytes": 0,
+            "AllocatedBytes": 10737418240,
+            "GuaranteedBytes": 1099511627776,
+            "ProvisionedBytes": 1099511627776
+        },
+        "Metadata": {
+            "ConsumedBytes": 536870912,
+            "AllocatedBytes": 536870912
+        }
     },
-    "ClassOfService": {
-      "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonBunker"
-    }
-  }
+    "Links": {
+        "OwningStorageService": {
+            "@odata.id": "/redfish/v1/StorageServices/1"
+        },
+        "ClassOfService": {
+            "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonBunker"
+        }
+    },
+    "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

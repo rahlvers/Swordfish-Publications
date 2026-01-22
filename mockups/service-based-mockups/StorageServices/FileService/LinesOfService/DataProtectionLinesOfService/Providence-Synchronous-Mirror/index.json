@@ -1,34 +1,20 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Providence-Synchronous-Mirror",
-  "@odata.type": "#DataProtectionLineOfService.v1_2_0.DataProtectionLineOfService",
-
-  "Name": "Providence-Synchronous-Mirror",
-  "RecoveryGeographicObjective": "Region",
-  "RecoveryPointObjectiveTime": "PT0S",
-  "RecoveryTimeObjective": "OnlineActive",
-  "ReplicaType": "Mirror",
-  "IsIsolated": true,
-  "ReplicaClassOfService": {
-    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence"
-  },
-  "ReplicaAccessLocation": {
-    "PostalAddress": {
-      "Country": "",
-      "Territory": "",
-      "City": "Providence",
-      "LeadingStreetDirection": "",
-      "Street": "",
-      "TrailingStreetSuffix": "",
-      "PostalCode": "",
-      "Building": "",
-      "Room": "",
-      "GPSCoords": ""
+    "@odata.type": "#DataProtectionLineOfService.v1_3_0.DataProtectionLineOfService",
+    "Id": "Providence-Synchronous-Mirror",
+    "Name": "Providence-Synchronous-Mirror",
+    "RecoveryGeographicObjective": "Region",
+    "RecoveryPointObjectiveTime": "PT0S",
+    "RecoveryTimeObjective": "OnlineActive",
+    "ReplicaType": "Mirror",
+    "IsIsolated": true,
+    "ReplicaClassOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence"
     },
-    "Placement": {
-      "Row": "",
-      "Rack": ""
-    }
-  }
+    "ReplicaAccessLocation": {
+        "PostalAddress": {
+            "City": "Providence"
+        }
+    },
+    "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Providence-Synchronous-Mirror",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

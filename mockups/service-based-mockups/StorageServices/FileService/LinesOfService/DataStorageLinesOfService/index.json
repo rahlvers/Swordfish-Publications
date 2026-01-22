@@ -1,11 +1,12 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataStorageLinesOfService",
-  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
-  "Name": "DataStorageLinesOfService Collection",
-  "Members@odata.count": 1,
-  "Members": [
-        { "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataStorageLinesOfService/HA-Thin"}
-     ]
+    "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+    "Name": "DataStorageLinesOfService Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataStorageLinesOfService/HA-Thin"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataStorageLinesOfService",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

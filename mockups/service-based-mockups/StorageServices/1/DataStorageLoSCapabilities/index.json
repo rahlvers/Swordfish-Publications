@@ -1,16 +1,28 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-
-	"@odata.id": "/redfish/v1/StorageServices/1/DataStorageLoSCapabilities",
-	"@odata.type": "#DataStorageLoSCapabilities.v1_0_0.DataStorageLoSCapabilities",
-	"Name": "DataStorageLoSCapabilities",
-	"SupportedAccessCapabilities": ["Read",
-	"Write"],
-	"SupportedRecoveryTimeObjectives": ["OnlineActive",
-	"Nearline",
-	"Offline"],
-	"SupportsSpaceEfficiency": true,
-	"SupportedLinesOfService": [
-		{"@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataSecurityLinesOfService"}
-		]
+    "@odata.type": "#DataStorageLoSCapabilities.v1_2_2.DataStorageLoSCapabilities",
+    "Id": "DataStorageLoSCapabilities",
+    "Name": "DataStorageLoSCapabilities",
+    "SupportedAccessCapabilities": [
+        "Read",
+        "Write"
+    ],
+    "SupportedRecoveryTimeObjectives": [
+        "OnlineActive",
+        "Nearline",
+        "Offline"
+    ],
+    "SupportsSpaceEfficiency": true,
+    "SupportedLinesOfService": [
+        {
+          "@odata.type": "#DataStorageLineOfService.v1_3_1.DataStorageLineOfService",
+          "Id": "HA-Thin",
+          "Name": "HA-Thin",
+          "RecoveryTimeObjectives": "OnlineActive",
+          "ProvisioningPolicy": "Thin",
+          "IsSpaceEfficient": true,
+          "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataStorageLinesOfService/HA-Thin"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/1/DataStorageLoSCapabilities",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

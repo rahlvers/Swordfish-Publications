@@ -21,11 +21,10 @@
     "TotalCores": 8,
     "TotalThreads": 16,
     "Status": {
-        "@odata.type": "#Resource.Status",
+         
         "State": "Enabled",
         "Health": "OK"
     },
-   
     "@odata.id": "/redfish/v1/Systems/556ST22255E/Processors/CPU1",
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

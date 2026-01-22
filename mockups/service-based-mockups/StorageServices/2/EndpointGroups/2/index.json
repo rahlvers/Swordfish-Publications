@@ -1,12 +1,16 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/2/EndpointGroups/2",
-  "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
-  "Name": "Server/Target EP group",
-  "Description": "Group of target endpoints for 2",
-  "GroupType": "Server",
-  "AccessState": "Optimized",
-  "Preferred": true,
-  "Endpoints":  [{"@odata.id": "/redfish/v1/StorageServices/2/Endpoints/1"}]
+    "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
+    "Id": "2",
+    "Name": "Server/Target EP group",
+    "Description": "Group of target endpoints for 2",
+    "GroupType": "Server",
+    "AccessState": "Optimized",
+    "Preferred": true,
+    "Endpoints": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/2/Endpoints/1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/2/EndpointGroups/2",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

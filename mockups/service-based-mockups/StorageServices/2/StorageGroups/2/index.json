@@ -1,22 +1,23 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/2/StorageGroups/2",
-  "@odata.type": "#StorageGroup.v1_2_1.StorageGroup",
-  "Id": "2",
-  "Name": "RG_LOB_SQL",
-  "Description": "Replication group for SQL LOB app",
-  "VolumesAreExposed": true,
-  "AccessState": "Optimized",
-  "Status": {
-    "State": "Enabled",
-    "Health": "OK",
-    "HealthRollup": "OK"
-  },
-  "MappedVolumes": [{
-      "LogicalUnitNumber": "4",
-      "Volume": {
-        "@odata.id": "/redfish/v1/StorageServices/2/Volumes/4"
-      }
-    }]
+    "@odata.type": "#StorageGroup.v1_5_0.StorageGroup",
+    "Id": "2",
+    "Name": "RG_LOB_SQL",
+    "Description": "Replication group for SQL LOB app",
+    "VolumesAreExposed": true,
+    "AccessState": "Optimized",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK",
+        "HealthRollup": "OK"
+    },
+    "MappedVolumes": [
+        {
+            "LogicalUnitNumber": "4",
+            "Volume": {
+                "@odata.id": "/redfish/v1/StorageServices/2/Volumes/4"
+            }
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/2/StorageGroups/2",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

@@ -1,37 +1,38 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2019 DMTF. All rights reserved.",
-  "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters/8fd725a1/Ports/1",
-  "@odata.type": "#Port.v1_3_1.Port",
-  "Id": "1",
-  "Name": "Port View",
-
-  "CurrentSpeedGbps": 12,
-  "Description": "Port in embedded network interface for IP Attached drive.",
-  "Ethernet": {
-    "SupportedEthernetCapabilities": [
-      "WakeOnLAN",
-      "EEE"
+    "@odata.type": "#Port.v1_6_1.Port",
+    "Id": "1",
+    "Name": "Port View",
+    "CurrentSpeedGbps": 12,
+    "Description": "Port in embedded network interface for IP Attached drive.",
+    "Ethernet": {
+        "EEEEnabled": false,
+        "FlowControlStatus": "None",
+        "FlowControlConfiguration": "None",
+        "WakeOnLANEnabled": false
+    },
+    "LinkConfiguration": [
+        {
+            "CapableLinkSpeedGbps": [
+                10000
+            ],
+            "AutoSpeedNegotiationCapable": true,
+            "AutoSpeedNegotiationEnabled": false,
+            "ConfiguredNetworkLinks": [
+                {
+                    "ConfiguredLinkSpeedGbps": 12,
+                    "ConfiguredWidth": 4
+                }
+            ]
+        }
     ],
-    "FlowControlStatus": "None",
-    "FlowControlConfiguration": "None"
-  },
-
-  "LinkConfiguration": [{
-    "CapableLinkSpeedGbps": [10000],
-    "AutoSpeedNegotiationCapable": true,
-    "AutoSpeedNegotiationEnabled": false,
-    "ConfiguredNetworkLinks": [{
-      "ConfiguredLinkSpeedGbps": 12,
-      "ConfiguredWidth": 4
-    }]
-  }],
-
-  "LinkNetworkTechnology": "Ethernet",
-  "LinkState": "Enabled",
-  "LinkStatus": "LinkUp",
-  "MaxFrameSize": 1518,
-  "MaxSpeedGbps": 100,
-  "PortMedium": "Electrical",
-  "SignalDetected": true,
-  "Width": 4
+    "LinkNetworkTechnology": "Ethernet",
+    "LinkState": "Enabled",
+    "LinkStatus": "LinkUp",
+    "MaxFrameSize": 1518,
+    "MaxSpeedGbps": 100,
+    "PortMedium": "Electrical",
+    "SignalDetected": true,
+    "Width": 4,
+    "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters/8fd725a1/Ports/1",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }

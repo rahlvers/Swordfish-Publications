@@ -1,12 +1,22 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
-  "@odata.id": "/redfish/v1/StorageServices/1/IOConnectivityLoSCapabilities",
-  "@odata.type": "#IOConnectivityLoSCapabilities.v1_0_0.IOConnectivityLoSCapabilities",
-  "Name": "IOConnectivityLoSCapabilities",
-  "SupportedAccessProtocols": ["FC"],
-  "MaxSupportedBytesPerSecond": 1000,
-	"SupportedLinesOfService": [
-    {"@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/IOConnectivityLinesOfService"}
-    ]
+    "@odata.type": "#IOConnectivityLoSCapabilities.v1_2_0.IOConnectivityLoSCapabilities",
+    "Id": "IOConnectivityLoSCapabilities",
+    "Name": "IOConnectivityLoSCapabilities",
+    "SupportedAccessProtocols": [
+        "FC"
+    ],
+    "MaxSupportedBytesPerSecond": 1000,
+    "SupportedLinesOfService": [
+        {
+          "@odata.type": "#IOConnectivityLineOfService.v1_2_1.IOConnectivityLineOfService",
+          "Id": "FC",
+          "Name": "FC IOConnectivityLineOfService",
+          "AccessProtocols": [
+              "FC"
+          ],
+          "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/IOConnectivityLinesOfService/FC"
+        }
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/1/IOConnectivityLoSCapabilities",
+    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
 }
