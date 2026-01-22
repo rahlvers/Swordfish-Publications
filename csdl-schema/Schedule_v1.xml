@@ -12,18 +12,9 @@
 
   <edmx:DataServices>
 
-    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Schedule">
-
-      <ComplexType  Name="Schedule" Abstract="true">
-        <Annotation Term="OData.Description" String="Schedule a series of occurrences."/>
-        <Annotation Term="OData.LongDescription" String="Schedule a series of occurrences"/>
-      </ComplexType>
-
-    </Schema>
-
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Schedule.v1_0_0">
 
-      <ComplexType  Name="Schedule" BaseType="Schedule.Schedule">
+      <ComplexType  Name="Schedule">
         <Annotation Term="OData.Description" String="Schedule a series of occurrences."/>
         <Annotation Term="OData.LongDescription" String="Schedule a series of occurrences"/>
         <Property Name="Name" Type="Edm.String">
@@ -139,5 +130,17 @@
 
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Schedule.v1_1_0">
+    
+      <ComplexType  Name="Schedule" BaseType="Schedule.v1_0_0.Schedule">
+        <Property Name="EnabledIntervals" Type="Collection(Edm.String)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="Intervals when scheduled occurrences are enabled."/>
+          <Annotation Term="OData.LongDescription" String="Each value shall be an ISO 8601 conformant interval specifying when occurences are enabled."/>
+        </Property>
+      </ComplexType>
+
+    </Schema>
+    
   </edmx:DataServices>
 </edmx:Edmx>

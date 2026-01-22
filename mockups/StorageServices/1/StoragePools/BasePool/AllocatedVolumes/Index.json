@@ -5,5 +5,5 @@
   "@odata.type": "#VolumeCollection_1_0_0.VolumeCollection_1_0_0",
   "Name": "AllocatedVolumes",
   "Members@odata.count": 1,
-  "Members": [{"@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567"]
+  "Members": [{"@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567"}]
 }

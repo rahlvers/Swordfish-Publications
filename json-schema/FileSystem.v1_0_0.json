@@ -3,6 +3,76 @@
     "title": "#FileSystem.v1_0_0.FileSystem",
     "$ref": "#/definitions/FileSystem",
     "definitions": {
+        "CharacterCodeSet": {
+            "type": "string",
+            "enum": [
+                "ASCII",
+                "Unicode",
+                "ISO2022",
+                "ISO8859_1",
+                "ExtendedUNIXCode",
+                "UTF_8",
+                "UTF_16",
+                "UCS_2"
+            ],
+            "enumDescriptions": {
+                "ASCII": "ASCII character encoding.",
+                "Unicode": "Unicode character encoding.",
+                "ISO2022": "ISO-2022 character encoding.",
+                "ISO8859_1": "ISO-8859-1 character encoding.",
+                "ExtendedUNIXCode": "Extended Unix Code encoding.",
+                "UTF_8": "UTF-8 character encoding.",
+                "UTF_16": "UTF-16 character encoding.",
+                "UCS_2": "UCS-2 character encoding."
+            },
+            "enumLongDescriptions": {
+                "ASCII": "This value shall indicate that the ASCII character encoding is supported by the file system.",
+                "Unicode": "This value shall indicate that Unicode characer encoding is supported by the file system.",
+                "ISO2022": "This value shall indicate that ISO-2022 character encoding is supported by the file system.",
+                "ISO8859_1": "This value shall indicate that ISO-8859-1 character encoding is supported by the file system.",
+                "ExtendedUNIXCode": "This value shall indicate that Extended Unix Code character encoding is supported by the file system.",
+                "UTF_8": "This value shall indicate that the UTF-8 character encoding is supported by the file system.",
+                "UTF_16": "This value shall indicate that the UTF-16 character encoding is supported by the file system.",
+                "UCS_2": "This value shall indicate that the UCS-2 character encoding is supported by the file system."
+            },
+            "description": "Supported character code standards for different alphabets and languages.",
+            "longDescription": "The values shall indicate the character code standards supported by the file system."
+        },
+        "FileProtocol": {
+            "type": "string",
+            "enum": [
+                "NFSv3",
+                "NFSv4_0",
+                "NFSv4_1",
+                "SMBv2_0",
+                "SMBv2_1",
+                "SMBv3_0",
+                "SMBv3_0_2",
+                "SMBv3_1_1"
+            ],
+            "enumDescriptions": {
+                "NFSv3": "NFSv3, as defined in RFC 1813.",
+                "NFSv4_0": "NFSv4, as defined in RFC 7530.",
+                "NFSv4_1": "NFSv4.1, as defined in RFC 5661.",
+                "SMBv2_0": "Server Message Block version 2.0.",
+                "SMBv2_1": "Server Message Block version 2.1.",
+                "SMBv3_0": "Server Message Block version 3.0.",
+                "SMBv3_0_2": "Server Message Block version 3.0.2.",
+                "SMBv3_1_1": "Server Message Block version 3.1.1."
+            },
+            "enumLongDescriptions": {
+                "NFSv3": "This value shall indicate that NFSv3, as defined in RFC 1813, is supported by the file system.",
+                "NFSv4_0": "This value shall indicate that NFSv4, as defined in RFC 7530, is supported by the file system.",
+                "NFSv4_1": "This value shall indicate that NFSv4.1, as defined in RFC 5661, is supported by the file system.",
+                "SMBv2_0": "This value shall indicate that Server Message Block version 2.0 is supported by the file system.",
+                "SMBv2_1": "This value shall indicate that Server Message Block version 2.1 is supported by the file system.",
+                "SMBv3_0": "This value shall indicate that Server Message Block version 3.0 is supported by the file system.",
+                "SMBv3_0_2": "This value shall indicate that Server Message Block version 3.0.2 is supported by the file system.",
+                "SMBv3_1_1": "This value shall indicate that Server Message Block version 3.1.1 is supported by the file system."
+            },
+            "description": "The file sharing protocols supported by the file system.",
+            "longDescription": "The values shall indicate the file sharing protocols supported by the file system. At least one value shall be present."
+        },
         "FileSystem": {
             "type": "object",
             "patternProperties": {
@@ -35,16 +105,19 @@
                     "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
                 },
                 "Id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
                 },
                 "Description": {
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
                         {"type": "null"}
-                    ]
+                    ],
+                    "readonly": true
                 },
                 "Name": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
                 },
                 "BlockSizeBytes": {
                     "type": [
@@ -58,7 +131,7 @@
                 },
                 "Capacity": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -67,7 +140,7 @@
                 },
                 "RemainingCapacity": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
                         {"type": "null"}
                     ],
                     "readonly": true,
@@ -78,7 +151,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"},
                             {"type": "null"}
                         ]
                     },
@@ -105,7 +178,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageAccessCapability.json#/definitions/StorageAccessCapability"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageAccessCapability.v1_0_0.json#/definitions/StorageAccessCapability"},
                             {"type": "null"}
                         ]
                     },
@@ -135,7 +208,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/FileSystem.json#/definitions/CharacterCodeSet"},
+                            {"$ref": "#/definitions/CharacterCodeSet"},
                             {"type": "null"}
                         ]
                     },
@@ -167,7 +240,7 @@
                 },
                 "ReplicaInfo": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageReplicaInfo.json#/definitions/ReplicaInfo"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaInfo"},
                         {"type": "null"}
                     ],
                     "readonly": true,
@@ -178,7 +251,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/FileShare.json#/definitions/FileShare"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.json#/definitions/FileShare"},
                             {"type": "null"}
                         ]
                     },
@@ -218,7 +291,7 @@
                         "ReplicaCollection": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/FileSystem.json#/definitions/FileSystem"
+                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.json#/definitions/FileSystem"
                             },
                             "readonly": true,
                             "description": "An array of links to replicas for this file system.",
@@ -226,7 +299,7 @@
                         },
                         "ClassOfService": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
                                 {"type": "null"}
                             ],
                             "readonly": true,
@@ -245,7 +318,27 @@
             ],
             "description": "An instance of a hierarchical namespace of files.",
             "longDescription": "This resource shall be used to represent an instance of a hierarchical namespace of files."
+        },
+        "FileSystemPersistenceType": {
+            "type": "string",
+            "enum": [
+                "Persistent",
+                "Temporary",
+                "Other"
+            ],
+            "enumDescriptions": {
+                "Persistent": "The file system is persistent, and will be preserved through an orderly shutdown.",
+                "Temporary": "The file system is not persistent, and may not survive a shutdown.",
+                "Other": "The persistence type is known, but not defined by this standard. Use of this value is not recommended."
+            },
+            "enumLongDescriptions": {
+                "Persistent": "This value shall indicate that the file system is persistent, and shall be preserved through an orderly shutdown.",
+                "Temporary": "This value shall indicate that the file system is non-persistent and may not survive a shutdown.",
+                "Other": "This value shall indicate that the persistence type is known, but not defined by this standard. Use of this value is not recommended."
+            },
+            "description": "The persistence characteristics of the file system.",
+            "longDescription": "The value shall indicate the persistence characteristics of the file system."
         }
     },
-    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

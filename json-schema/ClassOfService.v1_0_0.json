@@ -35,16 +35,19 @@
                     "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
                 },
                 "Id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
                 },
                 "Description": {
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
                         {"type": "null"}
-                    ]
+                    ],
+                    "readonly": true
                 },
                 "Name": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
                 },
                 "Identifier": {
                     "anyOf": [
@@ -102,7 +105,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/DataProtectionLoSCapabilities.json#/definitions/DataProtectionLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_0_0.json#/definitions/DataProtectionLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -114,7 +117,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/DataSecurityLoSCapabilities.json#/definitions/DataSecurityLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_0.json#/definitions/DataSecurityLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -126,7 +129,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/DataStorageLoSCapabilities.json#/definitions/DataStorageLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_0_0.json#/definitions/DataStorageLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -138,7 +141,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/IOConnectivityLoSCapabilities.json#/definitions/IOConnectivityLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLoSCapabilities.v1_0_0.json#/definitions/IOConnectivityLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -150,7 +153,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/IOPerformanceLoSCapabilities.json#/definitions/IOPerformanceLineOfService"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_0.json#/definitions/IOPerformanceLineOfService"},
                             {"type": "null"}
                         ]
                     },
@@ -163,5 +166,5 @@
             "longDescription": "This structure may be used to collect a set of related service options."
         }
     },
-    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

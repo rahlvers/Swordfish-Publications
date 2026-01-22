@@ -9,6 +9,10 @@
     <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
     <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
   </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
+    <edmx:Include Namespace="Resource" />
+    <edmx:Include Namespace="Resource.v1_0_0" />
+  </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterfaceCollection_v1.xml">
     <edmx:Include Namespace="EthernetInterfaceCollection"/>
   </edmx:Reference>
@@ -33,51 +37,20 @@
         <Annotation Term="OData.Description" String="A shared set of files."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent a shared set of files."/>
       </EntityType>
-
-      <EnumType Name="AccessCapability">
-        <Annotation Term="OData.Description" String="Indicates the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute." />
-        <Annotation Term="OData.LongDescription" String="The values shall indicate the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute." />
-        <Member Name="Read">
-          <Annotation Term="OData.Description" String="Read access is allowed by the file share." />
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that Read access is allowed by the file share." />
-		  </Member>
-        <Member Name="Write">
-          <Annotation Term="OData.Description" String="Write access is allowed by the file share." />
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that Write access is allowed by the file share." />
-        </Member>
-        <Member Name="Execute">		
-          <Annotation Term="OData.Description" String="Execute access is allowed by the file share." />
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that Execute access is allowed by the file share." />
-		  </Member>
-      </EnumType>
-  
-      <EnumType Name="QuotaType">
-        <Annotation Term="OData.Description" String="Indicates whether quotas are enabled and enforced by this file share. A value of Soft means that quotas are enabled but not enforced, and a value of Hard means that quotas are enabled and enforced." />
-        <Annotation Term="OData.LongDescription" String="The value shall indicate whether quotas are enabled and enforced by this file share. If QuotaType is present, a value of Soft shall mean that quotas are enabled but not enforced, and a value of Hard shall mean that quotas are enabled and enforced." />
-        <Member Name="Soft">
-          <Annotation Term="OData.Description" String="Quotas are enabled but not enforced." />
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that quotas are enabled but not enforced." />
-        </Member>
-        <Member Name="Hard">
-          <Annotation Term="OData.Description" String="Quotas are enabled and enforced." />
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that quotas are enabled and enforced." />
-        </Member>
-      </EnumType>
-      
-    </Schema>  
+    </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileShare.v1_0_0">
 
       <EntityType Name="FileShare" BaseType="FileShare.FileShare">
         <Annotation Term="OData.Description" String="An instance of a shared set of files with a common directory structure."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent a shared set of files with a common directory structure."/>
-        
+
         <Property Name="FileSharePath" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="A path to an exported file or directory on the file system where this file share is hosted."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall be a path (relative to the file system root) to the exported file or directory on the file system where this file share is hosted."/>
         </Property>
-        <Property Name="FileSharingProtocols" Type="Collection(FileSystem.FileProtocol)"> 
+        <Property Name="FileSharingProtocols" Type="Collection(FileSystem.v1_0_0.FileProtocol)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="An array of file sharing protocols supported by this file share."/>
           <Annotation Term="OData.LongDescription" String="This property shall be an array containing entries for the file sharing protocols supported by this file share. Each entry shall specify a file sharing protocol supported by the file system."/>
@@ -87,7 +60,7 @@
           <Annotation Term="OData.Description" String="Indicates the status of the file share."/>
           <Annotation Term="OData.LongDescription" String="This value of this property shall indicate the status of the file share."/>
         </Property>
-        <Property Name="DefaultAccessPrivileges" Type="Collection(FileShare.AccessCapability)">
+        <Property Name="DefaultAccessPrivileges" Type="Collection(FileShare.v1_0_0.AccessCapability)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="An array of default access privileges for the file share. The types of default access can include Read, Write, and/or Execute."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing entries for the default access privileges for the file share. Each entry shall specify a defaul access privilege. The types of default access can include Read, Write, and/or Execute."/>
@@ -102,7 +75,7 @@
           <Annotation Term="OData.Description" String="Root access is allowed by the file share."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall indicate whether Root access is allowed by the file share. The default value for this property is false."/>
         </Property>
-        <Property Name="WritePolicy" Type="StorageReplicaInfo.ReplicaUpdateMode">
+        <Property Name="WritePolicy" Type="StorageReplicaInfo.v1_0_0.ReplicaUpdateMode">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Defines how writes are replicated to the shared source."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall define how writes are replicated to the shared source."/>
@@ -130,12 +103,12 @@
           <Annotation Term="Validation.Minimum" Int="0"/>
           <Annotation Term="Validation.Maximum" Int="100"/>
         </Property>
-        <Property Name="FileShareQuotaType" Type="FileShare.QuotaType">
+        <Property Name="FileShareQuotaType" Type="FileShare.v1_0_0.QuotaType">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="Specifies the type of quota enforcement."/>
           <Annotation Term="OData.LongDescription" String="If FileShareQuotaType is present, a value of Soft shall specify that quotas are not enforced, and a value of Hard shall specify that writes shall fail if the space consumed would exceed the value of the FileShareTotalQuotaBytes property."/>
         </Property>
-		<Property Name="Links" Type="FileShare.v1_0_0.Links" Nullable="false">
+		    <Property Name="Links" Type="FileShare.v1_0_0.Links" Nullable="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
           <Annotation Term="OData.Description" String="Contains links to other resources that are related to this resource." />
           <Annotation Term="OData.LongDescription" String="This property shall contain links to other resources that are related to this resource." />
@@ -147,7 +120,7 @@
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
       </EntityType>
-    
+
       <ComplexType Name="Links" BaseType="Resource.Links">
         <NavigationProperty Name="ClassOfService" Type="ClassOfService.ClassOfService">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
@@ -162,6 +135,36 @@
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
       </ComplexType>
+
+      <EnumType Name="AccessCapability">
+        <Annotation Term="OData.Description" String="Indicates the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute." />
+        <Annotation Term="OData.LongDescription" String="The values shall indicate the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute." />
+        <Member Name="Read">
+          <Annotation Term="OData.Description" String="Read access is allowed by the file share." />
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that Read access is allowed by the file share." />
+		  </Member>
+        <Member Name="Write">
+          <Annotation Term="OData.Description" String="Write access is allowed by the file share." />
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that Write access is allowed by the file share." />
+        </Member>
+        <Member Name="Execute">
+          <Annotation Term="OData.Description" String="Execute access is allowed by the file share." />
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that Execute access is allowed by the file share." />
+		  </Member>
+      </EnumType>
+
+      <EnumType Name="QuotaType">
+        <Annotation Term="OData.Description" String="Indicates whether quotas are enabled and enforced by this file share. A value of Soft means that quotas are enabled but not enforced, and a value of Hard means that quotas are enabled and enforced." />
+        <Annotation Term="OData.LongDescription" String="The value shall indicate whether quotas are enabled and enforced by this file share. If QuotaType is present, a value of Soft shall mean that quotas are enabled but not enforced, and a value of Hard shall mean that quotas are enabled and enforced." />
+        <Member Name="Soft">
+          <Annotation Term="OData.Description" String="Quotas are enabled but not enforced." />
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that quotas are enabled but not enforced." />
+        </Member>
+        <Member Name="Hard">
+          <Annotation Term="OData.Description" String="Quotas are enabled and enforced." />
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that quotas are enabled and enforced." />
+        </Member>
+      </EnumType>
 
     </Schema>
   </edmx:DataServices>

@@ -38,10 +38,12 @@
                             "anyOf": [
                                 {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
                                 {"type": "null"}
-                            ]
+                            ],
+                            "readonly": true
                         },
                         "Name": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                            "readonly": true
                         },
                         "Oem": {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
@@ -71,5 +73,5 @@
             "longDescription": "An instance of this resource shall reference the set of Drive resources known in the scope of its use."
         }
     },
-    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

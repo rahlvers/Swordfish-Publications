@@ -1,9 +1,9 @@
 {
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
-    "title": "#StoragePoolCollection.StoragePoolCollection",
-    "$ref": "#/definitions/StoragePoolCollection",
+    "title": "#EndpointGroupCollection.EndpointGroupCollection",
+    "$ref": "#/definitions/EndpointGroupCollection",
     "definitions": {
-        "StoragePoolCollection": {
+        "EndpointGroupCollection": {
             "anyOf": [
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
@@ -60,17 +60,17 @@
                         "Members": {
                             "type": "array",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.json#/definitions/StoragePool"
+                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.json#/definitions/EndpointGroup"
                             },
                             "readonly": true,
-                            "description": "The value of each member references a StoragePool resource.",
-                            "longDescription": "The value of each member entry shall reference a StoragePool resource."
+                            "description": "The value of each member references an endpoint group resource.",
+                            "longDescription": "The value of each member entry shall reference an endpoint group resource."
                         }
                     }
                 }
             ],
-            "description": "A Collection of StoragePool resource instances.",
-            "longDescription": "This collection shall contain references to all StoragePool resource instances sharing the same parent resource."
+            "description": "A Collection of endpoint group resource instances.",
+            "longDescription": "An instance of this resource shall reference the set of Endpoint group resources known in the scope of its use."
         }
     },
     "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"

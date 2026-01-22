@@ -9,7 +9,7 @@
     <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
   </edmx:Reference>
   <edmx:DataServices>
-    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageAccessCapability">
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageAccessCapability.v1_0_0">
       <EnumType Name="StorageAccessCapability">
         <Annotation Term="OData.Description" String="Values of StorageAccessCapability describe abilities to read or write storage."/>
         <Annotation Term="OData.LongDescription" String="StorageAccessCapability enumeration literals may be used to describe abilities to read or write storage."/>
@@ -33,7 +33,7 @@
           <Annotation Term="OData.Description" String="Streaming."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the storage may be read sequentially."/>
         </Member>
-      </EnumType>				  	
+      </EnumType>
     </Schema>
   </edmx:DataServices>
 </edmx:Edmx>

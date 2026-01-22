@@ -3,115 +3,16 @@
     "title": "#DataStorageLoSCapabilities.DataStorageLoSCapabilities",
     "$ref": "#/definitions/DataStorageLoSCapabilities",
     "definitions": {
-        "AccessCapability": {
-            "type": "string",
-            "enum": [
-                "Read",
-                "WriteMany",
-                "WriteOnce",
-                "AppendOnly",
-                "Streaming"
-            ],
-            "enumDescriptions": {
-                "Read": "Read.",
-                "WriteMany": "WriteMany.",
-                "WriteOnce": "WriteOnce.",
-                "AppendOnly": "AppendOnly.",
-                "Streaming": "Streaming."
-            },
-            "enumLongDescriptions": {
-                "Read": "This enumeration literal specifies Read access.",
-                "WriteMany": "This enumeration literal specifies WriteMany access.",
-                "WriteOnce": "This enumeration literal specifies WriteOnce access.",
-                "AppendOnly": "This enumeration literal specifies AppendOnly access.",
-                "Streaming": "This enumeration literal specifies Streaming access."
-            },
-            "description": "Types of access.",
-            "longDescription": "The enumeration literals may be used to specify types of access."
-        },
-        "DataStorageLineOfService": {
-            "type": "object",
-            "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
-                    "type": [
-                        "array",
-                        "boolean",
-                        "number",
-                        "null",
-                        "object",
-                        "string"
-                    ],
-                    "description": "This property shall specify a valid odata or Redfish property."
-                }
-            },
-            "additionalProperties": true,
-            "properties": {
-                "Name": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
-                        {"type": "null"}
-                    ],
-                    "description": "A friendly name for this line of service.",
-                    "longDescription": "If present, the name shall be a friendly name for this line of service."
-                },
-                "RecoveryTimeObjectives": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/DataProtectionLoSCapabilities.json#/definitions/RecoveryAccessScope"},
-                        {"type": "null"}
-                    ],
-                    "readonly": false,
-                    "description": "Expectations for time to access the primary store after disaster recover.",
-                    "longDescription": "The enumeration literal specifies the time after a disaster that the client shall regain conformant service level access to the primary store, typical values are 'immediate' or 'offline'. The expectation is that the services required to implement this capability are part of the advertising system."
-                },
-                "ProvisioningPolicy": {
-                    "anyOf": [
-                        {"$ref": "#/definitions/ProvisioningPolicy"},
-                        {"type": "null"}
-                    ],
-                    "readonly": false,
-                    "description": "Provisioning policy for storage.",
-                    "longDescription": "The enumeration literal shall define the provisioning policy for storage."
-                },
-                "IsSpaceEfficient": {
-                    "type": [
-                        "boolean",
-                        "null"
-                    ],
-                    "readonly": false,
-                    "description": "True implies compression or deduplication of storage.",
-                    "longDescription": "A value of true shall indicate that the storage is compressed or deduplicated. The default value for this property is false."
-                }
-            },
-            "description": "Describe data storage capabilities.",
-            "longDescription": "This structure may be used to describe a service option covering storage provisioning and availability."
-        },
         "DataStorageLoSCapabilities": {
             "anyOf": [
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/DataStorageLoSCapabilities.v1_0_0.json#/definitions/DataStorageLoSCapabilities"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_0_0.json#/definitions/DataStorageLoSCapabilities"
                 }
             ]
-        },
-        "ProvisioningPolicy": {
-            "type": "string",
-            "enum": [
-                "Fixed",
-                "Thin"
-            ],
-            "enumDescriptions": {
-                "Fixed": "Storage is fully allocated",
-                "Thin": "Storage may be over allocated."
-            },
-            "enumLongDescriptions": {
-                "Fixed": "This enumeration literal specifies storage shall be fully allocated.",
-                "Thin": "This enumeration literal specifies storage may be over allocated."
-            },
-            "description": "Space provisioning policy.",
-            "longDescription": "The enumeration literals may be used to specify space provisioning policy."
         }
     },
-    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

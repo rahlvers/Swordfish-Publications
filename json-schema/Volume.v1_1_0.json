@@ -137,16 +137,19 @@
                     "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
                 },
                 "Id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
                 },
                 "Description": {
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
                         {"type": "null"}
-                    ]
+                    ],
+                    "readonly": true
                 },
                 "Name": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
                 },
                 "Status": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status"
@@ -264,7 +267,7 @@
                         },
                         "ClassOfService": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
+                                {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
                                 {"type": "null"}
                             ],
                             "readonly": true,
@@ -323,7 +326,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageAccessCapability.json#/definitions/StorageAccessCapability"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageAccessCapability.v1_0_0.json#/definitions/StorageAccessCapability"},
                             {"type": "null"}
                         ]
                     },
@@ -343,7 +346,7 @@
                 },
                 "Capacity": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -354,7 +357,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/CapacitySource"},
                             {"type": "null"}
                         ]
                     },
@@ -397,7 +400,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageReplicaInfo.json#/definitions/ReplicaInfo"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_0_0.json#/definitions/ReplicaInfo"},
                             {"type": "null"}
                         ]
                     },
@@ -415,7 +418,7 @@
                 "StorageGroups": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageGroup.json#/definitions/StorageGroup"
+                        "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.json#/definitions/StorageGroup"
                     },
                     "readonly": true,
                     "description": "An array of references to Storage Groups that includes this volume.",
@@ -431,7 +434,7 @@
                 "AllocatedPools": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StoragePool.json#/definitions/StoragePool"
+                        "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.json#/definitions/StoragePool"
                     },
                     "readonly": true,
                     "description": "An array of references to StoragePools allocated from this Volume.",
@@ -446,5 +449,5 @@
             "longDescription": "This resource shall be used to represent a volume, virtual disk, logical disk, LUN, or other logical storage for a Redfish implementation."
         }
     },
-    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

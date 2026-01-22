@@ -1,6 +1,6 @@
 {
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
-    "title": "#Schedule.v1_0_0",
+    "title": "#Schedule.v1_1_0",
     "definitions": {
         "DayOfWeek": {
             "type": "string",
@@ -157,6 +157,18 @@
                     "readonly": false,
                     "description": "Months of year when scheduled occurrences are enabled.",
                     "longDescription": "Months of year when scheduled occurrences are enabled, for enabled days of week and days of month. If not present, all months of the year shall be enabled."
+                },
+                "EnabledIntervals": {
+                    "type": "array",
+                    "items": {
+                        "type": [
+                            "string",
+                            "null"
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Intervals when scheduled occurrences are enabled.",
+                    "longDescription": "Each value shall be an ISO 8601 conformant interval specifying when occurences are enabled."
                 }
             },
             "description": "Schedule a series of occurrences.",

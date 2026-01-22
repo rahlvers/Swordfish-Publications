@@ -4,7 +4,7 @@
   "@odata.id": "/redfish/v1/StorageServices/Simple2/ClientEndpointGroups",
   "@odata.type": "#EndpointGroupCollection.v1_0_0.EndpointGroupCollection",
   "Name": "ClientEndpointGroups",
-  "Description": "List of client endpoint groups contained in StorageService Simple1"
+  "Description": "List of client endpoint groups contained in StorageService Simple1",
   "Members@odata.count": 1,
   "Members": [{"@odata.id": "/redfish/v1/StorageServices/Simple2/ClientEndpointGroups/1"}]
 }
