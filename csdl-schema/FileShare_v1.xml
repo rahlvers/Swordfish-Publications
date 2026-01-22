@@ -18,17 +18,15 @@
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService_v1.xml">
     <edmx:Include Namespace="ClassOfService"/>
-    <edmx:Include Namespace="ClassOfService.v1_0_0"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo_v1.xml">
-    <edmx:Include Namespace="StorageReplicaInfo.v1_0_0"/>
+    <edmx:Include Namespace="StorageReplicaInfo"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem_v1.xml">
     <edmx:Include Namespace="FileSystem"/>
-    <edmx:Include Namespace="FileSystem.v1_0_0"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities_v1.xml">
-    <edmx:Include Namespace="DataStorageLoSCapabilities.v1_0_0"/>
+    <edmx:Include Namespace="DataStorageLoSCapabilities"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Measures.V1.xml">
     <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
@@ -54,7 +52,7 @@
           <Annotation Term="OData.Description" String="A path to an exported file or directory on the file system where this file share is hosted."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall be a path (relative to the file system root) to the exported file or directory on the file system where this file share is hosted."/>
         </Property>
-        <Property Name="FileSharingProtocols" Type="Collection(FileSystem.v1_0_0.FileProtocol)">
+        <Property Name="FileSharingProtocols" Type="Collection(FileSystem.FileProtocol)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="An array of file sharing protocols supported by this file share."/>
           <Annotation Term="OData.LongDescription" String="This property shall be an array containing entries for the file sharing protocols supported by this file share. Each entry shall specify a file sharing protocol supported by the file system."/>
@@ -64,7 +62,7 @@
           <Annotation Term="OData.Description" String="Indicates the status of the file share."/>
           <Annotation Term="OData.LongDescription" String="This value of this property shall indicate the status of the file share."/>
         </Property>
-        <Property Name="DefaultAccessCapabilities" Type="Collection(DataStorageLoSCapabilities.v1_0_0.StorageAccessCapability)">
+        <Property Name="DefaultAccessCapabilities" Type="Collection(DataStorageLoSCapabilities.StorageAccessCapability)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="An array of default access capabilities for the file share. The types of default access can include Read, Write, and/or Execute."/>
           <Annotation
@@ -81,7 +79,7 @@
           <Annotation Term="OData.Description" String="Root access is allowed by the file share."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall indicate whether Root access is allowed by the file share. The default value for this property is false."/>
         </Property>
-        <Property Name="WritePolicy" Type="StorageReplicaInfo.v1_0_0.ReplicaUpdateMode">
+        <Property Name="WritePolicy" Type="StorageReplicaInfo.ReplicaUpdateMode">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Defines how writes are replicated to the shared source."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall define how writes are replicated to the shared source."/>
@@ -190,6 +188,10 @@
         <Annotation Term="OData.Description" String="The available OEM specific actions for this resource."/>
         <Annotation Term="OData.LongDescription" String="This type shall contain any additional OEM actions for this resource."/>
       </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileShare.v1_1_1">
+      <Annotation Term="OData.Description" String="Change references to unversioned. "/>
     </Schema>
 
   </edmx:DataServices>

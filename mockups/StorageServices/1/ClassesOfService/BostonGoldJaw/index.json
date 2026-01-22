@@ -8,12 +8,12 @@
   "Description": "Boston with Open Jaw config to Providence and Dallas",
   "ClassOfServiceVersion": "01.00.00",
   "LinesOfService": {
-      "IOConnectivityLineOfService": {
+      "IOConnectivityLinesOfService": {
         "Name": "FiberChannel",
         "AccessProtocol": "FC",
         "MaxSupportedIoOperationsPerSecond": null
       },
-      "IOPerformanceLineOfService": {
+      "IOPerformanceLinesOfService": {
         "Name": "Lite-OLTP-HDD",
         "IoOperationsPerSecondIsLimitedBoolean": "false",
         "SamplePeriod": "PT1M",
@@ -23,7 +23,7 @@
             "Name":"Duplicon:OLTP"
         }
       },
-      "DataProtectionLineOfService": [
+      "DataProtectionLinesOfService": [
         {
           "Name": "Providence-Synchronous-Mirror",
           "RecoveryGeographicObjective": "Region",
@@ -86,7 +86,7 @@
           }
         }
       ],
-      "DataSecurityLineOfService": {
+      "DataSecurityLinesOfService": {
         "Name": "SecureData",
         "MediaEncryptionStrength": "Bits_256",
         "ChannelEncryptionStrength": "Bits_128",
@@ -97,7 +97,7 @@
         "AntivirusEngineProvider": null,
         "DataSanitizationPolicy": "CryptographicErase"
       },
-      "DataStorageLineOfService": {
+      "DataStorageLinesOfService": {
         "Name": "HA-Thin",
         "RecoveryTimeObjective": 0,
         "ProvisioningPolicy": "Thin",

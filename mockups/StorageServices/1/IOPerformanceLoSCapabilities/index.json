@@ -30,7 +30,7 @@
 			"PercentOfIOPS ": 66
 		}]
 	}],
-	"SupportedIOPerformanceLinesOfService": [{
+	"SupportedLinesOfService": [{
 		"IoOperationsPerSecondIsLimitedBoolean": false,
 		"SamplePeriod": "PT1M",
 		"MaxIoOperationsPerSecondPerTerabyte": 83,

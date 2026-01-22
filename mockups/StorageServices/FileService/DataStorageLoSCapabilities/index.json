@@ -13,7 +13,7 @@
 	"SupportedLocations": [],
 	"SupportedSpaceGuaranteed": true,
 	"SupportedSpaceEfficient": true,
-    "SupportedDataStorageLinesOfService": [{
+    "SupportedLinesOfService": [{
 		"RecoveryTimeObjective": 0,
 		"ProvisioningPolicy": "Thin",
 		"SpaceEfficient": true

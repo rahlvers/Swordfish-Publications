@@ -12,7 +12,7 @@
 	"SupportedAntivirusScanPolicies": [],
 	"SupportedAntivirusEngineProviders": [],
 	"SupportedDataSanitization": ["None", "Clear", "CryptographicErase"],
-    "SupportedDataSecurityLinesOfService": [{
+    "SupportedLinesOfService": [{
 		"MediaEncryptionStrength": "Bits_256",
 		"ChannelEncryptionStrength": "Bits_128",
 		"HostAuthenticationType": "Ticket",

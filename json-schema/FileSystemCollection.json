@@ -1,7 +1,7 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "title": "#FileSystemCollection.FileSystemCollection",
     "$ref": "#/definitions/FileSystemCollection",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
+    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "FileSystemCollection": {
             "anyOf": [
@@ -9,9 +9,12 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
                 },
                 {
-                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Contains a collection of references to FileSystem resource instances.",
+                    "longDescription": "This resource shall contain a collection of references to FileSystem resource instances.",
                     "patternProperties": {
                         "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                            "description": "This property shall specify a valid odata or Redfish property.",
                             "type": [
                                 "array",
                                 "boolean",
@@ -19,11 +22,9 @@
                                 "null",
                                 "object",
                                 "string"
-                            ],
-                            "description": "This property shall specify a valid odata or Redfish property."
+                            ]
                         }
                     },
-                    "additionalProperties": false,
                     "properties": {
                         "@odata.context": {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/context"
@@ -36,10 +37,26 @@
                         },
                         "Description": {
                             "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
-                                {"type": "null"}
+                                {
+                                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                                },
+                                {
+                                    "type": "null"
+                                }
                             ],
                             "readonly": true
+                        },
+                        "Members": {
+                            "description": "References to the members of this FileSystem collection.",
+                            "items": {
+                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.json#/definitions/FileSystem"
+                            },
+                            "longDescription": "This property shall contain references to the members of this FileSystem collection.",
+                            "readonly": true,
+                            "type": "array"
+                        },
+                        "Members@odata.count": {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
                         },
                         "Name": {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
@@ -49,29 +66,12 @@
                             "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
                             "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
                             "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
-                        },
-                        "Members@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "Members@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "Members": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.json#/definitions/FileSystem"
-                            },
-                            "readonly": true,
-                            "description": "References to the members of this FileSystem collection.",
-                            "longDescription": "This property shall contain references to the members of this FileSystem collection."
                         }
-                    }
+                    },
+                    "type": "object"
                 }
-            ],
-            "description": "Contains a collection of references to FileSystem resource instances.",
-            "longDescription": "This resource shall contain a collection of references to FileSystem resource instances."
+            ]
         }
     },
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+    "title": "#FileSystemCollection.FileSystemCollection"
 }

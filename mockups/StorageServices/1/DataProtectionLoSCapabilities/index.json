@@ -29,7 +29,7 @@
 	"SupportsIsolated": true,
 	"SupportedReplicaOptions": [],
 	"SupportedLocations": [],
-	"SupportedDataProtectionLinesOfService": [
+	"SupportedLinesOfService": [
     {
 		"RecoveryGeographicObjective": "Region",
 		"RecoveryPointObjectiveTime": "P7D",

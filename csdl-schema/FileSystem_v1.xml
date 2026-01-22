@@ -15,16 +15,15 @@
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService_v1.xml">
     <edmx:Include Namespace="ClassOfService"/>
-    <edmx:Include Namespace="ClassOfService.v1_0_0"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Capacity_v1.xml">
-    <edmx:Include Namespace="Capacity.v1_0_0"/>
+    <edmx:Include Namespace="Capacity"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities_v1.xml">
-    <edmx:Include Namespace="DataStorageLoSCapabilities.v1_0_0"/>
+    <edmx:Include Namespace="DataStorageLoSCapabilities"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo_v1.xml">
-    <edmx:Include Namespace="StorageReplicaInfo.v1_0_0"/>
+    <edmx:Include Namespace="StorageReplicaInfo"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FileShareCollection_v1.xml">
     <edmx:Include Namespace="FileShareCollection"/>
@@ -42,6 +41,43 @@
         <Annotation Term="OData.Description" String="A hierarchical namespace of files."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent a hierarchical namespace of files."/>
       </EntityType>
+
+      <EnumType Name="FileProtocol">
+        <Annotation Term="OData.Description" String="The file sharing protocols supported by the file system."/>
+        <Annotation Term="OData.LongDescription" String="The values shall indicate the file sharing protocols supported by the file system. At least one value shall be present."/>
+        <Member Name="NFSv3">
+          <Annotation Term="OData.Description" String="NFSv3, as defined in RFC 1813."/>
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that NFSv3, as defined in RFC 1813, is supported by the file system."/>
+        </Member>
+        <Member Name="NFSv4_0">
+          <Annotation Term="OData.Description" String="NFSv4, as defined in RFC 7530."/>
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that NFSv4, as defined in RFC 7530, is supported by the file system."/>
+        </Member>
+        <Member Name="NFSv4_1">
+          <Annotation Term="OData.Description" String="NFSv4.1, as defined in RFC 5661."/>
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that NFSv4.1, as defined in RFC 5661, is supported by the file system."/>
+        </Member>
+        <Member Name="SMBv2_0">
+          <Annotation Term="OData.Description" String="Server Message Block version 2.0."/>
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 2.0 is supported by the file system."/>
+        </Member>
+        <Member Name="SMBv2_1">
+          <Annotation Term="OData.Description" String="Server Message Block version 2.1."/>
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 2.1 is supported by the file system."/>
+        </Member>
+        <Member Name="SMBv3_0">
+          <Annotation Term="OData.Description" String="Server Message Block version 3.0."/>
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 3.0 is supported by the file system."/>
+        </Member>
+        <Member Name="SMBv3_0_2">
+          <Annotation Term="OData.Description" String="Server Message Block version 3.0.2."/>
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 3.0.2 is supported by the file system."/>
+        </Member>
+        <Member Name="SMBv3_1_1">
+          <Annotation Term="OData.Description" String="Server Message Block version 3.1.1."/>
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 3.1.1 is supported by the file system."/>
+        </Member>
+      </EnumType>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_0_0">
@@ -56,21 +92,21 @@
           <Annotation Term="OData.LongDescription" String="The value of this property shall be the block size of the file system in bytes."/>
           <Annotation Term="Measures.Unit" String="By"/>
         </Property>
-        <Property Name="Capacity" Type="Capacity.v1_0_0.Capacity">
+        <Property Name="Capacity" Type="Capacity.Capacity">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="Capacity allocated to the file system."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall be the capacity allocated to the file system in bytes."/>
         </Property>
-        <Property Name="RemainingCapacity" Type="Capacity.v1_0_0.Capacity">
+        <Property Name="RemainingCapacity" Type="Capacity.Capacity">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Remaining capacity allocated to the file system."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall be the remaining capacity allocated to the file system in bytes."/>
         </Property>
-        <Property Name="CapacitySources" Type="Collection(Capacity.v1_0_0.CapacitySource)">
+        <NavigationProperty Name="CapacitySources" Type="Collection(Capacity.CapacitySource)" ContainsTarget="true">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="An array of capacity sources for the file system."/>
           <Annotation Term="OData.LongDescription" String="This property shall be an array containing entries for all the capacity sources for the file system. Each entry shall provide capacity allocation information from a named resource."/>
-        </Property>
+        </NavigationProperty>
 
         <Property Name="LowSpaceWarningThresholdPercents" Type="Collection(Edm.Int64)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
@@ -82,7 +118,7 @@
           <Annotation Term="Validation.Minimum" Int="0"/>
           <Annotation Term="Validation.Maximum" Int="100"/>
         </Property>
-        <Property Name="AccessCapabilities" Type="Collection(DataStorageLoSCapabilities.v1_0_0.StorageAccessCapability)">
+        <Property Name="AccessCapabilities" Type="Collection(DataStorageLoSCapabilities.StorageAccessCapability)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="An array of supported IO access capabilities."/>
           <Annotation Term="OData.LongDescription" String="This property shall be an array containing entries for the supported IO access capabilities. Each entry shall specify a current storage access capability."/>
@@ -122,7 +158,7 @@
           <Annotation Term="Measures.Unit" String="By"/>
           <Annotation Term="Validation.Minimum" Int="1"/>
         </Property>
-        <Property Name="ReplicaInfo" Type="StorageReplicaInfo.v1_0_0.ReplicaInfo">
+        <Property Name="ReplicaInfo" Type="StorageReplicaInfo.ReplicaInfo">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="This value describes the replica attributes if this file system is a replica."/>
           <Annotation
@@ -209,43 +245,6 @@
         </Member>
       </EnumType>
 
-      <EnumType Name="FileProtocol">
-        <Annotation Term="OData.Description" String="The file sharing protocols supported by the file system."/>
-        <Annotation Term="OData.LongDescription" String="The values shall indicate the file sharing protocols supported by the file system. At least one value shall be present."/>
-        <Member Name="NFSv3">
-          <Annotation Term="OData.Description" String="NFSv3, as defined in RFC 1813."/>
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that NFSv3, as defined in RFC 1813, is supported by the file system."/>
-        </Member>
-        <Member Name="NFSv4_0">
-          <Annotation Term="OData.Description" String="NFSv4, as defined in RFC 7530."/>
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that NFSv4, as defined in RFC 7530, is supported by the file system."/>
-        </Member>
-        <Member Name="NFSv4_1">
-          <Annotation Term="OData.Description" String="NFSv4.1, as defined in RFC 5661."/>
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that NFSv4.1, as defined in RFC 5661, is supported by the file system."/>
-        </Member>
-        <Member Name="SMBv2_0">
-          <Annotation Term="OData.Description" String="Server Message Block version 2.0."/>
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 2.0 is supported by the file system."/>
-        </Member>
-        <Member Name="SMBv2_1">
-          <Annotation Term="OData.Description" String="Server Message Block version 2.1."/>
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 2.1 is supported by the file system."/>
-        </Member>
-        <Member Name="SMBv3_0">
-          <Annotation Term="OData.Description" String="Server Message Block version 3.0."/>
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 3.0 is supported by the file system."/>
-        </Member>
-        <Member Name="SMBv3_0_2">
-          <Annotation Term="OData.Description" String="Server Message Block version 3.0.2."/>
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 3.0.2 is supported by the file system."/>
-        </Member>
-        <Member Name="SMBv3_1_1">
-          <Annotation Term="OData.Description" String="Server Message Block version 3.1.1."/>
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that Server Message Block version 3.1.1 is supported by the file system."/>
-        </Member>
-      </EnumType>
-
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_0_1">
@@ -255,11 +254,11 @@
       <EntityType Name="FileSystem" BaseType="FileSystem.v1_0_0.FileSystem">
         <Annotation Term="OData.Description" String="Add ImportedShares."/>
         <Annotation Term="OData.LongDescription" String="Add ImportedShares."/>
-        <Property Name="ImportedShares" Type="Collection(FileShare.FileShare)">
+        <NavigationProperty Name="ImportedShares" Type="Collection(FileShare.FileShare)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="An array of imported file shares."/>
           <Annotation Term="OData.LongDescription" String="The value shall be an array of imported file shares."/>
-        </Property>
+        </NavigationProperty>
       </EntityType>
 
       <ComplexType Name="ImportedShare" BaseType="Resource.Links">
@@ -304,21 +303,28 @@
       </ComplexType>
     </Schema>
 
-	
+
 	<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_1_1">
 
       <EntityType Name="FileSystem" BaseType="FileSystem.v1_1_0.FileSystem">
         <Annotation Term="OData.Description" String="An instance of a hierarchical namespace of files."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an instance of a hierarchical namespace of files."/>
-	
-        <Property Name="Identifiers" Type="Collection(Resource.v1_1_0.Identifier)" Nullable="false">
+
+        <Property Name="Identifiers" Type="Collection(Resource.Identifier)" Nullable="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="The durable names for this file system."/>
           <Annotation Term="OData.LongDescription" String="This property shall contain a list of all known durable names for this file system."/>
         </Property>
-		
+
       </EntityType>
-	</Schema>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_1_2">
+      <Annotation Term="OData.Description" String="This version was for errata to FileSystem."/>
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_1_0.FileSystem">
+		<Annotation Term="OData.Description" String="CapacitySources changes from Property to NavigationProperty with ContainsTarget=true. Move enums to unversioned namespace.  Change references to unversioned. "/>
+      </EntityType>
+    </Schema>
 
   </edmx:DataServices>
 </edmx:Edmx>

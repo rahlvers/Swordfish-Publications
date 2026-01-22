@@ -7,7 +7,7 @@
 	"SupportedAccessProtocols": ["FC",
 	"SCSI"],
 	"MaxSupportedIoOperationsPerSecond": 1000,
-    "SupportedIOConnectivityLinesOfService": [{
+    "SupportedLinesOfService": [{
 		"AccessProtocol": "FC",
 		"MaxSupportedIoOperationsPerSecond": null
 	}]
