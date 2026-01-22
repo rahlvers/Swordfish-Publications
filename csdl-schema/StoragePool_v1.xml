@@ -86,12 +86,20 @@
             <String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/AllocatedPools/{StoragePoolId}</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
+
             <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}</String>
             <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedPools/{AllocatedPoolId}</String>
             <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{ProvidingPoolId}</String>
             <String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
             <String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/AllocatedPools/{StoragePoolId}</String>
             <String>/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
+
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools/{StoragePoolId}</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedPools/{AllocatedPoolId}</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{ProvidingPoolId}</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/{VolumeId}/AllocatedPools/{StoragePoolId}</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
           </Collection>
         </Annotation>
       </EntityType>
@@ -348,7 +356,6 @@
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_4_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="WIP v1.2.0"/>
-
       <Annotation Term="OData.Description" String="This version was created to add OwningStorageResource to Links, and adds the NVMe Properties."/>
 
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_3_1.StoragePool">
@@ -367,7 +374,7 @@
         <Annotation Term="OData.LongDescription" String="This contains properties to use when StoragePool is used to describe an NVMe Set."/>
         <Property Name="SetIdentifier" Type="Edm.String">
           <Annotation Term="OData.Description" String="A 16-bit hex value that contains the NVMe Set group identifier."/>
-          <Annotation Term="OData.LongDescription" String="This property shall contain a 16-bit hex value that contains the NVMe Set group identifier. The endurance group identifier is unique within a subsystem. Reserved values include 0."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a 16-bit hex value that contains the NVMe Set group identifier. The NVM Set identifier is unique within a subsystem. Reserved values include 0."/>
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="Validation.Pattern" String="^0[xX](([a-fA-F]|[0-9])*)$"/>
         </Property>
@@ -484,6 +491,13 @@
         </NavigationProperty>
       </ComplexType>
 
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_5_0">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="TP v1.2.1"/>
+      <Annotation Term="OData.Description" String="This version was created to add missing URIs for Systems. It also corrects the long description for SetIdentifier in NVMeSetProperties."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_4_0.StoragePool"/>
     </Schema>
 
   </edmx:DataServices>

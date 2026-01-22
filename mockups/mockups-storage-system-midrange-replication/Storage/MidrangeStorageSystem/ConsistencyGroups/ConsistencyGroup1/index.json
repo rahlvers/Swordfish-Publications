@@ -1,0 +1,33 @@
+{
+  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/ConsistencyGroups/ConsistencyGroup1",
+  "@odata.type": "#ConsistencyGroup.v1_0_1.ConsistencyGroup",
+  "Id": "ConsistencyGroup1",
+  "Name": "Consistency group 1",
+  "Description": "Consistency group for VSS",
+
+  "IsConsistent": true,
+  "ConsistencyMethod": "VSS",
+  "ConsistencyType": "ApplicationConsistent",
+
+  "Volumes": [{
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2"
+  }],
+  "ReplicaInfo": {
+    "ReplicaType": "Snapshot"
+  },
+
+  "ReplicaTargets": [{
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap4"
+    }
+  ]
+}

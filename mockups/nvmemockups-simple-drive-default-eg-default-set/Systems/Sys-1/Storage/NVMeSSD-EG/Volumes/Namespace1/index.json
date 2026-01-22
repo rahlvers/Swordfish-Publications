@@ -17,9 +17,6 @@
     "Data": {
       "ConsumedBytes": 0,
       "AllocatedBytes": 10737418240
-    },
-    "Metadata": {
-      "AllocatedBytes": 536870912
     }
   },
   "CapacitySources": [{

@@ -1,34 +1,34 @@
 components:
   schemas:
-    DataSecurityLoSCapabilities:
+    DataSecurityLoSCapabilities_v1_0_1_DataSecurityLoSCapabilities:
       additionalProperties: false
       description: Describe data security capabilities.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
           readOnly: true
         Id:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         Identifier:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Identifier
           description: The value identifies this resource.
           x-longDescription: The value identifies this resource.  The value shall
             be unique within the managed ecosystem.
         Name:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
           readOnly: true
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties that this object contains shall conform to the Redfish
@@ -44,7 +44,7 @@ components:
         SupportedAntivirusScanPolicies:
           description: Supported policies that trigger an AntiVirus scan.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/AntiVirusScanTrigger
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AntiVirusScanTrigger
             nullable: true
           readOnly: false
           type: array
@@ -53,7 +53,7 @@ components:
         SupportedChannelEncryptionStrengths:
           description: Supported key sizes for transport channel encryption.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/KeySize
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
             nullable: true
           readOnly: false
           type: array
@@ -62,7 +62,7 @@ components:
         SupportedDataSanitizationPolicies:
           description: Supported data sanitization policies.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSanitizationPolicy
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_DataSanitizationPolicy
             nullable: true
           readOnly: false
           type: array
@@ -72,7 +72,7 @@ components:
           description: Supported authentication types for hosts (servers) or initiator
             endpoints.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/AuthenticationType
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
             nullable: true
           readOnly: false
           type: array
@@ -81,18 +81,18 @@ components:
         SupportedLinesOfService:
           description: Collection of known and supported DataSecurityLinesOfService.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           readOnly: false
           type: array
           x-autoExpand: true
           x-longDescription: The collection shall contain supported DataSecurity service
             options.
         SupportedLinesOfService@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
         SupportedMediaEncryptionStrengths:
           description: Supported key sizes for media encryption.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/KeySize
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
             nullable: true
           readOnly: false
           type: array
@@ -101,7 +101,7 @@ components:
         SupportedSecureChannelProtocols:
           description: Supported protocols that provide encrypted communication.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/SecureChannelProtocol
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_SecureChannelProtocol
             nullable: true
           readOnly: false
           type: array
@@ -110,7 +110,7 @@ components:
         SupportedUserAuthenticationTypes:
           description: Supported authentication types for users (or programs).
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/AuthenticationType
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
             nullable: true
           readOnly: false
           type: array

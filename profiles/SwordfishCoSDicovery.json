@@ -1,7 +1,7 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_1.json",
   "ProfileName": "SwordfishCoSDicovery",
-  "ProfileVersion": "1.0.0",
+  "ProfileVersion": "1.1.0",
   "OwningEntity": "SNIA.org",
   "Purpose": "Defines Class Of Service Discovery requirements for service-based Swordfish implementations.",
   "ContactInfo": "SNIA.org",
@@ -9,7 +9,7 @@
     "SwordfishDiscovery": {
       "OwningEntity": "SNIA.org",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-      "MinVersion": "1.0.1"
+      "MinVersion": "1.1.0"
     }
   },
   "Registries": {

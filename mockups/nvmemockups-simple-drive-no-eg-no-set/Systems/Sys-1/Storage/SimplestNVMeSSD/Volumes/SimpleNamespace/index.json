@@ -17,13 +17,10 @@
     "Data": {
       "ConsumedBytes": 0,
       "AllocatedBytes": 10737418240
-    },
-    "Metadata": {
-      "AllocatedBytes": 536870912
     }
   },
   "NVMeNamespaceProperties": {
-    "NamespaceId": "0x22F",    
+    "NamespaceId": "0x22F",
     "NamespaceFeatures": {
       "SupportsThinProvisioning": false,
       "SupportsAtomicTransactionSize": false,

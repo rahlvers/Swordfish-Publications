@@ -1,7 +1,7 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_1.json",
   "ProfileName": "SwordfishDiscovery",
-  "ProfileVersion": "1.0.1",
+  "ProfileVersion": "1.1.0",
   "OwningEntity": "SNIA.org",
   "Purpose": "Define requirements for discovery of resources and relationships that are common to all Swordfish conformant implementations.",
   "ContactInfo": "SNIA.org",
@@ -18,47 +18,17 @@
   "Resources": {
     "ServiceRoot": {
       "PropertyRequirements": {
-        "StorageSystems": {},
+        "Storage": {},
         "Systems": {
-          "ComputerSystem": {
-            "PropertyRequirements": {
-              "HostingRoles": {
-                "ConditionalRequirements": [{
-                  "Purpose": "Swordfish implementations must specify a hosting role type of StorageServer.",
-                  "CompareValues": "StorageServer"
-                }]
-              },
-              "Storage": {
-                "Volumes": {
-                  "PropertyRequirements": {
-                    "Members": {
-                      "MinCount": 0
-                    }
-                  }
-                },
-                "StoragePools": {
-                  "PropertyRequirements": {
-                    "Members": {
-                      "MinCount": 0
-                    }
-                  }
-                },
-                "Drives": {
-                  "ReadRequirement": "Recommended",
-                  "ConditionalRequirements": [{
-                    "Purpose": "ConditionalRequirements: The implementation must choose at least one selected media container (appropriate for the system's selected media type) and instantiate a collection for it.  This may be instantiated as a CapacitySources structure to feed a StoragePool, FileSystem, or Volume.  When drives are used, the Drives Collection in either Storage or, when implementing the ClassOfService Feature, StorageServices shall be implemented.",
-                    "CompareType": "Absent",
-                    "ReadRequirement": "Mandatory",
-                    "Comparison": "AnyOf",
-                    "CompareValues": ["StoragePool/CapacitySource", "FileSystem/CapacitySource", "Volume/CapacitySource"]
-                  }]
-                }
-              }
-            }
-          }
+          "Purpose": "If Storage is attached to a ComputerSystem rather than instantiated as a Standalone instance.",
+          "ReadRequirement": "IfImplemented"
+        },
+        "StorageSystems": {
+          "Purpose": "If Storage is attached to a ComputerSystem rather than instantiated as a Standalone instance.",
+          "ReadRequirement": "IfImplemented"
         }
       },
-      "StorageSystemCollection": {
+      "StorageCollection": {
         "PropertyRequirements": {
           "Members": {
             "MinCount": 1
@@ -77,6 +47,33 @@
           "Members": {
             "MinCount": 0
           }
+        }
+      },
+      "Storage": {
+        "PropertyRequirements": {
+          "Volumes": {},
+          "StoragePools": {},
+          "Drives": {
+            "ReadRequirement": "Recommended",
+            "ConditionalRequirements": [{
+              "Purpose": "ConditionalRequirements: The implementation must choose at least one selected media container (appropriate for the system's selected media type) and instantiate a collection for it.  This may be instantiated as a CapacitySources structure to feed a StoragePool, FileSystem, or Volume.  When drives are used, the Drives Collection in either Storage or, when implementing the ClassOfService Feature, StorageServices shall be implemented.",
+              "CompareType": "Absent",
+              "ReadRequirement": "Mandatory",
+              "Comparison": "AnyOf",
+              "CompareValues": ["StoragePool/CapacitySource", "FileSystem/CapacitySource", "Volume/CapacitySource"]
+            }]
+          }
+        }
+      },
+      "ComputerSystem": {
+        "PropertyRequirements": {
+          "HostingRoles": {
+            "ConditionalRequirements": [{
+              "Purpose": "Swordfish implementations must specify a hosting role type of StorageServer.",
+              "CompareValues": "StorageServer"
+            }]
+          },
+          "Storage": {}
         }
       }
     }

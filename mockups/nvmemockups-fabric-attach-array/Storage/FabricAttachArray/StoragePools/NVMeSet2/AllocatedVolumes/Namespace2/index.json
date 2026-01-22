@@ -17,9 +17,6 @@
     "Data": {
       "ConsumedBytes": 0,
       "AllocatedBytes": 10737418240
-    },
-    "Metadata": {
-      "AllocatedBytes": 536870912
     }
   },
   "CapacitySources": [{
@@ -27,7 +24,7 @@
   }],
   "NVMeNamespaceProperties": {
     "NamespaceId": "0x0DEAD",
-    "IsShareable" : true,         
+    "IsShareable" : true,
     "NamespaceFeatures": {
       "SupportsThinProvisioning": false,
       "SupportsAtomicTransactionSize": false,

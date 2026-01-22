@@ -1,11 +1,11 @@
 components:
   schemas:
-    Actions:
+    FileSystem_v1_2_2_Actions:
       additionalProperties: false
       description: The available actions for this resource.
       properties:
         Oem:
-          $ref: '#/components/schemas/OemActions'
+          $ref: '#/components/schemas/FileSystem_v1_2_2_OemActions'
           description: This property contains the available OEM specific actions for
             this resource.
           x-longDescription: This property shall contain any additional OEM actions
@@ -16,7 +16,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    CharacterCodeSet:
+    FileSystem_v1_2_2_CharacterCodeSet:
       description: Supported character code standards for different alphabets and
         languages.
       enum:
@@ -57,22 +57,22 @@ components:
           by the file system.
       x-longDescription: The values shall indicate the character code standards supported
         by the file system.
-    FileSystem:
+    FileSystem_v1_2_2_FileSystem:
       additionalProperties: false
       description: An instance of a hierarchical namespace of files.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
         AccessCapabilities:
           description: An array of supported IO access capabilities.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/StorageAccessCapability
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
             nullable: true
           readOnly: false
           type: array
@@ -80,7 +80,7 @@ components:
             the supported IO access capabilities. Each entry shall specify a current
             storage access capability.
         Actions:
-          $ref: '#/components/schemas/Actions'
+          $ref: '#/components/schemas/FileSystem_v1_2_2_Actions'
           description: The available actions for this resource.
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
@@ -94,21 +94,21 @@ components:
             the file system in bytes.
           x-units: By
         Capacity:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity_v1_0_0_Capacity
           description: Capacity allocated to the file system.
           x-longDescription: The value of this property shall be the capacity allocated
             to the file system in bytes.
         CapacitySources:
           description: An array of capacity sources for the file system.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.yaml#/components/schemas/CapacitySource
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.yaml#/components/schemas/Capacity_CapacitySource
           readOnly: false
           type: array
           x-longDescription: This property shall be an array containing entries for
             all the capacity sources for the file system. Each entry shall provide
             capacity allocation information from a named resource.
         CapacitySources@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
         CasePreserved:
           description: The case of file names is preserved by the file system.
           nullable: true
@@ -129,7 +129,7 @@ components:
           description: An array of the character sets or encodings supported by the
             file system.
           items:
-            $ref: '#/components/schemas/CharacterCodeSet'
+            $ref: '#/components/schemas/FileSystem_v1_2_2_CharacterCodeSet'
             nullable: true
           readOnly: false
           type: array
@@ -150,28 +150,28 @@ components:
             smaller than this value.
           x-units: By
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
           readOnly: true
         ExportedShares:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: An array of exported file shares of this file system.
           readOnly: false
           x-longDescription: This property shall be an array of exported file shares
             of this file system. Each entry shall define an exported file share of
             this file system.
         IOStatistics:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.yaml#/components/schemas/IOStatistics
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.yaml#/components/schemas/IOStatistics_IOStatistics
           description: Statistics for this FileSystem.
           x-longDescription: The value shall represent IO statistics for this FileSystem.
           x-versionAdded: v1_2_0
         Id:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         Identifiers:
           description: The durable names for this file system.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
+            $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Identifier
           type: array
           x-longDescription: This property shall contain a list of all known durable
             names for this file system.
@@ -179,12 +179,12 @@ components:
         ImportedShares:
           description: An array of imported file shares.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.yaml#/components/schemas/ImportedShare
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.yaml#/components/schemas/FileSystem_ImportedShare
           type: array
           x-longDescription: The value shall be an array of imported file shares.
           x-versionAdded: v1_0_1
         Links:
-          $ref: '#/components/schemas/Links'
+          $ref: '#/components/schemas/FileSystem_v1_2_2_Links'
           description: Contains links to other resources that are related to this
             resource.
           x-longDescription: This property shall contain links to other resources
@@ -217,10 +217,10 @@ components:
             of a file name within the file system.
           x-units: By
         Name:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
           readOnly: true
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties that this object contains shall conform to the Redfish
@@ -236,7 +236,7 @@ components:
             source resource fails.
           x-versionAdded: v1_2_0
         RemainingCapacity:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity_v1_0_0_Capacity
           deprecated: true
           description: Remaining capacity allocated to the file system.
           x-deprecatedReason: 'This property is deprecated in favor of the Capacity
@@ -255,7 +255,7 @@ components:
             value.
           x-versionAdded: v1_1_0
         ReplicaInfo:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/ReplicaInfo
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaInfo
           description: This value describes the replica attributes if this file system
             is a replica.
           x-longDescription: If this file system is a replica, this value shall describe
@@ -264,14 +264,14 @@ components:
         ReplicaTargets:
           description: The resources that are target replicas of this source.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
           readOnly: true
           type: array
           x-longDescription: The value shall reference the target replicas that are
             sourced by this replica.
           x-versionAdded: v1_2_1
         ReplicaTargets@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
       required:
       - '@odata.id'
       - '@odata.type'
@@ -283,18 +283,18 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    Links:
+    FileSystem_v1_2_2_Links:
       additionalProperties: false
       description: Contains links to other resources that are related to this resource.
       properties:
         ClassOfService:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: The ClassOfService of this file system.
           readOnly: true
           x-longDescription: This value shall be a link to the ClassOfService for
             this file system.
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties contained in this object shall conform to the Redfish
@@ -303,7 +303,7 @@ components:
           deprecated: true
           description: An array of links to replicas for this file system.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           readOnly: true
           type: array
           x-deprecatedReason: Deprecated in favor of ReplicaTargets.
@@ -311,11 +311,11 @@ components:
             for this file system. Each entry shall be a link to a replica for this
             file system.
         ReplicaCollection@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
         SpareResourceSets:
           description: An array of references to SpareResourceSets.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           readOnly: false
           type: array
           x-longDescription: Each referenced SpareResourceSet shall contain resources
@@ -323,14 +323,14 @@ components:
             having a compatible type.
           x-versionAdded: v1_2_0
         SpareResourceSets@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
       type: object
       x-longDescription: This property shall contain links to other resources that
         are related to this resource.
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    OemActions:
+    FileSystem_v1_2_2_OemActions:
       additionalProperties: true
       description: The available OEM specific actions for this resource.
       properties: {}

@@ -1,12 +1,12 @@
 components:
   schemas:
-    DataStorageLineOfService:
+    DataStorageLineOfService_DataStorageLineOfService:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_0_2.yaml#/components/schemas/DataStorageLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_1_2.yaml#/components/schemas/DataStorageLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_2_1.yaml#/components/schemas/DataStorageLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_3_1.yaml#/components/schemas/DataStorageLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_0_2.yaml#/components/schemas/DataStorageLineOfService_v1_0_2_DataStorageLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_1_2.yaml#/components/schemas/DataStorageLineOfService_v1_1_2_DataStorageLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_2_1.yaml#/components/schemas/DataStorageLineOfService_v1_2_1_DataStorageLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_3_1.yaml#/components/schemas/DataStorageLineOfService_v1_3_1_DataStorageLineOfService
       description: Describe data storage and provisioning capabilities.
       x-longDescription: This resource shall be used to describe storage availability
         and provisioning capabilities.

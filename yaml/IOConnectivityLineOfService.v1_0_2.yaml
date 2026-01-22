@@ -1,13 +1,13 @@
 components:
   schemas:
-    IOConnectivityLineOfService:
+    IOConnectivityLineOfService_v1_0_2_IOConnectivityLineOfService:
       additionalProperties: false
       description: A service option within the IO Connectivity line of service.
       properties:
         AccessProtocols:
           description: SupportedAccessProtocols.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/Protocol.yaml#/components/schemas/Protocol
+            $ref: http://redfish.dmtf.org/schemas/v1/Protocol.yaml#/components/schemas/Protocol_Protocol
             nullable: true
           readOnly: false
           type: array

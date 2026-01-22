@@ -321,7 +321,7 @@
                 },
                 "SetIdentifier": {
                     "description": "A 16-bit hex value that contains the NVMe Set group identifier.",
-                    "longDescription": "This property shall contain a 16-bit hex value that contains the NVMe Set group identifier. The endurance group identifier is unique within a subsystem. Reserved values include 0.",
+                    "longDescription": "This property shall contain a 16-bit hex value that contains the NVMe Set group identifier. The NVM Set identifier is unique within a subsystem. Reserved values include 0.",
                     "pattern": "^0[xX](([a-fA-F]|[0-9])*)$",
                     "readonly": true,
                     "type": [

@@ -1,6 +1,6 @@
 components:
   schemas:
-    ClassOfService:
+    ClassOfService_v1_0_1_ClassOfService:
       additionalProperties: false
       description: A service option composed of one or more service options.
       properties:
@@ -16,7 +16,7 @@ components:
             version (in numeric form). N - The minor version (in numeric form). U
             - The update (e.g. errata or patch in numeric form).'
         Identifier:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Identifier
           description: The value identifies this resource.
           x-longDescription: The value shall be unique within the managed ecosystem.
       type: object

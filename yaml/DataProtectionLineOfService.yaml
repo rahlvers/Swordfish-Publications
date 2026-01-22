@@ -1,11 +1,11 @@
 components:
   schemas:
-    DataProtectionLineOfService:
+    DataProtectionLineOfService_DataProtectionLineOfService:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_0_2.yaml#/components/schemas/DataProtectionLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_1_2.yaml#/components/schemas/DataProtectionLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_2_1.yaml#/components/schemas/DataProtectionLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_0_2.yaml#/components/schemas/DataProtectionLineOfService_v1_0_2_DataProtectionLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_1_2.yaml#/components/schemas/DataProtectionLineOfService_v1_1_2_DataProtectionLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_2_1.yaml#/components/schemas/DataProtectionLineOfService_v1_2_1_DataProtectionLineOfService
       description: Describes a data protection service option.
       x-longDescription: This service option describes a replica that protects data
         from loss. The requirements must be met collectively by the communication

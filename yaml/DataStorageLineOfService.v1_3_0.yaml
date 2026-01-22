@@ -1,11 +1,11 @@
 components:
   schemas:
-    Actions:
+    DataStorageLineOfService_v1_3_0_Actions:
       additionalProperties: false
       description: The available actions for this resource.
       properties:
         Oem:
-          $ref: '#/components/schemas/OemActions'
+          $ref: '#/components/schemas/DataStorageLineOfService_v1_3_0_OemActions'
           description: This property contains the available OEM specific actions for
             this resource.
           x-longDescription: This property shall contain any additional OEM actions
@@ -17,21 +17,21 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    DataStorageLineOfService:
+    DataStorageLineOfService_v1_3_0_DataStorageLineOfService:
       additionalProperties: false
       description: Describe data storage and provisioning capabilities.
       properties:
         AccessCapabilities:
           description: Required access capabilities.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/StorageAccessCapability
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
             nullable: true
           readOnly: false
           type: array
           x-longDescription: Each entry specifies a required storage access capability.
           x-versionAdded: v1_1_0
         Actions:
-          $ref: '#/components/schemas/Actions'
+          $ref: '#/components/schemas/DataStorageLineOfService_v1_3_0_Actions'
           description: The available actions for this resource.
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
@@ -44,7 +44,7 @@ components:
           x-longDescription: A value of true shall indicate that the storage is compressed
             or deduplicated. The default value for this property is false.
         ProvisioningPolicy:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/ProvisioningPolicy
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_ProvisioningPolicy
           description: Provisioning policy for storage.
           nullable: true
           readOnly: false
@@ -62,7 +62,7 @@ components:
             associated resource's RecoverableCapacitySourceCount.
           x-versionAdded: v1_2_0
         RecoveryTimeObjectives:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/RecoveryAccessScope
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_RecoveryAccessScope
           description: Expectations for time to access the primary store after disaster
             recover.
           nullable: true
@@ -78,7 +78,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    OemActions:
+    DataStorageLineOfService_v1_3_0_OemActions:
       additionalProperties: true
       description: The available OEM specific actions for this resource.
       properties: {}

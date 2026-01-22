@@ -1,6 +1,6 @@
 components:
   schemas:
-    IOStatistics:
+    IOStatistics_v1_0_3_IOStatistics:
       additionalProperties: false
       description: The properties of this type represent IO statistics.
       properties:

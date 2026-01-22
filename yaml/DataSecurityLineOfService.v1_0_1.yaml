@@ -1,6 +1,6 @@
 components:
   schemas:
-    DataSecurityLineOfService:
+    DataSecurityLineOfService_v1_0_1_DataSecurityLineOfService:
       additionalProperties: false
       description: Describes data security service level requirements.
       properties:
@@ -13,49 +13,49 @@ components:
         AntivirusScanPolicies:
           description: Policy for triggering an AntiVirus scan.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/AntiVirusScanTrigger
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AntiVirusScanTrigger
             nullable: true
           readOnly: false
           type: array
           x-longDescription: The enumeration literal shall specify the policy for
             triggering an AntiVirus scan.
         ChannelEncryptionStrength:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/KeySize
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
           description: Key size for transport channel encryption.
           nullable: true
           readOnly: false
           x-longDescription: The enumeration literal shall specify a key size in a
             symmetric encryption algorithm for transport channel encryption.
         DataSanitizationPolicy:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSanitizationPolicy
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_DataSanitizationPolicy
           description: Data sanitization policy.
           nullable: true
           readOnly: false
           x-longDescription: The enumeration literal shall specify the data sanitization
             policy.
         HostAuthenticationType:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/AuthenticationType
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
           description: Authentication type for hosts (servers) or initiator endpoints.
           nullable: true
           readOnly: false
           x-longDescription: The enumeration literal shall specify the authentication
             type for hosts (servers) or initiator endpoints.
         MediaEncryptionStrength:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/KeySize
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
           description: Key size for media encryption.
           nullable: true
           readOnly: false
           x-longDescription: The enumeration literal shall specify a key size in a
             symmetric encryption algorithm for media encryption.
         SecureChannelProtocol:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/SecureChannelProtocol
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_SecureChannelProtocol
           description: Protocol that provide encrypted communication.
           nullable: true
           readOnly: false
           x-longDescription: The enumeration literal shall specify the protocol that
             provide encrypted communication.
         UserAuthenticationType:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/AuthenticationType
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
           description: Authentication type for users (or programs).
           nullable: true
           readOnly: false

@@ -1,0 +1,25 @@
+{
+  "@odata.type": "#EndpointCollection.EndpointCollection",
+  "Name": "Endpoint Collection",
+  "Description": "Endpoint Collection",
+  "Members@odata.count": 5,
+  "Members": [{
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/InitiatorEndpoint1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint4"
+    }
+
+  ],
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints",
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

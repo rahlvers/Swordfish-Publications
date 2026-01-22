@@ -1,11 +1,11 @@
 components:
   schemas:
-    Actions:
+    IOPerformanceLoSCapabilities_v1_1_2_Actions:
       additionalProperties: false
       description: The available actions for this resource.
       properties:
         Oem:
-          $ref: '#/components/schemas/OemActions'
+          $ref: '#/components/schemas/IOPerformanceLoSCapabilities_v1_1_2_OemActions'
           description: This property contains the available OEM specific actions for
             this resource.
           x-longDescription: This property shall contain any additional OEM actions
@@ -16,7 +16,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    IOAccessPattern:
+    IOPerformanceLoSCapabilities_v1_1_2_IOAccessPattern:
       description: Typical IO access patterns.
       enum:
       - ReadWrite
@@ -44,26 +44,26 @@ components:
           write pattern of access.
       x-longDescription: The enumeration literals may be used to specify an IO access
         pattern.
-    IOPerformanceLoSCapabilities:
+    IOPerformanceLoSCapabilities_v1_1_2_IOPerformanceLoSCapabilities:
       additionalProperties: false
       description: Describe IO performance capabilities.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
         Actions:
-          $ref: '#/components/schemas/Actions'
+          $ref: '#/components/schemas/IOPerformanceLoSCapabilities_v1_1_2_Actions'
           description: The available actions for this resource.
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
           x-versionAdded: v1_1_0
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
           readOnly: true
         IOLimitingIsSupported:
@@ -75,10 +75,10 @@ components:
             * (Volume Size in Terabytes). Otherwise, the system shall not inforce
             a limit. The default value for this property is false.
         Id:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         Identifier:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Identifier
           description: The value identifies this resource.
           x-longDescription: The value shall be unique within the managed ecosystem.
         MaxSamplePeriod:
@@ -106,10 +106,10 @@ components:
             in microseconds calculated over the SamplePeriod.
           x-units: us
         Name:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
           readOnly: true
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties that this object contains shall conform to the Redfish
@@ -117,21 +117,21 @@ components:
         SupportedIOWorkloads:
           description: A collection of supported workloads.
           items:
-            $ref: '#/components/schemas/IOWorkload'
+            $ref: '#/components/schemas/IOPerformanceLoSCapabilities_v1_1_2_IOWorkload'
             nullable: true
           type: array
           x-longDescription: The value shall be a collection of supported workloads.
         SupportedLinesOfService:
           description: Collection of known and supported IOPerformanceLinesOfService.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           readOnly: false
           type: array
           x-autoExpand: true
           x-longDescription: The value shall be a collection supported IO performance
             service options.
         SupportedLinesOfService@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
       required:
       - '@odata.id'
       - '@odata.type'
@@ -143,14 +143,14 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    IOWorkload:
+    IOPerformanceLoSCapabilities_v1_1_2_IOWorkload:
       additionalProperties: false
       description: An IO Workload description.
       properties:
         Components:
           description: An array of IO workload component descriptions.
           items:
-            $ref: '#/components/schemas/IOWorkloadComponent'
+            $ref: '#/components/schemas/IOPerformanceLoSCapabilities_v1_1_2_IOWorkloadComponent'
             nullable: true
           type: array
           x-longDescription: The value shall be an array of IO workload component
@@ -169,7 +169,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    IOWorkloadComponent:
+    IOPerformanceLoSCapabilities_v1_1_2_IOWorkloadComponent:
       additionalProperties: false
       description: Describe a component of a IO workload.
       properties:
@@ -191,7 +191,7 @@ components:
             is specified and otherwise shall not be specified.
           x-units: s
         IOAccessPattern:
-          $ref: '#/components/schemas/IOAccessPattern'
+          $ref: '#/components/schemas/IOPerformanceLoSCapabilities_v1_1_2_IOAccessPattern'
           description: Expected access pattern for this component.
           nullable: true
           readOnly: false
@@ -214,7 +214,7 @@ components:
             IOPS for this workload that is covered by this component.
           x-units: '%'
         Schedule:
-          $ref: http://redfish.dmtf.org/schemas/v1/Schedule.yaml#/components/schemas/Schedule
+          $ref: http://redfish.dmtf.org/schemas/v1/Schedule.yaml#/components/schemas/Schedule_Schedule
           description: Specifies when to apply this workload component.
           x-longDescription: The value shall specifies when this workload component
             is applied to the overall workload.
@@ -224,7 +224,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    OemActions:
+    IOPerformanceLoSCapabilities_v1_1_2_OemActions:
       additionalProperties: true
       description: The available OEM specific actions for this resource.
       properties: {}

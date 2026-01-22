@@ -1,11 +1,11 @@
 components:
   schemas:
-    IOConnectivityLineOfService:
+    IOConnectivityLineOfService_IOConnectivityLineOfService:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_0_3.yaml#/components/schemas/IOConnectivityLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_1_2.yaml#/components/schemas/IOConnectivityLineOfService
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_2_1.yaml#/components/schemas/IOConnectivityLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_0_3.yaml#/components/schemas/IOConnectivityLineOfService_v1_0_3_IOConnectivityLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_1_2.yaml#/components/schemas/IOConnectivityLineOfService_v1_1_2_IOConnectivityLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_2_1.yaml#/components/schemas/IOConnectivityLineOfService_v1_2_1_IOConnectivityLineOfService
       description: A service option within the IO Connectivity line of service.
       x-longDescription: An IO connectivity service option may be used to specify
         the characteristics of storage connectivity.

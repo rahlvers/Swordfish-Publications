@@ -1,13 +1,13 @@
 components:
   schemas:
-    DataStorageLineOfService:
+    DataStorageLineOfService_v1_2_1_DataStorageLineOfService:
       additionalProperties: false
       description: Describe data storage and provisioning capabilities.
       properties:
         AccessCapabilities:
           description: Required access capabilities.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/StorageAccessCapability
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
             nullable: true
           readOnly: false
           type: array
@@ -21,7 +21,7 @@ components:
           x-longDescription: A value of true shall indicate that the storage is compressed
             or deduplicated. The default value for this property is false.
         ProvisioningPolicy:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/ProvisioningPolicy
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_ProvisioningPolicy
           description: Provisioning policy for storage.
           nullable: true
           readOnly: false
@@ -39,7 +39,7 @@ components:
             associated resource's RecoverableCapacitySourceCount.
           x-versionAdded: v1_2_0
         RecoveryTimeObjectives:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/RecoveryAccessScope
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_RecoveryAccessScope
           description: Expectations for time to access the primary store after disaster
             recover.
           nullable: true

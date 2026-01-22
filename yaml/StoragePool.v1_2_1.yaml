@@ -1,6 +1,6 @@
 components:
   schemas:
-    Links:
+    StoragePool_v1_2_1_Links:
       additionalProperties: false
       description: The links object contains the links to other resources that are
         related to this resource.
@@ -9,7 +9,7 @@ components:
           description: An array of references to the drives which are dedicated spares
             for this StoragePool.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           readOnly: true
           type: array
           x-longDescription: The value of this property shall be a reference to the
@@ -19,9 +19,9 @@ components:
             able to support this StoragePool.
           x-versionAdded: v1_2_0
         DedicatedSpareDrives@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
         DefaultClassOfService:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           deprecated: true
           description: The default class of service for entities allocated from this
             storage pool.
@@ -33,7 +33,7 @@ components:
             shall be one of its entries. If not present, the default class of service
             of the containing StorageService entity shall be used.
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties contained in this object shall conform to the Redfish
@@ -41,7 +41,7 @@ components:
         SpareResourceSets:
           description: An array of references to SpareResourceSets.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           readOnly: false
           type: array
           x-longDescription: Each referenced SpareResourceSet shall contain resources
@@ -49,7 +49,7 @@ components:
             having a compatible type.
           x-versionAdded: v1_2_0
         SpareResourceSets@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
       type: object
       x-longDescription: The Links property, as described by the Redfish Specification,
         shall contain references to resources that are related to, but not contained
@@ -57,27 +57,27 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    StoragePool:
+    StoragePool_v1_2_1_StoragePool:
       additionalProperties: false
       description: A container of data storage.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
         AllocatedPools:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: A reference to the collection of storage pools allocated from
             this storage pool.
           readOnly: true
           x-longDescription: The value of this property shall contain a reference
             to the collection of storage pools allocated from this storage pool.
         AllocatedVolumes:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: A reference to the collection of volumes allocated from this
             storage pool.
           readOnly: true
@@ -97,14 +97,14 @@ components:
             valid (for example, with Memory), enter a 1.
           x-units: By
         Capacity:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity_v1_0_0_Capacity
           description: Capacity utilization.
           x-longDescription: The value of this property shall provide an information
             about the actual utilization of the capacity within this storage pool.
         CapacitySources:
           description: An array of space allocations to this store.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.yaml#/components/schemas/CapacitySource
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.yaml#/components/schemas/Capacity_CapacitySource
           readOnly: false
           type: array
           x-autoExpand: true
@@ -112,16 +112,16 @@ components:
             Each entry shall provide capacity allocation data from a named source
             resource.
         CapacitySources@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
         ClassesOfService:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: The ClassesOfService supported by this storage pool.
           readOnly: false
           x-longDescription: This property shall contain references to all classes
             of service supported by this storage pool. Capacity allocated from this
             storage pool shall conform to one of the referenced classes of service.
         DefaultClassOfService:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: The default class of service for entities allocated from this
             storage pool.
           readOnly: false
@@ -132,24 +132,24 @@ components:
             of the containing StorageService entity shall be used.
           x-versionAdded: v1_2_0
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
           readOnly: true
         IOStatistics:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.yaml#/components/schemas/IOStatistics
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.yaml#/components/schemas/IOStatistics_IOStatistics
           description: Statistics for this StoragePool.
           x-longDescription: The value shall represent IO statistics for this StoragePool.
           x-versionAdded: v1_2_0
         Id:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         Identifier:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Identifier
           description: The value identifies this resource.
           x-longDescription: The value identifies this resource. The value shall be
             unique within the managed ecosystem.
         Links:
-          $ref: '#/components/schemas/Links'
+          $ref: '#/components/schemas/StoragePool_v1_2_1_Links'
           description: The links object contains the links to other resources that
             are related to this resource.
           x-longDescription: The Links property, as described by the Redfish Specification,
@@ -180,10 +180,10 @@ components:
           x-units: By
           x-versionAdded: v1_1_1
         Name:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
           readOnly: true
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties that this object contains shall conform to the Redfish
@@ -208,7 +208,7 @@ components:
             value.
           x-versionAdded: v1_1_0
         Status:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Status
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Status
           description: The property contains the status of the StoragePool.
           x-longDescription: The property shall contain the status of the StoragePool.
       required:

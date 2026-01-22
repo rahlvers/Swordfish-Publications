@@ -1,12 +1,12 @@
 components:
   schemas:
-    Capacity:
+    Capacity_v1_0_4_Capacity:
       additionalProperties: false
       description: This is the schema definition for the Capacity of a device. It
         represents the properties for capacity for any data store.
       properties:
         Data:
-          $ref: '#/components/schemas/CapacityInfo'
+          $ref: '#/components/schemas/Capacity_v1_0_4_CapacityInfo'
           description: The capacity information relating to the user data.
           x-longDescription: The value shall be capacity information relating to provisioned
             user data.
@@ -18,12 +18,12 @@ components:
           x-longDescription: If the value is false, the capacity shall be fully allocated.  The
             default value shall be false.
         Metadata:
-          $ref: '#/components/schemas/CapacityInfo'
+          $ref: '#/components/schemas/Capacity_v1_0_4_CapacityInfo'
           description: The capacity information relating to  metadata.
           x-longDescription: The value shall be capacity information relating to provisioned
             system (non-user accessible) data.
         Snapshot:
-          $ref: '#/components/schemas/CapacityInfo'
+          $ref: '#/components/schemas/Capacity_v1_0_4_CapacityInfo'
           description: The capacity information relating to snapshot or backup data.
           x-longDescription: The value shall be capacity information relating to provisioned
             snapshot or backup data.
@@ -34,7 +34,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    CapacityInfo:
+    Capacity_v1_0_4_CapacityInfo:
       additionalProperties: false
       description: The capacity of specific data type in a data store.
       properties:
@@ -80,60 +80,60 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    CapacitySource:
+    Capacity_v1_0_4_CapacitySource:
       additionalProperties: false
       description: A description of the type and source of storage.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
           readOnly: true
         Id:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         Name:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
           readOnly: true
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties that this object contains shall conform to the Redfish
             Specification-described requirements.
         ProvidedCapacity:
-          $ref: '#/components/schemas/Capacity'
+          $ref: '#/components/schemas/Capacity_v1_0_4_Capacity'
           description: The amount of space that has been provided from the ProvidingDrives,
             ProvidingVolumes, ProvidingMemory or ProvidingPools.
           x-longDescription: The value shall be the amount of space that has been
             provided from the ProvidingDrives, ProvidingVolumes, ProvidingMemory or
             ProvidingPools.
         ProvidedClassOfService:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: The ClassOfService provided from the ProvidingDrives, ProvidingVolumes,
             ProvidingMemoryChunks, ProvidingMemory or ProvidingPools.
           x-longDescription: The value shall reference the provided ClassOfService
             from the ProvidingDrives, ProvidingVolumes, ProvidingMemoryChunks, ProvidingMemory
             or ProvidingPools.
         ProvidingDrives:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: The drive or drives that provide this space.
           x-longDescription: If present, the value shall be a reference to a contributing
             drive or drives.
         ProvidingPools:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: The pool or pools that provide this space.
           x-longDescription: If present, the value shall be a reference to a contributing
             storage pool or storage pools.
         ProvidingVolumes:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: The volume or volumes that provide this space.
           x-longDescription: If present, the value shall be a reference to a contributing
             volume or volumes.

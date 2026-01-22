@@ -1,7 +1,7 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_1.json",
   "ProfileName": "SwordfishBlockMappingMasking",
-  "ProfileVersion": "1.0.1",
+  "ProfileVersion": "1.1.0",
   "OwningEntity": "SNIA.org",
   "Purpose": "Defines the Swordfish Block Mapping and Masking Feature details.",
   "ContactInfo": "SNIA.org",
@@ -9,7 +9,7 @@
     "SwordfishBlockProvisioning": {
       "OwningEntity": "SNIA.org",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-      "MinVersion": "1.0.1"
+      "MinVersion": "1.1.0"
     }
   },
   "Registries": {

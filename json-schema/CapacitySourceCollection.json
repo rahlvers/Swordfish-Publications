@@ -88,15 +88,7 @@
             ],
             "deletable": false,
             "insertable": false,
-            "updatable": false,
-            "uris": [
-                "/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/CapacitySources",
-                "/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/CapacitySources",
-                "/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemId}/CapacitySources",
-                "/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources",
-                "/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources",
-                "/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources"
-            ]
+            "updatable": false
         }
     },
     "owningEntity": "SNIA",

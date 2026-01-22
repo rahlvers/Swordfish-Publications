@@ -1,7 +1,7 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_1.json",
   "ProfileName": "SwordfishEnergyStar",
-  "ProfileVersion": "1.0.1",
+  "ProfileVersion": "1.1.0",
   "OwningEntity": "SNIA.org",
   "Purpose": "Defines Requirements for Swordfish to meet EnergyStar reporting for storage.",
   "ContactInfo": "SNIA.org",
@@ -14,14 +14,14 @@
         "SwordfishDiscovery": {
           "OwningEntity": "SNIA.org",
           "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-          "MinVersion": "1.0.1"
+          "MinVersion": "1.1.0"
         }
       }],
       [{
         "CoSDiscovery": {
           "OwningEntity": "SNIA.org",
           "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-          "MinVersion": "1.0.1"
+          "MinVersion": "1.1.0"
         }
       }]
     ]

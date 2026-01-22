@@ -1,26 +1,26 @@
 components:
   schemas:
-    Capacity:
+    Capacity_Capacity:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_4.yaml#/components/schemas/Capacity
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_2.yaml#/components/schemas/Capacity
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_4.yaml#/components/schemas/Capacity_v1_0_4_Capacity
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_3.yaml#/components/schemas/Capacity_v1_1_3_Capacity
       description: This is the schema definition for the Capacity of a device. It
         represents the properties for capacity for any data store.
       x-longDescription: This composition may be used to represent storage capacity.  The
         sum of the values in Data, Metadata, and Snapshot shall be equal to the total
         capacity for the data store.
-    CapacityInfo:
+    Capacity_CapacityInfo:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_4.yaml#/components/schemas/CapacityInfo
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_2.yaml#/components/schemas/CapacityInfo
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_4.yaml#/components/schemas/Capacity_v1_0_4_CapacityInfo
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_3.yaml#/components/schemas/Capacity_v1_1_3_CapacityInfo
       description: The capacity of specific data type in a data store.
       x-longDescription: This composition may be used to represent the utilization
         of storage capacity.
-    CapacitySource:
+    Capacity_CapacitySource:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_4.yaml#/components/schemas/CapacitySource
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_2.yaml#/components/schemas/CapacitySource
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_4.yaml#/components/schemas/Capacity_v1_0_4_CapacitySource
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_3.yaml#/components/schemas/Capacity_v1_1_3_CapacitySource
       description: A description of the type and source of storage.
       x-longDescription: This type may be used to represent the source and type of
         storage capacity.  At most one of the ProvidingDrives, ProvidingVolumes or

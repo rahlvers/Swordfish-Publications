@@ -1,11 +1,11 @@
 components:
   schemas:
-    Actions:
+    NVMeDomain_v1_0_0_Actions:
       additionalProperties: false
       description: The available actions for this resource.
       properties:
         Oem:
-          $ref: '#/components/schemas/OemActions'
+          $ref: '#/components/schemas/NVMeDomain_v1_0_0_OemActions'
           description: The available OEM-specific actions for this resource.
           x-longDescription: This property shall contain the available OEM-specific
             actions for this resource.
@@ -14,22 +14,22 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    Links:
+    NVMeDomain_v1_0_0_Links:
       additionalProperties: false
       description: The links to other resources that are related to this resource.
       properties:
         AssociatedDomains:
           description: An array of links to associated domains.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           readOnly: true
           type: array
           x-longDescription: This property shall contain an array of links to resources
             of type NVMeDomain that represent associated domains.
         AssociatedDomains@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties contained in this object shall conform to the Redfish
@@ -41,49 +41,49 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    NVMeDomain:
+    NVMeDomain_v1_0_0_NVMeDomain:
       additionalProperties: false
       description: Properties for the Domain.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
         Actions:
-          $ref: '#/components/schemas/Actions'
+          $ref: '#/components/schemas/NVMeDomain_v1_0_0_Actions'
           description: The available actions for this resource.
           x-longDescription: This property shall contain the available actions for
             this resource.
         AvailableFirmwareImages:
           description: A collection of available firmware images.
           items:
-            $ref: '#/components/schemas/NVMeFirmwareImage'
+            $ref: '#/components/schemas/NVMeDomain_v1_0_0_NVMeFirmwareImage'
           type: array
           x-longDescription: A collection of available firmware images.
         AvailableFirmwareImages@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
           readOnly: true
         DomainMembers:
           description: The members of the domain.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource
+            $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Resource
           readOnly: false
           type: array
           x-longDescription: The members of the domain.
         DomainMembers@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
         Id:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         Links:
-          $ref: '#/components/schemas/Links'
+          $ref: '#/components/schemas/NVMeDomain_v1_0_0_Links'
           description: The links to other resources that are related to this resource.
           x-longDescription: This property shall contain links to resources that are
             related to but are not contained by or subordinate to this resource.
@@ -97,16 +97,16 @@ components:
             endurance group in bytes of this NVMe Domain.
           x-units: By
         Name:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
           readOnly: true
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties that this object contains shall conform to the Redfish
             Specification-described requirements.
         Status:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Status
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Status
           description: The status and health of the resource and its subordinate or
             dependent resources.
           x-longDescription: This property shall contain any status or health properties
@@ -137,25 +137,25 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    NVMeFirmwareImage:
+    NVMeDomain_v1_0_0_NVMeFirmwareImage:
       additionalProperties: false
       description: NVMe Domain firmware image information.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
         Actions:
-          $ref: '#/components/schemas/Actions'
+          $ref: '#/components/schemas/NVMeDomain_v1_0_0_Actions'
           description: The available actions for this resource.
           x-longDescription: This property shall contain the available actions for
             this resource.
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
           readOnly: true
         FirmwareVersion:
@@ -166,20 +166,20 @@ components:
           x-longDescription: This property shall contain the firmware version of the
             available NVMe firmware image.
         Id:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         NVMeDeviceType:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/NVMeDomain.yaml#/components/schemas/NVMeDeviceType
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/NVMeDomain.yaml#/components/schemas/NVMeDomain_NVMeDeviceType
           description: The type of NVMe Device this image is associated with.
           nullable: true
           readOnly: true
           x-longDescription: This property shall specify the type of NVMe device for
             this NVMe firmware image.
         Name:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
           readOnly: true
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties that this object contains shall conform to the Redfish
@@ -202,7 +202,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    OemActions:
+    NVMeDomain_v1_0_0_OemActions:
       additionalProperties: true
       description: The available OEM-specific actions for this resource.
       properties: {}

@@ -108,13 +108,13 @@
 				<Property Name="ConsistencyType" Type="ConsistencyGroup.ConsistencyType">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="The consistency type used by this group."/>
-					<Annotation Term="OData.LongDescription" String="The property shall set the consistency type used by this group."/>
+					<Annotation Term="OData.LongDescription" String="This property shall set the consistency type used by this group."/>
 				</Property>
 				<Property Name="Status" Type="Resource.Status" Nullable="false">
 					<Annotation Term="OData.Description" String="The property contains the status of the ConsistencyGroup."/>
 					<Annotation Term="OData.LongDescription" String="The property shall contain the status of the ConsistencyGroup."/>
 				</Property>
-				<Property Name="ReplicaInfo" Type="StorageReplicaInfo.ReplicaInfo" Nullable="false">
+				<Property Name="ReplicaInfo" Type="StorageReplicaInfo.v1_3_0.ReplicaInfo" Nullable="false">
 					<Annotation Term="OData.Description" String="Describes this storage group in its role as a target for replication."/>
 					<Annotation Term="OData.LongDescription" String="This property shall describe the replication relationship between this storage group and a corresponding source storage group."/>
 				</Property>

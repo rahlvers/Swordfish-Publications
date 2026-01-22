@@ -1,11 +1,11 @@
 components:
   schemas:
-    Actions:
+    EndpointGroup_v1_1_0_Actions:
       additionalProperties: false
       description: The available actions for this resource.
       properties:
         Oem:
-          $ref: '#/components/schemas/OemActions'
+          $ref: '#/components/schemas/EndpointGroup_v1_1_0_OemActions'
           description: This property contains the available OEM specific actions for
             this resource.
           x-longDescription: This property shall contain any additional OEM actions
@@ -16,46 +16,46 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    EndpointGroup:
+    EndpointGroup_v1_1_0_EndpointGroup:
       additionalProperties: false
       description: A group of endpoints that are managed as a unit.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
         AccessState:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.yaml#/components/schemas/AccessState
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.yaml#/components/schemas/EndpointGroup_AccessState
           description: Access State for this group.
           nullable: true
           readOnly: false
           x-longDescription: Access to all associated resources through all aggregated
             endpoints shall share this access state.
         Actions:
-          $ref: '#/components/schemas/Actions'
+          $ref: '#/components/schemas/EndpointGroup_v1_1_0_Actions'
           description: The available actions for this resource.
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
           x-versionAdded: v1_1_0
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
           readOnly: true
         Endpoints:
           description: The Endpoints.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           readOnly: false
           type: array
           x-longDescription: The value of each entry shall reference an Endpoint resource.
         Endpoints@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
         GroupType:
-          $ref: '#/components/schemas/GroupType'
+          $ref: '#/components/schemas/EndpointGroup_v1_1_0_GroupType'
           description: Endpoint group type.
           nullable: true
           readOnly: false
@@ -63,23 +63,23 @@ components:
             or Server/Target.  If this endpoint group represents a SCSI target group,
             the value of GroupType shall be Server.
         Id:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         Identifier:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Identifier
           description: The value identifies this resource.
           x-longDescription: The value shall be unique within the managed ecosystem.
         Links:
-          $ref: '#/components/schemas/Links'
+          $ref: '#/components/schemas/EndpointGroup_v1_1_0_Links'
           description: Contains links to other resources that are related to this
             resource.
           x-longDescription: This structure shall contain references to resources
             that are not contained within this resource.
         Name:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
           readOnly: true
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties that this object contains shall conform to the Redfish
@@ -115,7 +115,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    GroupType:
+    EndpointGroup_v1_1_0_GroupType:
       enum:
       - Client
       - Server
@@ -123,12 +123,12 @@ components:
       x-enumDescriptions:
         Client: The group contains the client (initiator) endpoints.
         Server: The group contains the server (target) endpoints.
-    Links:
+    EndpointGroup_v1_1_0_Links:
       additionalProperties: false
       description: Contains links to other resources that are related to this resource.
       properties:
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties contained in this object shall conform to the Redfish
@@ -139,7 +139,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    OemActions:
+    EndpointGroup_v1_1_0_OemActions:
       additionalProperties: true
       description: The available OEM specific actions for this resource.
       properties: {}

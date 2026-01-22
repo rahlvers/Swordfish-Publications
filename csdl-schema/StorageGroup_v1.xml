@@ -91,7 +91,30 @@
 					<Annotation Term="OData.Description" String="A mapped Volume."/>
 					<Annotation Term="OData.LongDescription" String="The value shall reference a mapped Volume."/>
 				</NavigationProperty>
+
+				<Property Name="AccessCapability" Type="StorageGroup.AccessCapability">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Supported IO access capability."/>
+					<Annotation Term="OData.LongDescription" String="Each entry shall specify the storage access capability for this mapped volume."/>
+					<Annotation Term="Redfish.Revisions">
+						<Collection>
+							<Record>
+								<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Added"/>
+								<PropertyValue Property="Version" String="v1_4_0"/>
+							</Record>
+						</Collection>
+					</Annotation>
+				</Property>
 			</ComplexType>
+
+			<EnumType Name="AccessCapability">
+				<Member Name="Read">
+					<Annotation Term="OData.Description" String="Endpoints are allowed to perform reads from the specified resource."/>
+				</Member>
+				<Member Name="ReadWrite">
+					<Annotation Term="OData.Description" String="Endpoints are allowed to perform reads from and writes to the specified resource."/>
+				</Member>
+			</EnumType>
 		</Schema>
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_0_0">
@@ -253,7 +276,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_2_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="TP 1.0.7a"/>
+			<Annotation Term="Redfish.Release" String="TP v1.0.7a"/>
 			<Annotation Term="OData.Description" String="This version adds CHAP information."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_1_1.StorageGroup">
 				<Property Name="AuthenticationMethod" Type="StorageGroup.v1_2_0.AuthenticationMethod">
@@ -389,6 +412,13 @@
 				</Property>
 			</ComplexType>
 
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_4_0">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="Redfish.Release" String="TP v1.2.1"/>			
+			<Annotation Term="OData.Description" String="This version was created to add access capabilities to mapped volumes."/>
+			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_3_0.StorageGroup"/>
 		</Schema>
 
 	</edmx:DataServices>

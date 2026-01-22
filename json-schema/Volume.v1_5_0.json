@@ -293,8 +293,8 @@
         },
         "Initialize": {
             "additionalProperties": false,
-            "description": "This action is used to prepare the contents of the volume for use by the system. If InitializeMethod is not specified in the request body, the InitializeMethod should be Foreground.",
-            "longDescription": "This defines the name of the custom action supported on this resource. If InitializeMethod is not specified in the request body, the InitializeMethod should be Foreground.",
+            "description": "This action is used to prepare the contents of the volume for use by the system. If InitializeMethod is not specified in the request body, but the property InitializeMethod is specified, the property InitializeMethod value should be used. If neither is specified, the InitializeMethod should be Foreground.",
+            "longDescription": "This defines the name of the custom action supported on this resource. If InitializeMethod is not specified in the request body, but the property InitializeMethod is specified, the property InitializeMethod value should be used. If neither is specified, the InitializeMethod should be Foreground.",
             "parameters": {
                 "InitializeMethod": {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Volume.json#/definitions/InitializeMethod",
@@ -393,7 +393,7 @@
                         "$ref": "http://redfish.dmtf.org/schemas/v1/Drive.json#/definitions/Drive"
                     },
                     "longDescription": "The value of this property shall be a reference to the resources that this volume is associated with and shall reference resources of type Drive. This property shall only contain references to Drive entities which are currently assigned as a dedicated spare and are able to support this Volume.",
-                    "readonly": true,
+                    "readonly": false,
                     "type": "array",
                     "versionAdded": "v1_2_0"
                 },

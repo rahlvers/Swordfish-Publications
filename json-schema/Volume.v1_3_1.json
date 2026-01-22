@@ -93,7 +93,7 @@
                         "$ref": "http://redfish.dmtf.org/schemas/v1/Drive.json#/definitions/Drive"
                     },
                     "longDescription": "The value of this property shall be a reference to the resources that this volume is associated with and shall reference resources of type Drive. This property shall only contain references to Drive entities which are currently assigned as a dedicated spare and are able to support this Volume.",
-                    "readonly": true,
+                    "readonly": false,
                     "type": "array",
                     "versionAdded": "v1_2_0"
                 },

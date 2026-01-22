@@ -1,23 +1,23 @@
 components:
   schemas:
-    IOPerformanceLoSCapabilities:
+    IOPerformanceLoSCapabilities_IOPerformanceLoSCapabilities:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_2.yaml#/components/schemas/IOPerformanceLoSCapabilities
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_3.yaml#/components/schemas/IOPerformanceLoSCapabilities
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_2.yaml#/components/schemas/IOPerformanceLoSCapabilities_v1_0_2_IOPerformanceLoSCapabilities
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_3.yaml#/components/schemas/IOPerformanceLoSCapabilities_v1_1_3_IOPerformanceLoSCapabilities
       description: Describe IO performance capabilities.
       x-longDescription: Each instance of IOPerformanceLoSCapabilities shall describe
         the capabilities of the system to support various IO performance service options.
-    IOWorkload:
+    IOPerformanceLoSCapabilities_IOWorkload:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_2.yaml#/components/schemas/IOWorkload
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_3.yaml#/components/schemas/IOWorkload
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_2.yaml#/components/schemas/IOPerformanceLoSCapabilities_v1_0_2_IOWorkload
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_3.yaml#/components/schemas/IOPerformanceLoSCapabilities_v1_1_3_IOWorkload
       description: An IO Workload description.
       x-longDescription: This structure may be used to describe an IO Workload.
-    IOWorkloadComponent:
+    IOPerformanceLoSCapabilities_IOWorkloadComponent:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_2.yaml#/components/schemas/IOWorkloadComponent
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_3.yaml#/components/schemas/IOWorkloadComponent
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_2.yaml#/components/schemas/IOPerformanceLoSCapabilities_v1_0_2_IOWorkloadComponent
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_3.yaml#/components/schemas/IOPerformanceLoSCapabilities_v1_1_3_IOWorkloadComponent
       description: Describe a component of a IO workload.
       x-longDescription: This structure may be used to describe a component of an
         IO workload.

@@ -23,6 +23,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_4_0.json#/definitions/StoragePool"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_5_0.json#/definitions/StoragePool"
                 }
             ],
             "deletable": true,
@@ -42,7 +45,13 @@
                 "/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{ProvidingPoolId}",
                 "/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}",
                 "/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/AllocatedPools/{StoragePoolId}",
-                "/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}"
+                "/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}",
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools/{StoragePoolId}",
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedPools/{AllocatedPoolId}",
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{ProvidingPoolId}",
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}",
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/{VolumeId}/AllocatedPools/{StoragePoolId}",
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}"
             ]
         }
     },

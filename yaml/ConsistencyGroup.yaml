@@ -1,6 +1,6 @@
 components:
   schemas:
-    ApplicationConsistencyMethod:
+    ConsistencyGroup_ApplicationConsistencyMethod:
       enum:
       - HotStandby
       - VASA
@@ -15,17 +15,17 @@ components:
         VASA: Supports VMware consistency requirements, such as for VASA and VVOLs.
         VDI: Supports Microsoft virtual backup device interface (VDI).
         VSS: Supports Microsoft VSS.
-    ConsistencyGroup:
+    ConsistencyGroup_ConsistencyGroup:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.v1_0_1.yaml#/components/schemas/ConsistencyGroup
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.v1_0_1.yaml#/components/schemas/ConsistencyGroup_v1_0_1_ConsistencyGroup
       description: A collection of volumes grouped together to ensure write order
         consistency across all those volumes.
       x-longDescription: A collection of volumes grouped together to ensure write
         order consistency across all those volumes. A management operation on a consistency
         group, such as configuring replication properties, applies to all the volumes
         within the consistency group.
-    ConsistencyType:
+    ConsistencyGroup_ConsistencyType:
       enum:
       - CrashConsistent
       - ApplicationConsistent

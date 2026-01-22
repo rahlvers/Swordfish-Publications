@@ -1,0 +1,12 @@
+{
+  "@odata.type": "#StorageGroupCollection.StorageGroupCollection",
+  "Name": "Storage Group Collection",
+  "Description": "Storage Group Collection",
+  "Members@odata.count": 1,
+  "Members": [{
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup"
+    }
+  ],
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups",
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

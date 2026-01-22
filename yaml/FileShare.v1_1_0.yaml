@@ -1,11 +1,11 @@
 components:
   schemas:
-    Actions:
+    FileShare_v1_1_0_Actions:
       additionalProperties: false
       description: The available actions for this resource.
       properties:
         Oem:
-          $ref: '#/components/schemas/OemActions'
+          $ref: '#/components/schemas/FileShare_v1_1_0_OemActions'
           description: This property contains the available OEM specific actions for
             this resource.
           x-longDescription: This property shall contain any additional OEM actions
@@ -16,20 +16,20 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    FileShare:
+    FileShare_v1_1_0_FileShare:
       additionalProperties: false
       description: An instance of a shared set of files with a common directory structure.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
         Actions:
-          $ref: '#/components/schemas/Actions'
+          $ref: '#/components/schemas/FileShare_v1_1_0_Actions'
           description: The available actions for this resource.
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
@@ -49,7 +49,7 @@ components:
           description: An array of default access capabilities for the file share.
             The types of default access can include Read, Write, and/or Execute.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/StorageAccessCapability
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_StorageAccessCapability
             nullable: true
           readOnly: true
           type: array
@@ -58,11 +58,11 @@ components:
             shall specify a default access privilege. The types of default access
             can include Read, Write, and/or Execute.
         Description:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
           readOnly: true
         EthernetInterfaces:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: A link to the collection of Ethernet interfaces that provide
             access to this file share.
           readOnly: true
@@ -86,7 +86,7 @@ components:
             to the file system root) to the exported file or directory on the file
             system where this file share is hosted.
         FileShareQuotaType:
-          $ref: '#/components/schemas/QuotaType'
+          $ref: '#/components/schemas/FileShare_v1_1_0_QuotaType'
           description: Specifies the type of quota enforcement.
           nullable: true
           readOnly: false
@@ -114,7 +114,7 @@ components:
         FileSharingProtocols:
           description: An array of file sharing protocols supported by this file share.
           items:
-            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.yaml#/components/schemas/FileProtocol
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.yaml#/components/schemas/FileSystem_FileProtocol
             nullable: true
           readOnly: true
           type: array
@@ -122,10 +122,10 @@ components:
             the file sharing protocols supported by this file share. Each entry shall
             specify a file sharing protocol supported by the file system.
         Id:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
           readOnly: true
         Links:
-          $ref: '#/components/schemas/Links'
+          $ref: '#/components/schemas/FileShare_v1_1_0_Links'
           description: The links object contains the links to other resources that
             are related to this resource.
           x-longDescription: The Links property, as described by the Redfish Specification,
@@ -149,10 +149,10 @@ components:
             entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes).'
           x-units: '%'
         Name:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
           readOnly: true
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties that this object contains shall conform to the Redfish
@@ -175,12 +175,12 @@ components:
             access is allowed by the file share. The default value for this property
             is false.
         Status:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Status
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Status
           description: Indicates the status of the file share.
           x-longDescription: This value of this property shall indicate the status
             of the file share.
         WritePolicy:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/ReplicaUpdateMode
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/StorageReplicaInfo_ReplicaUpdateMode
           description: Defines how writes are replicated to the shared source.
           nullable: true
           readOnly: true
@@ -197,24 +197,24 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    Links:
+    FileShare_v1_1_0_Links:
       additionalProperties: false
       description: The links object contains the links to other resources that are
         related to this resource.
       properties:
         ClassOfService:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: A link to the ClassOfService for this file share.
           x-longDescription: This value shall be a link to the ClassOfService for
             this file share.
         FileSystem:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
           description: A link to the file system containing the file share.
           readOnly: true
           x-longDescription: The value shall be a link to the file system containing
             the file share.
         Oem:
-          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
           description: The OEM extension property.
           x-longDescription: This property shall contain the OEM extensions.  All
             values for properties contained in this object shall conform to the Redfish
@@ -226,7 +226,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    OemActions:
+    FileShare_v1_1_0_OemActions:
       additionalProperties: true
       description: The available OEM specific actions for this resource.
       properties: {}
@@ -236,7 +236,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    QuotaType:
+    FileShare_v1_1_0_QuotaType:
       description: Indicates whether quotas are enabled and enforced by this file
         share. A value of Soft means that quotas are enabled but not enforced, and
         a value of Hard means that quotas are enabled and enforced.

@@ -41,16 +41,6 @@
             <PropertyValue Property="Deletable" Bool="false"/>
           </Record>
         </Annotation>
-        <Annotation Term="Redfish.Uris">
-          <Collection>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/CapacitySources</String>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/CapacitySources</String>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemId}/CapacitySources</String>
-            <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources</String>
-            <String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources</String>
-            <String>/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources</String>
-          </Collection>
-        </Annotation>
         <NavigationProperty Name="Members" Type="Collection(Capacity.CapacitySource)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="The value of each member references a CapacitySource resource."/>

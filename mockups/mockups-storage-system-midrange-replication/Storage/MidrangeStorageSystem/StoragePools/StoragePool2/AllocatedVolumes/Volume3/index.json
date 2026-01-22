@@ -1,0 +1,47 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume3",
+  "@odata.type": "#Volume.v1_5_0.Volume",
+  "Id": "Volume3",
+  "Name": "Volume 3",
+  "Description": "Volume 3 in Midrange System. From StoragePool2.",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "RAIDType": "RAID0",
+  "Identifiers": [{
+    "DurableNameFormat": "NAA",
+    "DurableName": "6545671545176100124407610013555"
+  }],
+
+  "BlockSizeBytes": 512,
+  "Encrypted": false,
+  "DisplayName": "This is my user/client set friendly name.",
+
+  "Capacity": {
+    "Data": {
+      "ConsumedBytes": 0,
+      "AllocatedBytes": 300067890136
+    }
+  },
+  "StorageGroups": {
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup"
+  },
+
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4#/CapacitySources/0",
+    "MemberId": "0",
+    "ProvidedCapacity": {
+      "AllocatedBytes": 300067890136
+    },
+    "ProvidingPools": [{
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2"
+    }]
+  }],
+  "Links": {
+    "OwningStorageResource": {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem"
+    }
+  }
+}

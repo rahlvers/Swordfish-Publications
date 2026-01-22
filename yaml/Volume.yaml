@@ -1,6 +1,6 @@
 components:
   schemas:
-    EncryptionTypes:
+    Volume_EncryptionTypes:
       enum:
       - NativeDriveEncryption
       - ControllerAssisted
@@ -13,7 +13,7 @@ components:
           capabilities of the drive hardware.
         SoftwareAssisted: The volume is being encrypted by software running on the
           system or the operating system.
-    InitializeMethod:
+    Volume_InitializeMethod:
       enum:
       - Skip
       - Background
@@ -25,7 +25,7 @@ components:
         Foreground: Data erasure and preparation tasks will complete before the volume
           is presented as available for use.
         Skip: The volume will be available for use immediately, with no preparation.
-    InitializeType:
+    Volume_InitializeType:
       deprecated: true
       enum:
       - Fast
@@ -37,7 +37,7 @@ components:
           beginning and end of the space so that partitioning can be performed.
         Slow: The volume is prepared for use slowly, typically by completely erasing
           the volume.
-    RAIDType:
+    Volume_RAIDType:
       enum:
       - RAID0
       - RAID1
@@ -182,7 +182,7 @@ components:
           loss.
       x-enumVersionAdded:
         None: v1_4_2
-    ReadCachePolicyType:
+    Volume_ReadCachePolicyType:
       enum:
       - ReadAhead
       - AdaptiveReadAhead
@@ -195,20 +195,21 @@ components:
         'Off': The read cache is disabled.
         ReadAhead: A caching technique in which the controller pre-fetches data anticipating
           future read requests.
-    Volume:
+    Volume_Volume:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_0_4.yaml#/components/schemas/Volume
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_1_5.yaml#/components/schemas/Volume
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_2_4.yaml#/components/schemas/Volume
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_3_3.yaml#/components/schemas/Volume
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_4_2.yaml#/components/schemas/Volume
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_5_0.yaml#/components/schemas/Volume
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_0_4.yaml#/components/schemas/Volume_v1_0_4_Volume
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_1_5.yaml#/components/schemas/Volume_v1_1_5_Volume
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_2_4.yaml#/components/schemas/Volume_v1_2_4_Volume
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_3_3.yaml#/components/schemas/Volume_v1_3_3_Volume
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_4_2.yaml#/components/schemas/Volume_v1_4_2_Volume
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_5_0.yaml#/components/schemas/Volume_v1_5_0_Volume
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_6_0.yaml#/components/schemas/Volume_v1_6_0_Volume
       description: Volume contains properties used to describe a volume, virtual disk,
         LUN, or other logical storage entity for any system.
       x-longDescription: This resource shall be used to represent a volume, virtual
         disk, logical disk, LUN, or other logical storage for a Redfish implementation.
-    VolumeType:
+    Volume_VolumeType:
       enum:
       - RawDevice
       - NonRedundant
@@ -227,7 +228,7 @@ components:
           parity to retain redundant information.
         StripedWithParity: The volume is a device which uses parity to retain redundant
           information.
-    VolumeUsageType:
+    Volume_VolumeUsageType:
       enum:
       - Data
       - SystemData
@@ -255,7 +256,7 @@ components:
           reserved for system use.
         SystemReserve: The volume shall be allocated for use as a non-consumable system
           reserved volume.
-    WriteCachePolicyType:
+    Volume_WriteCachePolicyType:
       enum:
       - WriteThrough
       - ProtectedWriteBack
@@ -284,7 +285,7 @@ components:
           is not signaled until data is safely stored on non-volatile media.
       x-enumVersionAdded:
         'Off': v1_4_1
-    WriteCacheStateType:
+    Volume_WriteCacheStateType:
       enum:
       - Unprotected
       - Protected
@@ -306,7 +307,7 @@ components:
           requests on non-volatile media.
         Unprotected: Indicates that the cache state type in use generally does not
           protect write requests on non-volatile media.
-    WriteHoleProtectionPolicyType:
+    Volume_WriteHoleProtectionPolicyType:
       enum:
       - 'Off'
       - Journaling

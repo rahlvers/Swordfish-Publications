@@ -1,7 +1,7 @@
 {
   "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
   "ProfileName": "SwordfishBlockCoSRemoteReplication",
-  "ProfileVersion": "1.0.0",
+  "ProfileVersion": "1.1.0",
   "OwningEntity": "SNIA.org",
   "Purpose": "Define remote replication block requirements for service-based Swordfish conformant implementations.",
   "ContactInfo": "SNIA.org",
@@ -9,12 +9,12 @@
     "SwordfishCoSDiscovery": {
       "OwningEntity": "SNIA.org",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-      "MinVersion": "1.0.1"
+      "MinVersion": "1.1.0"
     },
     "SwordfishBlockProvisioning": {
       "OwningEntity": "SNIA.org",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-      "MinVersion": "1.0.1"
+      "MinVersion": "1.1.0"
     }
   },
   "Registries": {

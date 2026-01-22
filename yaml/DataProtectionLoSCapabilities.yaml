@@ -1,17 +1,17 @@
 components:
   schemas:
-    DataProtectionLoSCapabilities:
+    DataProtectionLoSCapabilities_DataProtectionLoSCapabilities:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_0_3.yaml#/components/schemas/DataProtectionLoSCapabilities
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_1_3.yaml#/components/schemas/DataProtectionLoSCapabilities
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_0_3.yaml#/components/schemas/DataProtectionLoSCapabilities_v1_0_3_DataProtectionLoSCapabilities
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_1_3.yaml#/components/schemas/DataProtectionLoSCapabilities_v1_1_3_DataProtectionLoSCapabilities
       description: The capabilities to protect data from loss by the use of a replica.
       x-longDescription: The capabilities to protect data from loss by the use of
         a replica. The requirements must be met collectively by the communication
         path and the replica. There will be one instance associated to a class of
         service for each replica. Each replica has its own class of service that describes
         its characteristics.
-    FailureDomainScope:
+    DataProtectionLoSCapabilities_FailureDomainScope:
       description: Values of this enumeration represent a geographic scope of a failure
         domain.
       enum:
@@ -44,7 +44,7 @@ components:
       x-longDescription: The enumeration literals of this enumeration shall represent
         a geographic scope in which all components within that scope have similar
         vulnerabilities.
-    RecoveryAccessScope:
+    DataProtectionLoSCapabilities_RecoveryAccessScope:
       description: An enumeration that represents the relative time required to make
         a replica available as a source.
       enum:

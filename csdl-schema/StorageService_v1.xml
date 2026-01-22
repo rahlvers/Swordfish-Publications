@@ -133,7 +133,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService.v1_0_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="TP 1.0.7a"/>
+			<Annotation Term="Redfish.Release" String="TP v1.0.7a"/>
 			<EntityType Name="StorageService" BaseType="StorageService.StorageService">
 				<Annotation Term="OData.Description" String="Collection of resources that are managed and exposed to hosts as a group."/>
 				<Annotation
@@ -325,7 +325,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService.v1_1_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="TP 1.0.6"/>
+			<Annotation Term="Redfish.Release" String="TP v1.0.6"/>
 			<EntityType Name="StorageService" BaseType="StorageService.v1_0_3.StorageService">
 				<Annotation Term="OData.Description" String="Modified the type of HostingSystem to Resource.Resource. Also modfied the description and the long description to include either the storage system or StorageController source."/>
 			</EntityType>
@@ -345,7 +345,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService.v1_2_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="TP 1.0.7a"/>
+			<Annotation Term="Redfish.Release" String="TP v1.0.7a"/>
 			<Annotation Term="OData.Description" String="This version was created to add IOStatistics and SpareResourceSets.  Move XXXLoSCapabilities from Links to NavProperties.  It also moves DefaultClassOfService outside of Links complex type."/>
 			<EntityType Name="StorageService" BaseType="StorageService.v1_1_0.StorageService">
 				<Annotation Term="OData.Description" String="Add ability to manage spare capacity."/>

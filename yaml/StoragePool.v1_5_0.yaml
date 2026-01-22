@@ -1,0 +1,557 @@
+components:
+  schemas:
+    StoragePool_v1_5_0_Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        Oem:
+          $ref: '#/components/schemas/StoragePool_v1_5_0_OemActions'
+          description: This property contains the available OEM specific actions for
+            this resource.
+          x-longDescription: This property shall contain any additional OEM actions
+            for this resource.
+          x-versionAdded: v1_3_0
+      type: object
+      x-longDescription: The Actions property shall contain the available actions
+        for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_5_0_EndGrpLifetime:
+      additionalProperties: false
+      description: This contains properties the Endurance Group Lifetime attributes.
+      properties:
+        DataUnitsRead:
+          description: The property contains the total number of data units read from
+            this endurance group.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall contain the total number of data units
+            read from this endurance group. This value does not include controller
+            reads due to internal operations such as garbage collection. The value
+            is reported in billions, where a value of 1 corresponds to 1 billion bytes
+            written, and is rounded up. A value of zero indicates the property is
+            unsupported.
+          x-versionAdded: v1_4_0
+        DataUnitsWritten:
+          description: The property contains the total number of data units written
+            from this endurance group.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall contain the total number of data units
+            written from this endurance group. This value does not include controller
+            writes due to internal operations such as garbage collection. The value
+            is reported in billions, where a value of 1 corresponds to 1 billion bytes
+            written, and is rounded up. A value of zero indicates the property is
+            unsupported.
+          x-versionAdded: v1_4_0
+        EnduranceEstimate:
+          description: This property contains an estimate of the total number of data
+            bytes that may be written to the Endurance Group over the lifetime of
+            the Endurance Group assuming a write amplication of 1.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain an estimate of the total
+            number of data bytes that may be written to the Endurance Group over the
+            lifetime of the Endurance Group assuming a write amplication of 1.  The
+            value is reported in billions, where a value of 1 corresponds to 1 billion
+            bytes written, and is rounded up. A value of zero indicates endurance
+            estimates are unsupported.
+          x-versionAdded: v1_4_0
+        ErrorInformationLogEntryCount:
+          description: This property contains the number of error information log
+            entries over the life of the controller for the endurance group.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the number of error information
+            log entries over the life of the controller for the endurance group.
+          x-versionAdded: v1_4_0
+        HostReadCommandCount:
+          description: This property contains the number of read commands completed
+            by all controllers in the NVM subsystem for the Endurance Group.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the number of read commands
+            completed by all controllers in the NVM subsystem for the Endurance Group.
+            For the NVM command set, the is the number of compare commands and read
+            commands.
+          x-versionAdded: v1_4_0
+        HostWriteCommandCount:
+          description: This property contains the number of write commands completed
+            by all controllers in the NVM subsystem for the Endurance Group.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the number of write commands
+            completed by all controllers in the NVM subsystem for the Endurance Group.
+            For the NVM command set, the is the number of compare commands and write
+            commands.
+          x-versionAdded: v1_4_0
+        MediaAndDataIntegrityErrorCount:
+          description: This property contains the number of occurences where the controller
+            detected an unrecovered data integrity error for the Endurance Group.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the number of occurences
+            where the controller detected an unrecovered data integrity error for
+            the Endurance Group. Errors such as uncorrectable ECC, CRC checksum failure,
+            or LBA tag mismatch are included in this field.
+          x-versionAdded: v1_4_0
+        MediaUnitsWritten:
+          description: The property contains the total number of data units written
+            from this endurance group.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: The property shall contain the total number of data units
+            written from this endurance group. This value includes host and controller
+            writes due to internal operations such as garbage collection. The value
+            is reported in billions, where a value of 1 corresponds to 1 billion bytes
+            written, and is rounded up. A value of zero indicates the property is
+            unsupported.
+          x-versionAdded: v1_4_0
+        PercentUsed:
+          description: A vendor-specific estimate of the percent life used for the
+            endurance group based on the actual usage and the manufacturer prediction
+            of NVM life.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain A vendor-specific estimate
+            of the percent life used for the endurance group based on the actual usage
+            and the manufacturer prediction of NVM life. A value of 100 indicates
+            that the estimated endurance of the NVM in the Endurance Group has been
+            consumed, but may not indicate an NVM failure. According to the NVMe and
+            JEDEC specs, the value is allowed to exceed 100. Percentages greater than
+            254 shall be represented as 255.
+          x-versionAdded: v1_4_0
+      type: object
+      x-longDescription: This contains properties for the Endurance Group Lifetime
+        attributes.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_5_0_Links:
+      additionalProperties: false
+      description: The links object contains the links to other resources that are
+        related to this resource.
+      properties:
+        DedicatedSpareDrives:
+          description: An array of references to the drives which are dedicated spares
+            for this StoragePool.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
+          readOnly: true
+          type: array
+          x-longDescription: The value of this property shall be a reference to the
+            resources that this StoragePool is associated with and shall reference
+            resources of type Drive. This property shall only contain references to
+            Drive entities which are currently assigned as a dedicated spare and are
+            able to support this StoragePool.
+          x-versionAdded: v1_2_0
+        DedicatedSpareDrives@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
+        DefaultClassOfService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
+          deprecated: true
+          description: The default class of service for entities allocated from this
+            storage pool.
+          readOnly: false
+          x-deprecatedReason: Default ClassOfService moved from Links to NavigationProperty.
+          x-longDescription: If present, this property shall reference the default
+            class of service for entities allocated from this storage pool.  If the
+            ClassesOfService collection is not empty, then the value of this property
+            shall be one of its entries. If not present, the default class of service
+            of the containing StorageService entity shall be used.
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties contained in this object shall conform to the Redfish
+            Specification-described requirements.
+        OwningStorageResource:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
+          description: A pointer to the Storage resource that owns or contains this
+            StoragePool.
+          readOnly: true
+          x-longDescription: This shall be a pointer to the Storage resource that
+            owns or contains this StoragePool.
+          x-versionAdded: v1_4_0
+        SpareResourceSets:
+          description: An array of references to SpareResourceSets.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
+          readOnly: false
+          type: array
+          x-longDescription: Each referenced SpareResourceSet shall contain resources
+            that may be utilized to replace the capacity provided by a failed resource
+            having a compatible type.
+          x-versionAdded: v1_2_0
+        SpareResourceSets@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
+      type: object
+      x-longDescription: The Links property, as described by the Redfish Specification,
+        shall contain references to resources that are related to, but not contained
+        by (subordinate to), this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_5_0_NVMeEnduranceGroupProperties:
+      additionalProperties: false
+      description: This contains properties to use when StoragePool is used to describe
+        an NVMe Endurance Group.
+      properties:
+        EndGrpLifetime:
+          $ref: '#/components/schemas/StoragePool_v1_5_0_EndGrpLifetime'
+          description: This property contains the Endurance Group Lifetime properties.
+          nullable: true
+          x-longDescription: This property shall contain any Endurance Group Lifetime
+            properties.
+          x-versionAdded: v1_4_0
+        PredictedMediaLifeLeftPercent:
+          description: The percentage of reads and writes that are predicted to be
+            available for the media.
+          nullable: true
+          readOnly: true
+          type: number
+          x-longDescription: This property shall contain an indicator of the percentage
+            of life remaining in the drive's media.
+          x-units: '%'
+          x-versionAdded: v1_4_0
+      type: object
+      x-longDescription: This contains properties to use when StoragePool is used
+        to describe an NVMe Endurance Group.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_5_0_NVMeSetProperties:
+      additionalProperties: false
+      description: This contains properties to use when StoragePool is used to describe
+        an NVMe Set.
+      properties:
+        EnduranceGroupIdentifier:
+          description: A 16-bit hex value that contains the endurance group identifier.
+          nullable: true
+          pattern: ^0[xX](([a-fA-F]|[0-9])*)$
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a 16-bit hex value that contains
+            the endurance group identifier.  The endurance group identifier is unique
+            within a subsystem.  Reserved values include 0.
+          x-versionAdded: v1_4_0
+        OptimalWriteSizeBytes:
+          description: This property contains the Optimal Write Size in Bytes for
+            this NVMe Set.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the Optimal Write Size in
+            Bytes for this NVMe Set.
+          x-units: By
+          x-versionAdded: v1_4_0
+        Random4kReadTypicalNanoSeconds:
+          description: Indicates the typical time to complete a 4k read in 100 nano-second
+            units when the NVM Set is in a Predictable Latency Mode Deterministic
+            Window and there is 1 outstanding command per NVM Set.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the typical time to complete
+            a 4k read in 100 nano-second units when the NVM Set is in a Predictable
+            Latency Mode Deterministic Window and there is 1 outstanding command per
+            NVM Set.
+          x-versionAdded: v1_4_0
+        SetIdentifier:
+          description: A 16-bit hex value that contains the NVMe Set group identifier.
+          nullable: true
+          pattern: ^0[xX](([a-fA-F]|[0-9])*)$
+          readOnly: true
+          type: string
+          x-longDescription: This property shall contain a 16-bit hex value that contains
+            the NVMe Set group identifier. The NVM Set identifier is unique within
+            a subsystem. Reserved values include 0.
+          x-versionAdded: v1_4_0
+        UnallocatedNVMNamespaceCapacityBytes:
+          description: Indicates the unallocated capacity of the NVMe Set in bytes.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: This property shall contain the unallocated capacity
+            of the NVMe Set in bytes.
+          x-units: By
+          x-versionAdded: v1_4_0
+      type: object
+      x-longDescription: This contains properties to use when StoragePool is used
+        to describe an NVMe Set.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_5_0_OemActions:
+      additionalProperties: true
+      description: The available OEM specific actions for this resource.
+      properties: {}
+      type: object
+      x-longDescription: This type shall contain any additional OEM actions for this
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_5_0_StoragePool:
+      additionalProperties: false
+      description: A container of data storage.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_type
+        Actions:
+          $ref: '#/components/schemas/StoragePool_v1_5_0_Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+          x-versionAdded: v1_3_0
+        AllocatedPools:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to the collection of storage pools allocated from
+            this storage pool.
+          readOnly: true
+          x-longDescription: The value of this property shall contain a reference
+            to the collection of storage pools allocated from this storage pool.
+        AllocatedVolumes:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
+          description: A reference to the collection of volumes allocated from this
+            storage pool.
+          readOnly: true
+          x-longDescription: The value of this property shall contain a reference
+            to the collection of volumes allocated from this storage pool.
+        BlockSizeBytes:
+          deprecated: true
+          description: Maximum Block size in bytes.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-deprecatedReason: This property has been Deprecated in favor of StoragePool.v1_1_1.StoragePool.MaxBlockSizeBytes
+          x-longDescription: Maximum size in bytes of the blocks which form this Volume.
+            If the block size is variable, then the maximum block size in bytes should
+            be specified. If the block size is unknown or if a block concept is not
+            valid (for example, with Memory), enter a 1.
+          x-units: By
+        Capacity:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity_v1_0_0_Capacity
+          description: Capacity utilization.
+          x-longDescription: The value of this property shall provide an information
+            about the actual utilization of the capacity within this storage pool.
+        CapacitySources:
+          description: An array of space allocations to this store.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.yaml#/components/schemas/Capacity_CapacitySource
+          readOnly: false
+          type: array
+          x-autoExpand: true
+          x-longDescription: Fully or partially consumed storage from a source resource.
+            Each entry shall provide capacity allocation data from a named source
+            resource.
+        CapacitySources@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_count
+        ClassesOfService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
+          description: The ClassesOfService supported by this storage pool.
+          readOnly: false
+          x-longDescription: This property shall contain references to all classes
+            of service supported by this storage pool. Capacity allocated from this
+            storage pool shall conform to one of the referenced classes of service.
+        Compressed:
+          description: Indicator of whether or not the StoragePool has compression
+            enabled.
+          nullable: true
+          readOnly: false
+          type: boolean
+          x-longDescription: This property shall contain a boolean indicator if the
+            StoragePool is currently utilizing compression or not.
+          x-versionAdded: v1_3_0
+        Deduplicated:
+          description: Indicator of whether or not the StoragePool has deduplication
+            enabled.
+          nullable: true
+          readOnly: false
+          type: boolean
+          x-longDescription: This property shall contain a boolean indicator if the
+            StoragePool is currently utilizing deduplication or not.
+          x-versionAdded: v1_3_0
+        DefaultClassOfService:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
+          description: The default class of service for entities allocated from this
+            storage pool.
+          readOnly: false
+          x-longDescription: If present, this property shall reference the default
+            class of service for entities allocated from this storage pool.  If the
+            ClassesOfService collection is not empty, then the value of this property
+            shall be one of its entries. If not present, the default class of service
+            of the containing StorageService entity shall be used.
+          x-versionAdded: v1_2_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Encrypted:
+          description: Indicator of whether or not the StoragePool has encryption
+            enabled.
+          nullable: true
+          readOnly: false
+          type: boolean
+          x-longDescription: This property shall contain a boolean indicator if the
+            StoragePool is currently utilizing encryption or not.
+          x-versionAdded: v1_3_0
+        IOStatistics:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.yaml#/components/schemas/IOStatistics_IOStatistics
+          description: Statistics for this StoragePool.
+          x-longDescription: The value shall represent IO statistics for this StoragePool.
+          x-versionAdded: v1_2_0
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
+        Identifier:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Identifier
+          description: The value identifies this resource.
+          x-longDescription: The value identifies this resource. The value shall be
+            unique within the managed ecosystem.
+        Links:
+          $ref: '#/components/schemas/StoragePool_v1_5_0_Links'
+          description: The links object contains the links to other resources that
+            are related to this resource.
+          x-longDescription: The Links property, as described by the Redfish Specification,
+            shall contain references to resources that are related to, but not contained
+            by (subordinate to), this resource.
+        LowSpaceWarningThresholdPercents:
+          description: Low space warning threshold specified in percents.
+          items:
+            nullable: true
+            type: integer
+          maximum: 100
+          minimum: 0
+          readOnly: false
+          type: array
+          x-longDescription: 'Each time the following value is less than one of the
+            values in the array the LOW_SPACE_THRESHOLD_WARNING event shall be triggered:
+            Across all CapacitySources entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes).'
+          x-units: '%'
+        MaxBlockSizeBytes:
+          description: Maximum Block size in bytes.
+          minimum: 0
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: If present, the value is the maximum block size of an
+            allocated resource. If the block size is unknown or if a block concept
+            is not valid (for example, with Memory), this property shall be NULL.
+          x-units: By
+          x-versionAdded: v1_1_1
+        NVMeEnduranceGroupProperties:
+          $ref: '#/components/schemas/StoragePool_v1_5_0_NVMeEnduranceGroupProperties'
+          description: This property contains properties to use when StoragePool is
+            used to describe an NVMe Endurance Group.
+          nullable: true
+          x-longDescription: This property shall contain properties to use when StoragePool
+            is used to describe an NVMe Endurance Group.
+          x-versionAdded: v1_4_0
+        NVMeSetProperties:
+          $ref: '#/components/schemas/StoragePool_v1_5_0_NVMeSetProperties'
+          description: This property contains properties to use when StoragePool is
+            used to describe an NVMe Set.
+          nullable: true
+          x-longDescription: This property shall contain properties to use when StoragePool
+            is used to describe an NVMe Set.
+          x-versionAdded: v1_4_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
+        RecoverableCapacitySourceCount:
+          description: Current number of capacity source resources that are available
+            as replacements.
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: The value is the number of available capacity source
+            resources currently available in the event that an equivalent capacity
+            source resource fails.
+          x-versionAdded: v1_2_0
+        RemainingCapacityPercent:
+          description: The percentage of the capacity remaining in the StoragePool.
+          nullable: true
+          readOnly: true
+          type: integer
+          x-longDescription: If present, this value shall return  {[(SUM(AllocatedBytes)
+            - SUM(ConsumedBytes)]/SUM(AllocatedBytes)}*100 represented as an integer
+            value.
+          x-versionAdded: v1_1_0
+        Status:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Status
+          description: The property contains the status of the StoragePool.
+          x-longDescription: The property shall contain the status of the StoragePool.
+        SupportedProvisioningPolicies:
+          description: This collection specifies all supported storage allocation
+            properties for the Storage Pool.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/DataStorageLoSCapabilities_ProvisioningPolicy
+            nullable: true
+          readOnly: false
+          type: array
+          x-longDescription: This collection shall specify all supported storage allocation
+            policies for the Storage Pool.
+          x-versionAdded: v1_3_0
+        SupportedRAIDTypes:
+          description: A collection of the RAID Types supported by the storage pool.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Volume.yaml#/components/schemas/Volume_RAIDType
+            nullable: true
+          readOnly: true
+          type: array
+          x-longDescription: This collection shall contain all the RAIDType values
+            supported by the storage pool.
+          x-versionAdded: v1_3_0
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: A container of data storage capable of providing capacity
+        conforming to one of its supported classes of service. The storage pool does
+        not support IO to its data storage.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#StoragePool.v1_5_0.StoragePool'
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-owningEntity: SNIA
+x-release: TP v1.2.1

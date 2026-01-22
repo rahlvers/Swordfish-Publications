@@ -1,6 +1,6 @@
 components:
   schemas:
-    FileProtocol:
+    FileSystem_FileProtocol:
       description: The file sharing protocols supported by the file system.
       enum:
       - NFSv3
@@ -40,16 +40,16 @@ components:
           is supported by the file system.
       x-longDescription: The values shall indicate the file sharing protocols supported
         by the file system. At least one value shall be present.
-    FileSystem:
+    FileSystem_FileSystem:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_0_3.yaml#/components/schemas/FileSystem
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_1_4.yaml#/components/schemas/FileSystem
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_2_2.yaml#/components/schemas/FileSystem
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_0_3.yaml#/components/schemas/FileSystem_v1_0_3_FileSystem
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_1_4.yaml#/components/schemas/FileSystem_v1_1_4_FileSystem
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_2_2.yaml#/components/schemas/FileSystem_v1_2_2_FileSystem
       description: A hierarchical namespace of files.
       x-longDescription: This resource shall be used to represent a hierarchical namespace
         of files.
-    ImportedShare:
+    FileSystem_ImportedShare:
       anyOf: []
 title: '#FileSystem.FileSystem'
 x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.

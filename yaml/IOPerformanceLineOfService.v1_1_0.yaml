@@ -1,11 +1,11 @@
 components:
   schemas:
-    Actions:
+    IOPerformanceLineOfService_v1_1_0_Actions:
       additionalProperties: false
       description: The available actions for this resource.
       properties:
         Oem:
-          $ref: '#/components/schemas/OemActions'
+          $ref: '#/components/schemas/IOPerformanceLineOfService_v1_1_0_OemActions'
           description: This property contains the available OEM specific actions for
             this resource.
           x-longDescription: This property shall contain any additional OEM actions
@@ -17,12 +17,12 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    IOPerformanceLineOfService:
+    IOPerformanceLineOfService_v1_1_0_IOPerformanceLineOfService:
       additionalProperties: false
       description: Describe service option within the IO performance line of service.
       properties:
         Actions:
-          $ref: '#/components/schemas/Actions'
+          $ref: '#/components/schemas/IOPerformanceLineOfService_v1_1_0_Actions'
           description: The available actions for this resource.
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
@@ -44,7 +44,7 @@ components:
             * VolumeSize. Otherwise, the system shall not enforce a limit.  The default
             value for this property is false.
         IOWorkload:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_0.yaml#/components/schemas/IOWorkload
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_0.yaml#/components/schemas/IOPerformanceLoSCapabilities_v1_0_0_IOWorkload
           description: A description of the expected workload.
           x-longDescription: The value shall be a description of the expected workload.
             The workload provides the context in which the values of MaxIOOperationsPerSecondPerTerabyte
@@ -72,7 +72,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    OemActions:
+    IOPerformanceLineOfService_v1_1_0_OemActions:
       additionalProperties: true
       description: The available OEM specific actions for this resource.
       properties: {}

@@ -49,13 +49,21 @@
             <String>/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/AllocatedPools</String>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>        
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
+
             <String>/redfish/v1/Storage/{StorageId}/StoragePools</String>
             <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedPools</String>
             <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
             <String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
             <String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/AllocatedPools</String>
             <String>/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
+
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedPools</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/Volumes/{VolumeId}/AllocatedPools</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
           </Collection>
         </Annotation>
         <NavigationProperty Name="Members" Type="Collection(StoragePool.StoragePool)">

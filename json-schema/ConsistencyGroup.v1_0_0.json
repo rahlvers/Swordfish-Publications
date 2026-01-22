@@ -162,7 +162,7 @@
                         }
                     ],
                     "description": "The consistency type used by this group.",
-                    "longDescription": "The property shall set the consistency type used by this group.",
+                    "longDescription": "This property shall set the consistency type used by this group.",
                     "readonly": false
                 },
                 "Description": {
@@ -204,7 +204,7 @@
                     "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 },
                 "ReplicaInfo": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.json#/definitions/ReplicaInfo",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_3_0.json#/definitions/ReplicaInfo",
                     "description": "Describes this storage group in its role as a target for replication.",
                     "longDescription": "This property shall describe the replication relationship between this storage group and a corresponding source storage group."
                 },
