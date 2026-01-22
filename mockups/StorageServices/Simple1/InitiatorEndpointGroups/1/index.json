@@ -1,0 +1,13 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#InitiatorEndpointGroup.InitiatorEndpointGroup",
+  "@odata.id": "/redfish/v1/StorageServices/Simple1/InitiatorEndpointGroups/1",
+  "@odata.type": "#InitiatorEndpointGroup.v1_0_0.InitiatorEndpointGroup",
+  "Name": "Initiator EP group",
+  "Description": "Group of initiator endpoints for simple1",
+  "Links" : {
+	"Endpoints": [{
+      "@odata.id": "/redfish/v1/StorageServices/Simple1/Endpoints/2"
+    }]
+	}
+}

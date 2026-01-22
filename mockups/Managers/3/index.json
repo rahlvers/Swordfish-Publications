@@ -1,0 +1,57 @@
+{
+  "@Redfish.Copyright": "Copyright � 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Managers/Members/$entity",
+  "@odata.id": "/redfish/v1/Managers/3",
+  "@odata.type": "#Managers.1.0.0.Manager",
+  "Id": "3",
+  "Name": "Manager for Enclosure Secondary",
+  "DateTime": "2015-03-13T04:14:33+06:00",
+  "DateTimeLocalOffset": "+06:00",
+  "ManagerType": "EnclosureManager",
+  "Links": {
+    "ManagerForServers": [
+      {
+        "@odata.id": "/redfish/v1/Systems/2"
+      }
+    ],
+    "ManagerForChassis": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/Enc1"
+      }
+    ],
+    "Oem": {}
+  },
+  "Description": "Administrator",
+  "UUID": "00000000-0000-0000-0000-000000000000",
+  "Model": "OEM's Manager Model",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Redundancy": {
+    "@odata.id": "/redfish/v1/Managers/2#/Redundancy",
+    "MemberId": "Redundancy",
+    "Mode": "Failover",
+    "MaxNumSupported": 2,
+    "MinNumNeeded": 1,
+    "Status": {
+      "State": "Offline",
+      "Health": "OK"
+    },
+    "RedundancySet": [
+      {
+        "@odata.id": "/redfish/v1/Managers/2"
+      },
+      {
+        "@odata.id": "/redfish/v1/Managers/3"
+      }
+    ]
+  },
+  "Actions": {
+    "#Manager.Reset": {
+      "target": "/redfish/v1/Managers/3/Actions/Manager.Reset"
+    },
+    "Oem": {}
+  },
+  "Oem": {}
+}

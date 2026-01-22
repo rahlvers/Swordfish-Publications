@@ -1,0 +1,44 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "title": "#TargetEndpointGroup.TargetEndpointGroup",
+    "$ref": "#/definitions/TargetEndpointGroup",
+    "definitions": {
+        "AccessState": {
+            "type": "string",
+            "enum": [
+                "Optimized",
+                "NonOptimized",
+                "Standby",
+                "Unavailable",
+                "Transitioning"
+            ],
+            "enumDescriptions": {
+                "Optimized": "The endpoint(s) are in an Active/Optimized state.",
+                "NonOptimized": "The endpoint(s) are in an Active/NonOptimized state.",
+                "Standby": "The endpoint(s) are in a Standby state.",
+                "Unavailable": "The endpoint(s) are unavailable.",
+                "Transitioning": "The endpoint(s) are transitioning to a new AccesState."
+            },
+            "enumLongDescriptions": {
+                "Optimized": "In the context of this enumeration literal, each endpoint shall be in an Active/Optimized state.",
+                "NonOptimized": "In the context of this enumeration literal, each endpoint shall be in an Active/NonOptimized state.",
+                "Standby": "In the context of this enumeration literal, each endpoint shall be in a Standby state.",
+                "Unavailable": "In the context of this enumeration literal, each endpoint shall be in an unavailable state.",
+                "Transitioning": "In the context of this enumeration literal, at least one endpoint shall be transitioning to a new AccesState."
+            },
+            "description": "Describes the options for the access characteristics of an endpoint.",
+            "longDescription": "Access to all associated resources through all aggregated endpoints shall share this access state."
+        },
+        "TargetEndpointGroup": {
+            "anyOf": [
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/TargetEndpointGroup.v1_0_0.json#/definitions/TargetEndpointGroup"
+                }
+            ]
+        }
+    },
+    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

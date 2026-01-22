@@ -1,0 +1,33 @@
+{
+	"Actions": {
+	 "#ComputerSystem.Reset": {
+	 "target":"/redfish/v1/Systems/1/Actions/ComputerSystem.Reset",
+	 "ResetType@Redfish.AllowableValues": [
+	"On",
+	"ForceOff",
+	"GracefulRestart",
+	"GracefulShutdown",
+	"ForceRestart",
+	"Nmi",
+	"ForceOn",
+	"PushPowerButton"
+	 ]
+	}
+	}
+}
+
+POST /redfish/v1/Systems/1/Actions/ComputerSystem.Reset HTTP/1.1
+Content-Type: application/json
+Content-Length: 128
+OData-Version: 4.0
+{
+ "ResetType": "On"
+}
+
+POST /redfish/v1/Systems/1/Actions/ComputerSystem.Reset HTTP/1.1
+Content-Type: application/json
+Content-Length: 128
+OData-Version: 4.0
+{
+ "ResetType": "On"
+}

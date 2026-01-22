@@ -1,0 +1,52 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageService.StorageService",
+  "@odata.id": "/redfish/v1/StorageServices/Simple1",
+  "@odata.type": "#StorageService.1.0.0.StorageService",
+  "Id": "Simple1",
+  "Name": "My Simple Storage Service",
+  "Description": "This simple system does not support service levels when provisioning storage",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "StorageGroups": [
+    {
+      "@odata.id": "/redfish/v1/StorageServices/Simple1/StorageGroups/1"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/Simple1/StorageGroups/2"
+    }
+  ],
+  "InitiatorEndpointGroups": [
+    {
+      "@odata.id": "/redfish/v1/StorageServices/Simple1/InitiatorEndpointGroups/1"
+    }
+  ],
+  "TargetEndpointGroups": [
+    {
+      "@odata.id": "/redfish/v1/StorageServices/Simple1/TargetEndpointGroups/1"
+    }
+  ],
+  "Endpoints": {
+    "@odata.id": "/redfish/v1/StorageServices/Simple1/Endpoints"
+  },
+  "StoragePools": {
+    "@odata.id": "/redfish/v1/StorageServices/Simple1/StoragePools"
+  },
+  "Volumes": {
+    "@odata.id": "/redfish/v1/StorageServices/Simple1/Volumes"
+  },
+  "Drives": {
+    "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives"
+  },
+  "Links": {
+    "Enclosures": {
+      "@odata.id": "/redfish/v1/Chassis/1"
+    },
+	"HostingSystem": {
+      "@odata.id": "/redfish/v1/StorageSystems/Simple"
+    }
+  },
+  "Oem": {}
+}

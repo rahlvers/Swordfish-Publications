@@ -1,0 +1,62 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageService.StorageService",
+  "@odata.id": "/redfish/v1/StorageServices/FileService",
+  "@odata.type": "#StorageService.1.0.0.StorageService",
+  "Id": "1",
+  "Name": "My Storage Service",
+  "Description": "Description of storage",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "ClassesOfService": [  
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonBunker"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonGoldJaw"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonSilverJaw"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonVMs"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/Gold"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/Silver"
+    }
+  ],
+  "FileSystems": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems"
+  },
+  "StorageServiceCapabilities": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StorageServiceCapabilities"
+  },
+  "StorageGroups": [
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/StorageGroups/1"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/StorageGroups/2"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/StorageGroups/3"
+    }
+  ],
+  "StoragePools": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools"
+  },
+  "Links": {
+    "Enclosures": {
+      "@odata.id": "/redfish/v1/Chassis/1"
+    },
+	"HostingSystem": {
+      "@odata.id": "/redfish/v1/StorageSystems/FileServer"
+    }
+  },
+  "Oem": {}
+}

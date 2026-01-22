@@ -1,0 +1,29 @@
+{
+  "@Redfish.Copyright": "Copyright � 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Rack1",
+  "@odata.type": "#Chassis.1.0.0.Chassis",
+  "Id": "Rack1",
+  "Name": "Application Rack",
+  "ChassisType": "Rack",
+  "Oem": {},
+  "Description": "User Rack Row 1, Rack 3, Rack47",
+  "Manufacturer": "Hewlett-Packard",
+  "Model": "Rack",
+  "SKU": "",
+  "SerialNumber": "USE135ES65",
+  "Version": "",
+  "PartNumber": "",
+  "AssetTag": "CustomerWritableThingy",
+  "Links": {
+    "Contains": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/Enc1"
+      }
+    ],
+    "Oem": {}
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "@Redfish.Copyright": "Copyright � 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/Enc1/Power/$entity",
+  "@odata.id": "/redfish/v1/Chassis/Enc1/Power",
+  "@odata.type": "#Power.1.0.0.Power",
+  "Id": "Power",
+  "Name": "Power",
+  "PowerControl": [
+    {
+      "@odata.id": "/redfish/v1/Chassis/Enc1/Power#/PowerControl/0",
+      "MemberId": "0",
+      "Name": "Chassis Power Control",
+      "PowerConsumedWatts": 8000,
+      "PowerRequestedWatts": 8500,
+      "PowerAvailableWatts": 1500,
+      "PowerCapacityWatts": 10000,
+      "PowerAllocatedWatts": 9000,
+      "PowerLimit": {
+        "LimitInWatts": 9000,
+        "LimitException": "NoAction",
+        "CorrectionInMs": 2000
+      },
+      "RelatedItem": [
+        {
+          "@odata.id": "/redfish/v1/Chassis/Enc1"
+        }
+      ],
+      "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+      },
+      "Oem": {}
+    }
+  ],
+  "PowerSupplies": [
+    {
+      "@odata.id": "/redfish/v1/Chassis/Enc1/Power#/PowerSupplies/0",
+      "MemberId": "0",
+      "Name": "Power Supply Bay 1",
+      "Status": {
+        "State": "Disabled",
+        "Health": "Warning"
+      },
+      "Oem": {},
+      "PowerSupplyType": "AC",
+      "LineInputVoltage": 48,
+      "PowerCapacityWatts": 400,
+      "LastPowerOutputWatts": 400,
+      "Model": "499253-B21",
+      "FirmwareVersion": "1.00",
+      "SerialNumber": "1z0000001",
+      "PartNumber": "1z0000001A3a",
+      "SparePartNumber": "0000001A3a",
+      "RelatedItem": [
+        {
+          "@odata.id": "/redfish/v1/Chassis/Enc1"
+        }
+      ],
+      "Redundancy": [
+        {
+          "@odata.id": "/redfish/v1/Chassis/Enc1/Power#/Redundancy/0"
+        }
+      ]
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Enc1/Power#/PowerSupplies/1",
+      "MemberId": "1",
+      "Name": "Power Supply Bay 2",
+      "Status": {
+        "State": "Disabled",
+        "Health": "Warning"
+      },
+      "Oem": {},
+      "PowerSupplyType": "AC",
+      "LineInputVoltage": 48,
+      "PowerCapacityWatts": 400,
+      "LastPowerOutputWatts": 400,
+      "Model": "499253-B21",
+      "FirmwareVersion": "1.00",
+      "SerialNumber": "1z0000001",
+      "PartNumber": "1z0000001A3a",
+      "SparePartNumber": "0000001A3a",
+      "RelatedItem": [
+        {
+          "@odata.id": "/redfish/v1/Chassis/Enc1"
+        }
+      ],
+      "Redundancy": [
+        {
+          "@odata.id": "/redfish/v1/Chassis/Enc1/Power#/Redundancy/0"
+        }
+      ]
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/Enc1/Power#/PowerSupplies/2",
+      "MemberId": "2",
+      "Name": "Power Supply Bay 3",
+      "Status": {
+        "State": "Absent"
+      }
+    }
+  ],
+  "Redundancy": [
+    {
+      "@odata.id": "/redfish/v1/Chassis/Enc1/Power#/Redundancy/0",
+      "MemberId": "0",
+      "Name": "PowerSupply Redundancy Group 1",
+      "Mode": "Failover",
+      "MaxNumSupported": 2,
+      "MinNumNeeded": 1,
+      "RedundancySet": [
+        {
+          "@odata.id": "/redfish/v1/Chassis/Enc1/Power#/PowerSupplies/0"
+        },
+        {
+          "@odata.id": "/redfish/v1/Chassis/Enc1/Power#/PowerSupplies/1"
+        }
+      ],
+      "Status": {
+        "State": "Offline",
+        "Health": "OK"
+      }
+    }
+  ],
+  "Oem": {}
+}

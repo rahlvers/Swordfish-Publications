@@ -1,0 +1,131 @@
+{
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "title": "#IOPerformanceLoSCapabilities.v1_0_0.IOPerformanceLoSCapabilities",
+    "$ref": "#/definitions/IOPerformanceLoSCapabilities",
+    "definitions": {
+        "IOPerformanceLoSCapabilities": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": false,
+            "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/context"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/type"
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id"
+                },
+                "Description": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
+                        {"type": "null"}
+                    ]
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"
+                },
+                "Identifier": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.v1_1_0.json#/definitions/Identifier"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The value identifies this resource.",
+                    "longDescription": "The value shall be unique within the managed ecosystem."
+                },
+                "IOLimitingIsSupportedBoolean": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Limitint IOPS is supported.",
+                    "longDescription": "True implies that the system supports limiting IOPS to exceed IOPSDensity * VolumeSize. Otherwise, the system does not inforce a limit."
+                },
+                "MinSamplePeriodSeconds": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "s",
+                    "readonly": false,
+                    "description": "Minimum sampling period over which average values are calculated.",
+                    "longDescription": "The value shall be the minimum sampling period over which average values are calculated."
+                },
+                "MaxSamplePeriodSeconds": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "s",
+                    "readonly": false,
+                    "description": "Maximum sampling period over which average values are calculated.",
+                    "longDescription": "The value shall be the maximum sampling period over which average values are calculated."
+                },
+                "MinSupportedIoOperationLatencyMicroseconds": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "units": "us",
+                    "readonly": false,
+                    "description": "Minimum supported average IO latency.",
+                    "longDescription": "The value shall be the minimum supported average IO latency in microseconds calculated over the SamplePeriod"
+                },
+                "SupportedIOWorkloads": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/IOPerformanceLoSCapabilities.json#/definitions/IOWorkload"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "A collection of supported workloads.",
+                    "longDescription": "The value shall be a collection of supported workloads."
+                },
+                "SupportedIOPerformanceLinesOfService": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/IOPerformanceLoSCapabilities.json#/definitions/IOPerformanceLineOfService"},
+                            {"type": "null"}
+                        ]
+                    },
+                    "readonly": false,
+                    "description": "Collection of known and supported IOPerformanceLinesOfService.",
+                    "longDescription": "The value shall be a collection supported IO performance service options."
+                }
+            },
+            "required": [
+                "Id",
+                "Name"
+            ],
+            "description": "Describe io performance capabilities.",
+            "longDescription": "Each instance of IOPerformanceLoSCapabilities shall describe the capabilities of the system to support various IO performance service options."
+        }
+    },
+    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
+}

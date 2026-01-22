@@ -1,0 +1,43 @@
+{
+  "@Redfish.Copyright": "Copyright © 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
+  "@odata.id": "/redfish/v1/Chassis/1",
+  "@odata.type": "#Chassis.1.0.0.Chassis",
+  "Id": "1",
+  "Name": "Computer System Chassis",
+  "ChassisType": "RackMount",
+  "Manufacturer": "ManufacturerName",
+  "Model": "ProductModelName",
+  "SKU": "",
+  "SerialNumber": "2M220100SL",
+  "PartNumber": "",
+  "AssetTag": "CustomerWritableThingy",
+  "IndicatorLED": "Lit",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/1/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/1/Power"
+  },
+  "Links": {
+    "ComputerSystems": [
+      {
+        "@odata.id": "/redfish/v1/Systems/1"
+      }
+    ],
+    "ContainedBy": {
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
+    },
+    "ManagedBy": [
+      {
+        "@odata.id": "/redfish/v1/Managers/1"
+      }
+    ],
+    "Oem": {}
+  },
+  "Oem": {}
+}
