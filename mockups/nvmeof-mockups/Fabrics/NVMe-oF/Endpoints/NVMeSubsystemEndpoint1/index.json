@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Endpoint.v1_6_0.Endpoint",
+    "@odata.type": "#Endpoint.v1_8_2.Endpoint",
     "Id": "NVMeSubsystemEndpoint1",
     "Name": "NVMeSubsystemEndpoint1",
     "Description": "Endpoint connected NVMe-oF Subsystem (used in Zone)",
@@ -32,10 +32,10 @@
             "IPv4Address": {
                 "Address": "192.168.22.1"
             },
-            "Port": 4444
+            "Port": 4420
         }
     ],
     "Links": {},
     "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeSubsystemEndpoint1",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

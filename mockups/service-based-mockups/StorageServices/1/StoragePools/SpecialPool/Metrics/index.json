@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StoragePoolMetrics.v1_0_1.StoragePoolMetrics",
+    "@odata.type": "#StoragePoolMetrics.v1_1_0.StoragePoolMetrics",
     "Name": "StoragePool Metrics",
     "Id": "Metrics",
     "CorrectableIOReadErrorCount": 524,
@@ -21,7 +21,10 @@
         "NonIORequests": 23423466,
         "NonIORequestTime": "P24S"
     },
+    "CompressionSavingsBytes": 0,
+    "DeduplicationSavingsBytes": 0,
+    "ThinProvisioningSavingsBytes": 298234455,
     "Oem": {},
     "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/Metrics",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

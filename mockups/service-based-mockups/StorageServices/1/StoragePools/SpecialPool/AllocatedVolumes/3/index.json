@@ -54,5 +54,5 @@
         }
     },
     "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool/AllocatedVolumes/3",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

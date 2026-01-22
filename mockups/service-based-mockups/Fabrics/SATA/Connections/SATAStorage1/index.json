@@ -28,5 +28,5 @@
     ],
     "Links": {},
     "@odata.id": "/redfish/v1/Fabrics/SATA/Connections/SATAStorage1",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

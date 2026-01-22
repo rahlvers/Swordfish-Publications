@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Connection.v1_2_0.Connection",
+    "@odata.type": "#Connection.v1_4_0.Connection",
     "Id": "iSCSIStorageGroup",
     "Name": "iSCSIStorageGroup Connection",
     "Description": "Connection info for iSCSIStorageGroup",
@@ -64,6 +64,14 @@
             }
         ]
     },
+    "Actions": {
+        "#Connection.AddVolumeInfo": {
+            "target": "/redfish/v1/Fabrics/iSCSI/Connections/iSCSIStorageGroup/Actions/Connection.AddVolumeInfo"
+        },
+        "#Connection.RemoveVolumeInfo": {
+            "target": "/redfish/v1/Fabrics/iSCSI/Connections/iSCSIStorageGroup/Actions/Connection.RemoveVolumeInfo"
+        }
+    },
     "@odata.id": "/redfish/v1/Fabrics/iSCSI/Connections/iSCSIStorageGroup",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

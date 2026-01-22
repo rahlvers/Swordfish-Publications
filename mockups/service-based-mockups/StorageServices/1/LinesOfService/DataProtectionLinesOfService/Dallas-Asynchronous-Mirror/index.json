@@ -11,7 +11,9 @@
         "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
     },
     "ReplicaAccessLocation": {
-        "PostalAddress": {
+        "PhysicalAddress": {
+            "Country": "US",
+            "StateOrProvince": "Texas",
             "City": "Dallas"
         }
     },
@@ -21,5 +23,5 @@
         }
     },
     "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataProtectionLinesOfService/Dallas-Asynchronous-Mirror",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

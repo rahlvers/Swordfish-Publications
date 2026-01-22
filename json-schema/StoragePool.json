@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.json",
     "$ref": "#/definitions/StoragePool",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "NVMePoolType": {
             "enum": [
@@ -54,28 +54,28 @@
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_1_3.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_2_2.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_2_3.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_3_2.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_3_3.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_4_2.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_4_3.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_5_1.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_5_2.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_6_2.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_6_3.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_7_3.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_7_4.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_8_1.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_8_2.json#/definitions/StoragePool"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_9_1.json#/definitions/StoragePool"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_9_2.json#/definitions/StoragePool"
                 }
             ],
             "deletable": true,
@@ -105,6 +105,7 @@
             ]
         }
     },
+    "language": "en",
     "owningEntity": "SNIA",
     "title": "#StoragePool.StoragePool"
 }

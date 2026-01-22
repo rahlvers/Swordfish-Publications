@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -39,6 +39,8 @@
   <edmx:DataServices>
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ClassOfService">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Language" String="en"/>
+
       <EntityType Name="ClassOfService" BaseType="LineOfService.v1_0_0.LineOfService" Abstract="true">
         <Annotation Term="OData.Description" String="A service option composed of one or more other service options."/>
         <Annotation Term="OData.LongDescription" String="A service option composed of one or more other service options.  ITIL defines a service option as a choice of utility or warranty for a service."/>

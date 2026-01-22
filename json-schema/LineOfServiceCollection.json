@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/LineOfServiceCollection.json",
     "$ref": "#/definitions/LineOfServiceCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "LineOfServiceCollection": {
             "anyOf": [
@@ -104,6 +104,7 @@
             ]
         }
     },
+    "language": "en",
     "owningEntity": "SNIA",
     "title": "#LineOfServiceCollection.LineOfServiceCollection"
 }

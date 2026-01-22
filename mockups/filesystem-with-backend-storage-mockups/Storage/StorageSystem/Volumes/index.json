@@ -1,0 +1,23 @@
+{
+    "@odata.type": "#VolumeCollection.VolumeCollection",
+    "Name": "Storage Volume Collection",
+    "Description": "Storage Volume Collection",
+    "Members@odata.count": 4,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Storage/StorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/StorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/StorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/StorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4"
+        }
+    ],
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Storage/StorageSystem/Volumes",
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
+}

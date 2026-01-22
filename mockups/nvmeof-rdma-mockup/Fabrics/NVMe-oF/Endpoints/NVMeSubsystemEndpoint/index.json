@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Endpoint.v1_7_0.Endpoint",
+    "@odata.type": "#Endpoint.v1_8_2.Endpoint",
     "Id": "1",
     "Name": "NVMeSubsystemEndpoint",
     "Description": "Endpoint connected NVMe-oF Subsystem (used in Zone)",
@@ -37,5 +37,5 @@
     ],
     "Links": {},
     "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeSubsystemEndpoint",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

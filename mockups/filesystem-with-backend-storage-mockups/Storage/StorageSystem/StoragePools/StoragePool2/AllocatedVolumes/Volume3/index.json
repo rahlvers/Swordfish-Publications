@@ -1,0 +1,52 @@
+{
+    "@odata.type": "#Volume.v1_10_0.Volume",
+    "Id": "Volume3",
+    "Name": "Volume 3",
+    "Description": "Volume 3 in Backend System. From StoragePool2.",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "RAIDType": "RAID0",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "6006016094602800e07ff528b73ae011"
+        }
+    ],
+    "BlockSizeBytes": 512,
+    "Encrypted": false,
+    "DisplayName": "This is my user/client set friendly name.",
+    "Capacity": {
+        "Data": {
+            "ConsumedBytes": 0,
+            "AllocatedBytes": 300067890136
+        }
+    },
+    "CapacitySources": [
+        {
+            "@odata.type": "#Capacity.v1_2_2.CapacitySource",
+            "Id": "Source1",
+            "Name": "Source1",
+            "ProvidedCapacity": {
+                "Data": {
+                    "AllocatedBytes": 300067890136
+                }
+            },
+            "ProvidingPools": {
+                "@odata.id": "/redfish/v1/Storage/StorageSystem/StoragePools/StoragePool2"
+            },
+            "@odata.id": "/redfish/v1/Storage/StorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume3/CapacitySources/Source1"
+        }
+    ],
+    "Links": {
+        "OwningStorageResource": {
+            "@odata.id": "/redfish/v1/Storage/StorageSystem/FileSystems/FS1"
+        },
+        "ProvidingStoragePool": {
+            "@odata.id": "/redfish/v1/Storage/StorageSystem/StoragePools/StoragePool2"
+        }
+    },
+    "@odata.id": "/redfish/v1/Storage/StorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume3",
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
+}

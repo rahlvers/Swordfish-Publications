@@ -27,7 +27,7 @@
     },
     "CapacitySources": [
         {
-            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "@odata.type": "#Capacity.v1_2_2.CapacitySource",
             "Name": "Source1",
             "Id": "Source1",
             "ProvidedCapacity": {
@@ -46,5 +46,5 @@
         }
     ],
     "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

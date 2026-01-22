@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -41,16 +41,58 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <ComplexType Name="Capacity" Abstract="true">
-        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+      <Annotation Term="Redfish.Language" String="en"/>
+
+      <ComplexType Name="Capacity">
         <Annotation Term="OData.Description" String="This is the schema definition for the Capacity of a device. It represents the properties for capacity for any data store."/>
         <Annotation Term="OData.LongDescription" String="This composition may be used to represent storage capacity.  The sum of the values in Data, Metadata, and Snapshot shall be equal to the total capacity for the data store."/>
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Property Name="Data" Type="Capacity.CapacityInfo" Nullable="false">
+          <Annotation Term="OData.Description" String="The capacity information relating to the user data."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be capacity information relating to provisioned user data."/>
+        </Property>
+        <Property Name="Metadata" Type="Capacity.CapacityInfo" Nullable="false">
+          <Annotation Term="OData.Description" String="The capacity information relating to  metadata."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be capacity information relating to provisioned system (non-user accessible) data."/>
+        </Property>
+        <Property Name="Snapshot" Type="Capacity.CapacityInfo" Nullable="false">
+          <Annotation Term="OData.Description" String="The capacity information relating to snapshot or backup data."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be capacity information relating to provisioned snapshot or backup data."/>
+        </Property>
+        <Property Name="IsThinProvisioned" Type="Edm.Boolean" DefaultValue="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="Marks that the capacity is not necessarily fully allocated."/>
+          <Annotation Term="OData.LongDescription" String="If the value is false, the capacity shall be fully allocated.  The default value shall be false."/>
+        </Property>
       </ComplexType>
 
-      <ComplexType Name="CapacityInfo" Abstract="true">
-        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+      <ComplexType Name="CapacityInfo">
         <Annotation Term="OData.Description" String="The capacity of specific data type in a data store."/>
         <Annotation Term="OData.LongDescription" String="This composition may be used to represent the utilization of storage capacity."/>
+        <Property Name="ConsumedBytes" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The number of bytes consumed in this data store for this data type."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be the number of logical bytes currently consumed in this data store for this data type."/>
+          <Annotation Term="Measures.Unit" String="By"/>
+        </Property>
+        <Property Name="AllocatedBytes" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="The number of bytes currently allocated by the storage system in this data store for this data type."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be the number of bytes currently allocated by the storage system in this data store for this data type."/>
+          <Annotation Term="Measures.Unit" String="By"/>
+        </Property>
+        <Property Name="GuaranteedBytes" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="The number of bytes the storage system guarantees can be allocated in this data store for this data type."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be the number of bytes the storage system guarantees can be allocated in this data store for this data type."/>
+          <Annotation Term="Measures.Unit" String="By"/>
+        </Property>
+        <Property Name="ProvisionedBytes" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="The maximum number of bytes that can be allocated in this data store for this data type."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be the maximum number of bytes that can be allocated in this data store for this data type."/>
+          <Annotation Term="Measures.Unit" String="By"/>
+        </Property>
       </ComplexType>
 
       <EntityType Name="CapacitySource" BaseType="Resource.v1_0_0.Resource" Abstract="true">
@@ -97,57 +139,6 @@
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="1.0.3"/>
-      <ComplexType Name="Capacity" BaseType="Capacity.Capacity">
-        <Annotation Term="OData.Description" String="This is the schema definition for the Capacity of a device. It represents the properties for capacity for any data store."/>
-        <Annotation Term="OData.LongDescription" String="This composition may be used to represent storage capacity.  The sum of the values in Data, Metadata, and Snapshot shall be equal to the total capacity for the data store."/>
-        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
-        <Property Name="Data" Type="Capacity.v1_0_0.CapacityInfo" Nullable="false">
-          <Annotation Term="OData.Description" String="The capacity information relating to the user data."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be capacity information relating to provisioned user data."/>
-        </Property>
-        <Property Name="Metadata" Type="Capacity.v1_0_0.CapacityInfo" Nullable="false">
-          <Annotation Term="OData.Description" String="The capacity information relating to  metadata."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be capacity information relating to provisioned system (non-user accessible) data."/>
-        </Property>
-        <Property Name="Snapshot" Type="Capacity.v1_0_0.CapacityInfo" Nullable="false">
-          <Annotation Term="OData.Description" String="The capacity information relating to snapshot or backup data."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be capacity information relating to provisioned snapshot or backup data."/>
-        </Property>
-        <Property Name="IsThinProvisioned" Type="Edm.Boolean" DefaultValue="false">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-          <Annotation Term="OData.Description" String="Marks that the capacity is not necessarily fully allocated."/>
-          <Annotation Term="OData.LongDescription" String="If the value is false, the capacity shall be fully allocated.  The default value shall be false."/>
-        </Property>
-      </ComplexType>
-
-      <ComplexType Name="CapacityInfo" BaseType="Capacity.CapacityInfo">
-        <Annotation Term="OData.Description" String="The capacity of specific data type in a data store."/>
-        <Annotation Term="OData.LongDescription" String="This composition may be used to represent the utilization of storage capacity."/>
-        <Property Name="ConsumedBytes" Type="Edm.Int64">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-          <Annotation Term="OData.Description" String="The number of bytes consumed in this data store for this data type."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be the number of logical bytes currently consumed in this data store for this data type."/>
-          <Annotation Term="Measures.Unit" String="By"/>
-        </Property>
-        <Property Name="AllocatedBytes" Type="Edm.Int64">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-          <Annotation Term="OData.Description" String="The number of bytes currently allocated by the storage system in this data store for this data type."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be the number of bytes currently allocated by the storage system in this data store for this data type."/>
-          <Annotation Term="Measures.Unit" String="By"/>
-        </Property>
-        <Property Name="GuaranteedBytes" Type="Edm.Int64">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-          <Annotation Term="OData.Description" String="The number of bytes the storage system guarantees can be allocated in this data store for this data type."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be the number of bytes the storage system guarantees can be allocated in this data store for this data type."/>
-          <Annotation Term="Measures.Unit" String="By"/>
-        </Property>
-        <Property Name="ProvisionedBytes" Type="Edm.Int64">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-          <Annotation Term="OData.Description" String="The maximum number of bytes that can be allocated in this data store for this data type."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be the maximum number of bytes that can be allocated in this data store for this data type."/>
-          <Annotation Term="Measures.Unit" String="By"/>
-        </Property>
-      </ComplexType>
 
       <EntityType Name="CapacitySource" BaseType="Capacity.CapacitySource">
         <Annotation Term="OData.Description" String="A description of the type and source of storage."/>
@@ -173,7 +164,7 @@
           </Record>
         </Annotation>
 
-        <Property Name="ProvidedCapacity" Type="Capacity.v1_0_0.Capacity" Nullable="false">
+        <Property Name="ProvidedCapacity" Type="Capacity.Capacity" Nullable="false">
           <Annotation Term="OData.Description" String="The amount of space that has been provided from the ProvidingDrives, ProvidingVolumes, ProvidingMemory or ProvidingPools."/>
           <Annotation Term="OData.LongDescription" String="The value shall be the amount of space that has been provided from the ProvidingDrives, ProvidingVolumes, ProvidingMemory or ProvidingPools."/>
         </Property>
@@ -229,6 +220,12 @@
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="OData.Description" String="This version was created to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
       <EntityType Name="CapacitySource" BaseType="Capacity.v1_0_3.CapacitySource"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_0_5">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version moves `Capacity` and `CapacityInfo` to unversioned namespace."/>
+      <EntityType Name="CapacitySource" BaseType="Capacity.v1_0_4.CapacitySource"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_1_0">
@@ -294,7 +291,13 @@
       <Annotation Term="OData.Description" String="This version adds URIs for use of CapacitySource."/>
       <EntityType Name="CapacitySource" BaseType="Capacity.v1_1_3.CapacitySource"/>
     </Schema>
-    
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_1_5">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version moves `Capacity` and `CapacityInfo` to unversioned namespace."/>
+      <EntityType Name="CapacitySource" BaseType="Capacity.v1_1_4.CapacitySource"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_2_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="1.2.2"/>
@@ -306,6 +309,12 @@
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="OData.Description" String="This version adds URIs for use of CapacitySource."/>
       <EntityType Name="CapacitySource" BaseType="Capacity.v1_2_0.CapacitySource"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_2_2">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version moves `Capacity` and `CapacityInfo` to unversioned namespace."/>
+      <EntityType Name="CapacitySource" BaseType="Capacity.v1_2_1.CapacitySource"/>
     </Schema>
 
   </edmx:DataServices>

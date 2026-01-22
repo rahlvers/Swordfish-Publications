@@ -1,0 +1,27 @@
+{
+    "@odata.type": "#Capacity.v1_2_2.CapacitySource",
+    "Id": "Source1",
+    "Name": "Source1",
+    "ProvidedCapacity": {
+        "Data": {
+            "ConsumedBytes": 500000000000,
+            "AllocatedBytes": 1000000000000,
+            "ProvisionedBytes": 3000000000000
+        },
+        "Metadata": {
+            "ConsumedBytes": 0,
+            "AllocatedBytes": 0,
+            "ProvisionedBytes": 0
+        },
+        "Snapshot": {
+            "ConsumedBytes": 0,
+            "AllocatedBytes": 0,
+            "ProvisionedBytes": 0
+        }
+    },
+    "ProvidingPools": {
+        "@odata.id": "/redfish/v1/Storage/StorageSystem/FileSystems/FS1/CapacitySources/Source1/ProvidingPools"
+    },
+    "@odata.id": "/redfish/v1/Storage/StorageSystem/FileSystems/FS1/CapacitySources/Source1",
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
+}

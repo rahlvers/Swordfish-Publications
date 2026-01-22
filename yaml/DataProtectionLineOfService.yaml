@@ -7,6 +7,7 @@ components:
         from loss. The requirements must be met collectively by the communication
         path and the replica.
 title: '#DataProtectionLineOfService.DataProtectionLineOfService'
-x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
+x-language: en
 x-owningEntity: SNIA

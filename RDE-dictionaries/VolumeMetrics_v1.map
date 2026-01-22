@@ -1,9 +1,9 @@
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
 |   Row |   Sequence# | Format   | Flags                              | Field String                   |   Child Count | Offset   |
 +=======+=============+==========+====================================+================================+===============+==========+
-|     0 |           0 | Set      |                                    | VolumeMetrics                  |            14 | 1        |
+|     0 |           0 | Set      |                                    | VolumeMetrics                  |            17 | 1        |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|     1 |           0 | Set      | Nullable=False,                    | Actions                        |             1 | 15       |
+|     1 |           0 | Set      | Nullable=False,                    | Actions                        |             1 | 18       |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
 |     2 |           1 | Real     | Nullable=True,Permission=Read      | ConsistencyCheckErrorCount     |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
@@ -29,33 +29,39 @@
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
 |    13 |          12 | Real     | Nullable=True,Permission=Read      | ConsistencyCheckCount          |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    14 |          13 | Set      | Nullable=False,                    | IOStatistics                   |            10 | 16       |
+|    14 |          13 | Set      | Nullable=False,                    | IOStatistics                   |            10 | 19       |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    15 |           0 | Set      | Nullable=False,                    | Oem                            |             0 |          |
+|    15 |          14 | Integer  | Nullable=True,Permission=Read      | CompressionSavingsBytes        |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    16 |           0 | String   | Nullable=True,Permission=ReadWrite | NonIORequestTime               |             0 |          |
+|    16 |          15 | Integer  | Nullable=True,Permission=Read      | DeduplicationSavingsBytes      |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    17 |           1 | Integer  | Nullable=True,Permission=ReadWrite | NonIORequests                  |             0 |          |
+|    17 |          16 | Integer  | Nullable=True,Permission=Read      | ThinProvisioningSavingsBytes   |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    18 |           2 | Integer  | Nullable=True,Permission=ReadWrite | ReadHitIORequests              |             0 |          |
+|    18 |           0 | Set      | Nullable=False,                    | Oem                            |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    19 |           3 | Integer  | Nullable=True,Permission=ReadWrite | ReadIOKiBytes                  |             0 |          |
+|    19 |           0 | String   | Nullable=True,Permission=ReadWrite | NonIORequestTime               |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    20 |           4 | String   | Nullable=True,Permission=ReadWrite | ReadIORequestTime              |             0 |          |
+|    20 |           1 | Integer  | Nullable=True,Permission=ReadWrite | NonIORequests                  |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    21 |           5 | Integer  | Nullable=True,Permission=ReadWrite | ReadIORequests                 |             0 |          |
+|    21 |           2 | Integer  | Nullable=True,Permission=ReadWrite | ReadHitIORequests              |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    22 |           6 | Integer  | Nullable=True,Permission=ReadWrite | WriteHitIORequests             |             0 |          |
+|    22 |           3 | Integer  | Nullable=True,Permission=ReadWrite | ReadIOKiBytes                  |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    23 |           7 | Integer  | Nullable=True,Permission=ReadWrite | WriteIOKiBytes                 |             0 |          |
+|    23 |           4 | String   | Nullable=True,Permission=ReadWrite | ReadIORequestTime              |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    24 |           8 | String   | Nullable=True,Permission=ReadWrite | WriteIORequestTime             |             0 |          |
+|    24 |           5 | Integer  | Nullable=True,Permission=ReadWrite | ReadIORequests                 |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-|    25 |           9 | Integer  | Nullable=True,Permission=ReadWrite | WriteIORequests                |             0 |          |
+|    25 |           6 | Integer  | Nullable=True,Permission=ReadWrite | WriteHitIORequests             |             0 |          |
 +-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
-Total Entries: 26
-Fixed size consumed (bytes): 272 (0x110)
-Field string size consumed (bytes): 521 (0x209)
-Total size (bytes): 793 (0x319)
-Version: 0XF1F1F100
-Signature: 0xd7cbbe35
+|    26 |           7 | Integer  | Nullable=True,Permission=ReadWrite | WriteIOKiBytes                 |             0 |          |
++-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
+|    27 |           8 | String   | Nullable=True,Permission=ReadWrite | WriteIORequestTime             |             0 |          |
++-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
+|    28 |           9 | Integer  | Nullable=True,Permission=ReadWrite | WriteIORequests                |             0 |          |
++-------+-------------+----------+------------------------------------+--------------------------------+---------------+----------+
+Total Entries: 29
+Fixed size consumed (bytes): 302 (0x12e)
+Field string size consumed (bytes): 600 (0x258)
+Total size (bytes): 902 (0x386)
+Version: 0XF1F2F000
+Signature: 0x63816a41

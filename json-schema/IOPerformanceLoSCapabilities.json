@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.json",
     "$ref": "#/definitions/IOPerformanceLoSCapabilities",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "IOPerformanceLoSCapabilities": {
             "anyOf": [
@@ -68,6 +68,7 @@
             "longDescription": "This structure may be used to describe a component of an IO workload."
         }
     },
+    "language": "en",
     "owningEntity": "SNIA",
     "title": "#IOPerformanceLoSCapabilities.IOPerformanceLoSCapabilities"
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -32,6 +32,8 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLineOfService">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Language" String="en"/>
+
       <EntityType Name="IOConnectivityLineOfService" BaseType="LineOfService.v1_0_0.LineOfService" Abstract="true">
         <Annotation Term="OData.Description" String="A service option within the IO Connectivity line of service."/>
         <Annotation Term="OData.LongDescription" String="An IO connectivity service option may be used to specify the characteristics of storage connectivity."/>

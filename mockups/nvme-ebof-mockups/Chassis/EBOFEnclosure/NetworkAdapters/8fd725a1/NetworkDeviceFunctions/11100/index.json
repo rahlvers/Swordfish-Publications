@@ -36,5 +36,5 @@
     "VirtualFunctionsEnabled": true,
     "MaxVirtualFunctions": 16,
     "@odata.id": "/redfish/v1/Chassis/EBOFEnclosure/NetworkAdapters/8fd725a1/NetworkDeviceFunctions/11100",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

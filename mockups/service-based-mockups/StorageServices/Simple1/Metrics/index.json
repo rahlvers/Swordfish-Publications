@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StorageServiceMetrics.v1_0_1.StorageServiceMetrics",
+    "@odata.type": "#StorageServiceMetrics.v1_1_0.StorageServiceMetrics",
     "Name": "StorageService Metrics",
     "Id": "Metrics",
     "IOStatistics": {
@@ -14,6 +14,9 @@
         "NonIORequests": 23423466,
         "NonIORequestTime": "P24S"
     },
+    "CompressionSavingsBytes": 0,
+    "DeduplicationSavingsBytes": 0,
+    "ThinProvisioningSavingsBytes": 181357135,
     "Oem": {},
     "@odata.id": "/redfish/v1/StorageServices/Simple1/Metrics",
     "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."

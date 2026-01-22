@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -51,6 +51,8 @@
   <edmx:DataServices>
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Language" String="en"/>
+
       <EntityType Name="FileSystem" BaseType="Resource.v1_0_0.Resource" Abstract="true">
         <Annotation Term="OData.Description" String="A hierarchical namespace of files."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent a hierarchical namespace of files."/>
@@ -146,11 +148,11 @@
           <Annotation Term="OData.LongDescription" String="The value of this property shall be the block size of the file system in bytes."/>
           <Annotation Term="Measures.Unit" String="By"/>
         </Property>
-        <Property Name="Capacity" Type="Capacity.v1_0_0.Capacity" Nullable="false">
+        <Property Name="Capacity" Type="Capacity.Capacity" Nullable="false">
           <Annotation Term="OData.Description" String="Capacity allocated to the file system."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall be the capacity allocated to the file system in bytes."/>
         </Property>
-        <Property Name="RemainingCapacity" Type="Capacity.v1_0_0.Capacity" Nullable="false">
+        <Property Name="RemainingCapacity" Type="Capacity.Capacity" Nullable="false">
           <Annotation Term="OData.Description" String="Remaining capacity allocated to the file system."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall be the remaining capacity allocated to the file system in bytes."/>
           <Annotation
@@ -442,7 +444,13 @@
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_2_3">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
      <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
-      <EntityType Name="FileSystem" BaseType="FileSystem.v1_2_1.FileSystem"/>
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_2_2.FileSystem"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_2_4">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change Capacity references to unversioned."/>
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_2_3.FileSystem"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_3_0">
@@ -464,6 +472,12 @@
       <EntityType Name="FileSystem" BaseType="FileSystem.v1_3_0.FileSystem"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_3_2">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change Capacity references to unversioned."/>
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_3_1.FileSystem"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_4_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="1.2.6"/>      
@@ -482,6 +496,12 @@
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
      <Annotation Term="OData.LongDescription" String="Change IOStatistics references to unversioned."/>
       <EntityType Name="FileSystem" BaseType="FileSystem.v1_4_0.FileSystem"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_4_2">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+     <Annotation Term="OData.LongDescription" String="Change Capacity references to unversioned."/>
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_4_1.FileSystem"/>
     </Schema>
 
   </edmx:DataServices>

@@ -1,0 +1,12 @@
+{
+    "@odata.type": "#FileSystemCollection.FileSystemCollection",
+    "Name": "FileSystems",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Storage/StorageSystem/FileSystems/FS1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Storage/StorageSystem/FileSystems",
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
+}

@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_2_3.json",
     "$ref": "#/definitions/FileSystem",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -131,7 +131,7 @@
                     "units": "By"
                 },
                 "Capacity": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.json#/definitions/Capacity",
                     "description": "Capacity allocated to the file system.",
                     "longDescription": "The value of this property shall be the capacity allocated to the file system in bytes."
                 },
@@ -288,7 +288,7 @@
                     "versionAdded": "v1_2_0"
                 },
                 "RemainingCapacity": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.json#/definitions/Capacity",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.json#/definitions/Capacity",
                     "deprecated": "This property is deprecated in favor of the Capacity property.  The RemainingCapacity can be computed from the values of that property, for each of the sub groups xxx: Data, MetaData, and Snapshot.  The RemainingCapacity is xxx/ProvisionedBytes - xxx/ConsumedBytes.",
                     "description": "Remaining capacity allocated to the file system.",
                     "longDescription": "The value of this property shall be the remaining capacity allocated to the file system in bytes."
@@ -411,6 +411,7 @@
             "type": "object"
         }
     },
+    "language": "en",
     "owningEntity": "SNIA",
     "release": "1.0.7a",
     "title": "#FileSystem.v1_2_3.FileSystem"

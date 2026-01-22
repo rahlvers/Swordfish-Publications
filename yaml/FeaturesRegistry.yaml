@@ -10,6 +10,7 @@ components:
       x-longDescription: This resource shall be used to represent a Feature registry
         for a Redfish implementation.
 title: '#FeaturesRegistry.FeaturesRegistry'
-x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
+x-language: en
 x-owningEntity: SNIA

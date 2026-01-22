@@ -24,5 +24,5 @@
     },
     "Oem": {},
     "@odata.id": "/redfish/v1/StorageServices/2/StoragePools/BasePool/AllocatedVolumes/4/Metrics",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

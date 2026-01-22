@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+    "@odata.type": "#Capacity.v1_2_2.CapacitySource",
     "Id": "Source1",
     "Name": "CapacitySource Source1",
     "ProvidedCapacity": {

@@ -1,6 +1,6 @@
 {
     "@odata.id": "/redfish/v1/Storage/NVMeoF-Discovery/Controllers/NVMeDiscoveryController",
-    "@odata.type": "#StorageController.v1_7_0.StorageController",
+    "@odata.type": "#StorageController.v1_9_0.StorageController",
     "Id": "NVMeDiscoveryController",
     "Name": "NVMe Discovery Controller",
     "Description": "An NVM Discovery Controller exposes capabilities that allow a host to retrieve information required to connect to one or more NVM Subsystems. Discovery controllers only support commands providing discovery capabilities; they do not provide IO or management access.",
@@ -17,7 +17,8 @@
         "NVMeOverFabrics"
     ],
     "NVMeControllerProperties": {
-        "NVMeVersion": "1.3",
+        "DiscoveryTransportServiceId": 8009,
+        "NVMeVersion": "2.0c",
         "NVMeControllerAttributes": {
             "ReportsUUIDList": false,
             "SupportsSQAssociations": false,
@@ -46,5 +47,5 @@
             }
         ]
     },
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

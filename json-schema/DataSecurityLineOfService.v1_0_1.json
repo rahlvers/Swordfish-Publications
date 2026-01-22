@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService.v1_0_1.json",
     "$ref": "#/definitions/DataSecurityLineOfService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "DataSecurityLineOfService": {
             "additionalProperties": false,
@@ -172,6 +172,7 @@
             "type": "object"
         }
     },
+    "language": "en",
     "owningEntity": "SNIA",
     "release": "1.0.6",
     "title": "#DataSecurityLineOfService.v1_0_1.DataSecurityLineOfService"

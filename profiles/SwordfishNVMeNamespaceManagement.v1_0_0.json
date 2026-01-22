@@ -1,0 +1,77 @@
+{
+    "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_1_0.json",
+    "ProfileName": "SwordfishNVMeNamespaceManagement",
+    "ProfileVersion": "1.0.0",
+    "OwningEntity": "SNIA.org",
+    "Purpose": "Defines the Swordfish NVMe Namespace Management Requirements.",
+    "ContactInfo": "SNIA.org",
+    "Registries": {
+      "Features": {
+        "MinVersion": "1.6.0",
+        "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+        "SupportedFeatures": {
+          "SNIA.Swordfish.NVMeNamespaceManagement": {}
+        }
+      }
+    },
+    "Protocol": {
+      "MinVersion": "1.18.0"
+    },
+    "Resources": {
+      "Storage": {
+        "PropertyRequirements": {
+          "NVMeSubsystemProperties": {
+            "PropertyRequirements": {
+              "MaxNamespacesSupported": {},
+              "SharedNamespaceControllerAttachmentSupported": {}
+            }
+          }
+        }
+      },
+      "StorageController": {
+        "ReadRequirement": "IfImplemented",
+        "PropertyRequirements": {
+          "NVMeControllerProperties": {
+            "PropertyRequirements": {
+              "ControllerType": {
+                  "Purpose": "The ControllerType should be of type Admin or IO.",
+                  "Comparison": "AnyOf",
+                  "Values": ["Admin", "IO"]
+                },
+              "MaxNamespaceAttachmentsAllowed": {
+                "ReadRequirement": "None",
+                "ConditionalRequirements": [{
+                  "Purpose": "Required  when ControllerType is 'IO'.",
+                  "CompareProperty": "ControllerType",
+                  "CompareType": "Equal",
+                  "CompareValues": ["IO"],
+                  "Comparison": "Absent",
+                  "ReadRequirement": "Mandatory"
+                }]
+              }
+            }
+          }
+        }
+      },
+      "NVMeDomain": {
+        "ReadRequirement": "IfImplemented",
+        "PropertyRequirements": {
+          "NVMeControllerProperties": {
+            "PropertyRequirements": {
+              "MaxNamespacesSupportedPerController": {}
+            }
+          }
+        }
+      },
+      "Volume": {
+        "ReadRequirement": "IfImplemented",
+        "PropertyRequirements": {
+          "NVMeNamespaceProperties": {
+            "PropertyRequirements": {
+              "SupportsMultipleNamespaceAttachments": {}
+            }
+          }
+        }
+      }
+    }
+  }

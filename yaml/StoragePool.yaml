@@ -36,12 +36,13 @@ components:
           is used to indicate a 'pool of pools' hierarchy.
       x-versionAdded: v1_6_0
     StoragePool_StoragePool:
-      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_9_1.yaml#/components/schemas/StoragePool_v1_9_1_StoragePool
+      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_9_2.yaml#/components/schemas/StoragePool_v1_9_2_StoragePool
       description: A container of data storage.
       x-longDescription: A container of data storage capable of providing capacity
         conforming to one of its supported classes of service. The storage pool does
         not support IO to its data storage.
 title: '#StoragePool.StoragePool'
-x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
+x-language: en
 x-owningEntity: SNIA

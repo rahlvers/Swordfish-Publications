@@ -39,5 +39,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive1",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

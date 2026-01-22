@@ -39,7 +39,9 @@
                 "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
             },
             "ReplicaAccessLocation": {
-                "PostalAddress": {
+                "PhysicalAddress": {
+                    "Country": "US",
+                    "StateOrProvince": "Texas",
                     "City": "Dallas"
                 }
             },
@@ -76,7 +78,9 @@
                 "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
             },
             "ReplicaAccessLocation": {
-                "PostalAddress": {
+                "PhysicalAddress": {
+                    "Country": "US",
+                    "StateOrProvince": "Rhode Island",
                     "City": "Providence"
                 }
             },
@@ -95,7 +99,9 @@
                 "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
             },
             "ReplicaAccessLocation": {
-                "PostalAddress": {
+                "PhysicalAddress": {
+                    "Country": "US",
+                    "StateOrProvince": "Rhode Island",
                     "City": "Providence"
                 }
             },
@@ -122,7 +128,9 @@
                 "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
             },
             "ReplicaAccessLocation": {
-                "PostalAddress": {
+                "PhysicalAddress": {
+                    "Country": "US",
+                    "StateOrProvince": "Rhode Island",
                     "City": "Providence"
                 }
             },
@@ -130,5 +138,5 @@
         }
     ],
     "@odata.id": "/redfish/v1/StorageServices/1/DataProtectionLoSCapabilities",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

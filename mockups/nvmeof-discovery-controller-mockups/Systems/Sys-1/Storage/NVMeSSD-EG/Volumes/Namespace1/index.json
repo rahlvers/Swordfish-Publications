@@ -21,7 +21,7 @@
     },
     "CapacitySources": [
         {
-            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "@odata.type": "#Capacity.v1_2_2.CapacitySource",
             "Id": "Source1",
             "Name": "Capacity Source for NVMeSSD",
             "ProvidedCapacity": {
@@ -61,5 +61,5 @@
         ]
     },
     "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Volumes/Namespace1",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

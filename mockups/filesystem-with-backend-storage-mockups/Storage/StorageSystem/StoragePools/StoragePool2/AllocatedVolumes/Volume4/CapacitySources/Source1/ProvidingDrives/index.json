@@ -1,0 +1,15 @@
+{
+    "@odata.type": "#DriveCollection.DriveCollection",
+    "Name": "Drives",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/0TH8N20R"
+        },
+        {
+            "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/0TH8S1JR"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Storage/StorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4/CapacitySources/Source1/ProvidingDrives",
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
+}

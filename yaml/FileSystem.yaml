@@ -41,13 +41,14 @@ components:
       x-longDescription: The values shall indicate the file sharing protocols supported
         by the file system. At least one value shall be present.
     FileSystem_FileSystem:
-      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_4_1.yaml#/components/schemas/FileSystem_v1_4_1_FileSystem
+      $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_4_2.yaml#/components/schemas/FileSystem_v1_4_2_FileSystem
       description: A hierarchical namespace of files.
       x-longDescription: This resource shall be used to represent a hierarchical namespace
         of files.
     FileSystem_ImportedShare:
       anyOf: []
 title: '#FileSystem.FileSystem'
-x-copyright: Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
+x-language: en
 x-owningEntity: SNIA

@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#FileSystem.v1_4_0.FileSystem",
+    "@odata.type": "#FileSystem.v1_4_2.FileSystem",
     "Id": "FS1",
     "Name": "Root",
     "Description": "Root FileSystem, not replicated.",
@@ -23,7 +23,7 @@
     },
     "CapacitySources": [
         {
-            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "@odata.type": "#Capacity.v1_2_2.CapacitySource",
             "Id": "Source1",
             "Name": "Source1",
             "ProvidedCapacity": {
@@ -80,5 +80,5 @@
         }
     },
     "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

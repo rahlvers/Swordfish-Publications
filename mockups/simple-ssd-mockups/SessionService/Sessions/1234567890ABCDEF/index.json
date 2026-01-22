@@ -5,5 +5,5 @@
     "Description": "Manager User Session",
     "UserName": "Administrator",
     "@odata.id": "/redfish/v1/SessionService/Sessions/1234567890ABCDEF",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

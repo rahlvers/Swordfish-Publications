@@ -1,0 +1,16 @@
+{
+    "@odata.type": "#Storage.v1_15_1.Storage",
+    "Id": "1",
+    "Name": "Abstract file system.",
+    "Description": "Mockup of an abstract Filesystem and Fileshare; no backend storage information is exposed.",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK",
+        "HealthRollup": "OK"
+    },
+    "FileSystems": {
+        "@odata.id": "/redfish/v1/Storage/StorageSystem/FileSystems"
+    },
+    "@odata.id": "/redfish/v1/Storage/StorageSystem",
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
+}

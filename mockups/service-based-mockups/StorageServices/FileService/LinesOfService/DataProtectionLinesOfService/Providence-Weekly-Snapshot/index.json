@@ -19,7 +19,9 @@
         "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverProvidence"
     },
     "ReplicaAccessLocation": {
-        "PostalAddress": {
+        "PhysicalAddress": {
+            "Country": "US",
+            "StateOrProvince": "Rhode Island",
             "City": "Providence"
         }
     },
@@ -29,5 +31,5 @@
         }
     },
     "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Providence-Weekly-Snapshot",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }

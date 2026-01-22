@@ -1,7 +1,7 @@
 {
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2024 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "IOStatistics": {
             "anyOf": [
@@ -13,6 +13,7 @@
             "longDescription": "The properties of this type shall be used to represent the IO statistics of the requested object."
         }
     },
+    "language": "en",
     "owningEntity": "SNIA",
     "title": "#IOStatistics"
 }

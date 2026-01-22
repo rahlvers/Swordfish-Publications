@@ -9,5 +9,5 @@
         }
     ],
     "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG2/Controllers",
-    "@Redfish.Copyright": "Copyright 2015-2024 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2025 SNIA. All rights reserved."
 }
