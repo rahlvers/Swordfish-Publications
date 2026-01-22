@@ -46,6 +46,14 @@
             },
             "additionalProperties": true,
             "properties": {
+                "Name": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
+                        {"type": "null"}
+                    ],
+                    "description": "A friendly name for this line of service.",
+                    "longDescription": "If present, the name shall be a friendly name for this line of service."
+                },
                 "RecoveryTimeObjectives": {
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/DataProtectionLoSCapabilities.json#/definitions/RecoveryAccessScope"},
@@ -71,7 +79,7 @@
                     ],
                     "readonly": false,
                     "description": "True implies compression or deduplication of storage.",
-                    "longDescription": "A value of true shall indicate that the storage is compressed or deduplicated."
+                    "longDescription": "A value of true shall indicate that the storage is compressed or deduplicated. The default value for this property is false."
                 }
             },
             "description": "Describe data storage capabilities.",

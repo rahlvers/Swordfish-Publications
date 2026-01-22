@@ -98,7 +98,7 @@
                     ],
                     "readonly": false,
                     "description": "Allows compression or deduplication of storage.",
-                    "longDescription": "The value specifies whether storage compression or deduplication is supported."
+                    "longDescription": "The value specifies whether storage compression or deduplication is supported. The default value for this property is false."
                 },
                 "SupportedDataStorageLinesOfService": {
                     "type": "array",

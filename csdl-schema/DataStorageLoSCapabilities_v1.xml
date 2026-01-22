@@ -35,8 +35,12 @@
       <ComplexType Name="DataStorageLineOfService">
         <Annotation Term="OData.Description" String="Describe data storage capabilities." />
         <Annotation Term="OData.LongDescription"
-        String="This structure may be used to describe a service option covering storage provisioning and availability." />
-        
+        String="This structure may be used to describe a service option covering storage provisioning and availability." /> 
+        <Property Name="Name" Type="Resource.Name" >
+            <Annotation Term="OData.Description" String="A friendly name for this line of service." />
+            <Annotation Term="OData.LongDescription"
+            String="If present, the name shall be a friendly name for this line of service." />
+        </Property>  
         <Property Name="RecoveryTimeObjectives" Type="DataProtectionLoSCapabilities.RecoveryAccessScope">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description"
@@ -50,10 +54,10 @@
           <Annotation Term="OData.Description" String="Provisioning policy for storage." />
           <Annotation Term="OData.LongDescription" String="The enumeration literal shall define the provisioning policy for storage." />
         </Property>
-        <Property Name="IsSpaceEfficient" Type="Edm.Boolean">
+        <Property Name="IsSpaceEfficient" Type="Edm.Boolean" DefaultValue="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description" String="True implies compression or deduplication of storage." />
-          <Annotation Term="OData.LongDescription" String="A value of true shall indicate that the storage is compressed or deduplicated." />
+          <Annotation Term="OData.LongDescription" String="A value of true shall indicate that the storage is compressed or deduplicated. The default value for this property is false." />
         </Property>
       </ComplexType>
       <EnumType Name="AccessCapability">
@@ -122,10 +126,10 @@
           <Annotation Term="OData.Description" String="Thin allows over allocation of storage." />
           <Annotation Term="OData.LongDescription" String="This collection specifies supported storage allocation policies." />
         </Property>
-        <Property Name="SupportsSpaceEfficiency" Type="Edm.Boolean">
+        <Property Name="SupportsSpaceEfficiency" Type="Edm.Boolean" DefaultValue="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description" String="Allows compression or deduplication of storage." />
-          <Annotation Term="OData.LongDescription" String="The value specifies whether storage compression or deduplication is supported." />
+          <Annotation Term="OData.LongDescription" String="The value specifies whether storage compression or deduplication is supported. The default value for this property is false." />
         </Property>
         <Property Name="SupportedDataStorageLinesOfService" Type="Collection(DataStorageLoSCapabilities.DataStorageLineOfService)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />

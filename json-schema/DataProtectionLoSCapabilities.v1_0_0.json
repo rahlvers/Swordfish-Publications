@@ -103,26 +103,26 @@
                     "description": "Supported replica types.",
                     "longDescription": "The value of each entry shall specify a supported replica type"
                 },
-                "SupportedMinLifetimeSeconds": {
+                "SupportedMinLifetime": {
                     "type": "array",
                     "items": {
                         "type": [
-                            "number",
+                            "string",
                             "null"
                         ]
                     },
                     "readonly": false,
-                    "description": "Supported minimum lifetime (seconds) that replica must be maintained.",
-                    "longDescription": "The value of each entry shall specify a supported minimum lifetime (seconds) that a replica must be maintained."
+                    "description": "Supported minimum lifetime that replica must be maintained.",
+                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify the minimum lifetime or the replica."
                 },
-                "SupportedIsolated": {
+                "SupportsIsolated": {
                     "type": [
                         "boolean",
                         "null"
                     ],
                     "readonly": false,
                     "description": "Allocating a replica in a separate fault domain is supported.",
-                    "longDescription": "A value of true shall indicate that allocating a replica in a separate fault domain is supported."
+                    "longDescription": "A value of true shall indicate that allocating a replica in a separate fault domain is supported. The default value for this property is false."
                 },
                 "Links": {
                     "type": "object",

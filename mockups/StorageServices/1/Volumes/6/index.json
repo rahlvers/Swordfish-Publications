@@ -1,5 +1,5 @@
 {
-  "@SSM.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#StorageVolume.StorageVolume",
   "@odata.id": "/redfish/v1/StorageServices/1/StorageVolumes/6",
   "@odata.type": "#StorageVolume_1_0_0.StorageVolume",

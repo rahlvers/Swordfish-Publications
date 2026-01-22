@@ -1,5 +1,5 @@
 {
-  "@SSM.Copyright": "Copyright © 2014-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#DataProtectionLoSCapabilites.DataProtectionLoSCapabilites",
   "@odata.id": "/redfish/v1/StorageServices/1/DataProtectionLoSCapabilites",
   "@odata.type": "#DataProtectionLoSCapabilites_1_0_0.DataProtectionLoSCapabilites",
@@ -12,12 +12,10 @@
       "DataCenter",
       "Region"
     ],
-    "SupportedRecoveryPointObjectiveSeconds": [
-      0,
-      4,
-      60,
-      3600
-    ],
+    "SupportedRecoveryPointObjectiveSeconds": ["PT0S",
+        "PT4S",
+        "PT1M",
+        "PT1H"],
     "SupportedRecoveryTimeObjectives": [
       "Immediate",
       "Online",
@@ -25,11 +23,11 @@
       "Offline"
     ],
     "SupportedReplicaTypes": [
-      "Continuous",
-      "Full",
+      "Mirror",
+      "Clone",
       "Delta"
     ],
-    "MinimumLifetimeSeconds": 60,
+    "MinimumLifetime": "PT1M",
     "SupportsIsolated": true,
     "SupportedReplicaOptions": [],
     "SupportedLocations": []

@@ -98,6 +98,13 @@
           <Annotation Term="OData.Description" String="The ClassesOfService supported by this storage pool." />
           <Annotation Term="OData.LongDescription"
           String="This property shall contain references to all classes of service supported by this storage pool. Capacity allocated from this storage pool shall conform to one of the referenced classes of service." />
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="DefaultClassOfService" Type="ClassOfService.ClassOfService">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="The default class of service for entities allocated from this storage pool." />
+          <Annotation Term="OData.LongDescription"
+          String="If present, this property shall reference the default class of service for entities allocated from this storage pool.  If not present, the default class of service of the containing StorageService entity shall be used." />
           <Annotation Term="OData.AutoExpandReferences" />
         </NavigationProperty>
       </ComplexType>

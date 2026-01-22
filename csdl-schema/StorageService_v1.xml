@@ -33,12 +33,6 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup_v1.xml">
 		<edmx:Include Namespace="StorageGroup"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/InitiatorEndpointGroup_v1.xml">
-		<edmx:Include Namespace="InitiatorEndpointGroup"/>
-	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/TargetEndpointGroup_v1.xml">
-		<edmx:Include Namespace="TargetEndpointGroup"/>
-	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection_v1.xml">
 		<edmx:Include Namespace="VolumeCollection"/>
 	</edmx:Reference>
@@ -68,6 +62,9 @@
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService_v1.xml">
 		<edmx:Include Namespace="ClassOfService"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup_v1.xml">
+		<edmx:Include Namespace="EndpointGroup"/>
 	</edmx:Reference>
 	
   <edmx:DataServices>
@@ -111,16 +108,16 @@
                 <Annotation Term="OData.LongDescription" String="The value of each enty in the array shall reference a StorageGroup."/>
                 <Annotation Term="OData.AutoExpandReferences"/>
             </NavigationProperty>
-            <NavigationProperty Name="InitiatorEndpointGroups" Type="Collection(InitiatorEndpointGroup.InitiatorEndpointGroup)" ContainsTarget="true">
+            <NavigationProperty Name="ClientEndpointGroups" Type="Collection(EndpointGroup.EndpointGroup)" ContainsTarget="true">
                 <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-                <Annotation Term="OData.Description" String="Initiator endoint groups."/>
-                <Annotation Term="OData.LongDescription" String="The value of each enty in the array shall reference an InitiatorEndpointGroup."/>
+                <Annotation Term="OData.Description" String="Client endpoint groups."/>
+                <Annotation Term="OData.LongDescription" String="The value of each entry in the array shall reference an EndpointGroup."/>
                 <Annotation Term="OData.AutoExpandReferences"/>
             </NavigationProperty>
-            <NavigationProperty Name="TargetEndpointGroups" Type="Collection(TargetEndpointGroup.TargetEndpointGroup)" ContainsTarget="true">
+            <NavigationProperty Name="ServerEndpointGroups" Type="Collection(EndpointGroup.EndpointGroup)" ContainsTarget="true">
                 <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-                <Annotation Term="OData.Description" String="Target endoint groups."/>
-                <Annotation Term="OData.LongDescription" String="The value of each enty in the array shall reference a TargetEndpointGroup."/>
+                <Annotation Term="OData.Description" String="Server endpoint groups."/>
+                <Annotation Term="OData.LongDescription" String="The value of each entry in the array shall reference a EndpointGroup."/>
                 <Annotation Term="OData.AutoExpandReferences"/>
             </NavigationProperty>
             <NavigationProperty Name="Volumes" Type="VolumeCollection.VolumeCollection" Nullable="false" ContainsTarget="true">
@@ -176,6 +173,13 @@
             <Annotation Term="OData.LongDescription" String="The value of each enty in the array shall reference a ClassOfService supported by this service."/>
             <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>	
+        <NavigationProperty Name="DefaultClassOfService" Type="ClassOfService.ClassOfService">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
+          <Annotation Term="OData.Description" String="The default class of service for entities allocated by this storage service." />
+          <Annotation Term="OData.LongDescription"
+          String="If present, this property shall reference the default class of service for entities allocated by this storage service. This default may be overridden by the DefaultClassOfService property values within contained StoragePools."/>
+          <Annotation Term="OData.AutoExpandReferences" />
+        </NavigationProperty>
        <NavigationProperty Name="DataProtectionLoSCapabilities" Type="DataProtectionLoSCapabilities.DataProtectionLoSCapabilities">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description" String="The data protection capabilities of this service." />
@@ -288,6 +292,7 @@
         </Member>
       </EnumType>    
     </Schema>
+
 	</edmx:DataServices>
 </edmx:Edmx>
 

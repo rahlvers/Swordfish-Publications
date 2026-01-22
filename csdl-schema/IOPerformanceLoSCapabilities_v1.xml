@@ -30,17 +30,21 @@
         <Annotation Term="OData.Description" String="Describe service option within the IO performance line of service." />
         <Annotation Term="OData.LongDescription"
         String="This structure may be used to define a service option related to IO performance." />
-        <Property Name="IOOperationsPerSecondIsLimited" Type="Edm.Boolean">
+        <Property Name="Name" Type="Resource.Name" >
+            <Annotation Term="OData.Description" String="A friendly name for this line of service." />
+            <Annotation Term="OData.LongDescription"
+            String="If present, the name shall be a friendly name for this line of service." />
+        </Property>
+        <Property Name="IOOperationsPerSecondIsLimited" Type="Edm.Boolean" DefaultValue="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description" String="Limit the IOPS." />
           <Annotation Term="OData.LongDescription"
-          String="Limit the IOPS. True implies that the system will not allow IOPS to exceed MaxIoOperationsPerSecondPerTerabyte * VolumeSize. Otherwise, the system does not inforce a limit." />
+          String="If true, the system should not allow IOPS to exceed MaxIoOperationsPerSecondPerTerabyte * VolumeSize. Otherwise, the system shall not enforce a limit.  The default value for this property is false." />
         </Property>
-        <Property Name="SamplePeriodSeconds" Type="Edm.Int64">
+        <Property Name="SamplePeriod" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description" String="Sampling period over which average values are calculated." />
-          <Annotation Term="OData.LongDescription" String="The value shall be the sampling period over which average values are calculated." />
-          <Annotation Term="Measures.Unit" String="s" />
+          <Annotation Term="OData.LongDescription" String="The value shall be an ISO 8601 duration specifying the sampling period over which average values are calculated." />
         </Property>
         <Property Name="MaxIOOperationsPerSecondPerTerabyte" Type="Edm.Int64">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
@@ -105,11 +109,11 @@
           <Annotation Term="OData.LongDescription" String="The value shall be the expected percent of the total IOPS for this workload that is covered by this component" />
           <Annotation Term="Measures.Unit" String="%" />
         </Property>
-        <Property Name="DurationSeconds" Type="Edm.Int64">
+        <Property Name="Duration" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description" String="Duration that this component is active." />
           <Annotation Term="OData.LongDescription"
-          String="The value shall be the expected length of time (seconds) to apply this component to the workload. This attribute shall be specified if a schedule is specified and otherwise shall not be specified." />
+          String="The value of each entry shall be an ISO 8601 duration that shall specify the expected length of time that this component is applied to the workload. This attribute shall be specified if a schedule is specified and otherwise shall not be specified." />
           <Annotation Term="Measures.Unit" String="s" />
         </Property>
         <Property Name="Schedule" Type="Schedule.Schedule">
@@ -156,22 +160,22 @@
           <Annotation Term="OData.Description" String="The value identifies this resource." />
           <Annotation Term="OData.LongDescription" String="The value shall be unique within the managed ecosystem." />
         </Property>
-        <Property Name="IOLimitingIsSupportedBoolean" Type="Edm.Boolean">
+        <Property Name="IOLimitingIsSupported" Type="Edm.Boolean" DefaultValue="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
-          <Annotation Term="OData.Description" String="Limitint IOPS is supported." />
+          <Annotation Term="OData.Description" String="Limiting IOPS is supported." />
           <Annotation Term="OData.LongDescription"
-          String="True implies that the system supports limiting IOPS to exceed IOPSDensity * VolumeSize. Otherwise, the system does not inforce a limit." />
+          String="If true, the system should limit IOPS to MaxIOOperationsPerSecondPerTerabyte * (Volume Size in Terabytes). Otherwise, the system shall not inforce a limit. The default value for this property is false." />
         </Property>
-        <Property Name="MinSamplePeriodSeconds" Type="Edm.Int64">
+        <Property Name="MinSamplePeriod" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description" String="Minimum sampling period over which average values are calculated." />
-          <Annotation Term="OData.LongDescription" String="The value shall be the minimum sampling period over which average values are calculated." />
+          <Annotation Term="OData.LongDescription" String="The value shall be an ISO 8601 duration specifying the minimum sampling period over which average values are calculated." />
           <Annotation Term="Measures.Unit" String="s" />
         </Property>
-        <Property Name="MaxSamplePeriodSeconds" Type="Edm.Int64">
+        <Property Name="MaxSamplePeriod" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description" String="Maximum sampling period over which average values are calculated." />
-          <Annotation Term="OData.LongDescription" String="The value shall be the maximum sampling period over which average values are calculated." />
+          <Annotation Term="OData.LongDescription" String="The value shall be an ISO 8601 duration specifying the maximum sampling period over which average values are calculated." />
           <Annotation Term="Measures.Unit" String="s" />
         </Property>
         <Property Name="MinSupportedIoOperationLatencyMicroseconds" Type="Edm.Int64">
