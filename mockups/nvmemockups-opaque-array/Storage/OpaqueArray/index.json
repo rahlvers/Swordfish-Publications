@@ -1,0 +1,39 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/OpaqueArray",
+  "@odata.type": "#Storage.v1_9_0.Storage",
+  "Id": "1",
+  "Name": "NVMe OpaqueArray Configuration",
+  "Description": "Mockup of NVMe Simple OpaqueArray config: This OpaqueArray has an enclosure and 4 SATA drives, along with 1 Subsystem, 1 I/O Controller and 1 Namespace. There is one traditional storage pool created from the SATA drives.",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "OK"
+  },
+    "Identifiers": [{
+      "DurableNameFormat": "NQN",
+      "DurableName": "nqn.2014-08.org.nvmexpress:uuid:6c5fe566-10e6-4fb6-aad4-8b4159f50245"
+    }],
+  "Drives": [{
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/4"
+    }
+  ],
+  "Controllers": {
+    "@odata.id": "/redfish/v1/Storage/OpaqueArray/Controllers"
+  },
+  "Volumes": {
+    "@odata.id": "/redfish/v1/Storage/OpaqueArray/Volumes"
+  },
+  "StoragePools": {
+    "@odata.id": "/redfish/v1/Storage/OpaqueArray/StoragePools"
+  }
+}

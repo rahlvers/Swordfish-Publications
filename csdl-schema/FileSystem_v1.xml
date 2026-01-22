@@ -253,7 +253,7 @@
         </Member>
         <Member Name="Unicode">
           <Annotation Term="OData.Description" String="Unicode character encoding."/>
-          <Annotation Term="OData.LongDescription" String="This value shall indicate that Unicode characer encoding is supported by the file system."/>
+          <Annotation Term="OData.LongDescription" String="This value shall indicate that Unicode character encoding is supported by the file system."/>
         </Member>
         <Member Name="ISO2022">
           <Annotation Term="OData.Description" String="ISO-2022 character encoding."/>

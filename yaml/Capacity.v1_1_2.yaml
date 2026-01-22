@@ -125,7 +125,6 @@ components:
         Name:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
           readOnly: true
-          x-excerpt: Capacity
         Oem:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
           description: The OEM extension property.

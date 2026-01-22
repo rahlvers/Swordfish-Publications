@@ -108,6 +108,7 @@
                     "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 },
                 "Preferred": {
+                    "deprecated": "Deprecated in favor of use of AccessState.",
                     "description": "Access to resource is preferred.",
                     "longDescription": "A value of True in this property shall indicate that access to the associated resource through the endpoints in this  endpoint group is preferred over access through other endpoints. The default value for this property is false.",
                     "readonly": false,

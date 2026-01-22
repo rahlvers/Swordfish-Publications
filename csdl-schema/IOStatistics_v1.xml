@@ -61,8 +61,8 @@
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
         </Property>
         <Property Name="WriteHitIORequests" Type="Edm.Int64">
-          <Annotation Term="OData.Description" String="Count of write IO requests coallesced into memory."/>
-          <Annotation Term="OData.LongDescription" String="The value shall represent the total count from the time of last reset or wrap of write IO requests coallesced into memory."/>
+          <Annotation Term="OData.Description" String="Count of write IO requests coalesced into memory."/>
+          <Annotation Term="OData.LongDescription" String="The value shall represent the total count from the time of last reset or wrap of write IO requests coalesced into memory."/>
           <Annotation Term="Measures.Unit" String="{tot}"/>
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
         </Property>

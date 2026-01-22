@@ -49,6 +49,8 @@
 
         <Annotation Term="Redfish.Uris">
           <Collection>
+            <String>/redfish/v1/Storage/{StorageId}/EndpointGroups/{EndpointGroupId}</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/EndpointGroups/{EndpointGroupId}</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/EndpointGroups/{EndpointGroupId}</String>
           </Collection>
         </Annotation>
@@ -74,8 +76,8 @@
           <Annotation Term="OData.LongDescription" String="In the context of this enumeration literal, each endpoint shall be in an unavailable state."/>
         </Member>
         <Member Name="Transitioning">
-          <Annotation Term="OData.Description" String="The endpoint(s) are transitioning to a new AccesState."/>
-          <Annotation Term="OData.LongDescription" String="In the context of this enumeration literal, at least one endpoint shall be transitioning to a new AccesState."/>
+          <Annotation Term="OData.Description" String="The endpoint(s) are transitioning to a new AccessState."/>
+          <Annotation Term="OData.LongDescription" String="In the context of this enumeration literal, at least one endpoint shall be transitioning to a new AccessState."/>
         </Member>
       </EnumType>
     </Schema>
@@ -113,6 +115,7 @@
           <Annotation
             Term="OData.LongDescription"
             String="A value of True in this property shall indicate that access to the associated resource through the endpoints in this  endpoint group is preferred over access through other endpoints. The default value for this property is false."/>
+            <Annotation Term="Redfish.Deprecated" String="Deprecated in favor of use of AccessState."/>
         </Property>
         <NavigationProperty Name="Endpoints" Type="Collection(Endpoint.Endpoint)" ContainsTarget="true">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
@@ -202,6 +205,12 @@
       <Annotation Term="Redfish.Release" String="WIP v1.1.0"/>
       <Annotation Term="OData.Description" String="This version changes Endpoint groups to an array instead of a collection. This version also fixes CSDL errors and adds both Redfish Uris and Capability Annotations."/>
       <EntityType Name="EndpointGroup" BaseType="EndpointGroup.v1_1_1.EndpointGroup"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="EndpointGroup.v1_2_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version deprecates the use of Preferred in favor of AccessState."/>
+      <EntityType Name="EndpointGroup" BaseType="EndpointGroup.v1_2_0.EndpointGroup"/>
     </Schema>
 
   </edmx:DataServices>

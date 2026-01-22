@@ -1,0 +1,9 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/StorageServices/Simple1/Volumes/3/CapacitySources/Source1",
+  "@odata.type": "#Capacity.v1_1_2.CapacitySource",
+
+  "ProvidingVolumes": {
+    "@odata.id": "/redfish/v1/StorageServices/Simple1/Volumes/3/CapacitySources/Source1/ProvidingVolumes"
+  }
+}

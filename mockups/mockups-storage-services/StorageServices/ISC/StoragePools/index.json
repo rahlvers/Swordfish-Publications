@@ -1,0 +1,19 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools",
+  "@odata.type": "#StoragePoolCollection.StoragePoolCollection",
+  "Name": "StoragePools",
+  "Members@odata.count": 3,
+  "Members": [
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPool"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPoolR5"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+  {
+    "@odata.type": "#Chassis.v1_14_0.Chassis",
+    "Id": "ArrayEnclosure",
+    "Name": "ArrayEnclosure",
+    "ChassisType": "Enclosure",
+    "Manufacturer": "NVMe Fabric Array Vendor",
+    "Model": "ArrayEnclosure-MODEL",
+    "SKU": "FAB-14260",
+    "SerialNumber": "FA-9450R6",
+    "PartNumber": "FA-S23",
+
+    "PowerState": "On",
+    "IndicatorLED": "Off",
+    "Status": {
+      "State": "Enabled",
+      "Health": "OK"
+    },
+    "Links": {
+
+      "Storage": [{
+        "@odata.id": "/redfish/v1/Storage/OpaqueArray"
+      }],
+
+      "Contains": [{
+          "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/1"
+        },
+        {
+          "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/2"
+        },
+        {
+          "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/3"
+        },
+        {
+          "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/4"
+        }
+      ]
+    },
+    "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+  }

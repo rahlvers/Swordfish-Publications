@@ -2,13 +2,7 @@ components:
   schemas:
     Capacity:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_1.yaml#/components/schemas/Capacity
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_2.yaml#/components/schemas/Capacity
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_3.yaml#/components/schemas/Capacity
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_4.yaml#/components/schemas/Capacity
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_0.yaml#/components/schemas/Capacity
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_1.yaml#/components/schemas/Capacity
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_2.yaml#/components/schemas/Capacity
       description: This is the schema definition for the Capacity of a device. It
         represents the properties for capacity for any data store.
@@ -17,13 +11,7 @@ components:
         capacity for the data store.
     CapacityInfo:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/CapacityInfo
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_1.yaml#/components/schemas/CapacityInfo
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_2.yaml#/components/schemas/CapacityInfo
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_3.yaml#/components/schemas/CapacityInfo
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_4.yaml#/components/schemas/CapacityInfo
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_0.yaml#/components/schemas/CapacityInfo
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_1.yaml#/components/schemas/CapacityInfo
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_2.yaml#/components/schemas/CapacityInfo
       description: The capacity of specific data type in a data store.
       x-longDescription: This composition may be used to represent the utilization
@@ -31,13 +19,7 @@ components:
     CapacitySource:
       anyOf:
       - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/CapacitySource
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_1.yaml#/components/schemas/CapacitySource
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_2.yaml#/components/schemas/CapacitySource
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_3.yaml#/components/schemas/CapacitySource
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_4.yaml#/components/schemas/CapacitySource
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_0.yaml#/components/schemas/CapacitySource
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_1.yaml#/components/schemas/CapacitySource
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_1_2.yaml#/components/schemas/CapacitySource
       description: A description of the type and source of storage.
       x-longDescription: This type may be used to represent the source and type of

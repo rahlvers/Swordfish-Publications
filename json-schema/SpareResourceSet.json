@@ -10,9 +10,6 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/SpareResourceSet.v1_0_0.json#/definitions/SpareResourceSet"
-                },
-                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/SpareResourceSet.v1_0_1.json#/definitions/SpareResourceSet"
                 }
             ],

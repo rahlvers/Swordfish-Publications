@@ -265,7 +265,7 @@
 					<Annotation Term="OData.Description" String="The credential information used to authenticate the endpoints in this StorageGroup."/>
 					<Annotation
 						Term="OData.LongDescription"
-						String="The value of this property must reflect the authentication used by this specific endpoint. For example, if this endpoint represents an initiator, and AuthenticationMethod is CHAP or MutualCHAP, the Credentials fields CHAPUsername and CHAPSecret must be used. If this endpoint represents a target endpoint and AuthenticationMethod is MutualCHAP, then MutualCHAPUsername and MutualCHAPSecret must be used."/>
+						String="The value of this property must reflect the authentication used by this specific endpoint. If this endpoint represents an initiator, and AuthenticationMethod is CHAP or MutualCHAP, the Credentials fields CHAPUsername and CHAPSecret must be used. If this endpoint represents a target endpoint and AuthenticationMethod is MutualCHAP, then MutualCHAPUsername and MutualCHAPSecret must be used."/>
 				</Property>
 			</EntityType>
 			<EnumType Name="AuthenticationMethod">
@@ -274,38 +274,53 @@
 				</Member>
 				<Member Name="CHAP">
 					<Annotation Term="OData.Description" String="iSCSI Challenge Handshake Authentication Protocol (CHAP) authentication is used."/>
+					<Annotation Term="OData.LongDescription" String="iSCSI Challenge Handshake Authentication Protocol (CHAP) authentication is used. For ChapInfo, the CHAPUser and CHAPPassword properties shall be used when type CHAP is selected."/>
 				</Member>
 				<Member Name="MutualCHAP">
 					<Annotation Term="OData.Description" String="iSCSI Mutual Challenge Handshake Authentication Protocol (CHAP) authentication is used."/>
+					<Annotation
+						Term="OData.LongDescription"
+						String="iSCSI Mutual Challenge Handshake Authentication Protocol (CHAP) authentication is used. For ChapInfo, the InitiatorCHAPUser, InitiatorCHAPPassword, TargetCHAPUser, and TargetCHAPPassword properties shall be used when type MutualCHAP is selected."/>
 				</Member>
 				<Member Name="DHCHAP">
+					<Annotation Term="OData.Description" String="Diffie-Hellman Challenge Handshake Authentication Protocol (DHCHAP) is an authentication protocol used in Fibre Channel."/>
 					<Annotation
-						Term="OData.Description"
-						String="Diffie-Hellman Challenge Handshake Authentication Protocol (DHCHAP) is an authentication protocol used in Fibre Channel. DHCHAP implies that only properties 'TargetCHAPUser' and 'TargetPassword' need to be present."/>
+						Term="OData.LongDescription"
+						String="Diffie-Hellman Challenge Handshake Authentication Protocol (DHCHAP) is an authentication protocol used in Fibre Channel. When MutualCHAP is selected, DHChapInfo shall be used instead of CHAPInfo, and the LocalDHCHAPAuthSecret and PeerDHCHAPAuthSecret properties shall be used."/>
 				</Member>
 			</EnumType>
+
 			<ComplexType Name="CHAPInformation">
 				<Annotation Term="OData.Description" String="User name and password for CHAP authentication."/>
 				<Annotation Term="OData.LongDescription" String="User name and password values for target and initiators Endpoints when CHAP authentication is used."/>
 				<Property Name="InitiatorCHAPUser" Type="Edm.String">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="The username for CHAP authentication."/>
-					<Annotation Term="OData.LongDescription" String="If present, this property is the initiator CHAP username for authentication. For example, with an iSCSI scenario, use the initiator iQN."/>
+					<Annotation Term="OData.Description" String="The Initiator username for Mutual (2-way) CHAP authentication by the initiator."/>
+					<Annotation Term="OData.LongDescription" String="If present, this property is the initiator CHAP username for Mutual (2-way) authentication. For example, with an iSCSI scenario, use the initiator iQN."/>
 				</Property>
 				<Property Name="InitiatorCHAPPassword" Type="Edm.String">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Write"/>
-					<Annotation Term="OData.Description" String="The shared secret for CHAP authentication."/>
-					<Annotation Term="OData.LongDescription" String="The value of this property shall be the shared secret for CHAP authentication."/>
+					<Annotation Term="OData.Description" String="The shared secret for Mutual (2-way) CHAP authentication by the initiator."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the shared secret for Mutual (2-way)CHAP authentication."/>
 				</Property>
 				<Property Name="TargetCHAPUser" Type="Edm.String">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="The CHAP Username for 2-way CHAP authentication."/>
-					<Annotation Term="OData.LongDescription" String="The value of this property shall be the CHAP Username for 2-way CHAP authentication. For example, with an iSCSI scenario, use the target iQN. In a FC with DHCHAP, this value will be a FC WWN."/>
+					<Annotation Term="OData.Description" String="The Target CHAP Username for Mutual (2-way) CHAP authentication by the target."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the Target CHAP Username for Mutual (2-way) CHAP authentication. For example, with an iSCSI scenario, use the target iQN."/>
 				</Property>
 				<Property Name="TargetPassword" Type="Edm.String">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Write"/>
-					<Annotation Term="OData.Description" String="The CHAP Secret for 2-way CHAP authentication."/>
+					<Annotation Term="OData.Description" String="This property is deprecated in favor of TargetCHAPPassword."/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall be the CHAP Secret for 2-way CHAP authentication."/>
+					<Annotation Term="Redfish.Revisions">
+						<Collection>
+							<Record>
+								<PropertyValue Property="Kind" EnumMember="Redfish.RevisionKind/Deprecated"/>
+								<PropertyValue Property="Version" String="v1_3_0"/>
+								<PropertyValue Property="Description" String="This property is deprecated in favor of TargetCHAPPassword."/>
+							</Record>
+						</Collection>
+					</Annotation>
 				</Property>
 			</ComplexType>
 		</Schema>
@@ -314,6 +329,66 @@
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
 			<Annotation Term="OData.Description" String="This version was created to fix CSDL errors, and marking consistency-related properties as Deprecated."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_2_0.StorageGroup"/>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_2_2">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="OData.Description" String="This version was created to update CHAP and CHAPInformation descriptions."/>
+			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_2_1.StorageGroup"/>
+			<ComplexType Name="CHAPInformation" BaseType="StorageGroup.v1_2_0.CHAPInformation">
+				<Annotation Term="OData.Description" String="The User name and password for Mutual 2-way CHAP authentication."/>
+				<Annotation Term="OData.LongDescription" String="The User name and password values for target and initiators Endpoints when Mutual CHAP authentication is used."/>
+			</ComplexType>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_3_0">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="Redfish.Release" String="WIP 1.2.0"/>
+			<Annotation Term="OData.Description" String="This version was created to add simple username and passwords to CHAPInformation."/>
+			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_2_2.StorageGroup">
+				<Property Name="DHChapInfo" Type="Collection(StorageGroup.v1_3_0.DHCHAPInformation)">
+					<Annotation Term="OData.Description" String="The credential information used to authenticate the endpoints in this StorageGroup for DHCHAP."/>
+					<Annotation
+						Term="OData.LongDescription"
+						String="The value of this property must reflect the authentication used by this specific endpoint when the authentication type is specificed as DHCHAP. If this endpoint represents an initiator, and AuthenticationMethod is DHCHAP, the Credentials fields LocalDHCHAPAuthSecret and PeerDHCHAPAuthSecret must be used."/>
+				</Property>
+			</EntityType>
+
+			<ComplexType Name="CHAPInformation" BaseType="StorageGroup.v1_2_2.CHAPInformation">
+				<Annotation Term="OData.Description" String="Adds simple user name and password for CHAP authentication."/>
+				<Annotation Term="OData.LongDescription" String="Adds user name and password values for use when CHAP authentication is used."/>
+				<Property Name="CHAPUser" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Write"/>
+					<Annotation Term="OData.Description" String="The username for CHAP authentication."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the username when CHAP authentication is specified."/>
+				</Property>
+				<Property Name="CHAPPassword" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Write"/>
+					<Annotation Term="OData.Description" String="The password for CHAP authentication."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the password when CHAP authentication is specified."/>
+				</Property>
+				<Property Name="TargetCHAPPassword" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Write"/>
+					<Annotation Term="OData.Description" String="The Target CHAP Secret for Mutual (2-way) CHAP authentication by the target."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the CHAP Secret for 2-way CHAP authentication."/>
+				</Property>
+			</ComplexType>
+
+			<ComplexType Name="DHCHAPInformation">
+				<Annotation Term="OData.Description" String="User name and password for CHAP authentication."/>
+				<Annotation Term="OData.LongDescription" String="User name and password values for target and initiator endpoints when CHAP authentication is used."/>
+				<Property Name="LocalDHCHAPAuthSecret" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="The local DHCHAP auth secret for DHCHAP authentication."/>
+					<Annotation Term="OData.LongDescription" String="This property shall be the  local DHCHAP auth secret for DHCHAP authentication."/>
+				</Property>
+				<Property Name="PeerDHCHAPAuthSecret" Type="Edm.String">
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Write"/>
+					<Annotation Term="OData.Description" String="The peer DHCHAP auth secret for DHCHAP authentication."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be the peer DHCHAP auth secret for DHCHAP authentication."/>
+				</Property>
+			</ComplexType>
+
 		</Schema>
 
 	</edmx:DataServices>

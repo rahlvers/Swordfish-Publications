@@ -1,0 +1,12 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+   
+    "@odata.id": "/redfish/v1/Systems/1/HostedServices",
+    "@odata.type": "#HostedStorageServices.HostedStorageServices",
+    "Name": "HostedStorageServices Collection",
+    "Description": "HostedStorageServices Collection",
+    "Members@odata.count": 1,
+    "Members": [
+      {"@odata.id": "/redfish/v1/Systems/1/HostedServices/StorageServices"}
+    ]
+}

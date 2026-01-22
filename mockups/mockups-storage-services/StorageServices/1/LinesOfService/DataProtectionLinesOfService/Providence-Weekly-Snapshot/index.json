@@ -1,0 +1,42 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataProtectionLinesOfService/Providence-Weekly-Snapshot",
+  "@odata.type": "#DataProtectionLineOfService.v1_2_0.DataProtectionLineOfService",
+
+  "Name": "Providence-Weekly-Snapshot",
+  "RecoveryGeographicObjective": "Region",
+  "RecoveryPointObjectiveTime": "P7D",
+  "RecoveryTimeObjective": "Nearline",
+  "ReplicaType": "Snapshot",
+  "MinLifetime": "P3M",
+  "IsIsolated": true,
+  "Schedule": {
+    "InitialStartTime": "2020-01-01T01:00:00+06:00",
+    "RecurrenceInterval": "P1W",
+    "EnabledDaysOfWeek": [
+      "Saturday"
+    ]
+  },
+  "ReplicaClassOfService": {
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
+  },
+  "ReplicaAccessLocation": {
+    "PostalAddress": {
+      "Country": "",
+      "Territory": "",
+      "City": "Providence",
+      "LeadingStreetDirection": "",
+      "Street": "",
+      "TrailingStreetSuffix": "",
+      "PostalCode": "",
+      "Building": "",
+      "Room": "",
+      "GPSCoords": ""
+    },
+    "Placement": {
+      "Row": "",
+      "Rack": ""
+    }
+  }
+}

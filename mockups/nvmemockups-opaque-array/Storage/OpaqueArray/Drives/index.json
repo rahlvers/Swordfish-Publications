@@ -1,0 +1,20 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.type": "#DriveCollection.DriveCollection",
+  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives",
+  "Name": "Drives",
+  "Members@odata.count": 4,
+  "Members": [{
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/4"
+    }
+  ]
+}

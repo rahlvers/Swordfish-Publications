@@ -50,8 +50,8 @@
         </NavigationProperty>
         <Annotation Term="Redfish.Uris">
           <Collection>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemsId}/ExportedShares</String>
             <String>/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedShares</String>
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemsId}/ExportedShares</String>
           </Collection>
         </Annotation>
       </EntityType>

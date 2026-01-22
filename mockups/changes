@@ -1,0 +1,64 @@
+Add to Storage:
+Storage.Identifiers
+
+Look at whether additional Identifier type of subNQN type is needed.
+
+StorageController.Id is mapped to CntlId
+
+StorageController New properties:
+
+  ComplexType: "MultiPathIOandNamespaceSharingCapabilities":
+  "PortCount:" (enum values) "SinglePort", "MultiplePort",
+  "ControllerCount": (enum values)  "SingleController","MultipleController"
+  "ControllerAssociation": (enum values) "SRIOV" "PCIeOrFabric"
+
+  "NVMeVersion": "1.3",
+  "OptionalAsynchEventSupported":
+   enums:
+    EnduranceGroupEventAggregateLog
+    LBAStatusInformationNotices,
+    PredictableLatencyEventAggregateLogChangeNotices
+    AsymmetricNamespaceAccess
+    FirmwareActivationNotices
+    NamespaceAttributeNotices
+    ChangedNamespaceListLogPage
+
+    ComplexType "NVMeControllerAttributes":
+        "ReportsUUIDList"
+        "SupportsSQAssociations"
+        "ReportsNamespaceGranularity"
+        "SupportsTrafficBasedKeepAlive"
+        "SupportsPredictableLatencyMode"
+        "SupportsEnduranceGroups"
+        "SupportsReadRecoveryLevels"
+        "SupportsNVMSets"
+        "SupportsExceedingPowerOfNonOperationalState"
+        "Supports128BitHostId"
+
+Namespace
+  Map LogicalUnitNumber to NSId
+    ComplexType "NamespaceFeatures"
+      "SupportsThinProvisioning"
+      "SupportsAtomicTransactionSize == Supports NAWUNandNAWUPFandNACWU"
+      "SupportsDeallocatedOrUnwrittenLBError"
+      "SupportsNGUIDReuse"
+      "SupportsIOPerformanceHints == Supports NPWGandNPWAandNPDGandNPDAandNOWS"
+      "NumberLBAFormats"
+
+  "MetadataTransferredAtEndOfDataLBA" (bool)
+
+  "NVMeVersion": "1.3",
+
+  "Identifiers" - Add NGUID, IEEE OUI (subset of EUI) and additional formats for Namespace
+
+NVMe-oFANACharacteristics
+  AccessState: Optimized, NonOptimized, Inacessible, PersistentLoss
+
+VMware request:
+  - Queue depth reporting -- add to controller
+  - Pass-through blob of telemetry / log Data
+  - LED management
+  - Additional properties for hot plug (since not using drive model)
+
+  For domain: check on the domain specific properties and see if they can be attached to / reported from the controller
+or if they need to be added to the Domain schema.

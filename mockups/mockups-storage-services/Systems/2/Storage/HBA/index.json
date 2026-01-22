@@ -1,0 +1,45 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+   
+    "@odata.id": "/redfish/v1/Systems/2/Storage/HBA",
+    "@odata.type": "#Storage.v1_0_0.Storage",
+    "Id": "2",
+    "Name": "Simple HBA",
+    "Description": "Simple HBA Connected to Storage Systems",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK",
+        "HealthRollup": "OK"
+    },
+    "StorageControllers": [
+        {
+            "@odata.id": "/redfish/v1/Systems/2/Storage/HBA#/StorageControllers/0",
+            "@odata.type": "#Storage.v1_1_0.StorageController",
+            "Id": "0",
+            "Name": "HBA",
+            "Description": "HBA",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "Manufacturer": "ManufacturerName",
+            "Model": "ProductModelName",
+            "SKU": "",
+            "SerialNumber": "12345678",
+            "PartNumber": "",
+            "AssetTag": "CustomerWritableThingy",
+            "SpeedGbps": 14,
+            "SupportedControllerProtocols": [
+                "PCIe"
+            ],
+            "SupportedDeviceProtocols": [
+                "FC"
+            ]
+        }
+    ],
+    "Volumes": {"@odata.id": "/redfish/v1/Systems/2/Storage/HBA/Volumes"},
+    "Links": {
+    },
+    "Actions": {
+    }
+}

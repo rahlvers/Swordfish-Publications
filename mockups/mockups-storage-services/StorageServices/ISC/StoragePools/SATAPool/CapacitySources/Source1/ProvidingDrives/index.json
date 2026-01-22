@@ -1,0 +1,33 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#DriveCollection.DriveCollection",
+  "@odata.type": "#DriveCollection.DriveCollection",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/CapacitySources/Source1/ProvidingDrives",
+  "Name": "Drives",
+  "Members@odata.count": 8,
+  "Members": [{
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/CapacitySources/Source1/ProvidingDrives/9"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/CapacitySources/Source1/ProvidingDrives/10"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/CapacitySources/Source1/ProvidingDrives/11"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/CapacitySources/Source1/ProvidingDrives/12"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/CapacitySources/Source1/ProvidingDrives/13"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/CapacitySources/Source1/ProvidingDrives/14"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/CapacitySources/Source1/ProvidingDrives/15"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/CapacitySources/Source1/ProvidingDrives/16"
+    }
+  ]
+}

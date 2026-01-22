@@ -97,7 +97,7 @@
           <Annotation Term="OData.Description" String="A description of the expected workload."/>
           <Annotation
             Term="OData.LongDescription"
-            String="The value shall be a description of the expected workload. The workload provides the context in which the values of  MaxIOOperationsPerSecondPerTerabyte and AverageIOOperationLatencyMicroseconds are expected to be achieveable."/>
+            String="The value shall be a description of the expected workload. The workload provides the context in which the values of MaxIOOperationsPerSecondPerTerabyte and AverageIOOperationLatencyMicroseconds are expected to be achievable."/>
         </Property>
       </EntityType>
 

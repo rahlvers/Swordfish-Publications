@@ -1,0 +1,15 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+ 
+  "@odata.type": "#DriveCollection.DriveCollection",
+  "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1/ProvidingDrives",
+  "Name": "Drives",
+  "Members@odata.count": 2,
+  "Members": [{
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1/ProvidingDrives/0THGR0KP"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1/ProvidingDrives/0THGXPBP"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup",
+  "@odata.type": "#StorageGroup.v1_3_0.StorageGroup",
+  "Id": "iSCSIStorageGroup",
+  "Name": "iSCSI Storage Group",
+  "Description": "Storage Group for MidrangeStorageSystem - iSCSI.",
+  "Identifier": {
+    "DurableName": "4289a3dd-ba52-41b8-9d3d-38de196e059c",
+    "DurableNameFormat": "UUID"
+  },
+  "AccessState": "Optimized",
+  "VolumesAreExposed": true,
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "OK"
+  },
+  "ClientEndpointGroups": [
+    { "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/iSCSIClientEndpointGroup" }
+  ],
+  "ServerEndpointGroups": [
+    { "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/iSCSIServerEndpointGroup" }
+  ],
+  "MappedVolumes" : [
+    {
+      "LogicalUnitNumber" : "0",
+      "Volume" : { "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume1" }
+    },
+    {
+      "LogicalUnitNumber" : "1",
+      "Volume" : { "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2" }
+    },
+    {
+      "LogicalUnitNumber" : "2",
+      "Volume" : { "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume3" }
+    },
+    {
+      "LogicalUnitNumber" : "3",
+      "Volume" : { "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4" }
+    }
+
+  ],
+  "AuthenticationMethod": "CHAP",
+  "ChapInfo": [
+    {
+      "CHAPUser": "bob",
+      "CHAPPassword": "arraysecret"
+    }
+  ]
+}

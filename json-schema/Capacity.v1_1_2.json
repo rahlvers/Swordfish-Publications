@@ -194,7 +194,6 @@
                 },
                 "Name": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
-                    "excerpt": "Capacity",
                     "readonly": true
                 },
                 "Oem": {

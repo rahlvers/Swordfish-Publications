@@ -1,0 +1,13 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SATA",
+  "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
+  "Id": "SATA",
+  "Name": "SATA Class of Service",
+  "Description": "SATA Class of Service",
+  "ClassOfServiceVersion": "01.20.00",
+  "IOConnectivityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SATA/IOConnectivityLinesOfService"
+  }]
+}

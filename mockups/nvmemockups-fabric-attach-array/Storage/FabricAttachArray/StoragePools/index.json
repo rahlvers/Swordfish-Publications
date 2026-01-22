@@ -1,0 +1,23 @@
+{
+    "@odata.type": "#StoragePoolCollection.StoragePoolCollection",
+    "Name": "Storage Pool Collection",
+    "Description": "Storage Pool Collection",
+    "Members@odata.count": 4,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet2"
+        }
+    ],
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

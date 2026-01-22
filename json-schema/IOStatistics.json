@@ -6,15 +6,6 @@
         "IOStatistics": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_0.json#/definitions/IOStatistics"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_1.json#/definitions/IOStatistics"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_2.json#/definitions/IOStatistics"
-                },
-                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_3.json#/definitions/IOStatistics"
                 }
             ],

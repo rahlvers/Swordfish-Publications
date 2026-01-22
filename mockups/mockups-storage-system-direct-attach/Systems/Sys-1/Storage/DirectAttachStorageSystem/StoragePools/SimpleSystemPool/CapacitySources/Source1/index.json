@@ -1,0 +1,16 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1",
+  "@odata.type": "#Capacity.v1_1_2.CapacitySource",
+
+  "ProvidedCapacity": {
+    "Data": {
+      "ConsumedBytes": 300067890136,
+      "AllocatedBytes": 600135780272
+    }
+  },
+
+  "ProvidingDrives": {
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1/ProvidingDrives"
+  }
+}

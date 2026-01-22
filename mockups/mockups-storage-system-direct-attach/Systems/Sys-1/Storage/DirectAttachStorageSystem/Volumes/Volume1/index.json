@@ -1,0 +1,41 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1",
+  "@odata.type": "#Volume.v1_5_0.Volume",
+  "Id": "1",
+  "Name": "Volume 1",
+  "Description": "Volume 1 in Simple System",
+  "LogicalUnitNumber": 1,
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "RAIDType": "RAID0",
+  "IOPerfModeEnabled": false,
+  "Identifiers": [{
+    "DurableNameFormat": "NAA",
+    "DurableName": "6545671545176100124407610013456"
+  }],
+
+  "BlockSizeBytes": 512,
+  "Encrypted": false,
+  "DisplayName": "This is my user/client set friendly name.",
+
+  "Capacity": {
+    "Data": {
+      "ConsumedBytes": 0,
+      "AllocatedBytes": 300067890136
+    }
+  },
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/CapacitySources/Source1"
+  }],
+  "Links": {
+    "Drives": [{
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1/ProvidingDrives"
+    }],
+    "OwningStorageResource": {
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem"
+    }
+  }
+}

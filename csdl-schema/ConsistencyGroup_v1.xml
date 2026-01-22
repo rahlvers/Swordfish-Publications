@@ -50,6 +50,7 @@
           </Annotation>
 					<Annotation Term="Redfish.Uris">
 						<Collection>
+							<String>/redfish/v1/Storage/{StorageId}/ConsistencyGroups/{ConsistencyGroupId}</String>
 							<String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/ConsistencyGroups/{ConsistencyGroupId}</String>
 							<String>/redfish/v1/StorageServices/{StorageServiceId}/ConsistencyGroups/{ConsistencyGroupId}</String>
 							<String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/ConsistencyGroups/{ConsistencyGroupId}</String>

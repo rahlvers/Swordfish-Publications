@@ -56,7 +56,7 @@
                             }
                         ]
                     },
-                    "longDescription": "The value of this property shall be an array containing entries for the default access capabilities for the file share. Each entry shall specify a defaul access privilege. The types of default access can include Read, Write, and/or Execute.",
+                    "longDescription": "The value of this property shall be an array containing entries for the default access capabilities for the file share. Each entry shall specify a default access privilege. The types of default access can include Read, Write, and/or Execute.",
                     "readonly": true,
                     "type": "array"
                 },

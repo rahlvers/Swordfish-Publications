@@ -1,0 +1,18 @@
+{
+    "@odata.type": "#EthernetInterfaceCollection.EthernetInterfaceCollection",
+    "Name": "Ethernet Interface Collection",
+    "Description": "System NICs on Contoso Servers",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/556ST22255E/EthernetInterfaces/12446A3B0411"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/556ST22255E/EthernetInterfaces/12446A3B8890"
+        }
+    ],
+    "Oem": {},
+   
+    "@odata.id": "/redfish/v1/Systems/556ST22255E/EthernetInterfaces",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

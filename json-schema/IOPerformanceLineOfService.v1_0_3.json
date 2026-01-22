@@ -44,7 +44,7 @@
                 "IOWorkload": {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_0.json#/definitions/IOWorkload",
                     "description": "A description of the expected workload.",
-                    "longDescription": "The value shall be a description of the expected workload. The workload provides the context in which the values of  MaxIOOperationsPerSecondPerTerabyte and AverageIOOperationLatencyMicroseconds are expected to be achieveable."
+                    "longDescription": "The value shall be a description of the expected workload. The workload provides the context in which the values of MaxIOOperationsPerSecondPerTerabyte and AverageIOOperationLatencyMicroseconds are expected to be achievable."
                 },
                 "MaxIOOperationsPerSecondPerTerabyte": {
                     "description": "The amount of IOPS a volume of a given committed size can support.",

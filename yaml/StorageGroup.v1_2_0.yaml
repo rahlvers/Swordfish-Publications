@@ -30,43 +30,57 @@ components:
         CHAP: iSCSI Challenge Handshake Authentication Protocol (CHAP) authentication
           is used.
         DHCHAP: Diffie-Hellman Challenge Handshake Authentication Protocol (DHCHAP)
-          is an authentication protocol used in Fibre Channel. DHCHAP implies that
-          only properties 'TargetCHAPUser' and 'TargetPassword' need to be present.
+          is an authentication protocol used in Fibre Channel.
         MutualCHAP: iSCSI Mutual Challenge Handshake Authentication Protocol (CHAP)
           authentication is used.
         None: No authentication is used.
+      x-enumLongDescriptions:
+        CHAP: iSCSI Challenge Handshake Authentication Protocol (CHAP) authentication
+          is used. For ChapInfo, the CHAPUser and CHAPPassword properties shall be
+          used when type CHAP is selected.
+        DHCHAP: Diffie-Hellman Challenge Handshake Authentication Protocol (DHCHAP)
+          is an authentication protocol used in Fibre Channel. When MutualCHAP is
+          selected, DHChapInfo shall be used instead of CHAPInfo, and the LocalDHCHAPAuthSecret
+          and PeerDHCHAPAuthSecret properties shall be used.
+        MutualCHAP: iSCSI Mutual Challenge Handshake Authentication Protocol (CHAP)
+          authentication is used. For ChapInfo, the InitiatorCHAPUser, InitiatorCHAPPassword,
+          TargetCHAPUser, and TargetCHAPPassword properties shall be used when type
+          MutualCHAP is selected.
     CHAPInformation:
       additionalProperties: false
       description: User name and password for CHAP authentication.
       properties:
         InitiatorCHAPPassword:
-          description: The shared secret for CHAP authentication.
+          description: The shared secret for Mutual (2-way) CHAP authentication by
+            the initiator.
           nullable: true
           readOnly: false
           type: string
           x-longDescription: The value of this property shall be the shared secret
-            for CHAP authentication.
+            for Mutual (2-way)CHAP authentication.
           x-versionAdded: v1_2_0
         InitiatorCHAPUser:
-          description: The username for CHAP authentication.
+          description: The Initiator username for Mutual (2-way) CHAP authentication
+            by the initiator.
           nullable: true
           readOnly: false
           type: string
           x-longDescription: If present, this property is the initiator CHAP username
-            for authentication. For example, with an iSCSI scenario, use the initiator
-            iQN.
+            for Mutual (2-way) authentication. For example, with an iSCSI scenario,
+            use the initiator iQN.
           x-versionAdded: v1_2_0
         TargetCHAPUser:
-          description: The CHAP Username for 2-way CHAP authentication.
+          description: The Target CHAP Username for Mutual (2-way) CHAP authentication
+            by the target.
           nullable: true
           readOnly: false
           type: string
-          x-longDescription: The value of this property shall be the CHAP Username
-            for 2-way CHAP authentication. For example, with an iSCSI scenario, use
-            the target iQN. In a FC with DHCHAP, this value will be a FC WWN.
+          x-longDescription: The value of this property shall be the Target CHAP Username
+            for Mutual (2-way) CHAP authentication. For example, with an iSCSI scenario,
+            use the target iQN.
           x-versionAdded: v1_2_0
         TargetPassword:
-          description: The CHAP Secret for 2-way CHAP authentication.
+          description: This property is deprecated in favor of TargetCHAPPassword.
           nullable: true
           readOnly: false
           type: string
@@ -229,9 +243,9 @@ components:
             nullable: true
           type: array
           x-longDescription: The value of this property must reflect the authentication
-            used by this specific endpoint. For example, if this endpoint represents
-            an initiator, and AuthenticationMethod is CHAP or MutualCHAP, the Credentials
-            fields CHAPUsername and CHAPSecret must be used. If this endpoint represents
+            used by this specific endpoint. If this endpoint represents an initiator,
+            and AuthenticationMethod is CHAP or MutualCHAP, the Credentials fields
+            CHAPUsername and CHAPSecret must be used. If this endpoint represents
             a target endpoint and AuthenticationMethod is MutualCHAP, then MutualCHAPUsername
             and MutualCHAPSecret must be used.
           x-versionAdded: v1_2_0

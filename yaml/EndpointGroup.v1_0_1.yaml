@@ -63,10 +63,12 @@ components:
             values for properties that this object contains shall conform to the Redfish
             Specification-described requirements.
         Preferred:
+          deprecated: true
           description: Access to resource is preferred.
           nullable: true
           readOnly: false
           type: boolean
+          x-deprecatedReason: Deprecated in favor of use of AccessState.
           x-longDescription: A value of True in this property shall indicate that
             access to the associated resource through the endpoints in this  endpoint
             group is preferred over access through other endpoints. The default value

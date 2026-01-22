@@ -419,7 +419,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService.v1_4_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="WIP v1.1.1"/>
+			<Annotation Term="Redfish.Release" String="WIP v1.2.0"/>
 			<Annotation Term="OData.Description" String="This version was created to add LinesOfService to StorageService."/>
 			<EntityType Name="StorageService" BaseType="StorageService.v1_2_1.StorageService">
 

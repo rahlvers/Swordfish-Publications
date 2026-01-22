@@ -1,0 +1,52 @@
+  {
+    "@odata.type": "#Chassis.v1_14_0.Chassis",
+    "Id": "NVMeFabricArray",
+    "Name": "NVMeFabricArray Controller",
+    "ChassisType": "Enclosure",
+    "Manufacturer": "NVMe Fabric Array Vendor",
+    "Model": "NVMeFabricArray-MODEL",
+    "SKU": "FAB-14260",
+    "SerialNumber": "FA-9450R6",
+    "PartNumber": "FA-S23",
+
+    "PowerState": "On",
+    "IndicatorLED": "Off",
+    "Status": {
+      "State": "Enabled",
+      "Health": "OK"
+    },
+    "Links": {
+
+      "Storage": [{
+        "@odata.id": "/redfish/v1/Storage/FabricAttachArray"
+      }],
+
+      "Contains": [{
+          "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
+        },
+        {
+          "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
+        },
+        {
+          "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
+        },
+        {
+          "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
+        },
+        {
+          "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
+        },
+        {
+          "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
+        },
+        {
+          "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
+        },
+        {
+          "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
+        }
+      ]
+    },
+    "@odata.id": "/redfish/v1/Chassis/NVMeFabricArray",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+  }

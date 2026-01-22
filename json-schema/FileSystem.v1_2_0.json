@@ -62,7 +62,7 @@
                 "UCS_2": "This value shall indicate that the UCS-2 character encoding is supported by the file system.",
                 "UTF_16": "This value shall indicate that the UTF-16 character encoding is supported by the file system.",
                 "UTF_8": "This value shall indicate that the UTF-8 character encoding is supported by the file system.",
-                "Unicode": "This value shall indicate that Unicode characer encoding is supported by the file system."
+                "Unicode": "This value shall indicate that Unicode character encoding is supported by the file system."
             },
             "longDescription": "The values shall indicate the character code standards supported by the file system.",
             "type": "string"

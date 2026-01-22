@@ -1,0 +1,28 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/1",
+  "@odata.type": "#Volume.v1_2_1.Volume",
+  "Id": "1",
+  "Name": "Logical Disk 3",
+  "Identifiers": [{
+    "DurableNameFormat": "UUID",
+    "DurableName": "123e4567-a12b-12a3-c3p0-123456789000"
+  }],
+  "Manufacturer": "BEST ChipCo",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "BlockSizeBytes": 512,
+  "VolumeType": "StripedWithParity",
+  "Capacity": {
+    "Data": {
+      "ConsumedBytes": 1099511627776,
+      "AllocatedBytes": 2096545335869
+    }
+  },
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/3/CapacitySources/Source1"
+  }]
+}

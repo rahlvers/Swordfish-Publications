@@ -383,8 +383,8 @@
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that replication has synchronization in progress."/>
         </Member>
         <Member Name="Resyncing">
-          <Annotation Term="OData.Description" String="Resync in progess."/>
-          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that replication has resynchronization in progess."/>
+          <Annotation Term="OData.Description" String="Resync in progress."/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that replication has resynchronization in progress."/>
         </Member>
         <Member Name="Restoring">
           <Annotation Term="OData.Description" String="Restore in progress."/>
@@ -652,7 +652,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo.v1_3_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WP 1.1.1"/>
+      <Annotation Term="Redfish.Release" String="WIP 1.2.0"/>
       <Annotation Term="OData.Description" String="Enhance to track DataProtectionLineOfService LoS for each replicaInfo. Move ComplexType into unversioned namespace.Move enums into unversioned namespace. Change references to unversioned."/>
       <EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.v1_2_0.StorageReplicaInfo"/>
 

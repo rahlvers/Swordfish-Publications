@@ -1,0 +1,13 @@
+{
+    "@odata.type": "#EventDestinationCollection.EventDestinationCollection",
+    "Name": "Event Subscriptions Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/EventService/Subscriptions/1"
+        }
+    ],
+   
+    "@odata.id": "/redfish/v1/EventService/Subscriptions",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

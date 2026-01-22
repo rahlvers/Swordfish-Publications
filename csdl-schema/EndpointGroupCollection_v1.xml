@@ -44,6 +44,8 @@
         </Annotation>
         <Annotation Term="Redfish.Uris">
           <Collection>
+            <String>/redfish/v1/Storage/{StorageId}/EndpointGroups</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/EndpointGroups</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/EndpointGroups</String>
           </Collection>
         </Annotation>

@@ -10,22 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_0_0.json#/definitions/FileShare"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_0_1.json#/definitions/FileShare"
-                },
-                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_0_2.json#/definitions/FileShare"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_1_0.json#/definitions/FileShare"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_1_1.json#/definitions/FileShare"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_1_2.json#/definitions/FileShare"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_1_3.json#/definitions/FileShare"
@@ -35,7 +20,12 @@
             "description": "A shared set of files.",
             "insertable": false,
             "longDescription": "This resource shall be used to represent a shared set of files.",
-            "updatable": true
+            "updatable": true,
+            "uris": [
+                "/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedShares/{ExportedSharesId}",
+                "/redfish/v1/Systems/{ComputerSystemsId}/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedShares/{ExportedSharesId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemsId}/ExportedShares/{ExportedSharesId}"
+            ]
         }
     },
     "owningEntity": "SNIA",

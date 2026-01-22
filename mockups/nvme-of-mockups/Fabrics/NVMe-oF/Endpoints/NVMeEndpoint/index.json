@@ -1,0 +1,27 @@
+{
+  "@odata.type": "#Endpoint.v1_4_0.Endpoint",
+  "Id": "1",
+  "Name": "NVMeEndpoint",
+  "Description": "Endpoint connected Logical Namespace (NVMe-oF)",
+  "EndpointProtocol": "NVMeOverFabrics",
+
+  "ConnectedEntities": [{
+    "EntityType": "Volume",
+    "EntityRole": "Target",
+    "Identifiers": [{
+      "DurableNameFormat": "NGUID",
+      "DurableName": "FDECBA9876543210h"
+    }]
+  }],
+
+  "IPTransportDetails": [{
+    "TransportProtocol": "RDMA",
+    "IPv4Address": {
+      "Address": "192.168.155.22"
+    },
+    "Port": 4420
+  }],
+
+  "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeEndpoint",
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

@@ -1,0 +1,12 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/NVMe-oF-Subsystem/StoragePools/LogicalNamespacePool",
+  "@odata.type": "#StoragePool.v1_4_0.StoragePool",
+  "Id": "0",
+  "Name": "Namespaces for Logical Namespace",
+  "Description": "Namespaces used to create logical namespace in NVMe-oF system",
+
+  "AllocatedVolumes": {
+    "@odata.id": "/redfish/v1/Storage/NVMe-oF-Subsystem/Volumes/LogicalNamespace1"
+  }
+}

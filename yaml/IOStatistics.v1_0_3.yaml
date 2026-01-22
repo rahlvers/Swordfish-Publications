@@ -52,12 +52,12 @@ components:
             or memory (i.e. from a storage device or from a cache).
           x-units: '{tot}'
         WriteHitIORequests:
-          description: Count of write IO requests coallesced into memory.
+          description: Count of write IO requests coalesced into memory.
           nullable: true
           readOnly: false
           type: integer
           x-longDescription: The value shall represent the total count from the time
-            of last reset or wrap of write IO requests coallesced into memory.
+            of last reset or wrap of write IO requests coalesced into memory.
           x-units: '{tot}'
         WriteIOKiBytes:
           description: Number of kibibytes written.

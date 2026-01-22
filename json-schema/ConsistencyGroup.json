@@ -27,9 +27,6 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.v1_0_0.json#/definitions/ConsistencyGroup"
-                },
-                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.v1_0_1.json#/definitions/ConsistencyGroup"
                 }
             ],
@@ -39,6 +36,7 @@
             "longDescription": "A collection of volumes grouped together to ensure write order consistency across all those volumes. A management operation on a consistency group, such as configuring replication properties, applies to all the volumes within the consistency group.",
             "updatable": true,
             "uris": [
+                "/redfish/v1/Storage/{StorageId}/ConsistencyGroups/{ConsistencyGroupId}",
                 "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/ConsistencyGroups/{ConsistencyGroupId}",
                 "/redfish/v1/StorageServices/{StorageServiceId}/ConsistencyGroups/{ConsistencyGroupId}",
                 "/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/ConsistencyGroups/{ConsistencyGroupId}"

@@ -1,0 +1,16 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.type": "#DriveCollection.DriveCollection",
+  "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1/CapacitySources/Source1/ProvidingDrives",
+  "Members@odata.count": 3,
+  "Members": [{
+      "@odata.id": "/redfish/v1/Storage/NVMeDrive1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/NVMeDrive2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/NVMeDrive3"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+    "@odata.type": "#EndpointCollection.EndpointCollection",
+    "Name": "NVMe-oF Endpoint Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeEndpoint"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/Host"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

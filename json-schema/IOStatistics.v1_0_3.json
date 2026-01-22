@@ -81,8 +81,8 @@
                     "units": "{tot}"
                 },
                 "WriteHitIORequests": {
-                    "description": "Count of write IO requests coallesced into memory.",
-                    "longDescription": "The value shall represent the total count from the time of last reset or wrap of write IO requests coallesced into memory.",
+                    "description": "Count of write IO requests coalesced into memory.",
+                    "longDescription": "The value shall represent the total count from the time of last reset or wrap of write IO requests coalesced into memory.",
                     "readonly": false,
                     "type": [
                         "integer",

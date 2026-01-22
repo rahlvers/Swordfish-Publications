@@ -2,9 +2,6 @@ components:
   schemas:
     IOStatistics:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_0.yaml#/components/schemas/IOStatistics
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_1.yaml#/components/schemas/IOStatistics
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_2.yaml#/components/schemas/IOStatistics
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_3.yaml#/components/schemas/IOStatistics
       description: The properties of this type represent IO statistics.
       x-longDescription: The properties of this type shall be used to represent the

@@ -79,7 +79,7 @@
         <Property Name="RecoveryGeographicObjective" Type="DataProtectionLoSCapabilities.FailureDomainScope">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="Geographic distribution scopes."/>
-          <Annotation Term="OData.LongDescription" String="The value specifies the geograhic scope of the failure domain."/>
+          <Annotation Term="OData.LongDescription" String="The value specifies the geographic scope of the failure domain."/>
         </Property>
         <Property Name="RecoveryPointObjectiveTime" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>

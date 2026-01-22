@@ -10,22 +10,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_0.json#/definitions/IOPerformanceLoSCapabilities"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_1.json#/definitions/IOPerformanceLoSCapabilities"
-                },
-                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_2.json#/definitions/IOPerformanceLoSCapabilities"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_0.json#/definitions/IOPerformanceLoSCapabilities"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_1.json#/definitions/IOPerformanceLoSCapabilities"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_2.json#/definitions/IOPerformanceLoSCapabilities"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_3.json#/definitions/IOPerformanceLoSCapabilities"
@@ -43,22 +28,7 @@
         "IOWorkload": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_0.json#/definitions/IOWorkload"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_1.json#/definitions/IOWorkload"
-                },
-                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_2.json#/definitions/IOWorkload"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_0.json#/definitions/IOWorkload"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_1.json#/definitions/IOWorkload"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_2.json#/definitions/IOWorkload"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_3.json#/definitions/IOWorkload"
@@ -70,22 +40,7 @@
         "IOWorkloadComponent": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_0.json#/definitions/IOWorkloadComponent"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_1.json#/definitions/IOWorkloadComponent"
-                },
-                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_0_2.json#/definitions/IOWorkloadComponent"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_0.json#/definitions/IOWorkloadComponent"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_1.json#/definitions/IOWorkloadComponent"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_2.json#/definitions/IOWorkloadComponent"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLoSCapabilities.v1_1_3.json#/definitions/IOWorkloadComponent"

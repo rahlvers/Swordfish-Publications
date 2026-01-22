@@ -24,7 +24,7 @@ components:
           description: Geographic distribution scopes.
           nullable: true
           readOnly: false
-          x-longDescription: The value specifies the geograhic scope of the failure
+          x-longDescription: The value specifies the geographic scope of the failure
             domain.
         RecoveryPointObjectiveTime:
           description: Time interval defining how much source data that can be lost

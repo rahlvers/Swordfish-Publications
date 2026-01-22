@@ -1,0 +1,10 @@
+{
+  "@odata.type": "#DriveCollection.DriveCollection",
+  "Name": "Drive Collection",
+  "Members@odata.count": 1,
+  "Members": [{
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive3/Drives/NVMeDrive3"
+  }],
+  "@odata.id": "/redfish/v1/Chassis/NVMeDrive3/Drives",
+  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved."
+}

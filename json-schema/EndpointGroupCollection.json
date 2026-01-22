@@ -90,6 +90,8 @@
             "insertable": true,
             "updatable": false,
             "uris": [
+                "/redfish/v1/Storage/{StorageId}/EndpointGroups",
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/EndpointGroups",
                 "/redfish/v1/StorageServices/{StorageServiceId}/EndpointGroups"
             ]
         }

@@ -1,0 +1,13 @@
+{
+    "@odata.type": "#TaskCollection.TaskCollection",
+    "Name": "Task Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/TaskService/Tasks/545"
+        }
+    ],
+   
+    "@odata.id": "/redfish/v1/TaskService/Tasks",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

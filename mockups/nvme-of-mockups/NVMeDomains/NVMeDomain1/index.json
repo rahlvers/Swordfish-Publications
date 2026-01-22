@@ -1,0 +1,47 @@
+{
+  "@odata.type": "#NVMeDomain.v1_0_0.NVMeDomain",
+  "Id": "NVMeDomain1",
+  "Name": "NVMeDomain 1",
+  "Description": "NVMeDomain contains NVMe I/O controllers from two devices",
+
+  "DomainMembers": [{
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Controllers/NVMeIOController"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Volumes/Namespace1"
+    }
+  ],
+
+  "TotalDomainCapacityBytes": 8575650934756566,
+  "UnallocatedDomainCapacityBytes": 0,
+  "MaximumCapacityPerEnduranceGroupBytes": 4287825467378283,
+  "AvailableFirmwareImages": [{
+    "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1#/AvailableFirmwareImages/0",
+    "MemberId": "0",
+      "Version": "1.1.1",
+      "Vendor": "BestNVMeCO",
+      "NVMeDeviceType": "Drive"
+    },
+    {
+      "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1#/AvailableFirmwareImages/1",
+      "MemberId": "1",
+      "Version": "v1.2.3",
+      "Vendor": "No, We're the Best Co",
+      "NVMeDeviceType": "JBOF"
+    },
+    {
+      "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1#/AvailableFirmwareImages/2",
+      "MemberId": "2",
+      "Version": "3_2-2",
+      "Vendor": "ReallytheBestInc",
+      "NVMeDeviceType": "FabricAttachArray"
+    }
+  ],
+
+  "Links": {
+    "AssociatedDomains": [{}]
+  },
+
+  "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1",
+  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved."
+}

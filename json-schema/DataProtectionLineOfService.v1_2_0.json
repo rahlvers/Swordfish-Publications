@@ -141,7 +141,7 @@
                         }
                     ],
                     "description": "Geographic distribution scopes.",
-                    "longDescription": "The value specifies the geograhic scope of the failure domain.",
+                    "longDescription": "The value specifies the geographic scope of the failure domain.",
                     "readonly": false
                 },
                 "RecoveryPointObjectiveTime": {

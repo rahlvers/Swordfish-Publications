@@ -1,0 +1,44 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/NVMeDrive5/Controllers/NVMeIOController",
+  "@odata.type": "#StorageController.v1_0_0.StorageController",
+  "Id": "1",
+  "Name": "NVMe I/O Controller",
+  "Description": "Single NVMe I/O Controller presented to host.",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Id": "NVMeIOController",
+  "Manufacturer": "Best NVMe Vendor",
+  "Model": "Simple NVMe Device",
+  "SerialNumber": "NVME123456",
+  "PartNumber": "NVM44",
+  "FirmwareVersion": "1.0.0",
+  "SupportedControllerProtocols": [
+    "PCIe"
+  ],
+  "SupportedDeviceProtocols": [
+    "NVMe"
+  ],
+  "NVMeControllerProperties": {
+    "NVMeVersion": "1.3",
+    "NVMeControllerAttributes": {
+      "ReportsUUIDList": false,
+      "SupportsSQAssociations": false,
+      "ReportsNamespaceGranularity": false,
+      "SupportsTrafficBasedKeepAlive": false,
+      "SupportsPredictableLatencyMode": false,
+      "SupportsEnduranceGroups": false,
+      "SupportsReadRecoveryLevels": false,
+      "SupportsNVMSets": false,
+      "SupportsExceedingPowerOfNonOperationalState": false,
+      "Supports128BitHostId": false
+    }
+  },
+  "Links": {
+    "AttachedVolumes": [{
+      "@odata.id": "/redfish/v1/Storage/NVMeDrive5/Volumes/SimpleNamespace"
+    }]
+  }
+}

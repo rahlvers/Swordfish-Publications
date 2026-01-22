@@ -1,0 +1,36 @@
+{
+  "@odata.type": "#Chassis.v1_14_0.Chassis",
+  "Id": "NVMeDrive2",
+  "Name": "NVMeDrive2",
+  "ChassisType": "Module",
+  "Manufacturer": "NVMeDriveVendorFoo",
+  "Model": "NVMeMODEL",
+  "SKU": "6914260",
+  "SerialNumber": "529QB9450R6",
+  "PartNumber": "166480-S23",
+
+  "PowerState": "On",
+  "IndicatorLED": "Off",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2/Thermal"
+  },
+  "Links": {
+    "Drives": [{
+      "@odata.id": "/redfish/v1/Chassis/NVMeDrive2/Drives/NVMeDrive2"
+      }],
+    "Storage": [{
+      "@odata.id": "/redfish/v1/Storage/FabricAttachArray"
+    }],
+
+    "ContainedBy": {
+        "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
+      }
+    },
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+
+}

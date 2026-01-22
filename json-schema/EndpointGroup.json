@@ -17,14 +17,14 @@
                 "NonOptimized": "The endpoint(s) are in an Active/NonOptimized state.",
                 "Optimized": "The endpoint(s) are in an Active/Optimized state.",
                 "Standby": "The endpoint(s) are in a Standby state.",
-                "Transitioning": "The endpoint(s) are transitioning to a new AccesState.",
+                "Transitioning": "The endpoint(s) are transitioning to a new AccessState.",
                 "Unavailable": "The endpoint(s) are unavailable."
             },
             "enumLongDescriptions": {
                 "NonOptimized": "In the context of this enumeration literal, each endpoint shall be in an Active/NonOptimized state.",
                 "Optimized": "In the context of this enumeration literal, each endpoint shall be in an Active/Optimized state.",
                 "Standby": "In the context of this enumeration literal, each endpoint shall be in a Standby state.",
-                "Transitioning": "In the context of this enumeration literal, at least one endpoint shall be transitioning to a new AccesState.",
+                "Transitioning": "In the context of this enumeration literal, at least one endpoint shall be transitioning to a new AccessState.",
                 "Unavailable": "In the context of this enumeration literal, each endpoint shall be in an unavailable state."
             },
             "longDescription": "Access to all associated resources through all aggregated endpoints shall share this access state.",
@@ -36,28 +36,13 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_0_0.json#/definitions/EndpointGroup"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_0_1.json#/definitions/EndpointGroup"
-                },
-                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_0_2.json#/definitions/EndpointGroup"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_1_0.json#/definitions/EndpointGroup"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_1_1.json#/definitions/EndpointGroup"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_1_2.json#/definitions/EndpointGroup"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_1_3.json#/definitions/EndpointGroup"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_2_0.json#/definitions/EndpointGroup"
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_2_1.json#/definitions/EndpointGroup"
                 }
             ],
             "deletable": true,
@@ -66,6 +51,8 @@
             "longDescription": "A group of endpoints that shall be managed as a unit.",
             "updatable": true,
             "uris": [
+                "/redfish/v1/Storage/{StorageId}/EndpointGroups/{EndpointGroupId}",
+                "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/EndpointGroups/{EndpointGroupId}",
                 "/redfish/v1/StorageServices/{StorageServiceId}/EndpointGroups/{EndpointGroupId}"
             ]
         }

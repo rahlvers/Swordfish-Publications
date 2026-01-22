@@ -90,6 +90,7 @@
             "insertable": false,
             "updatable": false,
             "uris": [
+                "/redfish/v1/Storage/{StorageId}/ConsistencyGroups",
                 "/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/ConsistencyGroups",
                 "/redfish/v1/StorageServices/{StorageServiceId}/ConsistencyGroups",
                 "/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/ConsistencyGroups"

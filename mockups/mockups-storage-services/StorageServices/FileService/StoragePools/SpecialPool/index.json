@@ -1,0 +1,37 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool",
+  "@odata.type": "#StoragePool.v1_0_0.StoragePool",
+  "Id": "SpecialPool",
+  "Name": "SpecialPool",
+  "Description": "Special storage pool",
+  "BlockSizeBytes": 8192,
+  "Capacity": {
+    "Data": {
+      "ConsumedBytes": 549755813888,
+      "AllocatedBytes": 1099511627776,
+      "GuaranteedBytes": 70368744177664,
+      "ProvisionedBytes": 140737488355328
+    }
+  },
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool/CapacitySources/Source1"
+  }],
+  "LowSpaceWarningThresholdPercents": [
+    70,
+    80,
+    90
+  ],
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "Warning"
+  },
+  "ClassesOfService": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool/ClassesOfService"
+  },
+  "AllocatedVolumes": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool/AllocatedVolumes"
+  }
+}

@@ -58,6 +58,13 @@
             <Annotation Term="OData.Description" String="FileShare resources can be deleted by deleting the FileShare resource."/>
           </Record>
         </Annotation>
+        <Annotation Term="Redfish.Uris">
+          <Collection>
+            <String>/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedShares/{ExportedSharesId}</String>
+            <String>/redfish/v1/Systems/{ComputerSystemsId}/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedShares/{ExportedSharesId}</String>            
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemsId}/ExportedShares/{ExportedSharesId}</String>
+          </Collection>
+        </Annotation>
       </EntityType>
     </Schema>
 
@@ -87,7 +94,7 @@
           <Annotation Term="OData.Description" String="An array of default access capabilities for the file share. The types of default access can include Read, Write, and/or Execute."/>
           <Annotation
             Term="OData.LongDescription"
-            String="The value of this property shall be an array containing entries for the default access capabilities for the file share. Each entry shall specify a defaul access privilege. The types of default access can include Read, Write, and/or Execute."/>
+            String="The value of this property shall be an array containing entries for the default access capabilities for the file share. Each entry shall specify a default access privilege. The types of default access can include Read, Write, and/or Execute."/>
         </Property>
         <Property Name="ExecuteSupport" Type="Edm.Boolean" DefaultValue="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
