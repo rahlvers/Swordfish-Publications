@@ -45,8 +45,8 @@ info:
   description: This contains the definition of the Swordfish extensions to a Redfish
     service.
   title: Swordfish API
-  version: v1.1.0
-  x-copyright: Copyright 2015-2019 Storage Networking Industry Association (SNIA),
+  version: v1.2.1a
+  x-copyright: Copyright 2015-2020 Storage Networking Industry Association (SNIA),
     USA. All rights reserved.
 openapi: 3.0.1
 paths:

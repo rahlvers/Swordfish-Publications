@@ -15,7 +15,7 @@
   }],
 
   "IPTransportDetails": [{
-    "TransportProtocol": "RDMA",
+    "TransportProtocol": "RoCEv2",
     "IPv4Address": {
       "Address": "192.168.155.22"
     },

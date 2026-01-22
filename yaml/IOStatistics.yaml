@@ -7,6 +7,6 @@ components:
       x-longDescription: The properties of this type shall be used to represent the
         IO statistics of the requested object.
 title: '#IOStatistics'
-x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA

@@ -29,7 +29,7 @@ components:
           x-longDescription: If present, the value is a SCSI Logical Unit Number for
             the Volume.
         Volume:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata-v4_idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           description: A mapped Volume.
           readOnly: false
           x-longDescription: The value shall reference a mapped Volume.
@@ -40,7 +40,7 @@ components:
           description: This property shall specify a valid odata or Redfish property.
     StorageGroup_StorageGroup:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_0_3.yaml#/components/schemas/StorageGroup_v1_0_3_StorageGroup
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_1_2.yaml#/components/schemas/StorageGroup_v1_1_2_StorageGroup
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_2_2.yaml#/components/schemas/StorageGroup_v1_2_2_StorageGroup
@@ -53,6 +53,6 @@ components:
         storage; local system access points through which the collection is made available;
         hosts, or host access points to which the collection is made available.'
 title: '#StorageGroup.StorageGroup'
-x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA

@@ -30,13 +30,13 @@ components:
         endpoints shall share this access state.
     EndpointGroup_EndpointGroup:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_0_2.yaml#/components/schemas/EndpointGroup_v1_0_2_EndpointGroup
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_1_3.yaml#/components/schemas/EndpointGroup_v1_1_3_EndpointGroup
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_2_1.yaml#/components/schemas/EndpointGroup_v1_2_1_EndpointGroup
       description: A group of endpoints that are managed as a unit.
       x-longDescription: A group of endpoints that shall be managed as a unit.
 title: '#EndpointGroup.EndpointGroup'
-x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA

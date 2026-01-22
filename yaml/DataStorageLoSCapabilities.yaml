@@ -2,7 +2,7 @@ components:
   schemas:
     DataStorageLoSCapabilities_DataStorageLoSCapabilities:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_0_2.yaml#/components/schemas/DataStorageLoSCapabilities_v1_0_2_DataStorageLoSCapabilities
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_1_3.yaml#/components/schemas/DataStorageLoSCapabilities_v1_1_3_DataStorageLoSCapabilities
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_2_1.yaml#/components/schemas/DataStorageLoSCapabilities_v1_2_1_DataStorageLoSCapabilities
@@ -56,6 +56,6 @@ components:
       x-longDescription: StorageAccessCapability enumeration literals may be used
         to describe abilities to read or write storage.
 title: '#DataStorageLoSCapabilities.DataStorageLoSCapabilities'
-x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA

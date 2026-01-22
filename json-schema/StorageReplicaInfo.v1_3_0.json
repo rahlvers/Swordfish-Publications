@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.v1_3_0.json",
     "$ref": "#/definitions/StorageReplicaInfo",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -201,7 +201,7 @@
                     "units": "%"
                 },
                 "Replica": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef",
                     "description": "Deprecated - Use Source Replica. The resource that is the source of this replica.",
                     "longDescription": "Deprecated - Use Source Replica. The value shall reference the resource that is the source of this replica.",
                     "readonly": true
@@ -349,7 +349,7 @@
                     "readonly": true
                 },
                 "SourceReplica": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef",
                     "description": "The resource that is the source of this replica.",
                     "longDescription": "The value shall reference the resource that is the source of this replica.",
                     "readonly": true,
@@ -676,16 +676,16 @@
             },
             "properties": {
                 "@odata.context": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/context"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context"
                 },
                 "@odata.etag": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/etag"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag"
                 },
                 "@odata.id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id"
                 },
                 "@odata.type": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/type"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type"
                 },
                 "Actions": {
                     "$ref": "#/definitions/Actions",

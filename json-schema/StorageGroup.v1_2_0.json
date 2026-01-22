@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_2_0.json",
     "$ref": "#/definitions/StorageGroup",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -212,7 +212,7 @@
                     "type": "array"
                 },
                 "ChildStorageGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
                 },
                 "ClassOfService": {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService",
@@ -235,7 +235,7 @@
                     "type": "array"
                 },
                 "ParentStorageGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
                 }
             },
             "type": "object"
@@ -281,16 +281,16 @@
             },
             "properties": {
                 "@odata.context": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/context"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context"
                 },
                 "@odata.etag": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/etag"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag"
                 },
                 "@odata.id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id"
                 },
                 "@odata.type": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/type"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type"
                 },
                 "AccessState": {
                     "anyOf": [
@@ -350,7 +350,7 @@
                     "type": "array"
                 },
                 "ClientEndpointGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
                 },
                 "Description": {
                     "anyOf": [
@@ -422,7 +422,7 @@
                     "deprecated": "Deprecated in favor of using the ConsistencyGroup for Consistency set management.",
                     "description": "The resources that are target replicas of this source.",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
                     },
                     "longDescription": "The value shall reference the target replicas that are sourced by this replica.",
                     "readonly": true,
@@ -430,7 +430,7 @@
                     "versionAdded": "v1_1_1"
                 },
                 "ReplicaTargets@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
                 },
                 "ServerEndpointGroups": {
                     "description": "Groups of server endpoints in this storage group.",
@@ -442,7 +442,7 @@
                     "type": "array"
                 },
                 "ServerEndpointGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
                 },
                 "Status": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status",
@@ -460,7 +460,7 @@
                     "type": "array"
                 },
                 "Volumes@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
                 },
                 "VolumesAreExposed": {
                     "description": "Storage volumes are exposed to paths defined by the client and server endpoints.",

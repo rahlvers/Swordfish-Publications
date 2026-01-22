@@ -12,7 +12,7 @@
   "Id": "NVMeIOController",
 
   "SupportedControllerProtocols": [
-    "TCP", "RDMA", "FC"
+    "TCP", "RoCEv2", "FC"
   ],
   "SupportedDeviceProtocols": [
     "NVMeOverFabrics"
@@ -49,9 +49,6 @@
       {
         "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/Host"
       }
-    ],
-    "Connections": [{
-      "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Connections/Host1"
-    }]
+    ]
   }
 }

@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.json",
     "$ref": "#/definitions/ConsistencyGroup",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "ApplicationConsistencyMethod": {
             "enum": [
@@ -24,7 +24,7 @@
         "ConsistencyGroup": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.v1_0_1.json#/definitions/ConsistencyGroup"

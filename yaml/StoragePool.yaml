@@ -2,7 +2,7 @@ components:
   schemas:
     StoragePool_StoragePool:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/odata_v4_0_3_idRef
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_0_2.yaml#/components/schemas/StoragePool_v1_0_2_StoragePool
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_1_3.yaml#/components/schemas/StoragePool_v1_1_3_StoragePool
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_2_1.yaml#/components/schemas/StoragePool_v1_2_1_StoragePool
@@ -14,6 +14,6 @@ components:
         conforming to one of its supported classes of service. The storage pool does
         not support IO to its data storage.
 title: '#StoragePool.StoragePool'
-x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA
