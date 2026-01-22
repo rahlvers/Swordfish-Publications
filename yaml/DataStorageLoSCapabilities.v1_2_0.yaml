@@ -48,6 +48,7 @@ components:
         MaximumRecoverableCapacitySourceCount:
           description: Maximum number of capacity source resources for the purpose
             of recovery from a failure.
+          format: int64
           nullable: true
           readOnly: false
           type: integer

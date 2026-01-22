@@ -1,0 +1,31 @@
+{
+    "@odata.type": "#Bios.v1_0_2.Bios",
+    "Id": "Bios",
+    "Name": "Bios Configuration Current Settings",
+    "AttributeRegistry": "BiosAttributeRegistryP89.v1_0_0",
+    "Attributes": {
+        "@odata.type": "#Bios.v1_0_0.Attributes",
+        "AdminPhone": "",
+        "BootMode": "Uefi",
+        "EmbeddedSata": "Raid",
+        "NicBoot1": "NetworkBoot",
+        "NicBoot2": "Disabled",
+        "PowerProfile": "MaxPerf",
+        "ProcCoreDisable": 0,
+        "ProcHyperthreading": "Enabled",
+        "ProcTurboMode": "Enabled",
+        "UsbControl": "UsbEnabled"
+    },
+    "Actions": {
+        "@odata.type": "#Bios.v1_0_0.Actions",
+        "#Bios.ResetBios": {
+            "target": "/redfish/v1/Systems/556ST22255E/Bios/Actions/Bios.ResetBios"
+        },
+        "#Bios.ChangePassword": {
+            "target": "/redfish/v1/Systems/556ST22255E/Bios/Actions/Bios.ChangePassword"
+        }
+    },
+
+    "@odata.id": "/redfish/v1/Systems/556ST22255E/Bios",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

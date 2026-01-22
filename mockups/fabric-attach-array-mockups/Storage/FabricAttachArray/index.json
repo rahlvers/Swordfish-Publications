@@ -1,10 +1,10 @@
 {
   "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
   "@odata.id": "/redfish/v1/Storage/FabricAttachArray",
-  "@odata.type": "#Storage.v1_9_0.Storage",
+  "@odata.type": "#Storage.v1_10_0.Storage",
   "Id": "1",
   "Name": "NVMe  FabricAttachArray Configuration",
-  "Description": "Mockup of NVMe Simple FabricAttachArray config: This FabricAttachArray has an enclosure and three drives, along with 1 Subsystem, 1 I/O Controller and 1 Namespace, and 1 Endurance Group and 1 set.",
+  "Description": "An NVM Express Subsystem is an NVMe device that contains one or more NVM Express controllers and may contain one or more namespaces.",
   "Status": {
     "State": "Enabled",
     "Health": "OK",

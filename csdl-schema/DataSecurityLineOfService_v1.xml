@@ -123,7 +123,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataSecurityLineOfService.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP 1.1.0"/>
+      <Annotation Term="Redfish.Release" String="WIP v1.1.0"/>
       <Annotation Term="OData.Description" String="The BaseType was changed from Resource to the LineOfService class.  This version also corrects CSDL errors."/>
       <EntityType Name="DataSecurityLineOfService" BaseType="DataSecurityLineOfService.v1_0_2.DataSecurityLineOfService">
         <Property Name="Actions" Type="DataSecurityLineOfService.v1_1_0.Actions" Nullable="false">

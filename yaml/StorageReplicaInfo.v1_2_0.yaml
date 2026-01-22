@@ -138,6 +138,7 @@ components:
             value for this property is false.
         PercentSynced:
           description: Specifies the percent of the work completed to reach synchronization.
+          format: int64
           nullable: true
           readOnly: true
           type: integer
@@ -199,6 +200,7 @@ components:
         ReplicaSkewBytes:
           description: Applies to Adaptive mode and it describes maximum number of
             bytes the SyncedElement (target) can be out of sync.
+          format: int64
           nullable: true
           readOnly: true
           type: integer

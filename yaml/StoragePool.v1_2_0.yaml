@@ -1,5 +1,40 @@
 components:
   schemas:
+    StoragePool_v1_2_0_Actions:
+      additionalProperties: false
+      properties:
+        '#StoragePool.AddDrives':
+          $ref: '#/components/schemas/StoragePool_v1_2_0_AddDrives'
+        '#StoragePool.RemoveDrives':
+          $ref: '#/components/schemas/StoragePool_v1_2_0_RemoveDrives'
+        '#StoragePool.SetCompressionState':
+          $ref: '#/components/schemas/StoragePool_v1_2_0_SetCompressionState'
+        '#StoragePool.SetDeduplicationState':
+          $ref: '#/components/schemas/StoragePool_v1_2_0_SetDeduplicationState'
+        '#StoragePool.SetEncryptionState':
+          $ref: '#/components/schemas/StoragePool_v1_2_0_SetEncryptionState'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_2_0_AddDrives:
+      additionalProperties: false
+      description: This action is used to add an additional drive, or set of drives,
+        to a capacity source for the storage pool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to add a drive, or set of drives,
+        to an underlying capacity source for the storage pool.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     StoragePool_v1_2_0_Links:
       additionalProperties: false
       description: The links object contains the links to other resources that are
@@ -57,6 +92,81 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_2_0_RemoveDrives:
+      additionalProperties: false
+      description: This action is used to remove drive(s) from the capacity source
+        for the StoragePool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to remove a drive from the StoragePool.
+        This action is targeted at a graceful drive removal process, such as initiating
+        a drive cleanup and data reallocation before drive removal from the pool.
+        The implementation may impose restrictions on the number of drives removed
+        simultaneously.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_2_0_SetCompressionState:
+      additionalProperties: false
+      description: This action is used to set the compression state of the pool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to set the compression state of
+        the storage pool. This may be both a highly impactful, as well as a long running
+        operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_2_0_SetDeduplicationState:
+      additionalProperties: false
+      description: This action is used to set the dedupe state of the pool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to set the dedupe state of the
+        storage pool. This may be both a highly impactful, as well as a long running
+        operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_2_0_SetEncryptionState:
+      additionalProperties: false
+      description: This action is used to set the encryption state of the pool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to set the encryption state of
+        the storage pool. This may be both a highly impactful, as well as a long running
+        operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     StoragePool_v1_2_0_StoragePool:
       additionalProperties: false
       description: A container of data storage.
@@ -86,6 +196,7 @@ components:
         BlockSizeBytes:
           deprecated: true
           description: Maximum Block size in bytes.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -158,6 +269,7 @@ components:
         LowSpaceWarningThresholdPercents:
           description: Low space warning threshold specified in percents.
           items:
+            format: int64
             nullable: true
             type: integer
           maximum: 100
@@ -170,6 +282,7 @@ components:
           x-units: '%'
         MaxBlockSizeBytes:
           description: Maximum Block size in bytes.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -191,6 +304,7 @@ components:
         RecoverableCapacitySourceCount:
           description: Current number of capacity source resources that are available
             as replacements.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -200,6 +314,7 @@ components:
           x-versionAdded: v1_2_0
         RemainingCapacityPercent:
           description: The percentage of the capacity remaining in the StoragePool.
+          format: int64
           nullable: true
           readOnly: true
           type: integer

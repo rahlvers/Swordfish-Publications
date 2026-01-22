@@ -138,6 +138,7 @@ components:
             value for this property is false.
         PercentSynced:
           description: Specifies the percent of the work completed to reach synchronization.
+          format: int64
           nullable: true
           readOnly: true
           type: integer
@@ -208,6 +209,7 @@ components:
         ReplicaSkewBytes:
           description: Applies to Adaptive mode and it describes maximum number of
             bytes the SyncedElement (target) can be out of sync.
+          format: int64
           nullable: true
           readOnly: true
           type: integer
@@ -701,4 +703,4 @@ title: '#StorageReplicaInfo.v1_3_0.StorageReplicaInfo'
 x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA
-x-release: WIP 1.2.0
+x-release: WIP v1.2.0

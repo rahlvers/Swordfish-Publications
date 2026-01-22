@@ -48,6 +48,7 @@ components:
         MaximumRecoverableCapacitySourceCount:
           description: Maximum number of capacity source resources for the purpose
             of recovery from a failure.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -133,4 +134,4 @@ title: '#DataStorageLoSCapabilities.v1_2_2.DataStorageLoSCapabilities'
 x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA
-x-release: TP v1.2.1c
+x-release: TP v1.0.7a

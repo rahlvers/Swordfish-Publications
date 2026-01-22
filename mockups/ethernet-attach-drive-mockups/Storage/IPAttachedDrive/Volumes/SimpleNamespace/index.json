@@ -5,6 +5,7 @@
   "Id": "1",
   "Name": "Namespace 1",
   "LogicalUnitNumber": 1,
+  "Description": "A Namespace is a quantity of non-volatile memory that may be formatted into logical blocks. When formatted, a namespace of size n is a collection of logical blocks with logical block addresses from 0 to (n-1). NVMe systems can support multiple namespaces.",
   "Status": {
     "State": "Enabled",
     "Health": "OK"
@@ -33,5 +34,6 @@
     "MetadataTransferredAtEndOfDataLBA": false,
     "NVMeVersion": "1.4"
   },
+  "OptimumIOSizeBytes": 1024,
   "Links": {}
 }

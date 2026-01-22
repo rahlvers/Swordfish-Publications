@@ -1,0 +1,15 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+
+  "@odata.type": "#DriveCollection.DriveCollection",
+  "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives",
+  "Name": "Drives",
+  "Members@odata.count": 2,
+  "Members": [{
+      "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/0THGR0KP"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/0THGXPBP"
+    }
+  ]
+}

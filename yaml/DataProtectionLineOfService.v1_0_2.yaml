@@ -1,9 +1,50 @@
 components:
   schemas:
+    DataProtectionLineOfService_v1_0_2_Actions:
+      additionalProperties: false
+      properties:
+        '#DataProtectionLineOfService.CreateReplicas':
+          $ref: '#/components/schemas/DataProtectionLineOfService_v1_0_2_CreateReplicas'
+      type: object
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DataProtectionLineOfService_v1_0_2_CreateReplicas:
+      additionalProperties: false
+      description: This action creates an on-demand replica.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall create an on-demand replica that conforms
+        to the bound DataProtectionLineOfService.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
     DataProtectionLineOfService_v1_0_2_DataProtectionLineOfService:
       additionalProperties: false
       description: Describes a data protection service option.
       properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
         IsIsolated:
           description: The replica is in a separate fault domain.
           nullable: true
@@ -19,6 +60,15 @@ components:
           x-longDescription: 'The value shall be an ISO 8601 duration that specifies
             the minimum required lifetime of the replica. Note: The maximum number
             of replicas can be determined using this value together with the replicaSchedule.'
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
         RecoveryGeographicObjective:
           $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/DataProtectionLoSCapabilities_FailureDomainScope
           description: Geographic distribution scopes.
@@ -69,6 +119,11 @@ components:
           description: A schedule for making periodic point in time replicas.
           x-longDescription: If a replica is made periodically, the value shall define
             the schedule.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
       type: object
       x-longDescription: This service option describes a replica that protects data
         from loss. The requirements must be met collectively by the communication
@@ -76,7 +131,7 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-title: '#DataProtectionLineOfService.v1_0_2'
+title: '#DataProtectionLineOfService.v1_0_2.DataProtectionLineOfService'
 x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA

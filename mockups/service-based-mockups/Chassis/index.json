@@ -1,17 +1,17 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+
   "@odata.id": "/redfish/v1/Chassis",
   "@odata.type": "#ChassisCollection.ChassisCollection",
   "Name": "Chassis Collection",
   "Members@odata.count": 4,
-  "Members": [
-    {
+  "Members": [{
       "@odata.id": "/redfish/v1/Chassis/1"
     },
     {
       "@odata.id": "/redfish/v1/Chassis/1URack"
     },
+
     {
       "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
     },

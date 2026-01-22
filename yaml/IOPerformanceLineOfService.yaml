@@ -8,7 +8,7 @@ components:
       description: Describe service option within the IO performance line of service.
       x-longDescription: This structure may be used to define a service option related
         to IO performance.
-title: '#IOPerformanceLineOfService'
+title: '#IOPerformanceLineOfService.IOPerformanceLineOfService'
 x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA

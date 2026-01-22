@@ -1,5 +1,5 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2014-2021 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#ServiceRoot.ServiceRoot",
   "@odata.id": "/redfish/v1/",
   "@odata.type": "#ServiceRoot.v1_9_0.ServiceRoot",
@@ -10,7 +10,15 @@
   "Chassis": {
     "@odata.id": "/redfish/v1/Chassis"
   },
+  "SessionService": {
+    "@odata.id": "/redfish/v1/SessionService"
+  },
   "Storage": {
     "@odata.id": "/redfish/v1/Storage"
+  },
+  "Links": {
+    "Sessions": {
+      "@odata.id": "/redfish/v1/SessionService/Sessions"
+    }
   }
 }

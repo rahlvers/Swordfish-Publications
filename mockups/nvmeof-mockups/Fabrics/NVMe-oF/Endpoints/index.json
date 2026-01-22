@@ -1,13 +1,10 @@
 {
     "@odata.type": "#EndpointCollection.EndpointCollection",
     "Name": "NVMe-oF Endpoint Collection",
-    "Members@odata.count": 3,
+    "Members@odata.count": 2,
     "Members": [
         {
-            "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeEndpoint"
-        },
-        {
-            "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeNamespaceEndpoint"
+            "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeSubsystemEndpoint"
         },
         {
             "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/Host"

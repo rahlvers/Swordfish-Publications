@@ -1,5 +1,6 @@
 {
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_0_0.json",
+    "$ref": "#/definitions/IOConnectivityLineOfService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
@@ -22,6 +23,18 @@
                 }
             },
             "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
                 "AccessProtocols": {
                     "description": "SupportedAccessProtocols.",
                     "items": {
@@ -37,12 +50,42 @@
                     "longDescription": "The Enumeration Literal shall specify the Access protocol for this service option. NOTE: If multiple protocols are specified,  the corresponding MaxSupportedIOPS governs the max achieved across all protocol uses. This may be less than the sum of the individual max values, which may be specified by individual Line of Service entries.",
                     "readonly": false,
                     "type": "array"
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 }
             },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
             "type": "object"
         }
     },
     "owningEntity": "SNIA",
     "release": "WIP v1.0.6",
-    "title": "#IOConnectivityLineOfService.v1_0_0"
+    "title": "#IOConnectivityLineOfService.v1_0_0.IOConnectivityLineOfService"
 }

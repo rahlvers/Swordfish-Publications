@@ -1,6 +1,6 @@
 {
   "@odata.id": "/redfish/v1/Chassis/NVMeDrive6/Drives/NVMeDrive6",
-  "@odata.type": "#Drive.v1_9_0.Drive",
+  "@odata.type": "#Drive.v1_12_0.Drive",
   "IndicatorLED": "Lit",
   "Model": "ST9146802SS",
   "Revision": "S20A",

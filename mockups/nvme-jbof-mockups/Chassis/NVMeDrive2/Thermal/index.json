@@ -1,5 +1,5 @@
 {
-  "@odata.type": "#Thermal.v1_5_3.Thermal",
+  "@odata.type": "#Thermal.v1_7_0.Thermal",
   "Id": "Thermal",
   "Name": "NVMeDRive1 Thermal",
   "Temperatures": [{

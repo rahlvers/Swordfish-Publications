@@ -1,11 +1,13 @@
 {
   "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
   "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1",
-  "@odata.type": "#StoragePool.v1_4_0.StoragePool",
+  "@odata.type": "#StoragePool.v1_6_0.StoragePool",
   "Id": "1",
   "Name": "Endurance Group 1",
   "Description": "Single Endurance Group",
-
+  "NVMeProperties": {
+    "NVMePoolType": "EnduranceGroup"
+  },
   "NVMeEnduranceGroupProperties": {
     "EndGrpLifetime": {
       "PercentUsed": 0,

@@ -9,7 +9,7 @@ components:
       description: A service option composed of one or more other service options.
       x-longDescription: A service option composed of one or more other service options.  ITIL
         defines a service option as a choice of utility or warranty for a service.
-title: '#ClassOfService'
+title: '#ClassOfService.ClassOfService'
 x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA

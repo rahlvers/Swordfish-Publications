@@ -1,11 +1,13 @@
 {
   "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
   "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/DefaultSet0",
-  "@odata.type": "#StoragePool.v1_4_0.StoragePool",
+  "@odata.type": "#StoragePool.v1_6_0.StoragePool",
   "Id": "0",
   "Name": "Default Set 0",
   "Description": "Default Set",
-
+  "NVMeProperties": {
+    "NVMePoolType": "NVMSet"
+  },
   "NVMeSetProperties": {
     "SetIdentifier": "0x1F",
     "OptimalWriteSizeBytes": 512
@@ -19,6 +21,6 @@
   },
 
   "AllocatedVolumes": {
-    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Volumes/Namespace1"
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/DefaultSet0/AllocatedVolumes"
   }
 }

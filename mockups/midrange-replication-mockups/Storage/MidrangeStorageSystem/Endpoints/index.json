@@ -24,8 +24,7 @@
     {
       "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/TargetEndpoint5"
     }
-
   ],
   "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints",
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved."
 }

@@ -1,5 +1,6 @@
 {
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.v1_2_0.json",
+    "$ref": "#/definitions/ClassOfService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
@@ -50,6 +51,18 @@
                 }
             },
             "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
                 "Actions": {
                     "$ref": "#/definitions/Actions",
                     "description": "The available actions for this resource.",
@@ -104,6 +117,17 @@
                 "DataStorageLinesOfService@odata.count": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
                 "IOConnectivityLinesOfService": {
                     "description": "A collection of IOConnectivity line of service elements.",
                     "items": {
@@ -130,12 +154,31 @@
                 "IOPerformanceLinesOfService@odata.count": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
                 "Identifier": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Identifier",
                     "description": "The value identifies this resource.",
                     "longDescription": "The value shall be unique within the managed ecosystem."
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 }
             },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
             "type": "object"
         },
         "OemActions": {
@@ -162,5 +205,5 @@
     },
     "owningEntity": "SNIA",
     "release": "WIP v1.0.5",
-    "title": "#ClassOfService.v1_2_0"
+    "title": "#ClassOfService.v1_2_0.ClassOfService"
 }

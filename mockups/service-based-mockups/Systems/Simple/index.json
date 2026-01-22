@@ -63,7 +63,7 @@
   },
   "Links": {
     "Endpoints": [{
-      "@odata.id": "/redfish/v1/Systems/Simple/Endpoints"
+      "@odata.id": "/redfish/v1/StorageServices/Simple1/Endpoints/2"
     }],
     "Chassis": [{
       "@odata.id": "/redfish/v1/Chassis/1"

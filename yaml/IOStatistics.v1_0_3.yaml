@@ -13,6 +13,7 @@ components:
             the time that the resource is busy processing non IO requests.
         NonIORequests:
           description: Count of non IO requests.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -21,6 +22,7 @@ components:
           x-units: '{tot}'
         ReadHitIORequests:
           description: Count of read IO requests satisfied from memory.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -29,6 +31,7 @@ components:
           x-units: '{tot}'
         ReadIOKiBytes:
           description: Number of kibibytes read.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -44,6 +47,7 @@ components:
             the time that the resource is busy processing read requests.
         ReadIORequests:
           description: Count of read IO requests.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -53,6 +57,7 @@ components:
           x-units: '{tot}'
         WriteHitIORequests:
           description: Count of write IO requests coalesced into memory.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -61,6 +66,7 @@ components:
           x-units: '{tot}'
         WriteIOKiBytes:
           description: Number of kibibytes written.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -76,6 +82,7 @@ components:
             the time that the resource is busy processing write requests.
         WriteIORequests:
           description: Count of write IO requests.
+          format: int64
           nullable: true
           readOnly: false
           type: integer

@@ -1,0 +1,15 @@
+{
+    "@odata.type": "#FeaturesRegistry.v1_0_0.FeaturesRegistry",
+    "Id": "GlobalRegistry",
+    "Name": "Global Features Registry",
+
+    "Features": [
+        {
+            "FeatureName": "SNIA.Swordfish.NVMeDrive",
+            "Description": "Supports discovery of resources in a Swordfish system.",
+            "Version": "1.0.0",
+            "CorrespondingProfileDefinition": "SwordfishNVMeDrive.json"
+        }
+    ],
+    "@Redfish.Copyright": "Copyright 2019-2021 SNIA. All rights reserved."
+}

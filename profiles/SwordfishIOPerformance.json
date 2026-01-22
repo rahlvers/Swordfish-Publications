@@ -6,7 +6,7 @@
   "Purpose": "Defines Swordfish IO Performance requirements.",
   "ContactInfo": "SNIA.org",
   "ConditionalRequirements": [{
-    "Purpose": "Either SwordfishDiscoveryor SwordfishCoSDiscovery must be supported.",
+    "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
     "CompareProperty": "RequiredProfiles",
     "CompareType": "AnyOf",
     "CompareValues": [

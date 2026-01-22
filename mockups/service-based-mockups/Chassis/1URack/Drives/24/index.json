@@ -1,0 +1,33 @@
+{
+  "@odata.id": "/redfish/v1/Chassis/1URack/Drives/24",
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+    "@odata.type": "#Drive.v1_12_0.Drive",
+    "Id": "24",
+    "Name": "Drive 24",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "StatusIndicator": "OK",
+    "CapacityBytes": 300067890136,
+    "FailurePredicted": false,
+    "Protocol": "SAS",
+    "MediaType": "HDD",
+    "Manufacturer": "HDD-Company",
+    "SerialNumber": "0THG65AU",
+    "PartNumber": "HUC156030CSS200",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "5000CCA05B522F79"
+        }
+    ],
+    "RotationSpeedRPM": 15000,
+    "BlockSizeBytes": 512,
+    "NegotiatedSpeedGbs": 12,
+    "Links": {
+        "Volumes": [{
+            "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/3"
+        }]
+    }
+}

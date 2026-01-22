@@ -1,7 +1,7 @@
 {
   "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
   "@odata.id": "/redfish/v1/Storage/OpaqueArray/Controllers/NVMeAdminController",
-  "@odata.type": "#StorageController.v1_0_0.StorageController",
+  "@odata.type": "#StorageController.v1_1_0.StorageController",
 
   "Name": "NVMe Admin Controller",
   "Description": "Single NVMe Admin Controller for in-band admin command access.",

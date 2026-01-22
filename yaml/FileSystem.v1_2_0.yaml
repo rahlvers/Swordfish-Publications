@@ -87,6 +87,7 @@ components:
           x-versionAdded: v1_1_0
         BlockSizeBytes:
           description: Block size of the file system in bytes.
+          format: int64
           nullable: true
           readOnly: true
           type: integer
@@ -139,6 +140,7 @@ components:
         ClusterSizeBytes:
           description: A value indicating the minimum file allocation size imposed
             by the file system.
+          format: int64
           minimum: 1
           nullable: true
           readOnly: false
@@ -193,6 +195,7 @@ components:
           description: An array of low space warning threshold percentages for the
             file system.
           items:
+            format: int64
             nullable: true
             type: integer
           maximum: 100
@@ -209,6 +212,7 @@ components:
         MaxFileNameLengthBytes:
           description: A value indicating the maximum length of a file name within
             the file system.
+          format: int64
           minimum: 1
           nullable: true
           readOnly: false
@@ -228,6 +232,7 @@ components:
         RecoverableCapacitySourceCount:
           description: Current number of capacity source resources that are available
             as replacements.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -247,6 +252,7 @@ components:
             allocated to the file system in bytes.
         RemainingCapacityPercent:
           description: The percentage of the capacity remaining in the FileSystem.
+          format: int64
           nullable: true
           readOnly: true
           type: integer

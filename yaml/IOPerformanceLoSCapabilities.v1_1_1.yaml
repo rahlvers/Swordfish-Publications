@@ -99,6 +99,7 @@ components:
           x-units: s
         MinSupportedIoOperationLatencyMicroseconds:
           description: Minimum supported average IO latency.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -175,6 +176,7 @@ components:
       properties:
         AverageIOBytes:
           description: Average I/O Size for this component.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -199,6 +201,7 @@ components:
             pattern.
         PercentOfData:
           description: Percent of data for this workload component.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -207,6 +210,7 @@ components:
           x-units: '%'
         PercentOfIOPS:
           description: Percent of total IOPS for this workload component.
+          format: int64
           nullable: true
           readOnly: false
           type: integer

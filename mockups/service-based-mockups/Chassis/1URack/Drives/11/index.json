@@ -1,0 +1,32 @@
+{
+  "@odata.id": "/redfish/v1/Chassis/1URack/Drives/11",
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+    "@odata.type": "#Drive.v1_12_0.Drive",
+    "Id": "11",
+    "Name": "Drive 11",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "StatusIndicator": "OK",
+    "CapacityBytes": 1000201246474,
+    "FailurePredicted": false,
+    "Protocol": "SATA",
+    "MediaType": "HDD",
+    "Manufacturer": "HDD-Company",
+    "SerialNumber": "Z1W0181K",
+    "PartNumber": "ST1000NM00339ZM",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "300062B202B21847"
+        }
+    ],
+    "BlockSizeBytes": 512,
+    "NegotiatedSpeedGbs": 6,
+    "Links": {
+        "Volumes": [{
+            "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/2"
+        }]
+    }
+}

@@ -4,6 +4,16 @@ components:
       additionalProperties: false
       description: The available actions for this resource.
       properties:
+        '#StoragePool.AddDrives':
+          $ref: '#/components/schemas/StoragePool_v1_4_0_AddDrives'
+        '#StoragePool.RemoveDrives':
+          $ref: '#/components/schemas/StoragePool_v1_4_0_RemoveDrives'
+        '#StoragePool.SetCompressionState':
+          $ref: '#/components/schemas/StoragePool_v1_4_0_SetCompressionState'
+        '#StoragePool.SetDeduplicationState':
+          $ref: '#/components/schemas/StoragePool_v1_4_0_SetDeduplicationState'
+        '#StoragePool.SetEncryptionState':
+          $ref: '#/components/schemas/StoragePool_v1_4_0_SetEncryptionState'
         Oem:
           $ref: '#/components/schemas/StoragePool_v1_4_0_OemActions'
           description: This property contains the available OEM specific actions for
@@ -17,6 +27,50 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_4_0_AddDrives:
+      additionalProperties: false
+      description: This action is used to add an additional drive, or set of drives,
+        to a capacity source for the storage pool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to add a drive, or set of drives,
+        to an underlying capacity source for the storage pool.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_4_0_AddDrivesRequestBody:
+      additionalProperties: false
+      description: This action is used to add an additional drive, or set of drives,
+        to a capacity source for the storage pool.
+      properties:
+        CapacitySource:
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.yaml#/components/schemas/Capacity_CapacitySource
+          description: The capacity source to be extended.
+          x-longDescription: This parameter shall contain the target capacity source
+            for the drive(s). This property does not need to be specified if the storage
+            pool only contains one capacity source, or if the implementation is capable
+            of automatically selecting the appropriate capacity source.
+        Drives:
+          description: The drive(s) to be added.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          type: array
+          x-longDescription: This parameter shall contain the Uri to the existing
+            drive or drives to be added to a capacity source of the storage pool.
+            The implementation may impose restrictions on the number of drives added
+            simultaneously.
+      required:
+      - Drives
+      type: object
+      x-longDescription: This action shall be used to add a drive, or set of drives,
+        to an underlying capacity source for the storage pool.
     StoragePool_v1_4_0_EndGrpLifetime:
       additionalProperties: false
       description: This contains properties the Endurance Group Lifetime attributes.
@@ -24,6 +78,7 @@ components:
         DataUnitsRead:
           description: The property contains the total number of data units read from
             this endurance group.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -38,6 +93,7 @@ components:
         DataUnitsWritten:
           description: The property contains the total number of data units written
             from this endurance group.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -53,6 +109,7 @@ components:
           description: This property contains an estimate of the total number of data
             bytes that may be written to the Endurance Group over the lifetime of
             the Endurance Group assuming a write amplication of 1.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -67,6 +124,7 @@ components:
         ErrorInformationLogEntryCount:
           description: This property contains the number of error information log
             entries over the life of the controller for the endurance group.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -77,6 +135,7 @@ components:
         HostReadCommandCount:
           description: This property contains the number of read commands completed
             by all controllers in the NVM subsystem for the Endurance Group.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -89,6 +148,7 @@ components:
         HostWriteCommandCount:
           description: This property contains the number of write commands completed
             by all controllers in the NVM subsystem for the Endurance Group.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -101,6 +161,7 @@ components:
         MediaAndDataIntegrityErrorCount:
           description: This property contains the number of occurences where the controller
             detected an unrecovered data integrity error for the Endurance Group.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -113,6 +174,7 @@ components:
         MediaUnitsWritten:
           description: The property contains the total number of data units written
             from this endurance group.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -128,11 +190,12 @@ components:
           description: A vendor-specific estimate of the percent life used for the
             endurance group based on the actual usage and the manufacturer prediction
             of NVM life.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
           type: integer
-          x-longDescription: This property shall contain A vendor-specific estimate
+          x-longDescription: This property shall contain a vendor-specific estimate
             of the percent life used for the endurance group based on the actual usage
             and the manufacturer prediction of NVM life. A value of 100 indicates
             that the estimated endurance of the NVM in the Endurance Group has been
@@ -257,6 +320,7 @@ components:
         OptimalWriteSizeBytes:
           description: This property contains the Optimal Write Size in Bytes for
             this NVMe Set.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -269,6 +333,7 @@ components:
           description: Indicates the typical time to complete a 4k read in 100 nano-second
             units when the NVM Set is in a Predictable Latency Mode Deterministic
             Window and there is 1 outstanding command per NVM Set.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -290,6 +355,7 @@ components:
           x-versionAdded: v1_4_0
         UnallocatedNVMNamespaceCapacityBytes:
           description: Indicates the unallocated capacity of the NVMe Set in bytes.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -314,6 +380,149 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_4_0_RemoveDrives:
+      additionalProperties: false
+      description: This action is used to remove drive(s) from the capacity source
+        for the StoragePool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to remove a drive from the StoragePool.
+        This action is targeted at a graceful drive removal process, such as initiating
+        a drive cleanup and data reallocation before drive removal from the pool.
+        The implementation may impose restrictions on the number of drives removed
+        simultaneously.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_4_0_RemoveDrivesRequestBody:
+      additionalProperties: false
+      description: This action is used to remove drive(s) from the capacity source
+        for the StoragePool.
+      properties:
+        Drives:
+          description: The drive(s) to be removed.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
+          type: array
+          x-longDescription: This parameter shall contain the Uri to the drive or
+            drives to be removed from the underlying capacity source.
+      required:
+      - Drives
+      type: object
+      x-longDescription: This action shall be used to remove a drive from the StoragePool.
+        This action is targeted at a graceful drive removal process, such as initiating
+        a drive cleanup and data reallocation before drive removal from the pool.
+        The implementation may impose restrictions on the number of drives removed
+        simultaneously.
+    StoragePool_v1_4_0_SetCompressionState:
+      additionalProperties: false
+      description: This action is used to set the compression state of the pool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to set the compression state of
+        the storage pool. This may be both a highly impactful, as well as a long running
+        operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_4_0_SetCompressionStateRequestBody:
+      additionalProperties: false
+      description: This action is used to set the compression state of the pool.
+      properties:
+        Enable:
+          description: This property indicates the desired compression state of the
+            storage pool.
+          type: boolean
+          x-longDescription: This property shall indicate the desired compression
+            state of the storage pool.
+      required:
+      - Enable
+      type: object
+      x-longDescription: This action shall be used to set the compression state of
+        the storage pool. This may be both a highly impactful, as well as a long running
+        operation.
+    StoragePool_v1_4_0_SetDeduplicationState:
+      additionalProperties: false
+      description: This action is used to set the dedupe state of the pool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to set the dedupe state of the
+        storage pool. This may be both a highly impactful, as well as a long running
+        operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_4_0_SetDeduplicationStateRequestBody:
+      additionalProperties: false
+      description: This action is used to set the dedupe state of the pool.
+      properties:
+        Enable:
+          description: This property indicates the desired deduplication state of
+            the storage pool.
+          type: boolean
+          x-longDescription: This property shall indicate the desired deduplication
+            state of the storage pool.
+      required:
+      - Enable
+      type: object
+      x-longDescription: This action shall be used to set the dedupe state of the
+        storage pool. This may be both a highly impactful, as well as a long running
+        operation.
+    StoragePool_v1_4_0_SetEncryptionState:
+      additionalProperties: false
+      description: This action is used to set the encryption state of the pool.
+      properties:
+        target:
+          description: Link to invoke action
+          format: uri-reference
+          type: string
+        title:
+          description: Friendly action name
+          type: string
+      type: object
+      x-longDescription: This action shall be used to set the encryption state of
+        the storage pool. This may be both a highly impactful, as well as a long running
+        operation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    StoragePool_v1_4_0_SetEncryptionStateRequestBody:
+      additionalProperties: false
+      description: This action is used to set the encryption state of the pool.
+      properties:
+        Enable:
+          description: This property indicates the desired encryption state of the
+            storage pool.
+          type: boolean
+          x-longDescription: This property shall indicate the desired encryption state
+            of the storage pool.
+      required:
+      - Enable
+      type: object
+      x-longDescription: This action shall be used to set the encryption state of
+        the storage pool. This may be both a highly impactful, as well as a long running
+        operation.
     StoragePool_v1_4_0_StoragePool:
       additionalProperties: false
       description: A container of data storage.
@@ -349,6 +558,7 @@ components:
         BlockSizeBytes:
           deprecated: true
           description: Maximum Block size in bytes.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -448,6 +658,7 @@ components:
         LowSpaceWarningThresholdPercents:
           description: Low space warning threshold specified in percents.
           items:
+            format: int64
             nullable: true
             type: integer
           maximum: 100
@@ -460,6 +671,7 @@ components:
           x-units: '%'
         MaxBlockSizeBytes:
           description: Maximum Block size in bytes.
+          format: int64
           minimum: 0
           nullable: true
           readOnly: true
@@ -497,6 +709,7 @@ components:
         RecoverableCapacitySourceCount:
           description: Current number of capacity source resources that are available
             as replacements.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -506,6 +719,7 @@ components:
           x-versionAdded: v1_2_0
         RemainingCapacityPercent:
           description: The percentage of the capacity remaining in the StoragePool.
+          format: int64
           nullable: true
           readOnly: true
           type: integer

@@ -1,7 +1,7 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
   "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1",
-  "@odata.type": "#Chassis.v1_6_0.Chassis",
+  "@odata.type": "#Chassis.v1_15_0.Chassis",
   "Id": "1",
   "Name": "Storage System Chassis",
   "ChassisType": "RackMount",
@@ -22,17 +22,13 @@
   "Power": {
     "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Power"
   },
+  "Drives": {
+    "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives"
+  },
   "Links": {
     "Storage": [{
       "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem"
     }],
-    "Drives": [{
-        "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Drives/0THGR0KP"
-      },
-      {
-        "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Drives/0THGXPBP"
-      }
-    ],
     "Oem": {}
   },
   "Oem": {}

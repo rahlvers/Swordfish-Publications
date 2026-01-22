@@ -39,16 +39,16 @@
             ],
             "RelatedItem": [
               {
-                  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/1"
+                  "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/1"
                 },
                 {
-                  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/2"
+                  "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/2"
                 },
                 {
-                  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/3"
+                  "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/3"
                 },
                 {
-                  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/4"
+                  "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/4"
                 }
             ]
         },
@@ -88,16 +88,16 @@
             ],
             "RelatedItem": [
               {
-                  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/1"
+                  "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/1"
                 },
                 {
-                  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/2"
+                  "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/2"
                 },
                 {
-                  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/3"
+                  "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/3"
                 },
                 {
-                  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/4"
+                  "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure/Drives/4"
                 }
             ]
         }

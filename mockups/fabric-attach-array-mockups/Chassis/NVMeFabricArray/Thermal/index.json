@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Thermal.v1_5_3.Thermal",
+    "@odata.type": "#Thermal.v1_7_0.Thermal",
     "Id": "Thermal",
     "Name": "Quad Blade Chassis Thermal",
     "Temperatures": [
@@ -21,27 +21,6 @@
             "RelatedItem": [
                 {
                     "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
                 }
             ]
         }
@@ -69,27 +48,6 @@
             "RelatedItem": [
                 {
                     "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
                 }
             ]
         },
@@ -115,27 +73,6 @@
             "RelatedItem": [
                 {
                     "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
                 }
             ]
         },
@@ -161,27 +98,6 @@
             "RelatedItem": [
                 {
                     "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
                 }
             ]
         },
@@ -207,27 +123,6 @@
             "RelatedItem": [
                 {
                     "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
                 }
             ]
         }

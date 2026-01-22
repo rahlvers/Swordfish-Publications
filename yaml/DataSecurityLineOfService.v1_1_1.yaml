@@ -21,6 +21,14 @@ components:
       additionalProperties: false
       description: Describes data security service level requirements.
       properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
         Actions:
           $ref: '#/components/schemas/DataSecurityLineOfService_v1_1_1_Actions'
           description: The available actions for this resource.
@@ -56,6 +64,10 @@ components:
           readOnly: false
           x-longDescription: The enumeration literal shall specify the data sanitization
             policy.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
+          nullable: true
+          readOnly: true
         HostAuthenticationType:
           $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_AuthenticationType
           description: Authentication type for hosts (servers) or initiator endpoints.
@@ -63,6 +75,9 @@ components:
           readOnly: false
           x-longDescription: The enumeration literal shall specify the authentication
             type for hosts (servers) or initiator endpoints.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Id
+          readOnly: true
         MediaEncryptionStrength:
           $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_KeySize
           description: Key size for media encryption.
@@ -70,6 +85,15 @@ components:
           readOnly: false
           x-longDescription: The enumeration literal shall specify a key size in a
             symmetric encryption algorithm for media encryption.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Oem
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
         SecureChannelProtocol:
           $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.yaml#/components/schemas/DataSecurityLoSCapabilities_SecureChannelProtocol
           description: Protocol that provide encrypted communication.
@@ -84,6 +108,11 @@ components:
           readOnly: false
           x-longDescription: The enumeration literal shall specify the authentication
             type for users (or programs).
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
       type: object
       x-longDescription: This structure shall be used to describe data security service
         level requirements.
@@ -100,8 +129,8 @@ components:
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-title: '#DataSecurityLineOfService.v1_1_1'
+title: '#DataSecurityLineOfService.v1_1_1.DataSecurityLineOfService'
 x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA
-x-release: WIP 1.1.0
+x-release: WIP v1.1.0

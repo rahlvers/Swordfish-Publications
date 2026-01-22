@@ -1,5 +1,6 @@
 {
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_0_2.json",
+    "$ref": "#/definitions/DataStorageLineOfService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
@@ -22,6 +23,33 @@
                 }
             },
             "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
                 "IsSpaceEfficient": {
                     "description": "True implies compression or deduplication of storage.",
                     "longDescription": "A value of true shall indicate that the storage is compressed or deduplicated. The default value for this property is false.",
@@ -30,6 +58,15 @@
                         "boolean",
                         "null"
                     ]
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 },
                 "ProvisioningPolicy": {
                     "anyOf": [
@@ -58,10 +95,16 @@
                     "readonly": false
                 }
             },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
             "type": "object"
         }
     },
     "owningEntity": "SNIA",
     "release": "TP v1.0.6",
-    "title": "#DataStorageLineOfService.v1_0_2"
+    "title": "#DataStorageLineOfService.v1_0_2.DataStorageLineOfService"
 }

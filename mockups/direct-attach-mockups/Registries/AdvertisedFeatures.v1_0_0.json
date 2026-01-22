@@ -17,6 +17,5 @@
             "CorrespondingProfileDefinition": "SwordfishBlockProvisioning.json"
         }
     ],
-    "@odata.id": "/redfish/v1/Registries/AdvertisedFeatures.v1_0_0",
     "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
 }

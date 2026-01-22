@@ -40,27 +40,6 @@
             "RelatedItem": [
                 {
                     "@odata.id": "/redfish/v1/Chassis/NVMeFabricArray"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
                 }
             ]
         },
@@ -101,27 +80,6 @@
             "RelatedItem": [
                 {
                     "@odata.id": "/redfish/v1/Chassis/NVMeFabricArray"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
-                },
-                {
-                    "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
                 }
             ]
         }

@@ -27,6 +27,7 @@ components:
         MaxSupportedBytesPerSecond:
           description: The maximum Bandwidth in bytes per second that a connection
             can support.
+          format: int64
           nullable: true
           readOnly: false
           type: integer

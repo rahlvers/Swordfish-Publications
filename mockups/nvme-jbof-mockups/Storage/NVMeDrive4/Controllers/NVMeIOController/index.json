@@ -1,10 +1,10 @@
 {
   "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
   "@odata.id": "/redfish/v1/Storage/NVMeDrive4/Controllers/NVMeIOController",
-  "@odata.type": "#StorageController.v1_0_0.StorageController",
+  "@odata.type": "#StorageController.v1_1_0.StorageController",
   "Id": "1",
   "Name": "NVMe I/O Controller",
-  "Description": "Single NVMe I/O Controller presented to host.",
+  "Description": "An NVM IO controller is a general-purpose controller that provides access to logical block data and metadata stored on an NVM subsystem’s non-volatile storage medium. IO Controllers may also support management capabilities.",
   "Status": {
     "State": "Enabled",
     "Health": "OK"

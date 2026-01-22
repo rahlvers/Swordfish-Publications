@@ -75,6 +75,7 @@ components:
         FileShareRemainingQuotaBytes:
           description: The number of remaining bytes that may be used by this file
             share.
+          format: int64
           nullable: true
           readOnly: true
           type: integer
@@ -83,6 +84,7 @@ components:
           x-units: By
         FileShareTotalQuotaBytes:
           description: The maximum number of bytes that may be used by this file share.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -113,6 +115,7 @@ components:
           description: An array of low space warning threshold percentages for the
             file share.
           items:
+            format: int64
             nullable: true
             type: integer
           maximum: 100

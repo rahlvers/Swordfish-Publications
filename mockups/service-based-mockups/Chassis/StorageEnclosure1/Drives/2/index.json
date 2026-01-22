@@ -2,7 +2,7 @@
  
   "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/2",
     "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
-    "@odata.type": "#Drive.v1_2_0.Drive",
+    "@odata.type": "#Drive.v1_12_0.Drive",
     "Id": "2",
     "Name": "Drive 2",
     "Status": {

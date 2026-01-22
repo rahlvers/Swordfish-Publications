@@ -6,13 +6,20 @@
   "EndpointProtocol": "NVMeOverFabrics",
 
   "ConnectedEntities": [{
-    "EntityType": "NetworkController",
-    "EntityRole": "Target",
-    "EntityLink": {
-      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMe-oF-Subsystem"
+      "EntityType": "StorageSubsystem",
+      "EntityRole": "Target",
+      "EntityLink": {
+        "@odata.id": "/redfish/v1/Storage/NVMe-oF-Subsystem"
+      }
+    },
+    {
+      "EntityType": "NetworkController",
+      "EntityRole": "Target",
+      "EntityLink": {
+        "@odata.id": "/redfish/v1/Chassis/Sys-1Chassis/NetworkAdapters/1/NetworkDeviceFunctions/1"
+      }
     }
-  }],
-
+  ],
   "Identifiers": [{
     "DurableNameFormat": "NQN",
     "DurableName": "nqn.2014-08.org.nvmexpress:uuid:6c5fe566-10e6-4fb6-aad4-8b4159f50245"
@@ -27,5 +34,5 @@
   }],
 
   "@odata.id": "/redfish/v1/Fabrics/NVMe-oF/Endpoints/NVMeSubsystemEndpoint",
-  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+  "@Redfish.Copyright": "Copyright 2014-2021 SNIA. All rights reserved."
 }

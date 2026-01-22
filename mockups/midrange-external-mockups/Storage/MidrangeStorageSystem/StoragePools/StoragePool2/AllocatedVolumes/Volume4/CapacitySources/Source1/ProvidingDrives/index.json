@@ -6,10 +6,10 @@
   "Name": "Drives",
   "Members@odata.count": 2,
   "Members": [{
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Drives/0TH8N20R"
+      "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/0TH8N20R"
     },
     {
-      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Drives/0TH8S1JR"
+      "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/0TH8S1JR"
     }
   ]
 }

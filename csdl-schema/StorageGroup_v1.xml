@@ -244,7 +244,7 @@
 
 		<Schema Namespace="StorageGroup.v1_1_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="WIP 1.0.7"/>
+			<Annotation Term="Redfish.Release" String="WIP v1.0.7"/>
 			<Annotation Term="OData.Description" String="This update replaces Volumes with MappedVolumes to support logical unit numbers. It also replaces collection StorageReplicaInfos with scalar StorageReplicaInfo."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_0_2.StorageGroup">
 				<Property Name="MappedVolumes" Type="Collection(StorageGroup.MappedVolume)">
@@ -366,7 +366,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_3_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="WIP 1.2.0"/>
+			<Annotation Term="Redfish.Release" String="WIP v1.2.0"/>
 			<Annotation Term="OData.Description" String="This version was created to add simple username and passwords to CHAPInformation."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_2_2.StorageGroup">
 				<Property Name="DHChapInfo" Type="Collection(StorageGroup.v1_3_0.DHCHAPInformation)">

@@ -290,7 +290,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_2_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WP v1.2.2"/>
+      <Annotation Term="Redfish.Release" String="TP v1.2.2"/>
       <Annotation Term="OData.Description" String="This version was created to change the reference for DriveCollection_v1 to the Redfish version."/>
       <EntityType Name="CapacitySource" BaseType="Capacity.v1_1_3.CapacitySource"/>
     </Schema>

@@ -7,6 +7,6 @@
             "@odata.id": "/redfish/v1/Systems/Sys-1"
         }
     ],
-    "@odata.id": "/redfish/v1/Systems",
+    "@odata.id": "/redfish/v1/StorageSystems",
     "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
 }

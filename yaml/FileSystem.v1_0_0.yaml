@@ -65,6 +65,7 @@ components:
             storage access capability.
         BlockSizeBytes:
           description: Block size of the file system in bytes.
+          format: int64
           nullable: true
           readOnly: true
           type: integer
@@ -117,6 +118,7 @@ components:
         ClusterSizeBytes:
           description: A value indicating the minimum file allocation size imposed
             by the file system.
+          format: int64
           minimum: 1
           nullable: true
           readOnly: false
@@ -151,6 +153,7 @@ components:
           description: An array of low space warning threshold percentages for the
             file system.
           items:
+            format: int64
             nullable: true
             type: integer
           maximum: 100
@@ -167,6 +170,7 @@ components:
         MaxFileNameLengthBytes:
           description: A value indicating the maximum length of a file name within
             the file system.
+          format: int64
           minimum: 1
           nullable: true
           readOnly: false

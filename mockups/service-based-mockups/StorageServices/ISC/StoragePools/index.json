@@ -1,12 +1,11 @@
 {
-    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
- 
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+
   "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools",
   "@odata.type": "#StoragePoolCollection.StoragePoolCollection",
   "Name": "StoragePools",
   "Members@odata.count": 3,
-  "Members": [
-    {
+  "Members": [{
       "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPool"
     },
     {

@@ -1,7 +1,7 @@
 {
   "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
   "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG",
-  "@odata.type": "#Storage.v1_9_0.Storage",
+  "@odata.type": "#Storage.v1_10_0.Storage",
   "Id": "1",
   "Name": "NVMe Simple SSD Configuration",
   "Description": "Mockup of NVMe config with 1 Subsystem, 1 I/O Controller and 1 Namespace, and a default endurance group and default set.",

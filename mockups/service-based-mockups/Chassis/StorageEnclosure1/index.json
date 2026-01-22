@@ -2,7 +2,7 @@
     "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
  
   "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1",
-  "@odata.type": "#Chassis.v1_6_0.Chassis",
+  "@odata.type": "#Chassis.v1_15_0.Chassis",
   "Id": "1",
   "Name": "Storage System Chassis",
   "ChassisType": "RackMount",

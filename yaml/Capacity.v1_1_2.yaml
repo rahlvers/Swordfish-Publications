@@ -58,6 +58,7 @@ components:
         AllocatedBytes:
           description: The number of bytes currently allocated by the storage system
             in this data store for this data type.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -67,6 +68,7 @@ components:
         ConsumedBytes:
           description: The number of bytes consumed in this data store for this data
             type.
+          format: int64
           nullable: true
           readOnly: true
           type: integer
@@ -76,6 +78,7 @@ components:
         GuaranteedBytes:
           description: The number of bytes the storage system guarantees can be allocated
             in this data store for this data type.
+          format: int64
           nullable: true
           readOnly: false
           type: integer
@@ -85,6 +88,7 @@ components:
         ProvisionedBytes:
           description: The maximum number of bytes that can be allocated in this data
             store for this data type.
+          format: int64
           nullable: true
           readOnly: false
           type: integer

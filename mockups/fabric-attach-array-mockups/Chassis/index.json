@@ -1,32 +1,11 @@
 {
   "@odata.type": "#ChassisCollection.ChassisCollection",
   "Name": "Chassis Collection",
-  "Members@odata.count": 9,
+  "Members@odata.count": 2,
   "Members": [{
       "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
     },
-    {
-      "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/NVMeDrive2"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/NVMeDrive3"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/NVMeDrive4"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/NVMeDrive5"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/NVMeDrive6"
-    },
-    {
-      "@odata.id": "/redfish/v1/Chassis/NVMeDrive7"
-    },
-    {
+      {
       "@odata.id": "/redfish/v1/Chassis/NVMeFabricArray"
     }
   ],

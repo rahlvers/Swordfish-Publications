@@ -4,7 +4,7 @@
   "Members@odata.count": 1,
   "Members": [
     {
-      "@odata.id": "/redfish/v1/Chassis/NVMeDrive1"
+      "@odata.id": "/redfish/v1/Chassis/Sys-1Chassis"
     }
   ],
   "@odata.id": "/redfish/v1/Chassis",

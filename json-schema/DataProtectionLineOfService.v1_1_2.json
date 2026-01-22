@@ -1,5 +1,6 @@
 {
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_1_2.json",
+    "$ref": "#/definitions/DataProtectionLineOfService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
     "copyright": "Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
@@ -27,23 +28,16 @@
             "type": "object"
         },
         "CreateReplicas": {
-            "actionResponse": {
-                "items": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.json#/definitions/ReplicaInfo"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ]
-                },
-                "type": "array"
-            },
             "additionalProperties": false,
             "description": "This action creates an on-demand replica.",
             "longDescription": "This action shall create an on-demand replica that conforms to the bound DataProtectionLineOfService.",
             "parameters": {
+                "ReplicaLineOfService": {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.json#/definitions/DataProtectionLineOfService",
+                    "description": "The data protection line of service this action is bound to.",
+                    "longDescription": "The value shall reference the data protection line of service this operation is bound to.",
+                    "requiredParameter": true
+                },
                 "ReplicaRequests": {
                     "description": "Specifies the resources to replicate and a name for the replica.",
                     "items": {
@@ -99,6 +93,33 @@
                 }
             },
             "properties": {
+                "@odata.context": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
+                },
+                "@odata.etag": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                },
+                "@odata.id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                },
+                "@odata.type": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                },
+                "Description": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "readonly": true
+                },
+                "Id": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Id",
+                    "readonly": true
+                },
                 "IsIsolated": {
                     "description": "The replica is in a separate fault domain.",
                     "longDescription": "True shall indicate that the replica is in a separate fault domain from its source. The default value of this property is false.",
@@ -116,6 +137,15 @@
                         "string",
                         "null"
                     ]
+                },
+                "Name": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
+                    "readonly": true
+                },
+                "Oem": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 },
                 "RecoveryGeographicObjective": {
                     "anyOf": [
@@ -183,6 +213,12 @@
                     "longDescription": "If a replica is made periodically, the value shall define the schedule."
                 }
             },
+            "required": [
+                "@odata.id",
+                "@odata.type",
+                "Id",
+                "Name"
+            ],
             "type": "object"
         },
         "ReplicaRequest": {
@@ -226,5 +262,5 @@
     },
     "owningEntity": "SNIA",
     "release": "TP v1.0.6",
-    "title": "#DataProtectionLineOfService.v1_1_2"
+    "title": "#DataProtectionLineOfService.v1_1_2.DataProtectionLineOfService"
 }

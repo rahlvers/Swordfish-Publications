@@ -6,11 +6,12 @@ components:
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_0_2.yaml#/components/schemas/DataProtectionLineOfService_v1_0_2_DataProtectionLineOfService
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_1_2.yaml#/components/schemas/DataProtectionLineOfService_v1_1_2_DataProtectionLineOfService
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_2_1.yaml#/components/schemas/DataProtectionLineOfService_v1_2_1_DataProtectionLineOfService
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_3_0.yaml#/components/schemas/DataProtectionLineOfService_v1_3_0_DataProtectionLineOfService
       description: Describes a data protection service option.
       x-longDescription: This service option describes a replica that protects data
         from loss. The requirements must be met collectively by the communication
         path and the replica.
-title: '#DataProtectionLineOfService'
+title: '#DataProtectionLineOfService.DataProtectionLineOfService'
 x-copyright: Copyright 2016-2020 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA

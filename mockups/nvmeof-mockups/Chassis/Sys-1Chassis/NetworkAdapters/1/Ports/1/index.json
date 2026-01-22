@@ -1,0 +1,26 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2021 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Chassis/Sys-1Chassis/NetworkAdapters/1/Ports/1",
+  "@odata.type": "#Port.v1_3_1.Port",
+  "Id": "1",
+  "Name": "Port View",
+
+  "LinkStatus": "LinkUp",
+  "LinkConfiguration": [{
+    "CapableLinkSpeedGbps": [10000],
+    "AutoSpeedNegotiationCapable": true,
+    "AutoSpeedNegotiationEnabled": false
+  }],
+  "CurrentSpeedGbps" : 10000,
+  "LinkNetworkTechnology": "Ethernet",
+  "Ethernet": {
+    "SupportedEthernetCapabilities": [
+      "WakeOnLAN",
+      "EEE"
+    ],
+    "FlowControlStatus": "None",
+    "FlowControlConfiguration": "None"
+  },
+
+  "SignalDetected": true
+}
