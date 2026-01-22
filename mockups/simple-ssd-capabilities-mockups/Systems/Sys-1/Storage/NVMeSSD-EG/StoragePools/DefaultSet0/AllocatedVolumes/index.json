@@ -1,10 +1,10 @@
 {
-  "@odata.type": "#VolumeCollection.VolumeCollection",
-  "Name": "Storage Volume Collection",
-  "Description": "Storage Volume Collection",
-  "Members@odata.count": 0,
-  "Members": [],
-  "Oem": {},
-  "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/DefaultSet0/AllocatedVolumes",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@odata.type": "#VolumeCollection.VolumeCollection",
+    "Name": "Storage Volume Collection",
+    "Description": "Storage Volume Collection",
+    "Members@odata.count": 0,
+    "Members": [],
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/DefaultSet0/AllocatedVolumes",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

@@ -3,6 +3,10 @@
     "Id": "1",
     "Name": "A Direct-attach Swordfish StorageService",
     "Description": "This simple system is connected from StorageController on the HostingSystem, supports limited capabilities in CoS when provisioning storage",
+    "Identifier": {
+        "DurableName": "4289a3dd-ba52-41b8-9d3d-38de196e082c",
+        "DurableNameFormat": "UUID"
+    },
     "Status": {
         "State": "Enabled",
         "Health": "OK"
@@ -24,15 +28,20 @@
     "Volumes": {
         "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes"
     },
-    "StorageSubsystems": {
-        "@odata.id": "/redfish/v1/Systems/556ST22255E/Storage/1"
-    },
+    "StorageSubsystems": [
+        {
+            "@odata.id": "/redfish/v1/Systems/556ST22255E/Storage/1"
+        }
+    ],
     "Links": {
         "IOConnectivityLoSCapabilities": {
             "@odata.id": "/redfish/v1/StorageServices/ISC/IOConnectivityLoSCapabilities"
+        },
+        "DataProtectionLoSCapabilities": {
+            "@odata.id": "/redfish/v1/StorageServices/ISC/DataProtectionLoSCapabilities"
         }
     },
     "Oem": {},
     "@odata.id": "/redfish/v1/StorageServices/ISC",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

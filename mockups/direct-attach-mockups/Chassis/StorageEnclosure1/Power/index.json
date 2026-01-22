@@ -25,7 +25,6 @@
             },
             "Status": {
                 "State": "Enabled",
-                "HealthRollup": "OK",
                 "Health": "OK"
             },
             "RelatedItem": [
@@ -36,10 +35,6 @@
                     "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1"
                 }
             ],
-            "Status": {
-                "State": "Enabled",
-                "Health": "OK"
-            },
             "Oem": {}
         }
     ],
@@ -193,5 +188,5 @@
     ],
     "Oem": {},
     "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Power",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

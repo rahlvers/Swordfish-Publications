@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -65,6 +65,7 @@
             <String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}</String>
             <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}</String>
+            <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedVolumes/{VolumeId}/CapacitySources/{CapacitySourceId}</String>
             <String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}</String>
             <String>/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}</String>
             <String>/redfish/v1/Systems/{ComputerSystemId}/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}</String>
@@ -95,7 +96,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.0.3"/>
+      <Annotation Term="Redfish.Release" String="1.0.3"/>
       <ComplexType Name="Capacity" BaseType="Capacity.Capacity">
         <Annotation Term="OData.Description" String="This is the schema definition for the Capacity of a device. It represents the properties for capacity for any data store."/>
         <Annotation Term="OData.LongDescription" String="This composition may be used to represent storage capacity.  The sum of the values in Data, Metadata, and Snapshot shall be equal to the total capacity for the data store."/>
@@ -232,7 +233,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.0.6"/>
+      <Annotation Term="Redfish.Release" String="1.0.6"/>
       <Annotation Term="OData.Description" String="This version was created to add ProvidingMemoryChunks and ProvidingMemory as contributing types to CapacitySource. Move ComplexTypes to unversioned namespace. Change references to unversioned."/>
       <EntityType Name="CapacitySource" BaseType="Capacity.v1_0_2.CapacitySource">
         <NavigationProperty Name="ProvidingMemoryChunks" Type="MemoryChunksCollection.MemoryChunksCollection" Nullable="false" ContainsTarget="true">
@@ -288,11 +289,23 @@
       <EntityType Name="CapacitySource" BaseType="Capacity.v1_1_2.CapacitySource"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_1_4">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version adds URIs for use of CapacitySource."/>
+      <EntityType Name="CapacitySource" BaseType="Capacity.v1_1_3.CapacitySource"/>
+    </Schema>
+    
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_2_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.2.2"/>
+      <Annotation Term="Redfish.Release" String="1.2.2"/>
       <Annotation Term="OData.Description" String="This version was created to change the reference for DriveCollection_v1 to the Redfish version."/>
       <EntityType Name="CapacitySource" BaseType="Capacity.v1_1_3.CapacitySource"/>
+    </Schema>
+    
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_2_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version adds URIs for use of CapacitySource."/>
+      <EntityType Name="CapacitySource" BaseType="Capacity.v1_2_0.CapacitySource"/>
     </Schema>
 
   </edmx:DataServices>

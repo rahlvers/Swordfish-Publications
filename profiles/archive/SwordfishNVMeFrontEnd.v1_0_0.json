@@ -1,0 +1,362 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_1.json",
+  "ProfileName": "SwordfishNVMeFrontEnd",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines requirements for Swordfish implementations with NVMe front-end interfaces, such as storage arrays.",
+  "ContactInfo": "SNIA.org",
+  "ConditionalRequirements": [{
+    "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+    "CompareProperty": "RequiredProfiles",
+    "CompareType": "AnyOf",
+    "CompareValues": [
+      [{
+        "SwordfishDiscovery": {
+          "OwningEntity": "SNIA.org",
+          "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+          "MinVersion": "1.1.1"
+        }
+      }],
+      [{
+        "CoSDiscovery": {
+          "OwningEntity": "SNIA.org",
+          "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+          "MinVersion": "1.1.1"
+        }
+      }]
+    ]
+  }],
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.2.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.SwordfishNVMeFrontEnd": {}
+      }
+    }
+  },
+  "Resources": {
+    "ServiceRoot": {
+      "PropertyRequirements": {
+        "Chassis": {}
+      }
+    },
+    "StorageCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "VolumeCollection": {},
+    "StorageControllerCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "Assembly": {
+      "ReadRequirement": "Recommended",
+      "PropertyRequirements": {
+        "BinaryDataURI": {
+          "ReadRequirement": "Recommended"
+        }
+      }
+    },
+    "Chassis": {
+      "PropertyRequirements": {
+        "NetworkAdapters": {}
+      }
+    },
+    "Storage": {
+      "ActionRequirements": {
+        "SetEncryptionKey": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        }
+      },
+      "PropertyRequirements": {
+        "Controllers": {},
+        "Description": {
+          "Comparison": "Equal",
+          "Values": ["An NVM Express Subsystem is an NVMe device that contains one or more NVM Express controllers and may contain one or more namespaces."],
+          "ReadRequirement": "Mandatory"
+        },
+        "Id": {},
+        "Identifiers": {
+          "PropertyRequirements": {
+            "DurableName": {},
+            "DurableNameFormat": {}
+          }
+        },
+        "Links": {
+          "PropertyRequirements": {
+            "Enclosures": {
+              "Purpose": "This resource shall contain the link to the chassis with the Drive object."
+            },
+            "SimpleStorage": {
+              "ReadRequirement": "None",
+              "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
+            }
+          }
+        },
+        "Name": {},
+        "Status": {
+          "PropertyRequirements": {
+            "Health": {},
+            "State": {
+              "Purpose": "Map the device's concept of 'Enabled / Disabled / etc. to the state reflected by the NVM Subsystem. There aren't NVMe specific properties to correspond; these should map from the underlying device's state.   This should reflect the NVMe portion of the device, not the non-NVMe characteristics."
+            },
+            "HealthRollup": {}
+          }
+        },
+        "StorageControllers": {
+          "ReadRequirement": "None",
+          "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type. Use the 'Controller' resource instead."
+        },
+        "StorageGroups": {
+          "ReadRequirement": "None",
+          "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type. Note that this function has been deprecated and replaced by Connections in Fabrics."
+        }
+      },
+      "Volumes": {}
+    },
+    "StorageController": {
+      "PropertyRequirements": {
+        "Assembly": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type. This information is available in the Drive resource if needed."
+        },
+        "AssetTag": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type. This information is available in the Drive resource if needed."
+        },
+        "CacheSummary": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "ControllerRates": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "Description": {
+          "ConditionalRequirements": [{
+            "Purpose": "The Description must be set to the designated string when the  ControllerType is Admin. There is a different specified value for IO and Discovery.",
+            "CompareProperty": "NVMeControllerProperties/ControllerType",
+            "CompareType": "Equal",
+            "CompareValues": ["Admin"],
+            "Comparison": "Equal",
+            "Values": ["An NVM Admin Controller exposes capabilities that allow a host to manage an NVM subsystem. Admin controllers support commands providing management capabilities but does not provide IO access."]
+          }, {
+            "Purpose": "The Description must be set to the designated string when the  ControllerType is Discovery. There is a different specified value for Admin and IO.",
+            "CompareProperty": "NVMeControllerProperties/ControllerType",
+            "CompareType": "Equal",
+            "CompareValues": ["Discovery"],
+            "Comparison": "Equal",
+            "Values": ["An NVM Discovery Controller exposes capabilities that allow a host to retrieve information required to connect to one or more NVM Subsystems. Discovery controllers only support commands providing discovery capabilities; they do not provide IO or management access."]
+          }, {
+            "Purpose": "The Description must be set to the designated string when the  ControllerType is IO. There is a different specified value for Admin and Discovery.",
+            "CompareProperty": "NVMeControllerProperties/ControllerType",
+            "CompareType": "Equal",
+            "CompareValues": ["IO"],
+            "Comparison": "Equal",
+            "Values": ["An NVM IO controller is a general-purpose controller that provides access to logical block data and metadata stored on an NVM subsystem’s non-volatile storage medium. IO Controllers may also support management capabilities."]
+          }]
+        },
+        "FirmwareVersion": {},
+                "Id": {},
+        "Links": {
+          "PropertyRequirements": {
+            "AttachedVolumes": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [{
+                "Purpose": "AttachedVolumes must be implemented when the ControllerType is IO. Do not implement when ControllerType is Discovery or Admin.",
+                "CompareProperty": "ControllerType",
+                "CompareType": "Equal",
+                "CompareValues": ["IO"],
+                "Comparison": "Present",
+                "ReadRequirement": "Mandatory",
+                "WriteRequirement": "Mandatory"
+              }]
+            },
+            "NetworkDeviceFunctions": {
+              "ReadRequirement": "Recommended"
+            }
+          }
+        },
+        "Location": {
+          "ReadRequirement": "None",
+          "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type. Implemented in the 'Drive' object as 'PhysicalLocation'."
+        },
+        "Manufacturer": {
+          "ConditionalRequirements": [{
+            "Purpose": "Manufacturer must be implemented when the ControllerType is IO. It is recommended to implement when ControllerType is Admin, and may be implemented for a Discovery controller.",
+            "CompareProperty": "NVMeControllerProperties/ControllerType",
+            "CompareType": "Equal",
+            "CompareValues": ["IO"],
+            "Comparison": "Present",
+            "ReadRequirement": "Mandatory"
+          }, {
+            "Purpose": "Manufacturer must be implemented when the ControllerType is IO. It is recommended to implement when ControllerType is Admin, and may be implemented for a Discovery controller.",
+            "CompareProperty": "NVMeControllerProperties/ControllerType",
+            "CompareType": "Equal",
+            "CompareValues": ["Discovery"],
+            "Comparison": "Present",
+            "ReadRequirement": "Recommended"
+          }]
+        },
+        "Model": {
+          "ConditionalRequirements": [{
+            "Purpose": "Model must be implemented when the ControllerType is IO. It is recommended to implement when ControllerType is Admin, and may be implemented for a Discovery controller.",
+            "CompareProperty": "NVMeControllerProperties/ControllerType",
+            "CompareType": "Equal",
+            "CompareValues": ["IO"],
+            "Comparison": "Present",
+            "ReadRequirement": "Mandatory"
+          }, {
+            "Purpose": "Model must be implemented when the ControllerType is IO. It is recommended to implement when ControllerType is Admin, and may be implemented for a Discovery controller.",
+            "CompareProperty": "NVMeControllerProperties/ControllerType",
+            "CompareType": "Equal",
+            "CompareValues": ["Discovery"],
+            "Comparison": "Present",
+            "ReadRequirement": "Recommended"
+          }]
+        },
+        "NVMeControllerProperties": {
+          "PropertyRequirements": {
+            "ControllerType": {},
+            "NVMeVersion": {
+              "Purpose": "NVMeVersion is required when the underlying NVMe implementation is revision 1.2 or higher.",
+              "ReadRequirement": "IfImplemented"
+            },
+            "MaxQueueSize": {},
+            "NVMeControllerAttributes": {
+              "PropertyRequirements": {
+                "NVMeSMARTCriticalWarnings": {
+                  "PropertyRequirements": {
+                    "MediaInReadOnly": {},
+                    "OverallSubsystemDegraded": {},
+                    "PMRUnreliable": {
+                      "ReadRequirement": "Recommended"
+                    },
+                    "PowerBackupFailed": {},
+                    "SpareCapacityWornOut": {},
+                    "SupportsTrafficBasedKeepAlive": {}
+                  }
+                },
+                "ReportsNamespaceGranularity": {
+                  "ReadRequirement": "Recommended"
+                },
+                "Supports128BitHostId": {}
+              }
+            }
+          },
+          "SpeedGbps": {
+            "ReadRequirement": "None",
+            "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
+          },
+          "SKU": {
+            "ReadRequirement": "None",
+            "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
+          },
+          "Status": {
+            "PropertyRequirements": {
+              "Health": {},
+              "State": {}
+            }
+          },
+          "SupportedControllerProtocols": {},
+          "SupportedDeviceProtocols": {
+            "ReadRequirement": "None",
+            "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
+          }
+        }
+      }
+    },
+    "Volume": {
+      "PropertyRequirements": {
+        "BlockSizeBytes": {},
+        "Capacity": {
+          "PropertyRequirements": {
+            "Data": {
+              "PropertyRequirements": {
+                "AllocatedBytes": {},
+                "ConsumedBytes": {}
+              }
+            }
+          }
+        },
+        "DisplayName": {},
+        "Description": {
+          "Comparison": "Equal",
+          "Values": ["A Namespace is a quantity of non-volatile memory that may be formatted into logical blocks. When formatted, a namespace of size n is a collection of logical blocks with logical block addresses from 0 to (n-1). NVMe systems can support multiple namespaces."],
+          "ReadRequirement": "Mandatory"
+        },
+        "Id": {},
+        "Identifiers": {
+          "PropertyRequirements": {
+            "DurableName": {},
+            "DurableNameFormat": {}
+          }
+        },
+        "InitializeMethod": {
+          "ReadRequirement": "Recommended"
+        },
+        "LogicalUnitNumber": {
+          "ReadRequirement": "None",
+          "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "Name": {},
+        "NVMeNamespaceProperties": {
+          "PropertyRequirements": {
+            "FormattedLBASize": {},
+            "IsShareable": {},
+            "NVMeVersion": {},
+            "NamespaceFeatures": {
+              "PropertyRequirements": {
+                "SupportsDeallocatedOrUnwrittenLBError": {},
+                "SupportsNGUIDReuse": {},
+                "SupportsAtomicTransactionSize": {},
+                "SupportsIOPerformanceHints": {},
+                "SupportsThinProvisioning": {}
+              }
+            },
+            "NamespaceId": {},
+            "NumberLBAFormats": {},
+            "MetadataTransferredAtEndOfDataLBA": {}
+          }
+        },
+        "OptimumIOSizeBytes": {
+          "ReadRequirement": "Recommended"
+        },
+        "ProvisioningPolicy": {
+          "ReadRequirement": "Recommended",
+          "Purpose": "Recommended to implement when device supports thin provisioning."
+        },
+        "RAIDType": {},
+        "Status": {
+          "PropertyRequirements": {
+            "Health": {},
+            "State": {},
+            "HealthRollup": {
+              "ReadRequirement": "None",
+              "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+            }
+          }
+        },
+        "StorageGroups": {
+          "ReadRequirement": "None",
+          "Purpose": "This resource is recommended as 'Do not implement' for this device and protocol type. Note that this function has been deprecated and replaced by Connections in Fabrics."
+        },
+        "VolumeType": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type. It has been deprecated and replaced by RAIDType."
+        },
+        "WriteCachePolicy": {
+          "ReadRequirement": "Recommended"
+        }
+      }
+    }
+  }
+}

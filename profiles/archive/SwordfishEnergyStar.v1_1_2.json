@@ -1,0 +1,66 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishEnergyStar",
+  "ProfileVersion": "1.1.2",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines Requirements for Swordfish to meet EnergyStar reporting for storage.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.2",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+        "CompareProfile": "CoSDiscovery",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    },
+    "CoSDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.2",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+        "CompareProfile": "SwordfishDiscovery",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.3.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.EnergyStar": {}
+      }
+    }
+  },
+  "Resources": {
+    "Chassis": {
+      "ReadRequirement": "IfImplemented",
+      "Purpose": "To meet EnergyStar compliance, if the data is not reported or aggregated at the system level, it shall be reported for each shelf or enclosure. (Note that data can be aggregated external to the system by the client when reported by subcomponents.) These properties should be collected in the same request. The system shall be able to support client queries of these properties at an interval of at least every 10 seconds (per ENERGY STAR Data Center Storage Version 1.1 Updated Program Requirements – April 1, 2019).",
+      "PropertyRequirements": {
+        "Power": {
+          "PropertyRequirements": {
+            "PowerSupply": {
+              "PropertyRequirements": {
+                "PowerInputWatts": {}
+              }
+            }
+          }
+        },
+        "Thermal": {
+          "Purpose": "Collect the inlet temperature for the power supply.",
+          "PropertyRequirements": {
+            "ReadingCelsius": {},
+            "PhysicalContext": {
+              "Comparison": "Equal",
+              "Values": ["Intake"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

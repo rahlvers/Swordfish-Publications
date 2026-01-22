@@ -1,11 +1,10 @@
 {
-    "@odata.type": "#Volume.v1_8_0.Volume",
+    "@odata.type": "#Volume.v1_9_0.Volume",
     "Id": "1",
     "Name": "Namespace 1",
     "Description": "A Namespace is a quantity of non-volatile memory that may be formatted into logical blocks. When formatted, a namespace of size n is a collection of logical blocks with logical block addresses from 0 to (n-1). NVMe systems can support multiple namespaces.",
     "DisplayName": "DB Vol 1",
     "RAIDType": "None",
-
     "Status": {
         "State": "Enabled",
         "Health": "OK"
@@ -26,18 +25,18 @@
     },
     "CapacitySources": [
         {
-          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
-          "Id": "Source1",
-          "Name": "Source1",
-          "ProvidedCapacity": {
-              "Data": {
-                  "AllocatedBytes": 10737418240
-              }
-          },
-          "ProvidingPools": {
-              "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1/CapacitySources/Source1/ProvidingPools"
-          },
-          "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet1/CapacitySources/Source1"
+            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "Id": "Source1",
+            "Name": "Source1",
+            "ProvidedCapacity": {
+                "Data": {
+                    "AllocatedBytes": 10737418240
+                }
+            },
+            "ProvidingPools": {
+                "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1/CapacitySources/Source1/ProvidingPools"
+            },
+            "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet1/CapacitySources/Source1"
         }
     ],
     "NVMeNamespaceProperties": {
@@ -50,12 +49,22 @@
             "SupportsNGUIDReuse": false,
             "SupportsIOPerformanceHints": false
         },
-        "NumberLBAFormats": 0,
-        "FormattedLBASize": "LBAFormat0Support",
+        "LBAFormat": {
+            "LBAFormatType": "LBAFormat0",
+            "RelativePerformance": "Best",
+            "LBADataSizeBytes": 4096,
+            "LBAMetadataSizeBytes": 0
+        },
         "MetadataTransferredAtEndOfDataLBA": false,
         "NVMeVersion": "1.4"
     },
-    "Links": {},
+    "Links": {
+        "Controllers": [
+            {
+                "@odata.id": "/redfish/v1/Storage/FabricAttachArray/Controllers/NVMeIOController"
+            }
+        ]
+    },
     "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet1/AllocatedVolumes/Namespace1",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

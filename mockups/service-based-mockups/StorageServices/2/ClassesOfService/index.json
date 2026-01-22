@@ -1,0 +1,8 @@
+{
+    "@odata.type": "#ClassOfServiceCollection.ClassOfServiceCollection",
+    "Name": "ClassesOfService",
+    "Members@odata.count": 0,
+    "Members": [],
+    "@odata.id": "/redfish/v1/StorageServices/2/ClassesOfService",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

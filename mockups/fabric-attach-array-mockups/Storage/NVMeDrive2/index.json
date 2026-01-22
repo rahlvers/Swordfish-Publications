@@ -14,17 +14,16 @@
             "DurableName": "nqn.2014-08.org.nvmexpress:uuid:6c5fe566-10e6-4fb6-aad4-8b4159f50245"
         }
     ],
-
     "Volumes": {
         "@odata.id": "/redfish/v1/Storage/NVMeDrive2/Volumes/SimpleNamespace"
     },
     "Links": {
-      "Enclosures": [
-        {
-            "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
-        }
-      ]
+        "Enclosures": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure"
+            }
+        ]
     },
     "@odata.id": "/redfish/v1/Storage/NVMeDrive2",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

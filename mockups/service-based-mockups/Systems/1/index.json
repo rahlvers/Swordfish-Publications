@@ -17,7 +17,6 @@
         "Health": "OK",
         "HealthRollup": "OK"
     },
-
     "PowerState": "On",
     "Boot": {
         "BootSourceOverrideEnabled": "Once",
@@ -69,7 +68,9 @@
     "HostedServices": {
         "@odata.id": "/redfish/v1/Systems/1/HostedServices"
     },
-    "HostingRoles": ["StorageServer"],
+    "HostingRoles": [
+        "StorageServer"
+    ],
     "Links": {
         "Chassis": [
             {
@@ -99,5 +100,5 @@
     },
     "Oem": {},
     "@odata.id": "/redfish/v1/Systems/1",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

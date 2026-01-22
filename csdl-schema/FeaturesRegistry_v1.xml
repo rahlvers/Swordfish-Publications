@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <!---->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
@@ -49,7 +49,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FeaturesRegistry.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.1.0"/>
+      <Annotation Term="Redfish.Release" String="1.1.0"/>
       <EntityType Name="FeaturesRegistry" BaseType="FeaturesRegistry.FeaturesRegistry">
         <Property Name="Language" Type="Edm.String" Nullable="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
@@ -157,7 +157,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FeaturesRegistry.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
+      <Annotation Term="Redfish.Release" String="1.2.1c"/>
       <Annotation Term="OData.Description" String="This version was added to fix CSDL Capability Annotations."/>
       <EntityType Name="FeaturesRegistry" BaseType="FeaturesRegistry.v1_0_0.FeaturesRegistry"/>
     </Schema>

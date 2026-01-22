@@ -1,0 +1,81 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishBlockMappingMasking",
+  "ProfileVersion": "1.1.2",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Block Mapping and Masking Feature details.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.2",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+        "CompareProfile": "CoSDiscovery",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    },
+    "CoSDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.2",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+        "CompareProfile": "SwordfishDiscovery",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.3.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.Block.MappingMasking": {}
+      }
+    }
+  },
+  "Resources": {
+    "StorageGroupCollection": {
+      "CreateResource": true,
+      "DeleteResource": true,
+      "UpdateResource": true,
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Storage", "StorageService"]
+      }],
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 0
+        }
+      }
+    },
+    "EndpointGroupsCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      },
+      "CreateResource": true,
+      "DeleteResource": true,
+      "UpdateResource": true
+    },
+
+    "StorageGroup": {
+      "PropertyRequirements": {
+        "ClientEndpointGroups": {},
+        "ServerEndpointGroups": {},
+        "MappedVolumes": {
+          "WriteRequirement": "Mandatory",
+          "PropertyRequirements": {
+            "Members": {
+              "MinCount": 1
+            },
+            "LogicalUnitNumber": {},
+            "Volume": {}
+          }
+        }
+      }
+    }
+  }
+}

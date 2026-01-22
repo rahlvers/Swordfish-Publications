@@ -54,6 +54,6 @@ components:
         storage; local system access points through which the collection is made available;
         hosts, or host access points to which the collection is made available.'
 title: '#StorageGroup.StorageGroup'
-x-copyright: Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA

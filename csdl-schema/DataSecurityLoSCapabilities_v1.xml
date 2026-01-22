@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -169,7 +169,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataSecurityLoSCapabilities.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.0.3"/>
+      <Annotation Term="Redfish.Release" String="1.0.3"/>
       <EntityType Name="DataSecurityLoSCapabilities" BaseType="DataSecurityLoSCapabilities.DataSecurityLoSCapabilities">
         <Annotation Term="OData.Description" String="Describe data security capabilities."/>
         <Annotation Term="OData.LongDescription" String="This resource may be used to describe data security capabilities."/>
@@ -241,7 +241,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataSecurityLoSCapabilities.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.0.5"/>
+      <Annotation Term="Redfish.Release" String="1.0.5"/>
       <EntityType Name="DataSecurityLoSCapabilities" BaseType="DataSecurityLoSCapabilities.v1_0_0.DataSecurityLoSCapabilities">
         <Property Name="Actions" Type="DataSecurityLoSCapabilities.v1_1_0.Actions" Nullable="false">
           <Annotation Term="OData.Description" String="The available actions for this resource."/>
@@ -286,7 +286,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataSecurityLoSCapabilities.v1_2_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
+      <Annotation Term="Redfish.Release" String="1.2.1c"/>
       <Annotation Term="OData.Description" String="This version was added to fix CSDL Capability Annotations."/>
       <EntityType Name="DataSecurityLoSCapabilities" BaseType="DataSecurityLoSCapabilities.v1_1_3.DataSecurityLoSCapabilities"/>
     </Schema>

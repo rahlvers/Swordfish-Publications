@@ -1,0 +1,67 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
+  "ProfileName": "SwordfishBlockMappingMasking",
+  "ProfileVersion": "1.0.1",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Block Mapping and Masking Feature details.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishBlockProvisioning": {
+      "OwningEntity": "SNIA.org",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.1"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.0.2",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.Block.MappingMasking": {}
+      }
+    }
+  },
+  "Resources": {
+    "StorageGroup": {
+      "CreateResource": true,
+      "DeleteResource": true,
+      "UpdateResource": true,
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Storage", "StorageService"]
+      }],
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 0
+        },
+        "ClientEndpointGroups": {
+          "Members": {
+            "MinCount": 1
+          },
+          "CreateResource": true,
+          "DeleteResource": true,
+          "UpdateResource": true
+        },
+        "ServerEndpointGroups": {
+          "Members": {
+            "MinCount": 1
+          },
+          "CreateResource": true,
+          "DeleteResource": true,
+          "UpdateResource": true
+        },
+        "MappedVolumes": {
+          "Members": {
+            "MinCount": 1
+          },
+          "CreateResource": true,
+          "DeleteResource": true,
+          "UpdateResource": true,
+          "PropertyRequirements": {
+            "LogicalUnitNumber": {},
+            "Volume": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_1_0.json",
+  "ProfileName": "SwordfishFabricConnectivityRightsforRDMA",
+  "ProfileVersion": "1.0.2",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Connectivity Rights requirements using Fabrics, for implementations using RDMA.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishFabricConnectivityRights": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.2"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.5.1",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.FabricConnectivityRightsforRDMA": {}
+      }
+    }
+  },
+  "Protocol": {
+    "MinVersion": "1.18.0"
+  },
+  "Resources": {
+    "ServiceRoot": {
+      "PropertyRequirements": {
+        "Chassis": {}
+      }
+    },
+    "Chassis": {
+      "PropertyRequirements": {
+        "NetworkAdapters": {}
+      }
+    },
+    "ChassisCollection": {},
+    "Endpoint": {
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Fabric", "EndpointCollection"],
+        "ReadRequirement": "Mandatory"
+      }],
+      "PropertyRequirements": {
+        "IPTransportDetails": {
+          "PropertyRequirements": {
+            "TransportProtocol": {
+              "ReadRequirement": "Mandatory",
+              "Purpose": "TransportProtocol must exist and be set to 'InfiniBand'",
+              "Comparison": "Equal",
+              "Values": ["InfiniBand"]
+            }
+          }
+        },
+        "Port": {
+          "ReadRequirement": "Recommended"
+        }
+      }
+    },
+    "NetworkAdapter": {
+      "PropertyRequirements": {
+        "Controllers": {
+          "PropertyRequirements": {
+            "ControllerCapabilities": {
+              "PropertyRequirements": {
+                "NetworkDeviceFunctionCount": {},
+                "NetworkPortCount": {}
+              }
+            }
+          }
+        },
+        "Description": {},
+        "Id": {},
+        "Manufacturer": {},
+        "Measurements": {
+          "ReadRequirement": "DoNotImplement",
+          "Purpose": "Deprecated, do not implement."
+        },
+        "Model": {},
+        "Name": {},
+        "NetworkDeviceFunctions": {},
+        "NetworkPorts": {
+          "ReadRequirement": "DoNotImplement",
+          "Purpose": "Deprecated, do not implement."
+        },
+        "PartNumber": {},
+        "Ports": {},
+        "SKU": {
+          "ReadRequirement": "Recommended"
+        },
+        "SerialNumber": {}
+      }
+    },
+    "NetworkAdapterCollection": {},
+    "NetworkDeviceFunction": {
+      "PropertyRequirements": {
+        "AssignablePhysicalNetworkPorts": {},
+        "AssignableNetworkPorts": {
+          "ReadRequirement": "DoNotImplement",
+          "Purpose": "Deprecated, do not implement."
+        },
+        "DeviceEnabled": {},
+        "Id": {},
+        "InfiniBand": {
+          "PropertyRequirements": {
+            "MTUSize": {},
+            "NodeGUID": {},
+            "PermanentNodeGUID": {},
+            "PermanentPortGUID": {},
+            "PermanentSystemGUID": {},
+            "PortGUID": {},
+            "SupportedMTUSizes": {
+              "ReadRequirement": "Recommended"
+            },
+            "SystemGUID": {}
+          }
+        },
+        "Links": {
+          "PropertyRequirements": {
+            "PhysicalNetworkPortAssignment": {}
+          }
+        },
+        "MaxVirtualFunctions": {},
+        "NetDevFuncCapabilities": {},
+        "VirtualFunctionsEnabled": {}
+      }
+    },
+    "NetworkDeviceFunctionCollection": {},
+    "Port": {
+      "ConditionalRequirements": [{
+          "SubordinateToResource": ["NetworkAdapter"]
+      },
+      {
+        "SubordinateToResource": ["Fabric", "SwitchCollection", "Switch"]
+      }],
+      "Purpose": "The Port object is used by both NetworkAdapter and Switch. Requirements for both are represented in this set of property requirements.",
+      "PropertyRequirements": {
+        "CurrentSpeedGbps": {},
+        "Id": {},
+        "InterfaceEnabled": {},
+        "LinkConfiguration": {
+          "PropertyRequirements": {
+            "AutoSpeedNegotiationCapable": {},
+            "AutoSpeedNegotiationEnabled": {},
+            "CapableLinkSpeedGbps": {},
+            "ConfiguredNetworkLinks": {}
+          }
+        },
+        "LinkNetworkTechnology": {},
+        "LinkState": {},
+        "LinkStatus": {},
+        "Links": {
+          "PropertyRequirements": {
+            "AssociatedEndpoints": {}
+          }
+        },
+        "LocationIndicatorActive": {
+          "ReadRequirement": "Recommended"
+        },
+        "MaxFrameSize": {
+          "ReadRequirement": "Recommended"
+        },
+        "MaxSpeedGbps": {},
+        "Name": {},
+        "PortId": {},
+        "PortProtocol": {
+          "ReadRequirement": "Mandatory",
+          "Purpose": "PortProtocol must exist and be set to 'InfiniBand'",
+          "Comparison": "Equal",
+          "Values": ["InfiniBand"]
+        },
+        "SFP": {
+          "ReadRequirement": "IfImplemented",
+          "PropertyRequirements": {
+            "Status": {
+              "PropertyRequirements": {
+                "State": {}
+              }
+            },
+            "Type": {}
+          }
+        },
+        "Width": {}
+      }
+    },
+    "PortCollection": {},
+    "Switch": {
+      "PropertyRequirements": {
+        "DomainID": {}
+      }
+    }
+  }
+}

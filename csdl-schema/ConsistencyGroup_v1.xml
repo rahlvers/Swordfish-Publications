@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
 		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -89,7 +89,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ConsistencyGroup.v1_0_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="WIP v1.1.0"/>
+			<Annotation Term="Redfish.Release" String="1.1.0"/>
 			<EntityType Name="ConsistencyGroup" BaseType="ConsistencyGroup.ConsistencyGroup">
 				<Annotation Term="OData.Description" String="A collection of volumes grouped together to ensure write order consistency across all those volumes."/>
 				<Annotation
@@ -265,15 +265,20 @@
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ConsistencyGroup.v1_1_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
 			<Annotation Term="OData.Description" String="This version adds RemoteReplicaTargets, and updates the reference to StorageReplicaInfo to version 1.4.0."/>
-			<Annotation Term="Redfish.Release" String="TP 1.2.4a"/>
+			<Annotation Term="Redfish.Release" String="1.2.4a"/>
 			<EntityType Name="ConsistencyGroup" BaseType="ConsistencyGroup.v1_0_1.ConsistencyGroup">
 				<Property Name="RemoteReplicaTargets" Type="Collection(Edm.String)">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
 					<Annotation Term="OData.Description" String="URIs to the resources that are remote target replicas of this source."/>
 					<Annotation Term="OData.LongDescription" String="The value shall reference the URIs to the remote target replicas that are sourced by this replica. Remote indicates that the replica is managed by a separate Swordfish service instance."/>
-					<Annotation Term="OData.AutoExpandReferences"/>
 				</Property>
 			</EntityType>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ConsistencyGroup.v1_1_1">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="OData.Description" String="This version was created to remove the erroneous AutoExpandReferences on the RemoteReplicaTargets property."/>
+			<EntityType Name="ConsistencyGroup" BaseType="ConsistencyGroup.v1_1_0.ConsistencyGroup"/>
 		</Schema>
 
 	</edmx:DataServices>

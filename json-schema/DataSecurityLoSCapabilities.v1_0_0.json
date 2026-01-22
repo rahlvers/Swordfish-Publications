@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_0.json",
     "$ref": "#/definitions/DataSecurityLoSCapabilities",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "DataSecurityLoSCapabilities": {
             "additionalProperties": false,
@@ -212,6 +212,6 @@
         }
     },
     "owningEntity": "SNIA",
-    "release": "TP v1.0.3",
+    "release": "1.0.3",
     "title": "#DataSecurityLoSCapabilities.v1_0_0.DataSecurityLoSCapabilities"
 }

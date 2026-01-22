@@ -1,0 +1,81 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfilev1_2_0.json",
+  "ProfileName": "SwordfishDiscovery",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Define requirements for discovery of resources and relationships that are common to all service-based Swordfish conformant implementations.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {},
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.0.0",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.Discovery": {}
+      }
+    }
+  },
+  "Resources": {
+    "ServiceRoot": {
+      "PropertyRequirements": {
+        "StorageServices": {}
+      }
+    },
+    "StorageServiceCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "StorageService": {
+      "PropertyRequirements": {
+        "Identifier": {},
+        "Status": {
+          "PropertyRequirements": {
+            "State": {},
+            "Health": {}
+          }
+        },
+        "ClassesOfService": {
+          "PropertyRequirements": {
+            "Members": {
+              "MinCount": 0
+            }
+          }
+        },
+        "Links": {
+          "PropertyRequirements": {
+            "HostingSystem": {
+              "ReadRequirement": "Mandatory",
+              "Comparison": "LinkToResource",
+              "Values": ["ComputerSystem", "Storage"]
+            },
+            "DefaultClassOfService": {
+              "Purpose": "When there is at least one class of service instantiated, the DefaultClassOfService property should be set.",
+              "ReadRequirement": "Recommended"
+            }
+          }
+        },
+        "ConditionalRequirements": [{
+            "Purpose": "ConditionalRequirements Comparison 1: The implementation must choose at least one selected media container (appropriate for the system's selected media type) and instantiate a collection for it.  This may be instantiated as a CapacitySources structure to feed a StoragePool, FileSystem, or Volume.  When drives are used, the Drives Collection in StorageServices shall be implemented.",
+            "Comparison": "AnyOf",
+            "CompareValues": ["Drives", "CapacitySources"],
+            "Drives": {
+              "PropertyRequirements": {
+                "Members": {
+                  "MinCount": 0
+                }
+              }
+            }
+          },
+          {
+            "Purpose": "ConditionalRequirements Comparison 2: One or more Line of Service Capabilities must be defined. This forms the basis for the system to build Lines of Service and Classes of Service.",
+            "CompareType": "AnyOf",
+            "CompareValues": ["DataProtectionLoSCapabilities", "DataSecurityLoSCapabilities", "DataStorageLoSCapabilities", "IOPerformanceLoSCapabilities"]
+          }
+        ]
+      }
+    }
+  }
+}

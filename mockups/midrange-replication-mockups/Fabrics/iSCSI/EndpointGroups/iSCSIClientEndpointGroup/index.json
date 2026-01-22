@@ -1,0 +1,15 @@
+{
+    "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
+    "Name": "iSCSI  client (initiator) Endpoint group",
+    "Id": "iSCSIClientEndpointGroup",
+    "Description": "Group of initiator endpoints for the midrange storage system",
+    "AccessState": "Optimized",
+    "GroupType": "Client",
+    "Endpoints": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/InitiatorEndpoint1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups/iSCSIClientEndpointGroup",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

@@ -1,0 +1,48 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
+  "ProfileName": "SwordfishBlockProvisioning",
+  "ProfileVersion": "1.0.1",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines Block Provisioning requirements for Swordfish implementations.",
+  "ContactInfo": "SNIA.org",
+  "ConditionalRequirements": [{
+    "Purpose": "Either SwordfishDiscoveryor SwordfishCoSDiscovery must be supported.",
+    "CompareProperty": "RequiredProfiles",
+    "CompareType": "AnyOf",
+    "CompareValues": [
+      [{
+        "SwordfishDiscovery": {
+          "OwningEntity": "SNIA.org",
+          "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+          "MinVersion": "1.0.1"
+        }
+      }],
+      [{
+        "CoSDiscovery": {
+          "OwningEntity": "SNIA.org",
+          "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+          "MinVersion": "1.0.1"
+        }
+      }]
+    ]
+  }],
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.0.2",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.Block.Provisioning": {}
+      }
+    }
+  },
+  "Resources": {
+    "VolumeCollection": {
+      "ReadRequirement": "IfImplemented",
+      "CreateResource": true,
+      "DeleteResource": true,
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Storage", "StoragePool", "CapacitySource", "StorageService"]
+      }]
+    }
+  }
+}

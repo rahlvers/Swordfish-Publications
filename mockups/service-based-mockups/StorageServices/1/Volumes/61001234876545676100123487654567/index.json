@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Volume.v1_8_0.Volume",
+    "@odata.type": "#Volume.v1_9_0.Volume",
     "Name": "Volume 1",
     "Id": "61001234876545676100123487654567",
     "Description": "Bob's Pizza Recipe",
@@ -25,23 +25,34 @@
         80,
         90
     ],
+    "IOStatistics": {
+        "ReadIORequests": 107238423,
+        "ReadHitIORequests": 234445346,
+        "ReadIOKiBytes": 234456677,
+        "ReadIORequestTime": "P18S",
+        "WriteIORequests": 98273402234,
+        "WriteHitIORequests": 9723598345,
+        "WriteIOKiBytes": 2345325,
+        "NonIORequests": 23423466,
+        "NonIORequestTime": "P24S"
+    },
     "CapacitySources": [
         {
-          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
-          "Id": "Source1",
-          "Name": "Source1",
-          "ProvidedCapacity": {
-              "Data": {
-                  "ConsumedBytes": 70390755885056,
-                  "AllocatedBytes": 140759500062720,
-                  "GuaranteedBytes": 17592722915328,
-                  "ProvisionedBytes": 565148976676864
-              }
-          },
-          "ProvidingPools": {
-              "@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567/CapacitySources/Source1/ProvidingPools"
-          },
-          "@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567/CapacitySources/Source1"
+            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "Id": "Source1",
+            "Name": "Source1",
+            "ProvidedCapacity": {
+                "Data": {
+                    "ConsumedBytes": 70390755885056,
+                    "AllocatedBytes": 140759500062720,
+                    "GuaranteedBytes": 17592722915328,
+                    "ProvisionedBytes": 565148976676864
+                }
+            },
+            "ProvidingPools": {
+                "@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567/CapacitySources/Source1/ProvidingPools"
+            },
+            "@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567/CapacitySources/Source1"
         }
     ],
     "Capacity": {
@@ -64,6 +75,14 @@
             "ProvisionedBytes": 2199023255552
         }
     },
+    "Actions": {
+        "#Volume.AssignReplicaTarget": {
+            "target": "/redfish/v1/StorageServices/1/Volumes/3/Actions/Volume.AssignReplicaTarget"
+        },
+        "#Volume.CreateReplicaTarget": {
+            "target": "/redfish/v1/StorageServices/1/Volumes/3/Actions/Volume.CreateReplicaTarget"
+        }
+    },
     "@odata.id": "/redfish/v1/StorageServices/1/Volumes/61001234876545676100123487654567",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

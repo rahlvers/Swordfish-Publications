@@ -3,9 +3,16 @@
     "Id": "Simple1",
     "Name": "My Simple Storage Service",
     "Description": "This simple system does not support service levels when provisioning storage",
+    "Identifier": {
+        "DurableName": "4289a3dd-ba52-41b8-9d3d-38de196e081e",
+        "DurableNameFormat": "UUID"
+    },
     "Status": {
         "State": "Enabled",
         "Health": "OK"
+    },
+    "ClassesOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/Simple1/ClassesOfService"
     },
     "StorageGroups": {
         "@odata.id": "/redfish/v1/StorageServices/Simple1/StorageGroups"
@@ -44,5 +51,5 @@
     },
     "Oem": {},
     "@odata.id": "/redfish/v1/StorageServices/Simple1",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

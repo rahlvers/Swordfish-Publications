@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLineOfService.v1_0_3.json",
     "$ref": "#/definitions/IOPerformanceLineOfService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "IOPerformanceLineOfService": {
             "additionalProperties": false,
@@ -113,6 +113,6 @@
         }
     },
     "owningEntity": "SNIA",
-    "release": "TP v1.0.3",
+    "release": "1.0.3",
     "title": "#IOPerformanceLineOfService.v1_0_3.IOPerformanceLineOfService"
 }

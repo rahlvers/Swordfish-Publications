@@ -1,0 +1,129 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishCoSDicovery",
+  "ProfileVersion": "1.1.2",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines Class Of Service Discovery requirements for service-based Swordfish implementations.",
+  "ContactInfo": "SNIA.org",
+  "Protocol": {
+    "MinVersion": "1.14.0"
+  },
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.2"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.3.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.CoSDiscovery": {},
+        "SNIA.Swordfish.Block.MappingMasking": {},
+        "SNIA.Swordfish.File.Provisioning": {}
+      }
+    }
+  },
+  "Resources": {
+    "StorageServiceCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "StorageSystemCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+
+    "ServiceRoot": {
+      "PropertyRequirements": {
+        "StorageSystems": {},
+        "Systems": {},
+        "StorageServices": {}
+      }
+    },
+
+    "ComputerSystem": {
+      "PropertyRequirements": {
+        "HostingRoles": {
+          "Purpose": "Swordfish implementations must specify a hosting role type of StorageServer.",
+          "Comparison": "AnyOf",
+          "Values": ["StorageServer"]
+        }
+      }
+    },
+    "StorageService": {
+      "PropertyRequirements": {
+        "Identifier": {},
+        "Status": {
+          "PropertyRequirements": {
+            "State": {},
+            "Health": {}
+          }
+        },
+        "ClassesOfService": {},
+        "Volumes": {},
+        "StoragePools": {},
+        "Links": {
+          "PropertyRequirements": {
+            "DefaultClassOfService": {
+              "Purpose": "When there is at least one class of service instantiated, the DefaultClassOfService property should be set.",
+              "ReadRequirement": "Recommended"
+            },
+            "HostingSystem": {
+              "ReadRequirement": "Mandatory",
+              "Comparison": "LinkToResource",
+              "Values": ["ComputerSystem", "Storage"]
+            }
+          }
+        }
+      },
+      "ConditionalRequirements": [{
+          "Purpose": "ConditionalRequirements: One or more Line of Service Capabilities must be defined. This forms the basis for the system to build Lines of Service and Classes of Service.",
+          "CompareType": "AnyOf",
+          "CompareValues": ["DataProtectionLoSCapabilities", "DataSecurityLoSCapabilities", "DataStorageLoSCapabilities", "IOConnectivityLoSCapabilities", "IOPerformanceLoSCapabilities"]
+        },
+        {
+          "Purpose": "ConditionalRequirements: Cross Dependencies of Features between Mapping and Masking and Class of Service. If Mapping and Masking is done within ClassOfService implementations, the StorageGroup collection shall be instantiated within the StorageService.",
+          "CompareProperty": "SupportedFeatures",
+          "CompareType": "Present",
+          "CompareValues": ["SNIA.Swordfish.Block.MappingMasking"],
+          "StorageService": {
+            "PropertyRequirements": {
+              "StorageGroups": {
+                "PropertyRequirements": {
+                  "Members": {
+                    "MinCount": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "Purpose": "ConditionalRequirements: Cross Dependencies of Features between File Provisioning and Class of Service. If File Provisioning  is done within ClassOfService implementations, the FileSystems collection shall be instantiated within the StorageService.",
+          "CompareProperty": "SupportedFeatures",
+          "CompareType": "Present",
+          "CompareValues": "SNIA.Swordfish.File.Provisioning",
+          "StorageService": {
+            "PropertyRequirements": {
+              "FileSystems": {
+                "PropertyRequirements": {
+                  "Members": {
+                    "MinCount": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

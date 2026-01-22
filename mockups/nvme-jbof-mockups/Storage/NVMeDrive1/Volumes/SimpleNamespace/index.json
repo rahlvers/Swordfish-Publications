@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Volume.v1_8_0.Volume",
+    "@odata.type": "#Volume.v1_9_0.Volume",
     "Id": "1",
     "Name": "Namespace 1",
     "LogicalUnitNumber": 1,
@@ -13,6 +13,10 @@
             "DurableName": "nqn.2014-08.org.nvmexpress:uuid:6c5fe566-10e6-4fb6-aad4-8b4159029384"
         }
     ],
+    "BlockSizeBytes": 10737418240,
+    "Description": "A Namespace is a quantity of non-volatile memory that may be formatted into logical blocks. When formatted, a namespace of size n is a collection of logical blocks with logical block addresses from 0 to (n-1). NVMe systems can support multiple namespaces.",
+    "DisplayName": "Simple Namespace",
+    "RAIDType": "None",
     "Capacity": {
         "Data": {
             "ConsumedBytes": 0,
@@ -20,7 +24,8 @@
         }
     },
     "NVMeNamespaceProperties": {
-        "NamespaceId": "0x1",
+        "IsShareable": false,
+        "NamespaceId": "0x22F",
         "NamespaceFeatures": {
             "SupportsThinProvisioning": false,
             "SupportsAtomicTransactionSize": false,
@@ -28,12 +33,27 @@
             "SupportsNGUIDReuse": false,
             "SupportsIOPerformanceHints": false
         },
-        "NumberLBAFormats": 0,
-        "FormattedLBASize": "LBAFormat0Support",
+        "LBAFormat": {
+            "LBAFormatType": "LBAFormat0",
+            "RelativePerformance": "Best",
+            "LBADataSizeBytes": 4096,
+            "LBAMetadataSizeBytes": 0
+        },
         "MetadataTransferredAtEndOfDataLBA": false,
         "NVMeVersion": "1.4"
     },
-    "Links": {},
+    "Links": {
+        "Drives": [
+            {
+                "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Drives/NVMeDrive1"
+            }
+        ],
+        "Controllers": [
+            {
+                "@odata.id": "/redfish/v1/Storage/NVMeDrive1/Controllers/NVMeIOController"
+            }
+        ]
+    },
     "@odata.id": "/redfish/v1/Storage/NVMeDrive1/Volumes/SimpleNamespace",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

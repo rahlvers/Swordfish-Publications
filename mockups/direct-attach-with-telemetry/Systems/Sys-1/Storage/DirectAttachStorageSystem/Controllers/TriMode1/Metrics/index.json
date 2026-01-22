@@ -1,0 +1,13 @@
+{
+    "@odata.type": "#StorageControllerMetrics.v1_0_0.StorageControllerMetrics",
+    "Name": "Storage Controller Metrics",
+    "Id": "Metrics",
+    "CorrectableECCErrorCount": 184,
+    "UncorrectableECCErrorCount": 0,
+    "CorrectableParityErrorCount": 234,
+    "UncorrectableParityErrorCount": 0,
+    "StateChangeCount": 1,
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Controllers/TriMode1/Metrics",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

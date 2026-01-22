@@ -1,0 +1,117 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_1_0.json",
+  "ProfileName": "SwordfishEventNotification",
+  "ProfileVersion": "1.2.5",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines Swordfish Event Notification requirements.",
+  "ContactInfo": "SNIA.org",
+  "Protocol": {
+    "MinVersion": "1.18.0"
+  },
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.4",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+        "CompareProfile": "CoSDiscovery",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    },
+    "CoSDiscovery": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.4",
+      "ConditionalRequirements": [{
+        "Purpose": "Either SwordfishDiscovery or SwordfishCoSDiscovery must be supported.",
+        "CompareProfile": "SwordfishDiscovery",
+        "CompareType": "Absent",
+        "ReadRequirement": "Mandatory"
+      }]
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.5.1",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.EventNotification": {}
+      }
+    },
+    "Base": {
+      "MinVersion": "1.4.0",
+      "Repository": "https://redfish.dmtf.org/registries/v1",
+      "Messages": {
+        "ResourceTypeIncompatible": {
+          "Purpose": "The ResourceTypeIncompatible event shall be sent when the requested resource type of the operation does not match that for the operation. This shall apply to all instantiated resources."
+        }
+      }
+    },
+    "ResourceEvent": {
+      "MinVersion": "1.2.0",
+      "Repository": "https://redfish.dmtf.org/registries/v1",
+      "Messages": {
+        "ResourceCreated": {
+          "Purpose": "The ResourceCreated event shall be sent on creation of a resource to indicate that the resource has been successfully created. This shall apply to all instantiated resources of type 'Collection'. The event shall be sent on any expansion of the collection, whether done by the user or by the system."
+        },
+        "ResourceRemoved": {
+          "Purpose": "The ResourceRemoved event shall be sent on removal (deletion) of a resource to indicate that the resource has been successfully removed. This applies to all resources of type 'Collection'. The event shall be sent on any removal of resources from the collection, whether done by the user or by the system."
+        },
+        "ResourceErrorsDetected": {
+          "Purpose": "The ResourceRemoved event shall be sent on detection of errors on a resource. As there are no standard schema properties that reflect error / threshold information in this release, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "ResourceErrorsCorrected": {
+          "Purpose": "The ResourceRemoved event shall be sent on detection of corrected errors on a resource. As there are no standard schema properties that reflect error / threshold information in this release, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "ResourceErrorThresholdExceeded": {
+          "Purpose": "The ResourceRemoved event shall be sent when the threshold for detected errors has been exceeded. As there are no standard schema properties that reflect error / threshold information in this release, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "ResourceErrorThresholdCleared": {
+          "Purpose": "The ResourceRemoved event shall be sent when the threshold for detected errors has been cleared. As there are no standard schema properties that reflect error / threshold information in this release, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "ResourceWarningThresholdExceeded": {
+          "Purpose": "The ResourceRemoved event shall be sent when the warning threshold for a resource has been exceeded. As there are no standard schema properties that reflect error / threshold information in this release, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "ResourceWarningThresholdCleared": {
+          "Purpose": "The ResourceRemoved event shall be sent on when the resources has cleared a warning threshold. As there are no standard schema properties that reflect error / threshold information in this release, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "ResourceStatusChangedOK": {
+          "Purpose": "The ResourceStatusChangedOK event shall be sent when the Status.State has changed and the Status.Health of the resource is OK. The new and old values of the State are reported in the Event message. This shall apply to all instantiated resources that implements Status.State."
+        },
+        "ResourceStatusChangedWarning": {
+          "Purpose": "The ResourceStatusChangedWarning event shall be sent when the Status.State has changed and the Status.Health of the resource is Warning. The value of the State is reported in the Event message. This shall apply to all instantiated resources that implements Status.State."
+        },
+        "ResourceStatusChangedCritical": {
+          "Purpose": "The ResourceStatusChangedCritical event shall be sent when the Status.State has changed and the Status.Health of the resource is Critical. The value of the State is reported in the Event message. This shall apply to all instantiated resources that implements Status.State."
+        },
+        "URIForResourceChanged": {
+          "Purpose": "The URIForResourceChanged event shall be sent when the URI for the model resource has changed. Examples for this would be physical component replacement or redistribution."
+        },
+        "ResourceChanged": {
+          "Purpose": "The ResourceChanged event shall be sent when one or more properties of a resource have changed.  This shall not be used whenever there is another event message for that specific change, such as only the state has changed. If multiple resource properties have changed, the event notification should be grouped together whenever possible. This should not be sent for changes related to fine-grained volatile values (eg., capacity, power, temperature). In the case of threshold crossings, other mechanisms should be employed, such as logging or threshold triggers."
+        },
+        "ResourceVersionIncompatible": {
+          "Purpose": "The ResourceVersionIncompatible event shall be sent when an incompatible version of software has been detected. This corresponds to schema that have a 'Version' or 'Revision' property, generally presenting either firmware or software version information. As there are no schema properties that specifically reflect compatibility, this may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "ResourceSelfTestFailed": {
+          "Purpose": "The ResourceSelfTestFailed event shall be sent when a self-test has failed. As there are no schema properties that reflect self-test controls, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "ResourceSelfTestCompleted": {
+          "Purpose": "The ResourceSelfTestCompleted event shall be sent when a self-test has completed. As there are no schema properties that reflect self-test controls, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "LicenseExpired": {
+          "Purpose": "The LicenseExpired event shall be sent when a license has expired.  The event information includes license detail information. As there are no schema properties that reflect license information, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "LicenseChanged": {
+          "Purpose": "The LicenseChanged event shall be sent when a license has changed.  The event information includes license detail information. As there are no schema properties that reflect license information, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        },
+        "LicenseAdded": {
+          "Purpose": "The LicenseAdded event shall be sent when a license has been added. The event information includes license detail information. As there are no schema properties that reflect license information, these may be mapped to OEM properties or device-specific events, until standard properties are defined."
+        }
+      }
+    }
+  },
+  "Resources": {
+    "EventService": {}
+  }
+}

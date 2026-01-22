@@ -1,0 +1,27 @@
+{
+    "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_1_0.json",
+    "ProfileName": "SwordfishPCIeJBOF",
+    "ProfileVersion": "1.2.0",
+    "OwningEntity": "SNIA.org",
+    "Purpose": "Defines the Swordfish PCIe JBOF Requirements.",
+    "ContactInfo": "SNIA.org",
+    "RequiredProfiles": {
+      "SwordfishNVMeDrive": {
+        "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+        "MinVersion": "1.1.0"
+      },
+     "SwordfishManagementController": {
+        "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+        "MinVersion": "1.0.1"
+      }
+    },
+    "Registries": {
+      "Features": {
+        "MinVersion": "1.5.0",
+        "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+        "SupportedFeatures": {
+          "SNIA.Swordfish.PCIeJBOF": {}
+        }
+      }
+    }
+  }

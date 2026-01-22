@@ -7,7 +7,6 @@
         "Health": "OK"
     },
     "Id": "NVMeAdminController",
-    "Manufacturer": "Best NVMe Vendor",
     "Model": "NVMe Connect Array",
     "SerialNumber": "NVME123456",
     "PartNumber": "NVM44",
@@ -22,16 +21,16 @@
             "SupportsSQAssociations": false,
             "SupportsTrafficBasedKeepAlive": false,
             "SupportsExceedingPowerOfNonOperationalState": false,
-            "Supports128BitHostId": false
+            "Supports128BitHostId": false,
+            "SupportsReservations": false
         },
-      "NVMeSMARTCriticalWarnings": {
-        "MediaInReadOnly": false,
-        "OverallSubsystemDegraded": false,
-        "SpareCapacityWornOut": false
-      },
-      "MaxQueueSize": 1
+        "NVMeSMARTCriticalWarnings": {
+            "MediaInReadOnly": false,
+            "OverallSubsystemDegraded": false,
+            "SpareCapacityWornOut": false
+        },
+        "MaxQueueSize": 1
     },
-
     "Links": {
         "NetworkDeviceFunctions": [
             {
@@ -49,5 +48,5 @@
         ]
     },
     "@odata.id": "/redfish/v1/Storage/OpaqueArray/Controllers/NVMeAdminController",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

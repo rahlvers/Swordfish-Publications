@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/SpareResourceSet.v1_0_1.json",
     "$ref": "#/definitions/SpareResourceSet",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -193,8 +193,8 @@
                 },
                 "TimeToProvision": {
                     "description": "Amount of time needed to make an on-hand resource available as a spare.",
-                    "longDescription": "Amount of time  needed to make an on-hand resource available as a spare.",
-                    "pattern": "-?P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?",
+                    "longDescription": "Amount of time needed to make an on-hand resource available as a spare.",
+                    "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?$",
                     "readonly": false,
                     "type": [
                         "string",
@@ -203,8 +203,8 @@
                 },
                 "TimeToReplenish": {
                     "description": "Amount of time needed to get more on-hand resources.",
-                    "longDescription": "Amount of time to needed replenish consumed on-hand resources.",
-                    "pattern": "-?P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?",
+                    "longDescription": "Amount of time needed to replenish consumed on-hand resources.",
+                    "pattern": "^P(\\d+D)?(T(\\d+H)?(\\d+M)?(\\d+(.\\d+)?S)?)?$",
                     "readonly": false,
                     "type": [
                         "string",
@@ -222,6 +222,6 @@
         }
     },
     "owningEntity": "SNIA",
-    "release": "TP v1.0.7a",
+    "release": "1.0.7a",
     "title": "#SpareResourceSet.v1_0_1.SpareResourceSet"
 }

@@ -1,0 +1,64 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishBlockLocalReplication",
+  "ProfileVersion": "1.1.2",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Define local replication block requirements for Swordfish conformant implementations.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishBlockProvisioning": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.2.0"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.3.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.Block.LocalReplication": {}
+      }
+    }
+  },
+  "Resources": {
+    "Volume": {
+      "PropertyRequirements": {
+        "ReplicaTarget": {
+          "PropertyRequirements": {
+            "ReplicaInfo": {
+              "PropertyRequirements": {
+                "ReplicaFaultDomain": {
+                  "Purpose": "The ReplicaFaultDomain type must be set to Local.",
+                  "Comparison": "AnyOf",
+                  "Values": ["Local"]
+                }
+              }
+            }
+          }
+        }
+      },
+      "ActionRequirements": {
+        "CreateReplicaTarget": {
+          "ReadRequirement": "Mandatory",
+          "Purpose": "Ability to reset the system is a core requirement of most users.",
+          "ConditionalRequirements": [{
+            "Purpose": "Either CreateReplicaTarget or AssignReplicaTarget must be supported in order to advertise local replication support.",
+            "CompareProperty": "AssignReplicaTarget",
+            "CompareType": "Absent",
+            "ReadRequirement": "Mandatory"
+          }]
+        },
+        "AssignReplicaTarget": {
+          "ReadRequirement": "Mandatory",
+          "Purpose": "Ability to reset the system is a core requirement of most users.",
+          "ConditionalRequirements": [{
+            "Purpose": "Either CreateReplicaTarget or AssignReplicaTarget must be supported in order to advertise local replication support.",
+            "CompareProperty": "CreateReplicaTarget",
+            "CompareType": "Absent",
+            "ReadRequirement": "Mandatory"
+          }]
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -43,6 +43,7 @@
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics_v1.xml">
     <edmx:Include Namespace="IOStatistics"/>
+    <edmx:Include Namespace="IOStatistics.v1_0_1"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/SpareResourceSet_v1.xml">
     <edmx:Include Namespace="SpareResourceSet"/>
@@ -214,7 +215,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.0.3"/>
+      <Annotation Term="Redfish.Release" String="1.0.3"/>
       <EntityType Name="StoragePool" BaseType="StoragePool.StoragePool">
         <Property Name="Identifier" Type="Resource.Identifier" Nullable="false">
           <Annotation Term="OData.Description" String="The value identifies this resource."/>
@@ -306,7 +307,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.0.5"/>
+      <Annotation Term="Redfish.Release" String="1.0.5"/>
       <Annotation Term="OData.Description" String="This version adds the RemainingCapacityPercent property."/>
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_0_1.StoragePool">
         <Property Name="RemainingCapacityPercent" Type="Edm.Int64">
@@ -346,12 +347,12 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_2_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.0.7a"/>
+      <Annotation Term="Redfish.Release" String="1.0.7a"/>
       <Annotation Term="OData.Description" String="This version was created to add RecoverableCapacitySourceCount, IOStatistics to StoragePool. It also moves DefaultClassOfService outside of Links complex type."/>
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_1_1.StoragePool">
         <Annotation Term="OData.Description" String="A container of data storage."/>
         <Annotation Term="OData.LongDescription" String="A container of data storage capable of providing capacity conforming to one of its supported classes of service. The storage pool does not support IO to its data storage."/>
-        <Property Name="IOStatistics" Type="IOStatistics.IOStatistics" Nullable="false">
+        <Property Name="IOStatistics" Type="IOStatistics.v1_0_1.IOStatistics" Nullable="false">
           <Annotation Term="OData.Description" String="Statistics for this StoragePool."/>
           <Annotation Term="OData.LongDescription" String="The value shall represent IO statistics for this StoragePool."/>
         </Property>
@@ -397,7 +398,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_3_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.1.0"/>
+      <Annotation Term="Redfish.Release" String="1.1.0"/>
       <Annotation
         Term="OData.Description"
         String="This version was created to add SupportedRAIDTypes and ProvisioningPolicy. It adds new properties for compression, deduplication, and encryption. It changes CapacitySources to ReadWrite to enable modifications. It also corrects CSDL errors."/>
@@ -491,7 +492,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_4_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.2.0"/>
+      <Annotation Term="Redfish.Release" String="1.2.0"/>
       <Annotation Term="OData.Description" String="This version was created to add OwningStorageResource to Links, and adds the NVMe Properties."/>
 
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_3_1.StoragePool">
@@ -636,7 +637,7 @@
         </Property>
       </ComplexType>
 
-      <ComplexType Name="Links" BaseType="StoragePool.v1_0_0.Links">
+      <ComplexType Name="Links" BaseType="StoragePool.v1_2_0.Links">
         <Annotation Term="OData.Description" String="Add a reference to OwningStorageResource associated with this StoragePool."/>
         <NavigationProperty Name="OwningStorageResource" Type="Storage.Storage" Nullable="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
@@ -647,16 +648,25 @@
 
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_4_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation
+        Term="OData.Description"
+        String="This version was created to note that the base type for links was corrected in links in v1_4_0 to be v1_2_0."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_4_0.StoragePool"/>
+    </Schema>
+
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_5_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.2.1"/>
+      <Annotation Term="Redfish.Release" String="1.2.1"/>
       <Annotation Term="OData.Description" String="This version was created to add missing URIs for Systems. It also corrects the long description for SetIdentifier in NVMeSetProperties."/>
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_4_0.StoragePool"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_6_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.2.2"/>
+      <Annotation Term="Redfish.Release" String="1.2.2"/>
       <Annotation
         Term="OData.Description"
         String="This version was created to add AddDrives and RemoveDrives Actions, deprecate Encrypted, Compressed, and Deduplicated properties and replace with combo usage of DefaultDeduplicationBehavior/DeduplicationEnabled, DefaultEncryptionBehavior/EncryptionEnabled, and DefaultCompressionBehavior/CompressionEnabled."/>
@@ -686,18 +696,18 @@
         </Property>
 
         <Property Name="DeduplicationEnabled" Type="Edm.Boolean">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="Indicates whether or not deduplication is enabled on the storage pool."/>
           <Annotation Term="OData.LongDescription" String="The property shall indicate whether or not deduplication is enabled on the storage pool."/>
         </Property>
 
         <Property Name="CompressionEnabled" Type="Edm.Boolean">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="Indicates whether or not compression is enabled on the storage pool."/>
           <Annotation Term="OData.LongDescription" String="The property shall indicate whether or not compression is enabled on the storage pool."/>
         </Property>
         <Property Name="EncryptionEnabled" Type="Edm.Boolean">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="Indicates whether or not encryption is enabled on the storage pool."/>
           <Annotation Term="OData.LongDescription" String="The property shall indicate whether or not encryption is enabled on the storage pool."/>
         </Property>
@@ -733,9 +743,17 @@
 
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_6_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation
+        Term="OData.Description"
+        String="This version was created to update annotations to ReadWrite for DeduplicationEnabled, CompressionEnabled and EncryptionEnabled."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_6_0.StoragePool"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_7_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.2.3"/>
+      <Annotation Term="Redfish.Release" String="1.2.3"/>
       <Annotation
         Term="OData.Description"
         String="This version was created to add SupportedPoolTypes."/>
@@ -756,5 +774,26 @@
       <EntityType Name="StoragePool" BaseType="StoragePool.v1_7_0.StoragePool"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_7_2">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation
+        Term="OData.Description"
+        String="This version was created to update annotations to ReadWrite for DeduplicationEnabled, CompressionEnabled and EncryptionEnabled."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_7_1.StoragePool"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_8_0">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="1.2.5"/>
+      <Annotation Term="OData.Description" String="This version was created to add ReplicationEnabled."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_7_0.StoragePool">
+        <Property Name="ReplicationEnabled" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="Indicates whether or not replication is enabled on the storage pool."/>
+          <Annotation Term="OData.LongDescription" String="The property shall indicate whether or not replication is enabled on the storage pool. If enabled for pool, replication can still be disabled on individual resources (e.g., volumes) within the pool."/>
+        </Property>
+      </EntityType>
+    </Schema>
+    
   </edmx:DataServices>
 </edmx:Edmx>

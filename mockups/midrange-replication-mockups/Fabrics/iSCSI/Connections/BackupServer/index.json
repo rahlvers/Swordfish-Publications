@@ -1,0 +1,32 @@
+{
+    "@odata.type": "#Connection.v1_2_0.Connection",
+    "Id": "BackupServer",
+    "Name": "BackupServer Connection",
+    "Description": "Connection info for zone 1",
+    "ConnectionType": "Storage",
+    "VolumeInfo": [
+        {
+            "AccessCapabilities": [
+                "Read"
+            ],
+            "LUN": 0,
+            "Volume": {
+                "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap1"
+            }
+        }
+    ],
+    "Links": {
+        "InitiatorEndpointGroups": [
+            {
+                "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups/BackupServerClientEndpointGroup"
+            }
+        ],
+        "TargetEndpointGroups": [
+            {
+                "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups/iSCSIServerEndpointGroup"
+            }
+        ]
+    },
+    "@odata.id": "/redfish/v1/Fabrics/iSCSI/Connections/BackupServer",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

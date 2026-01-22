@@ -13,7 +13,6 @@
     "UUID": "38947555-7742-3448-3784-823347823834",
     "HostName": "web483",
     "Status": {
-
         "State": "Enabled",
         "Health": "OK",
         "HealthRollup": "OK"
@@ -21,7 +20,6 @@
     "HostingRoles": [
         "ApplicationServer"
     ],
-
     "PowerState": "On",
     "Boot": {
         "BootSourceOverrideEnabled": "Once",
@@ -46,7 +44,6 @@
             "FirmwareVersion": "1.13b",
             "InterfaceType": "TPM1_2",
             "Status": {
-
                 "State": "Enabled",
                 "Health": "OK"
             }
@@ -57,7 +54,6 @@
         "Count": 2,
         "Model": "Multi-Core Intel(R) Xeon(R) processor 7xxx Series",
         "Status": {
-
             "State": "Enabled",
             "Health": "OK",
             "HealthRollup": "OK"
@@ -68,7 +64,6 @@
         "TotalSystemPersistentMemoryGiB": 0,
         "MemoryMirroring": "None",
         "Status": {
-
             "State": "Enabled",
             "Health": "OK",
             "HealthRollup": "OK"
@@ -120,5 +115,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Systems/556ST22255E",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

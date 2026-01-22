@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -61,7 +61,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataSecurityLineOfService.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.0.6"/>
+      <Annotation Term="Redfish.Release" String="1.0.6"/>
       <EntityType Name="DataSecurityLineOfService" BaseType="DataSecurityLineOfService.DataSecurityLineOfService">
         <Annotation Term="OData.Description" String="Describes data security service level requirements."/>
         <Annotation Term="OData.LongDescription" String="This structure shall be used to describe data security service level requirements."/>
@@ -123,7 +123,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataSecurityLineOfService.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.1.0"/>
+      <Annotation Term="Redfish.Release" String="1.1.0"/>
       <Annotation Term="OData.Description" String="The BaseType was changed from Resource to the LineOfService class.  This version also corrects CSDL errors."/>
       <EntityType Name="DataSecurityLineOfService" BaseType="DataSecurityLineOfService.v1_0_2.DataSecurityLineOfService">
         <Property Name="Actions" Type="DataSecurityLineOfService.v1_1_0.Actions" Nullable="false">

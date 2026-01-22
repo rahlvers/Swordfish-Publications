@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -70,7 +70,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileShare.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.0.3"/>
+      <Annotation Term="Redfish.Release" String="1.0.3"/>
       <EntityType Name="FileShare" BaseType="FileShare.FileShare">
         <Annotation Term="OData.Description" String="An instance of a shared set of files with a common directory structure."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to represent a shared set of files with a common directory structure."/>
@@ -205,7 +205,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileShare.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.0.5"/>
+      <Annotation Term="Redfish.Release" String="1.0.5"/>
       <Annotation Term="OData.Description" String="This version adds the RemainingCapacityPercent property."/>
       <EntityType Name="FileShare" BaseType="FileShare.v1_0_0.FileShare">
         <Property Name="RemainingCapacityPercent" Type="Edm.Int64">
@@ -256,9 +256,22 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileShare.v1_2_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
+      <Annotation Term="Redfish.Release" String="1.2.1c"/>
       <Annotation Term="OData.Description" String="This version was added to add Redfish URIs."/>
       <EntityType Name="FileShare" BaseType="FileShare.v1_1_3.FileShare"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileShare.v1_3_0">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="1.2.5"/>
+      <Annotation Term="OData.Description" String="This version was created to add ReplicationEnabled."/>
+      <EntityType Name="FileShare" BaseType="FileShare.v1_2_0.FileShare">
+        <Property Name="ReplicationEnabled" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="Indicates whether or not replication is enabled on the file share."/>
+          <Annotation Term="OData.LongDescription" String="The property shall indicate whether or not replication is enabled on the file share. This property shall be consistent with the state reflected at the storage pool level."/>
+        </Property>
+      </EntityType>
     </Schema>
 
   </edmx:DataServices>

@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.v1_4_0.json",
     "$ref": "#/definitions/StorageService",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -393,11 +393,17 @@
                     "readonly": true
                 },
                 "StorageSubsystems": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/StorageCollection.json#/definitions/StorageCollection",
                     "description": "A reference to storage subsystems managed by this storage service.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Storage.json#/definitions/Storage"
+                    },
                     "longDescription": "The value shall be a link to a collection of type StorageCollection having members that represent storage subsystems managed by this storage service.",
                     "readonly": true,
+                    "type": "array",
                     "versionAdded": "v1_0_1"
+                },
+                "StorageSubsystems@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "Volumes": {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection",
@@ -416,6 +422,6 @@
         }
     },
     "owningEntity": "SNIA",
-    "release": "WIP v1.2.0",
+    "release": "1.2.0",
     "title": "#StorageService.v1_4_0.StorageService"
 }

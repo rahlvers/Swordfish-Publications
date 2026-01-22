@@ -460,7 +460,7 @@ components:
         between a source and target consistency group, without otherwise altering
         the replication relationship.
 title: '#ConsistencyGroup.v1_1_0.ConsistencyGroup'
-x-copyright: Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA
-x-release: TP 1.2.4a
+x-release: 1.2.4a

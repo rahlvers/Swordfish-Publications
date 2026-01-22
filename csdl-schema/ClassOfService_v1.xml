@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -71,7 +71,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ClassOfService.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.0.3"/>
+      <Annotation Term="Redfish.Release" String="1.0.3"/>
       <EntityType Name="ClassOfService" BaseType="ClassOfService.ClassOfService">
         <Annotation Term="OData.Description" String="A service option composed of one or more service options."/>
         <Annotation Term="OData.LongDescription" String="This resource shall define a service option composed of one or more line of service entities.  ITIL defines a service option as a choice of utility or warranty for a service."/>
@@ -104,7 +104,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ClassOfService.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.0.5"/>
+      <Annotation Term="Redfish.Release" String="1.0.5"/>
       <EntityType Name="ClassOfService" BaseType="ClassOfService.v1_0_0.ClassOfService">
         <Property Name="Actions" Type="ClassOfService.v1_1_0.Actions" Nullable="false">
           <Annotation Term="OData.Description" String="The available actions for this resource."/>
@@ -174,7 +174,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ClassOfService.v1_2_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.0.5"/>
+      <Annotation Term="Redfish.Release" String="1.0.5"/>
       <Annotation Term="OData.Description" String="The BaseType was changed from Resource to the LineOfService class. This version also fixes CSDL schema errors."/>
       <EntityType Name="ClassOfService" BaseType="ClassOfService.v1_1_2.ClassOfService"/>
     </Schema>

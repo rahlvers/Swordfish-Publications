@@ -4,7 +4,6 @@
     "Name": "Ethernet Interface",
     "Description": "System NIC 2",
     "Status": {
-
         "State": "Enabled",
         "Health": "OK"
     },
@@ -41,5 +40,5 @@
         "VLANId": 101
     },
     "@odata.id": "/redfish/v1/Systems/556ST22255E/EthernetInterfaces/12446A3B8890",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

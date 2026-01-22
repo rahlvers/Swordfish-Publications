@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -85,7 +85,7 @@
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataProtectionLineOfService.v1_0_0">
-      <Annotation Term="Redfish.Release" String="WIP v1.0.6"/>
+      <Annotation Term="Redfish.Release" String="1.0.6"/>
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <EntityType Name="DataProtectionLineOfService" BaseType="DataProtectionLineOfService.DataProtectionLineOfService">
         <Annotation Term="OData.Description" String="Describes a data protection service option."/>
@@ -159,7 +159,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataProtectionLineOfService.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.0.6"/>
+      <Annotation Term="Redfish.Release" String="1.0.6"/>
       <Annotation Term="OData.Description" String="Adds ReplicaRequest ComplexType and CreateReplicas Action.  Change references to unversioned."/>
       <EntityType Name="DataProtectionLineOfService" BaseType="DataProtectionLineOfService.v1_0_1.DataProtectionLineOfService"/>
       <ComplexType Name="ReplicaRequest">
@@ -191,7 +191,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataProtectionLineOfService.v1_2_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="WIP v1.1.0"/>
+      <Annotation Term="Redfish.Release" String="1.1.0"/>
       <Annotation Term="OData.Description" String="The BaseType was changed from Resource to the LineOfService class. This version also fixes CSDL schema errors."/>
       <EntityType Name="DataProtectionLineOfService" BaseType="DataProtectionLineOfService.v1_1_2.DataProtectionLineOfService">
         <Property Name="Actions" Type="DataProtectionLineOfService.v1_2_0.Actions" Nullable="false">
@@ -225,7 +225,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataProtectionLineOfService.v1_3_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="Redfish.Release" String="TP v1.2.2"/>      
+      <Annotation Term="Redfish.Release" String="1.2.2"/>      
       <Annotation Term="OData.Description" String="This version was created to fix issues with the CreateReplicas action. It moves the actions to the unversioned namespace and fixes schema issues."/>
       <EntityType Name="DataProtectionLineOfService" BaseType="DataProtectionLineOfService.v1_2_1.DataProtectionLineOfService"/>
     </Schema>

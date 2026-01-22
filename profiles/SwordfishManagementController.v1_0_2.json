@@ -1,0 +1,251 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_1_0.json",
+  "ProfileName": "SwordfishManagementController",
+  "ProfileVersion": "1.0.2",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Management Controller requirements for configurations such as embedded management controllers.",
+  "ContactInfo": "SNIA.org",
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.5.1",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.ManagementController": {}
+      }
+    }
+  },
+  "Protocol": {
+    "MinVersion": "1.18.0"
+  },
+  "Resources": {
+    "ServiceRoot": {
+      "PropertyRequirements": {
+        "Managers": {}
+      }
+    },
+    "EthernetInterface": {
+      "ConditionalRequirements": [
+        {
+          "SubordinateToResource": [
+            "Manager",
+            "EthernetInterfaceCollection"
+          ],
+          "ReadRequirement": "Mandatory"
+        }
+      ],
+      "PropertyRequirements": {
+        "DHCPv4": {
+          "ReadRequirement": "Recommended"
+        },
+        "DHCPv6": {
+          "ReadRequirement": "Recommended"
+        },
+        "Description": {},
+        "FQDN": {},
+        "HostName": {},
+        "IPv4Addresses": {},
+        "IPv4StaticAddresses": {},
+        "IPv6Addresses": {
+          "ReadRequirement": "Recommended"
+        },
+        "IPv6DefaultGateway": {
+          "ReadRequirement": "Recommended",
+          "ConditionalRequirements": [
+            {
+              "Purpose": "If IPv6Addresses is implemented, then IPv6DefaultGateway is required.",
+              "CompareProperty": "IPv6Addresses",
+              "CompareType": "Present",
+              "ReadRequirement": "Mandatory"
+            }
+          ]
+        },
+        "IPv6StaticAddresses": {
+          "ReadRequirement": "Recommended",
+          "ConditionalRequirements": [
+            {
+              "Purpose": "If IPv6Addresses is implemented, then IPv6StaticAddresses is required.",
+              "CompareProperty": "IPv6Addresses",
+              "CompareType": "Present",
+              "ReadRequirement": "Mandatory"
+            }
+          ]
+        },
+        "IPv6StaticDefaultGateways": {
+          "ReadRequirement": "Recommended",
+          "ConditionalRequirements": [
+            {
+              "Purpose": "If IPv6Addresses is implemented, then IPv6StaticDefaultGateways is required.",
+              "CompareProperty": "IPv6Addresses",
+              "CompareType": "Present",
+              "ReadRequirement": "Mandatory"
+            }
+          ]
+        },
+        "Id": {},
+        "LinkStatus": {},
+        "Links": {
+          "PropertyRequirements": {
+            "Chassis": {}
+          }
+        },
+        "MACAddress": {},
+        "Name": {},
+        "PermanentMACAddress": {
+          "ReadRequirement": "Recommended"
+        },
+        "StatelessAddressAutoConfig": {
+          "ReadRequirement": "Recommended"
+        },
+        "Status": {
+          "PropertyRequirements": {
+            "Health": {},
+            "State": {}
+          }
+        }
+      }
+    },
+    "EthernetInterfaceCollection": {},
+    "Manager": {
+      "ActionRequirements": {
+        "Reset": {
+          "ReadRequirement": "Recommended",
+          "Parameters": {
+            "ResetType": {
+              "ParameterValues": [
+                "ForceOff",
+                "PowerCycle",
+                "On"
+              ],
+              "RecommendedValues": [
+                "GracefulShutdown",
+                "GracefulRestart",
+                "ForceRestart",
+                "PushPowerButton"
+              ],
+              "ReadRequirement": "Recommended"
+            }
+          }
+        }
+      },
+      "PropertyRequirements": {
+        "DateTime": {},
+        "DateTimeLocalOffset": {},
+        "Description": {},
+        "EthernetInterfaces": {},
+        "FirmwareVersion": {},
+        "Id": {},
+        "Links": {
+          "PropertyRequirements": {
+            "ManagerForServers": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [
+                {
+                  "CompareProperties": [
+                    "ManagerForChassis",
+                    "ManagerForSwitches",
+                    "ManagerForManagers"
+                  ],
+                  "CompareType": "Absent",
+                  "Purpose": "Must have one of the 'ManagerFor' implemented.",
+                  "ReadRequirement": "Mandatory"
+                }
+              ]
+            },
+            "ManagerForChassis": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [
+                {
+                  "CompareProperties": [
+                    "ManagerForSwitches",
+                    "ManagerForManagers",
+                    "ManagerForServers"
+                  ],
+                  "CompareType": "Absent",
+                  "Purpose": "Must have one of the 'ManagerFor' implemented.",
+                  "ReadRequirement": "Mandatory"
+                }
+              ]
+            },
+            "ManagerForSwitches": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [
+                {
+                  "CompareProperties": [
+                    "ManagerForManagers",
+                    "ManagerForServers",
+                    "ManagerForChassis"
+                  ],
+                  "CompareType": "Absent",
+                  "Purpose": "Must have one of the 'ManagerFor' implemented.",
+                  "ReadRequirement": "Mandatory"
+                }
+              ]
+            },
+            "ManagerForManagers": {
+              "ReadRequirement": "None",
+              "ConditionalRequirements": [
+                {
+                  "CompareProperties": [
+                    "ManagerForChassis",
+                    "ManagerForServers",
+                    "ManagerForSwitches"
+                  ],
+                  "CompareType": "Absent",
+                  "Purpose": "Must have one of the 'ManagerFor' implemented.",
+                  "ReadRequirement": "Mandatory"
+                }
+              ]
+            }
+          }
+        },
+        "LocationIndicatorActive": {},
+        "ManagerType": {},
+        "Manufacturer": {},
+        "Model": {},
+        "Name": {},
+        "NetworkProtocol": {},
+        "SerialNumber": {},
+        "ServiceEntryPointUUID": {},
+        "Status": {
+          "PropertyRequirements": {
+            "Health": {},
+            "State": {}
+          }
+        },
+        "VirtualMedia": {
+          "ReadRequirement": "DoNotImplement",
+          "Purpose": "Deprecated.  Do not implement."
+        }
+      }
+    },
+    "ManagerCollection": {},
+    "ManagerNetworkProtocol": {
+      "PropertyRequirements": {
+        "Description": {},
+        "HTTP": {},
+        "HTTPS": {},
+        "Id": {},
+        "NTP": {
+          "PropertyRequirements": {
+            "NTPServers": {},
+            "Port": {}
+          }
+        },
+        "Name": {},
+        "Proxy": {},
+        "SSDP": {
+          "PropertyRequirements": {
+            "NotifyIPv6Scope": {
+              "ReadRequirement": "Recommended",
+              "Purpose": "Required if IPv6 is implemented."
+            },
+            "NotifyMulticastIntervalSeconds": {},
+            "NotifyTTL": {},
+            "Port": {},
+            "ProtocolEnabled": {}
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
+  "ProfileName": "SwordfishBlockLocalReplication",
+  "ProfileVersion": "1.0.1",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Define remote replication block requirements for service-based Swordfish conformant implementations.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishBlockProvisioning": {
+      "OwningEntity": "SNIA.org",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.1"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.0.2",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.Block.RemoteReplication": {}
+      }
+    }
+  },
+  "Resources": {
+    "Volume": {
+      "PropertyRequirements": {
+        "ReplicaTarget": {
+          "PropertyRequirements": {
+            "ReplicaInfo": {
+              "PropertyRequirements": {
+                "ReplicaFaultDomain": {
+                  "ConditionalRequirements": [{
+                    "Purpose": "The ReplicaFaultDomain type must be set to Remote.",
+                    "CompareValues": "Remote"
+                  }]
+                }
+              }
+            }
+          }
+        }
+      },
+      "ActionRequirements": {
+        "CreateReplicaTarget": {
+          "ReadRequirement": "Mandatory",
+          "Purpose": "Ability to reset the system is a core requirement of most users.",
+          "ConditionalRequirements": [{
+            "Purpose": "Either CreateReplicaTarget or AssignReplicaTarget must be supported in order to advertise remote replication support.",
+            "CompareProperty": "AssignReplicaTarget",
+            "CompareType": "Absent",
+            "ReadRequirement": "Mandatory"
+          }]
+        },
+        "AssignReplicaTarget": {
+          "ReadRequirement": "Mandatory",
+          "Purpose": "Ability to reset the system is a core requirement of most users.",
+          "ConditionalRequirements": [{
+            "Purpose": "Either CreateReplicaTarget or AssignReplicaTarget must be supported in order to advertise remote replication support.",
+            "CompareProperty": "CreateReplicaTarget",
+            "CompareType": "Absent",
+            "ReadRequirement": "Mandatory"
+          }]
+        }
+      }
+    }
+  }
+}

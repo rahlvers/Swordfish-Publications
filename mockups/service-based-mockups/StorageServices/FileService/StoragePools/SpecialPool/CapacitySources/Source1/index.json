@@ -11,8 +11,8 @@
         }
     },
     "ProvidingVolumes": {
-            "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/BasePool/CapacitySources/Source1/ProvidingVolumes"
+        "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/BasePool/CapacitySources/Source1/ProvidingVolumes"
     },
     "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool/CapacitySources/Source1",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

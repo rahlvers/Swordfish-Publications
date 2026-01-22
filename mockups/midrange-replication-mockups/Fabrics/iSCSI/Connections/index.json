@@ -1,0 +1,15 @@
+{
+    "@odata.type": "#ConnectionCollection.ConnectionCollection",
+    "Name": "Connection Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Connections/BackupServer"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Connections/iSCSIStorageGroup"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/iSCSI/Connections",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

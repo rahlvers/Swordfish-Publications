@@ -2,7 +2,6 @@
     "@odata.type": "#DataProtectionLineOfService.v1_3_0.DataProtectionLineOfService",
     "Name": "Dallas-Asynchronous-Mirror",
     "Id": "Dallas-Asynchronous-Mirror",
-
     "RecoveryGeographicObjective": "Region",
     "RecoveryPointObjectiveTime": "PT4S",
     "RecoveryTimeObjective": "Nearline",
@@ -14,8 +13,13 @@
     "ReplicaAccessLocation": {
         "PostalAddress": {
             "City": "Dallas"
-          }
+        }
+    },
+    "Actions": {
+        "#DataProtectionLineOfService.CreateReplicas": {
+            "target": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Dallas-Asynchronous-Mirror/Actions/DataProtectionLineOfService.CreateReplicas"
+        }
     },
     "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Dallas-Asynchronous-Mirror",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

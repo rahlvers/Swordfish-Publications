@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_7_0.json",
     "$ref": "#/definitions/StoragePool",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -723,7 +723,7 @@
                 "CompressionEnabled": {
                     "description": "Indicates whether or not compression is enabled on the storage pool.",
                     "longDescription": "The property shall indicate whether or not compression is enabled on the storage pool.",
-                    "readonly": true,
+                    "readonly": false,
                     "type": [
                         "boolean",
                         "null"
@@ -745,7 +745,7 @@
                 "DeduplicationEnabled": {
                     "description": "Indicates whether or not deduplication is enabled on the storage pool.",
                     "longDescription": "The property shall indicate whether or not deduplication is enabled on the storage pool.",
-                    "readonly": true,
+                    "readonly": false,
                     "type": [
                         "boolean",
                         "null"
@@ -815,7 +815,7 @@
                 "EncryptionEnabled": {
                     "description": "Indicates whether or not encryption is enabled on the storage pool.",
                     "longDescription": "The property shall indicate whether or not encryption is enabled on the storage pool.",
-                    "readonly": true,
+                    "readonly": false,
                     "type": [
                         "boolean",
                         "null"
@@ -823,7 +823,7 @@
                     "versionAdded": "v1_6_0"
                 },
                 "IOStatistics": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.json#/definitions/IOStatistics",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_1.json#/definitions/IOStatistics",
                     "description": "Statistics for this StoragePool.",
                     "longDescription": "The value shall represent IO statistics for this StoragePool.",
                     "versionAdded": "v1_2_0"
@@ -1023,6 +1023,6 @@
         }
     },
     "owningEntity": "SNIA",
-    "release": "WIP v1.2.3",
+    "release": "1.2.3",
     "title": "#StoragePool.v1_7_0.StoragePool"
 }

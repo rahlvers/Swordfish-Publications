@@ -1,8 +1,8 @@
 {
-    "@odata.type": "#Volume.v1_8_0.Volume",
+    "@odata.type": "#Volume.v1_9_0.Volume",
     "Id": "Namespace1",
     "Name": "Namespace 1",
-    "Description": "Namespace 1 in Opaque Array",
+    "Description": "A Namespace is a quantity of non-volatile memory that may be formatted into logical blocks. When formatted, a namespace of size n is a collection of logical blocks with logical block addresses from 0 to (n-1). NVMe systems can support multiple namespaces.",
     "Status": {
         "State": "Enabled",
         "Health": "OK"
@@ -26,25 +26,52 @@
     },
     "CapacitySources": [
         {
-          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
-          "Id": "Source1",
-          "Name": "Source1",
-          "ProvidedCapacity": {
-              "Data": {
-                  "AllocatedBytes": 300067890136
-              }
-          },
-          "ProvidingPools": {
-              "@odata.id": "/redfish/v1/Storage/OpaqueArray/StoragePools/StoragePool1/AllocatedVolumes/Namespace1/CapacitySources/Source1/ProvidingPools"
-          },
-          "@odata.id": "/redfish/v1/Storage/OpaqueArray/StoragePools/StoragePool1/AllocatedVolumes/Namespace1/CapacitySources/Source1"
+            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "Id": "Source1",
+            "Name": "Source1",
+            "ProvidedCapacity": {
+                "Data": {
+                    "AllocatedBytes": 300067890136
+                }
+            },
+            "ProvidingPools": {
+                "@odata.id": "/redfish/v1/Storage/OpaqueArray/StoragePools/StoragePool1/AllocatedVolumes/Namespace1/CapacitySources/Source1/ProvidingPools"
+            },
+            "@odata.id": "/redfish/v1/Storage/OpaqueArray/StoragePools/StoragePool1/AllocatedVolumes/Namespace1/CapacitySources/Source1"
         }
     ],
+    "NVMeNamespaceProperties": {
+        "NamespaceId": "0x011",
+        "NamespaceFeatures": {
+            "SupportsThinProvisioning": false,
+            "SupportsAtomicTransactionSize": false,
+            "SupportsDeallocatedOrUnwrittenLBError": false,
+            "SupportsNGUIDReuse": false,
+            "SupportsIOPerformanceHints": false
+        },
+        "LBAFormat": {
+            "LBAFormatType": "LBAFormat0",
+            "RelativePerformance": "Best",
+            "LBADataSizeBytes": 4096,
+            "LBAMetadataSizeBytes": 0
+        },
+        "MetadataTransferredAtEndOfDataLBA": false,
+        "NVMeVersion": "1.4",
+        "IsShareable": false
+    },
     "Links": {
         "OwningStorageResource": {
             "@odata.id": "/redfish/v1/Storage/OpaqueArray"
-        }
+        },
+        "Controllers": [
+            {
+                "@odata.id": "/redfish/v1/Storage/OpaqueArray/Controllers/NVMeIOController1"
+            },
+            {
+                "@odata.id": "/redfish/v1/Storage/OpaqueArray/Controllers/NVMeIOController2"
+            }
+        ]
     },
     "@odata.id": "/redfish/v1/Storage/OpaqueArray/StoragePools/StoragePool1/AllocatedVolumes/Namespace1",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

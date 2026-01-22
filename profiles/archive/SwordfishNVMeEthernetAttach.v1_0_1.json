@@ -1,0 +1,217 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_0_0.json",
+  "ProfileName": "SwordfishNVMeDriveEthernetAttach",
+  "ProfileVersion": "1.0.1",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Define requirements for resources and relationships for Ethernet Attach support on Swordfish conformant implementations of NVMe Drives.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishNVMeDrive": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.1.0"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.4.0",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.NVMeDriveEthernetAttach": {}
+      }
+    }
+  },
+  "Resources": {
+    "NetworkAdapterCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "NetworkDeviceFunctionCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "PortCollection": {
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 1
+        }
+      }
+    },
+    "StorageController": {
+      "PropertyRequirements": {
+        "NVMeControllerProperties": {
+          "PropertyRequirements": {
+            "NVMeControllerAttributes": {
+              "PropertyRequirements": {
+                "SupportsTrafficBasedKeepAlive": {}
+              }
+            }
+          }
+        },
+        "PCIeInterface": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is only required for implementations that connect via PCIe - do not implement for Ethernet-Attach drives."
+        }
+      }
+    },
+    "Volume": {
+      "PropertyRequirements": {
+        "OptimumIOSizeBytes": {}
+      }
+    },
+    "NetworkAdapter": {
+      "PropertyRequirements": {
+        "Controllers": {
+          "PropertyRequirements": {
+            "ControllerCapabilities": {
+              "PropertyRequirements": {
+                "DataCenterBridging": {
+                  "PropertyRequirements": {
+                    "Capable": {}
+                  }
+                },
+                "NetworkDeviceFunctionCount": {},
+                "NetworkPortCount": {},
+                "VirtualizationOffload": {
+                  "ReadRequirement": "None",
+                  "Purpose": "This property is required for implementations that connect via PCIe (e.g., do not implement for Ethernet-Attach drives)."
+                }
+              }
+            },
+            "FirmwarePackageVersion": {},
+            "Links": {
+              "PropertyRequirements": {
+                "NetworkDeviceFunctions": {},
+                "Ports": {}
+              }
+            },
+            "Location": {
+              "ReadRequirement": "None",
+              "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+            }
+          }
+        },
+        "Description": {},
+        "Id": {},
+        "Location": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "Manufacturer": {},
+        "Model": {},
+        "Name": {},
+        "NetworkDeviceFunctions": {},
+        "PartNumber": {},
+        "Ports": {},
+        "SKU": {},
+        "SerialNumber": {}
+      }
+    },
+    "NetworkDeviceFunction": {
+      "PropertyRequirements": {
+        "AssignablePhysicalNetworkPorts": {},
+        "Description": {},
+        "DeviceEnabled": {},
+        "Ethernet": {
+          "PropertyRequirements": {
+            "MacAddress": {},
+            "MTUSize": {},
+            "MTUSizeMaximum": {},
+            "PermanentMacAddress": {}
+          }
+        },
+        "FibreChannel": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "InfiniBand": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "Links": {
+          "PropertyRequirements": {
+            "Endpoints": {},
+            "EthernetInterface": {
+              "ReadRequirement": "None",
+              "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+            },
+            "PhysicalNetworkPortAssignment": {}
+          }
+        },
+        "Name": {},
+        "NetDevFuncCapabilities": {},
+        "NetDevFuncType": {},
+        "PhysicalNetworkPortAssignment": {},
+        "iSCSIBoot": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        }
+      }
+    },
+    "Port": {
+      "PropertyRequirements": {
+        "CurrentSpeedGbps": {},
+        "Description": {},
+        "Ethernet": {
+          "PropertyRequirements": {
+            "FlowControlConfiguration": {},
+            "FlowControlStatus": {},
+            "SupportedEthernetCapabilities": {}
+          }
+        },
+        "FibreChannel": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "GenZ": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "Id": {},
+        "LinkConfiguration": {
+          "PropertyRequirements": {
+            "AutoSpeedNegotiationCapable": {},
+            "AutoSpeedNegotiationEnabled": {},
+            "CapableLinkSpeedGbps": {},
+            "ConfiguredNetworkLinks": {
+              "PropertyRequirements": {
+                "ConfiguredLinkSpeedGbps": {},
+                "ConfiguredWidth": {}
+              }
+            }
+          }
+        },
+        "LinkNetworkTechnology": {},
+        "LinkState": {},
+        "LinkStatus": {},
+        "Location": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "MaxFrameSize": {},
+        "MaxSpeedGbps": {},
+        "Name": {},
+        "PortId": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "PortMedium": {},
+        "PortProtocol": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "PortType": {
+          "ReadRequirement": "None",
+          "Purpose": "This property is recommended as 'Do not implement' for this device and protocol type."
+        },
+        "SignalDetected": {},
+        "Width": {}
+      }
+    }
+  }
+}

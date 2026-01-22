@@ -6,5 +6,5 @@
         "SATA"
     ],
     "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService/IOConnectivityLinesOfService/SATA",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

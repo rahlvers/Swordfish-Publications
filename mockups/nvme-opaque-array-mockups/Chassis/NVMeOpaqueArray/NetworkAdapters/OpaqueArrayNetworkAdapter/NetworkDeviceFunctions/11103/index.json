@@ -1,28 +1,30 @@
 {
-  "@odata.type": "#NetworkDeviceFunction.v1_8_0.NetworkDeviceFunction",
-  "Id": "11103",
-  "Name": "Network Device Function View",
-  "Description": "Network Device function for opaque array.",
-  "AssignablePhysicalNetworkPorts": [{
-    "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/4"
-  }],
-  "DeviceEnabled": true,
-  "Ethernet": {
-    "PermanentMACAddress": "00:0C:29:9A:98:01",
-    "MACAddress": "00:0C:29:9A:98:01",
-    "MTUSize": 1500,
-    "MTUSizeMaximum": 1500
-  },
-  "NetDevFuncCapabilities": [
-    "Ethernet"
-  ],
-  "NetDevFuncType": "Ethernet",
-  "Links": {
-    "PhysicalNetworkPortAssignment": {
-      "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/4"
+    "@odata.type": "#NetworkDeviceFunction.v1_8_0.NetworkDeviceFunction",
+    "Id": "11103",
+    "Name": "Network Device Function View",
+    "Description": "Network Device function for opaque array.",
+    "AssignablePhysicalNetworkPorts": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/4"
+        }
+    ],
+    "DeviceEnabled": true,
+    "Ethernet": {
+        "PermanentMACAddress": "00:0C:29:9A:98:01",
+        "MACAddress": "00:0C:29:9A:98:01",
+        "MTUSize": 1500,
+        "MTUSizeMaximum": 1500
     },
-    "Endpoints": []
-  },
-  "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/NetworkDeviceFunctions/11103",
-  "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "NetDevFuncCapabilities": [
+        "Ethernet"
+    ],
+    "NetDevFuncType": "Ethernet",
+    "Links": {
+        "PhysicalNetworkPortAssignment": {
+            "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/Ports/4"
+        },
+        "Endpoints": []
+    },
+    "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray/NetworkAdapters/OpaqueArrayNetworkAdapter/NetworkDeviceFunctions/11103",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

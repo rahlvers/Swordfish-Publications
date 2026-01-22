@@ -1,0 +1,15 @@
+{
+    "@odata.type": "#VolumeMetrics.v1_0_0.VolumeMetrics",
+    "Name": "Volume Metrics",
+    "Id": "Metrics",
+    "CorrectableIOReadErrorCount": 184,
+    "UncorrectableIOReadErrorCount": 0,
+    "CorrectableIOWriteErrorCount": 184,
+    "UncorrectableIOWriteErrorCount": 0,
+    "ConsistencyCheckErrorCount": 0,
+    "RebuildErrorCount": 0,
+    "StateChangeCount": 20,
+    "Oem": {},
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/Metrics",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

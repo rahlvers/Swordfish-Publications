@@ -10,7 +10,6 @@
             "Name": "CPU1 Temp",
             "SensorNumber": 5,
             "Status": {
-
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -32,7 +31,6 @@
             "Name": "CPU2 Temp",
             "SensorNumber": 6,
             "Status": {
-
                 "State": "Disabled"
             },
             "UpperThresholdNonCritical": 42,
@@ -54,7 +52,6 @@
             "Name": "Chassis Intake Temp",
             "SensorNumber": 9,
             "Status": {
-
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -86,7 +83,6 @@
             "Name": "BaseBoard System Fan",
             "PhysicalContext": "Backplane",
             "Status": {
-
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -116,7 +112,6 @@
             "Name": "BaseBoard System Fan Backup",
             "PhysicalContext": "Backplane",
             "Status": {
-
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -156,7 +151,6 @@
             ],
             "Mode": "N+m",
             "Status": {
-
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -165,5 +159,5 @@
         }
     ],
     "@odata.id": "/redfish/v1/Chassis/1URack/Thermal",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

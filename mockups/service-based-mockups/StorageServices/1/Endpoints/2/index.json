@@ -1,7 +1,7 @@
 {
     "@odata.type": "#Endpoint.v1_7_0.Endpoint",
     "Description": "This instance represents a SCSI implemented over FC",
-    "Id": "2",    
+    "Id": "2",
     "Name": "SCSI2",
     "EndpointProtocol": "FC",
     "Status": {
@@ -21,5 +21,5 @@
         }
     ],
     "@odata.id": "/redfish/v1/StorageServices/1/Endpoints/2",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

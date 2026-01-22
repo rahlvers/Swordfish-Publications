@@ -1,0 +1,79 @@
+{
+    "@odata.type": "#Connection.v1_2_0.Connection",
+    "Id": "iSCSIStorageGroup",
+    "Name": "iSCSIStorageGroup Connection",
+    "Description": "Connection info for iSCSIStorageGroup",
+    "ConnectionType": "Storage",
+    "ConnectionKeys": {
+        "CHAP": {
+            "CHAPUser": "bob",
+            "CHAPPassword": "arraysecret"
+        }
+    },
+    "VolumeInfo": [
+        {
+            "AccessCapabilities": [
+                "Read",
+                "Write"
+            ],
+            "LUN": 0,
+            "Volume": {
+                "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume1"
+            }
+        },
+        {
+            "AccessCapabilities": [
+                "Read",
+                "Write"
+            ],
+            "LUN": 1,
+            "Volume": {
+                "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2"
+            }
+        },
+        {
+            "AccessCapabilities": [
+                "Read",
+                "Write"
+            ],
+            "LUN": 2,
+            "Volume": {
+                "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume3"
+            }
+        },
+        {
+            "AccessCapabilities": [
+                "Read",
+                "Write"
+            ],
+            "LUN": 3,
+            "Volume": {
+                "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4"
+            }
+        },
+        {
+            "AccessCapabilities": [
+                "Read",
+                "Write"
+            ],
+            "LUN": 4,
+            "Volume": {
+                "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap1"
+            }
+        }
+    ],
+    "Links": {
+        "InitiatorEndpointGroups": [
+            {
+                "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups/iSCSIClientEndpointGroup"
+            }
+        ],
+        "TargetEndpointGroups": [
+            {
+                "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups/iSCSIServerEndpointGroup"
+            }
+        ]
+    },
+    "@odata.id": "/redfish/v1/Fabrics/iSCSI/Connections/BackupServer",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

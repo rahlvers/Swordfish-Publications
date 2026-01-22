@@ -1,41 +1,43 @@
 {
-  "@odata.type": "#StoragePool.v1_7_1.StoragePool",
-  "Id": "1",
-  "Name": "Set 1",
-  "Description": "First Set",
-  "NVMeProperties": {
-    "NVMePoolType": "NVMSet"
-  },
-  "NVMeSetProperties": {
-    "SetIdentifier": "0x1F",
-    "EnduranceGroupIdentifier": "0x2",
-    "Random4kReadTypicalNanoSeconds": 34534345348,
-    "UnallocatedNVMNamespaceCapacityBytes": 5497558138880,
-    "OptimalWriteSizeBytes": 512
-  },
-  "Capacity": {
-    "Data": {
-      "AllocatedBytes": 10995116277760,
-      "ConsumedBytes": 5497558138880
-    }
-  },
-  "CapacitySources": [{
-    "@odata.type": "#Capacity.v1_2_0.CapacitySource",
-    "Name": "Source1",
-    "Id": "Source1",
-    "ProvidedCapacity": {
-      "Data": {
-        "AllocatedBytes": 10737418240
-      }
+    "@odata.type": "#StoragePool.v1_7_1.StoragePool",
+    "Id": "1",
+    "Name": "Set 1",
+    "Description": "First Set",
+    "NVMeProperties": {
+        "NVMePoolType": "NVMSet"
     },
-    "ProvidingPools": {
-      "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1/CapacitySources/Source1/ProvidingPools"
+    "NVMeSetProperties": {
+        "SetIdentifier": "0x1F",
+        "EnduranceGroupIdentifier": "0x2",
+        "Random4kReadTypicalNanoSeconds": 34534345348,
+        "UnallocatedNVMNamespaceCapacityBytes": 5497558138880,
+        "OptimalWriteSizeBytes": 512
     },
-    "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet2/CapacitySources/Source1"
-  }],
-  "AllocatedVolumes": {
-    "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet2/AllocatedVolumes"
-  },
-  "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet2",
-  "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "Capacity": {
+        "Data": {
+            "AllocatedBytes": 10995116277760,
+            "ConsumedBytes": 5497558138880
+        }
+    },
+    "CapacitySources": [
+        {
+            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "Name": "Source1",
+            "Id": "Source1",
+            "ProvidedCapacity": {
+                "Data": {
+                    "AllocatedBytes": 10737418240
+                }
+            },
+            "ProvidingPools": {
+                "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1/CapacitySources/Source1/ProvidingPools"
+            },
+            "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet2/CapacitySources/Source1"
+        }
+    ],
+    "AllocatedVolumes": {
+        "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet2/AllocatedVolumes"
+    },
+    "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet2",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

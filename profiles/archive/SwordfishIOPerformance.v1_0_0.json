@@ -1,0 +1,64 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfilev1_2_0.json",
+  "ProfileName": "SwordfishIOPerformance",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines Swordfish IO Performance requirements.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "OwningEntity": "SNIA.org",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.0.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.IOPerformance": {}
+      }
+    },
+    "Resources": {
+      "Volume": {
+        "ReadRequirement": "IfImplemented",
+        "PropertyRequirements": {
+          "IOStatistics": {}
+        }
+      },
+      "StoragePool": {
+        "ReadRequirement": "IfImplemented",
+        "PropertyRequirements": {
+          "IOStatistics": {}
+        }
+      },
+      "FileSystem": {
+        "ReadRequirement": "IfImplemented",
+        "PropertyRequirements": {
+          "IOStatistics": {}
+        }
+      },
+      "FileShare": {
+        "ReadRequirement": "IfImplemented",
+        "PropertyRequirements": {
+          "IOStatistics": {}
+        }
+      },
+      "IOStatistics": {
+        "PropertyRequirements": {
+          "WriteIORequestTime": {},
+          "WriteIORequests": {},
+          "WriteIOKiBytes": {},
+          "WriteHitIORequests": {},
+          "ReadIORequestTime": {},
+          "ReadIORequests": {},
+          "ReadIOKiBytes": {},
+          "ReadHitIORequests": {},
+          "NonIORequestTime": {},
+          "NonIORequests": {}
+        }
+      }
+    }
+  }
+}

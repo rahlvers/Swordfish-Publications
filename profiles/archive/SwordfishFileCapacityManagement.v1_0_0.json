@@ -1,0 +1,36 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfilev1_2_0.json",
+  "ProfileName": "SwordfishFileCapacityManagement",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish File Capacity Management requirements.",
+  "ContactInfo": "SNIA.org",
+
+  "RequiredProfiles": {
+    "SwordfishFileProvisioning": {
+        "OwningEntity": "SNIA.org",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+        "MinVersion": "1.0.0"
+      }
+    },
+    "Registries": {
+      "Features": {
+        "MinVersion": "1.0.0",
+        "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+        "SupportedFeatures": {
+          "SNIA.Swordfish.File.CapacityManagement": {}
+        }
+      }
+    },
+    "Resources": {
+      "FileSystemCollection": {
+        "ReadRequirement": "IfImplemented",
+        "UpdateResource": true
+      },
+      "FileSystem": {
+        "Capacity": {
+          "WriteRequirement": "Mandatory"
+        }
+      }
+    }
+  }

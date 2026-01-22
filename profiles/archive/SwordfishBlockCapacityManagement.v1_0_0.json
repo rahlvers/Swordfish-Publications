@@ -1,0 +1,26 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_0_3.json",
+  "ProfileName": "SwordfishBlockCapacityManagement",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish Block Capacity Management Feature details.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishBlockProvisioning": {
+      "OwningEntity": "SNIA.org",
+      "Repository": "https:/...",
+      "MinVersion": "1.0.0"
+    }
+  },
+  "Resources": {
+    "VolumeCollection": {
+      "ReadRequirement": "IfImplemented",
+      "UpdateResource": "Mandatory"
+    },
+    "Volume": {
+      "Capacity": {
+        "WriteRequirement": "Mandatory"
+      }
+    }
+  }
+}

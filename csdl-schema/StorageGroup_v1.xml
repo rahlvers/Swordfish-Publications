@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
 		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -119,7 +119,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_0_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="TP v1.0.3"/>
+			<Annotation Term="Redfish.Release" String="1.0.3"/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.StorageGroup">
 				<Annotation Term="OData.Description" String="Collection of resources that are managed and exposed to hosts as a group."/>
 				<Annotation Term="OData.LongDescription" String="A storage group collects a set of related storage entities (volumes, file systems...) The collection should be useful for managing the storage of a set of related client applications."/>
@@ -244,7 +244,7 @@
 
 		<Schema Namespace="StorageGroup.v1_1_0" xmlns="http://docs.oasis-open.org/odata/ns/edm">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="WIP v1.0.7"/>
+			<Annotation Term="Redfish.Release" String="1.0.7"/>
 			<Annotation Term="OData.Description" String="This update replaces Volumes with MappedVolumes to support logical unit numbers. It also replaces collection StorageReplicaInfos with scalar StorageReplicaInfo."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_0_2.StorageGroup">
 				<Property Name="MappedVolumes" Type="Collection(StorageGroup.MappedVolume)">
@@ -276,7 +276,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_2_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="TP v1.0.7a"/>
+			<Annotation Term="Redfish.Release" String="1.0.7a"/>
 			<Annotation Term="OData.Description" String="This version adds CHAP information."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_1_1.StorageGroup">
 				<Property Name="AuthenticationMethod" Type="StorageGroup.v1_2_0.AuthenticationMethod">
@@ -366,7 +366,7 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_3_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="WIP v1.2.0"/>
+			<Annotation Term="Redfish.Release" String="1.2.0"/>
 			<Annotation Term="OData.Description" String="This version was created to add simple username and passwords to CHAPInformation."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_2_2.StorageGroup">
 				<Property Name="DHChapInfo" Type="Collection(StorageGroup.v1_3_0.DHCHAPInformation)">
@@ -416,14 +416,14 @@
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_4_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="TP v1.2.1"/>
+			<Annotation Term="Redfish.Release" String="1.2.1"/>
 			<Annotation Term="OData.Description" String="This version was created to add access capabilities to mapped volumes."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_3_0.StorageGroup"/>
 		</Schema>
 
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup.v1_5_0">
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-			<Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
+			<Annotation Term="Redfish.Release" String="1.2.1c"/>
 			<Annotation Term="OData.Description" String="This version was created to change the reference for EndpointGroup_v1 to the Redfish version."/>
 			<EntityType Name="StorageGroup" BaseType="StorageGroup.v1_4_0.StorageGroup"/>
 		</Schema>

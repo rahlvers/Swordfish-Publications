@@ -12,4 +12,4 @@
         "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1/ProvidingDrives"
     },
     "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1"
-  }
+}

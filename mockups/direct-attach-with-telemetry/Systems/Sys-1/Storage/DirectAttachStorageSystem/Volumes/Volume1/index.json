@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Volume.v1_8_0.Volume",
+    "@odata.type": "#Volume.v1_9_0.Volume",
     "Id": "1",
     "Name": "Volume 1",
     "Description": "Volume 1 in Simple System",
@@ -20,8 +20,10 @@
     "Encrypted": false,
     "DisplayName": "This is my user/client set friendly name.",
     "IsBootCapable": true,
-
     "RemainingCapacityPercent": 100,
+    "Metrics": {
+        "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/Metrics"
+    },
     "Capacity": {
         "Data": {
             "ConsumedBytes": 0,
@@ -30,24 +32,19 @@
     },
     "CapacitySources": [
         {
-            "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1/CapacitySources/Source1"
+            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "Id": "Source1",
+            "Name": "Capacity Source Source1",
+            "ProvidedCapacity": {
+                "Data": {
+                    "AllocatedBytes": 300067890136
+                }
+            },
+            "ProvidingPools": {
+                "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool"
+            },
+            "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1"
         }
-    ],
-    "CapacitySources": [
-      {
-          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
-          "Id": "Source1",
-          "Name": "Capacity Source Source1",
-          "ProvidedCapacity": {
-              "Data": {
-                  "AllocatedBytes": 300067890136
-              }
-          },
-          "ProvidingPools": {
-              "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool"
-          },
-          "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool/CapacitySources/Source1"
-      }
     ],
     "Links": {
         "Drives": [
@@ -60,5 +57,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

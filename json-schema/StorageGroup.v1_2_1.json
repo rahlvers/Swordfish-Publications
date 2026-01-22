@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_2_1.json",
     "$ref": "#/definitions/StorageGroup",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -84,7 +84,8 @@
                         "string",
                         "null"
                     ],
-                    "versionAdded": "v1_2_0"
+                    "versionAdded": "v1_2_0",
+                    "writeOnly": true
                 },
                 "InitiatorCHAPUser": {
                     "description": "The Initiator username for Mutual (2-way) CHAP authentication by the initiator.",
@@ -114,7 +115,8 @@
                         "string",
                         "null"
                     ],
-                    "versionAdded": "v1_2_0"
+                    "versionAdded": "v1_2_0",
+                    "writeOnly": true
                 }
             },
             "type": "object"
@@ -482,6 +484,6 @@
         }
     },
     "owningEntity": "SNIA",
-    "release": "TP v1.0.7a",
+    "release": "1.0.7a",
     "title": "#StorageGroup.v1_2_1.StorageGroup"
 }

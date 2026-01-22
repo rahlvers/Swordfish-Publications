@@ -1,23 +1,29 @@
 {
-  "@odata.type": "#StorageControllerCollection.StorageControllerCollection",
-  "Name": "Storage Controller Collection",
-  "Description": "Storage Controller Collection",
-  "Members@odata.count": 0,
-  "Members": [],
-  "@Redfish.CollectionCapabilities": {
-    "@odata.type": "#CollectionCapabilities.v1_3_0.CollectionCapabilities",
-    "Capabilities": [{
-      "CapabilitiesObject": {
-        "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Volumes/Capabilities"
-      },
-      "UseCase": "VolumeCreation",
-      "Links": {
-        "TargetCollection": {
-          "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Controllers"
+    "@odata.type": "#StorageControllerCollection.StorageControllerCollection",
+    "Name": "Storage Controller Collection",
+    "Description": "Storage Controller Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Controllers/NVMeIOController"
         }
-      }
-    }]
-  },
-  "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Controllers",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    ],
+    "@Redfish.CollectionCapabilities": {
+        "@odata.type": "#CollectionCapabilities.v1_3_0.CollectionCapabilities",
+        "Capabilities": [
+            {
+                "UseCase": "VolumeCreation",
+                "CapabilitiesObject": {
+                    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Volumes/Capabilities"
+                },
+                "Links": {
+                    "TargetCollection": {
+                        "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Controllers"
+                    }
+                }
+            }
+        ]
+    },
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Controllers",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

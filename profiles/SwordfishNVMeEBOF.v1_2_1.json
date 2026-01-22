@@ -1,0 +1,36 @@
+{
+  "SchemaDefinition": "./SwordfishInteroperabilityProfile.v1_1_0.json",
+  "ProfileName": "SwordfishNVMeEBOF",
+  "ProfileVersion": "1.2.1",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines the Swordfish NVMe EBOF Requirements.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishNVMeEthernetAttach": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.2.1"
+    },
+    "SwordfishFabricConnectivityRightsforEthernet": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.2"
+    },
+    "SwordfishFabricAccessRightsforEthernet": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.2"
+    },
+    "SwordfishManagementController": {
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.2"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.5.1",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.NVMeEBOF": {}
+      }
+    }
+  }
+}
+

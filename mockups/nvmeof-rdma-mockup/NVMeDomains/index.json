@@ -1,0 +1,12 @@
+{
+    "@odata.type": "#NVMeDomainCollection.NVMeDomainCollection",
+    "Name": "NVMeDomainCollection Collection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/NVMeDomains/NVMeDomain1"
+        }
+    ],
+    "@odata.id": "/redfish/v1/NVMeDomains",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

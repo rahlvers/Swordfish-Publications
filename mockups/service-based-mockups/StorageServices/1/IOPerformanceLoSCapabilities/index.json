@@ -33,32 +33,32 @@
     ],
     "SupportedLinesOfService": [
         {
-          "@odata.type": "#IOPerformanceLineOfService.v1_1_1.IOPerformanceLineOfService",
-          "Id": "Heavy-OLTP-HDD",
-          "Name": "Heavy-OLTP-HDD",
-          "IOOperationsPerSecondIsLimited": false,
-          "SamplePeriod": "PT720H",
-          "MaxIOOperationsPerSecondPerTerabyte": 83,
-          "AverageIOOperationLatencyMicroseconds": 8000,
-          "IOWorkload": {
-              "Name": "Duplicon:OLTP"
-          },
-          "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/IOPerformanceLinesOfService/Heavy-OLTP-HDD"
+            "@odata.type": "#IOPerformanceLineOfService.v1_1_1.IOPerformanceLineOfService",
+            "Id": "Heavy-OLTP-HDD",
+            "Name": "Heavy-OLTP-HDD",
+            "IOOperationsPerSecondIsLimited": false,
+            "SamplePeriod": "PT720H",
+            "MaxIOOperationsPerSecondPerTerabyte": 83,
+            "AverageIOOperationLatencyMicroseconds": 8000,
+            "IOWorkload": {
+                "Name": "Duplicon:OLTP"
+            },
+            "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/IOPerformanceLinesOfService/Heavy-OLTP-HDD"
         },
         {
-          "@odata.type": "#IOPerformanceLineOfService.v1_1_1.IOPerformanceLineOfService",
-          "Id": "Lite-OLTP-HDD",
-          "Name": "Lite-OLTP-HDD",
-          "IOOperationsPerSecondIsLimited": false,
-          "SamplePeriod": "PT720H",
-          "MaxIOOperationsPerSecondPerTerabyte": 133,
-          "AverageIOOperationLatencyMicroseconds": 5000,
-          "IOWorkload": {
-              "Name": "Duplicon:OLTP"
-          },
-          "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/IOPerformanceLinesOfService/Lite-OLTP-HDD"
+            "@odata.type": "#IOPerformanceLineOfService.v1_1_1.IOPerformanceLineOfService",
+            "Id": "Lite-OLTP-HDD",
+            "Name": "Lite-OLTP-HDD",
+            "IOOperationsPerSecondIsLimited": false,
+            "SamplePeriod": "PT720H",
+            "MaxIOOperationsPerSecondPerTerabyte": 133,
+            "AverageIOOperationLatencyMicroseconds": 5000,
+            "IOWorkload": {
+                "Name": "Duplicon:OLTP"
+            },
+            "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/IOPerformanceLinesOfService/Lite-OLTP-HDD"
         }
     ],
     "@odata.id": "/redfish/v1/StorageServices/1/IOPerformanceLoSCapabilities",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

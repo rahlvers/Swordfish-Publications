@@ -1,0 +1,25 @@
+{
+    "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
+    "Name": "iSCSI Server (target) Endpoint group",
+    "Id": "iSCSIServerEndpointGroup",
+    "Description": "Group of target endpoints for the midrange storage system",
+    "AccessState": "Optimized",
+    "TargetEndpointGroupIdentifier": 3,
+    "GroupType": "Server",
+    "Endpoints": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/TargetEndpoint1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/TargetEndpoint2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/TargetEndpoint3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/TargetEndpoint4"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups/iSCSIServerEndpointGroup",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

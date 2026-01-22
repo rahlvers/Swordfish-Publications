@@ -1,0 +1,31 @@
+{
+    "@odata.type": "#EndpointCollection.EndpointCollection",
+    "Name": "Endpoint Collection",
+    "Description": "Endpoint Collection",
+    "Members@odata.count": 7,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/InitiatorEndpoint1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/InitiatorEndpoint2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/TargetEndpoint1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/TargetEndpoint2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/TargetEndpoint3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/TargetEndpoint4"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints/TargetEndpoint5"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/iSCSI/Endpoints",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

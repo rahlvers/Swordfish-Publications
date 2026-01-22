@@ -3,10 +3,10 @@ components:
     SpareResourceSet_SpareResourceSet:
       anyOf:
       - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
-      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/SpareResourceSet.v1_0_1.yaml#/components/schemas/SpareResourceSet_v1_0_1_SpareResourceSet
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/SpareResourceSet.v1_0_2.yaml#/components/schemas/SpareResourceSet_v1_0_2_SpareResourceSet
       description: A description of a set of spare resources.
       x-longDescription: The values define a set of spares of a particular type.
 title: '#SpareResourceSet.SpareResourceSet'
-x-copyright: Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA.
   All rights reserved.
 x-owningEntity: SNIA

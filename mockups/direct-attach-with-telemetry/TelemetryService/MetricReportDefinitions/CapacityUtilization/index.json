@@ -1,64 +1,67 @@
 {
-  "@odata.type": "#MetricReportDefinition.v1_3_0.MetricReportDefinition",
-  "Id": "CapacityUtilization",
-  "Name": "Capacity Utilization",
-  "MetricReportDefinitionType": "Periodic",
-  "MetricReportDefinitionEnabled": true,
-  "Schedule": {
-    "RecurrenceInterval": "PT1H"
-  },
-  "ReportActions": [
-    "LogToMetricReportsCollection"
-  ],
-  "ReportUpdates": "NewReport",
-  "MetricReport": {
-    "@odata.id": "/redfish/v1/TelemetryService/MetricReports/CapacityUtilization"
-  },
-  "Status": {
-    "State": "Enabled"
-  },
-  "Wildcards": [{
-      "Name": "SystemID"
+    "@odata.type": "#MetricReportDefinition.v1_3_0.MetricReportDefinition",
+    "Id": "CapacityUtilization",
+    "Name": "Capacity Utilization",
+    "MetricReportDefinitionType": "Periodic",
+    "MetricReportDefinitionEnabled": true,
+    "Schedule": {
+        "RecurrenceInterval": "PT1H"
     },
-    {
-      "Name": "StorageSystemID"
-    },
-    {
-      "Name": "SystemStoragePoolID"
-    },
-    {
-      "Name": "SystemVolumeID"
-    },
-    {
-      "Name": "StorageID"
-    },
-    {
-      "Name": "StoragePoolID"
-    },
-    {
-      "Name": "VolumeID"
-    },
-    {
-      "Name": "FileSystemID"
-    }
-  ],
-  "Metrics": [{
-    "MetricId": "CapacityUtilization",
-    "MetricProperties": [
-      "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/StoragePools/{SystemStoragePoolID}/AllocatedVolumes/{SystemVolumeID}/RemainingCapacityPercent",
-      "/redfish/v1/Storage/{StorageID}/StoragePools/{StoragePoolID}/AllocatedVolumes/{VolumeID}/RemainingCapacityPercent",
-      "/redfish/v1/StorageServices/{StorageServiceID}/StoragePools/{ServiceStoragePoolID}/AllocatedVolumes/{ServiceVolumeID}/RemainingCapacityPercent",
-      "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/RemainingCapacityPercent",
-      "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacityPercent",
-      "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacityPercent",
-      "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}RemainingCapacityPercent",
-      "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacityPercent",
-      "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacityPercent"
+    "ReportActions": [
+        "LogToMetricReportsCollection"
     ],
-    "CollectionFunction": "Minimum",
-    "CollectionTimeScope": "Point",
-    "CollectionDuration": "PT1H"
-  }],
-  "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/CapacityUtilization",
-  "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "ReportUpdates": "NewReport",
+    "MetricReport": {
+        "@odata.id": "/redfish/v1/TelemetryService/MetricReports/CapacityUtilization"
+    },
+    "Status": {
+        "State": "Enabled"
+    },
+    "Wildcards": [
+        {
+            "Name": "SystemID"
+        },
+        {
+            "Name": "StorageSystemID"
+        },
+        {
+            "Name": "SystemStoragePoolID"
+        },
+        {
+            "Name": "SystemVolumeID"
+        },
+        {
+            "Name": "StorageID"
+        },
+        {
+            "Name": "StoragePoolID"
+        },
+        {
+            "Name": "VolumeID"
+        },
+        {
+            "Name": "FileSystemID"
+        }
+    ],
+    "Metrics": [
+        {
+            "MetricId": "CapacityUtilization",
+            "MetricProperties": [
+                "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/StoragePools/{SystemStoragePoolID}/AllocatedVolumes/{SystemVolumeID}/RemainingCapacityPercent",
+                "/redfish/v1/Storage/{StorageID}/StoragePools/{StoragePoolID}/AllocatedVolumes/{VolumeID}/RemainingCapacityPercent",
+                "/redfish/v1/StorageServices/{StorageServiceID}/StoragePools/{ServiceStoragePoolID}/AllocatedVolumes/{ServiceVolumeID}/RemainingCapacityPercent",
+                "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}/RemainingCapacityPercent",
+                "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacityPercent",
+                "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacityPercent",
+                "/redfish/v1/Storage/{StorageID}/FileSystems/{FileSystemID}RemainingCapacityPercent",
+                "/redfish/v1/Systems/{SystemID}/Storage/{SystemStorageID}/FileSystems/{SystemFileSystemID}/RemainingCapacityPercent",
+                "/redfish/v1/StorageServices/{StorageServiceID}/FileSystems/{ServiceFileSystemID}/RemainingCapacityPercent"
+            ],
+            "CollectionFunction": "Minimum",
+            "CollectionTimeScope": "Point",
+            "CollectionDuration": "PT1H"
+        }
+    ],
+    "@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/CapacityUtilization",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

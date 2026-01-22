@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#Volume.v1_8_0.Volume",
+    "@odata.type": "#Volume.v1_9_0.Volume",
     "Id": "Volume4",
     "Name": "Volume 4",
     "Description": "Volume 4 in Midrange System. From StoragePool2.",
@@ -23,23 +23,25 @@
             "AllocatedBytes": 300067890136
         }
     },
-    "StorageGroups": {
-        "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup"
-    },
     "CapacitySources": [
         {
-          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
-          "Id": "Source1",
-          "Name": "Source1",
-          "ProvidedCapacity": {
-              "Data": {
-                  "AllocatedBytes": 300067890136
-              }
-          },
-          "ProvidingPools": {
-              "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4/CapacitySources/Source1/ProvidingPools"
-          },
-          "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4/CapacitySources/Source1"
+            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "Id": "Source1",
+            "Name": "Source1",
+            "ProvidedCapacity": {
+                "Data": {
+                    "AllocatedBytes": 300067890136
+                }
+            },
+            "ProvidingPools": {
+                "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4/CapacitySources/Source1/ProvidingPools"
+            },
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4/CapacitySources/Source1"
+        }
+    ],
+    "Connections": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/Connections/iSCSIStorageGroup"
         }
     ],
     "Links": {
@@ -48,5 +50,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

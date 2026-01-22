@@ -35,7 +35,6 @@
                 }
             ],
             "Status": {
-                 
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -50,7 +49,6 @@
             "Name": "VRM1 Voltage",
             "SensorNumber": 11,
             "Status": {
-                 
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -80,7 +78,6 @@
             "Name": "VRM2 Voltage",
             "SensorNumber": 12,
             "Status": {
-                 
                 "State": "Enabled",
                 "Health": "OK"
             },
@@ -109,7 +106,6 @@
             "MemberId": "0",
             "Name": "Power Supply Bay",
             "Status": {
-                 
                 "State": "Enabled",
                 "Health": "Warning"
             },
@@ -150,5 +146,5 @@
     ],
     "Oem": {},
     "@odata.id": "/redfish/v1/Chassis/1URack/Power",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

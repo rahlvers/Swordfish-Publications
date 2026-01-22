@@ -38,11 +38,6 @@
     },
     "Redundancy": [
         {
-            "@odata.id": "/redfish/v1/Systems/OpaqueController2"
-        }
-    ],
-    "Redundancy": [
-        {
             "@odata.id": "/redfish/v1/Systems/OpaqueController2#/Redundancy/0",
             "MemberId": "0",
             "Name": "System Controllers",
@@ -86,5 +81,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Systems/OpaqueController2",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

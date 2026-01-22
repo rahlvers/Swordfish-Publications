@@ -2,7 +2,7 @@
     "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/Volume.v1_8_0.json",
     "$ref": "#/definitions/Volume",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2022 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
+    "copyright": "Copyright 2015-2023 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
@@ -625,6 +625,20 @@
                     ],
                     "units": "By",
                     "versionAdded": "v1_5_0"
+                },
+                "Type": {
+                    "anyOf": [
+                        {
+                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/Volume.json#/definitions/NamespaceType"
+                        },
+                        {
+                            "type": "null"
+                        }
+                    ],
+                    "description": "Identifies the type of namespace.",
+                    "longDescription": "This shall identify the type of namespace.",
+                    "readonly": true,
+                    "versionAdded": "v1_8_0"
                 }
             },
             "type": "object"
@@ -1134,7 +1148,7 @@
                     "versionAdded": "v1_5_0"
                 },
                 "IOStatistics": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.json#/definitions/IOStatistics",
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.v1_0_1.json#/definitions/IOStatistics",
                     "description": "Statistics for this volume.",
                     "longDescription": "The value shall represent IO statistics for this volume.",
                     "versionAdded": "v1_2_0"
@@ -1476,6 +1490,6 @@
         }
     },
     "owningEntity": "SNIA",
-    "release": "WIP v1.2.4",
+    "release": "1.2.4",
     "title": "#Volume.v1_8_0.Volume"
 }

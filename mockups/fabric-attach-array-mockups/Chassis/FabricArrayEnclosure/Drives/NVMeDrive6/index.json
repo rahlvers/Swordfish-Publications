@@ -2,7 +2,7 @@
     "@odata.type": "#Drive.v1_15_0.Drive",
     "Id": "NVMeDrive6",
     "Name": "NVMeDrive 6",
-     "Model": "ST9146802SS",
+    "Model": "ST9146802SS",
     "Revision": "S20A",
     "Status": {
         "State": "Enabled",
@@ -39,5 +39,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Chassis/FabricArrayEnclosure/Drives/NVMeDrive6",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

@@ -1,5 +1,5 @@
 {
-    "@odata.type": "#StoragePool.v1_7_1.StoragePool",
+    "@odata.type": "#StoragePool.v1_8_0.StoragePool",
     "Id": "SimpleSystemPool",
     "Name": "Simple System Storage Pool",
     "Description": "Simple Storage Pool for Simple System",
@@ -14,21 +14,22 @@
             "ConsumedBytes": 600135780272
         }
     },
+    "ReplicationEnabled": true,
     "CapacitySources": [
         {
-          "@odata.type": "#Capacity.v1_2_0.CapacitySource",
-          "Id": "Source1",
-          "Name": "Source1",
-          "ProvidedCapacity": {
-              "Data": {
-                  "ConsumedBytes": 300067890136,
-                  "AllocatedBytes": 600135780272
-              }
-          },
-          "ProvidingDrives": {
-              "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/CapacitySources/Source1/ProvidingDrives"
-          },
-          "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/CapacitySources/Source1"
+            "@odata.type": "#Capacity.v1_2_0.CapacitySource",
+            "Id": "Source1",
+            "Name": "Source1",
+            "ProvidedCapacity": {
+                "Data": {
+                    "ConsumedBytes": 300067890136,
+                    "AllocatedBytes": 600135780272
+                }
+            },
+            "ProvidingDrives": {
+                "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/CapacitySources/Source1/ProvidingDrives"
+            },
+            "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/CapacitySources/Source1"
         }
     ],
     "AllocatedVolumes": {
@@ -40,5 +41,5 @@
         }
     },
     "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1",
-    "@Redfish.Copyright": "Copyright 2015-2022 SNIA. All rights reserved."
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
 }

@@ -1,0 +1,19 @@
+{
+    "@odata.type": "#EndpointGroupCollection.EndpointGroupCollection",
+    "Name": "Endpoint Group Collection",
+    "Description": "Endpoint Group Collection",
+    "Members@odata.count": 3,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups/BackupServerClientEndpointGroup"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups/iSCSIClientEndpointGroup"
+        },
+        {
+            "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups/iSCSIServerEndpointGroup"
+        }
+    ],
+    "@odata.id": "/redfish/v1/Fabrics/iSCSI/EndpointGroups",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}

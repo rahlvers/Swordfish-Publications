@@ -1,0 +1,10 @@
+{
+    "@odata.type": "#DataProtectionLoSCapabilities.v1_2_0.DataProtectionLoSCapabilities",
+    "Id": "DataProtectionLoSCapabilites",
+    "Name": "DataProtectionLoSCapabilites",
+    "SupportedReplicaTypes": [
+        "Snapshot"
+    ],
+    "@odata.id": "/redfish/v1/StorageServices/ISC/DataProtectionLoSCapabilities",
+    "@Redfish.Copyright": "Copyright 2015-2023 SNIA. All rights reserved."
+}
