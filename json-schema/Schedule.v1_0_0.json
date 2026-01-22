@@ -58,29 +58,6 @@
             "description": "Months of the year.",
             "longDescription": "Months of the year."
         },
-        "RecurrenceGranularity": {
-            "type": "string",
-            "enum": [
-                "Seconds",
-                "Minutes",
-                "Hours",
-                "Days",
-                "Weeks",
-                "Months",
-                "Years"
-            ],
-            "enumDescriptions": {
-                "Seconds": "Next interval is seconds away.",
-                "Minutes": "Next interval is minutes away.",
-                "Hours": "Next interval is hours away.",
-                "Days": "Next interval is days away.",
-                "Weeks": "Next interval is weeks away.",
-                "Months": "Next interval is months away.",
-                "Years": "Next interval is years away."
-            },
-            "description": "The interval until the next event.",
-            "longDescription": "The interval until the next event."
-        },
         "Schedule": {
             "type": "object",
             "patternProperties": {
@@ -105,54 +82,45 @@
                     ],
                     "readonly": false,
                     "description": "The Schedule name.",
-                    "longDescription": "The name of the Schedule. It should be constructed as <OrgID>:<ScheduleName>.Examples: ACME:Daily, ACME:Weekly, ACME:FirstTuesday,"
+                    "longDescription": "The name of the Schedule. It should be constructed as OrgID:ScheduleName. Examples: ACME:Daily, ACME:Weekly, ACME:FirstTuesday,"
                 },
-                "ScheduleLifetime": {
+                "Lifetime": {
                     "type": [
                         "string",
                         "null"
                     ],
                     "readonly": false,
-                    "description": "The time after provisioning when the schedule expires.",
-                    "longDescription": "The time after provisioning when the schedule expires."
+                    "description": "The time after provisioning when the schedule as a whole expires.",
+                    "longDescription": "The value shall be an ISO 8601 conformant duration describing the time after provisioning when the schedule expires."
                 },
-                "MaxScheduledEvents": {
+                "MaxOccurrences": {
                     "type": [
                         "number",
                         "null"
                     ],
                     "readonly": false,
-                    "description": "Maximum number of scheduled events.",
-                    "longDescription": "Maximum number of scheduled events."
+                    "description": "Maximum number of scheduled occurrences.",
+                    "longDescription": "Maximum number of scheduled occurrences."
                 },
-                "EventStartTimeMilliSeconds": {
+                "InitialStartTime": {
                     "type": [
-                        "number",
+                        "string",
                         "null"
                     ],
                     "readonly": false,
-                    "description": "MilliSeconds after midnightfor event.",
-                    "longDescription": "MilliSeconds after midnight defining when in a day, each scheduled event occurs."
-                },
-                "RecurrenceGranularity": {
-                    "anyOf": [
-                        {"$ref": "#/definitions/RecurrenceGranularity"},
-                        {"type": "null"}
-                    ],
-                    "readonly": false,
-                    "description": "The granularity of the interval until the next event.",
-                    "longDescription": "The granularity of the interval until the next event is in terms of recurrenceInterval number of recurrenceGranularity units."
+                    "description": "Time for initial occurrence.",
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day on which the initial occurrence is scheduled to occur."
                 },
                 "RecurrenceInterval": {
                     "type": [
-                        "number",
+                        "string",
                         "null"
                     ],
                     "readonly": false,
-                    "description": "Distance until the next events.",
-                    "longDescription": "Distance until the next events.  Defined in units of recurrenceGranularity."
+                    "description": "Distance until the next occurrences.",
+                    "longDescription": "The value shall be an ISO 8601 conformant duration describing the time until the next occurrence."
                 },
-                "RecurrenceDayOfWeekMask": {
+                "EnabledDaysOfWeek": {
                     "type": "array",
                     "items": {
                         "anyOf": [
@@ -161,10 +129,10 @@
                         ]
                     },
                     "readonly": false,
-                    "description": "Days of the week when scheduled events are enabled.",
-                    "longDescription": "Days of the week when scheduled events are enabled."
+                    "description": "Days of the week when scheduled occurrences are enabled, for enabled days of month and months of year.",
+                    "longDescription": "Days of the week when scheduled occurrences are enabled. If not present, all days of the week shall be enabled."
                 },
-                "RecurrenceDayOfMonthMask": {
+                "EnabledDaysOfMonth": {
                     "type": "array",
                     "items": {
                         "type": [
@@ -175,10 +143,10 @@
                         "maximum": 31
                     },
                     "readonly": false,
-                    "description": "Days of month when scheduled events are enabled.",
-                    "longDescription": "Days of month when scheduled events are enabled."
+                    "description": "Days of month when scheduled occurrences are enabled.",
+                    "longDescription": "Days of month when scheduled occurrences are enabled, for enabled days of week and months of year. If not present, all days of the month shall be enabled."
                 },
-                "RecurrenceMonthOfYearMask": {
+                "EnabledMonthsOfYear": {
                     "type": "array",
                     "items": {
                         "anyOf": [
@@ -187,12 +155,12 @@
                         ]
                     },
                     "readonly": false,
-                    "description": "Months of year when scheduled events are enabled.",
-                    "longDescription": "Months of year when scheduled events are enabled."
+                    "description": "Months of year when scheduled occurrences are enabled.",
+                    "longDescription": "Months of year when scheduled occurrences are enabled, for enabled days of week and days of month. If not present, all months of the year shall be enabled."
                 }
             },
-            "description": "Schedule a series of events.",
-            "longDescription": "Schedule a series of events"
+            "description": "Schedule a series of occurrences.",
+            "longDescription": "Schedule a series of occurrences"
         }
     },
     "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"

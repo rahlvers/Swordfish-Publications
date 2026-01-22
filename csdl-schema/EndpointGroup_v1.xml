@@ -10,7 +10,7 @@
     <edmx:Include Namespace="Resource.v1_0_0" />
     <edmx:Include Namespace="Resource.v1_1_0" />
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EndpointCollection_v1.xml">
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/EndpointCollection_v1.xml">
     <edmx:Include Namespace="EndpointCollection" />
   </edmx:Reference>
   <edmx:DataServices>
@@ -94,7 +94,7 @@
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
           <Annotation Term="OData.Description" String="Contains links to other resources that are related to this resource." />
           <Annotation Term="OData.LongDescription" String="This structure shall contain references to resources that are not contained within this resource." />
-        </Property> 
+        </Property>
       </EntityType>
 
       <ComplexType Name="Links" BaseType="Resource.Links">
