@@ -1,0 +1,50 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/OpaqueArray/Controllers/NVMeIOController2",
+  "@odata.type": "#StorageController.v1_0_0.StorageController",
+  "Name": "NVMe I/O Controller",
+  "Description": "NVMe I/O Controller presented to host.",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Id": "NVMeIOController2",
+
+  "Manufacturer": "Best NVMe Vendor",
+  "Model": "NVMe Connect Array",
+  "SerialNumber": "NVME123456",
+  "PartNumber": "NVM44",
+  "FirmwareVersion": "1.0.0",
+  "SupportedControllerProtocols": [
+    "PCIe"
+  ],
+  "SupportedDeviceProtocols": [
+    "NVMe"
+  ],
+  "NVMeControllerProperties": {
+    "ControllerType": "IO",
+    "NVMeVersion": "1.3",
+    "NVMeControllerAttributes": {
+      "ReportsUUIDList": false,
+      "SupportsSQAssociations": false,
+      "ReportsNamespaceGranularity": false,
+      "SupportsTrafficBasedKeepAlive": false,
+      "SupportsPredictableLatencyMode": false,
+      "SupportsEnduranceGroups": false,
+      "SupportsReadRecoveryLevels": false,
+      "SupportsNVMSets": false,
+      "SupportsExceedingPowerOfNonOperationalState": false,
+      "Supports128BitHostId": false
+    }
+  },
+  "Links": {
+    "AttachedVolumes": [
+      {
+          "@odata.id": "/redfish/v1/Storage/OpaqueArray/StoragePools/StoragePool1/AllocatedVolumes/Namespace1"
+        },
+        {
+          "@odata.id": "/redfish/v1/Storage/OpaqueArray/StoragePools/StoragePool1/AllocatedVolumes/Namespace2"
+        }
+    ]
+  }
+}

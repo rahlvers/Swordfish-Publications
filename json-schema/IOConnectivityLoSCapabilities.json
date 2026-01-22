@@ -7,20 +7,23 @@
         "IOConnectivityLoSCapabilities": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLoSCapabilities.v1_0_3.json#/definitions/IOConnectivityLoSCapabilities"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLoSCapabilities.v1_1_3.json#/definitions/IOConnectivityLoSCapabilities"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLoSCapabilities.v1_2_0.json#/definitions/IOConnectivityLoSCapabilities"
                 }
             ],
             "deletable": false,
             "description": "Describe IO connectivity capabilities.",
             "insertable": false,
             "longDescription": "This resource shall be used to describe the capabilities to provide IO connectivity.",
-            "updatable": false,
+            "updatable": true,
             "uris": [
                 "/redfish/v1/StorageServices/{StorageServiceId}/IOConnectivityLoSCapabilities"
             ]

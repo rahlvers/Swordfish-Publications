@@ -1,0 +1,13 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ExportedFileShares",
+  "@odata.type": "#FileShareCollection.FileShareCollection",
+  "Name": "FileShares Collection",
+  "Members@odata.count": 1,
+  "Members": [
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ExportedFileShares/MyShare"
+    }
+  ]
+}

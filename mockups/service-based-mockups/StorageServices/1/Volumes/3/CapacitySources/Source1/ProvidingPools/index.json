@@ -1,0 +1,12 @@
+{
+  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3/CapacitySources/Source1/ProvidingPools",
+  "@odata.type": "#StoragePoolCollection.StoragePoolCollection",
+  "Name": "Providing Pool Collection",
+  "Members@odata.count": 1,
+  "Members": [
+    {
+      "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool"
+    }
+  ]
+}

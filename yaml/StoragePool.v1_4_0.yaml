@@ -165,7 +165,7 @@ components:
             able to support this StoragePool.
           x-versionAdded: v1_2_0
         DedicatedSpareDrives@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         DefaultClassOfService:
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           deprecated: true
@@ -203,7 +203,7 @@ components:
             having a compatible type.
           x-versionAdded: v1_2_0
         SpareResourceSets@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
       type: object
       x-longDescription: The Links property, as described by the Redfish Specification,
         shall contain references to resources that are related to, but not contained
@@ -319,13 +319,13 @@ components:
       description: A container of data storage.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
         Actions:
           $ref: '#/components/schemas/StoragePool_v1_4_0_Actions'
           description: The available actions for this resource.
@@ -375,7 +375,7 @@ components:
             Each entry shall provide capacity allocation data from a named source
             resource.
         CapacitySources@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         ClassesOfService:
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           description: The ClassesOfService supported by this storage pool.

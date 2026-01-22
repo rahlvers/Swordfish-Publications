@@ -1,0 +1,9 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas/DataProtectionLinesOfService",
+  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+  "Name": "DataProtectionLinesOfService Collection",
+  "Members@odata.count": 0,
+  "Members": []
+}

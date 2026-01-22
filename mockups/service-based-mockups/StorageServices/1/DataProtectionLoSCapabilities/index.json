@@ -1,0 +1,289 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/1/DataProtectionLoSCapabilities",
+  "@odata.type": "#DataProtectionLoSCapabilities.v1_0_0.DataProtectionLoSCapabilities",
+  "Name": "DataProtectionLoSCapabilites",
+  "SupportedRecoveryGeographicObjectives": [
+    "Rack",
+    "RackGroup",
+    "Row",
+    "Datacenter",
+    "Region"
+  ],
+  "SupportedRecoveryPointObjectiveTimes": ["PT0S",
+    "PT4S",
+    "PT1M",
+    "PT1H"
+  ],
+  "SupportedRecoveryPointObjectiveTimes": ["Immediate",
+    "Online",
+    "Nearline",
+    "Offline"
+  ],
+  "SupportedReplicaTypes": [
+    "Mirror",
+    "Snapshot",
+    "Clone",
+    "TokenizedClone"
+  ],
+  "SupportedMinLifetimes": [
+    "P1M"
+  ],
+  "SupportsIsolated": true,
+  "SupportedLinesOfService": [{
+      "RecoveryGeographicObjective": "Region",
+      "RecoveryPointObjectiveTime": "P7D",
+      "RecoveryTimeObjective": "Nearline",
+      "ReplicaType": "Snapshot",
+      "MinLifetime": "P3M",
+      "IsIsolated": true,
+      "Schedule": {
+        "InitialStartTime": "0300-0500",
+        "RecurrenceInterval": "P1W",
+        "EnabledDaysOfWeek": ["Saturday"]
+      },
+      "ReplicaClassOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
+      },
+      "ReplicaAccessLocation": {
+        "Country": "",
+        "Territory": "",
+        "State": "",
+        "City": "Providence",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "PostalCode": "",
+        "Building": "",
+        "Room": "",
+        "Row": "",
+        "Rack": "",
+        "Shelf": "",
+        "Item": "",
+        "GPSCoords": "",
+        "OtherLocationInfo": ""
+      }
+    },
+    {
+      "RecoveryGeographicObjective": "Region",
+      "RecoveryPointObjective": "P30D",
+      "RecoveryTimeObjective": "Nearline",
+      "ReplicaType": "Clone",
+      "MinLifetime": "P4M",
+      "IsIsolated": true,
+      "Schedule": {
+        "InitialStartTime": "P4M",
+        "RecurrenceInterval": "P1M",
+        "EnabledDaysOfWeek": ["Sunday"],
+        "EnabledDaysOfMonth": [1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "EnabledMonthsOfYear": []
+      },
+      "ReplicaClassOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence"
+      },
+      "ReplicaAccessLocation": {
+        "Country": "",
+        "Territory": "",
+        "State": "",
+        "City": "Providence",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "PostalCode": "",
+        "Building": "",
+        "Room": "",
+        "Row": "",
+        "Rack": "",
+        "Shelf": "",
+        "Item": "",
+        "GPSCoords": "",
+        "OtherLocationInfo": ""
+      }
+    },
+    {
+      "RecoveryGeographicObjective": "Region",
+      "RecoveryPointObjective": "PT0S",
+      "RecoveryTimeObjective": "Online",
+      "ReplicaType": "Mirror",
+      "IsIsolated": true,
+      "ReplicaClassOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
+      },
+      "ReplicaAccessLocation": {
+        "Country": "",
+        "Territory": "",
+        "State": "",
+        "City": "Providence",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "PostalCode": "",
+        "Building": "",
+        "Room": "",
+        "Row": "",
+        "Rack": "",
+        "Shelf": "",
+        "Item": "",
+        "GPSCoords": "",
+        "OtherLocationInfo": ""
+      },
+      "Links": {
+
+      }
+    },
+    {
+      "RecoveryGeographicObjective": "Region",
+      "RecoveryPointObjective": "PT4S",
+      "RecoveryTimeObjective": "Online",
+      "ReplicaType": "Mirror",
+      "ReplicaAccessLocation": {
+        "Country": "",
+        "Territory": "",
+        "State": "",
+        "City": "Dallas",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "PostalCode": "",
+        "Building": "",
+        "Room": "",
+        "Row": "",
+        "Rack": "",
+        "Shelf": "",
+        "Item": "",
+        "GPSCoords": "",
+        "OtherLocationInfo": ""
+      },
+      "Links": {
+        "ReplicaOption": {
+          "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
+        }
+      }
+    },
+    {
+      "RecoveryGeographicObjective": "Region",
+      "RecoveryPointObjective": "PT0S",
+      "RecoveryTimeObjective": "Online",
+      "ReplicaType": "Mirror",
+      "ReplicaAccessLocation": {
+        "Country": "",
+        "Territory": "",
+        "State": "",
+        "City": "Providence",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "PostalCode": "",
+        "Building": "",
+        "Room": "",
+        "Row": "",
+        "Rack": "",
+        "Shelf": "",
+        "Item": "",
+        "GPSCoords": "",
+        "OtherLocationInfo": ""
+      },
+      "Links": {
+        "ReplicaOption": {
+          "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
+        }
+      }
+    },
+    {
+      "RecoveryGeographicObjective": "Region",
+      "RecoveryPointObjective": "PT4S",
+      "RecoveryTimeObjective": "Online",
+      "ReplicaType": "Mirror",
+      "ReplicaAccessLocation": {
+        "Country": "",
+        "Territory": "",
+        "State": "",
+        "City": "Dallas",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "PostalCode": "",
+        "Building": "",
+        "Room": "",
+        "Row": "",
+        "Rack": "",
+        "Shelf": "",
+        "Item": "",
+        "GPSCoords": "",
+        "OtherLocationInfo": ""
+      },
+      "Links": {
+        "ReplicaOption": {
+          "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
+        }
+      }
+    },
+    {
+      "RecoveryGeographicObjective": "Region",
+      "RecoveryPointObjective": "PT0S",
+      "RecoveryTimeObjective": "Online",
+      "ReplicaType": "Mirror",
+      "IsIsolated": true,
+      "ReplicaClassOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldProvidence"
+      },
+      "ReplicaAccessLocation": {
+        "Country": "",
+        "Territory": "",
+        "State": "",
+        "City": "Providence",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "PostalCode": "",
+        "Building": "",
+        "Room": "",
+        "Row": "",
+        "Rack": "",
+        "Shelf": "",
+        "Item": "",
+        "GPSCoords": "",
+        "OtherLocationInfo": ""
+      }
+    },
+    {
+      "RecoveryGeographicObjective": "Region",
+      "RecoveryPointObjective": "PT4S",
+      "RecoveryTimeObjective": "Nearline",
+      "ReplicaType": "Continuous",
+      "IsIsolated": true,
+      "ReplicaClassOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
+      },
+      "ReplicaAccessLocation": {
+        "Country": "",
+        "Territory": "",
+        "State": "",
+        "City": "Dallas",
+        "Address1": "",
+        "Address2": "",
+        "Address3": "",
+        "PostalCode": "",
+        "Building": "",
+        "Room": "",
+        "Row": "",
+        "Rack": "",
+        "Shelf": "",
+        "Item": "",
+        "GPSCoords": "",
+        "OtherLocationInfo": ""
+      }
+    }
+  ],
+  "SupportedLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataProtectionLinesOfService"
+  }]
+}

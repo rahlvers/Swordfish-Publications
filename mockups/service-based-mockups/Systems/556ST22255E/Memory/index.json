@@ -1,0 +1,22 @@
+{
+    "@odata.type": "#MemoryCollection.MemoryCollection",
+    "Name": "Memory Module Collection",
+    "Members@odata.count": 4,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/556ST22255E/Memory/DIMM1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/556ST22255E/Memory/DIMM2"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/556ST22255E/Memory/DIMM3"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/556ST22255E/Memory/DIMM4"
+        }
+    ],
+   
+    "@odata.id": "/redfish/v1/Systems/556ST22255E/Memory",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

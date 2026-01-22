@@ -1,0 +1,88 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+
+  "@odata.id": "/redfish/v1/Systems/FileServer",
+  "@odata.type": "#ComputerSystem.v1_5_0.ComputerSystem",
+  "Id": "FileServer",
+  "Name": "My File Server",
+  "SystemType": "Physical",
+  "AssetTag": "free form asset tag",
+  "Manufacturer": "Manufacturer Name",
+  "Model": "Model Name",
+  "SKU": "",
+  "SerialNumber": "2M220100SL",
+  "PartNumber": "",
+  "Description": "Description of server",
+  "UUID": "00000000-0000-0000-0000-000000000000",
+  "HostName": "web-srv344",
+  "HostingRoles": ["StorageServer"],
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "OK"
+  },
+  "PowerState": "On",
+  "Boot": {
+    "BootSourceOverrideEnabled": "Once",
+    "BootSourceOverrideTarget": "Pxe",
+    "BootSourceOverrideTarget@Redfish.AllowableValues": [
+      "None",
+      "BiosSetup",
+      "UefiTarget"
+    ]
+  },
+  "BiosVersion": "Xxxx",
+  "ProcessorSummary": {
+    "Count": 2,
+    "Model": "Multi-Core Broadcom(R) ARM processor Xxxx Series",
+    "Status": {
+      "State": "Enabled",
+      "Health": "OK",
+      "HealthRollup": "OK"
+    }
+  },
+  "MemorySummary": {
+    "TotalSystemMemoryGiB": 16,
+    "Status": {
+      "State": "Enabled",
+      "Health": "OK",
+      "HealthRollup": "OK"
+    }
+  },
+  "Processors": {
+    "@odata.id": "/redfish/v1/Systems/FileServer/Processors"
+  },
+  "EthernetInterfaces": {
+    "@odata.id": "/redfish/v1/Systems/FileServer/EthernetInterfaces"
+  },
+  "LogServices": {
+    "@odata.id": "/redfish/v1/Systems/FileServer/LogServices"
+  },
+  "HostedServices": {
+      "@odata.id": "/redfish/v1/Systems/FileServer/HostedServices"
+    },
+  "Links": {
+    "Chassis": [{
+      "@odata.id": "/redfish/v1/Chassis/1"
+    }],
+    "ManagedBy": [{
+      "@odata.id": "/redfish/v1/Managers/StorageManager1"
+    }],
+    "Oem": {}
+  },
+  "Actions": {
+    "#ComputerSystem.Reset": {
+      "target": "/redfish/v1/Systems/FileServer/Actions/ComputerSystem.Reset",
+      "ResetType@Redfish.AllowableValues": [
+        "On",
+        "ForceOff",
+        "GracefulRestart",
+        "ForceRestart",
+        "Nmi",
+        "GracefulRestart",
+        "ForceOn",
+        "PushPowerButton"
+      ]
+    }
+  }
+}

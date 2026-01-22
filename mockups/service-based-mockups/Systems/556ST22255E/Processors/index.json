@@ -1,0 +1,16 @@
+{
+    "@odata.type": "#ProcessorCollection.ProcessorCollection",
+    "Name": "Processors Collection",
+    "Members@odata.count": 2,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Systems/556ST22255E/Processors/CPU1"
+        },
+        {
+            "@odata.id": "/redfish/v1/Systems/556ST22255E/Processors/CPU2"
+        }
+    ],
+   
+    "@odata.id": "/redfish/v1/Systems/556ST22255E/Processors",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

@@ -1,0 +1,33 @@
+{
+  "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SASPool/CapacitySources/Source1/ProvidingDrives/3",
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+    "@odata.type": "#Drive.v1_2_0.Drive",
+    "Id": "3",
+    "Name": "Drive 3",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "StatusIndicator": "OK",
+    "CapacityBytes": 300067890136,
+    "FailurePredicted": false,
+    "Protocol": "SAS",
+    "MediaType": "HDD",
+    "Manufacturer": "HDD-Company",
+    "SerialNumber": "0TH8N20R",
+    "PartNumber": "HUC156030CSS200",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "300062B202B2184D"
+        }
+    ],
+    "RotationSpeedRPM": 15000,
+    "BlockSizeBytes": 512,
+    "NegotiatedSpeedGbs": 12,
+    "Links": {
+        "Volumes": [{
+            "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/1"
+        }]
+    }
+}

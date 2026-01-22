@@ -1,0 +1,16 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService",
+  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+  "Id": "1",
+  "Name": "LinesOfService",
+  "Members@odata.count": 5,
+  "Members": [
+        { "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataProtectionLinesOfService"},
+        {"@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataSecurityLinesOfService"},
+        {"@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataStorageLinesOfService"},
+        {"@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/IOConnectivityLinesOfService"},
+        {"@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/IOPerformanceLinesOfService"}
+     ]
+}

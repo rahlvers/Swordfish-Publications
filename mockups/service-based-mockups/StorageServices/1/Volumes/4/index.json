@@ -1,0 +1,47 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/1/Volumes/4",
+  "@odata.type": "#Volume.v1_4_0.Volume",
+  "Name": "Volume 4",
+  "Id": "4",
+  "Description": "Volume with remote replica",
+  "Identifiers": [{
+    "DurableNameFormat": "NAA",
+    "DurableName": "65456765456761001244076100123487"
+  }],
+  "Manufacturer": "SuperDuperSSD",
+  "Model": "Drive Model string",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "AccessCapabilities": [
+    "Read",
+    "Write",
+    "Append",
+    "Streaming"
+  ],
+  "BlockSizeBytes": 512,
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/Volumes/4/CapacitySources/Source1"
+  }],
+  "Capacity": {
+    "Data": {
+      "ConsumedBytes": 0,
+      "AllocatedBytes": 10737418240,
+      "GuaranteedBytes": 536870912,
+      "ProvisionedBytes": 1099511627776
+    },
+    "Metadata": {
+      "ConsumedBytes": 536870912,
+      "AllocatedBytes": 536870912
+    }
+  },
+  "ReplicaTargets": [{
+    "@odata.id": "https://10.1.1.13/redfish/v1/StorageServices/A/Volume/ABC"
+  }],
+  "StorageGroups": {
+    "@odata.id": "/redfish/v1/StorageServices/1/Volumes/4/StorageGroups"
+  }
+}

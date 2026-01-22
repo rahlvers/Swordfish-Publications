@@ -7,7 +7,7 @@
         "StorageService": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.v1_0_4.json#/definitions/StorageService"
@@ -23,6 +23,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.v1_4_0.json#/definitions/StorageService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.v1_5_0.json#/definitions/StorageService"
                 }
             ],
             "deletable": true,
@@ -31,7 +34,8 @@
             "longDescription": "This resource shall be used to represent resources that are managed by a storage service.",
             "updatable": true,
             "uris": [
-                "/redfish/v1/StorageServices/{StorageServiceId}"
+                "/redfish/v1/StorageServices/{StorageServiceId}",
+                "/redfish/v1/Systems/{ComputerSystemId}/StorageServices/{StorageServiceId}"
             ]
         }
     },

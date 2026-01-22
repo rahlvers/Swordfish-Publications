@@ -46,13 +46,13 @@ components:
       description: An instance of a hierarchical namespace of files.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
         AccessCapabilities:
           description: An array of supported IO access capabilities.
           items:
@@ -86,7 +86,7 @@ components:
             all the capacity sources for the file system. Each entry shall provide
             capacity allocation information from a named resource.
         CapacitySources@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         CasePreserved:
           description: The case of file names is preserved by the file system.
           nullable: true
@@ -239,7 +239,7 @@ components:
             for this file system. Each entry shall be a link to a replica for this
             file system.
         ReplicaCollection@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
       type: object
       x-longDescription: This property shall contain links to other resources that
         are related to this resource.

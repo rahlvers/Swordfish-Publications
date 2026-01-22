@@ -1,0 +1,26 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw",
+  "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
+  "Id": "BostonGoldJaw",
+  "Name": "BostonGoldJaw",
+  "Description": "Boston with Open Jaw config to Providence and Dallas",
+  "ClassOfServiceVersion": "01.20.00",
+
+  "DataProtectionLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw/DataProtectionLinesOfService"
+  }],
+  "DataSecurityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw/DataSecurityLinesOfService"
+  }],
+  "DataStorageLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw/DataStorageLinesOfService"
+  }],
+  "IOConnectivityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw/IOConnectivityLinesOfService"
+  }],
+  "IOPerformanceLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw/IOPerformanceLinesOfService"
+  }]
+}

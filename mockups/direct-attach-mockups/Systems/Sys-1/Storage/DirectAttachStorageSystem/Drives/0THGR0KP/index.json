@@ -1,0 +1,34 @@
+{
+  "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Drives/0THGR0KP",
+  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
+  "@odata.type": "#Drive.v1_8_0.Drive",
+  "Id": "0THGR0KP",
+  "Name": "Drive 1",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "StatusIndicator": "OK",
+  "CapacityBytes": 300067890136,
+  "FailurePredicted": false,
+  "Protocol": "SAS",
+  "MediaType": "HDD",
+  "Manufacturer": "HDD-Company",
+  "SerialNumber": "0THGR0KP",
+  "PartNumber": "HUC156030CSS200",
+  "Identifiers": [{
+    "DurableNameFormat": "NAA",
+    "DurableName": "300062B202B21849"
+  }],
+  "RotationSpeedRPM": 15000,
+  "BlockSizeBytes": 512,
+  "NegotiatedSpeedGbs": 12,
+  "Links": {
+    "Volumes": [{
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes/Volume1"
+    }],
+    "StoragePools": [{
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools/SimpleSystemPool"
+    }]
+  }
+}

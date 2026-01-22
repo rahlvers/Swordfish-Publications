@@ -187,16 +187,16 @@
             },
             "properties": {
                 "@odata.context": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
                 },
                 "@odata.etag": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
                 },
                 "@odata.id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
                 },
                 "@odata.type": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
                 },
                 "Actions": {
                     "$ref": "#/definitions/Actions",
@@ -210,7 +210,7 @@
                     "readonly": false
                 },
                 "ClientEndpointGroups": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection",
                     "deprecated": "Deprecated in favor of EndpointGroups. The GroupType property of EndpointGroup already distinguishes between use for Server or Client.",
                     "description": "Client endpoint groups.",
                     "longDescription": "The value of each entry in the array shall reference an EndpointGroup.",
@@ -256,13 +256,13 @@
                     "readonly": true
                 },
                 "Drives": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DriveCollection.json#/definitions/DriveCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/DriveCollection.json#/definitions/DriveCollection",
                     "description": "The set of drives managed by this storage service.",
                     "longDescription": "A collection that indicates all the drives managed by this storage service.",
                     "readonly": true
                 },
                 "EndpointGroups": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection",
                     "description": "Client and Server endpoint groups.",
                     "longDescription": "The value of each entry in the array shall reference an EndpointGroup.",
                     "readonly": false
@@ -333,10 +333,10 @@
                     "type": "array"
                 },
                 "Redundancy@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "ServerEndpointGroups": {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection",
                     "deprecated": "Deprecated in favor of EndpointGroups. The GroupType property of EndpointGroup already distinguishes between use for Server or Client.",
                     "description": "Server endpoint groups.",
                     "longDescription": "The value of each entry in the array shall reference a EndpointGroup.",
@@ -353,7 +353,7 @@
                     "versionAdded": "v1_2_0"
                 },
                 "SpareResourceSets@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "Status": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status",

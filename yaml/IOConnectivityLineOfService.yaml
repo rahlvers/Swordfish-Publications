@@ -2,7 +2,7 @@ components:
   schemas:
     IOConnectivityLineOfService_IOConnectivityLineOfService:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_0_3.yaml#/components/schemas/IOConnectivityLineOfService_v1_0_3_IOConnectivityLineOfService
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_1_2.yaml#/components/schemas/IOConnectivityLineOfService_v1_1_2_IOConnectivityLineOfService
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_2_1.yaml#/components/schemas/IOConnectivityLineOfService_v1_2_1_IOConnectivityLineOfService

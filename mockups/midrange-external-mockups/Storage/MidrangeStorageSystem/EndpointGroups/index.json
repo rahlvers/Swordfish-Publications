@@ -1,0 +1,15 @@
+{
+  "@odata.type": "#EndpointGroupCollection.EndpointGroupCollection",
+  "Name": "Endpoint Group Collection",
+  "Description": "Endpoint Group Collection",
+  "Members@odata.count": 2,
+  "Members": [{
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/iSCSIClientEndpointGroup"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/iSCSIServerEndpointGroup"
+    }
+  ],
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups",
+  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved."
+}

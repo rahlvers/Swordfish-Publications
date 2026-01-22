@@ -1,0 +1,11 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/1/Volumes/5/StorageGroups",
+  "@odata.type": "#StorageGroupCollection.StorageGroupCollection",
+  "Name": "StorageGroups",
+  "Members@odata.count": 1,
+  "Members":[
+        {"@odata.id": "/redfish/v1/StorageServices/1/StorageGroups/3"}
+  ]
+}

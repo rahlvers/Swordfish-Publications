@@ -537,20 +537,20 @@
           <Annotation Term="OData.LongDescription" String="The support for addressing the write hole issue is disabled. The volume is not performing any additional activities to close the RAID write hole."/>
         </Member>
         <Member Name="Journaling">
-          <Annotation Term="OData.Description" String="The policy that uses separate block device for write-ahead logging to adddress write hole issue."/>
+          <Annotation Term="OData.Description" String="The policy that uses separate block device for write-ahead logging to address write hole issue."/>
           <Annotation
             Term="OData.LongDescription"
-            String="The policy that uses separate block device for write-ahead logging to adddress write hole issue. All write operations on the RAID volume are first logged on dedicated journaling device that is not part of the volume."/>
+            String="The policy that uses separate block device for write-ahead logging to address write hole issue. All write operations on the RAID volume are first logged on dedicated journaling device that is not part of the volume."/>
         </Member>
         <Member Name="DistributedLog">
           <Annotation Term="OData.Description" String="The policy that distributes additional log among the volume's capacity sources to address write hole issue."/>
           <Annotation
             Term="OData.LongDescription"
-            String="The policy that distributes additional log (e.q. cheksum of the parity) among the volume's capacity sources to address write hole issue. Additional data is used to detect data corruption on the volume."/>
+            String="The policy that distributes additional log (e.q. checksum of the parity) among the volume's capacity sources to address write hole issue. Additional data is used to detect data corruption on the volume."/>
         </Member>
         <Member Name="Oem">
           <Annotation Term="OData.Description" String="The policy that is Oem specific."/>
-          <Annotation Term="OData.LongDescription" String="The policy that is Oem specific. The mechanism details are unknown unless provided separatly by the Oem."/>
+          <Annotation Term="OData.LongDescription" String="The policy that is Oem specific. The mechanism details are unknown unless provided separately by the Oem."/>
         </Member>
       </EnumType>
 
@@ -911,6 +911,12 @@
       <EntityType Name="Volume" BaseType="Volume.v1_2_3.Volume"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Volume.v1_2_5">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was added to fix typographical errors."/>
+      <EntityType Name="Volume" BaseType="Volume.v1_2_4.Volume"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Volume.v1_3_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="TP v1.0.6a"/>
@@ -968,6 +974,12 @@
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="OData.Description" String="This version was created to move enums to the unversioned namespace."/>
       <EntityType Name="Volume" BaseType="Volume.v1_3_2.Volume"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Volume.v1_3_4">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was added to fix typographical errors."/>
+      <EntityType Name="Volume" BaseType="Volume.v1_3_3.Volume"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Volume.v1_4_0">
@@ -1088,6 +1100,12 @@
       <EntityType Name="Volume" BaseType="Volume.v1_4_1.Volume"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Volume.v1_4_3">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was added to fix typographical errors."/>
+      <EntityType Name="Volume" BaseType="Volume.v1_4_2.Volume"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Volume.v1_5_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="Redfish.Release" String="WIP v1.2.0"/>
@@ -1184,12 +1202,18 @@
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
         </Property>
         <Property Name="SupportsIOPerformanceHints" Type="Edm.Boolean">
-          <Annotation Term="OData.Description" String="Indicates that the Namepsace Atomic Write Unit Normal (NAWUN), Namespace Atomic Write Unit Power Fail (NAWUPF), and Namespace Atomic Compare and Write Unit (NACWU) fields are defined for this namespace and should be used by the host for this namespace instead of the controller-level properties AWUN, AWUPF, and ACWU."/>
-          <Annotation Term="OData.LongDescription" String="This property shall indicate that the Namepsace Atomic Write Unit Normal (NAWUN), Namespace Atomic Write Unit Power Fail (NAWUPF), and Namespace Atomic Compare and Write Unit (NACWU) fields are defined for this namespace and should be used by the host for this namespace instead of the controller-level properties AWUN, AWUPF, and ACWU."/>
+          <Annotation Term="OData.Description" String="Indicates that the Namespace Atomic Write Unit Normal (NAWUN), Namespace Atomic Write Unit Power Fail (NAWUPF), and Namespace Atomic Compare and Write Unit (NACWU) fields are defined for this namespace and should be used by the host for this namespace instead of the controller-level properties AWUN, AWUPF, and ACWU."/>
+          <Annotation Term="OData.LongDescription" String="This property shall indicate that the Namespace Atomic Write Unit Normal (NAWUN), Namespace Atomic Write Unit Power Fail (NAWUPF), and Namespace Atomic Compare and Write Unit (NACWU) fields are defined for this namespace and should be used by the host for this namespace instead of the controller-level properties AWUN, AWUPF, and ACWU."/>
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
         </Property>
       </ComplexType>
 
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Volume.v1_5_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was added to fix typographical errors."/>
+      <EntityType Name="Volume" BaseType="Volume.v1_5_0.Volume"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Volume.v1_6_0">
@@ -1219,6 +1243,12 @@
           <Annotation Term="OData.LongDescription" String="This shall be a pointer to the cache data volumes this volume serves as a cache volume.  The corresponding VolumeUsage property shall be set to CacheOnly when this property is used."/>
         </NavigationProperty>
       </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Volume.v1_6_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was added to fix typographical errors."/>
+      <EntityType Name="Volume" BaseType="Volume.v1_6_0.Volume"/>
     </Schema>
 
   </edmx:DataServices>

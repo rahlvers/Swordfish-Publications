@@ -44,7 +44,7 @@
         </Annotation>
         <Annotation Term="Capabilities.UpdateRestrictions">
           <Record>
-            <PropertyValue Property="Updatable" Bool="false"/>
+            <PropertyValue Property="Updatable" Bool="true"/>
           </Record>
         </Annotation>
         <Annotation Term="Capabilities.DeleteRestrictions">
@@ -245,6 +245,13 @@
     <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
     <Annotation Term="OData.Description" String="This version was created to fix CSDL schema errors."/>
     <EntityType Name="DataProtectionLoSCapabilities" BaseType="DataProtectionLoSCapabilities.v1_1_2.DataProtectionLoSCapabilities"/>
+  </Schema>
+
+  <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataProtectionLoSCapabilities.v1_2_0">
+    <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+    <Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
+    <Annotation Term="OData.Description" String="This version was added to fix CSDL Capability Annotations."/>
+    <EntityType Name="DataProtectionLoSCapabilities" BaseType="DataProtectionLoSCapabilities.v1_1_3.DataProtectionLoSCapabilities"/>
   </Schema>
 
 </edmx:DataServices>

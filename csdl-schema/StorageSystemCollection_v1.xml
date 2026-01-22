@@ -43,6 +43,7 @@
         </Annotation>
         <Annotation Term="Redfish.Uris">
           <Collection>
+            <String>/redfish/v1/Systems</String>
             <String>/redfish/v1/StorageSystems</String>
           </Collection>
         </Annotation>

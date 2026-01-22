@@ -1,0 +1,38 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/BackupServer",
+  "@odata.type": "#StorageGroup.v1_3_0.StorageGroup",
+  "Id": "BackupServer",
+  "Name": "BackupServer Storage Group",
+  "Description": "Storage Group for MidrangeStorageSystem - Backup server usage.",
+  "Identifier": {
+    "DurableName": "4289a3dd-ba52-41b8-9d3d-38de196e0500",
+    "DurableNameFormat": "UUID"
+  },
+  "AccessState": "Optimized",
+  "VolumesAreExposed": true,
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "OK"
+  },
+  "ClientEndpointGroups": [
+    { "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/BackupServerClientEndpointGroup" }
+  ],
+  "ServerEndpointGroups": [
+    { "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/EndpointGroups/iSCSIServerEndpointGroup" }
+  ],
+  "MappedVolumes" : [
+    {
+      "LogicalUnitNumber" : "0",
+      "Volume" : { "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes/Volume2-Snap1" }
+    }
+  ],
+  "AuthenticationMethod": "CHAP",
+  "ChapInfo": [
+    {
+      "CHAPUser": "bob",
+      "CHAPPassword": "arraysecret"
+    }
+  ]
+}

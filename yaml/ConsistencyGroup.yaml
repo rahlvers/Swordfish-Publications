@@ -17,7 +17,7 @@ components:
         VSS: Supports Microsoft VSS.
     ConsistencyGroup_ConsistencyGroup:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.v1_0_1.yaml#/components/schemas/ConsistencyGroup_v1_0_1_ConsistencyGroup
       description: A collection of volumes grouped together to ensure write order
         consistency across all those volumes.

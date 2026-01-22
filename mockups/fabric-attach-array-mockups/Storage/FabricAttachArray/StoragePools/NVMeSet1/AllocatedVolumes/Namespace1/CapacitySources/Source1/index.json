@@ -1,0 +1,15 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet1/AllocatedVolumes/Namespace1/CapacitySources/Source1",
+  "@odata.type": "#Capacity.v1_1_2.CapacitySource",
+
+  "ProvidedCapacity": {
+    "Data": {
+      "AllocatedBytes": 10737418240
+    }
+  },
+
+  "ProvidingPools": {
+    "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/EnduranceGroup1/CapacitySources/Source1/ProvidingPools"
+  }
+}

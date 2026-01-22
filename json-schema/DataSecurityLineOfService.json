@@ -6,7 +6,7 @@
         "DataSecurityLineOfService": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService.v1_0_2.json#/definitions/DataSecurityLineOfService"

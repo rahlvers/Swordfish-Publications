@@ -7,7 +7,7 @@
         "NVMeDomainCollection": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
                     "additionalProperties": false,
@@ -29,16 +29,16 @@
                     },
                     "properties": {
                         "@odata.context": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
                         },
                         "@odata.etag": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
                         },
                         "@odata.id": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
                         },
                         "@odata.type": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
                         },
                         "Description": {
                             "anyOf": [
@@ -54,17 +54,17 @@
                         "Members": {
                             "description": "The value of each member references a NVMeDomain resource.",
                             "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/NVMeDomain.json#/definitions/NVMeDomain"
+                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/NVMeDomain.json#/definitions/NVMeDomain"
                             },
                             "longDescription": "The value of each member entry shall reference a NVMeDomain resource.",
                             "readonly": true,
                             "type": "array"
                         },
                         "Members@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                         },
                         "Members@odata.nextLink": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/nextLink"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/nextLink"
                         },
                         "Name": {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",

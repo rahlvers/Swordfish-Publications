@@ -1,0 +1,26 @@
+{
+  "@odata.type": "#ChassisCollection.ChassisCollection",
+  "Name": "Chassis Collection",
+  "Members@odata.count": 9,
+  "Members": [{
+      "@odata.id": "/redfish/v1/Chassis/ArrayEnclosure"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/2"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/3"
+    },
+    {
+      "@odata.id": "/redfish/v1/Storage/OpaqueArray/Drives/4"
+    },
+    {
+      "@odata.id": "/redfish/v1/Chassis/NVMeOpaqueArray"
+    }
+  ],
+  "@odata.id": "/redfish/v1/Chassis",
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

@@ -115,7 +115,7 @@ components:
           x-longDescription: The value shall be the names of the replica.
           x-versionAdded: v1_1_0
         ReplicaSource:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           description: A resource to be replicated.
           x-longDescription: The value shall reference a resource to be replicated.
           x-versionAdded: v1_1_0

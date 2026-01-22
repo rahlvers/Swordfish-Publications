@@ -1,0 +1,53 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem",
+  "@odata.type": "#Storage.v1_8_0.Storage",
+  "Id": "1",
+  "Name": "Simple Storage Systems",
+  "Description": "Mockup of a Simple Swordfish Storage System with a Single Storage Pool and Volume.",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "OK"
+  },
+
+  "StorageControllers": [{
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem#/StorageControllers/0",
+    "MemberId": "0",
+    "Name": "Storage Controller",
+    "Status": {
+      "State": "Enabled",
+      "Health": "OK"
+    },
+    "Id": "14",
+    "Manufacturer": "Best Storage Vendor",
+    "Model": "Simple Storage Device",
+    "SerialNumber": "SS123456",
+    "PartNumber": "SS44",
+    "FirmwareVersion": "1.0.0",
+    "SupportedControllerProtocols": [
+      "PCIe"
+    ],
+    "SupportedDeviceProtocols": [
+      "SAS", "SATA", "NVME"
+    ],
+    "Links": {
+      "Chassis": {
+        "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1"
+      }
+    }
+  }],
+  "Volumes": {
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Volumes"
+  },
+  "Drives": [{
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Drives/0THGR0KP"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/Drives/0THGXPBP"
+    }
+  ],
+  "StoragePools": {
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/DirectAttachStorageSystem/StoragePools"
+  }
+}

@@ -44,7 +44,7 @@
         </Annotation>
         <Annotation Term="Redfish.Uris">
           <Collection>
-            <String>/redfish/v1/Systems/{ComputerSystemId}/HostedServices/StorageServices</String>
+            <String>/redfish/v1/Systems/{ComputerSystemId}/HostedServices</String>
           </Collection>
         </Annotation>
         <NavigationProperty Name="Members" Type="Collection(StorageService.StorageService)">

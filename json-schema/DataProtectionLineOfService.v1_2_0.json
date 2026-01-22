@@ -250,7 +250,7 @@
                     "versionAdded": "v1_1_0"
                 },
                 "ReplicaSource": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef",
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef",
                     "description": "A resource to be replicated.",
                     "longDescription": "The value shall reference a resource to be replicated.",
                     "versionAdded": "v1_1_0"

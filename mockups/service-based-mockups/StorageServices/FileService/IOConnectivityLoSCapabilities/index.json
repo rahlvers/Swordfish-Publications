@@ -1,0 +1,12 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/FileService/IOConnectivityLoSCapabilities",
+  "@odata.type": "#IOConnectivityLoSCapabilities.v1_0_0.IOConnectivityLoSCapabilities",
+  "Name": "IOConnectivityLoSCapabilities",
+  "SupportedAccessProtocols": ["FC"],
+  "MaxSupportedBytesPerSecond": 1000,
+	"SupportedLinesOfService": [
+    {"@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/IOConnectivityLinesOfService"}
+    ]
+}

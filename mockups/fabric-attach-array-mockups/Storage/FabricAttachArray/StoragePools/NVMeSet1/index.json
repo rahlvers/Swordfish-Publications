@@ -1,0 +1,27 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet1",
+  "@odata.type": "#StoragePool.v1_4_0.StoragePool",
+  "Id": "1",
+  "Name": "Set 1",
+  "Description": "First Set",
+
+  "NVMeSetProperties": {
+    "SetIdentifier": "0x1F",
+    "EnduranceGroupIdentifier": "0x1",
+    "Random4kReadTypicalNanoSeconds": 34534345348,
+    "UnallocatedNVMNamespaceCapacityBytes": 5497558138880,
+    "OptimalWriteSizeBytes": 512
+  },
+
+  "Capacity": {
+    "Data": {
+      "AllocatedBytes": 10995116277760,
+      "ConsumedBytes": 5497558138880
+    }
+  },
+
+  "AllocatedVolumes": {
+    "@odata.id": "/redfish/v1/Storage/FabricAttachArray/StoragePools/NVMeSet1/AllocatedVolumes"
+  }
+}

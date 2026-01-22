@@ -1,0 +1,12 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService",
+  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+  "Id": "1",
+  "Name": "LinesOfService",
+  "Members@odata.count": 1,
+  "Members": [
+        {"@odata.id": "/redfish/v1/StorageServices/ISC/LinesOfService/IOConnectivityLinesOfService"}
+     ]
+}

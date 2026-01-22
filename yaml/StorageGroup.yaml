@@ -40,12 +40,13 @@ components:
           description: This property shall specify a valid odata or Redfish property.
     StorageGroup_StorageGroup:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_0_3.yaml#/components/schemas/StorageGroup_v1_0_3_StorageGroup
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_1_2.yaml#/components/schemas/StorageGroup_v1_1_2_StorageGroup
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_2_2.yaml#/components/schemas/StorageGroup_v1_2_2_StorageGroup
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_3_0.yaml#/components/schemas/StorageGroup_v1_3_0_StorageGroup
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_4_0.yaml#/components/schemas/StorageGroup_v1_4_0_StorageGroup
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_5_0.yaml#/components/schemas/StorageGroup_v1_5_0_StorageGroup
       description: Collection of resources that are managed and exposed to hosts as
         a group.
       x-longDescription: 'Collection of resources that the system can make available

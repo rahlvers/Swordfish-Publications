@@ -1,0 +1,21 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/EnduranceGroup0",
+  "@odata.type": "#StoragePool.v1_4_0.StoragePool",
+  "Id": "0",
+  "Name": "Endurance Group 0",
+  "Description": "Default Endurance Group",
+
+  "NVMeEnduranceGroupProperties": {},
+
+  "Capacity": {
+    "Data": {
+      "AllocatedBytes": 10995116277760,
+      "ConsumedBytes": 10995116277760
+    }
+  },
+
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools/EnduranceGroup0/CapacitySources/Source1"
+  }]
+}

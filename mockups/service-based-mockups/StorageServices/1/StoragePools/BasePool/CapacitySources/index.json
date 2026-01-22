@@ -1,0 +1,14 @@
+{
+    "@odata.type": "#CapacitySourceCollection.CapacitySourceCollection",
+    "Name": "Capacity Source Collection",
+    "Description": "Capacity SourceCollection",
+    "Members@odata.count": 1,
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/CapacitySources/Source1"
+        }
+    ],
+
+    "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool/CapacitySources",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved."
+}

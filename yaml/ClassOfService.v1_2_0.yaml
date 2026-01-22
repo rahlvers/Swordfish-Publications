@@ -47,7 +47,7 @@ components:
             for each replication session.
           x-versionAdded: v1_1_1
         DataProtectionLinesOfService@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         DataSecurityLinesOfService:
           description: A collection of DataSecurity line of service elements.
           items:
@@ -57,7 +57,7 @@ components:
           x-longDescription: The value shall be a set of data security service options.
           x-versionAdded: v1_1_1
         DataSecurityLinesOfService@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         DataStorageLinesOfService:
           description: A collection of DataStorage line of service elements.
           items:
@@ -67,7 +67,7 @@ components:
           x-longDescription: The value shall be a set of data protection service options.
           x-versionAdded: v1_1_1
         DataStorageLinesOfService@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         IOConnectivityLinesOfService:
           description: A collection of IOConnectivity line of service elements.
           items:
@@ -79,7 +79,7 @@ components:
             present for a value of AccessProtocol.
           x-versionAdded: v1_1_1
         IOConnectivityLinesOfService@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         IOPerformanceLinesOfService:
           description: A collection of IOPerformance line of service elements.
           items:
@@ -89,7 +89,7 @@ components:
           x-longDescription: The value shall be a set of IO performance service options.
           x-versionAdded: v1_1_1
         IOPerformanceLinesOfService@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         Identifier:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Identifier
           description: The value identifies this resource.

@@ -1,0 +1,30 @@
+{
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Drives/0THEZDAU",
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+    "@odata.type": "#Drive.v1_9_0.Drive",
+    "Id": "0THEZDAU",
+    "Name": "Drive 6",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK"
+    },
+    "StatusIndicator": "OK",
+    "CapacityBytes": 300067890136,
+    "FailurePredicted": false,
+    "Protocol": "SAS",
+    "MediaType": "HDD",
+    "Manufacturer": "HDD-Company",
+    "SerialNumber": "0THEZDAU",
+    "PartNumber": "HUC156030CSS200",
+    "Identifiers": [
+        {
+            "DurableNameFormat": "NAA",
+            "DurableName": "300062B202B2184C"
+        }
+    ],
+    "RotationSpeedRPM": 15000,
+    "BlockSizeBytes": 512,
+    "NegotiatedSpeedGbs": 12,
+    "Links": {
+    }
+}

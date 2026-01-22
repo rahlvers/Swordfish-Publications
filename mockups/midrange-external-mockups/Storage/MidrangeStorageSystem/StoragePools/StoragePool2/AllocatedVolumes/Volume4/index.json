@@ -1,0 +1,41 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4",
+  "@odata.type": "#Volume.v1_5_0.Volume",
+  "Id": "Volume4",
+  "Name": "Volume 4",
+  "Description": "Volume 4 in Midrange System. From StoragePool2.",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "RAIDType": "RAID0",
+  "Identifiers": [{
+    "DurableNameFormat": "NAA",
+    "DurableName": "6545671545176100124407610013555"
+  }],
+
+  "BlockSizeBytes": 512,
+  "Encrypted": false,
+  "DisplayName": "This is my user/client set friendly name.",
+
+  "Capacity": {
+    "Data": {
+      "ConsumedBytes": 0,
+      "AllocatedBytes": 300067890136
+    }
+  },
+  "StorageGroups": {
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StorageGroups/iSCSIStorageGroup"
+  },
+
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool2/AllocatedVolumes/Volume4/CapacitySources/Source1"
+  }],
+
+  "Links": {
+    "OwningStorageResource": {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem"
+    }
+  }
+}

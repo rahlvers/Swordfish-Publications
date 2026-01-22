@@ -1,0 +1,29 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/Simple1/Volumes/1",
+  "@odata.type": "#Volume.v1_3_0.Volume",
+  "Id": "1",
+  "Name": "Logical Disk 1",
+  "Identifiers": [
+    {
+      "DurableNameFormat": "UUID",
+      "DurableName": "123e4567-a12b-12a3-a123-123456789000"
+    }
+  ],
+  "Manufacturer": "ACME",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "BlockSizeBytes": 512,
+  "Capacity": {
+    "Data": {
+      "AllocatedBytes": 1099511627776,
+      "ConsumedBytes": 1099511627776
+    }
+  },
+  "ReplicaTargets": [{
+    "@odata.id": "/redfish/v1/StorageServices/Simple1/Volumes/3"
+  }]
+}

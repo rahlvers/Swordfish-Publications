@@ -1,0 +1,20 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/StorageServices/1/Volumes/4/CapacitySources/Source1",
+  "@odata.type": "#Capacity.v1_1_2.CapacitySource",
+
+  "ProvidedCapacity": {
+    "Data": {
+      "ConsumedBytes": 70390755885056,
+      "AllocatedBytes": 140759500062720,
+      "GuaranteedBytes": 17592722915328,
+      "ProvisionedBytes": 565148976676864
+    }
+  },
+  "ProvidingPools": {
+    "@odata.id": "/redfish/v1/StorageServices/1/Volumes/4/CapacitySources/Source1/ProvidingPools"
+  },
+  "ProvidedClassOfService": {
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldDallas"
+  }
+}

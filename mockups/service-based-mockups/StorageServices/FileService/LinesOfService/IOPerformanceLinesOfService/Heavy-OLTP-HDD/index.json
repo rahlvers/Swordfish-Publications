@@ -1,0 +1,15 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/IOPerformanceLinesOfService/Heavy-OLTP-HDD",
+  "@odata.type": "#IOPerformanceLineOfService.v1_1_0.IOPerformanceLineOfService",
+
+  "Name": "Heavy-OLTP-HDD",
+  "IOOperationsPerSecondIsLimited": false,
+  "SamplePeriod": "PT1M",
+  "MaxIOOperationsPerSecondPerTerabyte": 83,
+  "AverageIOOperationLatencyMicroseconds": 8000,
+  "IOWorkload": {
+    "Name": "Duplicon:OLTP"
+  }
+}

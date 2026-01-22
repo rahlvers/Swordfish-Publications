@@ -36,7 +36,7 @@
         </Annotation>
         <Annotation Term="Capabilities.UpdateRestrictions">
           <Record>
-            <PropertyValue Property="Updatable" Bool="false"/>
+            <PropertyValue Property="Updatable" Bool="true"/>
           </Record>
         </Annotation>
         <Annotation Term="Capabilities.DeleteRestrictions">
@@ -213,6 +213,13 @@
       <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataStorageLoSCapabilities.v1_2_1">
         <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
         <Annotation Term="OData.Description" String="This version was added to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
+        <EntityType Name="DataStorageLoSCapabilities" BaseType="DataStorageLoSCapabilities.v1_2_0.DataStorageLoSCapabilities"/>
+      </Schema>
+
+      <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataStorageLoSCapabilities.v1_2_2">
+        <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+        <Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
+        <Annotation Term="OData.Description" String="This version was added to fix CSDL Capability Annotations."/>
         <EntityType Name="DataStorageLoSCapabilities" BaseType="DataStorageLoSCapabilities.v1_2_0.DataStorageLoSCapabilities"/>
       </Schema>
 

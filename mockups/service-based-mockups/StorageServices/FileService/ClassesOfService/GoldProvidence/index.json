@@ -1,0 +1,25 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence",
+  "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
+  "Id": "GoldProvidence",
+  "Name": "GoldProvidence",
+  "Description": "Gold class of service in Providence",
+  "ClassOfServiceVersion": "01.20.00",
+  "DataProtectionLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence/DataProtectionLinesOfService"
+  }],
+  "DataSecurityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence/DataSecurityLinesOfService"
+  }],
+  "DataStorageLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence/DataStorageLinesOfService"
+  }],
+  "IOConnectivityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence/IOConnectivityLinesOfService"
+  }],
+  "IOPerformanceLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldProvidence/IOPerformanceLinesOfService"
+  }]
+}

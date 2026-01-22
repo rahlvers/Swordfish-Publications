@@ -1,0 +1,15 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonSilverJaw/DataProtectionLinesOfService",
+  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+  "Name": "DataProtectionLinesOfService Collection",
+  "Members@odata.count": 2,
+  "Members": [{
+      "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Dallas-Asynchronous-Mirror"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Providence-Synchronous-Mirror"
+    }
+  ]
+}

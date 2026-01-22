@@ -1,0 +1,16 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+
+	"@odata.id": "/redfish/v1/StorageServices/FileService/DataStorageLoSCapabilities",
+	"@odata.type": "#DataStorageLoSCapabilities.v1_0_0.DataStorageLoSCapabilities",
+	"Name": "DataStorageLoSCapabilities",
+	"SupportedAccessCapabilities": ["Read",
+	"Write"],
+	"SupportedRecoveryTimeObjectives": ["OnlineActive",
+	"Nearline",
+	"Offline"],
+	"SupportsSpaceEfficiency": true,
+	"SupportedLinesOfService": [
+		{"@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataSecurityLinesOfService"}
+		]
+}

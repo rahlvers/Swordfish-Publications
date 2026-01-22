@@ -1,0 +1,34 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1",
+  "@odata.type": "#StoragePool.v1_4_0.StoragePool",
+  "Id": "SimpleSystemPool",
+  "Name": "Simple System Storage Pool",
+  "Description": "Simple Storage Pool for Simple System",
+
+  "SupportedRAIDTypes": ["RAID0", "RAID5"],
+
+  "RemainingCapacityPercent": 0,
+
+  "Capacity": {
+    "Data": {
+      "AllocatedBytes": 600135780272,
+      "ConsumedBytes": 600135780272
+    }
+  },
+
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/CapacitySources/Source1"
+  }],
+
+  "AllocatedVolumes": {
+    "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/StoragePools/StoragePool1/AllocatedVolumes"
+  },
+
+  "Links": {
+    "OwningStorageResource": {
+      "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem"
+    }
+  }
+
+}

@@ -42,7 +42,7 @@ components:
         by the file system. At least one value shall be present.
     FileSystem_FileSystem:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_0_3.yaml#/components/schemas/FileSystem_v1_0_3_FileSystem
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_1_4.yaml#/components/schemas/FileSystem_v1_1_4_FileSystem
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.v1_2_2.yaml#/components/schemas/FileSystem_v1_2_2_FileSystem

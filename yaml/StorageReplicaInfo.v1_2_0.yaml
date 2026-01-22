@@ -147,7 +147,7 @@ components:
             shall be an average of the PercentSynced across all members of the group.
           x-units: '%'
         Replica:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           description: Deprecated - Use Source Replica. The resource that is the source
             of this replica.
           readOnly: true
@@ -240,7 +240,7 @@ components:
             When RequestedState reaches the requested state, this property shall be
             null.
         SourceReplica:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           description: The resource that is the source of this replica.
           readOnly: true
           x-longDescription: The value shall reference the resource that is the source
@@ -628,13 +628,13 @@ components:
       description: Defines the characteristics of a Storage Replica.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
         Actions:
           $ref: '#/components/schemas/StorageReplicaInfo_v1_2_0_Actions'
           description: The available actions for this resource.

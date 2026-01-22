@@ -1,0 +1,29 @@
+{
+  "@odata.type": "#DriveCollection.DriveCollection",
+  "Name": "Drive Collection",
+  "Members@odata.count": 7,
+  "Members": [{
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive1/Drives/NVMeDrive1"
+  },
+  {
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive2/Drives/NVMeDrive2"
+  },
+  {
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive3/Drives/NVMeDrive3"
+  },
+  {
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive4/Drives/NVMeDrive4"
+  },
+  {
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive5/Drives/NVMeDrive5"
+  },
+  {
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive6/Drives/NVMeDrive6"
+  },
+  {
+    "@odata.id": "/redfish/v1/Chassis/NVMeDrive7/Drives/NVMeDrive7"
+  }
+],
+  "@odata.id": "/redfish/v1/Chassis/NVMeJBOF/Drives",
+  "@Redfish.Copyright": "Copyright 2020 SNIA. All rights reserved."
+}

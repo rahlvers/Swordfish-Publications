@@ -7,20 +7,23 @@
         "DataProtectionLoSCapabilities": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_0_3.json#/definitions/DataProtectionLoSCapabilities"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_1_3.json#/definitions/DataProtectionLoSCapabilities"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_2_0.json#/definitions/DataProtectionLoSCapabilities"
                 }
             ],
             "deletable": false,
             "description": "The capabilities to protect data from loss by the use of a replica.",
             "insertable": false,
             "longDescription": "The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics.",
-            "updatable": false,
+            "updatable": true,
             "uris": [
                 "/redfish/v1/StorageServices/{StorageServiceId}/DataProtectionLoSCapabilities"
             ]

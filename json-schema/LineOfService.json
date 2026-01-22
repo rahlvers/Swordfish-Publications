@@ -7,17 +7,20 @@
         "LineOfService": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/LineOfService.v1_0_0.json#/definitions/LineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/LineOfService.v1_1_0.json#/definitions/LineOfService"
                 }
             ],
             "deletable": true,
             "description": "Describes a service option.",
             "insertable": false,
             "longDescription": "This service option is the abstract base class for other ClassOfService and concrete lines of service.",
-            "updatable": true
+            "updatable": false
         }
     },
     "owningEntity": "SNIA",

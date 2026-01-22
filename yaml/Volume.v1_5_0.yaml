@@ -313,7 +313,7 @@ components:
             client Endpoints this volume is associated with.
           x-versionAdded: v1_4_0
         ClientEndpoints@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         ConsistencyGroups:
           description: An array of references to the ConsistencyGroups associated
             with this volume.
@@ -325,7 +325,7 @@ components:
             ConsistencyGroups this volume is associated with.
           x-versionAdded: v1_4_0
         ConsistencyGroups@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         DedicatedSpareDrives:
           description: An array of references to the drives which are dedicated spares
             for this volume.
@@ -340,7 +340,7 @@ components:
             this Volume.
           x-versionAdded: v1_2_0
         DedicatedSpareDrives@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         Drives:
           description: An array of references to the drives which contain this volume.
             This will reference Drives that either wholly or only partly contain this
@@ -355,7 +355,7 @@ components:
             which are currently members of the Volume, not hot spare Drives which
             are not currently a member of the volume.
         Drives@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         JournalingMedia:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Resource
           description: A pointer to the Resource that serves as a journaling media
@@ -399,7 +399,7 @@ components:
             server Endpoints this volume is associated with.
           x-versionAdded: v1_4_0
         ServerEndpoints@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         SpareResourceSets:
           description: An array of references to SpareResourceSets.
           items:
@@ -411,7 +411,7 @@ components:
             having a compatible type.
           x-versionAdded: v1_3_0
         SpareResourceSets@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         StorageGroups:
           description: An array of references to the StorageGroups associated with
             this volume.
@@ -423,7 +423,7 @@ components:
             StorageGroups this volume is associated with.
           x-versionAdded: v1_4_0
         StorageGroups@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
       type: object
       x-patternProperties:
         ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
@@ -532,7 +532,7 @@ components:
             deallocated or unwritten logical block error for this namespace. .
           x-versionAdded: v1_5_0
         SupportsIOPerformanceHints:
-          description: Indicates that the Namepsace Atomic Write Unit Normal (NAWUN),
+          description: Indicates that the Namespace Atomic Write Unit Normal (NAWUN),
             Namespace Atomic Write Unit Power Fail (NAWUPF), and Namespace Atomic
             Compare and Write Unit (NACWU) fields are defined for this namespace and
             should be used by the host for this namespace instead of the controller-level
@@ -540,7 +540,7 @@ components:
           nullable: true
           readOnly: true
           type: boolean
-          x-longDescription: This property shall indicate that the Namepsace Atomic
+          x-longDescription: This property shall indicate that the Namespace Atomic
             Write Unit Normal (NAWUN), Namespace Atomic Write Unit Power Fail (NAWUPF),
             and Namespace Atomic Compare and Write Unit (NACWU) fields are defined
             for this namespace and should be used by the host for this namespace instead
@@ -788,13 +788,13 @@ components:
         LUN, or other logical storage entity for any system.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
         AccessCapabilities:
           description: Supported IO access capabilities.
           items:
@@ -852,7 +852,7 @@ components:
             resource.
           x-versionAdded: v1_1_0
         CapacitySources@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         Compressed:
           description: Indicator of whether or not the Volume has compression enabled.
           nullable: true
@@ -1068,14 +1068,14 @@ components:
         ReplicaTargets:
           description: The resources that are target replicas of this source.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           readOnly: true
           type: array
           x-longDescription: The value shall reference the target replicas that are
             sourced by this replica.
           x-versionAdded: v1_3_0
         ReplicaTargets@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         Status:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Status
           description: The property contains the status of the Volume.

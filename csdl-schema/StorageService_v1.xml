@@ -32,7 +32,7 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/StorageCollection_v1.xml">
 		<edmx:Include Namespace="StorageCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DriveCollection_v1.xml">
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/DriveCollection_v1.xml">
 		<edmx:Include Namespace="DriveCollection"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroupCollection_v1.xml">
@@ -71,7 +71,7 @@
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfServiceCollection_v1.xml">
 		<edmx:Include Namespace="ClassOfServiceCollection"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroupCollection_v1.xml">
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EndpointGroupCollection_v1.xml">
 		<edmx:Include Namespace="EndpointGroupCollection"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics_v1.xml">
@@ -115,6 +115,7 @@
 				<Annotation Term="Redfish.Uris">
 					<Collection>
 						<String>/redfish/v1/StorageServices/{StorageServiceId}</String>
+						<String>/redfish/v1/Systems/{ComputerSystemId}/StorageServices/{StorageServiceId}</String>
 					</Collection>
 				</Annotation>
 			</EntityType>
@@ -421,7 +422,7 @@
 			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
 			<Annotation Term="Redfish.Release" String="WIP v1.2.0"/>
 			<Annotation Term="OData.Description" String="This version was created to add LinesOfService to StorageService."/>
-			<EntityType Name="StorageService" BaseType="StorageService.v1_2_1.StorageService">
+			<EntityType Name="StorageService" BaseType="StorageService.v1_3_0.StorageService">
 
 				<NavigationProperty Name="LinesOfService" Type="Collection(LineOfServiceCollection.LineOfServiceCollection)" ContainsTarget="true">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
@@ -431,6 +432,13 @@
 				</NavigationProperty>
 
 			</EntityType>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageService.v1_5_0">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
+			<Annotation Term="OData.Description" String="This version was created to change the reference for EndpointGroupCollection_v1 and DriveCollection_v1 to the Redfish version."/>
+			<EntityType Name="StorageService" BaseType="StorageService.v1_4_0.StorageService"/>
 		</Schema>
 
 	</edmx:DataServices>

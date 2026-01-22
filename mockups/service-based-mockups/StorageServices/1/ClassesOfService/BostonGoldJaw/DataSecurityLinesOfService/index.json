@@ -1,0 +1,11 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+ 
+  "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonGoldJaw/DataSecurityLinesOfService",
+  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+  "Name": "DataSecurityLinesOfService Collection",
+  "Members@odata.count": 1,
+  "Members": [
+        { "@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/DataSecurityLinesOfService/SecureData"}
+     ]
+}

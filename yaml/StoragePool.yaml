@@ -2,7 +2,7 @@ components:
   schemas:
     StoragePool_StoragePool:
       anyOf:
-      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef
+      - $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_0_2.yaml#/components/schemas/StoragePool_v1_0_2_StoragePool
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_1_3.yaml#/components/schemas/StoragePool_v1_1_3_StoragePool
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_2_1.yaml#/components/schemas/StoragePool_v1_2_1_StoragePool

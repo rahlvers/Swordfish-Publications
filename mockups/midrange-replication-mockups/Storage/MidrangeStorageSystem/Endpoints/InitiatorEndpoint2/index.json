@@ -1,0 +1,28 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Storage/MidrangeStorageSystem/Endpoints/InitiatorEndpoint1",
+  "@odata.type": "#Endpoint.v1_4_0.Endpoint",
+  "Id": "InitiatorEndpoint1",
+  "Name": "InitiatorEndpoint1",
+  "Description": "iSCSI Host / Initiator Endpoint 2 for backup server.",
+  "Identifiers": [{
+    "DurableName": "4289a3dd-ba52-41b8-9d3d-38de196e0630",
+    "DurableNameFormat": "UUID"
+  }],
+  "ConnectedEntities": [{
+    "EntityType": "NetworkController",
+    "EntityRole": "Initiator"
+  }],
+
+  "EndpointProtocol": "iSCSI",
+  "IPTransportDetails": [{
+    "IPv4Address": {
+      "Address": "192.168.1.99"
+    }
+  }],
+
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  }
+}

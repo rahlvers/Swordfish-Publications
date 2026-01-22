@@ -44,6 +44,7 @@
         </Annotation>
         <Annotation Term="Redfish.Uris">
           <Collection>
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataProtectionLinesOfService</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataSecurityLinesOfService</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataStorageLinesOfService</String>

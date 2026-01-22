@@ -69,7 +69,7 @@
         "StorageGroup": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_0_3.json#/definitions/StorageGroup"
@@ -85,6 +85,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_4_0.json#/definitions/StorageGroup"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_5_0.json#/definitions/StorageGroup"
                 }
             ],
             "deletable": true,

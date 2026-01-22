@@ -1,0 +1,26 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2020 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG",
+  "@odata.type": "#Storage.v1_9_0.Storage",
+  "Id": "1",
+  "Name": "NVMe Simple SSD Configuration",
+  "Description": "Mockup of NVMe config with 1 Subsystem, 1 I/O Controller and 1 Namespace, and a default endurance group and default set.",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "OK"
+  },
+  "Identifiers": [{
+    "DurableNameFormat": "NQN",
+    "DurableName": "nqn.2014-08.org.nvmexpress:uuid:6c5fe566-10e6-4fb6-aad4-8b4159f50245"
+  }],
+  "Controllers": {
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Controllers"
+  },
+  "Volumes": {
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/Volumes"
+  },
+  "StoragePools": {
+    "@odata.id": "/redfish/v1/Systems/Sys-1/Storage/NVMeSSD-EG/StoragePools"
+  }
+}

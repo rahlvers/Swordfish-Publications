@@ -76,20 +76,23 @@
         "DataSecurityLoSCapabilities": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_2.json#/definitions/DataSecurityLoSCapabilities"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_3.json#/definitions/DataSecurityLoSCapabilities"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_2_0.json#/definitions/DataSecurityLoSCapabilities"
                 }
             ],
             "deletable": false,
             "description": "Describe data security capabilities.",
             "insertable": false,
             "longDescription": "This resource may be used to describe data security capabilities.",
-            "updatable": false,
+            "updatable": true,
             "uris": [
                 "/redfish/v1/StorageServices/{StorageServiceId}/DataSecurityLoSCapabilities"
             ]

@@ -1,0 +1,12 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2019 DMTF. All rights reserved.",
+    "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters/8fd725a1/NetworkPorts",
+    "@odata.type": "#NetworkPortCollection.NetworkPortCollection",
+    "Name": "Network Port Collection",
+    "Members@odata.count": "1",
+    "Members": [
+        {
+            "@odata.id": "/redfish/v1/Chassis/IPAttachedDrive/NetworkAdapters/8fd725a1/NetworkPorts/1"
+        }
+    ]
+}

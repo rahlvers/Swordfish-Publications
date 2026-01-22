@@ -86,7 +86,7 @@ components:
           x-longDescription: An array of references to StorageGroups are incorporated
             into this StorageGroup.
         ChildStorageGroups@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         ClassOfService:
           $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_idRef
           description: The ClassOfService that all storage in this StorageGroup conforms
@@ -109,7 +109,7 @@ components:
           x-longDescription: An array of references to StorageGroups that incorporate
             this StorageGroup.
         ParentStorageGroups@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
       type: object
       x-longDescription: This structure shall contain references to resources that
         are not contained within this resource.
@@ -132,15 +132,15 @@ components:
         a group.
       properties:
         '@odata.context':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_context
         '@odata.etag':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_etag
         '@odata.id':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_id
         '@odata.type':
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_type
         AccessState:
-          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.yaml#/components/schemas/EndpointGroup_AccessState
+          $ref: http://redfish.dmtf.org/schemas/v1/EndpointGroup.yaml#/components/schemas/EndpointGroup_AccessState
           description: AccessState for this storage group.
           nullable: true
           readOnly: false
@@ -164,7 +164,7 @@ components:
             endpoint.  If empty, the implementation shall not allow access to the
             storage via any client-side endpoint.
         ClientEndpointGroups@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         Description:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Description
           nullable: true
@@ -230,7 +230,7 @@ components:
             any server-side endpoint.  If empty, the implementation shall not allow
             access to the storage via any server-side endpoint.
         ServerEndpointGroups@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         Status:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource_Status
           description: The property contains the status of the StorageGroup.
@@ -247,7 +247,7 @@ components:
           x-longDescription: An array of references to volumes managed by this storage
             group.
         Volumes@odata.count:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count
+          $ref: http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/components/schemas/odata-v4_count
         VolumesAreExposed:
           description: Storage volumes are exposed to paths defined by the client
             and server endpoints.

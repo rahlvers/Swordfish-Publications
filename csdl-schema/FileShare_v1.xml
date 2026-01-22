@@ -60,9 +60,9 @@
         </Annotation>
         <Annotation Term="Redfish.Uris">
           <Collection>
-            <String>/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedShares/{ExportedSharesId}</String>
-            <String>/redfish/v1/Systems/{ComputerSystemsId}/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedShares/{ExportedSharesId}</String>            
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemsId}/ExportedShares/{ExportedSharesId}</String>
+            <String>/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedFileShares/{ExportedFileSharesId}</String>
+            <String>/redfish/v1/Systems/{ComputerSystemsId}/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedFileShares/{ExportedFileSharesId}</String>
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemsId}/ExportedFileShares/{ExportedFileSharesId}</String>
           </Collection>
         </Annotation>
       </EntityType>
@@ -252,6 +252,13 @@
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="OData.Description" String="This version was added to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
       <EntityType Name="FileShare" BaseType="FileShare.v1_1_2.FileShare"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileShare.v1_2_0">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="TP v1.2.1c"/>
+      <Annotation Term="OData.Description" String="This version was added to add Redfish URIs."/>
+      <EntityType Name="FileShare" BaseType="FileShare.v1_1_3.FileShare"/>
     </Schema>
 
   </edmx:DataServices>

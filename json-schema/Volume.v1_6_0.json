@@ -365,7 +365,7 @@
                     "versionAdded": "v1_6_0"
                 },
                 "CacheDataVolumes@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "CacheVolumeSource": {
                     "anyOf": [
@@ -399,7 +399,7 @@
                     "versionAdded": "v1_4_0"
                 },
                 "ClientEndpoints@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "ConsistencyGroups": {
                     "description": "An array of references to the ConsistencyGroups associated with this volume.",
@@ -412,7 +412,7 @@
                     "versionAdded": "v1_4_0"
                 },
                 "ConsistencyGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "DedicatedSpareDrives": {
                     "description": "An array of references to the drives which are dedicated spares for this volume.",
@@ -425,7 +425,7 @@
                     "versionAdded": "v1_2_0"
                 },
                 "DedicatedSpareDrives@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "Drives": {
                     "description": "An array of references to the drives which contain this volume. This will reference Drives that either wholly or only partly contain this volume.",
@@ -437,7 +437,7 @@
                     "type": "array"
                 },
                 "Drives@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "JournalingMedia": {
                     "anyOf": [
@@ -483,7 +483,7 @@
                     "versionAdded": "v1_4_0"
                 },
                 "ServerEndpoints@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "SpareResourceSets": {
                     "description": "An array of references to SpareResourceSets.",
@@ -496,7 +496,7 @@
                     "versionAdded": "v1_3_0"
                 },
                 "SpareResourceSets@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "StorageGroups": {
                     "description": "An array of references to the StorageGroups associated with this volume.",
@@ -509,7 +509,7 @@
                     "versionAdded": "v1_4_0"
                 },
                 "StorageGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 }
             },
             "type": "object"
@@ -650,8 +650,8 @@
                     "versionAdded": "v1_5_0"
                 },
                 "SupportsIOPerformanceHints": {
-                    "description": "Indicates that the Namepsace Atomic Write Unit Normal (NAWUN), Namespace Atomic Write Unit Power Fail (NAWUPF), and Namespace Atomic Compare and Write Unit (NACWU) fields are defined for this namespace and should be used by the host for this namespace instead of the controller-level properties AWUN, AWUPF, and ACWU.",
-                    "longDescription": "This property shall indicate that the Namepsace Atomic Write Unit Normal (NAWUN), Namespace Atomic Write Unit Power Fail (NAWUPF), and Namespace Atomic Compare and Write Unit (NACWU) fields are defined for this namespace and should be used by the host for this namespace instead of the controller-level properties AWUN, AWUPF, and ACWU.",
+                    "description": "Indicates that the Namespace Atomic Write Unit Normal (NAWUN), Namespace Atomic Write Unit Power Fail (NAWUPF), and Namespace Atomic Compare and Write Unit (NACWU) fields are defined for this namespace and should be used by the host for this namespace instead of the controller-level properties AWUN, AWUPF, and ACWU.",
+                    "longDescription": "This property shall indicate that the Namespace Atomic Write Unit Normal (NAWUN), Namespace Atomic Write Unit Power Fail (NAWUPF), and Namespace Atomic Compare and Write Unit (NACWU) fields are defined for this namespace and should be used by the host for this namespace instead of the controller-level properties AWUN, AWUPF, and ACWU.",
                     "readonly": true,
                     "type": [
                         "boolean",
@@ -967,16 +967,16 @@
             },
             "properties": {
                 "@odata.context": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/context"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
                 },
                 "@odata.etag": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/etag"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
                 },
                 "@odata.id": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/id"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
                 },
                 "@odata.type": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/type"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
                 },
                 "AccessCapabilities": {
                     "description": "Supported IO access capabilities.",
@@ -1045,7 +1045,7 @@
                     "versionAdded": "v1_1_0"
                 },
                 "CapacitySources@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "Compressed": {
                     "description": "Indicator of whether or not the Volume has compression enabled.",
@@ -1329,7 +1329,7 @@
                 "ReplicaTargets": {
                     "description": "The resources that are target replicas of this source.",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/idRef"
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
                     },
                     "longDescription": "The value shall reference the target replicas that are sourced by this replica.",
                     "readonly": true,
@@ -1337,7 +1337,7 @@
                     "versionAdded": "v1_3_0"
                 },
                 "ReplicaTargets@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.yaml#/definitions/count"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
                 },
                 "Status": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status",
