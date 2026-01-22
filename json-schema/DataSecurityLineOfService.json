@@ -19,6 +19,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService.v1_1_0.json#/definitions/DataSecurityLineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService.v1_1_1.json#/definitions/DataSecurityLineOfService"
                 }
             ],
             "deletable": true,
@@ -27,8 +30,8 @@
             "longDescription": "The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics.",
             "updatable": true,
             "uris": [
-                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataSecurityLineOfService",
-                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataSecurityLineOfService"
+                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataSecurityLinesOfService/{DataSecurityLineOfServiceId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataSecurityLinesOfService/{DataSecurityLineOfServiceId}"
             ]
         }
     },

@@ -13,7 +13,6 @@
     "Health": "OK",
     "HealthRollup": "OK"
   },
-  "ReplicaTargets":[{"@odata.id":"https://10.12.1.12/redfish/v1/StorageServices/2/Volumes/5"}],
   "MappedVolumes": [{
       "LogicalUnitNumber": "14",
       "Volume": {

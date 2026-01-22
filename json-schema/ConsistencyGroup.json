@@ -28,6 +28,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.v1_0_0.json#/definitions/ConsistencyGroup"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroup.v1_0_1.json#/definitions/ConsistencyGroup"
                 }
             ],
             "deletable": true,

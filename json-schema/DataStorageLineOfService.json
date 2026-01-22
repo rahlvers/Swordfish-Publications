@@ -34,6 +34,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_3_0.json#/definitions/DataStorageLineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLineOfService.v1_3_1.json#/definitions/DataStorageLineOfService"
                 }
             ],
             "deletable": true,
@@ -42,8 +45,8 @@
             "longDescription": "This resource shall be used to describe storage availability and provisioning capabilities.",
             "updatable": true,
             "uris": [
-                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataStorageLineOfService",
-                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataStorageLineOfService"
+                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataStorageLinesOfService/{DataStorageLineOfServiceId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataStorageLinesOfService/{DataStorageLineOfServiceId}"
             ]
         }
     },

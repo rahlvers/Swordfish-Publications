@@ -78,15 +78,15 @@
         <Annotation Term="Redfish.Uris">
           <Collection>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}</String>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/AllocatedPools/{StoragePoolId}</String>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/AllocatedPools/{AllocatedPoolId}</String>
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{ProvidingPoolId}</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/AllocatedPools/{StoragePoolId}</String>
             <String>/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
-            <String>/redfish/v1/Storage/{StorageId}/StoragePools</String>
-            <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedPools/{StoragePoolId}</String>
-            <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
-            <String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools</String>
+            <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}</String>
+            <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedPools/{AllocatedPoolId}</String>
+            <String>/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{ProvidingPoolId}</String>
+            <String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
             <String>/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/AllocatedPools/{StoragePoolId}</String>
             <String>/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}</String>
           </Collection>
@@ -332,6 +332,12 @@
         <Annotation Term="OData.LongDescription" String="This type shall contain any additional OEM actions for this resource."/>
       </ComplexType>
 
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StoragePool.v1_3_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was created to fix Redfish Uris issues."/>
+      <EntityType Name="StoragePool" BaseType="StoragePool.v1_3_0.StoragePool"/>
     </Schema>
 
   </edmx:DataServices>

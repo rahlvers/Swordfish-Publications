@@ -98,6 +98,19 @@
         </Member>
       </EnumType>
 
+      <EnumType Name="ReplicaFaultDomain">
+        <Annotation Term="OData.Description" String="Values of ReplicaFaultDomain describe the fault domain for the replication relationship."/>
+        <Annotation Term="OData.LongDescription" String="The enumeration literals may be used to specify the fault domain for the replication relationship."/>
+        <Member Name="Local">
+          <Annotation Term="OData.Description" String="Local indicates that the source and target replicas are contained within a single fault domain."/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the source and target replicas are contained within a single fault domain."/>
+        </Member>
+        <Member Name="Remote">
+          <Annotation Term="OData.Description" String="Remote indicates that the source and target replicas are in separate fault domains."/>
+          <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the source and target replicas are in separate fault domains."/>
+        </Member>
+      </EnumType>
+
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo.v1_0_0">
@@ -634,6 +647,21 @@
           <Annotation Term="OData.LongDescription" String="The value shall reference the resource that is the source of this replica."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
+      </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo.v1_3_0">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="WP 1.1.1"/>
+      <Annotation Term="OData.Description" String="Enhance to track DataProtectionLineOfService LoS for each replicaInfo. Move ComplexType into unversioned namespace.Move enums into unversioned namespace. Change references to unversioned."/>
+      <EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.v1_2_0.StorageReplicaInfo"/>
+
+      <ComplexType Name="ReplicaInfo" BaseType="StorageReplicaInfo.v1_2_0.ReplicaInfo">
+        <Property Name="ReplicaFaultDomain" Type="StorageReplicaInfo.ReplicaFaultDomain">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="ReplicaFaultDomain describes the fault domain (local or remote) of the replica relationship."/>
+          <Annotation Term="OData.LongDescription" String="The ReplicaFaultDomain enumeration literal shall describe the fault domain (local or remote) of the replica relationship."/>
+        </Property>
       </ComplexType>
     </Schema>
 

@@ -31,13 +31,20 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_2_0.json#/definitions/IOConnectivityLineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOConnectivityLineOfService.v1_2_1.json#/definitions/IOConnectivityLineOfService"
                 }
             ],
             "deletable": true,
             "description": "A service option within the IO Connectivity line of service.",
             "insertable": false,
             "longDescription": "An IO connectivity service option may be used to specify the characteristics of storage connectivity.",
-            "updatable": true
+            "updatable": true,
+            "uris": [
+                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/IOConnectivityLinesOfService/{IOConnectivityLineOfServiceId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/IOConnectivityLinesOfService/{IOConnectivityLineOfServiceId}"
+            ]
         }
     },
     "owningEntity": "SNIA",

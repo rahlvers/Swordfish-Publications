@@ -1,0 +1,88 @@
+{
+  "@Redfish.Copyright": "Copyright 2019 SNIA. All rights reserved.",
+  "@odata.type": "#FeaturesRegistry.v1_0_0.FeaturesRegistry",
+  "Id": "SwordfishFeatures.1.0.2",
+  "Name": "Swordfish Features Registry",
+  "Language": "en",
+  "Description": "This registry defines the Swordfish features.",
+  "RegistryPrefix": "SwordfishFeatures",
+  "RegistryVersion": "1.0.2",
+  "OwningEntity": "SNIA",
+  "Features": {
+    "SNIA.Swordfish.Discovery": {
+      "Description": "Supports discovery of resources in a Swordfish system.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishDiscovery.json"
+    },
+    "SNIA.Swordfish.EventNotification": {
+      "Description": "Supports the Swordfish Event Notification Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishEventNotification.json"
+    },
+    "SNIA.Swordfish.Block.IOPerformance": {
+      "Description": "Supports the Swordfish Block IOPerformance Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishIOPerformance.json"
+    },
+    "SNIA.Swordfish.Block.Provisioning": {
+      "Description": "Supports the Block Provisioning Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishBlockProvisioning.json"
+    },
+    "SNIA.Swordfish.Block.LocalReplication": {
+      "Description": "Supports the local replication for block storage Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishBlockLocalReplication.json"
+    },
+    "SNIA.Swordfish.Block.RemoteReplication": {
+      "Description": "Supports the remote replication for block storage Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishBlockRemoteReplication.json"
+    },
+    "SNIA.Swordfish.Block.MappingMasking": {
+      "Description": "Supports the Swordfish Block Mapping and Masking Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishBlockMappingMasking.json"
+    },
+    "SNIA.Swordfish.Block.CapacityManagement": {
+      "Description": "Supports the Swordfish Block Capacity Management Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishBlockCapacityManagement.json"
+    },
+      "SNIA.Swordfish.File.Provisioning": {
+      "Description": "Supports the File Provisioning Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishFileProvisioning.json"
+    },
+    "SNIA.Swordfish.File.CapacityManagement": {
+      "Description": "Supports the Swordfish File Capacity Management Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishFileCapacityManagement.json"
+    },
+    "SNIA.Swordfish.EnergyStar": {
+      "Description": "Supports the Swordfish EnergyStar for Storage Feature.",
+      "Version": "1.0.1",
+      "CorrespondingProfileDefinition": "SwordfishEnergyStar.json"
+    },
+    "SNIA.Swordfish.CoSDiscovery": {
+      "Description": "Supports Discovery requirements when using the Swordfish Class Of Service Feature.",
+      "Version": "1.0.0",
+      "CorrespondingProfileDefinition": "SwordfishCoSDicovery.json"
+    },
+    "SNIA.Swordfish.CoSMappingMasking": {
+      "Description": "Supports Mapping and Masking Feature when using the Swordfish Class Of Service Feature.",
+      "Version": "1.0.0",
+      "CorrespondingProfileDefinition": "SwordfishCoSMappingMasking.json"
+    },
+    "SNIA.Swordfish.Block.CoSLocalReplication": {
+      "Description": "Supports the local replication for block storage Feature when using the Swordfish Class Of Service Feature.",
+      "Version": "1.0.0",
+      "CorrespondingProfileDefinition": "SwordfishBlockCoSLocalReplication.json"
+    },
+    "SNIA.Swordfish.Block.CoSRemoteReplication": {
+      "Description": "Supports the remote replication for block storage Feature when using the Swordfish Class Of Service Feature.",
+      "Version": "1.0.0",
+      "CorrespondingProfileDefinition": "SwordfishBlockCoSRemoteReplication.json"
+    }
+  }
+}

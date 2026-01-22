@@ -20,7 +20,7 @@
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo_v1.xml">
 		<edmx:Include Namespace="StorageReplicaInfo"/>
-		<edmx:Include Namespace="StorageReplicaInfo.v1_2_0"/>
+		<edmx:Include Namespace="StorageReplicaInfo.v1_3_0"/>
 	</edmx:Reference>
 
 	<edmx:DataServices>
@@ -253,6 +253,12 @@
 				<Annotation Term="OData.Description" String="This action is used to suspend active data synchronization between a source and target consistency group, without otherwise altering the replication relationship."/>
 				<Annotation Term="OData.LongDescription" String="This action shall be used to suspend active data synchronization between a source and target consistency group, without otherwise altering the replication relationship."/>
 			</Action>
+		</Schema>
+
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="ConsistencyGroup.v1_0_1">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="OData.Description" String="This version was created to update the reference to StorageReplicaInfo to version 1.3.0. It also adds Redfish.Release annotations."/>
+			<EntityType Name="ConsistencyGroup" BaseType="ConsistencyGroup.v1_0_0.ConsistencyGroup"/>
 		</Schema>
 
 	</edmx:DataServices>

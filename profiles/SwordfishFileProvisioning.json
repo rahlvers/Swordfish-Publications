@@ -1,20 +1,35 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfilev1_2_0.json",
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
   "ProfileName": "SwordfishFileProvisioning",
-  "ProfileVersion": "1.0.0",
+  "ProfileVersion": "1.0.1",
   "OwningEntity": "SNIA.org",
   "Purpose": "Defines File Provisioning requirements for service-based Swordfish implementations.",
   "ContactInfo": "SNIA.org",
-  "RequiredProfiles": {
-    "SwordfishDiscovery": {
-      "OwningEntity": "SNIA.org",
-      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-      "MinVersion": "1.0.0"
-    }
-  },
+  "ConditionalRequirements": [{
+    "Purpose": "Either SwordfishDiscovery or SwordfishCoSDicovery must be supported.",
+    "CompareProperty": "RequiredProfiles",
+    "CompareType": "AnyOf",
+    "CompareValues": [
+      [{
+        "SwordfishDiscovery": {
+          "OwningEntity": "SNIA.org",
+          "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+          "MinVersion": "1.0.1"
+        }
+      }],
+      [{
+        "CoSDiscovery": {
+          "OwningEntity": "SNIA.org",
+          "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+          "MinVersion": "1.0.1"
+        }
+      }]
+    ]
+  }],
+
   "Registries": {
     "Features": {
-      "MinVersion": "1.0.0",
+      "MinVersion": "1.0.2",
       "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
       "SupportedFeatures": {
         "SNIA.Swordfish.File.Provisioning": {}
@@ -22,30 +37,29 @@
     }
   },
   "Resources": {
-    "StorageServices": {
+    "FileSystemCollection": {
+      "CreateResource": true,
+      "DeleteResource": true,
+      "ConditionalRequirements": [{
+        "SubordinateToResource": ["Storage", "StorageService"]
+      }],
       "PropertyRequirements": {
-        "FileSystems": {
+        "Members": {
+          "MinCount": 0
+        },
+        "ExportedShares": {
+          "ReadRequirement": "IfImplemented",
+          "CreateResource": true,
+          "DeleteResource": true
+        },
+        "ImportedShares": {
+          "Purpose": "Require the Imported Shares structure to be complete and Create / Delete if implemented.",
+          "ReadRequirement": "IfImplemented",
           "CreateResource": true,
           "DeleteResource": true,
           "PropertyRequirements": {
-            "Members": {
-              "MinCount": 0
-            },
-            "ExportedShares": {
-              "ReadRequirement": "IfImplemented",
-              "CreateResource": true,
-              "DeleteResource": true
-            },
-            "ImportedShares": {
-              "Purpose": "Require the Imported Shares structure to be complete and Create / Delete if implemented.",
-              "ReadRequirement": "IfImplemented",
-              "CreateResource": true,
-              "DeleteResource": true,
-              "PropertyRequirements": {
-                "ImportedShare": "Mandatory",
-                "FileSharePath": "Mandatory"
-              }
-            }
+            "ImportedShare": "Mandatory",
+            "FileSharePath": "Mandatory"
           }
         }
       }

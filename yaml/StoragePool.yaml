@@ -13,6 +13,7 @@ components:
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_2_0.yaml#/components/schemas/StoragePool
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_2_1.yaml#/components/schemas/StoragePool
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_3_0.yaml#/components/schemas/StoragePool
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_3_1.yaml#/components/schemas/StoragePool
       description: A container of data storage.
       x-longDescription: A container of data storage capable of providing capacity
         conforming to one of its supported classes of service. The storage pool does

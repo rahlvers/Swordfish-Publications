@@ -28,6 +28,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_2_0.json#/definitions/DataProtectionLineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_2_1.json#/definitions/DataProtectionLineOfService"
                 }
             ],
             "deletable": true,
@@ -36,8 +39,8 @@
             "longDescription": "This service option describes a replica that protects data from loss. The requirements must be met collectively by the communication path and the replica.",
             "updatable": true,
             "uris": [
-                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataProtectionLinesOfService",
-                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataProtectionLinesOfService"
+                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataProtectionLinesOfService/{DataProtectionLineOfServiceId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataProtectionLinesOfService/{DataProtectionLineOfServiceId}"
             ]
         }
     },

@@ -24,10 +24,10 @@ components:
       properties:
         Oem:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
-          description: Oem extension object.
-          x-longDescription: This object represents the Oem property.  All values
-            for resources described by this schema shall comply to the requirements
-            as described in the Redfish specification.
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties contained in this object shall conform to the Redfish
+            Specification-described requirements.
         OnHandSpares:
           description: The type of resources in the set.
           items:
@@ -99,10 +99,10 @@ components:
           readOnly: true
         Oem:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
-          description: This is the manufacturer/provider specific extension moniker
-            used to divide the Oem object into sections.
-          x-longDescription: The value of this string shall be of the format for the
-            reserved word *Oem*.
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
         OnHandLocation:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.v1_5_0.yaml#/components/schemas/Location
           description: Location where this set of spares is kept.

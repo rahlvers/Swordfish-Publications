@@ -41,6 +41,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.v1_3_0.json#/definitions/StorageService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.v1_4_0.json#/definitions/StorageService"
                 }
             ],
             "deletable": true,

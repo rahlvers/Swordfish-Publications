@@ -1,20 +1,20 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfilev1_2_0.json",
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
   "ProfileName": "SwordfishBlockLocalReplication",
-  "ProfileVersion": "1.0.0",
+  "ProfileVersion": "1.0.1",
   "OwningEntity": "SNIA.org",
-  "Purpose": "Define local replication block requirements for service-based Swordfish conformant implementations.",
+  "Purpose": "Define local replication block requirements for Swordfish conformant implementations.",
   "ContactInfo": "SNIA.org",
   "RequiredProfiles": {
     "SwordfishBlockProvisioning": {
       "OwningEntity": "SNIA.org",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-      "MinVersion": "1.0.0"
+      "MinVersion": "1.0.1"
     }
   },
   "Registries": {
     "Features": {
-      "MinVersion": "1.0.0",
+      "MinVersion": "1.0.2",
       "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
       "SupportedFeatures": {
         "SNIA.Swordfish.Block.LocalReplication": {}
@@ -24,50 +24,41 @@
   "Resources": {
     "Volume": {
       "PropertyRequirements": {
-        "OwningStorageService": {
+        "ReplicaTarget": {
           "PropertyRequirements": {
-            "Links": {
+            "ReplicaInfo": {
               "PropertyRequirements": {
-                "HostingSystem": {
+                "ReplicaFaultDomain": {
                   "ConditionalRequirements": [{
-                    "Purpose": "Hosting System values must be the same for the volume and its replica.",
-                    "CompareType": "Equal",
-                    "CompareProperty": "ReplicaInfo/SourceReplica/OwningStorageService/Links/HostingSystem"
+                    "Purpose": "The ReplicaFaultDomain type must be set to Local.",
+                    "CompareValues": "Local"
                   }]
                 }
               }
             }
           }
         }
-      }
-    },
-    "StorageServices": {
-      "PropertyRequirements": {
-        "Purpose": "The Data Protection Line of Service must be supported. DataProtectionLoSCapabilities are a pre-requisite to the Line of Service.",
-        "DataProtectionLoSCapabilities": {}
-      }
-    },
-    "DataProtectionLineOfServiceCollection": {
-      "Purpose": "The Data Protection Line of Service must be supported.",
-      "CreateResource": true,
-      "DeleteResource": true,
-      "PropertyRequirements": {
-        "Members": {
-          "MinCount": 0
-        }
-      }
-    },
-    "DataProtectionLineOfService": {
+      },
       "ActionRequirements": {
-        "CreateReplicas": {
+        "CreateReplicaTarget": {
           "ReadRequirement": "Mandatory",
-          "Purpose": "Ability to create an on-demand (ad-hoc) replica.",
-          "Parameters": {
-            "ResetType": {
-              "ParameterValues": ["ReplicaLineOfService", "ReplicaRequests"],
-              "ReadRequirement": "Mandatory"
-            }
-          }
+          "Purpose": "Ability to reset the system is a core requirement of most users.",
+          "ConditionalRequirements": [{
+            "Purpose": "Either CreateReplicaTarget or AssignReplicaTarget must be supported in order to advertise local replication support.",
+            "CompareProperty": "AssignReplicaTarget",
+            "CompareType": "Absent",
+            "ReadRequirement": "Mandatory"
+          }]
+        },
+        "AssignReplicaTarget": {
+          "ReadRequirement": "Mandatory",
+          "Purpose": "Ability to reset the system is a core requirement of most users.",
+          "ConditionalRequirements": [{
+            "Purpose": "Either CreateReplicaTarget or AssignReplicaTarget must be supported in order to advertise local replication support.",
+            "CompareProperty": "CreateReplicaTarget",
+            "CompareType": "Absent",
+            "ReadRequirement": "Mandatory"
+          }]
         }
       }
     }

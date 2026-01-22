@@ -38,6 +38,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_3_0.json#/definitions/StoragePool"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.v1_3_1.json#/definitions/StoragePool"
                 }
             ],
             "deletable": true,
@@ -47,15 +50,15 @@
             "updatable": true,
             "uris": [
                 "/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}",
-                "/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/AllocatedPools/{StoragePoolId}",
-                "/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/AllocatedPools/{AllocatedPoolId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{ProvidingPoolId}",
                 "/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}",
                 "/redfish/v1/StorageServices/{StorageServiceId}/Volumes/{VolumeId}/AllocatedPools/{StoragePoolId}",
                 "/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}",
-                "/redfish/v1/Storage/{StorageId}/StoragePools",
-                "/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedPools/{StoragePoolId}",
-                "/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}",
-                "/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools",
+                "/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}",
+                "/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/AllocatedPools/{AllocatedPoolId}",
+                "/redfish/v1/Storage/{StorageId}/StoragePools/{StoragePoolId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{ProvidingPoolId}",
+                "/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}",
                 "/redfish/v1/Storage/{StorageId}/Volumes/{VolumeId}/AllocatedPools/{StoragePoolId}",
                 "/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemId}/CapacitySources/{CapacitySourceId}/ProvidingPools/{StoragePoolId}"
             ]

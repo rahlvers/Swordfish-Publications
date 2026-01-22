@@ -19,10 +19,10 @@ components:
             of the containing StorageService entity shall be used.
         Oem:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
-          description: Oem extension object.
-          x-longDescription: This object represents the Oem property.  All values
-            for resources described by this schema shall comply to the requirements
-            as described in the Redfish specification.
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties contained in this object shall conform to the Redfish
+            Specification-described requirements.
       type: object
       x-longDescription: The Links property, as described by the Redfish Specification,
         shall contain references to resources that are related to, but not contained
@@ -130,10 +130,10 @@ components:
           readOnly: true
         Oem:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
-          description: This is the manufacturer/provider specific extension moniker
-            used to divide the Oem object into sections.
-          x-longDescription: The value of this string shall be of the format for the
-            reserved word *Oem*.
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
         RemainingCapacityPercent:
           description: The percentage of the capacity remaining in the StoragePool.
           nullable: true

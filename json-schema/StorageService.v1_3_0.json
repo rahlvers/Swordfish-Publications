@@ -102,8 +102,8 @@
                 },
                 "Oem": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
-                    "description": "Oem extension object.",
-                    "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties contained in this object shall conform to the Redfish Specification-described requirements."
                 }
             },
             "type": "object"
@@ -206,7 +206,7 @@
                 "ClassesOfService": {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection",
                     "description": "The ClassesOfService that all storage in this StorageService can support.",
-                    "longDescription": "The value of each enty in the array shall reference a ClassOfService supported by this service.",
+                    "longDescription": "The value of each entry in the array shall reference a ClassOfService supported by this service.",
                     "readonly": false
                 },
                 "ClientEndpointGroups": {
@@ -219,7 +219,7 @@
                 "ConsistencyGroups": {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ConsistencyGroupCollection.json#/definitions/ConsistencyGroupCollection",
                     "description": "ConsistencyGroups.",
-                    "longDescription": "The value of each enty in the array shall reference a ConsistencyGroup.",
+                    "longDescription": "The value of each entry in the array shall reference a ConsistencyGroup.",
                     "readonly": false,
                     "versionAdded": "v1_3_0"
                 },
@@ -277,7 +277,7 @@
                 "Endpoints": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/EndpointCollection.json#/definitions/EndpointCollection",
                     "description": "Endpoints.",
-                    "longDescription": "The value of each enty in the array shall reference an Endpoint managed by this service.",
+                    "longDescription": "The value of each entry in the array shall reference an Endpoint managed by this service.",
                     "readonly": true
                 },
                 "FileSystems": {
@@ -326,8 +326,8 @@
                 },
                 "Oem": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
-                    "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
-                    "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                    "description": "The OEM extension property.",
+                    "longDescription": "This property shall contain the OEM extensions.  All values for properties that this object contains shall conform to the Redfish Specification-described requirements."
                 },
                 "Redundancy": {
                     "autoExpand": true,
@@ -370,7 +370,7 @@
                 "StorageGroups": {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroupCollection.json#/definitions/StorageGroupCollection",
                     "description": "StorageGroups.",
-                    "longDescription": "The value of each enty in the array shall reference a StorageGroup.",
+                    "longDescription": "The value of each entry in the array shall reference a StorageGroup.",
                     "readonly": true
                 },
                 "StoragePools": {

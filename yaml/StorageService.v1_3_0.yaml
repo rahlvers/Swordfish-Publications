@@ -82,10 +82,10 @@ components:
             of this service.
         Oem:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
-          description: Oem extension object.
-          x-longDescription: This object represents the Oem property.  All values
-            for resources described by this schema shall comply to the requirements
-            as described in the Redfish specification.
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties contained in this object shall conform to the Redfish
+            Specification-described requirements.
       type: object
       x-longDescription: This property shall contain links to other resources related
         to this resource.
@@ -153,8 +153,8 @@ components:
           description: The ClassesOfService that all storage in this StorageService
             can support.
           readOnly: false
-          x-longDescription: The value of each enty in the array shall reference a
-            ClassOfService supported by this service.
+          x-longDescription: The value of each entry in the array shall reference
+            a ClassOfService supported by this service.
         ClientEndpointGroups:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           deprecated: true
@@ -169,8 +169,8 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: ConsistencyGroups.
           readOnly: false
-          x-longDescription: The value of each enty in the array shall reference a
-            ConsistencyGroup.
+          x-longDescription: The value of each entry in the array shall reference
+            a ConsistencyGroup.
           x-versionAdded: v1_3_0
         DataProtectionLoSCapabilities:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
@@ -223,8 +223,8 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: Endpoints.
           readOnly: true
-          x-longDescription: The value of each enty in the array shall reference an
-            Endpoint managed by this service.
+          x-longDescription: The value of each entry in the array shall reference
+            an Endpoint managed by this service.
         FileSystems:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: FileSystems.
@@ -269,10 +269,10 @@ components:
           readOnly: true
         Oem:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
-          description: This is the manufacturer/provider specific extension moniker
-            used to divide the Oem object into sections.
-          x-longDescription: The value of this string shall be of the format for the
-            reserved word *Oem*.
+          description: The OEM extension property.
+          x-longDescription: This property shall contain the OEM extensions.  All
+            values for properties that this object contains shall conform to the Redfish
+            Specification-described requirements.
         Redundancy:
           description: Redundancy information for the storage subsystem.
           items:
@@ -314,8 +314,8 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: StorageGroups.
           readOnly: true
-          x-longDescription: The value of each enty in the array shall reference a
-            StorageGroup.
+          x-longDescription: The value of each entry in the array shall reference
+            a StorageGroup.
         StoragePools:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: StoragePools.

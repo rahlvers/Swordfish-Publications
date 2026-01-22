@@ -22,6 +22,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLineOfService.v1_1_0.json#/definitions/IOPerformanceLineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLineOfService.v1_1_1.json#/definitions/IOPerformanceLineOfService"
                 }
             ],
             "deletable": true,
@@ -30,8 +33,8 @@
             "longDescription": "This structure may be used to define a service option related to IO performance.",
             "updatable": true,
             "uris": [
-                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/IOPerformanceLineOfService",
-                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/IOPerformanceLineOfService"
+                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/IOPerformanceLinesOfService/{IOPerformanceLineOfServiceId}",
+                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/IOPerformanceLinesOfService/{IOPerformanceLineOfServiceId}"
             ]
         }
     },

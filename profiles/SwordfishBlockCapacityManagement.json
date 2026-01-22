@@ -1,5 +1,5 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_2_0.json",
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
   "ProfileName": "SwordfishBlockCapacityManagement",
   "ProfileVersion": "1.0.1",
   "OwningEntity": "SNIA.org",
@@ -10,12 +10,12 @@
     "SwordfishBlockProvisioning": {
       "OwningEntity": "SNIA.org",
       "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-      "MinVersion": "1.0.0"
+      "MinVersion": "1.0.1"
     }
   },
   "Registries": {
     "Features": {
-      "MinVersion": "1.0.0",
+      "MinVersion": "1.0.2",
       "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
       "SupportedFeatures": {
         "SNIA.Swordfish.File.Block.CapacityManagement": {}

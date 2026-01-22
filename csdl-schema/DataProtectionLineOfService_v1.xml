@@ -62,8 +62,8 @@
         </Annotation>
         <Annotation Term="Redfish.Uris">
           <Collection>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataProtectionLinesOfService</String>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataProtectionLinesOfService</String>
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataProtectionLinesOfService/{DataProtectionLineOfServiceId}</String>
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataProtectionLinesOfService/{DataProtectionLineOfServiceId}</String>
           </Collection>
         </Annotation>
       </EntityType>
@@ -220,6 +220,12 @@
         <Annotation Term="OData.Description" String="The available OEM specific actions for this resource."/>
         <Annotation Term="OData.LongDescription" String="This type shall contain any additional OEM actions for this resource."/>
       </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="DataProtectionLineOfService.v1_2_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was created to fix Redfish Uris issues."/>
+      <EntityType Name="DataProtectionLineOfService" BaseType="DataProtectionLineOfService.v1_2_0.DataProtectionLineOfService"/>
     </Schema>
 
   </edmx:DataServices>

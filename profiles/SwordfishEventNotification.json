@@ -1,20 +1,35 @@
 {
-  "SchemaDefinition": "./RedfishInteroperabilityProfilev1_2_0.json",
+  "SchemaDefinition": "./RedfishInteroperabilityProfile.v1_3_0.json",
   "ProfileName": "SwordfishEventNotification",
-  "ProfileVersion": "1.0.0",
+  "ProfileVersion": "1.0.1",
   "OwningEntity": "SNIA.org",
   "Purpose": "Defines Swordfish Event Notification requirements.",
   "ContactInfo": "SNIA.org",
-  "RequiredProfiles": {
-    "SwordfishDiscovery": {
-      "OwningEntity": "SNIA.org",
-      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
-      "MinVersion": "1.0.0"
-    }
-  },
+
+  "ConditionalRequirements": [{
+    "Purpose": "Either SwordfishDiscoveryor SwordfishCoSDiscovery must be supported.",
+    "CompareProperty": "RequiredProfiles",
+    "CompareType": "AnyOf",
+    "CompareValues": [
+      [{
+        "SwordfishDiscovery": {
+          "OwningEntity": "SNIA.org",
+          "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+          "MinVersion": "1.0.1"
+        }
+      }],
+      [{
+        "CoSDiscovery": {
+          "OwningEntity": "SNIA.org",
+          "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+          "MinVersion": "1.0.1"
+        }
+      }]
+    ]
+  }],
   "Registries": {
     "Features": {
-      "MinVersion": "1.0.0",
+      "MinVersion": "1.0.2",
       "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
       "SupportedFeatures": {
         "SNIA.Swordfish.EventNotification": {}
@@ -22,7 +37,7 @@
     },
     "Base": {
       "MinVersion": "1.4.0",
-      "Repository": "redfish.dmtf.org/registries",
+      "Repository": "https://redfish.dmtf.org/registries/v1",
       "Messages": {
         "ResourceTypeIncompatible": {
           "Purpose": "The ResourceTypeIncompatible event shall be send when the requested resource type of the operation does not match that for the operation."
@@ -30,8 +45,8 @@
       }
     },
     "ResourceEvent": {
-      "MinVersion": "1.0.1",
-      "Repository": "redfish.dmtf.org/registries",
+      "MinVersion": "1.0.2",
+      "Repository": "https://redfish.dmtf.org/registries/v1",
       "Messages": {
         "ResourceCreated": {
           "Purpose": "The ResourceCreated event shall be sent on creation of a resource to indicate that the resource has been successfully created."
@@ -79,7 +94,7 @@
           "Purpose": "The ResourceSelfTestFailed event shall be sent when a self-test has failed."
         },
         "ResourceSelfTestCompleted": {
-          "Purpose": "The ResourceSelfTestCompleted event shall be sent a self-test has completed."
+          "Purpose": "The ResourceSelfTestCompleted event shall be sent when a self-test has completed."
         },
         "LicenseExpired": {
           "Purpose": "The LicenseExpired event shall be sent when a license has expired.  The event information includes license detail information."

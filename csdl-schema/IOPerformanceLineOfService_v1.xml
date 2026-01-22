@@ -55,8 +55,8 @@
 
         <Annotation Term="Redfish.Uris">
           <Collection>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/IOPerformanceLineOfService</String>
-            <String>/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/IOPerformanceLineOfService</String>
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/IOPerformanceLinesOfService/{IOPerformanceLineOfServiceId}</String>
+            <String>/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/IOPerformanceLinesOfService/{IOPerformanceLineOfServiceId}</String>
           </Collection>
         </Annotation>
       </EntityType>
@@ -147,6 +147,12 @@
         <Annotation Term="OData.Description" String="The available OEM specific actions for this resource."/>
         <Annotation Term="OData.LongDescription" String="This type shall contain any additional OEM actions for this resource."/>
       </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOPerformanceLineOfService.v1_1_1">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was created to fix Redfish Uris issues."/>
+      <EntityType Name="IOPerformanceLineOfService" BaseType="IOPerformanceLineOfService.v1_1_0.IOPerformanceLineOfService"/>
     </Schema>
 
   </edmx:DataServices>
