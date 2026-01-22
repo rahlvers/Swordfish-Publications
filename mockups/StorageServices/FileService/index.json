@@ -16,7 +16,7 @@
   "StoragePools": {"@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools"},
   "Links": {
 	"HostingSystem": {
-      "@odata.id": "/redfish/v1/StorageSystems/FileServer"
+      "@odata.id": "/redfish/v1/Systems/FileServer"
     },
     "DataPerformanceLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/DataPerformanceLoSCapabilities"},
     "DataProtectionLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/DataProtectionLoSCapabilities"},

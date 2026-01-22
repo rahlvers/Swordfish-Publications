@@ -64,20 +64,20 @@
     "@odata.id": "/redfish/v1/Systems/1/EthernetInterfaces"
   },
   "SimpleStorage": {
-    "@odata.id": "/redfish/v1/Systems/1/SimpleStorage"
+    "@odata.id": "/redfish/v1/Systems/Members/1/SimpleStorage"
   },
   "LogServices": {
-    "@odata.id": "/redfish/v1/Systems/1/Logs"
+    "@odata.id": "/redfish/v1/Systems/Members/1/Logs"
   },
   "Links": {
     "Chassis": [
       {
-        "@odata.id": "/redfish/v1/Chassis/1"
+        "@odata.id": "/redfish/v1/Chassis/Members/1"
       }
     ],
     "ManagedBy": [
       {
-        "@odata.id": "/redfish/v1/Managers/1"
+        "@odata.id": "/redfish/v1/Managers/Members/1"
       }
     ],
     "Storage": {

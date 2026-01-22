@@ -23,7 +23,7 @@
     "Write"
   ],
   "BlockSizeBytes": 512,
-  "LowSpaceWarningThresholdPercent": [
+  "LowSpaceWarningThresholdPercents": [
     70,
     80,
     90,
@@ -43,7 +43,7 @@
           "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldBoston"
         },
         "ProvidingPool": {
-           "Members": [{"@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool"}] 
+           "Members": [{"@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool"}]
         },
         "ProvidingVolume": null
       }
@@ -68,8 +68,5 @@
       "GuaranteedBytes": 536870912,
       "ProvisionedBytes": 2199023255552
     }
-  },
-  "Links": {
-    "ConsumingResource": null
   }
 }

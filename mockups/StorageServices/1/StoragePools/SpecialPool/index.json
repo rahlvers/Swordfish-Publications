@@ -36,7 +36,7 @@
       }
     }
   ],
-  "LowSpaceWarningThresholdPercent": [
+  "LowSpaceWarningThresholdPercents": [
     70,
     80,
     90
@@ -48,7 +48,7 @@
   },
   "ClassOfService": {"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService"},
   "AllocatedPools": [],
-  "AllocatedVolumes": {"@odata.id": "/redfish/v1/StorageServices/1/Volumes"},
+  "AllocatedVolumes": [{"@odata.id": "/redfish/v1/StorageServices/1/Volumes"}],
   "Links": {
   }
 }

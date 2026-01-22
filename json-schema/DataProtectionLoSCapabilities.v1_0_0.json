@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#DataProtectionLoSCapabilities.v1_0_0.DataProtectionLoSCapabilities",
     "$ref": "#/definitions/DataProtectionLoSCapabilities",
     "definitions": {
@@ -24,9 +24,7 @@
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
                         {"type": "null"}
-                    ],
-                    "description": "A friendly name for this line of service.",
-                    "longDescription": "If present, the name shall be a friendly name for this line of service."
+                    ]
                 },
                 "RecoveryGeographicObjective": {
                     "anyOf": [
@@ -37,14 +35,14 @@
                     "description": "Geographic distribution scopes",
                     "longDescription": "The value specifies the geograhic scope of the failure domain."
                 },
-                "RecoveryPointObjective": {
+                "RecoveryPointObjectiveTime": {
                     "type": [
                         "string",
                         "null"
                     ],
                     "readonly": false,
                     "description": "Time interval defining how much source data that can be lost on failure.",
-                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify a bound on the the amount of source data that can be lost on failure."
+                    "longDescription": "The value shall be an ISO 8601 duration that specifies the maximum time over which source data may be lost on failure."
                 },
                 "RecoveryTimeObjective": {
                     "anyOf": [
@@ -53,8 +51,8 @@
                     ],
                     "units": "s",
                     "readonly": false,
-                    "description": "Time to access an alternate replica.",
-                    "longDescription": "The maximum time required to access an alternate replica shall be less than this time interval."
+                    "description": "An enumeration value that indicates the expected time to access an alternate replica.",
+                    "longDescription": "The value shall be an enumeration that indicates the maximum time required to access an alternate replica."
                 },
                 "ReplicaType": {
                     "anyOf": [
@@ -67,12 +65,12 @@
                 },
                 "MinLifetime": {
                     "type": [
-                        "number",
+                        "string",
                         "null"
                     ],
                     "readonly": false,
                     "description": "Minimum lifetime (seconds) that replica must be maintained.",
-                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify the minimum supported lifetime. Note: The maximum number of replicas can be determined using this value together with the replicaSchedule."
+                    "longDescription": "The value shall be an ISO 8601 duration that specifies the minimum required lifetime of the replica. Note: The maximum number of replicas can be determined using this value together with the replicaSchedule."
                 },
                 "IsIsolated": {
                     "type": [
@@ -181,18 +179,17 @@
                     "description": "Supported types of failure domains.",
                     "longDescription": "The value of each entry shall specify a supported failure domain."
                 },
-                "SupportedRecoveryPointObjectiveSeconds": {
+                "SupportedRecoveryPointObjectiveTimes": {
                     "type": "array",
                     "items": {
                         "type": [
-                            "number",
+                            "string",
                             "null"
-                        ],
-                        "units": "s"
+                        ]
                     },
                     "readonly": false,
                     "description": "Supported time intervals defining how much source information can be lost on failure.",
-                    "longDescription": "The value of each entry shall specify a supported time interval defining the maximum source information that may be lost on failure"
+                    "longDescription": "The value of each entry shall specify a supported ISO 8601 time interval defining the maximum source information that may be lost on failure"
                 },
                 "SupportedRecoveryTimeObjectives": {
                     "type": "array",
@@ -204,7 +201,7 @@
                     },
                     "readonly": false,
                     "description": "Supported expectations for time to access an alternate replica.",
-                    "longDescription": "The value of each entry shall specify a supported expectation for time to access an alternate replica."
+                    "longDescription": "The value of each entry shall specify an enumerated value that indicates a supported expectation for the time required to access an alternate replica."
                 },
                 "SupportedReplicaTypes": {
                     "type": "array",
@@ -218,7 +215,7 @@
                     "description": "Supported replica types.",
                     "longDescription": "The value of each entry shall specify a supported replica type"
                 },
-                "SupportedMinLifetime": {
+                "SupportedMinLifetimes": {
                     "type": "array",
                     "items": {
                         "type": [
@@ -228,7 +225,7 @@
                     },
                     "readonly": false,
                     "description": "Supported minimum lifetime that replica must be maintained.",
-                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify the minimum lifetime or the replica."
+                    "longDescription": "The value of each entry shall be an ISO 8601 duration that specifies the minimum lifetime required for the replica."
                 },
                 "SupportsIsolated": {
                     "type": [
@@ -334,20 +331,20 @@
         "RecoveryAccessScope": {
             "type": "string",
             "enum": [
-                "Immediate",
-                "Online",
+                "OnlineActive",
+                "OnlinePassive",
                 "Nearline",
                 "Offline"
             ],
             "enumDescriptions": {
-                "Immediate": "Active access to synchronous replicas.",
-                "Online": "Passive access to replicas via the same front-end interconnect.",
+                "OnlineActive": "Active access to synchronous replicas.",
+                "OnlinePassive": "Passive access to replicas via the same front-end interconnect.",
                 "Nearline": "Access to replica via a different front-end interconnect. A restore step is required before recovery can commence.",
                 "Offline": "No direct connection to the replica. (i.e. To a bunker containing backup media.)"
             },
             "enumLongDescriptions": {
-                "Immediate": "Access to synchronous replicas shall be instantaneous.",
-                "Online": "Access to a synchronous replica shall be consistent with switching access to a different path the same front-end interconnect.  A restore step shall not be required.",
+                "OnlineActive": "Access to synchronous replicas shall be instantaneous.",
+                "OnlinePassive": "Access to a synchronous replica shall be consistent with switching access to a different path the same front-end interconnect.  A restore step shall not be required.",
                 "Nearline": "Access to a replica shall be consistent with switching access to a different path through a different front-end interconnection infrastructure.  Some inconsistency may occur.  A restore step may be required before recovery can commence.",
                 "Offline": "Access to a replica may take a significant amount of time.  No direct connection to the replica is assumed. Some inconsistency loss may occur.  A restore step is likely to be required."
             },

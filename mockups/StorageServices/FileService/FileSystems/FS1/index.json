@@ -57,27 +57,7 @@
   "FileSystemType": "CIFS",
   "FileSystemPersistenceType": "Persistent",
   "ResizeIncrementBytes": 256,
-  "ExportedShares": [{ 
-        "SharedFilePath": "/Shares/MyShare",
-        "Name": "MyShare",
-        "FileSharingProtocols": ["SMBv3_1_1"],
-        "Status": {
-            "State": "Enabled",
-            "Health": "OK",
-            "HealthRollUp": "OK"
-        },
-        "DefaultReadAccess": true,
-        "DefaultWriteAccess": true,
-        "ExecuteSupport": true,
-        "RootAccess": true,
-        "CASupported": true,
-        "Links": {
-		  "EthernetInterfaces": 
-			{"@odata.id": "/redfish/v1/StorageServices/FileServer/EthernetInterfaces/1"},
-		"FileSystem": 
-			{"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1"}
-		}
-    }],
+  "ExportedShares": {"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ExportedFileShares/MyShare"},
   "Status": {
     "State": "Enabled",
     "Health": "OK",

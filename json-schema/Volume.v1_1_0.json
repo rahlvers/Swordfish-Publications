@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#Volume.v1_1_0.Volume",
     "$ref": "#/definitions/Volume",
     "definitions": {
@@ -41,9 +41,9 @@
                 "SoftwareAssisted"
             ],
             "enumDescriptions": {
-                "NativeDriveEncryption": "The volume is utilizing the native drive encryption capabilities of the drive hardware",
-                "ControllerAssisted": "The volume is being encrypted by the storage controller entity",
-                "SoftwareAssisted": "The volume is being encrypted by software running on the system or the operating system"
+                "NativeDriveEncryption": "The volume is utilizing the native drive encryption capabilities of the drive hardware.",
+                "ControllerAssisted": "The volume is being encrypted by the storage controller entity.",
+                "SoftwareAssisted": "The volume is being encrypted by software running on the system or the operating system."
             }
         },
         "Operations": {
@@ -97,12 +97,12 @@
                 "SpannedStripesWithParity"
             ],
             "enumDescriptions": {
-                "RawDevice": "The volume is a raw physical device without any RAID or other virtualization applied",
-                "NonRedundant": "The volume is a non-redundant storage device",
-                "Mirrored": "The volume is a mirrored device",
-                "StripedWithParity": "The volume is a device which uses parity to retain redundant information",
-                "SpannedMirrors": "The volume is a spanned set of mirrored devices",
-                "SpannedStripesWithParity": "The volume is a spanned set of devices which uses parity to retain redundant information"
+                "RawDevice": "The volume is a raw physical device without any RAID or other virtualization applied.",
+                "NonRedundant": "The volume is a non-redundant storage device.",
+                "Mirrored": "The volume is a mirrored device.",
+                "StripedWithParity": "The volume is a device which uses parity to retain redundant information.",
+                "SpannedMirrors": "The volume is a spanned set of mirrored devices.",
+                "SpannedStripesWithParity": "The volume is a spanned set of devices which uses parity to retain redundant information."
             }
         },
         "Volume": {
@@ -161,7 +161,7 @@
                     ],
                     "units": "By",
                     "readonly": true,
-                    "description": "The size in bytes of this Volume",
+                    "description": "The size in bytes of this Volume.",
                     "longDescription": "This property shall contain the size in bytes of the associated volume."
                 },
                 "VolumeType": {
@@ -170,7 +170,7 @@
                         {"type": "null"}
                     ],
                     "readonly": true,
-                    "description": "The type of this volume",
+                    "description": "The type of this volume.",
                     "longDescription": "This property shall contain the type of the associated Volume."
                 },
                 "Encrypted": {
@@ -178,7 +178,8 @@
                         "boolean",
                         "null"
                     ],
-                    "description": "Is this Volume encrypted",
+                    "readonly": false,
+                    "description": "Is this Volume encrypted.",
                     "longDescription": "This property shall contain a boolean indicator if the Volume is currently utilizing encryption or not."
                 },
                 "EncryptionTypes": {
@@ -186,7 +187,8 @@
                     "items": {
                         "$ref": "#/definitions/EncryptionTypes"
                     },
-                    "description": "The types of encryption used by this Volume",
+                    "readonly": false,
+                    "description": "The types of encryption used by this Volume.",
                     "longDescription": "This property shall contain the types of encryption used by this Volume."
                 },
                 "Identifiers": {
@@ -194,8 +196,7 @@
                     "items": {
                         "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.v1_1_0.json#/definitions/Identifier"
                     },
-                    "readonly": true,
-                    "description": "The Durable names for the volume",
+                    "description": "The Durable names for the volume.",
                     "longDescription": "This property shall contain a list of all known durable names for the associated volume."
                 },
                 "BlockSizeBytes": {
@@ -205,7 +206,7 @@
                     ],
                     "units": "By",
                     "readonly": true,
-                    "description": "The size of the smallest addressable unit (Block) of this volume in bytes",
+                    "description": "The size of the smallest addressable unit (Block) of this volume in bytes.",
                     "longDescription": "This property shall contain size of the smallest addressable unit of the associated volume."
                 },
                 "Operations": {
@@ -213,8 +214,7 @@
                     "items": {
                         "$ref": "#/definitions/Operations"
                     },
-                    "readonly": true,
-                    "description": "The operations currently running on the Volume",
+                    "description": "The operations currently running on the Volume.",
                     "longDescription": "This property shall contain a list of all currently running on the Volume."
                 },
                 "OptimumIOSizeBytes": {
@@ -275,7 +275,6 @@
                             "longDescription": "This property shall contain a reference to the ClassOfService that this storage volume conforms to."
                         }
                     },
-                    "readonly": true,
                     "description": "Contains references to other resources that are related to this resource.",
                     "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource."
                 },
@@ -318,7 +317,6 @@
                             "$ref": "#/definitions/Initialize"
                         }
                     },
-                    "readonly": true,
                     "description": "The available actions for this resource.",
                     "longDescription": "The Actions property shall contain the available actions for this resource."
                 },
@@ -326,7 +324,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageAccessCapability.v1_0_0.json#/definitions/StorageAccessCapability"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_0_0.json#/definitions/StorageAccessCapability"},
                             {"type": "null"}
                         ]
                     },
@@ -341,7 +339,7 @@
                     ],
                     "units": "By",
                     "readonly": true,
-                    "description": "Max Block size in bytes .",
+                    "description": "Max Block size in bytes.",
                     "longDescription": "This property shall contain size of the largest addressable unit of this storage volume."
                 },
                 "Capacity": {
@@ -376,7 +374,7 @@
                     },
                     "readonly": false,
                     "description": "Low space warning.",
-                    "longDescription": "Each time the following value is less than one of the values in the array the LOW_SPACE_THRESHOLD_WARNING event shall be triggered: Across all CapacitySources entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes)"
+                    "longDescription": "Each time the following value is less than one of the values in the array the LOW_SPACE_THRESHOLD_WARNING event shall be triggered: Across all CapacitySources entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes)."
                 },
                 "Manufacturer": {
                     "type": [
@@ -393,7 +391,7 @@
                         "null"
                     ],
                     "readonly": true,
-                    "description": "The model number for this storage volume",
+                    "description": "The model number for this storage volume.",
                     "longDescription": "The value is assigned by the manufacturer and shall represents a specific storage volume implementation."
                 },
                 "ReplicaInfos": {
@@ -408,34 +406,20 @@
                     "description": "Describes this storage volume in its role as a source and/or target replica.",
                     "longDescription": "This property shall describe the replica relationship between this storage volume and a corresponding source and/or target volume."
                 },
-                "StorageGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "StorageGroups@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "StorageGroups": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.json#/definitions/StorageGroup"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroupCollection.json#/definitions/StorageGroupCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": true,
                     "description": "An array of references to Storage Groups that includes this volume.",
                     "longDescription": "The value of this property shall contain references to all storage groups that include this volume."
                 },
-                "AllocatedPools@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "AllocatedPools@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "AllocatedPools": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePool.json#/definitions/StoragePool"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StoragePoolCollection.json#/definitions/StoragePoolCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": true,
                     "description": "An array of references to StoragePools allocated from this Volume.",
                     "longDescription": "The value of this property shall contain references to all storage pools allocated from this volume."

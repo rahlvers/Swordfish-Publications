@@ -1,34 +1,8 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#DataStorageLoSCapabilities.v1_0_0.DataStorageLoSCapabilities",
     "$ref": "#/definitions/DataStorageLoSCapabilities",
     "definitions": {
-        "AccessCapability": {
-            "type": "string",
-            "enum": [
-                "Read",
-                "WriteMany",
-                "WriteOnce",
-                "AppendOnly",
-                "Streaming"
-            ],
-            "enumDescriptions": {
-                "Read": "Read.",
-                "WriteMany": "WriteMany.",
-                "WriteOnce": "WriteOnce.",
-                "AppendOnly": "AppendOnly.",
-                "Streaming": "Streaming."
-            },
-            "enumLongDescriptions": {
-                "Read": "This enumeration literal specifies Read access.",
-                "WriteMany": "This enumeration literal specifies WriteMany access.",
-                "WriteOnce": "This enumeration literal specifies WriteOnce access.",
-                "AppendOnly": "This enumeration literal specifies AppendOnly access.",
-                "Streaming": "This enumeration literal specifies Streaming access."
-            },
-            "description": "Types of access.",
-            "longDescription": "The enumeration literals may be used to specify types of access."
-        },
         "DataStorageLineOfService": {
             "type": "object",
             "patternProperties": {
@@ -50,9 +24,7 @@
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
                         {"type": "null"}
-                    ],
-                    "description": "A friendly name for this line of service.",
-                    "longDescription": "If present, the name shall be a friendly name for this line of service."
+                    ]
                 },
                 "RecoveryTimeObjectives": {
                     "anyOf": [
@@ -144,7 +116,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/AccessCapability"},
+                            {"$ref": "#/definitions/StorageAccessCapability"},
                             {"type": "null"}
                         ]
                     },
@@ -221,6 +193,35 @@
             },
             "description": "Space provisioning policy.",
             "longDescription": "The enumeration literals may be used to specify space provisioning policy."
+        },
+        "StorageAccessCapability": {
+            "type": "string",
+            "enum": [
+                "Read",
+                "Write",
+                "WriteOnce",
+                "Append",
+                "Streaming",
+                "Execute"
+            ],
+            "enumDescriptions": {
+                "Read": "Read.",
+                "Write": "Write Many.",
+                "WriteOnce": "WriteOnce.",
+                "Append": "AppendOnly.",
+                "Streaming": "Streaming.",
+                "Execute": "Execute access is allowed by the file share."
+            },
+            "enumLongDescriptions": {
+                "Read": "This enumeration literal shall indicate that the storage may be read.",
+                "Write": "This enumeration literal shall indicate that the storage may be written multiple times.",
+                "WriteOnce": "This enumeration literal shall indicate that the storage may be written only once.",
+                "Append": "This enumeration literal shall indicate that the storage may be written only to append.",
+                "Streaming": "This enumeration literal shall indicate that the storage may be read sequentially.",
+                "Execute": "This value shall indicate that Execute access is allowed by the file share."
+            },
+            "description": "Values of StorageAccessCapability describe abilities to read or write storage.",
+            "longDescription": "StorageAccessCapability enumeration literals may be used to describe abilities to read or write storage."
         }
     },
     "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"

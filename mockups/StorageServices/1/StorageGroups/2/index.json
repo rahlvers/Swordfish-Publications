@@ -23,8 +23,7 @@
     "ReplicaRole": "Source",
     "Replica": {"@odata.id": "http://hf.contoso.org/redfish/v1/StorageServices/2/StorageGroups/2"}   
   }],
-  "ServerEndpointGroups": [],
-  "ClientEndpointGroups": [],
+  "EndpointGroups": [],
   "Volumes": {"@odata.id": "/redfish/v1/StorageServices/1/Volumes"},
   "Links": {
     "ParentStorageGroups": [],

@@ -30,10 +30,10 @@
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
         },
         {
-          "@odata.id": "/redfish/v1/StorageSystems/Simple"
+          "@odata.id": "/redfish/v1/Systems/Simple"
         },
         {
-          "@odata.id": "/redfish/v1/StorageSystems/Complex"
+          "@odata.id": "/redfish/v1/Systems/Complex"
         }
       ]
     }
@@ -64,10 +64,10 @@
       ],
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/StorageSystems/Simple"
+          "@odata.id": "/redfish/v1/Systems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/StorageSystems/Complex"
+          "@odata.id": "/redfish/v1/Systems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
@@ -99,10 +99,10 @@
       ],
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/StorageSystems/Simple"
+          "@odata.id": "/redfish/v1/Systems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/StorageSystems/Complex"
+          "@odata.id": "/redfish/v1/Systems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"

@@ -24,8 +24,7 @@
       "target": "/redfish/v1/StorageServices/1/StorageGroups/1/Actions/StorageGroup.HideVolumes"
     }
   },
-  "ServerEndpointGroups": [],
-  "ClientEndpointGroups": [],
+  "EndpointGroups": [],
   "Volumes": {"@odata.id": "/redfish/v1/StorageServices/1/Volumes"},
   "Links": {
     "ParentStorageGroups": [],

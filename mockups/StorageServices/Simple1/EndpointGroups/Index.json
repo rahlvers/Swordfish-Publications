@@ -1,0 +1,12 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageServices/Simple1/EndpointGroups",
+  "@odata.id": "/redfish/v1/StorageServices/Simple1/EndpointGroups",
+  "@odata.type": "#EndpointGroupCollection.v1_0_0.EndpointGroupCollection",
+  "Name": "EndpointGroups",
+  "Description": "List of endpoint groups contained in StorageService Simple1",
+  "Members@odata.count": 2,
+  "Members": [
+	{"@odata.id": "/redfish/v1/StorageServices/Simple1/EndpointGroups/1"},
+	{"@odata.id": "/redfish/v1/StorageServices/Simple1/EndpointGroups/2"}]
+}

@@ -22,7 +22,7 @@
     {
       "ConnectionID": null,
       "ConnectedEndpoint": {
-        "@odata.id": "/redfish/v1/StorageSystems/1/Endpoints/2"
+        "@odata.id": "/redfish/v1/Systems/1/Endpoints/2"
       }
     }
   ]

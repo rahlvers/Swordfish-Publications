@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#DataSecurityLoSCapabilities.DataSecurityLoSCapabilities",
     "$ref": "#/definitions/DataSecurityLoSCapabilities",
     "definitions": {
@@ -10,6 +10,9 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_0.json#/definitions/DataSecurityLoSCapabilities"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_0.json#/definitions/DataSecurityLoSCapabilities"
                 }
             ]
         }

@@ -28,10 +28,10 @@
       },
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/StorageSystems/Simple"
+          "@odata.id": "/redfish/v1/Systems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/StorageSystems/Complex"
+          "@odata.id": "/redfish/v1/Systems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
@@ -66,10 +66,10 @@
       "PhysicalContext": "VoltageRegulator",
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/StorageSystems/Simple"
+          "@odata.id": "/redfish/v1/Systems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/StorageSystems/Complex"
+          "@odata.id": "/redfish/v1/Systems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
@@ -95,10 +95,10 @@
       "PhysicalContext": "VoltageRegulator",
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/StorageSystems/Simple"
+          "@odata.id": "/redfish/v1/Systems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/StorageSystems/Complex"
+          "@odata.id": "/redfish/v1/Systems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"

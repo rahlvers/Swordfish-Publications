@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2016 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
-	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+	<edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
 		<edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
@@ -13,23 +13,22 @@
 		<edmx:Include Namespace="Resource.v1_0_0"/>
 		<edmx:Include Namespace="Resource.v1_1_0"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection_v1.xml">
-		<edmx:Include Namespace="VolumeCollection"/>
-	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup_v1.xml">
-		<edmx:Include Namespace="StorageGroup"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Volume_v1.xml">
+		<edmx:Include Namespace="Volume"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService_v1.xml">
 		<edmx:Include Namespace="ClassOfService"/>
 	</edmx:Reference>
 	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo_v1.xml">
-		<edmx:Include Namespace="StorageReplicaInfo"/>
+		<edmx:Include Namespace="StorageReplicaInfo.v1_0_0"/>
 	</edmx:Reference>
-	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroupCollection_v1.xml">
-		<edmx:Include Namespace="EndpointGroupCollection"/>
+	<edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup_v1.xml">
+		<edmx:Include Namespace="EndpointGroup"/>
+		<edmx:Include Namespace="EndpointGroup.v1_0_0"/>
 	</edmx:Reference>
 	<edmx:DataServices>
 		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageGroup">
+
 			<EntityType Name="StorageGroup" BaseType="Resource.v1_0_0.Resource" Abstract="true">
 				<Annotation Term="OData.Description" String="Collection of resources that are managed and exposed to hosts as a group."/>
 				<Annotation
@@ -37,6 +36,7 @@
 					String="Collection of resources that the system can make available to one or more host systems. The collection can contain: block, file, or object storage; local system access points through which the collection is made available; hosts, or host access points to which the collection is made available."/>
 			</EntityType>
 			<Action Name="ExposeVolumes" IsBound="true">
+				<Annotation Term="Redfish.Deprecated" String="The Expose and Hide Volume actions are redundant with REST PATCH/PUT operations."/>
 				<Annotation Term="OData.Description" String="Expose the storage volumes of this group."/>
 				<Annotation
 					Term="OData.LongDescription"
@@ -44,6 +44,7 @@
 				<Parameter Name="StorageGroup" Type="StorageGroup.v1_0_0.Actions"/>
 			</Action>
 			<Action Name="HideVolumes" IsBound="true">
+				<Annotation Term="Redfish.Deprecated" String="The Expose and Hide Volume actions are redundant with REST PATCH/PUT operations."/>
 				<Annotation Term="OData.Description" String="Hide the storage volumes of this group."/>
 				<Annotation Term="OData.LongDescription" String="Hide the storage of this group from the initiator endpoints named in the ClientEndpointGroups. The property VolumesAreExposed shall be set to false when this action is completed."/>
 				<Parameter Name="StorageGroup" Type="StorageGroup.v1_0_0.Actions"/>
@@ -65,14 +66,14 @@
 					<Annotation Term="OData.LongDescription" String="The value of this property shall describe the access characteristics of this storage group. All associated logical units through all aggregated ports shall share this access state."/>
 				</Property>
 				<Property Name="MembersAreConsistent" Type="Edm.Boolean" DefaultValue="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="Members are kept in a consistent state."/>
 					<Annotation Term="OData.LongDescription" String="The value of this property shall be set to true if all members are in a consistent state. The default value for this property is false."/>
 				</Property>
 				<Property Name="VolumesAreExposed" Type="Edm.Boolean" DefaultValue="false">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-					<Annotation Term="OData.Description" String="Storage volumes are exposed to the Client Endpoints."/>
-					<Annotation Term="OData.LongDescription" String="The value of this property shall be set to true if storage volumes are exposed to the initiator endpoints.  The default value for this property is false."/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+					<Annotation Term="OData.Description" String="Storage volumes are exposed to paths defined by the client and server endpoints."/>
+					<Annotation Term="OData.LongDescription" String="The value of this property shall be set to true if storage volumes are exposed to the paths defined by the client and server endpoints.  The default value for this property is false."/>
 				</Property>
 				<Property Name="Status" Type="Resource.Status"/>
 				<Property Name="Links" Type="StorageGroup.v1_0_0.Links" Nullable="false">
@@ -81,26 +82,26 @@
 					<Annotation Term="OData.LongDescription" String="This structure shall contain references to resources that are not contained within this resource."/>
 				</Property>
 				<Property Name="ReplicaInfos" Type="Collection(StorageReplicaInfo.v1_0_0.ReplicaInfo)">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="Describes this storage group in its role as a source and/or target for replication."/>
 					<Annotation Term="OData.LongDescription" String="This property shall describe the replication relationship between this storage group and a corresponding source and/or target storage group."/>
 				</Property>
-				<NavigationProperty Name="ClientEndpointGroups" Type="EndpointGroupCollection.EndpointGroupCollection" ContainsTarget="true">
+				<NavigationProperty Name="ClientEndpointGroups" Type="Collection(EndpointGroup.EndpointGroup)" ContainsTarget="true">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="ClientEndpointGroup in this StorageGroup."/>
-					<Annotation Term="OData.LongDescription" String="An array of references to ClientEndpointGroups that contain the Endpoints that may be used by clients to make requests to the storage exposed by this StorageGroup."/>
+					<Annotation Term="OData.Description" String="Groups of client endpoints in this storage group."/>
+					<Annotation Term="OData.LongDescription" String="An array of references to groups of client-side endpoints that may be used to make requests to the storage exposed by this StorageGroup. If null, the implementation may allow access to the storage via any client-side endpoint.  If empty, the implementation shall not allow access to the storage via any client-side endpoint."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="ServerEndpointGroups" Type="EndpointGroupCollection.EndpointGroupCollection" ContainsTarget="true">
+				<NavigationProperty Name="ServerEndpointGroups" Type="Collection(EndpointGroup.EndpointGroup)" ContainsTarget="true">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="ServerEndpointGroups in this StorageGroup."/>
-					<Annotation Term="OData.LongDescription" String="An array of references to ServerEndpointGroups that contain the Endpoints that may be used by the storage service to receive requests from clients for storage exposed by this StorageGroup."/>
+					<Annotation Term="OData.Description" String="Groups of server endpoints in this storage group."/>
+					<Annotation Term="OData.LongDescription" String="An array of references to groups of server-side endpoints that may be used to make requests to the storage exposed by this storage group.  If null, the implementation may allow access to the storage via any server-side endpoint.  If empty, the implementation shall not allow access to the storage via any server-side endpoint."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
-				<NavigationProperty Name="Volumes" Type="VolumeCollection.VolumeCollection" ContainsTarget="true">
+				<NavigationProperty Name="Volumes" Type="Collection(Volume.Volume)" ContainsTarget="true">
 					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-					<Annotation Term="OData.Description" String="Volumes in this StorageGroup."/>
-					<Annotation Term="OData.LongDescription" String="An array of references to Volumes managed by this StorageGroup."/>
+					<Annotation Term="OData.Description" String="Volumes in this storage group."/>
+					<Annotation Term="OData.LongDescription" String="An array of references to volumes managed by this storage group."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<Property Name="Actions" Type="StorageGroup.v1_0_0.Actions" Nullable="false">
@@ -123,7 +124,7 @@
 					<Annotation Term="OData.AutoExpandReferences"/>
 				</NavigationProperty>
 				<NavigationProperty Name="ClassOfService" Type="ClassOfService.ClassOfService">
-					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+					<Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
 					<Annotation Term="OData.Description" String="The ClassOfService that all storage in this StorageGroup conforms to."/>
 					<Annotation Term="OData.LongDescription" String="The ClassOfService that all storage in this StorageGroup conforms to."/>
 					<Annotation Term="OData.AutoExpandReferences"/>
@@ -136,6 +137,9 @@
 			<ComplexType Name="OemActions">
 				<Annotation Term="OData.AdditionalProperties" Bool="true"/>
 			</ComplexType>
+		</Schema>
+		<Schema Namespace="StorageGroup.v1_0_1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+			<Annotation Term="OData.Description" String="The Expose and Hide Volume actions are redundant with REST PATCH/PUT operations.  Also, the extra level of a EndpointGroupCollection is not needed."/>
 		</Schema>
 	</edmx:DataServices>
 </edmx:Edmx>

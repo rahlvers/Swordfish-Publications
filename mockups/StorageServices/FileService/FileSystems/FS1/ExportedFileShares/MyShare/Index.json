@@ -1,0 +1,27 @@
+{
+	"@Redfish.Copyright": "Copyright 2014-2017 SNIA. All rights reserved.",
+	"@odata.context": "/redfish/v1/$metadata#FileShare.FileShare",
+	"@odata.id": "/redfish/v1/StorageServices/FileSystems/FS1/ExportedFileShares/MyShare",
+	"@odata.type": "#FileShare.FileShare",
+	"Id": "MyShare",
+	"Name": "MyShare",
+	"Description": "My File Share.",
+	"SharedFilePath": "/Shares/MyShare",
+	"FileSharingProtocols": ["SMBv3_1_1"],
+	"Status": {
+		"State": "Enabled",
+		"Health": "OK",
+		"HealthRollUp": "OK"
+	},
+	"DefaultReadAccess": true,
+	"DefaultWriteAccess": true,
+	"ExecuteSupport": true,
+	"RootAccess": true,
+	"CASupported": true,
+	"Links": {
+	  "EthernetInterfaces": 
+		{"@odata.id": "/redfish/v1/StorageServices/FileServer/EthernetInterfaces/1"},
+	"FileSystem": 
+		{"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1"}
+	}
+}

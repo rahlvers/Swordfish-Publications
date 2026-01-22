@@ -1,0 +1,44 @@
+{
+	"@Redfish.Copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+	"@odata.context": "/redfish/v1/$metadata#MetricReportDefinition.MetricReportDefinition",
+	"@odata.type": "#MetricReportDefinition.v1_0_0.MetricReportDefinition",
+	"@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/IOStatistics",
+	"Id": "IOStatistics",
+
+	"Name": "IOStatistics",
+	"Schedule": {
+		"RecurrenceInterval": "PT0.010S"
+	},
+	"CollectionType": "Periodic",
+	"CollectionTimeScope": "Interval",
+	"Volatile": false,	
+	"Wildcards": [ 
+		{ 	"Name": "allSS",
+			"Values": ["*"] },
+		{ 	"Name": "allV",
+			"Values": ["*"] },
+		{ 	"Name": "RequestTimeStats",
+			"Values": ["ReadIORequestTime", "WriteIORequestTime", "NonIORequestTime"] }
+    ],
+	"Metrics": [{
+			"MemberID": "AverageReadIORequestTime",
+			"MetricProperties": ["/redfish/v1/StorageServices/Members({allSS})/Volumes/Members({allV})/IOStatistics/ReadIORequestTime"],
+			"CollectionFunction@odata.Description": "Avg, Min, Max, Sum",
+			"CollectionFunction": "Avg",
+			"CollectionDuration": "PT0.020S"
+		},{
+			"MemberID": "AverageWriteIORequestTime",
+			"MetricProperties": ["/redfish/v1/StorageServices/Members({allSS})/Volumes/Members({allV})/IOStatistics/WriteIORequestTime"],
+			"CollectionFunction@odata.Description": "Avg, Min, Max, Sum",
+			"CollectionFunction": "Avg",
+			"CollectionDuration": "PT0.020S"
+		},{
+			"MemberID": "AverageNonIORequestTime",
+			"MetricProperties": ["/redfish/v1/StorageServices/Members({allSS})/Volumes/Members({allV})/IOStatistics/NonIORequestTime"],
+			"CollectionFunction@odata.Description": "Avg, Min, Max, Sum",
+			"CollectionFunction": "Avg",
+			"CollectionDuration": "PT0.020S"
+		}
+	],
+	"MetricReport": {"@odata.id": "/redfish/v1/TelemetryService/MetricReports/IOStatistics"}
+}

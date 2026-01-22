@@ -65,10 +65,8 @@
 	}
   }
   ],
-  "Links": {
-    "AllocatedPool": null,
-    "StorageGroup": {
-	"@odata.id": "/redfish/v1/StorageServices/1/StorageGroups/2"
-    }
+  "AllocatedPools": null,
+  "StorageGroups": {
+		"@odata.id": "/redfish/v1/StorageServices/1/Volumes/4/StorageGroups"
   }
 }

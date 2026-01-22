@@ -1,0 +1,61 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#MetricDefinition.MetricDefinitions",
+    "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions/IORequests",
+    "@odata.type": "#MetricDefinition.v1_0_0.MetricDefinition",
+    "Id": "IORequests",
+    "Name": "IORequests",
+	"Calculatable@odata.description": "NonCalculatable, Summable, NonSummable",
+    "Calculable": "Summable",
+    "Units": "{tot}",
+    "DataType": "Int64",
+    "IsLinear": true,
+	"MetricType": "Guage, Counter, Numeric, Discrete",
+    "MetricType": "Counter",	
+	"Wildcards": [ 
+		{ 	"Name": "allSS",
+			"Values": ["*"] },
+		{ 	"Name": "allV",
+			"Values": ["*"] },
+		{ 	"Name": "IORequestStats",
+			"Values": ["ReadIORequests", "ReadHitIORequests", "WriteIORequests", "WriteHitIORequests", "NonIORequests"] }
+    ],
+	"MetricProperties": [
+		"/redfish/v1/StorageServices/Members({allSS})/Volumes/Members({allV})/IOStatistics/{percentStats}"],
+		
+	"CalculationParameters": {
+		"SourceMetric": null,
+		"ResultMetric": null
+	},
+	
+	"PhysicalContext@odata.description": "PhysicalContext.v1_0_0.PhysicalContext",
+	"PhysicalContext": null,
+	
+	"SensorType@odata.description": "LogEntry.v1_0_0.SensorType",
+	"SensorType": null,
+	
+    "SensingInterval@odata.description": "ISO 8601",
+	"SensingInterval": "PT1S",
+	
+	"DiscreteValues": null, 
+	"Precision": null,
+		
+    "Accuracy@odata.description": "{tot}",
+	"Accuracy": 1,
+	
+	"Calibration": 0,
+	
+    "TimeStampAccuracy@odata.description": "ISO 8601",
+	"TimeStampAccuracy": null,
+	
+	"MinReadingRange": 0,
+	"MaxReadingRange": null,
+	
+	"CalculationAlgorithm@odata.description": "AverageOverInterval, MaximumDuringInterval, MinimumDuringInterval",
+	"CalculationAlgorithm": "MaximumDuringInterval",
+	
+    "CalculationTimeInterval@odata.description": "ISO 8601",
+    "CalculationTimeInterval": null
+
+}
+

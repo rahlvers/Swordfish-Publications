@@ -23,12 +23,11 @@
 	"ReplicaProgressStatus": "Completed",
     "ReplicaRole": "Source",
     "Replica": {
-      "@odata.id": "http://hf.contoso.org/redfish/v1/StorageSystems/FileServer/StorageServices/2/StorageGroups/2"
+      "@odata.id": "http://hf.contoso.org/redfish/v1/Systems/FileServer/StorageServices/2/StorageGroups/2"
     }
        
   }],
-  "ServerEndpointGroups": [],
-  "ClientEndpointGroups": [],
+  "EndpointGroups": [],
   "Links": {
     "ParentStorageGroups": [],
     "ChildStorageGroups": [],

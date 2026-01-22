@@ -12,17 +12,19 @@
       "DataCenter",
       "Region"
     ],
-	"SupportedRecoveryPointObjectiveSeconds": ["PT0S",
+	"SupportedRecoveryPointObjectiveTimes": ["PT0S",
 	"PT4S",
 	"PT1M",
 	"PT1H"],
-	"SupportedRecoveryTimeObjectives": ["Immediate",
+	"SupportedRecoveryObjectiveTimes": ["Immediate",
 	"Online",
 	"Nearline",
 	"Offline"],
-	"SupportedReplicaOldTypes": ["Continuous",
-	"Full",
-	"Delta"],
+	"SupportedReplicaTypes": [
+      "Mirror",
+	  "Snapshot",
+      "Clone",
+      "TokenizedClone"],
 	"MinimumLifetime": "P1M",
 	"SupportsIsolated": true,
 	"SupportedReplicaOptions": [],
@@ -30,7 +32,7 @@
 	"SupportedDataProtectionLinesOfService": [
     {
 		"RecoveryGeographicObjective": "Region",
-		"RecoveryPointObjective": "P7D",
+		"RecoveryPointObjectiveTime": "P7D",
 		"RecoveryTimeObjective": "Nearline",
 		"ReplicaType": "Snapshot",
 		"MinLifetime": "P3M",

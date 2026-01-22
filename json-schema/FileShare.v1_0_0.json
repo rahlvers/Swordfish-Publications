@@ -1,28 +1,8 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#FileShare.v1_0_0.FileShare",
     "$ref": "#/definitions/FileShare",
     "definitions": {
-        "AccessCapability": {
-            "type": "string",
-            "enum": [
-                "Read",
-                "Write",
-                "Execute"
-            ],
-            "enumDescriptions": {
-                "Read": "Read access is allowed by the file share.",
-                "Write": "Write access is allowed by the file share.",
-                "Execute": "Execute access is allowed by the file share."
-            },
-            "enumLongDescriptions": {
-                "Read": "This value shall indicate that Read access is allowed by the file share.",
-                "Write": "This value shall indicate that Write access is allowed by the file share.",
-                "Execute": "This value shall indicate that Execute access is allowed by the file share."
-            },
-            "description": "Indicates the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute.",
-            "longDescription": "The values shall indicate the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute."
-        },
         "FileShare": {
             "type": "object",
             "patternProperties": {
@@ -99,17 +79,17 @@
                     "description": "Indicates the status of the file share.",
                     "longDescription": "This value of this property shall indicate the status of the file share."
                 },
-                "DefaultAccessPrivileges": {
+                "DefaultAccessCapabilities": {
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/AccessCapability"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.v1_0_0.json#/definitions/StorageAccessCapability"},
                             {"type": "null"}
                         ]
                     },
                     "readonly": true,
-                    "description": "An array of default access privileges for the file share. The types of default access can include Read, Write, and/or Execute.",
-                    "longDescription": "The value of this property shall be an array containing entries for the default access privileges for the file share. Each entry shall specify a defaul access privilege. The types of default access can include Read, Write, and/or Execute."
+                    "description": "An array of default access capabilities for the file share. The types of default access can include Read, Write, and/or Execute.",
+                    "longDescription": "The value of this property shall be an array containing entries for the default access capabilities for the file share. Each entry shall specify a defaul access privilege. The types of default access can include Read, Write, and/or Execute."
                 },
                 "ExecuteSupport": {
                     "type": [

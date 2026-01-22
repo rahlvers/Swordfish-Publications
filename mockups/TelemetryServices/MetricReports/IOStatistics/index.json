@@ -1,0 +1,28 @@
+{
+	"@Redfish.Copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+	"@odata.context": "/redfish/v1/$metadata#MetricReport.MetricReport",
+	"@odata.type": "#MetricReport.v1_0_0.MetricReport",
+	"@odata.id": "/redfish/v1/TelemetryService/MetricReports/IOStatistics",
+	"Id": "IOStatistics",
+
+	"Name": "IOStatistics",
+	"MetricReportDefinition": {"@odata.id": "/redfish/v1/TelemetryService/MetricReportDefinitions/IOStatistics"},
+	"MetricValues": [
+        {
+		    "MemberID": "AverageReadIORequestTime",
+		    "MetricValue": "P5M00S",
+		    "TimeStamp": "2017-07-08T14:25:00-05:00",
+		    "MetricProperty": "/redfish/v1/Chassis/Tray_1/Power/PowerControl/0/PowerConsumedWatts"
+	    }, {
+		    "MemberID": "AverageWriteIORequestTime",
+		    "MetricValue": "P6M20S",
+		    "TimeStamp": "2017-07-08T12:25:00-05:00",
+		    "MetricScope": "/redfish/v1/Chassis/Tray_1/Power/PowerControl/0/PowerConsumedWatts"
+	    }, {
+		    "MemberID": "AverageNonIORequestTime",
+		    "MetricValue": "P01S",
+		    "TimeStamp": "2017-07-08T12:25:00-05:00",
+		    "MetricScope": "/redfish/v1/Chassis/Tray_1/Power/PowerControl/0/PowerConsumedWatts"
+	    }
+    ]
+}

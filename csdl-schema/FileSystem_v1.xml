@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2016 SNIA. All rights reserved.-->
+<!-- Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
-  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
@@ -20,16 +20,19 @@
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Capacity_v1.xml">
     <edmx:Include Namespace="Capacity.v1_0_0"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageAccessCapability_v1.xml">
-    <edmx:Include Namespace="StorageAccessCapability"/>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities_v1.xml">
+    <edmx:Include Namespace="DataStorageLoSCapabilities.v1_0_0"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem_v1.xml">
-    <edmx:Include Namespace="FileSystem"/>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo_v1.xml">
+    <edmx:Include Namespace="StorageReplicaInfo.v1_0_0"/>
+  </edmx:Reference>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FileShareCollection_v1.xml">
+    <edmx:Include Namespace="FileShareCollection"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/FileShare_v1.xml">
     <edmx:Include Namespace="FileShare"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Measures.V1.xml">
     <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
   </edmx:Reference>
 
@@ -79,7 +82,7 @@
           <Annotation Term="Validation.Minimum" Int="0"/>
           <Annotation Term="Validation.Maximum" Int="100"/>
         </Property>
-        <Property Name="AccessCapabilities" Type="Collection(StorageAccessCapability.v1_0_0.StorageAccessCapability)">
+        <Property Name="AccessCapabilities" Type="Collection(DataStorageLoSCapabilities.v1_0_0.StorageAccessCapability)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="An array of supported IO access capabilities."/>
           <Annotation Term="OData.LongDescription" String="This property shall be an array containing entries for the supported IO access capabilities. Each entry shall specify a current storage access capability."/>
@@ -126,11 +129,11 @@
             Term="OData.LongDescription"
             String="If this file system is a replica, this value shall describe its replication attributes. This value shall not be present if this file system is not a replica. A file system may be both a source and a replica."/>
         </Property>
-        <Property Name="ExportedShares" Type="Collection(FileShare.FileShare)">
+        <NavigationProperty Name="ExportedShares" Type="FileShareCollection.FileShareCollection">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="An array of exported file shares of this file system."/>
           <Annotation Term="OData.LongDescription" String="This property shall be an array of exported file shares of this file system. Each entry shall define an exported file share of this file system."/>
-        </Property>
+        </NavigationProperty>
         <Property Name="Links" Type="FileSystem.v1_0_0.Links" Nullable="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Contains links to other resources that are related to this resource."/>
@@ -244,5 +247,78 @@
       </EnumType>
 
     </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_0_1">
+      <Annotation Term="OData.Description" String="Updated ExportedFileShares to utilize a collection."/>
+      <Annotation Term="OData.LongDescription" String="Updated ExportedFileShares to utilize a FileSystemCollection since there may be 1000's of shares exported by a FileSystem."/>
+
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_0_0.FileSystem">
+        <Annotation Term="OData.Description" String="Add ImportedShares."/>
+        <Annotation Term="OData.LongDescription" String="Add ImportedShares."/>
+        <Property Name="ImportedShares" Type="Collection(FileShare.FileShare)">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="An array of imported file shares."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be an array of imported file shares."/>
+        </Property>
+      </EntityType>
+
+      <ComplexType Name="ImportedShare" BaseType="Resource.Links">
+        <NavigationProperty Name="ImportedShare" Type="FileShare.FileShare">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="Link to imported FileShare."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be a reference to a file share."/>
+        </NavigationProperty>
+        <Property Name="FileSharePath" Type="Edm.String">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A path to a file or directory on this file system where this file share is hosted."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be a path (relative to the file system root) to the importing file or directory."/>
+        </Property>
+      </ComplexType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_1_0">
+      <Annotation Term="OData.Description" String="This version adds the RemainingCapacityPercent property."/>
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_0_0.FileSystem">
+        <Property Name="RemainingCapacityPercent" Type="Edm.Int64">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The percentage of the capacity remaining in the FileSystem."/>
+          <Annotation Term="OData.LongDescription" String="If present, this value shall return  {[(SUM(AllocatedBytes) - SUM(ConsumedBytes)]/SUM(AllocatedBytes)}*100 represented as an integer value."/>
+        </Property>
+        <Property Name="Actions" Type="FileSystem.v1_1_0.Actions" Nullable="false">
+          <Annotation Term="OData.Description" String="The available actions for this resource."/>
+          <Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
+        </Property>
+      </EntityType>
+
+      <ComplexType Name="Actions">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="The available actions for this resource."/>
+        <Annotation Term="OData.LongDescription" String="This type shall contain the available actions for this resource."/>
+        <Property Name="Oem" Type="FileSystem.v1_1_0.OemActions" Nullable="false"/>
+      </ComplexType>
+
+      <ComplexType Name="OemActions">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+        <Annotation Term="OData.Description" String="The available OEM specific actions for this resource."/>
+        <Annotation Term="OData.LongDescription" String="This type shall contain any additional OEM actions for this resource."/>
+      </ComplexType>
+    </Schema>
+
+	
+	<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="FileSystem.v1_1_1">
+
+      <EntityType Name="FileSystem" BaseType="FileSystem.v1_1_0.FileSystem">
+        <Annotation Term="OData.Description" String="An instance of a hierarchical namespace of files."/>
+        <Annotation Term="OData.LongDescription" String="This resource shall be used to represent an instance of a hierarchical namespace of files."/>
+	
+        <Property Name="Identifiers" Type="Collection(Resource.v1_1_0.Identifier)" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The durable names for this file system."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain a list of all known durable names for this file system."/>
+        </Property>
+		
+      </EntityType>
+	</Schema>
+
   </edmx:DataServices>
 </edmx:Edmx>

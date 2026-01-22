@@ -34,10 +34,10 @@
   "Links": {
     "ManagerForStorage": [
       {
-        "@odata.id": "/redfish/v1/StorageSystems/Simple"
+        "@odata.id": "/redfish/v1/Systems/Simple"
       },
 	  {
-        "@odata.id": "/redfish/v1/StorageSystems/Complex"
+        "@odata.id": "/redfish/v1/Systems/Complex"
       }
     ],
     "ManagerForChassis": [

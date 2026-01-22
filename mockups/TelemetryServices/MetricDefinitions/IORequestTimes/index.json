@@ -1,0 +1,60 @@
+{
+    "@Redfish.Copyright": "Copyright 2014-2016 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#MetricDefinition.MetricDefinitions",
+    "@odata.id": "/redfish/v1/TelemetryService/MetricDefinitions/IORequestTimes",
+    "@odata.type": "#MetricDefinition.v1_0_0.MetricDefinition",
+    "Id": "IORequestTime",
+    "Name": "IORequestTime",
+	"Calculatable@odata.description": "NonCalculatable, Summable, NonSummable",
+    "Calculable": "Summable",
+    "Units": "%",
+    "DataType": "String",
+    "IsLinear": true,
+    "MetricType": "Gauge",	
+	"Wildcards": [ 
+		{ 	"Name": "allSS",
+			"Values": ["*"] },
+		{ 	"Name": "allV",
+			"Values": ["*"] },
+		{ 	"Name": "RequestTimeStats",
+			"Values": ["ReadIORequestTime", "WriteIORequestTime", "NonIORequestTime"] }
+    ],
+	"MetricProperties": [
+		"/redfish/v1/StorageServices/Members({allSS})/Volumes/Members({allV})/IOStatistics/{RequestTimeStats}"],
+		
+	"CalculationParameters": {
+		"SourceMetric": null,
+		"ResultMetric": null
+	},
+	
+	"PhysicalContext@odata.description": "PhysicalContext.v1_0_0.PhysicalContext",
+	"PhysicalContext": null,
+	
+	"SensorType@odata.description": "LogEntry.v1_0_0.SensorType",
+	"SensorType": null,
+	
+    "SensingInterval@odata.description": "ISO 8601",
+	"SensingInterval": "PT1M",
+	
+	"DiscreteValues": null, 
+	"Precision": null,
+		
+    "Accuracy@odata.description": "s",
+	"Accuracy": 5,
+	
+	"Calibration": 0,
+	
+    "TimeStampAccuracy@odata.description": "ISO 8601",
+	"TimeStampAccuracy": null,
+	
+	"MinReadingRange": 0,
+	"MaxReadingRange": 100,
+	
+	"CalculationAlgorithm@odata.description": "AverageOverInterval, MaximumDuringInterval, MinimumDuringInterval",
+	"CalculationAlgorithm": null,
+	
+    "CalculationTimeInterval@odata.description": "ISO 8601",
+    "CalculationTimeInterval": null
+
+}
+

@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#Capacity.v1_0_0",
     "definitions": {
         "Capacity": {
@@ -151,7 +151,7 @@
                         {"type": "null"}
                     ],
                     "description": "The volume or volumes that provide this space.",
-                    "longDescription": "The value shall be a reference to a contributing volume or volumes."
+                    "longDescription": "If present, the value shall be a reference to a contributing volume or volumes."
                 },
                 "ProvidingPools": {
                     "anyOf": [
@@ -159,7 +159,7 @@
                         {"type": "null"}
                     ],
                     "description": "The pool or pools that provide this space.",
-                    "longDescription": "The value shall be a reference to a contributing storage pool or storage pools."
+                    "longDescription": "If present, the value shall be a reference to a contributing storage pool or storage pools."
                 },
                 "ProvidingDrives": {
                     "anyOf": [
@@ -167,7 +167,7 @@
                         {"type": "null"}
                     ],
                     "description": "The drive or drives that provide this space.",
-                    "longDescription": "The value shall be a reference to a contributing drive or drives."
+                    "longDescription": "If present, the value shall be a reference to a contributing drive or drives."
                 }
             },
             "description": "A description of the type and source of storage.",

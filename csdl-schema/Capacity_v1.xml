@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2016 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
-  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Core.V1.xml">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/RedfishExtensions_v1.xml">
     <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/cs01/vocabularies/Org.OData.Measures.V1.xml">
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Measures.V1.xml">
     <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
@@ -21,13 +21,13 @@
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection_v1.xml">
     <edmx:Include Namespace="VolumeCollection"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/Swordfish/v1/StoragePoolCollection_v1.xml">
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/StoragePoolCollection_v1.xml">
     <edmx:Include Namespace="StoragePoolCollection"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/Swordfish/v1/DriveCollection_v1.xml">
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DriveCollection_v1.xml">
     <edmx:Include Namespace="DriveCollection"/>
   </edmx:Reference>
-  
+
   <edmx:DataServices>
     <!--todo: should we define unversioned base types for these?-->
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_0_0">
@@ -92,22 +92,28 @@
         </NavigationProperty>
         <NavigationProperty Name="ProvidingVolumes" Type="VolumeCollection.VolumeCollection" ContainsTarget="true">
           <Annotation Term="OData.Description" String="The volume or volumes that provide this space."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be a reference to a contributing volume or volumes."/>
+          <Annotation Term="OData.LongDescription" String="If present, the value shall be a reference to a contributing volume or volumes."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
         <NavigationProperty Name="ProvidingPools" Type="StoragePoolCollection.StoragePoolCollection" ContainsTarget="true">
           <Annotation Term="OData.Description" String="The pool or pools that provide this space."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be a reference to a contributing storage pool or storage pools."/>
+          <Annotation Term="OData.LongDescription" String="If present, the value shall be a reference to a contributing storage pool or storage pools."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
         <NavigationProperty Name="ProvidingDrives" Type="DriveCollection.DriveCollection" ContainsTarget="true">
           <Annotation Term="OData.Description" String="The drive or drives that provide this space."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be a reference to a contributing drive or drives."/>
+          <Annotation Term="OData.LongDescription" String="If present, the value shall be a reference to a contributing drive or drives."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
             <!-- ToDo: Add Providing File, FileSystem, Object, ObjectStore, Memory... as appropriate. -->
       </ComplexType>
 
     </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="Capacity.v1_0_1">
+      <Annotation Term="OData.Description" String="This version was created to show annotations in the previous namespace were updated."/>
+      <EntityType Name="Capacity" BaseType="Capacity.v1_0_0.Capacity"/>
+    </Schema>
+
   </edmx:DataServices>
 </edmx:Edmx>

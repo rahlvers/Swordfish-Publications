@@ -25,11 +25,10 @@
 	"ReplicaUpdateMode": "Asynchronous",
 	"ReplicaRole": "Target",
 	"Replica": {
-            "@odata.id": "https://10.23.11.12/redfish/v1/StorageSystems/FileServer/StorageServices/X/StorageGroups/10"
+            "@odata.id": "https://10.23.11.12/redfish/v1/Systems/FileServer/StorageServices/X/StorageGroups/10"
         }
   }],
-  "ServerEndpointGroups": [],
-  "ClientEndpointGroups": [],
+  "EndpointGroups": [],
   "Links": {
     "ParentStorageGroups": [],
     "ChildStorageGroups": [],

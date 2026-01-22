@@ -34,7 +34,7 @@
       }
     }
   ],
-  "LowSpaceWarningThresholdPercent": [
+  "LowSpaceWarningThresholdPercents": [
     70,
     80,
     90

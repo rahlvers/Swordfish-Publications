@@ -54,11 +54,9 @@
       "AllocatedBytes": 536870912
     }
   },
+  "AllocatedPools": null,
+  "StorageGroups": null,
   "Links": {
-    "AllocatedPool": null,
-	"SourceVolume": {
-		"@odata.id": "/redfish/v1/StorageServices/1/Volume/61001234876545676100123487654567"
-	},
 	"ClassofService": {
 		"@odata.id": "/redfish/v1/StorageServices/1/ClassesofService/BostonBunker"
 	}

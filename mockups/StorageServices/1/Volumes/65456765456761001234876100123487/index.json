@@ -62,7 +62,5 @@
       "ProvisionedBytes": 2199023255552
     }
   },
-  "Links": {
-    "AllocatedPool": null
-  }
+  "AllocatedPools": null
 }

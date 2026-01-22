@@ -26,8 +26,7 @@
 	"ReplicaRole": "Target",
 	"Replica": {"@odata.id": "https://10.23.11.12/redfish/v1/StorageServices/X/StorageGroups/10"}
   }],
-  "ServerEndpointGroups": [],
-  "ClientEndpointGroups": [],
+  "EndpointGroups": [],
   "Volumes": {"@odata.id": "/redfish/v1/StorageServices/1/StorageGroups/3/Volumes"},
   "Links": {
     "ParentStorageGroups": [],

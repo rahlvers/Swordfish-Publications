@@ -1,5 +1,5 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#StorageService.StorageService",
     "$ref": "#/definitions/StorageService",
     "definitions": {
@@ -10,6 +10,12 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.v1_0_0.json#/definitions/StorageService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.v1_0_1.json#/definitions/StorageService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.v1_0_2.json#/definitions/StorageService"
                 }
             ]
         }

@@ -1,64 +1,8 @@
 {
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
     "title": "#IOConnectivityLoSCapabilities.v1_0_0.IOConnectivityLoSCapabilities",
     "$ref": "#/definitions/IOConnectivityLoSCapabilities",
     "definitions": {
-        "AccessProtocol": {
-            "type": "string",
-            "enum": [
-                "FC",
-                "FCP",
-                "iSCSI",
-                "SAS",
-                "SMB",
-                "NFSv3",
-                "NFSv4",
-                "HTTP",
-                "HTTPS",
-                "FTP",
-                "FTPS",
-                "SecureNFS",
-                "FICON",
-                "FCOE",
-                "SMBAndNFS"
-            ],
-            "enumDescriptions": {
-                "FC": "FC2",
-                "FCP": "FC4 SCSI Protocol",
-                "iSCSI": "Internet SCSI",
-                "SAS": "Serial Attached SCSI",
-                "SMB": "SMB",
-                "NFSv3": "NFSv3",
-                "NFSv4": "NFSv4",
-                "HTTP": "Hypertext Transfer Protocol",
-                "HTTPS": "Secure HTTP",
-                "FTP": "File Transfer Protocol",
-                "FTPS": "Secure FTP",
-                "SecureNFS": "Secure NFS",
-                "FICON": "FICON",
-                "FCOE": "FC2 over Ethernet",
-                "SMBAndNFS": "Both SMB and an NFS protocol"
-            },
-            "enumLongDescriptions": {
-                "FC": "This enumeration literal shall indicate the Fibre Channel Framing and Signaling Interface.",
-                "FCP": "This enumeration literal shall indicate the Fibre Channel SCSI Protocol.",
-                "iSCSI": "This enumeration literal shall indicate the Internet SCSI protocol.",
-                "SAS": "This enumeration literal shall indicate the Serial Attached SCSI protocol.",
-                "SMB": "This enumeration literal shall indicate the SMB protocol.",
-                "NFSv3": "This enumeration literal shall indicate the NFSv3 protocol.",
-                "NFSv4": "This enumeration literal shall indicate the NFSv4 protocol.",
-                "HTTP": "This enumeration literal shall indicate the Hypertext Transfer Protocol.",
-                "HTTPS": "This enumeration literal shall indicate the Secure HTTP protocol.",
-                "FTP": "This enumeration literal shall indicate the File Transfer Protocol.",
-                "FTPS": "This enumeration literal shall indicate the Secure FTP protocol.",
-                "SecureNFS": "This enumeration literal shall indicate the Secure NFS protocol.",
-                "FICON": "This enumeration literal shall indicate the FICON protocol.",
-                "FCOE": "This enumeration literal shall indicate the FC2 over Ethernet protocol.",
-                "SMBAndNFS": "This enumeration literal shall indicate that both SMB and an NFS protocol are supported."
-            },
-            "description": "This enumeration defines choices for access protocols.",
-            "longDescription": "This enumeration may be used to specify an access protocol."
-        },
         "IOConnectivityLineOfService": {
             "type": "object",
             "patternProperties": {
@@ -80,27 +24,19 @@
                     "anyOf": [
                         {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
                         {"type": "null"}
-                    ],
-                    "description": "A friendly name for this line of service.",
-                    "longDescription": "If present, the name shall be a friendly name for this line of service."
+                    ]
                 },
-                "AccessProtocol": {
-                    "anyOf": [
-                        {"$ref": "#/definitions/AccessProtocol"},
-                        {"type": "null"}
-                    ],
+                "AccessProtocols": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {"$ref": "http://redfish.dmtf.org/schemas/v1/Storage.v1_0_0.json#/definitions/Protocol"},
+                            {"type": "null"}
+                        ]
+                    },
                     "readonly": false,
                     "description": "SupportedAccessProtocols.",
-                    "longDescription": "The Enumeration Literal shall specify the Access protocol for this service option. NOTE: If SMB+NFS* is specified, the corresponding MaxSupportedIOPS governs the max achieved across both protocol uses. This may be less than the sum of the individual max values."
-                },
-                "MaxIOPS": {
-                    "type": [
-                        "number",
-                        "null"
-                    ],
-                    "readonly": false,
-                    "description": "The maximum supported IOs per second that the connection will support for the selected access protocol.",
-                    "longDescription": "The value shall be the maximum IOs per second that the connection shall allow for the selected access protocol."
+                    "longDescription": "The Enumeration Literal shall specify the Access protocol for this service option. NOTE: If multiple protocols are specified,  the corresponding MaxSupportedIOPS governs the max achieved across all protocol uses. This may be less than the sum of the individual max values, which may be specified by individual Line of Service entries."
                 }
             },
             "description": "A service option within the IO Connectivity line of service.",
@@ -165,7 +101,7 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {"$ref": "#/definitions/AccessProtocol"},
+                            {"$ref": "http://redfish.dmtf.org/schemas/v1/Storage.v1_0_0.json#/definitions/Protocol"},
                             {"type": "null"}
                         ]
                     },
@@ -173,14 +109,15 @@
                     "description": "SupportedAccessProtocols.",
                     "longDescription": "Access protocols supported by this service option. NOTE: SMB+NFS* requires that SMB and at least one of NFSv3 or NFXv4 are also selected, (i.e. {'SMB', 'NFSv4', 'SMB+NFS*'})."
                 },
-                "MaxSupportedIOPS": {
+                "MaxSupportedBytesPerSecond": {
                     "type": [
                         "number",
                         "null"
                     ],
+                    "units": "By/s",
                     "readonly": false,
-                    "description": "The maximum IOPS that a connection can support.",
-                    "longDescription": "The value shall be the maximum IOPS that a connection can support."
+                    "description": "The maximum Bandwidth in bytes per second that a connection can support.",
+                    "longDescription": "The value shall be the maximum bytes per second that a connection can support."
                 },
                 "SupportedIOConnectivityLinesOfService": {
                     "type": "array",

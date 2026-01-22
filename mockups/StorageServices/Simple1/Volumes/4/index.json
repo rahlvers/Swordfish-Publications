@@ -23,11 +23,7 @@
       "ConsumedBytes": 1099511627776
     }
   },
-    "Links": {
-    "StorageGroups": [
-      {
-        "@odata.id": "/redfish/v1/StorageServices/Simple1/StorageGroups/2"
-      }
-    ]
+  "StorageGroups": {
+        "@odata.id": "/redfish/v1/StorageServices/Simple1/Volumes/4/StorageGroups"
   }
 }
