@@ -1,0 +1,21 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageServices/2/Endpoints/1",
+  "@odata.id": "/redfish/v1/StorageServices/2/Endpoints/1",
+  "@odata.type": "#Endpoint.v1_3_1.Endpoint",
+  "Description": "This instance represents a SCSI implemented over FC",
+  "Name": "SCSI2",
+  "EndpointProtocol" : "FC",
+  "Status": {
+    "State": "Enabled",
+    "Health": "Warning"
+  },
+  "ConnectedEntities": [{
+    "EntityType": "Volume",
+    "EntityRole": "Target",
+    "Identifiers": [{
+      "DurableName": "60123456789abcdef60123456789abcdef",
+      "DurableNameFormat": "NAA"
+    }]
+  }]
+}

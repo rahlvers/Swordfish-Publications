@@ -1,7 +1,7 @@
 {
-    "$ref": "#/definitions/DataProtectionLineOfService",
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "DataProtectionLineOfService": {
             "anyOf": [
@@ -15,16 +15,32 @@
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_0_1.json#/definitions/DataProtectionLineOfService"
                 },
                 {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_0_2.json#/definitions/DataProtectionLineOfService"
+                },
+                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_1_0.json#/definitions/DataProtectionLineOfService"
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_1_1.json#/definitions/DataProtectionLineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_1_2.json#/definitions/DataProtectionLineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService.v1_2_0.json#/definitions/DataProtectionLineOfService"
                 }
             ],
+            "deletable": true,
             "description": "Describes a data protection service option.",
-            "longDescription": "This service option describes a replica that protects data from loss. The requirements must be met collectively by the communication path and the replica."
+            "insertable": false,
+            "longDescription": "This service option describes a replica that protects data from loss. The requirements must be met collectively by the communication path and the replica.",
+            "updatable": true,
+            "uris": [
+                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataProtectionLinesOfService",
+                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataProtectionLinesOfService"
+            ]
         }
     },
     "owningEntity": "SNIA",
-    "title": "#DataProtectionLineOfService.DataProtectionLineOfService"
+    "title": "#DataProtectionLineOfService"
 }

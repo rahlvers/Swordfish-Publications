@@ -1,12 +1,15 @@
 {
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageGroup.v1_1_0.json",
     "$ref": "#/definitions/StorageGroup",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "Actions": {
             "additionalProperties": false,
+            "description": "The available actions for this resource.",
+            "longDescription": "This property shall contain any actions for this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -27,7 +30,9 @@
                     "$ref": "#/definitions/HideVolumes"
                 },
                 "Oem": {
-                    "$ref": "#/definitions/OemActions"
+                    "$ref": "#/definitions/OemActions",
+                    "description": "This property contains the available OEM specific actions for this resource.",
+                    "longDescription": "This property shall contain any additional OEM actions for this resource."
                 }
             },
             "type": "object"
@@ -38,7 +43,7 @@
             "longDescription": "Exposes the storage of this group via the target endpoints named in the ServerEndpointGroups to the initiator endpoints named in the ClientEndpointGroups.  The property VolumesAreExposed shall be set to true when this action is completed.",
             "parameters": {},
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -54,7 +59,7 @@
             "properties": {
                 "target": {
                     "description": "Link to invoke action",
-                    "format": "uri",
+                    "format": "uri-reference",
                     "type": "string"
                 },
                 "title": {
@@ -70,7 +75,7 @@
             "longDescription": "Hide the storage of this group from the initiator endpoints named in the ClientEndpointGroups. The property VolumesAreExposed shall be set to false when this action is completed.",
             "parameters": {},
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -86,7 +91,7 @@
             "properties": {
                 "target": {
                     "description": "Link to invoke action",
-                    "format": "uri",
+                    "format": "uri-reference",
                     "type": "string"
                 },
                 "title": {
@@ -98,8 +103,10 @@
         },
         "Links": {
             "additionalProperties": false,
+            "description": "Contains links to other resources that are related to this resource.",
+            "longDescription": "This structure shall contain references to resources that are not contained within this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -118,7 +125,7 @@
                     "items": {
                         "$ref": "#/definitions/StorageGroup"
                     },
-                    "longDescription": "An array of references to StorageGroups are incorporated into this StorageGroup",
+                    "longDescription": "An array of references to StorageGroups are incorporated into this StorageGroup.",
                     "readonly": false,
                     "type": "array"
                 },
@@ -126,14 +133,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
                 },
                 "ClassOfService": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService",
                     "description": "The ClassOfService that all storage in this StorageGroup conforms to.",
                     "longDescription": "The ClassOfService that all storage in this StorageGroup conforms to.",
                     "readonly": false
@@ -148,7 +148,7 @@
                     "items": {
                         "$ref": "#/definitions/StorageGroup"
                     },
-                    "longDescription": "An array of references to StorageGroups that incorporate this StorageGroup",
+                    "longDescription": "An array of references to StorageGroups that incorporate this StorageGroup.",
                     "readonly": true,
                     "type": "array"
                 },
@@ -160,8 +160,10 @@
         },
         "OemActions": {
             "additionalProperties": true,
+            "description": "The available OEM specific actions for this resource.",
+            "longDescription": "This type shall contain any additional OEM actions for this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -182,7 +184,7 @@
             "description": "Collection of resources that are managed and exposed to hosts as a group.",
             "longDescription": "A storage group collects a set of related storage entities (volumes, file systems...) The collection should be useful for managing the storage of a set of related client applications.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -224,8 +226,7 @@
                 "Actions": {
                     "$ref": "#/definitions/Actions",
                     "description": "The available actions for this resource.",
-                    "longDescription": "The Actions property shall contain the available actions for this resource.",
-                    "readonly": true
+                    "longDescription": "The Actions property shall contain the available actions for this resource."
                 },
                 "ClientEndpointGroups": {
                     "description": "Groups of client endpoints in this storage group.",
@@ -255,23 +256,14 @@
                     "readonly": true
                 },
                 "Identifier": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Identifier"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Identifier",
                     "description": "The value identifies this resource.",
-                    "longDescription": "The value shall be unique within the managed ecosystem.",
-                    "readonly": true
+                    "longDescription": "The value shall be unique within the managed ecosystem."
                 },
                 "Links": {
                     "$ref": "#/definitions/Links",
                     "description": "Contains links to other resources that are related to this resource.",
-                    "longDescription": "This structure shall contain references to resources that are not contained within this resource.",
-                    "readonly": true
+                    "longDescription": "This property shall contain links to other resources that are related to this resource."
                 },
                 "MappedVolumes": {
                     "description": "Mapped Volumes in this storage group.",
@@ -286,10 +278,11 @@
                         ]
                     },
                     "longDescription": "An array of mapped volumes managed by this storage group.",
-                    "readonly": false,
-                    "type": "array"
+                    "type": "array",
+                    "versionAdded": "v1_1_0"
                 },
                 "MembersAreConsistent": {
+                    "deprecated": "Deprecated in favor of using the ConsistencyGroup for Consistency set management.",
                     "description": "Members are kept in a consistent state.",
                     "longDescription": "The value of this property shall be set to true if all members are in a consistent state. The default value for this property is false.",
                     "readonly": false,
@@ -308,17 +301,10 @@
                     "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
                 },
                 "ReplicaInfo": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.json#/definitions/ReplicaInfo"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.json#/definitions/ReplicaInfo",
+                    "deprecated": "Deprecated in favor of using the ConsistencyGroup for Consistency set management.",
                     "description": "Describes this storage group in its role as a target for replication.",
-                    "longDescription": "This property shall describe the replication relationship between this storage group and a corresponding source storage group.",
-                    "readonly": false
+                    "longDescription": "This property shall describe the replication relationship between this storage group and a corresponding source storage group."
                 },
                 "ServerEndpointGroups": {
                     "description": "Groups of server endpoints in this storage group.",
@@ -333,14 +319,9 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
                 },
                 "Status": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ]
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status",
+                    "description": "The property contains the status of the StorageGroup.",
+                    "longDescription": "The property shall contain the status of the StorageGroup."
                 },
                 "Volumes": {
                     "deprecated": "These references are replaced by the MappedVolumes array in StorageGroup.",
@@ -375,5 +356,6 @@
         }
     },
     "owningEntity": "SNIA",
+    "release": "WIP 1.0.7",
     "title": "#StorageGroup.v1_1_0.StorageGroup"
 }

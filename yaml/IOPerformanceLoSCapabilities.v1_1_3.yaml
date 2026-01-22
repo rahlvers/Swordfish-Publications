@@ -1,0 +1,241 @@
+components:
+  schemas:
+    Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        Oem:
+          $ref: '#/components/schemas/OemActions'
+          description: This property contains the available OEM specific actions for
+            this resource.
+          x-longDescription: This property shall contain any additional OEM actions
+            for this resource.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    IOAccessPattern:
+      description: Typical IO access patterns.
+      enum:
+      - ReadWrite
+      - SequentialRead
+      - SequentialWrite
+      - RandomReadNew
+      - RandomReadAgain
+      type: string
+      x-enumDescriptions:
+        RandomReadAgain: Random Read of cached data.
+        RandomReadNew: Random Read of uncached data.
+        ReadWrite: Uniform distribution of reads and writes.
+        SequentialRead: Sequential read.
+        SequentialWrite: Sequential write.
+      x-enumLongDescriptions:
+        RandomReadAgain: Use of this enumeration literal shall indicate an access
+          pattern of random reads of cached data.
+        RandomReadNew: Use of this enumeration literal shall indicate an access pattern
+          of random reads of uncached data.
+        ReadWrite: Use of this enumeration literal shall indicate a Uniform distribution
+          of reads and writes.
+        SequentialRead: Use of this enumeration literal shall indicate a sequential
+          read pattern of access.
+        SequentialWrite: Use of this enumeration literal shall indicate a sequential
+          write pattern of access.
+      x-longDescription: The enumeration literals may be used to specify an IO access
+        pattern.
+    IOPerformanceLoSCapabilities:
+      additionalProperties: false
+      description: Describe IO performance capabilities.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+        Actions:
+          $ref: '#/components/schemas/Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+          x-versionAdded: v1_1_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          nullable: true
+          readOnly: true
+        IOLimitingIsSupported:
+          description: Limiting IOPS is supported.
+          nullable: true
+          readOnly: false
+          type: boolean
+          x-longDescription: If true, the system should limit IOPS to MaxIOOperationsPerSecondPerTerabyte
+            * (Volume Size in Terabytes). Otherwise, the system shall not inforce
+            a limit. The default value for this property is false.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          readOnly: true
+        Identifier:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
+          description: The value identifies this resource.
+          x-longDescription: The value shall be unique within the managed ecosystem.
+        MaxSamplePeriod:
+          description: Maximum sampling period over which average values are calculated.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: The value shall be an ISO 8601 duration specifying the
+            maximum sampling period over which average values are calculated.
+          x-units: s
+        MinSamplePeriod:
+          description: Minimum sampling period over which average values are calculated.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: The value shall be an ISO 8601 duration specifying the
+            minimum sampling period over which average values are calculated.
+          x-units: s
+        MinSupportedIoOperationLatencyMicroseconds:
+          description: Minimum supported average IO latency.
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: The value shall be the minimum supported average IO latency
+            in microseconds calculated over the SamplePeriod.
+          x-units: us
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          description: This is the manufacturer/provider specific extension moniker
+            used to divide the Oem object into sections.
+          x-longDescription: The value of this string shall be of the format for the
+            reserved word *Oem*.
+        SupportedIOWorkloads:
+          description: A collection of supported workloads.
+          items:
+            $ref: '#/components/schemas/IOWorkload'
+            nullable: true
+          type: array
+          x-longDescription: The value shall be a collection of supported workloads.
+        SupportedLinesOfService:
+          description: Collection of known and supported IOPerformanceLinesOfService.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          readOnly: false
+          type: array
+          x-autoExpand: true
+          x-longDescription: The value shall be a collection supported IO performance
+            service options.
+        SupportedLinesOfService@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: Each instance of IOPerformanceLoSCapabilities shall describe
+        the capabilities of the system to support various IO performance service options.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    IOWorkload:
+      additionalProperties: false
+      description: An IO Workload description.
+      properties:
+        Components:
+          description: An array of IO workload component descriptions.
+          items:
+            $ref: '#/components/schemas/IOWorkloadComponent'
+            nullable: true
+          type: array
+          x-longDescription: The value shall be an array of IO workload component
+            descriptions.
+        Name:
+          description: The workload name.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: 'The value shall be a name of the workload. It should
+            be constructed as OrgID:WorkloadID. Examples: ACME:DSS, ACME:DSS-REP,
+            ACME:Exchange, ACME:OLTP, ACME:OLTP-REPA.  An organization may define
+            a set of well known workloads.'
+      type: object
+      x-longDescription: This structure may be used to describe an IO Workload.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    IOWorkloadComponent:
+      additionalProperties: false
+      description: Describe a component of a IO workload.
+      properties:
+        AverageIOBytes:
+          description: Average I/O Size for this component.
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: The value shall be the expected average I/O size.
+          x-units: By
+        Duration:
+          description: Duration that this component is active.
+          nullable: true
+          readOnly: false
+          type: string
+          x-longDescription: The value of each entry shall be an ISO 8601 duration
+            that shall specify the expected length of time that this component is
+            applied to the workload. This attribute shall be specified if a schedule
+            is specified and otherwise shall not be specified.
+          x-units: s
+        IOAccessPattern:
+          $ref: '#/components/schemas/IOAccessPattern'
+          description: Expected access pattern for this component.
+          nullable: true
+          readOnly: false
+          x-longDescription: The enumeration literal shall be the expected access
+            pattern.
+        PercentOfData:
+          description: Percent of data for this workload component.
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: The value shall be the expected percent of the data referenced
+            by the workload that is covered by this component.
+          x-units: '%'
+        PercentOfIOPS:
+          description: Percent of total IOPS for this workload component.
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: The value shall be the expected percent of the total
+            IOPS for this workload that is covered by this component.
+          x-units: '%'
+        Schedule:
+          $ref: http://redfish.dmtf.org/schemas/v1/Schedule.yaml#/components/schemas/Schedule
+          description: Specifies when to apply this workload component.
+          x-longDescription: The value shall specifies when this workload component
+            is applied to the overall workload.
+      type: object
+      x-longDescription: This structure may be used to describe a component of an
+        IO workload.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemActions:
+      additionalProperties: true
+      description: The available OEM specific actions for this resource.
+      properties: {}
+      type: object
+      x-longDescription: This type shall contain any additional OEM actions for this
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#IOPerformanceLoSCapabilities.v1_1_3.IOPerformanceLoSCapabilities'
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-owningEntity: SNIA
+x-release: WIP v1.0.5

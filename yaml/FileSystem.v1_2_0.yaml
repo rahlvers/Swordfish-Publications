@@ -6,10 +6,15 @@ components:
       properties:
         Oem:
           $ref: '#/components/schemas/OemActions'
+          description: This property contains the available OEM specific actions for
+            this resource.
+          x-longDescription: This property shall contain any additional OEM actions
+            for this resource.
+          x-versionAdded: v1_1_0
       type: object
       x-longDescription: This type shall contain the available actions for this resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     CharacterCodeSet:
       description: Supported character code standards for different alphabets and
@@ -52,46 +57,6 @@ components:
           by the file system.
       x-longDescription: The values shall indicate the character code standards supported
         by the file system.
-    FileProtocol:
-      description: The file sharing protocols supported by the file system.
-      enum:
-      - NFSv3
-      - NFSv4_0
-      - NFSv4_1
-      - SMBv2_0
-      - SMBv2_1
-      - SMBv3_0
-      - SMBv3_0_2
-      - SMBv3_1_1
-      type: string
-      x-enumDescriptions:
-        NFSv3: NFSv3, as defined in RFC 1813.
-        NFSv4_0: NFSv4, as defined in RFC 7530.
-        NFSv4_1: NFSv4.1, as defined in RFC 5661.
-        SMBv2_0: Server Message Block version 2.0.
-        SMBv2_1: Server Message Block version 2.1.
-        SMBv3_0: Server Message Block version 3.0.
-        SMBv3_0_2: Server Message Block version 3.0.2.
-        SMBv3_1_1: Server Message Block version 3.1.1.
-      x-enumLongDescriptions:
-        NFSv3: This value shall indicate that NFSv3, as defined in RFC 1813, is supported
-          by the file system.
-        NFSv4_0: This value shall indicate that NFSv4, as defined in RFC 7530, is
-          supported by the file system.
-        NFSv4_1: This value shall indicate that NFSv4.1, as defined in RFC 5661, is
-          supported by the file system.
-        SMBv2_0: This value shall indicate that Server Message Block version 2.0 is
-          supported by the file system.
-        SMBv2_1: This value shall indicate that Server Message Block version 2.1 is
-          supported by the file system.
-        SMBv3_0: This value shall indicate that Server Message Block version 3.0 is
-          supported by the file system.
-        SMBv3_0_2: This value shall indicate that Server Message Block version 3.0.2
-          is supported by the file system.
-        SMBv3_1_1: This value shall indicate that Server Message Block version 3.1.1
-          is supported by the file system.
-      x-longDescription: The values shall indicate the file sharing protocols supported
-        by the file system. At least one value shall be present.
     FileSystem:
       additionalProperties: false
       description: An instance of a hierarchical namespace of files.
@@ -119,6 +84,7 @@ components:
           description: The available actions for this resource.
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
+          x-versionAdded: v1_1_0
         BlockSizeBytes:
           description: Block size of the file system in bytes.
           nullable: true
@@ -128,10 +94,8 @@ components:
             the file system in bytes.
           x-units: By
         Capacity:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity
           description: Capacity allocated to the file system.
-          nullable: true
-          readOnly: false
           x-longDescription: The value of this property shall be the capacity allocated
             to the file system in bytes.
         CapacitySources:
@@ -192,16 +156,15 @@ components:
         ExportedShares:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: An array of exported file shares of this file system.
-          nullable: true
-          readOnly: true
+          readOnly: false
           x-longDescription: This property shall be an array of exported file shares
             of this file system. Each entry shall define an exported file share of
             this file system.
         IOStatistics:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/IOStatistics.yaml#/components/schemas/IOStatistics
           description: Statistics for this FileSystem.
-          nullable: true
           x-longDescription: The value shall represent IO statistics for this FileSystem.
+          x-versionAdded: v1_2_0
         Id:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
           readOnly: true
@@ -209,23 +172,21 @@ components:
           description: The durable names for this file system.
           items:
             $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
-          readOnly: true
           type: array
           x-longDescription: This property shall contain a list of all known durable
             names for this file system.
+          x-versionAdded: v1_1_1
         ImportedShares:
           description: An array of imported file shares.
           items:
             $ref: http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.yaml#/components/schemas/ImportedShare
-            nullable: true
-          readOnly: true
           type: array
           x-longDescription: The value shall be an array of imported file shares.
+          x-versionAdded: v1_0_1
         Links:
           $ref: '#/components/schemas/Links'
           description: Contains links to other resources that are related to this
             resource.
-          readOnly: true
           x-longDescription: This property shall contain links to other resources
             that are related to this resource.
         LowSpaceWarningThresholdPercents:
@@ -243,7 +204,7 @@ components:
             are be issued. A LOW_SPACE_THRESHOLD_WARNING event shall be triggered
             each time the remaining file system capacity value becomes less than one
             of the values in the array. The following shall be true: Across all CapacitySources
-            entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes)'
+            entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes).'
           x-units: '%'
         MaxFileNameLengthBytes:
           description: A value indicating the maximum length of a file name within
@@ -273,12 +234,11 @@ components:
           x-longDescription: The value is the number of available capacity source
             resources currently available in the event that an equivalent capacity
             source resource fails.
+          x-versionAdded: v1_2_0
         RemainingCapacity:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/swordfish/v1/Capacity.v1_0_0.yaml#/components/schemas/Capacity
           deprecated: true
           description: Remaining capacity allocated to the file system.
-          nullable: true
-          readOnly: true
           x-deprecatedReason: 'This property is deprecated in favor of the Capacity
             property.  The RemainingCapacity can be computed from the values of that
             property, for each of the sub groups xxx: Data, MetaData, and Snapshot.  The
@@ -293,12 +253,11 @@ components:
           x-longDescription: If present, this value shall return  {[(SUM(AllocatedBytes)
             - SUM(ConsumedBytes)]/SUM(AllocatedBytes)}*100 represented as an integer
             value.
+          x-versionAdded: v1_1_0
         ReplicaInfo:
           $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/ReplicaInfo
           description: This value describes the replica attributes if this file system
             is a replica.
-          nullable: true
-          readOnly: true
           x-longDescription: If this file system is a replica, this value shall describe
             its replication attributes. This value shall not be present if this file
             system is not a replica. A file system may be both a source and a replica.
@@ -311,38 +270,15 @@ components:
       x-longDescription: This resource shall be used to represent an instance of a
         hierarchical namespace of files.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    FileSystemPersistenceType:
-      description: The persistence characteristics of the file system.
-      enum:
-      - Persistent
-      - Temporary
-      - Other
-      type: string
-      x-enumDescriptions:
-        Other: The persistence type is known, but not defined by this standard. Use
-          of this value is not recommended.
-        Persistent: The file system is persistent, and will be preserved through an
-          orderly shutdown.
-        Temporary: The file system is not persistent, and may not survive a shutdown.
-      x-enumLongDescriptions:
-        Other: This value shall indicate that the persistence type is known, but not
-          defined by this standard. Use of this value is not recommended.
-        Persistent: This value shall indicate that the file system is persistent,
-          and shall be preserved through an orderly shutdown.
-        Temporary: This value shall indicate that the file system is non-persistent
-          and may not survive a shutdown.
-      x-longDescription: The value shall indicate the persistence characteristics
-        of the file system.
     Links:
       additionalProperties: false
-      description: Add ability to manage spare capacity.
+      description: Contains links to other resources that are related to this resource.
       properties:
         ClassOfService:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: The ClassOfService of this file system.
-          nullable: true
           readOnly: true
           x-longDescription: This value shall be a link to the ClassOfService for
             this file system.
@@ -374,11 +310,14 @@ components:
           x-longDescription: Each referenced SpareResourceSet shall contain resources
             that may be utilized to replace the capacity provided by a failed resource
             having a compatible type.
+          x-versionAdded: v1_2_0
         SpareResourceSets@odata.count:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
       type: object
+      x-longDescription: This property shall contain links to other resources that
+        are related to this resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     OemActions:
       additionalProperties: true
@@ -388,9 +327,10 @@ components:
       x-longDescription: This type shall contain any additional OEM actions for this
         resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#FileSystem.v1_2_0.FileSystem'
-x-copyright: Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA
+x-release: TP v1.0.7a

@@ -1,10 +1,11 @@
 {
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.json",
     "$ref": "#/definitions/DataSecurityLoSCapabilities",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "AntiVirusScanTrigger": {
-            "description": "Types of antivirus scan triggers",
+            "description": "Types of antivirus scan triggers.",
             "enum": [
                 "None",
                 "OnFirstRead",
@@ -30,7 +31,7 @@
             "type": "string"
         },
         "AuthenticationType": {
-            "description": "Enumeration of authentication algorithms.)",
+            "description": "Enumeration of authentication algorithms.",
             "enum": [
                 "None",
                 "PKI",
@@ -40,8 +41,8 @@
             "enumDescriptions": {
                 "None": "No authentication.",
                 "PKI": "Public Key Infrastructure.",
-                "Password": "Password/shared-secret",
-                "Ticket": "Ticket-based (e.g., Kerberos)"
+                "Password": "Password/shared-secret.",
+                "Ticket": "Ticket-based (e.g., Kerberos)."
             },
             "enumLongDescriptions": {
                 "None": "This enumeration literal specifies No authentication.",
@@ -53,7 +54,7 @@
             "type": "string"
         },
         "DataSanitizationPolicy": {
-            "description": "Types of data sanitization policies",
+            "description": "Types of data sanitization policies.",
             "enum": [
                 "None",
                 "Clear",
@@ -84,6 +85,9 @@
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_1.json#/definitions/DataSecurityLoSCapabilities"
                 },
                 {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_2.json#/definitions/DataSecurityLoSCapabilities"
+                },
+                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_0.json#/definitions/DataSecurityLoSCapabilities"
                 },
                 {
@@ -91,19 +95,22 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_2.json#/definitions/DataSecurityLoSCapabilities"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_3.json#/definitions/DataSecurityLoSCapabilities"
                 }
             ],
             "deletable": false,
-            "description": "Describe data protection capabilities",
+            "description": "Describe data security capabilities.",
             "insertable": false,
-            "longDescription": "The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics.",
+            "longDescription": "This resource may be used to describe data security capabilities.",
             "updatable": false,
             "uris": [
                 "/redfish/v1/StorageServices/{StorageServiceId}/DataSecurityLoSCapabilities"
             ]
         },
         "KeySize": {
-            "description": "Enumeration of Key sizes in a symmetric encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)",
+            "description": "Enumeration of Key sizes in a symmetric encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf).",
             "enum": [
                 "Bits_0",
                 "Bits_112",
@@ -125,11 +132,11 @@
                 "Bits_192": "This enumeration literal specifies an AES 192 bit key.",
                 "Bits_256": "This enumeration literal specifies an AES 256 bit key."
             },
-            "longDescription": "The enumeration literals shall specify Key sizes in a symmetric encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)",
+            "longDescription": "The enumeration literals shall specify Key sizes in a symmetric encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf).",
             "type": "string"
         },
         "SecureChannelProtocol": {
-            "description": "Types of Secure channel protocols",
+            "description": "Types of Secure channel protocols.",
             "enum": [
                 "None",
                 "TLS",

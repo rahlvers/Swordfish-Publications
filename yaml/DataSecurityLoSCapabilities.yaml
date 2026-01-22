@@ -1,7 +1,7 @@
 components:
   schemas:
     AntiVirusScanTrigger:
-      description: Types of antivirus scan triggers
+      description: Types of antivirus scan triggers.
       enum:
       - None
       - OnFirstRead
@@ -25,7 +25,7 @@ components:
       x-longDescription: The enumberation literals shall specify types of antivirus
         scan triggers.
     AuthenticationType:
-      description: Enumeration of authentication algorithms.)
+      description: Enumeration of authentication algorithms.
       enum:
       - None
       - PKI
@@ -35,8 +35,8 @@ components:
       x-enumDescriptions:
         None: No authentication.
         PKI: Public Key Infrastructure.
-        Password: Password/shared-secret
-        Ticket: Ticket-based (e.g., Kerberos)
+        Password: Password/shared-secret.
+        Ticket: Ticket-based (e.g., Kerberos).
       x-enumLongDescriptions:
         None: This enumeration literal specifies No authentication.
         PKI: This enumeration literal specifies a Public Key Infrastructure. Customers
@@ -54,7 +54,7 @@ components:
           (e.g., academia) there are comparable ticket-based systems.'
       x-longDescription: The enumeration literals shall specify authentication algorithms.
     DataSanitizationPolicy:
-      description: Types of data sanitization policies
+      description: Types of data sanitization policies.
       enum:
       - None
       - Clear
@@ -85,18 +85,16 @@ components:
       - $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_0.yaml#/components/schemas/DataSecurityLoSCapabilities
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_1.yaml#/components/schemas/DataSecurityLoSCapabilities
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_0_2.yaml#/components/schemas/DataSecurityLoSCapabilities
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_0.yaml#/components/schemas/DataSecurityLoSCapabilities
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_1.yaml#/components/schemas/DataSecurityLoSCapabilities
       - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_2.yaml#/components/schemas/DataSecurityLoSCapabilities
-      description: Describe data protection capabilities
-      x-longDescription: The capabilities to protect data from loss by the use of
-        a replica. The requirements must be met collectively by the communication
-        path and the replica. There will be one instance associated to a class of
-        service for each replica. Each replica has its own class of service that describes
-        its characteristics.
+      - $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLoSCapabilities.v1_1_3.yaml#/components/schemas/DataSecurityLoSCapabilities
+      description: Describe data security capabilities.
+      x-longDescription: This resource may be used to describe data security capabilities.
     KeySize:
       description: Enumeration of Key sizes in a symmetric encryption algorithm, (see
-        NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)
+        NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf).
       enum:
       - Bits_0
       - Bits_112
@@ -117,9 +115,9 @@ components:
         Bits_192: This enumeration literal specifies an AES 192 bit key.
         Bits_256: This enumeration literal specifies an AES 256 bit key.
       x-longDescription: The enumeration literals shall specify Key sizes in a symmetric
-        encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)
+        encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf).
     SecureChannelProtocol:
-      description: Types of Secure channel protocols
+      description: Types of Secure channel protocols.
       enum:
       - None
       - TLS
@@ -144,6 +142,6 @@ components:
       x-longDescription: The enumeration literals shall specify types of Secure channel
         protocols.
 title: '#DataSecurityLoSCapabilities.DataSecurityLoSCapabilities'
-x-copyright: Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA

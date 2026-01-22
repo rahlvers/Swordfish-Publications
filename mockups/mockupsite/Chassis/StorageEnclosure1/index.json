@@ -1,0 +1,46 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Chassis.Chassis",
+  "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1",
+  "@odata.type": "#Chassis.v1_6_0.Chassis",
+  "Id": "1",
+  "Name": "Storage System Chassis",
+  "ChassisType": "RackMount",
+  "Manufacturer": "ManufacturerName",
+  "Model": "ProductModelName",
+  "SKU": "",
+  "SerialNumber": "XXXYYY",
+  "PartNumber": "",
+  "AssetTag": "CustomerWritableThingy",
+  "IndicatorLED": "Lit",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "Thermal": {
+    "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Thermal"
+  },
+  "Power": {
+    "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Power"
+  },
+  "Links": {
+    "ManagedBy": [{
+      "@odata.id": "/redfish/v1/Managers/StorageManager1"
+    }],
+    "Drives": [{
+        "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/1"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/2"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/3"
+      },
+      {
+        "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives/4"
+      }
+    ],
+    "Oem": {}
+  },
+  "Oem": {}
+}

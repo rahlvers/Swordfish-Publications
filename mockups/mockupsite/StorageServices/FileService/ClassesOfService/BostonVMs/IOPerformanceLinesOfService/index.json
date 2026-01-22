@@ -1,0 +1,11 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#LineOfServiceCollection.LineOfServiceCollection",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonVMs/IOPerformanceLinesOfService",
+  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+  "Name": "IOPerformanceLinesOfService Collection",
+  "Members@odata.count": 1,
+  "Members": [
+        { "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/IOPerformanceLinesOfService/Heavy-OLTP-HDD"}
+     ]
+}

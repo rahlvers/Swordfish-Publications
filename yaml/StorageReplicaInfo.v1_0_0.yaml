@@ -113,11 +113,11 @@ components:
           x-units: '%'
         Replica:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
-          description: The resource that is the source of this replica.
-          nullable: true
-          readOnly: true
-          x-longDescription: The value shall reference the resource that is the source
+          description: Deprecated - Use Source Replica. The resource that is the source
             of this replica.
+          readOnly: true
+          x-longDescription: Deprecated - Use Source Replica. The value shall reference
+            the resource that is the source of this replica.
         ReplicaPriority:
           $ref: '#/components/schemas/ReplicaPriority'
           description: The priority of background copy engine I/O to be managed relative
@@ -283,7 +283,7 @@ components:
       type: object
       x-longDescription: The value shall define the characteristics of a replica.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     ReplicaPriority:
       description: ReplicaPriority allows the priority of background copy engine I/O
@@ -442,7 +442,7 @@ components:
       type: string
       x-enumDescriptions:
         Both: Both the source and the target elements are read only to the host.
-        ReplicaElement: 'The replica element. '
+        ReplicaElement: The replica element.
         SourceElement: The source element.
       x-enumLongDescriptions:
         Both: Both the source and the target elements shall be read only to the host.
@@ -478,7 +478,7 @@ components:
       x-deprecatedReason: ReplicaRole is not used.
       x-enumDescriptions:
         Source: The source element.
-        Target: 'The target element. '
+        Target: The target element.
       x-enumLongDescriptions:
         Source: This enumeration literal shall indicate a source element.
         Target: This enumeration literal shall indicate target element.
@@ -506,37 +506,37 @@ components:
       - Restored
       type: string
       x-enumDescriptions:
-        Aborted: 'The copy operation is aborted with the Abort operation. Use the
-          Resync Replica operation to restart the copy operation. '
-        Broken: 'The relationship is non-functional due to errors in the source, the
-          target, the path between the two or space constraints. '
-        Failedover: 'Reads and writes are sent to the target element. Source element
-          is not reachable. '
-        Fractured: 'Target is split from the source. '
-        Inactive: 'Data flow has stopped, writes to source element will not be sent
-          to target element. '
+        Aborted: The copy operation is aborted with the Abort operation. Use the Resync
+          Replica operation to restart the copy operation.
+        Broken: The relationship is non-functional due to errors in the source, the
+          target, the path between the two or space constraints.
+        Failedover: Reads and writes are sent to the target element. Source element
+          is not reachable.
+        Fractured: Target is split from the source.
+        Inactive: Data flow has stopped, writes to source element will not be sent
+          to target element.
         Initialized: ' The link to enable replication is established and source/replica
-          elements are associated, but the data flow has not started. '
-        Invalid: 'The array is unable to determine the state of the replication relationship,
+          elements are associated, but the data flow has not started.'
+        Invalid: The array is unable to determine the state of the replication relationship,
           for example, after the connection is restored; however, either source or
-          target elements have an unknown status. '
-        Mixed: 'Applies to the ReplicaState of GroupSynchronized. It indicates the
+          target elements have an unknown status.
+        Mixed: Applies to the ReplicaState of GroupSynchronized. It indicates the
           StorageSynchronized relationships of the elements in the groups have different
-          ReplicaState values. '
-        Partitioned: 'State of replication relationship can not be determined, for
-          example, due to a connection problem. '
-        Prepared: 'Initialization is completed, however, the data flow has not started. '
+          ReplicaState values.
+        Partitioned: State of replication relationship can not be determined, for
+          example, due to a connection problem.
+        Prepared: Initialization is completed, however, the data flow has not started.
         Restored: It indicates the source element was restored from the target element.
-        Skewed: 'The target has been modified and is no longer synchronized with the
-          source element or the point-in-time view. '
-        Split: 'The target element was gracefully (or systematically) split from its
-          source element -- consistency is guaranteed. '
-        Suspended: 'Data flow between the source and target elements has stopped.
-          Writes to source element are held until the relationship is Resumed. '
-        Synchronized: 'For the Mirror, Snapshot, or Clone replication, the target
-          represents a copy of the source. '
-        Unsynchronized: 'Not all the source element data has been copied to the target
-          element. '
+        Skewed: The target has been modified and is no longer synchronized with the
+          source element or the point-in-time view.
+        Split: The target element was gracefully (or systematically) split from its
+          source element -- consistency is guaranteed.
+        Suspended: Data flow between the source and target elements has stopped. Writes
+          to source element are held until the relationship is Resumed.
+        Synchronized: For the Mirror, Snapshot, or Clone replication, the target represents
+          a copy of the source.
+        Unsynchronized: Not all the source element data has been copied to the target
+          element.
       x-enumLongDescriptions:
         Aborted: This enumeration literal shall indicate that the copy operation is
           aborted with the Abort operation. The Resync Replica operation can be used
@@ -581,56 +581,9 @@ components:
           element data has been copied to the target element.
       x-longDescription: ReplicaState enumeration literals may be used to describe
         the state of the relationship with respect to Replication activity.
-    ReplicaType:
-      description: Values of ReplicaType describe the intended outcome of the replication.
-      enum:
-      - Mirror
-      - Snapshot
-      - Clone
-      - TokenizedClone
-      type: string
-      x-enumDescriptions:
-        Clone: Create a point in time, full copy the source.
-        Mirror: Create and maintain a copy of the source.
-        Snapshot: Create a point in time, virtual copy of the source.
-        TokenizedClone: Create a token based clone.
-      x-enumLongDescriptions:
-        Clone: This enumeration literal shall indicate that replication shall create
-          a point in time, full copy the source.
-        Mirror: This enumeration literal shall indicate that replication shall create
-          and maintain a copy of the source.
-        Snapshot: This enumeration literal shall indicate that replication shall create
-          a point in time, virtual copy of the source.
-        TokenizedClone: This enumeration literal shall indicate that replication shall
-          create a token based clone.
-      x-longDescription: The enumeration literals may be used to specify the intended
-        outcome of the replication.
-    ReplicaUpdateMode:
-      description: Values of ReplicaUpdateMode describe whether the target elements
-        will be updated synchronously or asynchronously.
-      enum:
-      - Active
-      - Synchronous
-      - Asynchronous
-      - Adaptive
-      type: string
-      x-enumDescriptions:
-        Active: Active-Active (i.e. bidirectional) synchronous updates.
-        Adaptive: Allows implementation to switch between synchronous and asynchronous
-          modes.
-        Asynchronous: Asynchronous updates.
-        Synchronous: Synchronous updates.
-      x-enumLongDescriptions:
-        Active: This enumeration literal shall indicate Active-Active (i.e. bidirectional)
-          synchronous updates.
-        Adaptive: This enumeration literal shall indicate that an implementation may
-          switch between synchronous and asynchronous modes.
-        Asynchronous: This enumeration literal shall indicate Asynchronous updates.
-        Synchronous: This enumeration literal shall indicate Synchronous updates.
-      x-longDescription: The enumeration literals may be used to specify whether the
-        target elements will be updated synchronously or asynchronously.
     StorageReplicaInfo:
       additionalProperties: false
+      description: Defines the characteristics of a Storage Replica.
       properties:
         '@odata.context':
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
@@ -662,8 +615,9 @@ components:
       - Id
       - Name
       type: object
+      x-longDescription: This entity shall define the characteristics of a replica.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     UndiscoveredElement:
       description: Values of UndiscoveredElement specify whether the source, the target,
@@ -687,6 +641,7 @@ components:
         An element shall be considered undiscovered if its object model is not known
         to the service performing the copy operation.
 title: '#StorageReplicaInfo.v1_0_0.StorageReplicaInfo'
-x-copyright: Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA
+x-release: TP v1.0.3

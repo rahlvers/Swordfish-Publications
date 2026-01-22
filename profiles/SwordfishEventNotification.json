@@ -1,0 +1,96 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfilev1_2_0.json",
+  "ProfileName": "SwordfishEventNotification",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines Swordfish Event Notification requirements.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "OwningEntity": "SNIA.org",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.0.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.EventNotification": {}
+      }
+    },
+    "Base": {
+      "MinVersion": "1.4.0",
+      "Repository": "redfish.dmtf.org/registries",
+      "Messages": {
+        "ResourceTypeIncompatible": {
+          "Purpose": "The ResourceTypeIncompatible event shall be send when the requested resource type of the operation does not match that for the operation."
+        }
+      }
+    },
+    "ResourceEvent": {
+      "MinVersion": "1.0.1",
+      "Repository": "redfish.dmtf.org/registries",
+      "Messages": {
+        "ResourceCreated": {
+          "Purpose": "The ResourceCreated event shall be sent on creation of a resource to indicate that the resource has been successfully created."
+        },
+        "ResourceRemoved": {
+          "Purpose": "The ResourceRemoved event shall be sent on removal (deletion) of a resource to indicate that the resource has been successfully removed."
+        },
+        "ResourceErrorsDetected": {
+          "Purpose": "The ResourceRemoved event shall be sent on detection of errors on a resource."
+        },
+        "ResourceErrorsCorrected": {
+          "Purpose": "The ResourceRemoved event shall be sent on detection of corrected errors on a resource."
+        },
+        "ResourceErrorThresholdExceeded": {
+          "Purpose": "The ResourceRemoved event shall be sent when the threshold for detected errors has been exceeded."
+        },
+        "ResourceErrorThresholdCleared": {
+          "Purpose": "The ResourceRemoved event shall be sent when the threshold for detected errors has been cleared."
+        },
+        "ResourceWarningThresholdExceeded": {
+          "Purpose": "The ResourceRemoved event shall be sent when the warning threshold for a resource has been exceeded."
+        },
+        "ResourceWarningThresholdCleared": {
+          "Purpose": "The ResourceRemoved event shall be sent on when the resources has cleared a warning threshold."
+        },
+        "ResourceStatusChangedOK": {
+          "Purpose": "The ResourceStatusChangedOK event shall be sent when the Status.State has changed and the Status.Health of the resource is OK. The new and old values of the State are reported in the Event message."
+        },
+        "ResourceStatusChangedWarning": {
+          "Purpose": "The ResourceStatusChangedWarning event shall be sent when the Status.State has changed and the Status.Health of the resource is Warning. The value of the State is reported in the Event message."
+        },
+        "ResourceStatusChangedCritical": {
+          "Purpose": "The ResourceStatusChangedCritical event shall be sent when the Status.State has changed and the Status.Health of the resource is Critical. The value of the State is reported in the Event message."
+        },
+        "URIForResourceChanged": {
+          "Purpose": "The URIForResourceChanged event shall be sent when the URI for the model resource has changed. Examples for this would be physical component replacement or redistribution."
+        },
+        "ResourceChanged": {
+          "Purpose": "The ResourceChanged event shall be sent when one or more properties of a resource have changed.  This is not used whenever there is another event message for that specific change, such as only the state has changed. If multiple resource properties have changed, the event notification should be grouped together whenever possible."
+        },
+        "ResourceVersionIncompatible": {
+          "Purpose": "The ResourceVersionIncompatible event shall be sent when an incompatible version of software has been detected."
+        },
+        "ResourceSelfTestFailed": {
+          "Purpose": "The ResourceSelfTestFailed event shall be sent when a self-test has failed."
+        },
+        "ResourceSelfTestCompleted": {
+          "Purpose": "The ResourceSelfTestCompleted event shall be sent a self-test has completed."
+        },
+        "LicenseExpired": {
+          "Purpose": "The LicenseExpired event shall be sent when a license has expired.  The event information includes license detail information."
+        },
+        "LicenseChanged": {
+          "Purpose": "The LicenseChanged event shall be sent when a license has changed.  The event information includes license detail information."
+        },
+        "LicenseAdded": {
+          "Purpose": "The LicenseChanged event shall be sent when a license has been added.  The event information includes license detail information."
+        }
+      }
+    }
+  }
+}

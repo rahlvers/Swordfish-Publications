@@ -1,7 +1,8 @@
 {
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.json",
     "$ref": "#/definitions/DataProtectionLoSCapabilities",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "DataProtectionLoSCapabilities": {
             "anyOf": [
@@ -18,6 +19,9 @@
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_0_2.json#/definitions/DataProtectionLoSCapabilities"
                 },
                 {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_0_3.json#/definitions/DataProtectionLoSCapabilities"
+                },
+                {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_1_0.json#/definitions/DataProtectionLoSCapabilities"
                 },
                 {
@@ -25,10 +29,13 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_1_2.json#/definitions/DataProtectionLoSCapabilities"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_1_3.json#/definitions/DataProtectionLoSCapabilities"
                 }
             ],
             "deletable": false,
-            "description": "Describe data protection capabilities",
+            "description": "The capabilities to protect data from loss by the use of a replica.",
             "insertable": false,
             "longDescription": "The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics.",
             "updatable": false,
@@ -75,7 +82,7 @@
             ],
             "enumDescriptions": {
                 "Nearline": "Access to replica via a different front-end interconnect. A restore step is required before recovery can commence.",
-                "Offline": "No direct connection to the replica. (i.e. To a bunker containing backup media.)",
+                "Offline": "No direct connection to the replica. (i.e. To a bunker containing backup media).",
                 "OnlineActive": "Active access to synchronous replicas.",
                 "OnlinePassive": "Passive access to replicas via the same front-end interconnect."
             },
@@ -85,7 +92,7 @@
                 "OnlineActive": "Access to synchronous replicas shall be instantaneous.",
                 "OnlinePassive": "Access to a synchronous replica shall be consistent with switching access to a different path the same front-end interconnect.  A restore step shall not be required."
             },
-            "longDescription": "The enumeration literals shall represent the relative time required to make a replica available as a source. ",
+            "longDescription": "The enumeration literals shall represent the relative time required to make a replica available as a source.",
             "type": "string"
         }
     },

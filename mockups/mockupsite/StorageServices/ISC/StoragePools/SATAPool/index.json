@@ -1,0 +1,62 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StoragePool.StoragePool",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool",
+  "@odata.type": "#StoragePool.v1_1_0.StoragePool",
+  "Id": "SATAPool",
+  "Name": "SATAPool",
+  "Description": "SATA storage pool",
+  "BlockSizeBytes": 512,
+  "Capacity": {
+    "Data": {
+      "AllocatedBytes": 1198027440128,
+      "ConsumedBytes": 1198027440128
+    }
+  },
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool#/CapacitySources/0",
+    "MemberId": "0",
+    "ProvidedCapacity": {
+      "Data": {
+        "AllocatedBytes": 1198027440128,
+        "ConsumedBytes": 1198027440128
+      }
+    },
+    "ProvidingDrives": [{
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/9"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/10"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/11"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/12"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/13"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/14"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/15"
+      },
+      {
+        "@odata.id": "/redfish/v1/StorageServices/ISC/Drives/16"
+      }
+    ]
+  }],
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "ClassesOfService": {"@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/ClassesOfService"},
+  "AllocatedVolumes": {
+    "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool/AllocatedVolumes"
+  },
+  "Links": {
+    "DefaultClassOfService":  {"@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SATA"}
+  }
+}

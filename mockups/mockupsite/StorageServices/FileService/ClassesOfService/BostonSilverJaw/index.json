@@ -1,0 +1,26 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonSilverJaw",
+  "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
+  "Id": "BostonSilverJaw",
+  "Name": "BostonSilverJaw",
+  "Description": "Silver class of service in Boston with async mirror in Dallas and sync mirror in Providence.",
+  "ClassOfServiceVersion": "01.20.00",
+
+  "DataProtectionLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonSilverJaw/DataProtectionLinesOfService"
+  }],
+  "DataSecurityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonSilverJaw/DataSecurityLinesOfService"
+  }],
+  "DataStorageLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonSilverJaw/DataStorageLinesOfService"
+  }],
+  "IOConnectivityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonSilverJaw/IOConnectivityLinesOfService"
+  }],
+  "IOPerformanceLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonSilverJaw/IOPerformanceLinesOfService"
+  }]
+}

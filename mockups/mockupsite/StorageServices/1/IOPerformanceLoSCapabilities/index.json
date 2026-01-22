@@ -1,0 +1,35 @@
+{
+	"@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+	"@odata.context": "/redfish/v1/$metadata#IOPerformanceLoSCapabilities.IOPerformanceLoSCapabilities",
+	"@odata.id": "/redfish/v1/StorageServices/1/IOPerformanceLoSCapabilities",
+	"@odata.type": "#IOPerformanceLoSCapabilities.v1_0_0.IOPerformanceLoSCapabilities",
+	"Name": "IOPerformanceLoSCapabilities",
+	"IOLimitingIsSupported": true,
+	"MinSamplePeriod": "PT5S",
+	"MaxSamplePeriod": "PT1H",
+	"MinSupportedIoOperationLatencyMicroseconds": 200,
+	"SupportedIOWorkloads": [{
+		"Name": "Duplicon:DSS"
+	},
+	{
+		"Name": "Duplicon:OLTP"
+	},
+	{
+		"Name": "Duplicon:Streaming",
+		"Components": [{
+			"AccessPattern ": "SequentialRead",
+			"AverageIOBytes ": 8192,
+			"PercentOfData ": 66,
+			"PercentOfIOPS ": 33
+		},
+		{
+			"AccessPattern ": "SequentialWrite",
+			"AverageIOBytes ": 4096,
+			"PercentOfData ": 33,
+			"PercentOfIOPS ": 66
+		}]
+	}],
+	"SupportedLinesOfService": [
+		{"@odata.id": "/redfish/v1/StorageServices/1/LinesOfService/IOPerformanceLinesOfService"}
+		]
+}

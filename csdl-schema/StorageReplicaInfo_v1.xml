@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -11,10 +11,13 @@
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Measures.V1.xml">
     <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
   </edmx:Reference>
+  <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Capabilities.V1.xml">
+    <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+  </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Resource_v1.xml">
-		<edmx:Include Namespace="Resource"/>
-		<edmx:Include Namespace="Resource.v1_0_0"/>
-	</edmx:Reference>
+    <edmx:Include Namespace="Resource"/>
+    <edmx:Include Namespace="Resource.v1_0_0"/>
+  </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLineOfService_v1.xml">
     <edmx:Include Namespace="DataProtectionLineOfService"/>
   </edmx:Reference>
@@ -23,7 +26,29 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <EntityType Name="StorageReplicaInfo" BaseType="Resource.v1_0_0.Resource" Abstract="true"/>
+      <Annotation Term="OData.Description" String="Defines the characteristics of a Storage Replica."/>
+      <Annotation Term="OData.LongDescription" String="This entity shall define the characteristics of a replica."/>
+      <EntityType Name="StorageReplicaInfo" BaseType="Resource.v1_0_0.Resource" Abstract="true">
+        <Annotation Term="OData.Description" String="Defines the characteristics of a Storage Replica."/>
+        <Annotation Term="OData.LongDescription" String="This entity shall define the characteristics of a replica."/>
+        <Annotation Term="Capabilities.InsertRestrictions">
+          <Record>
+            <PropertyValue Property="Insertable" Bool="false"/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.UpdateRestrictions">
+          <Record>
+            <PropertyValue Property="Updatable" Bool="true"/>
+            <Annotation Term="OData.Description" String="StorageReplicaInfo resources can be updated to change the writable properties."/>
+          </Record>
+        </Annotation>
+        <Annotation Term="Capabilities.DeleteRestrictions">
+          <Record>
+            <PropertyValue Property="Deletable" Bool="true"/>
+            <Annotation Term="OData.Description" String="StorageReplicaInfo resources can be deleted by deleting the StorageReplicaInfo resource."/>
+          </Record>
+        </Annotation>
+      </EntityType>
 
       <ComplexType Name="ReplicaInfo" Abstract="true">
         <Annotation Term="OData.AdditionalProperties" Bool="false"/>
@@ -77,6 +102,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="TP v1.0.3"/>
       <EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.StorageReplicaInfo"/>
 
       <ComplexType Name="ReplicaInfo" BaseType="StorageReplicaInfo.ReplicaInfo">
@@ -228,10 +254,10 @@
           <Annotation Term="OData.Description" String="The source or target role of this replica."/>
           <Annotation Term="OData.LongDescription" String="The ReplicaRole enumeration literal shall represent the source or target role of this replica as known to the containing resource."/>
         </Property>
-        <NavigationProperty Name="Replica" Type="Resource.Item">
+        <NavigationProperty Name="Replica" Type="Resource.Item" Nullable="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-          <Annotation Term="OData.Description" String="The resource that is the source of this replica."/>
-          <Annotation Term="OData.LongDescription" String="The value shall reference the resource that is the source of this replica."/>
+          <Annotation Term="OData.Description" String="Deprecated - Use Source Replica. The resource that is the source of this replica."/>
+          <Annotation Term="OData.LongDescription" String="Deprecated - Use Source Replica. The value shall reference the resource that is the source of this replica."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
       </ComplexType>
@@ -267,7 +293,7 @@
           <Annotation Term="OData.LongDescription" String="The source element shall be read-only to the host."/>
         </Member>
         <Member Name="ReplicaElement">
-          <Annotation Term="OData.Description" String="The replica element. "/>
+          <Annotation Term="OData.Description" String="The replica element."/>
           <Annotation Term="OData.LongDescription" String="The replica element shall be read-only to the host."/>
         </Member>
         <Member Name="Both">
@@ -285,7 +311,7 @@
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate a source element."/>
         </Member>
         <Member Name="Target">
-          <Annotation Term="OData.Description" String="The target element. "/>
+          <Annotation Term="OData.Description" String="The target element."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate target element."/>
         </Member>
 
@@ -421,65 +447,65 @@
         <Annotation Term="OData.Description" String="Values of ReplicaState describe the state of the relationship with respect to Replication activity."/>
         <Annotation Term="OData.LongDescription" String="ReplicaState enumeration literals may be used to describe the state of the relationship with respect to Replication activity."/>
         <Member Name="Initialized">
-          <Annotation Term="OData.Description" String=" The link to enable replication is established and source/replica elements are associated, but the data flow has not started. "/>
+          <Annotation Term="OData.Description" String=" The link to enable replication is established and source/replica elements are associated, but the data flow has not started."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the link to enable replication is established and source/replica elements are associated, but the data flow has not started."/>
         </Member>
         <Member Name="Unsynchronized">
-          <Annotation Term="OData.Description" String="Not all the source element data has been copied to the target element. "/>
+          <Annotation Term="OData.Description" String="Not all the source element data has been copied to the target element."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that not all the source element data has been copied to the target element."/>
         </Member>
         <Member Name="Synchronized">
-          <Annotation Term="OData.Description" String="For the Mirror, Snapshot, or Clone replication, the target represents a copy of the source. "/>
+          <Annotation Term="OData.Description" String="For the Mirror, Snapshot, or Clone replication, the target represents a copy of the source."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that for Mirror, Snapshot, or Clone replication, the target represents a copy of the source."/>
         </Member>
         <Member Name="Broken">
-          <Annotation Term="OData.Description" String="The relationship is non-functional due to errors in the source, the target, the path between the two or space constraints. "/>
+          <Annotation Term="OData.Description" String="The relationship is non-functional due to errors in the source, the target, the path between the two or space constraints."/>
           <Annotation Term="OData.LongDescription" String=" This enumeration literal shall indicate that the relationship is non-functional due to errors in the source, the target, the path between the two or space constraints."/>
         </Member>
         <Member Name="Fractured">
-          <Annotation Term="OData.Description" String="Target is split from the source. "/>
+          <Annotation Term="OData.Description" String="Target is split from the source."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the Target is split from the source. The target may not be consistent."/>
         </Member>
         <Member Name="Split">
-          <Annotation Term="OData.Description" String="The target element was gracefully (or systematically) split from its source element -- consistency is guaranteed. "/>
+          <Annotation Term="OData.Description" String="The target element was gracefully (or systematically) split from its source element -- consistency is guaranteed."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the target element was gracefully (or systematically) split from its source element -- consistency shall be guaranteed."/>
         </Member>
         <Member Name="Inactive">
-          <Annotation Term="OData.Description" String="Data flow has stopped, writes to source element will not be sent to target element. "/>
+          <Annotation Term="OData.Description" String="Data flow has stopped, writes to source element will not be sent to target element."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that data flow has stopped, writes to source element shall not be sent to target element."/>
         </Member>
         <Member Name="Suspended">
-          <Annotation Term="OData.Description" String="Data flow between the source and target elements has stopped. Writes to source element are held until the relationship is Resumed. "/>
+          <Annotation Term="OData.Description" String="Data flow between the source and target elements has stopped. Writes to source element are held until the relationship is Resumed."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the data flow between the source and target elements has stopped. Writes to source element shall be held until the relationship is Resumed."/>
         </Member>
         <Member Name="Failedover">
-          <Annotation Term="OData.Description" String="Reads and writes are sent to the target element. Source element is not reachable. "/>
+          <Annotation Term="OData.Description" String="Reads and writes are sent to the target element. Source element is not reachable."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the reads and writes are sent to the target element. The source element may not be reachable."/>
         </Member>
         <Member Name="Prepared">
-          <Annotation Term="OData.Description" String="Initialization is completed, however, the data flow has not started. "/>
+          <Annotation Term="OData.Description" String="Initialization is completed, however, the data flow has not started."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that initialization is completed, however, the data flow has not started."/>
         </Member>
         <Member Name="Aborted">
-          <Annotation Term="OData.Description" String="The copy operation is aborted with the Abort operation. Use the Resync Replica operation to restart the copy operation. "/>
+          <Annotation Term="OData.Description" String="The copy operation is aborted with the Abort operation. Use the Resync Replica operation to restart the copy operation."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the copy operation is aborted with the Abort operation. The Resync Replica operation can be used to restart the copy operation."/>
         </Member>
         <Member Name="Skewed">
-          <Annotation Term="OData.Description" String="The target has been modified and is no longer synchronized with the source element or the point-in-time view. "/>
+          <Annotation Term="OData.Description" String="The target has been modified and is no longer synchronized with the source element or the point-in-time view."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the target has been modified and is no longer synchronized with the source element or the point-in-time view."/>
         </Member>
         <Member Name="Mixed">
-          <Annotation Term="OData.Description" String="Applies to the ReplicaState of GroupSynchronized. It indicates the StorageSynchronized relationships of the elements in the groups have different ReplicaState values. "/>
+          <Annotation Term="OData.Description" String="Applies to the ReplicaState of GroupSynchronized. It indicates the StorageSynchronized relationships of the elements in the groups have different ReplicaState values."/>
           <Annotation
             Term="OData.LongDescription"
             String="This enumeration literal shall indicate the ReplicaState of GroupSynchronized. The value indicates the StorageSynchronized relationships of the elements in the group have different ReplicaState values."/>
         </Member>
         <Member Name="Partitioned">
-          <Annotation Term="OData.Description" String="State of replication relationship can not be determined, for example, due to a connection problem. "/>
+          <Annotation Term="OData.Description" String="State of replication relationship can not be determined, for example, due to a connection problem."/>
           <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that the state of replication relationship can not be determined, for example, due to a connection problem."/>
         </Member>
         <Member Name="Invalid">
-          <Annotation Term="OData.Description" String="The array is unable to determine the state of the replication relationship, for example, after the connection is restored; however, either source or target elements have an unknown status. "/>
+          <Annotation Term="OData.Description" String="The array is unable to determine the state of the replication relationship, for example, after the connection is restored; however, either source or target elements have an unknown status."/>
           <Annotation
             Term="OData.LongDescription"
             String="This enumeration literal shall indicate that the storage server is unable to determine the state of the replication relationship, for example, after the connection is restored; however, either source or target elements have an unknown status."/>
@@ -541,16 +567,23 @@
       <EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.v1_0_0.StorageReplicaInfo"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo.v1_0_2">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="OData.Description" String="This version was created to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
+			<EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.v1_0_1.StorageReplicaInfo"/>
+		</Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="TP v1.0.6"/>
       <Annotation Term="OData.Description" String="Enhance to track DataProtectionLineOfService LoS for each replicaInfo. Move ComplexType into unversioned namespace.Move enums into unversioned namespace. Change references to unversioned."/>
       <EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.v1_0_1.StorageReplicaInfo"/>
 
       <ComplexType Name="ReplicaInfo" BaseType="StorageReplicaInfo.v1_0_0.ReplicaInfo">
-        <NavigationProperty Name="DataProtectionLineOfService" Type="DataProtectionLineOfService.DataProtectionLineOfService">
+        <NavigationProperty Name="DataProtectionLineOfService" Type="DataProtectionLineOfService.DataProtectionLineOfService" Nullable="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-          <Annotation Term="OData.Description" String="A collection of DataProtection lines of service elements."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be a set of data protection service options.  Within a class of service, one data protection service option shall be present for each replication session."/>
+          <Annotation Term="OData.Description" String="A pointer to the DataProtection line of service element that describes this replica."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be a pointer to the data protection line of service that describes this replica."/>
         </NavigationProperty>
       </ComplexType>
     </Schema>
@@ -559,6 +592,49 @@
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="OData.Description" String="This version was created to force the regeneration of JSON Schema so that OData properties are marked as required, and integer properties are marked as integer rather than number."/>
       <EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.v1_1_0.StorageReplicaInfo"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo.v1_1_2">
+			<Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+			<Annotation Term="OData.Description" String="This version was created to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
+			<EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.v1_1_1.StorageReplicaInfo"/>
+		</Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="StorageReplicaInfo.v1_2_0">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="WIP v1.1.0"/>
+      <Annotation Term="OData.Description" String="This version was created to clarify terminology.  It deprecates the NavigationProperty Replica and replaces it with a NavigationProperty called SourceReplica. This also corrects the DataProtectionLineOfService property description to refer to a single Line of Service instead of a collection. This version also fixes CSDL errors."/>
+      <EntityType Name="StorageReplicaInfo" BaseType="StorageReplicaInfo.v1_1_2.StorageReplicaInfo">
+        <Property Name="Actions" Type="StorageReplicaInfo.v1_2_0.Actions" Nullable="false">
+          <Annotation Term="OData.Description" String="The available actions for this resource."/>
+          <Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
+        </Property>
+      </EntityType>
+
+      <ComplexType Name="Actions">
+        <Annotation Term="OData.AdditionalProperties" Bool="false"/>
+        <Annotation Term="OData.Description" String="The available actions for this resource."/>
+        <Annotation Term="OData.LongDescription" String="The Actions property shall contain the available actions for this resource."/>
+        <Property Name="Oem" Type="StorageReplicaInfo.v1_2_0.OemActions" Nullable="false">
+          <Annotation Term="OData.Description" String="This property contains the available OEM specific actions for this resource."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain any additional OEM actions for this resource."/>
+        </Property>
+      </ComplexType>
+
+      <ComplexType Name="OemActions">
+        <Annotation Term="OData.AdditionalProperties" Bool="true"/>
+        <Annotation Term="OData.Description" String="The available OEM specific actions for this resource."/>
+        <Annotation Term="OData.LongDescription" String="This type shall contain any additional OEM actions for this resource."/>
+      </ComplexType>
+
+      <ComplexType Name="ReplicaInfo" BaseType="StorageReplicaInfo.v1_1_0.ReplicaInfo">
+        <NavigationProperty Name="SourceReplica" Type="Resource.Item" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="The resource that is the source of this replica."/>
+          <Annotation Term="OData.LongDescription" String="The value shall reference the resource that is the source of this replica."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+      </ComplexType>
     </Schema>
 
   </edmx:DataServices>

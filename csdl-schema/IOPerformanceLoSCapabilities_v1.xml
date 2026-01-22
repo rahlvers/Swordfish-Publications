@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -18,7 +18,7 @@
     <edmx:Include Namespace="Resource"/>
     <edmx:Include Namespace="Resource.v1_0_0"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Schedule_v1.xml">
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/Schedule_v1.xml">
     <edmx:Include Namespace="Schedule"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/IOPerformanceLineOfService_v1.xml">
@@ -29,10 +29,8 @@
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOPerformanceLoSCapabilities">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <EntityType Name="IOPerformanceLoSCapabilities" BaseType="Resource.v1_0_0.Resource" Abstract="true">
-        <Annotation Term="OData.Description" String="Describe data protection capabilities"/>
-        <Annotation
-          Term="OData.LongDescription"
-          String="The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics."/>
+        <Annotation Term="OData.Description" String="Describe IO performance capabilities."/>
+        <Annotation Term="OData.LongDescription" String="Each instance of IOPerformanceLoSCapabilities shall describe the capabilities of the system to support various IO performance service options."/>
         <Annotation Term="Capabilities.InsertRestrictions">
           <Record>
             <PropertyValue Property="Insertable" Bool="false"/>
@@ -58,7 +56,7 @@
       <ComplexType Name="IOWorkload" Abstract="true">
         <Annotation Term="OData.AdditionalProperties" Bool="false"/>
         <Annotation Term="OData.Description" String="An IO Workload description."/>
-        <Annotation Term="OData.LongDescription" String="This structure may be used to describe an IO Workload.  "/>
+        <Annotation Term="OData.LongDescription" String="This structure may be used to describe an IO Workload."/>
       </ComplexType>
 
       <ComplexType Name="IOWorkloadComponent" Abstract="true">
@@ -70,11 +68,11 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOPerformanceLoSCapabilities.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="TP v1.0.3"/>
       <EntityType Name="IOPerformanceLoSCapabilities" BaseType="IOPerformanceLoSCapabilities.IOPerformanceLoSCapabilities">
-        <Annotation Term="OData.Description" String="Describe io performance capabilities."/>
+        <Annotation Term="OData.Description" String="Describe IO performance capabilities."/>
         <Annotation Term="OData.LongDescription" String="Each instance of IOPerformanceLoSCapabilities shall describe the capabilities of the system to support various IO performance service options."/>
-        <Property Name="Identifier" Type="Resource.Identifier">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+        <Property Name="Identifier" Type="Resource.Identifier" Nullable="false">
           <Annotation Term="OData.Description" String="The value identifies this resource."/>
           <Annotation Term="OData.LongDescription" String="The value shall be unique within the managed ecosystem."/>
         </Property>
@@ -100,11 +98,10 @@
         <Property Name="MinSupportedIoOperationLatencyMicroseconds" Type="Edm.Int64">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="Minimum supported average IO latency."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be the minimum supported average IO latency in microseconds calculated over the SamplePeriod"/>
+          <Annotation Term="OData.LongDescription" String="The value shall be the minimum supported average IO latency in microseconds calculated over the SamplePeriod."/>
           <Annotation Term="Measures.Unit" String="us"/>
         </Property>
         <Property Name="SupportedIOWorkloads" Type="Collection(IOPerformanceLoSCapabilities.v1_0_0.IOWorkload)">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="A collection of supported workloads."/>
           <Annotation Term="OData.LongDescription" String="The value shall be a collection of supported workloads."/>
         </Property>
@@ -118,7 +115,7 @@
 
       <ComplexType Name="IOWorkload" BaseType="IOPerformanceLoSCapabilities.IOWorkload">
         <Annotation Term="OData.Description" String="An IO Workload description."/>
-        <Annotation Term="OData.LongDescription" String="This structure may be used to describe an IO Workload.  "/>
+        <Annotation Term="OData.LongDescription" String="This structure may be used to describe an IO Workload."/>
         <Property Name="Name" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="The workload name."/>
@@ -127,7 +124,6 @@
             String="The value shall be a name of the workload. It should be constructed as OrgID:WorkloadID. Examples: ACME:DSS, ACME:DSS-REP, ACME:Exchange, ACME:OLTP, ACME:OLTP-REPA.  An organization may define a set of well known workloads."/>
         </Property>
         <Property Name="Components" Type="Collection(IOPerformanceLoSCapabilities.v1_0_0.IOWorkloadComponent)">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="An array of IO workload component descriptions."/>
           <Annotation Term="OData.LongDescription" String="The value shall be an array of IO workload component descriptions."/>
         </Property>
@@ -156,7 +152,7 @@
         <Property Name="PercentOfIOPS" Type="Edm.Int64">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="Percent of total IOPS for this workload component."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be the expected percent of the total IOPS for this workload that is covered by this component"/>
+          <Annotation Term="OData.LongDescription" String="The value shall be the expected percent of the total IOPS for this workload that is covered by this component."/>
           <Annotation Term="Measures.Unit" String="%"/>
         </Property>
         <Property Name="Duration" Type="Edm.String">
@@ -167,8 +163,7 @@
             String="The value of each entry shall be an ISO 8601 duration that shall specify the expected length of time that this component is applied to the workload. This attribute shall be specified if a schedule is specified and otherwise shall not be specified."/>
           <Annotation Term="Measures.Unit" String="s"/>
         </Property>
-        <Property Name="Schedule" Type="Schedule.Schedule">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+        <Property Name="Schedule" Type="Schedule.Schedule" Nullable="false">
           <Annotation Term="OData.Description" String="Specifies when to apply this workload component."/>
           <Annotation Term="OData.LongDescription" String="The value shall specifies when this workload component is applied to the overall workload."/>
         </Property>
@@ -187,11 +182,11 @@
           <Annotation Term="OData.LongDescription" String="Use of this enumeration literal shall indicate a sequential read pattern of access."/>
         </Member>
         <Member Name="SequentialWrite">
-          <Annotation Term="OData.Description" String="Sequential write"/>
+          <Annotation Term="OData.Description" String="Sequential write."/>
           <Annotation Term="OData.LongDescription" String="Use of this enumeration literal shall indicate a sequential write pattern of access."/>
         </Member>
         <Member Name="RandomReadNew">
-          <Annotation Term="OData.Description" String="Random Read of uncached data"/>
+          <Annotation Term="OData.Description" String="Random Read of uncached data."/>
           <Annotation Term="OData.LongDescription" String="Use of this enumeration literal shall indicate an access pattern of random reads of uncached data."/>
         </Member>
         <Member Name="RandomReadAgain">
@@ -208,8 +203,15 @@
       <EntityType Name="IOPerformanceLoSCapabilities" BaseType="IOPerformanceLoSCapabilities.v1_0_0.IOPerformanceLoSCapabilities"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOPerformanceLoSCapabilities.v1_0_2">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was created to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
+      <EntityType Name="IOPerformanceLoSCapabilities" BaseType="IOPerformanceLoSCapabilities.v1_0_1.IOPerformanceLoSCapabilities"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOPerformanceLoSCapabilities.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="WIP v1.0.5"/>
       <EntityType Name="IOPerformanceLoSCapabilities" BaseType="IOPerformanceLoSCapabilities.v1_0_1.IOPerformanceLoSCapabilities">
         <Property Name="Actions" Type="IOPerformanceLoSCapabilities.v1_1_0.Actions" Nullable="false">
           <Annotation Term="OData.Description" String="The available actions for this resource."/>
@@ -221,7 +223,10 @@
         <Annotation Term="OData.AdditionalProperties" Bool="false"/>
         <Annotation Term="OData.Description" String="The available actions for this resource."/>
         <Annotation Term="OData.LongDescription" String="This type shall contain the available actions for this resource."/>
-        <Property Name="Oem" Type="IOPerformanceLoSCapabilities.v1_1_0.OemActions" Nullable="false"/>
+        <Property Name="Oem" Type="IOPerformanceLoSCapabilities.v1_1_0.OemActions" Nullable="false">
+          <Annotation Term="OData.Description" String="This property contains the available OEM specific actions for this resource."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain any additional OEM actions for this resource."/>
+        </Property>
       </ComplexType>
 
       <ComplexType Name="OemActions">
@@ -234,17 +239,23 @@
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOPerformanceLoSCapabilities.v1_1_1">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="OData.LongDescription" String="Change IOPerformanceLineOfService to EntityType. Move ComplexType to unversioned namespace. Change references to unversioned."/>
-      <EntityType Name="IOPerformanceLoSCapabilities" BaseType="IOPerformanceLoSCapabilities.v1_1_0.IOPerformanceLoSCapabilities">
-        <Annotation Term="OData.Description" String="Use Redfish Location type, and change IOPerformanceLineOfService to EntityType.  Move enums to unversioned namespace. Change references to unversioned."/>
-      </EntityType>
+      <EntityType Name="IOPerformanceLoSCapabilities" BaseType="IOPerformanceLoSCapabilities.v1_1_0.IOPerformanceLoSCapabilities"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOPerformanceLoSCapabilities.v1_1_2">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="OData.Description" String="Make SupportedLinesOfService be a containment NavigationProperty. This version was also created to force the regeneration of JSON Schema so that OData properties are marked as required, and integer properties are marked as integer rather than number."/>
+      <Annotation
+        Term="OData.Description"
+        String="Make SupportedLinesOfService be a containment NavigationProperty. This version was also created to force the regeneration of JSON Schema so that OData properties are marked as required, and integer properties are marked as integer rather than number."/>
       <EntityType Name="IOPerformanceLoSCapabilities" BaseType="IOPerformanceLoSCapabilities.v1_1_1.IOPerformanceLoSCapabilities">
         <Annotation Term="OData.Description" String="Make SupportedLinesOfService be a containment NavigationProperty."/>
       </EntityType>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOPerformanceLoSCapabilities.v1_1_3">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="Make SupportedLinesOfService be a containment NavigationProperty. This version was created to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
+      <EntityType Name="IOPerformanceLoSCapabilities" BaseType="IOPerformanceLoSCapabilities.v1_1_1.IOPerformanceLoSCapabilities"/>
     </Schema>
 
   </edmx:DataServices>

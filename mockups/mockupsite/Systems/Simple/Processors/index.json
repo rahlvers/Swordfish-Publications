@@ -1,0 +1,15 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.id": "/redfish/v1/Systems/Simple/Processors",
+  "@odata.type": "#ProcessorCollection.ProcessorCollection",
+  "Name": "Processors Collection",
+  "Members@odata.count": 2,
+  "Members": [
+    {
+      "@odata.id": "/redfish/v1/Systems/Simple/Processors/1"
+    },
+    {
+      "@odata.id": "/redfish/v1/Systems/Simple/Processors/2"
+    }
+  ]
+}

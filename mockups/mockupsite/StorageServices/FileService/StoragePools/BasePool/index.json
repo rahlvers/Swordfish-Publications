@@ -1,0 +1,49 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StoragePool.StoragePool",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/BasePool",
+  "@odata.type": "#StoragePool.v1_0_0.StoragePool",
+  "Id": "BasePool",
+  "Name": "BasePool",
+  "Description": "Base storage pool",
+  "BlockSizeBytes": 8192,
+  "Capacity": {
+    "Data": {
+      "ConsumedBytes": 0,
+      "AllocatedBytes": 0,
+      "GuaranteedBytes": 0,
+      "ProvisionedBytes": 0
+    }
+  },
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/BasePool#/CapacitySources/0",
+    "MemberId": "0",
+    "ProvidedCapacity": {
+      "ConsumedBytes": 70368744177664,
+      "AllocatedBytes": 140737488355328,
+      "GuaranteedBytes": 17592186044416,
+      "ProvisionedBytes": 562949953421312
+    },
+    "Links": {
+      "ClassOfService": {
+        "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"
+      }
+    }
+  }],
+  "LowSpaceWarningThresholdPercents": [
+    70,
+    80,
+    90
+  ],
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "Warning"
+  },
+  "AllocatedVolumes": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/BasePool/AllocatedVolumes"
+  },
+  "ClassesOfService": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/BasePool/ClassesOfService"
+  }
+}

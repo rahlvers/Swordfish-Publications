@@ -1,0 +1,27 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
+  "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonVMs",
+  "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
+  "Id": "BostonVMs with snaps to Providence",
+  "Name": "BostonVMs",
+  "Description": "Boston VMs",
+  "ClassOfServiceVersion": "01.20.00",
+
+  "DataProtectionLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonVMs/DataProtectionLinesOfService"
+  }],
+  "DataSecurityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonVMs/DataSecurityLinesOfService"
+  }],
+  "DataStorageLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonVMs/DataStorageLinesOfService"
+  }],
+  "IOConnectivityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonVMs/IOConnectivityLinesOfService"
+  }],
+  "IOPerformanceLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonVMs/IOPerformanceLinesOfService"
+  }]
+
+}

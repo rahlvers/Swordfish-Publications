@@ -1,0 +1,26 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverBoston",
+  "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
+  "Id": "SilverBoston",
+  "Name": "SilverBoston",
+  "Description": "Silver class of service in Boston",
+  "ClassOfServiceVersion": "01.20.00",
+
+  "DataProtectionLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverBoston/DataProtectionLinesOfService"
+  }],
+  "DataSecurityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverBoston/DataSecurityLinesOfService"
+  }],
+  "DataStorageLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverBoston/DataStorageLinesOfService"
+  }],
+  "IOConnectivityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverBoston/IOConnectivityLinesOfService"
+  }],
+  "IOPerformanceLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverBoston/IOPerformanceLinesOfService"
+  }]
+}

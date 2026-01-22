@@ -1,7 +1,8 @@
 {
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/HostedStorageServices.json",
     "$ref": "#/definitions/HostedStorageServices",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "HostedStorageServices": {
             "anyOf": [
@@ -11,8 +12,9 @@
                 {
                     "additionalProperties": false,
                     "description": "A Collection of Hosted Storage Service resource instances.",
+                    "longDescription": "Used to provide a Collection of Hosted Storage Service resource instances to ComputerSystem.",
                     "patternProperties": {
-                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                             "description": "This property shall specify a valid odata or Redfish property.",
                             "type": [
                                 "array",
@@ -55,7 +57,7 @@
                                 "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageService.json#/definitions/StorageService"
                             },
                             "longDescription": "The value of each member entry shall reference a StorageService resource.",
-                            "readonly": false,
+                            "readonly": true,
                             "type": "array"
                         },
                         "Members@odata.count": {
@@ -76,6 +78,7 @@
                     },
                     "required": [
                         "Members",
+                        "Members@odata.count",
                         "@odata.id",
                         "@odata.type",
                         "Name"
@@ -84,10 +87,10 @@
                 }
             ],
             "deletable": false,
-            "insertable": false,
+            "insertable": true,
             "updatable": false,
             "uris": [
-                "/redfish/v1/StorageServices"
+                "/redfish/v1/Systems/{ComputerSystemId}/HostedServices/StorageServices"
             ]
         }
     },

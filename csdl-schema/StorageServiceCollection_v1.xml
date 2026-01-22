@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -28,7 +28,9 @@
         <Annotation Term="OData.LongDescription" String="An instance of this resource shall reference the set of StorageService resources known in the scope of its use."/>
         <Annotation Term="Capabilities.InsertRestrictions">
           <Record>
-            <PropertyValue Property="Insertable" Bool="false"/>
+            <PropertyValue Property="Insertable" Bool="true"/>
+            <Annotation Term="OData.Description" String="StoragePool collections may support adding StoragePool resources by clients."/>
+
           </Record>
         </Annotation>
         <Annotation Term="Capabilities.UpdateRestrictions">

@@ -1,0 +1,26 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
+  "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence",
+  "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
+  "Id": "SilverProvidence",
+  "Name": "SilverProvidence",
+  "Description": "Silver class of service in Providence",
+  "ClassOfServiceVersion": "01.20.00",
+
+    "DataProtectionLinesOfService": [{
+      "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence/DataProtectionLinesOfService"
+    }],
+    "DataSecurityLinesOfService": [{
+      "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence/DataSecurityLinesOfService"
+    }],
+    "DataStorageLinesOfService": [{
+      "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence/DataStorageLinesOfService"
+    }],
+    "IOConnectivityLinesOfService": [{
+      "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence/IOConnectivityLinesOfService"
+    }],
+    "IOPerformanceLinesOfService": [{
+      "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence/IOPerformanceLinesOfService"
+    }]
+  }

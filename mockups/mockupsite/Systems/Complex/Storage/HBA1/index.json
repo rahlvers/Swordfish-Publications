@@ -1,0 +1,45 @@
+{
+    "@Redfish.Copyright": "Copyright  2014-2018 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+    "@odata.context": "/redfish/v1/$metadata#Storage.Storage",
+    "@odata.id": "/redfish/v1/Systems/Complex/Storage/HBA1",
+    "@odata.type": "#Storage.v1_3_0.Storage",
+    "Id": "HBA1",
+    "Name": "Simple HBA",
+    "Description": "Simple HBA Connected to Storage Systems",
+    "Status": {
+        "State": "Enabled",
+        "Health": "OK",
+        "HealthRollup": "OK"
+    },
+    "StorageControllers": [
+        {
+            "@odata.id": "/redfish/v1/Systems/Complex/Storage/HBA1#/StorageControllers/0",
+            "@odata.type": "#Storage.v1_0_0.StorageController",
+            "Id": "0",
+            "Name": "HBA",
+            "Description": "HBA",
+            "Status": {
+                "State": "Enabled",
+                "Health": "OK"
+            },
+            "Manufacturer": "ManufacturerName",
+            "Model": "ProductModelName",
+            "SKU": "",
+            "SerialNumber": "12345678",
+            "PartNumber": "",
+            "AssetTag": "CustomerWritableThingy",
+            "SpeedGbps": 14,
+            "SupportedControllerProtocols": [
+                "PCIe"
+            ],
+            "SupportedDeviceProtocols": [
+                "FC"
+            ]
+        }
+    ],
+    "Volumes": {"@odata.id": "/redfish/v1/Systems/Complex/Storage/HBA1/Volumes"},
+    "Links": {
+    },
+    "Actions": {
+    }
+}

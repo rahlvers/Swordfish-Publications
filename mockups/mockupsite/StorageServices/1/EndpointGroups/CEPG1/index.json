@@ -1,0 +1,13 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#EndpointGroup.EndpointGroup",
+  "@odata.id": "/redfish/v1/StorageServices/1/EndpointGroups/CEPG1",
+  "@odata.type": "#EndpointGroup.v1_2_0.EndpointGroup",
+  "Name": "CEPG1",
+  "Description": "Group of client endpoints for 1",
+  "GroupType": "Client",
+  "AccessState": "Standby",
+  "Endpoints": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/Endpoints/2"
+  }]
+}

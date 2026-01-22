@@ -1,0 +1,172 @@
+components:
+  schemas:
+    Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        Oem:
+          $ref: '#/components/schemas/OemActions'
+          description: This property contains the available OEM specific actions for
+            this resource.
+          x-longDescription: This property shall contain any additional OEM actions
+            for this resource.
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    FeaturesRegistry:
+      additionalProperties: false
+      description: This is the schema definition for all Features Registries.  It
+        represents the properties for the registries themselves.  The FeatureId is
+        formed per the Redfish specification.  It consists of the RegistryPrefix concatenated
+        with the version concatenated with the unique identifier for the feature registry
+        entry.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+        Actions:
+          $ref: '#/components/schemas/Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          nullable: true
+          readOnly: true
+        Features:
+          $ref: '#/components/schemas/FeaturesRegistryProperty'
+          description: The pattern property indicates that a free-form string is the
+            unique identifier for the feature within the registry.
+          x-longDescription: The pattern property shall represent the suffix to be
+            used in the FeatureId and shall be unique within this message registry.
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          readOnly: true
+        Language:
+          description: This is the RFC 5646 compliant language code for the registry.
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property shall be a string consisting
+            of an RFC 5646 language code.
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          description: This is the manufacturer/provider specific extension moniker
+            used to divide the Oem object into sections.
+          x-longDescription: The value of this string shall be of the format for the
+            reserved word *Oem*.
+        OwningEntity:
+          description: This is the organization or company that publishes this registry.
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property shall be a string that represents
+            the publisher of this registry.
+        RegistryPrefix:
+          description: This is the single word prefix used to form a Feature ID structure.
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property shall be the prefix used in
+            IDs which uniquely identifies all of the Features in this registry as
+            belonging to this registry.
+        RegistryVersion:
+          description: This is the feature registry version which is used in the middle
+            portion of a Feature ID.
+          readOnly: true
+          type: string
+          x-longDescription: The value of this property shall be the version of this
+            message registry. The format of this string shall be of the format majorversion.minorversion.errata.
+      required:
+      - Language
+      - RegistryPrefix
+      - RegistryVersion
+      - OwningEntity
+      - Features
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: This resource shall be used to represent a Feature registry
+        for a Redfish implementation.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    FeaturesRegistryProperty:
+      additionalProperties: false
+      description: The pattern type indicates that a free-form string is the unique
+        identifier for the Feature within the registry.
+      properties: {}
+      type: object
+      x-longDescription: The pattern type shall represent the suffix to be used in
+        the Feature and shall be unique within this registry.
+      x-patternProperties:
+        '[A-Za-z0-9]+':
+          $ref: '#/components/schemas/SupportedFeature'
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemActions:
+      additionalProperties: true
+      description: The available OEM specific actions for this resource.
+      properties: {}
+      type: object
+      x-longDescription: This type shall contain any additional OEM actions for this
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    SupportedFeature:
+      additionalProperties: false
+      description: This type shall describe how a supported feature is defined within
+        the registry.
+      properties:
+        CorrespondingProfileDefinition:
+          description: The profile definition that defines the feature.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: If present, the value shall define a profile definition
+            that contains the named profile declaration.
+        Description:
+          description: A description of the feature.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value shall be a detailed description of the feature.
+        FeatureName:
+          description: The Name of the feature.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value shall be the unique name of the feature prefixed
+            by the defining organization separated by a period (e.g. 'vendor.feature').
+        Version:
+          description: The Version of the feature.
+          nullable: true
+          readOnly: true
+          type: string
+          x-longDescription: The value shall uniquely identify the version of the
+            feature, using the major.minor.errata format.
+      required:
+      - FeatureName
+      - Description
+      - Version
+      - CorrespondingProfileDefinition
+      type: object
+      x-longDescription: Each entity shall name a feature.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#FeaturesRegistry.v1_0_0.FeaturesRegistry'
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-owningEntity: SNIA
+x-release: WIP v1.1.0

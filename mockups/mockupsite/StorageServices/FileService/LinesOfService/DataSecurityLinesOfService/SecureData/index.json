@@ -1,0 +1,15 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#DataSecurityLineOfService.DataSecurityLineOfService",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataSecurityLinesOfService/SecureData",
+  "@odata.type": "#DataSecurityLineOfService.v1_0_0.DataSecurityLineOfService",
+
+  "Name": "SecureData",
+  "MediaEncryptionStrength": "Bits_256",
+  "ChannelEncryptionStrength": "Bits_128",
+  "HostAuthenticationType": "Ticket",
+  "UserAuthenticationType": "Password",
+  "SecureChannelProtocol": "TLS",
+  "AntivirusScanPolicies": [],
+  "DataSanitizationPolicy": "CryptographicErase"
+}

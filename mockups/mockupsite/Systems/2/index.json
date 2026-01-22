@@ -1,0 +1,38 @@
+{
+  "@Redfish.Copyright": "Copyright  2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Systems/$entity",
+  "@odata.id": "/redfish/v1/Systems/2",
+  "@odata.type": "#ComputerSystem.v1_5_0.ComputerSystem",
+  "Id": "2",
+  "Name": "My Computer System",
+  "SystemType": "Physical",
+  "AssetTag": "free form asset tag",
+  "Manufacturer": "Manufacturer Name",
+  "Model": "Model Name",
+  "SKU": "",
+  "SerialNumber": "2M220100SL",
+  "PartNumber": "",
+  "Description": "Description of server",
+  "IndicatorLED": "Lit",
+  "UUID": "00000000-0000-0000-0000-000000000000",
+  "PowerState": "On",
+  "HostName": "chicago22",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "OK"
+  },
+  "Storage": {
+    "@odata.id": "/redfish/v1/Systems/2/Storage"
+  },
+  "Boot": {},
+  "Links": {
+    "Chassis": [
+      {
+        "@odata.id": "/redfish/v1/Chassis/1"
+      }
+    ],
+    "Oem": {}
+  },
+  "Oem": {}
+}

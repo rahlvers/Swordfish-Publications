@@ -1,0 +1,136 @@
+components:
+  schemas:
+    Actions:
+      additionalProperties: false
+      description: The available actions for this resource.
+      properties:
+        Oem:
+          $ref: '#/components/schemas/OemActions'
+          description: This property contains the available OEM specific actions for
+            this resource.
+          x-longDescription: This property shall contain any additional OEM actions
+            for this resource.
+          x-versionAdded: v1_1_0
+      type: object
+      x-longDescription: This type shall contain the available actions for this resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    DataStorageLoSCapabilities:
+      additionalProperties: false
+      description: Describe data storage and provisioning capabilities.
+      properties:
+        '@odata.context':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/context
+        '@odata.etag':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/etag
+        '@odata.id':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/id
+        '@odata.type':
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/type
+        Actions:
+          $ref: '#/components/schemas/Actions'
+          description: The available actions for this resource.
+          x-longDescription: The Actions property shall contain the available actions
+            for this resource.
+          x-versionAdded: v1_1_0
+        Description:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
+          nullable: true
+          readOnly: true
+        Id:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Id
+          readOnly: true
+        Identifier:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
+          description: The value identifies this resource.
+          x-longDescription: The value shall be unique within the managed ecosystem.
+        MaximumRecoverableCapacitySourceCount:
+          description: Maximum number of capacity source resources for the purpose
+            of recovery from a failure.
+          nullable: true
+          readOnly: false
+          type: integer
+          x-longDescription: The maximum number of capacity source resources that
+            can be supported for the purpose of recovery when in the event that an
+            equivalent capacity source resource fails.
+          x-versionAdded: v1_2_0
+        Name:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
+          readOnly: true
+        Oem:
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Oem
+          description: This is the manufacturer/provider specific extension moniker
+            used to divide the Oem object into sections.
+          x-longDescription: The value of this string shall be of the format for the
+            reserved word *Oem*.
+        SupportedAccessCapabilities:
+          description: Supported access capabilities.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/StorageAccessCapability
+            nullable: true
+          readOnly: false
+          type: array
+          x-longDescription: Each entry specifies a storage access capability.
+        SupportedLinesOfService:
+          description: Collection of known and supported DataStorageLinesOfService.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          readOnly: false
+          type: array
+          x-autoExpand: true
+          x-longDescription: The collection shall contain known and supported DataStorageLinesOfService.
+        SupportedLinesOfService@odata.count:
+          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
+        SupportedProvisioningPolicies:
+          description: Thin allows over allocation of storage.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataStorageLoSCapabilities.yaml#/components/schemas/ProvisioningPolicy
+            nullable: true
+          readOnly: false
+          type: array
+          x-longDescription: This collection specifies supported storage allocation
+            policies.
+        SupportedRecoveryTimeObjectives:
+          description: Supported expectations for time to access the primary store
+            after recovery.
+          items:
+            $ref: http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.yaml#/components/schemas/RecoveryAccessScope
+            nullable: true
+          readOnly: false
+          type: array
+          x-longDescription: This collection specifies supported expectations for
+            time to access the primary store after recovery.
+        SupportsSpaceEfficiency:
+          description: Allows compression or deduplication of storage.
+          nullable: true
+          readOnly: false
+          type: boolean
+          x-longDescription: The value specifies whether storage compression or deduplication
+            is supported. The default value for this property is false.
+      required:
+      - '@odata.id'
+      - '@odata.type'
+      - Id
+      - Name
+      type: object
+      x-longDescription: Each instance of DataStorageLoSCapabilities describes capabilities
+        of the system to support various data storage service options.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+    OemActions:
+      additionalProperties: true
+      description: The available OEM specific actions for this resource.
+      properties: {}
+      type: object
+      x-longDescription: This type shall contain any additional OEM actions for this
+        resource.
+      x-patternProperties:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
+          description: This property shall specify a valid odata or Redfish property.
+title: '#DataStorageLoSCapabilities.v1_2_1.DataStorageLoSCapabilities'
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
+  All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
+x-owningEntity: SNIA
+x-release: TP v1.0.7a

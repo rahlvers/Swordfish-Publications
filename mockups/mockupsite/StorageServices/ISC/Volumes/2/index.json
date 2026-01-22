@@ -1,0 +1,36 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Volume.Volume",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/1",
+  "@odata.type": "#Volume.v1_2_1.Volume",
+  "Id": "2",
+  "Name": "Logical Disk 2",
+  "Identifiers": [{
+    "DurableNameFormat": "UUID",
+    "DurableName": "123e4567-a12b-12a3-b234-123456789000"
+  }],
+  "Manufacturer": "BEST ChipCo",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "BlockSizeBytes": 512,
+  "VolumeType": "Mirrored",
+  "Capacity": {
+    "Data": {
+      "ConsumedBytes": 1099511627776,
+      "AllocatedBytes": 3998614552576
+    }
+  },
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/StorageServices/ISC/Volumes/2#/CapacitySources/0",
+    "MemberId": "0",
+    "ProvidedCapacity": {
+      "AllocatedBytes": 3998614552576,
+      "ConsumedBytes": 3998614552576
+    },
+    "ProvidingPools": [{
+      "@odata.id": "/redfish/v1/StorageServices/ISC/StoragePools/SATAPool"
+    }]
+  }]
+}

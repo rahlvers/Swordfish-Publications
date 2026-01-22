@@ -2,23 +2,30 @@ components:
   schemas:
     Actions:
       additionalProperties: false
+      description: The available actions for this resource.
       properties:
         '#StorageService.SetEncryptionKey':
           $ref: '#/components/schemas/SetEncryptionKey'
         Oem:
           $ref: '#/components/schemas/OemActions'
+          description: This property contains the available OEM specific actions for
+            this resource.
+          x-longDescription: This property shall contain any additional OEM actions
+            for this resource.
       type: object
+      x-longDescription: The Actions property shall contain the available actions
+        for this resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     Links:
       additionalProperties: false
+      description: Contains links to other resources that are related to this resource.
       properties:
         DataProtectionLoSCapabilities:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           deprecated: true
           description: The data protection capabilities of this service.
-          nullable: true
           readOnly: false
           x-deprecatedReason: Moved up to StorageServices
           x-longDescription: The value shall reference the data protection capabilities
@@ -27,7 +34,6 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           deprecated: true
           description: The data security capabilities of this service.
-          nullable: true
           readOnly: false
           x-deprecatedReason: Moved up to StorageServices
           x-longDescription: The value shall reference the data security capabilities
@@ -36,7 +42,6 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           deprecated: true
           description: The data storage capabilities of this service.
-          nullable: true
           readOnly: false
           x-deprecatedReason: Moved up to StorageServices
           x-longDescription: The value shall reference the data storage capabilities
@@ -46,7 +51,6 @@ components:
           deprecated: true
           description: The default class of service for entities allocated by this
             storage service.
-          nullable: true
           readOnly: false
           x-deprecatedReason: DefaultClassOfService moved outside of Links complex
             type.
@@ -55,17 +59,15 @@ components:
             default may be overridden by the DefaultClassOfService property values
             within contained StoragePools.
         HostingSystem:
-          $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+          $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Resource
           description: The hosting system or storage controller hosting this storage
             service.
-          nullable: true
           x-longDescription: The value shall reference the ComputerSystem or StorageController
             that hosts this service.
         IOConnectivityLoSCapabilities:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           deprecated: true
           description: The IO connectivity capabilities of this service.
-          nullable: true
           readOnly: false
           x-deprecatedReason: Moved up to StorageServices
           x-longDescription: The value shall reference the IO connectivity capabilities
@@ -74,7 +76,6 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           deprecated: true
           description: The IO performance capabilities of this service.
-          nullable: true
           readOnly: false
           x-deprecatedReason: Moved up to StorageServices
           x-longDescription: The value shall reference the IO performance capabilities
@@ -86,15 +87,20 @@ components:
             for resources described by this schema shall comply to the requirements
             as described in the Redfish specification.
       type: object
+      x-longDescription: This property shall contain links to other resources related
+        to this resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     OemActions:
       additionalProperties: true
+      description: The available OEM specific actions for this resource.
       properties: {}
       type: object
+      x-longDescription: This type shall contain any additional OEM actions for this
+        resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     SetEncryptionKey:
       additionalProperties: false
@@ -102,7 +108,7 @@ components:
       properties:
         target:
           description: Link to invoke action
-          format: uri
+          format: uri-reference
           type: string
         title:
           description: Friendly action name
@@ -111,14 +117,14 @@ components:
       x-longDescription: This defines the name of the custom action supported on this
         resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     SetEncryptionKeyRequestBody:
       additionalProperties: false
       description: This action is used to set the encryption key for the storage subsystem.
       properties:
         EncryptionKey:
-          description: The encryption key to set on the storage subsytem
+          description: The encryption key to set on the storage subsystem.
           type: string
           x-longDescription: This defines the property name for the action.
       type: object
@@ -140,14 +146,12 @@ components:
         Actions:
           $ref: '#/components/schemas/Actions'
           description: The available actions for this resource.
-          readOnly: true
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
         ClassesOfService:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: The ClassesOfService that all storage in this StorageService
             can support.
-          nullable: true
           readOnly: false
           x-longDescription: The value of each enty in the array shall reference a
             ClassOfService supported by this service.
@@ -155,7 +159,6 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           deprecated: true
           description: Client endpoint groups.
-          nullable: true
           readOnly: false
           x-deprecatedReason: Deprecated in favor of EndpointGroups. The GroupType
             property of EndpointGroup already distinguishes between use for Server
@@ -175,14 +178,12 @@ components:
         EndpointGroups:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: Client and Server endpoint groups.
-          nullable: true
           readOnly: false
           x-longDescription: The value of each entry in the array shall reference
             an EndpointGroup.
         Endpoints:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: Endpoints.
-          nullable: true
           readOnly: true
           x-longDescription: The value of each enty in the array shall reference an
             Endpoint managed by this service.
@@ -198,17 +199,14 @@ components:
         Identifier:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
           description: The value identifies this resource.
-          nullable: true
-          readOnly: false
           x-longDescription: The value identifies this resource.  The value shall
             be unique within the managed ecosystem.
         Links:
           $ref: '#/components/schemas/Links'
           description: Contains links to other resources that are related to this
             resource.
-          readOnly: true
           x-longDescription: This property shall contain links to other resources
-            related to this resource.
+            that are related to this resource.
         Name:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Name
           readOnly: true
@@ -219,9 +217,9 @@ components:
           x-longDescription: The value of this string shall be of the format for the
             reserved word *Oem*.
         Redundancy:
-          description: Redundancy information for the storage subsystem
+          description: Redundancy information for the storage subsystem.
           items:
-            $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
+            $ref: http://redfish.dmtf.org/schemas/v1/Redundancy.yaml#/components/schemas/Redundancy
           readOnly: true
           type: array
           x-autoExpand: true
@@ -233,7 +231,6 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           deprecated: true
           description: Server endpoint groups.
-          nullable: true
           readOnly: false
           x-deprecatedReason: Deprecated in favor of EndpointGroups. The GroupType
             property of EndpointGroup already distinguishes between use for Server
@@ -242,11 +239,11 @@ components:
             a EndpointGroup.
         Status:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Status
-          nullable: true
+          description: The property contains the status of the StorageService.
+          x-longDescription: The property shall contain the status of the StorageService.
         StorageGroups:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: StorageGroups.
-          nullable: true
           readOnly: true
           x-longDescription: The value of each enty in the array shall reference a
             StorageGroup.
@@ -262,6 +259,7 @@ components:
           x-longDescription: The value shall be a link to a collection of type StorageCollection
             having members that represent storage subsystems managed by this storage
             service.
+          x-versionAdded: v1_0_1
         Volumes:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: Volumes.
@@ -280,9 +278,10 @@ components:
         made available; hosts, or host access points to which the collection is made
         available.'
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#StorageService.v1_0_1.StorageService'
-x-copyright: Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA
+x-release: TP 1.0.7a

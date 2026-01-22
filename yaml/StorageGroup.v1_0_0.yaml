@@ -2,6 +2,7 @@ components:
   schemas:
     Actions:
       additionalProperties: false
+      description: The available actions for this resource.
       properties:
         '#StorageGroup.ExposeVolumes':
           $ref: '#/components/schemas/ExposeVolumes'
@@ -9,9 +10,14 @@ components:
           $ref: '#/components/schemas/HideVolumes'
         Oem:
           $ref: '#/components/schemas/OemActions'
+          description: This property contains the available OEM specific actions for
+            this resource.
+          x-longDescription: This property shall contain any additional OEM actions
+            for this resource.
       type: object
+      x-longDescription: This property shall contain any actions for this resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     ExposeVolumes:
       additionalProperties: false
@@ -19,7 +25,7 @@ components:
       properties:
         target:
           description: Link to invoke action
-          format: uri
+          format: uri-reference
           type: string
         title:
           description: Friendly action name
@@ -30,7 +36,7 @@ components:
         ClientEndpointGroups.  The property VolumesAreExposed shall be set to true
         when this action is completed.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     ExposeVolumesRequestBody:
       additionalProperties: false
@@ -47,7 +53,7 @@ components:
       properties:
         target:
           description: Link to invoke action
-          format: uri
+          format: uri-reference
           type: string
         title:
           description: Friendly action name
@@ -57,7 +63,7 @@ components:
         named in the ClientEndpointGroups. The property VolumesAreExposed shall be
         set to false when this action is completed.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     HideVolumesRequestBody:
       additionalProperties: false
@@ -69,6 +75,7 @@ components:
         set to false when this action is completed.
     Links:
       additionalProperties: false
+      description: Contains links to other resources that are related to this resource.
       properties:
         ChildStorageGroups:
           description: Child StorageGroups.
@@ -77,14 +84,13 @@ components:
           readOnly: false
           type: array
           x-longDescription: An array of references to StorageGroups are incorporated
-            into this StorageGroup
+            into this StorageGroup.
         ChildStorageGroups@odata.count:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
         ClassOfService:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/idRef
           description: The ClassOfService that all storage in this StorageGroup conforms
             to.
-          nullable: true
           readOnly: false
           x-longDescription: The ClassOfService that all storage in this StorageGroup
             conforms to.
@@ -101,19 +107,24 @@ components:
           readOnly: true
           type: array
           x-longDescription: An array of references to StorageGroups that incorporate
-            this StorageGroup
+            this StorageGroup.
         ParentStorageGroups@odata.count:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
       type: object
+      x-longDescription: This structure shall contain references to resources that
+        are not contained within this resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     OemActions:
       additionalProperties: true
+      description: The available OEM specific actions for this resource.
       properties: {}
       type: object
+      x-longDescription: This type shall contain any additional OEM actions for this
+        resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
     StorageGroup:
       additionalProperties: false
@@ -139,7 +150,6 @@ components:
         Actions:
           $ref: '#/components/schemas/Actions'
           description: The available actions for this resource.
-          readOnly: true
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
         ClientEndpointGroups:
@@ -165,21 +175,21 @@ components:
         Identifier:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
           description: The value identifies this resource.
-          nullable: true
-          readOnly: true
           x-longDescription: The value shall be unique within the managed ecosystem.
         Links:
           $ref: '#/components/schemas/Links'
           description: Contains links to other resources that are related to this
             resource.
-          readOnly: true
-          x-longDescription: This structure shall contain references to resources
-            that are not contained within this resource.
+          x-longDescription: This property shall contain links to other resources
+            that are related to this resource.
         MembersAreConsistent:
+          deprecated: true
           description: Members are kept in a consistent state.
           nullable: true
           readOnly: false
           type: boolean
+          x-deprecatedReason: Deprecated in favor of using the ConsistencyGroup for
+            Consistency set management.
           x-longDescription: The value of this property shall be set to true if all
             members are in a consistent state. The default value for this property
             is false.
@@ -194,9 +204,10 @@ components:
             reserved word *Oem*.
         ReplicaInfo:
           $ref: http://redfish.dmtf.org/schemas/swordfish/v1/StorageReplicaInfo.yaml#/components/schemas/ReplicaInfo
+          deprecated: true
           description: Describes this storage group in its role as a target for replication.
-          nullable: true
-          readOnly: false
+          x-deprecatedReason: Deprecated in favor of using the ConsistencyGroup for
+            Consistency set management.
           x-longDescription: This property shall describe the replication relationship
             between this storage group and a corresponding source storage group.
         ServerEndpointGroups:
@@ -214,7 +225,8 @@ components:
           $ref: http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.yaml#/components/schemas/count
         Status:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Status
-          nullable: true
+          description: The property contains the status of the StorageGroup.
+          x-longDescription: The property shall contain the status of the StorageGroup.
         Volumes:
           deprecated: true
           description: Volumes in this storage group.
@@ -247,9 +259,10 @@ components:
         (volumes, file systems...) The collection should be useful for managing the
         storage of a set of related client applications.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
 title: '#StorageGroup.v1_0_0.StorageGroup'
-x-copyright: Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA
+x-release: TP v1.0.3

@@ -6,91 +6,16 @@ components:
       properties:
         Oem:
           $ref: '#/components/schemas/OemActions'
+          description: This property contains the available OEM specific actions for
+            this resource.
+          x-longDescription: This property shall contain any additional OEM actions
+            for this resource.
+          x-versionAdded: v1_1_0
       type: object
       x-longDescription: This type shall contain the available actions for this resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    AntiVirusScanTrigger:
-      description: Types of antivirus scan triggers
-      enum:
-      - None
-      - OnFirstRead
-      - OnPatternUpdate
-      - OnUpdate
-      - OnRename
-      type: string
-      x-enumDescriptions:
-        None: No trigger.
-        OnFirstRead: Trigger on first read.
-        OnPatternUpdate: Trigger on antivirus pattern file update.
-        OnRename: Trigger on object rename.
-        OnUpdate: Trigger on object update.
-      x-enumLongDescriptions:
-        None: This enumeration literal specifies No trigger.
-        OnFirstRead: This enumeration literal specifies to trigger on first read.
-        OnPatternUpdate: This enumeration literal specifies to trigger on antivirus
-          pattern file update.
-        OnRename: This enumeration literal specifies to trigger on object rename.
-        OnUpdate: This enumeration literal specifies to trigger on object update.
-      x-longDescription: The enumberation literals shall specify types of antivirus
-        scan triggers.
-    AuthenticationType:
-      description: Enumeration of authentication algorithms.)
-      enum:
-      - None
-      - PKI
-      - Ticket
-      - Password
-      type: string
-      x-enumDescriptions:
-        None: No authentication.
-        PKI: Public Key Infrastructure.
-        Password: Password/shared-secret
-        Ticket: Ticket-based (e.g., Kerberos)
-      x-enumLongDescriptions:
-        None: This enumeration literal specifies No authentication.
-        PKI: This enumeration literal specifies a Public Key Infrastructure. Customers
-          with the highest assurance requirements roll PKI out to hosts and users
-          (it is more common for hosts than users. User PKI-based authentication has
-          significant operational complications and administrative overheads, e.g.,
-          smart cards may be involved.
-        Password: 'This enumeration literal specifies Password/shared-secret: Absent
-          an distributed authentication infrastructure, this is what is typically
-          done.'
-        Ticket: 'This enumeration literal specifies Ticket-based (e.g., Kerberos):
-          This is the most common class of authentication infrastructure used in enterprises.
-          Kerberos is the best known example, and Windows usage of that via Active
-          Directory is so widely deployed as to be a de facto standard. In other areas
-          (e.g., academia) there are comparable ticket-based systems.'
-      x-longDescription: The enumeration literals shall specify authentication algorithms.
-    DataSanitizationPolicy:
-      description: Types of data sanitization policies
-      enum:
-      - None
-      - Clear
-      - CryptographicErase
-      type: string
-      x-enumDescriptions:
-        Clear: Sanitize data in all user-addressable storage locations for protection
-          against simple non-invasive data recovery techniques.
-        CryptographicErase: Leverages the encryption of target data by enabling sanitization
-          of the target data's encryption key. This leaves only the ciphertext remaining
-          on the media, effectively sanitizing the data by preventing read-access.
-          For more information, see NIST800-88 and ISO/IEC 27040.
-        None: No sanitization.
-      x-enumLongDescriptions:
-        Clear: This enumeration literal specifies to sanitize data in all user-addressable
-          storage locations for protection against simple non-invasive data recovery
-          techniques.
-        CryptographicErase: This enumeration literal specifies to leverages the encryption
-          of target data by enabling sanitization of the target data's encryption
-          key. This leaves only the ciphertext remaining on the media, effectively
-          sanitizing the data by preventing read-access. For more information, see
-          NIST800-88 and ISO/IEC 27040.
-        None: This enumeration literal specifies no sanitization.
-      x-longDescription: The enumberation literals shall specify types of data sanitization
-        policies.
     DataSecurityLoSCapabilities:
       additionalProperties: false
       description: Describe data security capabilities.
@@ -108,6 +33,7 @@ components:
           description: The available actions for this resource.
           x-longDescription: The Actions property shall contain the available actions
             for this resource.
+          x-versionAdded: v1_1_0
         Description:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Description
           nullable: true
@@ -118,8 +44,6 @@ components:
         Identifier:
           $ref: http://redfish.dmtf.org/schemas/v1/Resource.yaml#/components/schemas/Identifier
           description: The value identifies this resource.
-          nullable: true
-          readOnly: false
           x-longDescription: The value identifies this resource.  The value shall
             be unique within the managed ecosystem.
         Name:
@@ -222,32 +146,8 @@ components:
       type: object
       x-longDescription: This resource may be used to describe data security capabilities.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    KeySize:
-      description: Enumeration of Key sizes in a symmetric encryption algorithm, (see
-        NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)
-      enum:
-      - Bits_0
-      - Bits_112
-      - Bits_128
-      - Bits_192
-      - Bits_256
-      type: string
-      x-enumDescriptions:
-        Bits_0: No key.
-        Bits_112: 3DES 112 bit key.
-        Bits_128: AES 128 bit key.
-        Bits_192: AES 192 bit key.
-        Bits_256: AES 256 bit key.
-      x-enumLongDescriptions:
-        Bits_0: This enumeration literal specifies that there is no key.
-        Bits_112: This enumeration literal specifies a 3DES 112 bit key.
-        Bits_128: This enumeration literal specifies an AES 128 bit key.
-        Bits_192: This enumeration literal specifies an AES 192 bit key.
-        Bits_256: This enumeration literal specifies an AES 256 bit key.
-      x-longDescription: The enumeration literals shall specify Key sizes in a symmetric
-        encryption algorithm, (see NIST SP 800-57 part 1 (http:/csrc.nist.gov/publications/nistpubs/800-57/sp800-57_part1_rev3_general.pdf)
     OemActions:
       additionalProperties: true
       description: The available OEM specific actions for this resource.
@@ -256,34 +156,10 @@ components:
       x-longDescription: This type shall contain any additional OEM actions for this
         resource.
       x-patternProperties:
-        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_.]+$:
+        ^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\.[a-zA-Z_][a-zA-Z0-9_]*$:
           description: This property shall specify a valid odata or Redfish property.
-    SecureChannelProtocol:
-      description: Types of Secure channel protocols
-      enum:
-      - None
-      - TLS
-      - IPsec
-      - RPCSEC_GSS
-      type: string
-      x-enumDescriptions:
-        IPsec: Internet Protocol Security (IPsec), as defined by IETF RFC 2401.
-        None: No encryption.
-        RPCSEC_GSS: RPC access to the Generic Security Services Application Programming
-          Interface (GSS-API), as defined by IETF RPC 2203.
-        TLS: Transport Layer Security (TLS), as defined by IETF RFC 5246.
-      x-enumLongDescriptions:
-        IPsec: This enumeration literal specifies Internet Protocol Security (IPsec),
-          as defined by IETF RFC 2401.
-        None: This enumeration literal specifies no encryption.
-        RPCSEC_GSS: This enumeration literal specifies RPC access to the Generic Security
-          Services Application Programming Interface (GSS-API), as defined by IETF
-          RPC 2203.
-        TLS: This enumeration literal specifies Transport Layer Security (TLS), as
-          defined by IETF RFC 5246.
-      x-longDescription: The enumeration literals shall specify types of Secure channel
-        protocols.
 title: '#DataSecurityLoSCapabilities.v1_1_0.DataSecurityLoSCapabilities'
-x-copyright: Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA.
+x-copyright: Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA.
   All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright
 x-owningEntity: SNIA
+x-release: WIP v1.0.5

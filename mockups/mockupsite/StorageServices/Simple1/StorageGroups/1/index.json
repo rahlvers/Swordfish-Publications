@@ -1,0 +1,33 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageGroup.StorageGroup",
+  "@odata.id": "/redfish/v1/StorageServices/Simple1/StorageGroups/1",
+  "@odata.type": "#StorageGroup.v1_2_1.StorageGroup",
+  "Id": "1",
+  "Name": "SG_abc_005",
+  "Description": "System SATA",
+  "VolumesAreExposed": false,
+  "AccessState": "Optimized",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK",
+    "HealthRollup": "OK"
+  },
+  "MappedVolumes": [{
+      "LogicalUnitNumber": "1",
+      "Volume": {
+        "@odata.id": "/redfish/v1/StorageServices/Simple1/Volumes/1"
+      }
+    },
+    {
+      "LogicalUnitNumber": "2",
+      "Volume": {
+        "@odata.id": "/redfish/v1/StorageServices/Simple1/Volumes/2"
+      }
+    }
+  ],
+  "Links": {
+    "ParentStorageGroups": [],
+    "ChildStorageGroups": []
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Volume.Volume",
+  "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3",
+  "@odata.type": "#Volume.v1_4_0.Volume",
+  "Name": "Snapshot1",
+  "Id": "3",
+  "Description": "",
+  "Identifiers": [{
+    "DurableNameFormat": "NAA",
+    "DurableName": "65456765456761001234076100123487"
+  }],
+  "Manufacturer": "SuperDuperSSD",
+  "Model": "Drive Model string",
+  "Status": {
+    "State": "Enabled",
+    "Health": "OK"
+  },
+  "AccessCapabilities": [
+    "Read",
+    "Write",
+    "Append",
+    "Streaming"
+  ],
+  "BlockSizeBytes": 512,
+  "CapacitySources": [{
+    "@odata.id": "/redfish/v1/StorageServices/1/Volumes/3#/CapacitySources/0",
+    "MemberId": "0",
+    "ProvidedCapacity": {
+      "ConsumedBytes": 0,
+      "AllocatedBytes": 10737418240,
+      "GuaranteedBytes": 536870912,
+      "ProvisionedBytes": 1099511627776
+    },
+    "ProvidingPool": {
+      "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool"
+    }
+  }],
+  "Capacity": {
+    "Data": {
+      "ConsumedBytes": 0,
+      "AllocatedBytes": 10737418240,
+      "GuaranteedBytes": 1099511627776,
+      "ProvisionedBytes": 1099511627776
+    },
+    "Metadata": {
+      "ConsumedBytes": 536870912,
+      "AllocatedBytes": 536870912
+    }
+  },
+  "Links": {
+    "OwningStorageService": {
+      "@odata.id": "/redfish/v1/StorageServices/1"
+    },
+    "ClassOfService": {
+      "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/BostonBunker"
+    }
+  }
+}

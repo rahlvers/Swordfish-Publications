@@ -1,0 +1,15 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#IOPerformanceLineOfService.IOPerformanceLineOfService",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/IOPerformanceLinesOfService/Lite-OLTP-HDD",
+  "@odata.type": "#IOPerformanceLineOfService.v1_1_0.IOPerformanceLineOfService",
+
+  "Name": "Lite-OLTP-HDD",
+  "IOOperationsPerSecondIsLimited": false,
+  "SamplePeriod": "PT1M",
+  "MaxIOOperationsPerSecondPerTerabyte": 133,
+  "AverageIOOperationLatencyMicroseconds": 5000,
+  "IOWorkload": {
+    "Name": "Duplicon:OLTP"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#DataStorageLineOfService.DataStorageLineOfService",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataStorageLinesOfService/HA-Thin",
+  "@odata.type": "#DataStorageLineOfService.v1_0_0.DataStorageLineOfService",
+
+  "Name": "HA-Thin",
+  "RecoveryTimeObjectives": "OnlineActive",
+  "ProvisioningPolicy": "Thin",
+  "IsSpaceEfficient": true
+}

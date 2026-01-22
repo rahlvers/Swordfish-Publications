@@ -1,7 +1,8 @@
 {
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/StorageSystemCollection.json",
     "$ref": "#/definitions/StorageSystemCollection",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "StorageSystemCollection": {
             "anyOf": [
@@ -13,7 +14,7 @@
                     "description": "A Collection of ComputerSystem resource instances that each have an entry in HostingRoles set to 'StorageServer'.",
                     "longDescription": "An instance of this resource shall reference the set of ComputerSystem resources known in the scope of its use and and that has a HostingRoles entry with a value of 'StorageServer'.",
                     "patternProperties": {
-                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                             "description": "This property shall specify a valid odata or Redfish property.",
                             "type": [
                                 "array",
@@ -77,6 +78,7 @@
                     },
                     "required": [
                         "Members",
+                        "Members@odata.count",
                         "@odata.id",
                         "@odata.type",
                         "Name"

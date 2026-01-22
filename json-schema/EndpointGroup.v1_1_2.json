@@ -1,40 +1,15 @@
 {
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/EndpointGroup.v1_1_2.json",
     "$ref": "#/definitions/EndpointGroup",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
-        "AccessState": {
-            "description": "Describes the options for the access characteristics of an endpoint.",
-            "enum": [
-                "Optimized",
-                "NonOptimized",
-                "Standby",
-                "Unavailable",
-                "Transitioning"
-            ],
-            "enumDescriptions": {
-                "NonOptimized": "The endpoint(s) are in an Active/NonOptimized state.",
-                "Optimized": "The endpoint(s) are in an Active/Optimized state.",
-                "Standby": "The endpoint(s) are in a Standby state.",
-                "Transitioning": "The endpoint(s) are transitioning to a new AccesState.",
-                "Unavailable": "The endpoint(s) are unavailable."
-            },
-            "enumLongDescriptions": {
-                "NonOptimized": "In the context of this enumeration literal, each endpoint shall be in an Active/NonOptimized state.",
-                "Optimized": "In the context of this enumeration literal, each endpoint shall be in an Active/Optimized state.",
-                "Standby": "In the context of this enumeration literal, each endpoint shall be in a Standby state.",
-                "Transitioning": "In the context of this enumeration literal, at least one endpoint shall be transitioning to a new AccesState.",
-                "Unavailable": "In the context of this enumeration literal, each endpoint shall be in an unavailable state."
-            },
-            "longDescription": "Access to all associated resources through all aggregated endpoints shall share this access state.",
-            "type": "string"
-        },
         "Actions": {
             "additionalProperties": false,
             "description": "The available actions for this resource.",
             "longDescription": "This type shall contain the available actions for this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -49,7 +24,10 @@
             },
             "properties": {
                 "Oem": {
-                    "$ref": "#/definitions/OemActions"
+                    "$ref": "#/definitions/OemActions",
+                    "description": "This property contains the available OEM specific actions for this resource.",
+                    "longDescription": "This property shall contain any additional OEM actions for this resource.",
+                    "versionAdded": "v1_1_0"
                 }
             },
             "type": "object"
@@ -59,7 +37,7 @@
             "description": "A group of endpoints that are managed as a unit.",
             "longDescription": "A group of endpoints that shall be managed as a unit.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -101,7 +79,8 @@
                 "Actions": {
                     "$ref": "#/definitions/Actions",
                     "description": "The available actions for this resource.",
-                    "longDescription": "The Actions property shall contain the available actions for this resource."
+                    "longDescription": "The Actions property shall contain the available actions for this resource.",
+                    "versionAdded": "v1_1_0"
                 },
                 "Description": {
                     "anyOf": [
@@ -115,17 +94,16 @@
                     "readonly": true
                 },
                 "Endpoints": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/EndpointCollection.json#/definitions/EndpointCollection"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
                     "description": "The Endpoints.",
+                    "items": {
+                        "$ref": "http://redfish.dmtf.org/schemas/v1/Endpoint.json#/definitions/Endpoint"
+                    },
                     "longDescription": "The value of each entry shall reference an Endpoint resource.",
-                    "readonly": false
+                    "readonly": false,
+                    "type": "array"
+                },
+                "Endpoints@odata.count": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/count"
                 },
                 "GroupType": {
                     "anyOf": [
@@ -145,23 +123,14 @@
                     "readonly": true
                 },
                 "Identifier": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Identifier"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Identifier",
                     "description": "The value identifies this resource.",
-                    "longDescription": "The value shall be unique within the managed ecosystem.",
-                    "readonly": true
+                    "longDescription": "The value shall be unique within the managed ecosystem."
                 },
                 "Links": {
                     "$ref": "#/definitions/Links",
                     "description": "Contains links to other resources that are related to this resource.",
-                    "longDescription": "This structure shall contain references to resources that are not contained within this resource.",
-                    "readonly": true
+                    "longDescription": "This structure shall contain references to resources that are not contained within this resource."
                 },
                 "Name": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
@@ -215,7 +184,7 @@
             "description": "Contains links to other resources that are related to this resource.",
             "longDescription": "This structure shall contain references to resources that are not contained within this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -242,7 +211,7 @@
             "description": "The available OEM specific actions for this resource.",
             "longDescription": "This type shall contain any additional OEM actions for this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -260,5 +229,6 @@
         }
     },
     "owningEntity": "SNIA",
+    "release": "WIP v1.0.5",
     "title": "#EndpointGroup.v1_1_2.EndpointGroup"
 }

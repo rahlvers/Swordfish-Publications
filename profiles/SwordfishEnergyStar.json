@@ -1,0 +1,52 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfilev1_2_0.json",
+  "ProfileName": "SwordfishEnergyStar",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Defines Requirements for Swordfish to meet EnergyStar reporting for storage.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishDiscovery": {
+      "OwningEntity": "SNIA.org",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.0.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.EnergyStar": {}
+      }
+    },
+    "Resources": {
+      "Chassis": {
+        "ReadRequirement": "IfImplemented",
+        "Purpose": "To meet EnergyStar compliance, if the data is not reported or aggregated at the system level, it shall be reported for each shelf or enclosure. (Note that data can be aggregated external to the system by the client when reported by subcomponents.) These properties should be collected in the same request. The system shall be able to support client queries of these properties at an interval of at least every 10 seconds (per ENERGY STAR Data Center Storage Version 1.1 Updated Program Requirements – April 1, 2019).", 
+        "PropertyRequirements": {
+          "Power": {
+            "PropertyRequirements": {
+              "PowerSupply": {
+                "PowerInputWatts": {}
+              }
+            }
+          },
+          "Thermal": {
+            "Purpose": "Collect the inlet temperature for the power supply.",
+            "PropertyRequirements": {
+              "ReadingCelsius": {},
+              "ConditionalRequirements": [{
+                "Purpose": "The PhysicalContext type must be Intake.",
+                "CompareProperty": "PhysicalContext",
+                "CompareType": "Equal",
+                "CompareValues": "Intake",
+                "ReadRequirement": "Mandatory"
+              }]
+            }
+          }
+        }
+      }
+    }
+  }
+}

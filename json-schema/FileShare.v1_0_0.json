@@ -1,14 +1,15 @@
 {
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_0_0.json",
     "$ref": "#/definitions/FileShare",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "FileShare": {
             "additionalProperties": false,
             "description": "An instance of a shared set of files with a common directory structure.",
             "longDescription": "This resource shall be used to represent a shared set of files with a common directory structure.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -35,7 +36,7 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.v4_0_3.json#/definitions/type"
                 },
                 "CASupported": {
-                    "description": "Continuous Availability is supported. Client/Server mediated recovery from network and server failure with application transparency. ",
+                    "description": "Continuous Availability is supported. Client/Server mediated recovery from network and server failure with application transparency.",
                     "longDescription": "The value of this property shall indicate that Continuous Availability is supported. Client/Server mediated recovery from network and server failure with application transparency. This property shall be NULL unless the FileSharingProtocols property includes SMB.  The default value for this property is false.",
                     "readonly": false,
                     "type": [
@@ -110,6 +111,7 @@
                 "FileShareRemainingQuotaBytes": {
                     "description": "The number of remaining bytes that may be used by this file share.",
                     "longDescription": "If present, the value of this property shall indicate the remaining number of bytes that may be consumed by this file share.",
+                    "readonly": true,
                     "type": [
                         "integer",
                         "null"
@@ -119,6 +121,7 @@
                 "FileShareTotalQuotaBytes": {
                     "description": "The maximum number of bytes that may be used by this file share.",
                     "longDescription": "If present, the value of this property shall indicate the maximum number of bytes that may be consumed by this file share.",
+                    "readonly": false,
                     "type": [
                         "integer",
                         "null"
@@ -147,9 +150,8 @@
                 },
                 "Links": {
                     "$ref": "#/definitions/Links",
-                    "description": "Contains links to other resources that are related to this resource.",
-                    "longDescription": "This property shall contain links to other resources that are related to this resource.",
-                    "readonly": true
+                    "description": "The links object contains the links to other resources that are related to this resource.",
+                    "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource."
                 },
                 "LowSpaceWarningThresholdPercents": {
                     "description": "An array of low space warning threshold percentages for the file share.",
@@ -159,7 +161,7 @@
                             "null"
                         ]
                     },
-                    "longDescription": "This property shall be an array containing entries for the percentages of file share capacity at which low space warning events are be issued. A LOW_SPACE_THRESHOLD_WARNING event shall be triggered each time the remaining file share capacity value becomes less than one of the values in the array. The following shall be true: Across all CapacitySources entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes)",
+                    "longDescription": "This property shall be an array containing entries for the percentages of file share capacity at which low space warning events are be issued. A LOW_SPACE_THRESHOLD_WARNING event shall be triggered each time the remaining file share capacity value becomes less than one of the values in the array. The following shall be true: Across all CapacitySources entries, percent = (SUM(AllocatedBytes) - SUM(ConsumedBytes))/SUM(AllocatedBytes).",
                     "maximum": 100,
                     "minimum": 0,
                     "readonly": false,
@@ -185,17 +187,9 @@
                     ]
                 },
                 "Status": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Status",
                     "description": "Indicates the status of the file share.",
-                    "longDescription": "This value of this property shall indicate the status of the file share.",
-                    "readonly": true
+                    "longDescription": "This value of this property shall indicate the status of the file share."
                 },
                 "WritePolicy": {
                     "anyOf": [
@@ -221,8 +215,10 @@
         },
         "Links": {
             "additionalProperties": false,
+            "description": "The links object contains the links to other resources that are related to this resource.",
+            "longDescription": "The Links property, as described by the Redfish Specification, shall contain references to resources that are related to, but not contained by (subordinate to), this resource.",
             "patternProperties": {
-                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
                     "description": "This property shall specify a valid odata or Redfish property.",
                     "type": [
                         "array",
@@ -237,27 +233,12 @@
             },
             "properties": {
                 "ClassOfService": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService.json#/definitions/ClassOfService",
                     "description": "A link to the ClassOfService for this file share.",
-                    "longDescription": "This value shall be a link to the ClassOfService for this file share.",
-                    "readonly": false
+                    "longDescription": "This value shall be a link to the ClassOfService for this file share."
                 },
                 "FileSystem": {
-                    "anyOf": [
-                        {
-                            "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.json#/definitions/FileSystem"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileSystem.json#/definitions/FileSystem",
                     "description": "A link to the file system containing the file share.",
                     "longDescription": "The value shall be a link to the file system containing the file share.",
                     "readonly": true
@@ -289,5 +270,6 @@
         }
     },
     "owningEntity": "SNIA",
+    "release": "TP v1.0.3",
     "title": "#FileShare.v1_0_0.FileShare"
 }

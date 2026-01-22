@@ -1,0 +1,20 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#LineOfServiceCollection.LineOfServiceCollection",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService",
+  "@odata.type": "#LineOfServiceCollection.LineOfServiceCollection",
+  "Name": "DataProtectionLinesOfService Collection",
+  "Members@odata.count": 4,
+  "Members": [{
+      "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Dallas-Asynchronous-Mirror"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Providence-Synchronous-Mirror"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Providence-Monthly-Clone"
+    }, {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionLinesOfService/Providence-Weekly-Snapshot"
+    }
+  ]
+}

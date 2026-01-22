@@ -1,0 +1,75 @@
+{
+  "SchemaDefinition": "./RedfishInteroperabilityProfilev1_2_0.json",
+  "ProfileName": "SwordfishBlockLocalReplication",
+  "ProfileVersion": "1.0.0",
+  "OwningEntity": "SNIA.org",
+  "Purpose": "Define remote replication block requirements for service-based Swordfish conformant implementations.",
+  "ContactInfo": "SNIA.org",
+  "RequiredProfiles": {
+    "SwordfishBlockProvisioning": {
+      "OwningEntity": "SNIA.org",
+      "Repository": "https://redfish.dmtf.org/profiles/swordfish",
+      "MinVersion": "1.0.0"
+    }
+  },
+  "Registries": {
+    "Features": {
+      "MinVersion": "1.0.0",
+      "Repository": "https://redfish.dmtf.org/registries/swordfish/v1",
+      "SupportedFeatures": {
+        "SNIA.Swordfish.Block.RemoteReplication": {}
+      }
+    }
+  },
+  "Resources": {
+    "Volume": {
+      "PropertyRequirements": {
+        "OwningStorageService": {
+          "PropertyRequirements": {
+            "Links": {
+              "PropertyRequirements": {
+                "HostingSystem": {
+                  "ConditionalRequirements": [{
+                    "Purpose": "Hosting System values must be the same for the volume and its replica.",
+                    "CompareType": "Equal",
+                    "CompareProperty": "ReplicaInfo/SourceReplica/OwningStorageService/Links/HostingSystem"
+                  }]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "StorageServices": {
+      "PropertyRequirements": {
+        "Purpose": "The Data Protection Line of Service must be supported. DataProtectionLoSCapabilities are a pre-requisite to the Line of Service.",
+        "DataProtectionLoSCapabilities": {}
+      }
+    },
+    "DataProtectionLineOfServiceCollection": {
+      "Purpose": "The Data Protection Line of Service must be supported.",
+      "CreateResource": true,
+      "DeleteResource": true,
+      "PropertyRequirements": {
+        "Members": {
+          "MinCount": 0
+        }
+      }
+    },
+    "DataProtectionLineOfService": {
+      "ActionRequirements": {
+        "CreateReplicas": {
+          "ReadRequirement": "Mandatory",
+          "Purpose": "Ability to create an on-demand (ad-hoc) replica.",
+          "Parameters": {
+            "ResetType": {
+              "ParameterValues": ["ReplicaLineOfService", "ReplicaRequests"],
+              "ReadRequirement": "Mandatory"
+            }
+          }
+        }
+      }
+    }
+  }
+}

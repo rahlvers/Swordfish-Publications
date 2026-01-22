@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
 
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
@@ -27,6 +27,7 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOStatistics.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="WIP v1.0.5"/>
       <ComplexType Name="IOStatistics" BaseType="IOStatistics.IOStatistics">
         <Annotation Term="OData.Description" String="The properties of this type represent IO statistics."/>
         <Annotation Term="OData.LongDescription" String="The properties of this type shall be used to represent the IO statistics of the requested object."/>
@@ -93,12 +94,17 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOStatistics.v1_0_1">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="OData.LongDescription" String="Move ComplexType to unversioned namespace. Change references to unversioned."/>
+      <Annotation Term="OData.Description" String="Move ComplexType to unversioned namespace. Change references to unversioned."/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOStatistics.v1_0_2">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <Annotation Term="OData.Description" String="This version was created to force the regeneration of JSON Schema so that OData properties are marked as required, and integer properties are marked as integer rather than number."/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOStatistics.v1_0_3">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was created to fix CSDL errors."/>
     </Schema>
 
   </edmx:DataServices>

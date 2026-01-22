@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!---->
-<!-- Copyright 2015-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
+<!-- Copyright 2015-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved.-->
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
   <edmx:Reference Uri="http://docs.oasis-open.org/odata/odata/v4.0/errata03/csd01/complete/vocabularies/Org.OData.Core.V1.xml">
     <edmx:Include Namespace="Org.OData.Core.V1" Alias="OData"/>
@@ -29,7 +29,7 @@
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLoSCapabilities">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
       <EntityType Name="IOConnectivityLoSCapabilities" BaseType="Resource.v1_0_0.Resource" Abstract="true">
-        <Annotation Term="OData.Description" String="Describe IO connectivity capabilities"/>
+        <Annotation Term="OData.Description" String="Describe IO connectivity capabilities."/>
         <Annotation Term="OData.LongDescription" String="This resource shall be used to describe the capabilities to provide IO connectivity."/>
         <Annotation Term="Capabilities.InsertRestrictions">
           <Record>
@@ -55,11 +55,11 @@
     </Schema>
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLoSCapabilities.v1_0_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="TP v1.0.3"/>
       <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.IOConnectivityLoSCapabilities">
         <Annotation Term="OData.Description" String="Describe IO Connectivity capabilities."/>
         <Annotation Term="OData.LongDescription" String="Each instance of IOConnectivityLoSCapabilities describes capabilities of the system to support various IO Connectivity service options."/>
-        <Property Name="Identifier" Type="Resource.Identifier">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+        <Property Name="Identifier" Type="Resource.Identifier" Nullable="false">
           <Annotation Term="OData.Description" String="The value identifies this resource."/>
           <Annotation Term="OData.LongDescription" String="The value identifies this resource. The value shall be unique within the managed ecosystem."/>
         </Property>
@@ -78,7 +78,7 @@
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
           <Annotation Term="OData.Description" String="Collection of known and supported IOConnectivityLinesOfService."/>
           <Annotation Term="OData.LongDescription" String="The collection shall contain known and supported IOConnectivityLinesOfService."/>
-		  <Annotation Term="OData.AutoExpand"/>
+          <Annotation Term="OData.AutoExpand"/>
         </NavigationProperty>
       </EntityType>
     </Schema>
@@ -95,8 +95,15 @@
       <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.v1_0_1.IOConnectivityLoSCapabilities"/>
     </Schema>
 
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLoSCapabilities.v1_0_3">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was created to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
+      <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.v1_0_2.IOConnectivityLoSCapabilities"/>
+    </Schema>
+
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLoSCapabilities.v1_1_0">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="Redfish.Release" String="WIP v1.0.5"/>
       <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.v1_0_0.IOConnectivityLoSCapabilities">
         <Property Name="Actions" Type="IOConnectivityLoSCapabilities.v1_1_0.Actions" Nullable="false">
           <Annotation Term="OData.Description" String="The available actions for this resource."/>
@@ -108,13 +115,16 @@
           <Annotation Term="OData.LongDescription" String="The value shall be the maximum IOPS that a connection can support."/>
           <Annotation Term="Measures.Unit" String="[IO]/s"/>
         </Property>
-	  </EntityType>
+      </EntityType>
 
       <ComplexType Name="Actions">
         <Annotation Term="OData.AdditionalProperties" Bool="false"/>
         <Annotation Term="OData.Description" String="The available actions for this resource."/>
         <Annotation Term="OData.LongDescription" String="This type shall contain the available actions for this resource."/>
-        <Property Name="Oem" Type="IOConnectivityLoSCapabilities.v1_1_0.OemActions" Nullable="false"/>
+        <Property Name="Oem" Type="IOConnectivityLoSCapabilities.v1_1_0.OemActions" Nullable="false">
+          <Annotation Term="OData.Description" String="This property contains the available OEM specific actions for this resource."/>
+          <Annotation Term="OData.LongDescription" String="This property shall contain any additional OEM actions for this resource."/>
+        </Property>
       </ComplexType>
 
       <ComplexType Name="OemActions">
@@ -126,18 +136,22 @@
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLoSCapabilities.v1_1_1">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="OData.LongDescription" String="Change IOConnectivityLineOfService to EntityType."/>
-      <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.v1_1_0.IOConnectivityLoSCapabilities">
-        <Annotation Term="OData.Description" String="Use Redfish Location type, and change IOConnectivityLineOfService to EntityType.  Move enums to unversioned namespace. Change references to unversioned."/>
-      </EntityType>
+      <Annotation Term="OData.Description" String="Use Redfish Location type, and change IOConnectivityLineOfService to EntityType.  Move enums to unversioned namespace. Change references to unversioned."/>
+      <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.v1_1_0.IOConnectivityLoSCapabilities"/>
     </Schema>
 
     <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLoSCapabilities.v1_1_2">
       <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
-      <Annotation Term="OData.Description" String="Make SupportedLinesOfService be a containment NavigationProperty. This version was also created to force the regeneration of JSON Schema so that OData properties are marked as required, and integer properties are marked as integer rather than number."/>
-      <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.v1_1_1.IOConnectivityLoSCapabilities">
-        <Annotation Term="OData.Description" String="Make SupportedLinesOfService be a containment NavigationProperty."/>
-      </EntityType>
+      <Annotation
+        Term="OData.Description"
+        String="Make SupportedLinesOfService be a containment NavigationProperty. This version was also created to force the regeneration of JSON Schema so that OData properties are marked as required, and integer properties are marked as integer rather than number."/>
+      <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.v1_1_1.IOConnectivityLoSCapabilities"/>
+    </Schema>
+
+    <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="IOConnectivityLoSCapabilities.v1_1_3">
+      <Annotation Term="Redfish.OwningEntity" String="SNIA"/>
+      <Annotation Term="OData.Description" String="This version was added to fix CSDL errors and adds both Redfish Uris and Capability Annotations."/>
+      <EntityType Name="IOConnectivityLoSCapabilities" BaseType="IOConnectivityLoSCapabilities.v1_1_2.IOConnectivityLoSCapabilities"/>
     </Schema>
 
   </edmx:DataServices>

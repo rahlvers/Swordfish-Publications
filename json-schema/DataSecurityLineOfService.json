@@ -1,7 +1,7 @@
 {
-    "$ref": "#/definitions/DataSecurityLineOfService",
+    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService.json",
     "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2016-2018 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
+    "copyright": "Copyright 2016-2019 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "DataSecurityLineOfService": {
             "anyOf": [
@@ -13,12 +13,25 @@
                 },
                 {
                     "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService.v1_0_1.json#/definitions/DataSecurityLineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService.v1_0_2.json#/definitions/DataSecurityLineOfService"
+                },
+                {
+                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataSecurityLineOfService.v1_1_0.json#/definitions/DataSecurityLineOfService"
                 }
             ],
-            "description": "Describe data protection capabilities",
-            "longDescription": "The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics."
+            "deletable": true,
+            "description": "The capabilities to protect the system data from loss.",
+            "insertable": false,
+            "longDescription": "The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics.",
+            "updatable": true,
+            "uris": [
+                "/redfish/v1/StorageServices/{StorageServiceId}/LinesOfService/DataSecurityLineOfService",
+                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService/{ClassOfServiceId}/DataSecurityLineOfService"
+            ]
         }
     },
     "owningEntity": "SNIA",
-    "title": "#DataSecurityLineOfService.DataSecurityLineOfService"
+    "title": "#DataSecurityLineOfService"
 }

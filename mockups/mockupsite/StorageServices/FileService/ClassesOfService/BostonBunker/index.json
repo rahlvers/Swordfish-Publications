@@ -1,0 +1,26 @@
+{
+  "@Redfish.Copyright": "Copyright 2014-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
+  "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonBunker",
+  "@odata.type": "#ClassOfService.v1_2_0.ClassOfService",
+  "Id": "BostonBunker",
+  "Name": "BostonBunker",
+  "Description": "Replica to Dallas and Bunker in Providence",
+  "ClassOfServiceVersion": "01.20.00",
+
+  "DataProtectionLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonBunker/DataProtectionLinesOfService"
+  }],
+  "DataSecurityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonBunker/DataSecurityLinesOfService"
+  }],
+  "DataStorageLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonBunker/DataStorageLinesOfService"
+  }],
+  "IOConnectivityLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonBunker/IOConnectivityLinesOfService"
+  }],
+  "IOPerformanceLinesOfService": [{
+    "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonBunker/IOPerformanceLinesOfService"
+  }]
+}

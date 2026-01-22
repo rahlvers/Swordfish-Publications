@@ -1,0 +1,15 @@
+{
+  "@Redfish.Copyright": "Copyright 2015-2019 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfServiceCollection.ClassOfServiceCollection",
+  "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService",
+  "@odata.type": "#ClassOfServiceCollection.ClassOfServiceCollection",
+  "Name": "ClassesOfService",
+  "Members@odata.count": 2,
+  "Members": [{
+      "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SAS"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/ISC/ClassesOfService/SATA"
+    }
+  ]
+}
