@@ -200,6 +200,15 @@
                             "description": "The ClassesOfService that all storage in this StorageService can support.",
                             "longDescription": "The value of each enty in the array shall reference a ClassOfService supported by this service."
                         },
+                        "DefaultClassOfService": {
+                            "anyOf": [
+                                {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
+                                {"type": "null"}
+                            ],
+                            "readonly": false,
+                            "description": "The default class of service for entities allocated by this storage service.",
+                            "longDescription": "If present, this property shall reference the default class of service for entities allocated by this storage service. This default may be overridden by the DefaultClassOfService property values within contained StoragePools."
+                        },
                         "DataProtectionLoSCapabilities": {
                             "anyOf": [
                                 {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/DataProtectionLoSCapabilities.json#/definitions/DataProtectionLoSCapabilities"},
@@ -302,43 +311,43 @@
                 "StorageGroups": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageGroup.json#/definitions/StorageGroup"
+                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageAccessGroup.json#/definitions/StorageGroup"
                     },
                     "readonly": true,
                     "description": "StorageGroups.",
                     "longDescription": "The value of each enty in the array shall reference a StorageGroup."
                 },
-                "InitiatorEndpointGroups@odata.count": {
+                "ClientEndpointGroups@odata.count": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
                 },
-                "InitiatorEndpointGroups@odata.navigationLink": {
+                "ClientEndpointGroups@odata.navigationLink": {
                     "type": "string",
                     "format": "uri"
                 },
-                "InitiatorEndpointGroups": {
+                "ClientEndpointGroups": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/InitiatorEndpointGroup.json#/definitions/InitiatorEndpointGroup"
+                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroup.json#/definitions/EndpointGroup"
                     },
                     "readonly": false,
-                    "description": "Initiator endoint groups.",
-                    "longDescription": "The value of each enty in the array shall reference an InitiatorEndpointGroup."
+                    "description": "Client endpoint groups.",
+                    "longDescription": "The value of each entry in the array shall reference an EndpointGroup."
                 },
-                "TargetEndpointGroups@odata.count": {
+                "ServerEndpointGroups@odata.count": {
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
                 },
-                "TargetEndpointGroups@odata.navigationLink": {
+                "ServerEndpointGroups@odata.navigationLink": {
                     "type": "string",
                     "format": "uri"
                 },
-                "TargetEndpointGroups": {
+                "ServerEndpointGroups": {
                     "type": "array",
                     "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/TargetEndpointGroup.json#/definitions/TargetEndpointGroup"
+                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroup.json#/definitions/EndpointGroup"
                     },
                     "readonly": false,
-                    "description": "Target endoint groups.",
-                    "longDescription": "The value of each enty in the array shall reference a TargetEndpointGroup."
+                    "description": "Server endpoint groups.",
+                    "longDescription": "The value of each entry in the array shall reference a EndpointGroup."
                 },
                 "Volumes": {
                     "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection",

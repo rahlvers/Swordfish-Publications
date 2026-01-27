@@ -48,9 +48,9 @@
           <Annotation Term="OData.Description" String="The capacity information relating to snapshot or backup data."/>
           <Annotation Term="OData.LongDescription" String="The value shall be capacity information relating to provisioned snapshot or backup data."/>
         </Property>
-        <Property Name="IsThinProvisioned" Type="Edm.Boolean">
+        <Property Name="IsThinProvisioned" Type="Edm.Boolean" DefaultValue="false">
           <Annotation Term="OData.Description" String="Marks that the capacity is not necessarily fully allocated."/>
-          <Annotation Term="OData.LongDescription" String="If false, the capacity shall be fully allocated."/>
+          <Annotation Term="OData.LongDescription" String="If the value is false, the capacity shall be fully allocated.  The default value shall be false."/>
         </Property> </ComplexType>
 
       <ComplexType Name="CapacityInfo">

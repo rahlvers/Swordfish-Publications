@@ -1,5 +1,5 @@
 {
-  "@SSM.Copyright": "Copyright © 2014-2016 SNIA. All rights reserved.",
+  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
   "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonGoldJaw",
   "@odata.type": "#ClassOfService_1_0_0.ClassOfService",
@@ -7,15 +7,16 @@
   "Name": "BostonGoldJaw",
   "Description": "Boston with Open Jaw config to Providence and Dallas",
   "ClassOfServiceVersion": "01.00.00",
-  "IsDefault": false,
   "LinesOfService": {
       "IOConnectivityLineOfService": {
+        "Name": "FiberChannel",
         "AccessProtocol": "FC",
         "MaxSupportedIoOperationsPerSecond": null
       },
       "IOPerformanceLineOfService": {
+        "Name": "Heavy-OLTP-SDD",
         "IoOperationsPerSecondIsLimitedBoolean": "false",
-        "SamplePeriodSeconds": 60,
+        "SamplePeriod": "PT1M",
         "MaxIoOperationsPerSecondPerTerabyte": 100000,
         "AverageIoOperationLatencyMicroseconds": 10,
         "IOWorkload": {
@@ -24,11 +25,12 @@
       },
       "DataProtectionLineOfService": [
         {
+          "Name": "Providence-Synchronous-Mirror",
           "RecoveryGeographicObjective": "Region",
-          "RecoveryPointObjectiveSeconds": 0,
+          "RecoveryPointObjective": "PT0S",
           "RecoveryTimeObjective": "Online",
-          "ProtectionType": "Mirror",
-          "MinLifetimeSeconds": null,
+          "ReplicaType": "Mirror",
+          "MinLifetime": null,
           "IsIsolated": true,
           "Schedule": null, 
           "ReplicaClassOfService": {
@@ -54,11 +56,12 @@
           }
         },
         {
+          "Name": "Dallas-Asynchronous-Mirror",
           "RecoveryGeographicObjective": "Region",
-          "RecoveryPointObjectiveSeconds": 4,
+          "RecoveryPointObjective": "PT4S",
           "RecoveryTimeObjective": "Online",
-          "ProtectionType": "Continuous",
-          "MinLifetimeSeconds": null,
+          "ReplicaType": "Mirror",
+          "MinLifetime": null,
           "IsIsolated": true,
           "Schedule": null, 
           "ReplicaClassOfService": {
@@ -85,6 +88,7 @@
         }
       ],
       "DataSecurityLineOfService": {
+        "Name": "SecureData",
         "MediaEncryptionStrength": "Bits_256",
         "ChannelEncryptionStrength": "Bits_128",
         "HostAuthenticationType": "Ticket",
@@ -95,6 +99,7 @@
         "DataSanitizationPolicy": "CryptographicErase"
       },
       "DataStorageLineOfService": {
+        "Name": "HA-Thin",
         "RecoveryTimeObjective": 0,
         "ProvisioningPolicy": "Thin",
         "SpaceEfficient": true

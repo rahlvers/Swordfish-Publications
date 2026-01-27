@@ -42,14 +42,14 @@
   "Drives": {
     "@odata.id": "/redfish/v1/Chassis/StorageEnclosure1/Drives"
   },
-  "InitiatorEndpointGroups": [
+  "ClientEndpointGroups": [
     {
-      "@odata.id": "/redfish/v1/StorageServices/1/InitiatorEndpointGroups/1"
+      "@odata.id": "/redfish/v1/StorageServices/1/ClientEndpointGroups/1"
     }
   ],
-  "TargetEndpointGroups": [
+  "ServerEndpointGroups": [
     {
-      "@odata.id": "/redfish/v1/StorageServices/1/TargetEndpointGroups/1"
+      "@odata.id": "/redfish/v1/StorageServices/1/ServerEndpointGroups/1"
     }
   ],
   "Endpoints": {

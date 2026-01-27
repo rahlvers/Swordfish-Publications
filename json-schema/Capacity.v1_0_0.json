@@ -49,7 +49,7 @@
                         "null"
                     ],
                     "description": "Marks that the capacity is not necessarily fully allocated.",
-                    "longDescription": "If false, the capacity shall be fully allocated."
+                    "longDescription": "If the value is false, the capacity shall be fully allocated.  The default value shall be false."
                 }
             },
             "description": "This is the schema definition for the Capacity of a device. It represents the properties for capacity for any data store.",

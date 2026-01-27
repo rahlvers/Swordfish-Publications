@@ -23,6 +23,11 @@
       <ComplexType Name="IOConnectivityLineOfService">
         <Annotation Term="OData.Description" String="A service option within the IO Connectivity line of service." />
         <Annotation Term="OData.LongDescription" String="An IO connectivity service option may be used to specify the characteristics of storage connectivity." />
+        <Property Name="Name" Type="Resource.Name" >
+            <Annotation Term="OData.Description" String="A friendly name for this line of service." />
+            <Annotation Term="OData.LongDescription"
+            String="If present, the name shall be a friendly name for this line of service." />
+        </Property>
         <Property Name="AccessProtocol" Type="IOConnectivityLoSCapabilities.AccessProtocol">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
           <Annotation Term="OData.Description" String="SupportedAccessProtocols." />
