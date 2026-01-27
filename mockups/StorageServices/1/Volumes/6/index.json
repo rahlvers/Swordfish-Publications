@@ -1,5 +1,5 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@SSM.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#StorageVolume.StorageVolume",
   "@odata.id": "/redfish/v1/StorageServices/1/StorageVolumes/6",
   "@odata.type": "#StorageVolume_1_0_0.StorageVolume",
@@ -37,7 +37,7 @@
           "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverBoston"
         },
         "ProvidingPool": {
-            "Members": [{"@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool"}]     
+          "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool"
         },
         "ProvidingVolume": null
       }

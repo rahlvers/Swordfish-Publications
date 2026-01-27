@@ -61,7 +61,7 @@
                                 "$ref": "http://redfish.dmtf.org/schemas/v1/Drive.json#/definitions/Drive"
                             },
                             "readonly": true,
-                            "description": "Contains the members of this drive collection.",
+                            "description": "Contains the members of this collection.",
                             "longDescription": "The value of each entry of this property shall reference a Drive resource."
                         }
                     }

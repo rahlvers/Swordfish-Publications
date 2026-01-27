@@ -64,6 +64,15 @@
                     "description": "The value identifies the current version of this class of service definition.",
                     "longDescription": "The version describing the creation or last modification of this service option specification. The string representing the version shall be in the form: M + '.' + N + '.' + U  Where: M - The major version (in numeric form). N - The minor version (in numeric form). U - The update (e.g. errata or patch in numeric form)."
                 },
+                "IsDefault": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "True if this class of service is the default.",
+                    "longDescription": "True if this class of service is the default."
+                },
                 "LinesOfService": {
                     "anyOf": [
                         {"$ref": "#/definitions/LinesOfService"},

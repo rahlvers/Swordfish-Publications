@@ -124,14 +124,21 @@
                             "description": "Oem extension object.",
                             "longDescription": "This object represents the Oem property.  All values for resources described by this schema shall comply to the requirements as described in the Redfish specification."
                         },
-                        "DefaultClassOfService": {
-                            "anyOf": [
-                                {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
-                                {"type": "null"}
-                            ],
+                        "ClassesOfService@odata.count": {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                        },
+                        "ClassesOfService@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "ClassesOfService": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"
+                            },
                             "readonly": false,
-                            "description": "The default class of service for entities allocated from this storage pool.",
-                            "longDescription": "If present, this property shall reference the default class of service for entities allocated from this storage pool.  If not present, the default class of service of the containing StorageService entity shall be used."
+                            "description": "The ClassesOfService supported by this storage pool.",
+                            "longDescription": "This property shall contain references to all classes of service supported by this storage pool. Capacity allocated from this storage pool shall conform to one of the referenced classes of service."
                         }
                     },
                     "readonly": true,
@@ -161,15 +168,6 @@
                     "readonly": true,
                     "description": "A reference to the collection of storage pools allocated from this storage pool.",
                     "longDescription": "The value of this property shall contain a reference to the collection of storage pools allocated from this storage pool."
-                },
-                "ClassesOfService": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection"},
-                        {"type": "null"}
-                    ],
-                    "readonly": false,
-                    "description": "The ClassesOfService supported by this storage pool.",
-                    "longDescription": "This property shall contain references to all classes of service supported by this storage pool. Capacity allocated from this storage pool shall conform to one of the referenced classes of service."
                 }
             },
             "required": [

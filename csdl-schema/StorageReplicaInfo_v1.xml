@@ -18,6 +18,11 @@
       <ComplexType Name="ReplicaInfo"> 
 		<Annotation Term="OData.Description" String="Defines the characteristics of a replica."/>
 		<Annotation Term="OData.LongDescription" String="The value shall define the characteristics of a replica."/>
+        <Property Name="ReplicaType" Type="StorageReplicaInfo.ReplicaType">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="How the Replica is being maintained."/>
+          <Annotation Term="OData.LongDescription" String="The value shall indicate the type of Replica being maintained."/>
+        </Property>
         <Property Name="ReplicaPriority" Type="StorageReplicaInfo.ReplicaPriority">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="The priority of background copy engine I/O to be managed relative to host I/O operations during a sequential background copy operation."/>
@@ -33,15 +38,16 @@
           <Annotation Term="OData.Description" String="This property specifies whether the source, the target, or both elements involved in a copy operation are undiscovered."/>
           <Annotation Term="OData.LongDescription" String="The enumeration literal shall specify whether the source, the target, or both elements involved in a copy operation are undiscovered. An element is considered undiscovered if its object model is not known to the service performing the copy operation."/>
         </Property>
+        <!-- JSON has no equivalent to TimeOfDay. Replacing with a string for now -->
         <Property Name="WhenSynced" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="The point in time that the Elements were synchronized."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be an ISO 8601 conformant time of day that specifies when the elements were synchronized."/>
+          <Annotation Term="OData.LongDescription" String="The value shall specify the time of day when the elements were synchronized."/>
         </Property> 
-        <Property Name="SyncMaintained" Type="Edm.Boolean" DefaultValue="false">
+        <Property Name="SyncMaintained" Type="Edm.Boolean">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Synchronization is maintained."/>
-          <Annotation Term="OData.LongDescription" String="If true, Synchronization shall be maintained. The default value for this property is false."/>
+          <Annotation Term="OData.LongDescription" String="If true, Synchronization shall be maintained."/>
         </Property>           
         <Property Name="ReplicaRecoveryMode" Type="StorageReplicaInfo.ReplicaRecoveryMode">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
@@ -62,36 +68,41 @@
         <Property Name="FailedCopyStopsHostIO" Type="Edm.Boolean" DefaultValue="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="If true, the storage array tells host to stop sending data to source element if copying to a remote element fails."/>
-          <Annotation Term="OData.LongDescription" String="If true, the storage array shall stop receiving data to the source element if copying to a remote element fails. The default value for this property is false."/>
+          <Annotation Term="OData.LongDescription" String="If true, the storage array shall stop receiving data to the source element if copying to a remote element fails."/>
        </Property>
+       <!-- JSON has no equivalent to TimeOfDay. Replacing with a string for now -->
        <Property Name="WhenActivated" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Specifies when point-in-time copy was taken or when the replication relationship is activated, reactivated, resumed or re-established."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be an ISO 8601 conformant time of day that specifies when the point-in-time copy was taken or when the replication relationship is activated, reactivated, resumed or re-established. This property shall be null if the implementation is not capable of providing this information."/>
+          <Annotation Term="OData.LongDescription" String="The value shall specify the time of day when the point-in-time copy was taken or when the replication relationship is activated, reactivated, resumed or re-established. This property shall be null if the implementation is not capable of providing this information."/>
           <Annotation Term="Measures.Unit" String="%" />
        </Property>
+       <!-- JSON has no equivalent to TimeOfDay. Replacing with a string for now -->  
        <Property Name="WhenDeactivated" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Specifies when the replication relationship is deactivated."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is deactivated. Do not instantiate this property if implementation is not capable of providing this information."/>
+          <Annotation Term="OData.LongDescription" String="Specifies when the replication relationship is deactivated. Do not instantiate this property if implementation is not capable of providing this information."/>
           <Annotation Term="Measures.Unit" String="%" />
        </Property>
+       <!-- JSON has no equivalent to TimeOfDay. Replacing with a string for now -->
        <Property Name="WhenEstablished" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Specifies when the replication relationship is established."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is established. Do not instantiate this property if implementation is not capable of providing this information."/>
+          <Annotation Term="OData.LongDescription" String="Specifies when the replication relationship is established. Do not instantiate this property if implementation is not capable of providing this information."/>
           <Annotation Term="Measures.Unit" String="%" />
        </Property>
+       <!-- JSON has no equivalent to TimeOfDay. Replacing with a string for now -->  
        <Property Name="WhenSuspended" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Specifies when the replication relationship is suspended."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is suspended. Do not instantiate this property if implementation is not capable of providing this information."/>
+          <Annotation Term="OData.LongDescription" String="Specifies when the replication relationship is suspended. Do not instantiate this property if implementation is not capable of providing this information."/>
           <Annotation Term="Measures.Unit" String="%" />
        </Property>   
+       <!-- JSON has no equivalent to TimeOfDay. Replacing with a string for now -->
        <Property Name="WhenSynchronized" Type="Edm.String">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Specifies when the replication relationship is synchronized."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is synchronized. Do not instantiate this property if implementation is not capable of providing this information."/>
+          <Annotation Term="OData.LongDescription" String="Specifies when the replication relationship is synchronized. Do not instantiate this property if implementation is not capable of providing this information."/>
           <Annotation Term="Measures.Unit" String="%" />
         </Property>   
        <Property Name="ReplicaSkewBytes" Type="Edm.Int64">
@@ -100,10 +111,10 @@
           <Annotation Term="OData.LongDescription" String="Applies to Adaptive mode and it describes maximum number of bytes the SyncedElement (target) can be out of sync. If the number of out-of-sync bytes exceeds the skew value, ReplicaUpdateMode shall be switched to synchronous."/>
           <Annotation Term="Measures.Unit" String="By" />
         </Property>          
-       <Property Name="ReplicaType" Type="StorageReplicaInfo.ReplicaType">
+       <Property Name="ReplicaSyncType" Type="StorageReplicaInfo.ReplicaSyncType">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-          <Annotation Term="OData.Description" String="ReplicaType describes the intended outcome of the replication."/>
-          <Annotation Term="OData.LongDescription" String="The ReplicaType enumeration literal shall describe the intended outcome of the replication."/>
+          <Annotation Term="OData.Description" String="ReplicaSyncType describes the intended outcome of the replication."/>
+          <Annotation Term="OData.LongDescription" String="The ReplicaSyncType enumeration literal shall describe the intended outcome of the replication."/>
         </Property>   
        <Property Name="ReplicaProgressStatus" Type="StorageReplicaInfo.ReplicaProgressStatus">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
@@ -120,10 +131,10 @@
           <Annotation Term="OData.Description" String="The last requested or desired state for the relationship."/>
           <Annotation Term="OData.LongDescription" String="The last requested or desired state for the relationship. The actual state of the relationship shall be represented by ReplicaState. When RequestedState reaches the requested state, this property shall be null."/>
         </Property> 
-        <Property Name="ConsistencyEnabled" Type="Edm.Boolean" DefaultValue="false">
+        <Property Name="ConsistencyEnabled" Type="Edm.Boolean">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="True if consistency is enabled."/>
-          <Annotation Term="OData.LongDescription" String="If true, consistency shall be enabled across the source and its associated target replica(s). The default value for this property is false."/>
+          <Annotation Term="OData.LongDescription" String="True if consistency is enabled."/>
         </Property>   
         <Property Name="ConsistencyType" Type="StorageReplicaInfo.ConsistencyType">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
@@ -152,6 +163,37 @@
           <Annotation Term="OData.AutoExpandReferences" />
         </NavigationProperty>
       </ComplexType>
+
+        <EnumType Name="ReplicaType"> 
+	    <Annotation Term="OData.Description"
+          String="An enumeration that defines the type of a replica." />
+        <Annotation Term="OData.LongDescription"
+          String="The enumeration literals shall specify the relation of the data in a replica to its source." />
+        <Member Name="Continuous">
+          <Annotation Term="OData.Description"
+          String="Data for every change is recorded. A replica representing a point in time of the source data can be produced from the journal." />
+          <Annotation Term="OData.LongDescription"
+          String="Data for every change to the source shall be recorded allowing a replica representing any point in time of the source data to be produced." />
+        </Member>
+        <Member Name="Full">
+          <Annotation Term="OData.Description"
+          String="Neither replica is dependent on data stored in the other. Each holds a full copy of the data as of some point in time (possibly current)." />
+          <Annotation Term="OData.LongDescription"
+          String="Neither the source or the replica may be dependent on data stored in the other. Each shall hold a full copy of the data as of some point in time (possibly current)." />
+        </Member>
+        <Member Name="BeforeDelta">
+          <Annotation Term="OData.Description"
+          String="The source is maintained as delta data from the replica.  The replica (a snap) provides access to a previous point in time copy of source." />
+          <Annotation Term="OData.LongDescription"
+          String="The source resource shall be maintained as delta data from the replica. The replica (a snap) shall contain a full copy of the source as of the time the replica was created." />
+        </Member> 
+        <Member Name="AfterDelta">
+          <Annotation Term="OData.Description"
+          String="The replica is maintained as delta data from the source. The replica (a snap) provides access to a previous point in time copy of source." />
+          <Annotation Term="OData.LongDescription"
+          String="The replica shall be maintained as delta data from the source. The source shall contain a full and current copy of the data.  Overwritten  original data shall be contained in replica." />
+        </Member>
+       </EnumType>
 
         <EnumType Name="ReplicaPriority">
             <Annotation Term="OData.Description" String="ReplicaPriority allows the priority of background copy engine I/O to be managed relative to host I/O operations during a sequential background copy operation."/>
@@ -251,8 +293,8 @@
             </Member>          
         </EnumType>
     
-        <EnumType Name="ReplicaType">
-            <Annotation Term="OData.Description" String="Values of ReplicaType describe the intended outcome of the replication."/>
+        <EnumType Name="ReplicaSyncType">
+            <Annotation Term="OData.Description" String="Values of ReplicaSyncType describe the intended outcome of the replication."/>
             <Annotation Term="OData.LongDescription" String="The enumeration literals may be used to specify the intended outcome of the replication."/>
             <Member Name="Mirror">
                 <Annotation Term="OData.Description" String="Create and maintain a copy of the source."/>
@@ -270,7 +312,7 @@
                 <Annotation Term="OData.Description" String="Create a token based clone."/>
                 <Annotation Term="OData.LongDescription" String="This enumeration literal shall indicate that replication shall create a token based clone."/>
             </Member>            
-        </EnumType>     
+        </EnumType>        
    
         <EnumType Name="ReplicaProgressStatus">
             <Annotation Term="OData.Description" String="Values of ReplicaProgressStatus describe the status of the session with respect to Replication activity."/>

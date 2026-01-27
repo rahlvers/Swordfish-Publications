@@ -9,8 +9,8 @@
     <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
     <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterfaceCollection_v1.xml">
-    <edmx:Include Namespace="EthernetInterfaceCollection"/>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterface_v1.xml">
+    <edmx:Include Namespace="EthernetInterface"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService_v1.xml">
     <edmx:Include Namespace="ClassOfService"/>
@@ -92,25 +92,25 @@
           <Annotation Term="OData.Description" String="An array of default access privileges for the file share. The types of default access can include Read, Write, and/or Execute."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall be an array containing entries for the default access privileges for the file share. Each entry shall specify a defaul access privilege. The types of default access can include Read, Write, and/or Execute."/>
         </Property>
-        <Property Name="ExecuteSupport" Type="Edm.Boolean" DefaultValue="false">
+        <Property Name="ExecuteSupport" Type="Edm.Boolean">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Execute access is supported by the file share."/>
-          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate whether Execute access is supported by the file share. The default value for this property is false."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate whether Execute access is supported by the file share."/>
         </Property>
-        <Property Name="RootAccess" Type="Edm.Boolean" DefaultValue="false">
+        <Property Name="RootAccess" Type="Edm.Boolean">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Root access is allowed by the file share."/>
-          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate whether Root access is allowed by the file share. The default value for this property is false."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate whether Root access is allowed by the file share."/>
         </Property>
         <Property Name="WritePolicy" Type="StorageReplicaInfo.ReplicaUpdateMode">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="Defines how writes are replicated to the shared source."/>
           <Annotation Term="OData.LongDescription" String="The value of this property shall define how writes are replicated to the shared source."/>
         </Property>
-        <Property Name="CASupported" Type="Edm.Boolean" DefaultValue="false">
+        <Property Name="CASupported" Type="Edm.Boolean">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
-          <Annotation Term="OData.Description" String="Continuous Availability is supported. Client/Server mediated recovery from network and server failure with application transparency. "/>
-          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate that Continuous Availability is supported. Client/Server mediated recovery from network and server failure with application transparency. This property shall be NULL unless the FileSharingProtocols property includes SMB.  The default value for this property is false."/>
+          <Annotation Term="OData.Description" String="Continuous Availability is supported. Client/Server mediated recovery from network and server failure with application transparency."/>
+          <Annotation Term="OData.LongDescription" String="The value of this property shall indicate that Continuous Availability is supported. Client/Server mediated recovery from network and server failure with application transparency. This property shall be NULL unless the FileSharingProtocols property includes SMB."/>
         </Property>
         <Property Name="FileShareTotalQuotaBytes" Type="Edm.Int64">
           <Annotation Term="OData.Description" String="The maximum number of bytes that may be used by this file share."/>
@@ -140,12 +140,6 @@
           <Annotation Term="OData.Description" String="Contains links to other resources that are related to this resource." />
           <Annotation Term="OData.LongDescription" String="This property shall contain links to other resources that are related to this resource." />
         </Property>
-        <NavigationProperty Name="EthernetInterfaces" Type="EthernetInterfaceCollection.EthernetInterfaceCollection" Nullable="false" ContainsTarget="true">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-          <Annotation Term="OData.Description" String="A link to the collection of Ethernet interfaces that provide access to this file share."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be a link to an EthernetInterfaceCollection with members that provide access to the file share."/>
-          <Annotation Term="OData.AutoExpandReferences"/>
-        </NavigationProperty>
       </EntityType>
     
       <ComplexType Name="Links" BaseType="Resource.Links">
@@ -159,6 +153,12 @@
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="A link to the file system containing the file share."/>
           <Annotation Term="OData.LongDescription" String="The value shall be a link to the file system containing the file share."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
+        <NavigationProperty Name="EthernetInterfaces" Type="Collection(EthernetInterface.EthernetInterface)" Nullable="false">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A link to the collection of Ethernet interfaces that provide access to this file share."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be a link to an EthernetInterfaceCollection with members that provide access to the file share."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
       </ComplexType>

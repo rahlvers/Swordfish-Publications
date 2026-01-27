@@ -44,14 +44,6 @@
             },
             "additionalProperties": true,
             "properties": {
-                "Name": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
-                        {"type": "null"}
-                    ],
-                    "description": "A friendly name for this line of service.",
-                    "longDescription": "If present, the name shall be a friendly name for this line of service."
-                },
                 "IOOperationsPerSecondIsLimited": {
                     "type": [
                         "boolean",
@@ -59,16 +51,17 @@
                     ],
                     "readonly": false,
                     "description": "Limit the IOPS.",
-                    "longDescription": "If true, the system should not allow IOPS to exceed MaxIoOperationsPerSecondPerTerabyte * VolumeSize. Otherwise, the system shall not enforce a limit.  The default value for this property is false."
+                    "longDescription": "Limit the IOPS. True implies that the system will not allow IOPS to exceed MaxIoOperationsPerSecondPerTerabyte * VolumeSize. Otherwise, the system does not inforce a limit."
                 },
-                "SamplePeriod": {
+                "SamplePeriodSeconds": {
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ],
+                    "units": "s",
                     "readonly": false,
                     "description": "Sampling period over which average values are calculated.",
-                    "longDescription": "The value shall be an ISO 8601 duration specifying the sampling period over which average values are calculated."
+                    "longDescription": "The value shall be the sampling period over which average values are calculated."
                 },
                 "MaxIOOperationsPerSecondPerTerabyte": {
                     "type": [
@@ -211,15 +204,15 @@
                     "description": "Percent of total IOPS for this workload component.",
                     "longDescription": "The value shall be the expected percent of the total IOPS for this workload that is covered by this component"
                 },
-                "Duration": {
+                "DurationSeconds": {
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ],
                     "units": "s",
                     "readonly": false,
                     "description": "Duration that this component is active.",
-                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify the expected length of time that this component is applied to the workload. This attribute shall be specified if a schedule is specified and otherwise shall not be specified."
+                    "longDescription": "The value shall be the expected length of time (seconds) to apply this component to the workload. This attribute shall be specified if a schedule is specified and otherwise shall not be specified."
                 },
                 "Schedule": {
                     "anyOf": [

@@ -17,7 +17,7 @@
     "Health": "OK"
   },
   "ReplicaInfo":{
-	"ReplicaType": "Clone",
+	"ReplicaSyncType": "Clone",
   	"ReplicaProgressStatus": "Synchronizing"
   },
   "BlockSizeBytes": 512,

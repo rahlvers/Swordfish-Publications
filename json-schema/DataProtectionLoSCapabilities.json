@@ -20,14 +20,6 @@
             },
             "additionalProperties": true,
             "properties": {
-                "Name": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
-                        {"type": "null"}
-                    ],
-                    "description": "A friendly name for this line of service.",
-                    "longDescription": "If present, the name shall be a friendly name for this line of service."
-                },
                 "RecoveryGeographicObjective": {
                     "anyOf": [
                         {"$ref": "#/definitions/FailureDomainScope"},
@@ -37,14 +29,14 @@
                     "description": "Geographic distribution scopes",
                     "longDescription": "The value specifies the geograhic scope of the failure domain."
                 },
-                "RecoveryPointObjective": {
+                "RecoveryPointObjectiveSeconds": {
                     "type": [
-                        "string",
+                        "number",
                         "null"
                     ],
                     "readonly": false,
                     "description": "Time interval defining how much source data that can be lost on failure.",
-                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify a bound on the the amount of source data that can be lost on failure."
+                    "longDescription": "The amount of source data that can be lost on failure shall be bound by this time interval."
                 },
                 "RecoveryTimeObjective": {
                     "anyOf": [
@@ -64,14 +56,14 @@
                     "description": "Type of replica.",
                     "longDescription": "The type of replica shall conform to this value."
                 },
-                "MinLifetime": {
+                "MinLifetimeSeconds": {
                     "type": [
                         "number",
                         "null"
                     ],
                     "readonly": false,
                     "description": "Minimum lifetime (seconds) that replica must be maintained.",
-                    "longDescription": "The value of each entry shall be an ISO 8601 duration that shall specify the minimum supported lifetime. Note: The maximum number of replicas can be determined using this value together with the replicaSchedule."
+                    "longDescription": "Replicas conforming to this line of service shall have at least the specified minimum lifetime (seconds). Note: The maximum number of replicas can be determined using this value together with the replicaSchedule."
                 },
                 "IsIsolated": {
                     "type": [
@@ -80,7 +72,7 @@
                     ],
                     "readonly": false,
                     "description": "The replica is in a separate fault domain.",
-                    "longDescription": "True shall indicate that the replica is in a separate fault domain from its source. The default value of this property is false."
+                    "longDescription": "True shall indicate that the replica is in a separate fault domain from its source."
                 },
                 "Schedule": {
                     "anyOf": [

@@ -10,19 +10,53 @@
     "State": "Enabled",
     "Health": "OK"
   },
-  "ClassesOfService": {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService"},
-  "FileSystems": {"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems"},
-  "StorageGroups": {"@odata.id": "/redfish/v1/StorageServices/FileService/StorageGroups"},
-  "StoragePools": {"@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools"},
+  "ClassesOfService": [  
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonBunker"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonGoldJaw"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonSilverJaw"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonVMs"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/Gold"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/Silver"
+    }
+  ],
+  "FileSystems": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems"
+  },
+  "StorageServiceCapabilities": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StorageServiceCapabilities"
+  },
+  "StorageGroups": [
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/StorageGroups/1"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/StorageGroups/2"
+    },
+    {
+      "@odata.id": "/redfish/v1/StorageServices/FileService/StorageGroups/3"
+    }
+  ],
+  "StoragePools": {
+    "@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools"
+  },
   "Links": {
+    "Enclosures": {
+      "@odata.id": "/redfish/v1/Chassis/1"
+    },
 	"HostingSystem": {
       "@odata.id": "/redfish/v1/StorageSystems/FileServer"
-    },
-    "DataPerformanceLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/DataPerformanceLoSCapabilities"},
-    "DataProtectionLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/DataProtectionLoSCapabilities"},
-    "DataStorageLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/DataStorageLoSCapabilities"},
-    "IOConnectivityLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/IOConnectivityLoSCapabilities"},
-    "IOPerformanceLoSCapabilities": {"@odata.id": "/redfish/v1/StorageServices/FileService/IOPerformanceLoSCapabilities"}
+    }
   },
   "Oem": {}
 }

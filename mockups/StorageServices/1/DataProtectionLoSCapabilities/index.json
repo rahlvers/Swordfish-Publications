@@ -1,5 +1,5 @@
 {
-	"@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+	"@SSM.Copyright": "Copyright © 2014-2016 SNIA. All rights reserved.",
 	"@odata.context": "/redfish/v1/$metadata#DataProtectionLoSCapabilites.DataProtectionLoSCapabilites",
 	"@odata.id": "/redfish/v1/StorageServices/1/DataProtectionLoSCapabilites",
 	"@odata.type": "#DataProtectionLoSCapabilites_1_0_0.DataProtectionLoSCapabilites",
@@ -12,33 +12,33 @@
       "DataCenter",
       "Region"
     ],
-	"SupportedRecoveryPointObjectiveSeconds": ["PT0S",
-	"PT4S",
-	"PT1M",
-	"PT1H"],
+	"SupportedRecoveryPointObjectiveSeconds": [0,
+	4,
+	60,
+	3600],
 	"SupportedRecoveryTimeObjectives": ["Immediate",
 	"Online",
 	"Nearline",
 	"Offline"],
-	"SupportedReplicaOldTypes": ["Continuous",
+	"SupportedReplicaTypes": ["Continuous",
 	"Full",
 	"Delta"],
-	"MinimumLifetime": "P1M",
+	"MinimumLifetimeSeconds": 60,
 	"SupportsIsolated": true,
 	"SupportedReplicaOptions": [],
 	"SupportedLocations": [],
-	"SupportedDataProtectionLinesOfService": [
-    {
+	"SupportedDataProtectionLinesOfService": [{
 		"RecoveryGeographicObjective": "Region",
-		"RecoveryPointObjective": "P7D",
+		"RecoveryPointObjectiveSeconds": 604800,
 		"RecoveryTimeObjective": "Nearline",
-		"ReplicaType": "Snapshot",
-		"MinLifetime": "P3M",
+		"ProtectionType": "Delta",
+		"MinLifetimeSeconds": 7948800,
 		"IsIsolated": true,
 		"Schedule": {
-			"InitialStartTime": "0300-0500",
-			"RecurrenceInterval": "P1W",
-			"EnabledDaysOfWeek": ["Saturday"]
+			"EventStartTime": "03:00-05:00",
+			"RecurrenceGranularity": "Weekly",
+			"RecurrenceInterval": 1,
+			"RecurrenceDayOfWeekMask": ["Saturday"]
 		},
 		"ReplicaClassOfService": {
 			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Silver_Providence"
@@ -64,23 +64,24 @@
 	},
 	{
 		"RecoveryGeographicObjective": "Region",
-		"RecoveryPointObjective": "P30D",
+		"RecoveryPointObjectiveSeconds": 2592000,
 		"RecoveryTimeObjective": "Nearline",
-		"ReplicaType": "Clone",
-		"MinLifetime": "P4M",
+		"ProtectionType": "Full",
+		"MinLifetimeSeconds": 10627200,
 		"IsIsolated": true,
 		"Schedule": {
-			"InitialStartTime": "P4M",
-			"RecurrenceInterval": "P1M",
-			"EnabledDaysOfWeek": ["Sunday"],
-			"EnabledDaysOfMonth": [1,
+			"EventStartTime": "04:00-05:00",
+			"RecurrenceGranularity": "Monthly",
+			"RecurrenceInterval": "1",
+			"RecurrenceDayOfWeekMask": ["Sunday"],
+			"RecurrenceDayOfMonthMask": [1,
 			2,
 			3,
 			4,
 			5,
 			6,
 			7],
-			"EnabledMonthsOfYear": []
+			"RecurrenceMonthOfYearMask": []
 		},
 		"ReplicaClassOfService": {
 			"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Storage/Silver_Providence"
@@ -106,10 +107,10 @@
 	},
 	{
 		"RecoveryGeographicObjective": "Region",
-		"RecoveryPointObjective": "PT0S",
+		"RecoveryPointObjectiveSeconds": 0,
 		"RecoveryTimeObjective": "Online",
-		"ReplicaType": "Mirror",
-		"MinLifetime": null,
+		"ProtectionType": "Continuous",
+		"MinLifetimeSeconds": null,
 		"IsIsolated": true,
 		"Schedule": null,
 		"ReplicaClassOfService": {
@@ -133,16 +134,16 @@
 			"GPSCoords": "",
 			"OtherLocationInfo": ""
 		},
+		"Schedule": null,
 		"Links": {
 			
 		}
 	},
 	{
 		"RecoveryGeographicObjective": "Region",
-		"RecoveryPointObjective": "PT4S",
+		"RecoveryPointObjectiveSeconds": 4,
 		"RecoveryTimeObjective": "Online",
-		"ReplicaType": "Mirror",
-		"Schedule": null,
+		"ProtectionType": "Continuous",
 		"ReplicaAccessLocation": {
 			"Country": "",
 			"Territory": "",
@@ -161,6 +162,7 @@
 			"GPSCoords": "",
 			"OtherLocationInfo": ""
 		},
+		"Schedule": null,
 		"Links": {
 			"ReplicaOption": {
 				"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Dallas"
@@ -169,10 +171,9 @@
 	},
 	{
 		"RecoveryGeographicObjective": "Region",
-		"RecoveryPointObjective": "PT0S",
+		"RecoveryPointObjectiveSeconds": 0,
 		"RecoveryTimeObjective": "Online",
-		"ReplicaType": "Mirror",
-		"Schedule": null,
+		"ProtectionType": "Mirror",
 		"ReplicaAccessLocation": {
 			"Country": "",
 			"Territory": "",
@@ -191,6 +192,7 @@
 			"GPSCoords": "",
 			"OtherLocationInfo": ""
 		},
+		"Schedule": null,
 		"Links": {
 			"ReplicaOption": {
 				"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Providence"
@@ -199,10 +201,9 @@
 	},
 	{
 		"RecoveryGeographicObjective": "Region",
-		"RecoveryPointObjective": "PT4S",
+		"RecoveryPointObjectiveSeconds": 4,
 		"RecoveryTimeObjective": "Online",
-		"ReplicaType": "Mirror",
-		"Schedule": null,
+		"ProtectionType": "Continuous",
 		"ReplicaAccessLocation": {
 			"Country": "",
 			"Territory": "",
@@ -221,6 +222,7 @@
 			"GPSCoords": "",
 			"OtherLocationInfo": ""
 		},
+		"Schedule": null,
 		"Links": {
 			"ReplicaOption": {
 				"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/Gold_Dallas"
@@ -229,10 +231,10 @@
 	},
 	{
 		"RecoveryGeographicObjective": "Region",
-		"RecoveryPointObjective": "PT0S",
+		"RecoveryPointObjectiveSeconds": 0,
 		"RecoveryTimeObjective": "Online",
-		"ReplicaType": "Mirror",
-		"MinLifetime": null,
+		"ProtectionType": "Continuous",
+		"MinLifetimeSeconds": null,
 		"IsIsolated": true,
 		"Schedule": null,
 		"ReplicaClassOfService": {
@@ -259,10 +261,10 @@
 	},
 	{
 		"RecoveryGeographicObjective": "Region",
-		"RecoveryPointObjective": "PT4S",
+		"RecoveryPointObjectiveSeconds": 4,
 		"RecoveryTimeObjective": "Nearline",
-		"ReplicaType": "Continuous",
-		"MinLifetime": null,
+		"ProtectionType": "Continuous",
+		"MinLifetimeSeconds": null,
 		"IsIsolated": true,
 		"Schedule": null,
 		"ReplicaClassOfService": {

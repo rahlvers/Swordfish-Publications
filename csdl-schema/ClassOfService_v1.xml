@@ -60,7 +60,11 @@
           <Annotation Term="OData.Description" String="The value identifies the current version of this class of service definition."/>
           <Annotation Term="OData.LongDescription" String="The version describing the creation or last modification of this service option specification. The string representing the version shall be in the form: M + '.' + N + '.' + U  Where: M - The major version (in numeric form). N - The minor version (in numeric form). U - The update (e.g. errata or patch in numeric form)."/>
         </Property>
-
+        <Property Name="IsDefault" Type="Edm.Boolean">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>
+          <Annotation Term="OData.Description" String="True if this class of service is the default."/>
+          <Annotation Term="OData.LongDescription" String="True if this class of service is the default."/>
+        </Property>
         <!--todo: mockup doesn't nest under "LinesOfService" property; which is correct?-->
         <Property Name="LinesOfService" Type="ClassOfService.v1_0_0.LinesOfService">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite"/>

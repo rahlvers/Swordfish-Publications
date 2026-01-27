@@ -17,8 +17,8 @@
     <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish" />
     <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation" />
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfServiceCollection_v1.xml">
-    <edmx:Include Namespace="ClassOfServiceCollection" />
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService_v1.xml">
+    <edmx:Include Namespace="ClassOfService" />
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Capacity_v1.xml">
     <edmx:Include Namespace="Capacity.v1_0_0" />
@@ -84,14 +84,7 @@
           <Annotation Term="OData.LongDescription"
           String="The value of this property shall contain a reference to the collection of storage pools allocated from this storage pool." />
           <Annotation Term="OData.AutoExpandReferences" />
-        </NavigationProperty> 
-        <NavigationProperty Name="ClassesOfService" Type="ClassOfServiceCollection.ClassOfServiceCollection" ContainsTarget="true">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
-          <Annotation Term="OData.Description" String="The ClassesOfService supported by this storage pool." />
-          <Annotation Term="OData.LongDescription"
-          String="This property shall contain references to all classes of service supported by this storage pool. Capacity allocated from this storage pool shall conform to one of the referenced classes of service." />
-          <Annotation Term="OData.AutoExpandReferences"/>
-        </NavigationProperty>    
+        </NavigationProperty>        
         <Property Name="Links" Type="StoragePool.v1_0_0.Links" Nullable="false">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read" />
           <Annotation Term="OData.Description" String="Contains links to other resources that are related to this resource." />
@@ -100,11 +93,11 @@
         <Property Name="Status" Type="Resource.Status" />
       </EntityType>
       <ComplexType Name="Links" BaseType="Resource.Links">
-        <NavigationProperty Name="DefaultClassOfService" Type="ClassOfService.ClassOfService">
+        <NavigationProperty Name="ClassesOfService" Type="Collection(ClassOfService.ClassOfService)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/ReadWrite" />
-          <Annotation Term="OData.Description" String="The default class of service for entities allocated from this storage pool." />
+          <Annotation Term="OData.Description" String="The ClassesOfService supported by this storage pool." />
           <Annotation Term="OData.LongDescription"
-          String="If present, this property shall reference the default class of service for entities allocated from this storage pool.  If not present, the default class of service of the containing StorageService entity shall be used." />
+          String="This property shall contain references to all classes of service supported by this storage pool. Capacity allocated from this storage pool shall conform to one of the referenced classes of service." />
           <Annotation Term="OData.AutoExpandReferences" />
         </NavigationProperty>
       </ComplexType>

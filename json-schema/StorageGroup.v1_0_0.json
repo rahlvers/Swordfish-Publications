@@ -31,7 +31,7 @@
                 }
             },
             "description": "Expose the storage volumes of this group.",
-            "longDescription": "Exposes the storage of this group via the target endpoints named in the ServerEndpointGroups to the initiator endpoints named in the ClientEndpointGroups.  The property VolumesAreExposed shall be set to true when this action is completed."
+            "longDescription": "Exposes the storage of this group via the target endpoints named in the TargetEndpointGroups to the initiator endpoints named in the InitiatorEndpointGroups.  The property VolumesAreExposed shall be set to true when this action is completed."
         },
         "HideVolumes": {
             "patternProperties": {
@@ -61,7 +61,7 @@
                 }
             },
             "description": "Hide the storage volumes of this group.",
-            "longDescription": "Hide the storage of this group from the initiator endpoints named in the ClientEndpointGroups. The property VolumesAreExposed shall be set to false when this action is completed."
+            "longDescription": "Hide the storage of this group from the initiator endpoints named in the InitiatorEndpointGroups. The property VolumesAreExposed shall be set to false when this action is completed."
         },
         "StorageGroup": {
             "type": "object",
@@ -117,7 +117,7 @@
                 },
                 "AccessState": {
                     "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroup.json#/definitions/AccessState"},
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/TargetEndpointGroup.json#/definitions/AccessState"},
                         {"type": "null"}
                     ],
                     "readonly": false,
@@ -131,7 +131,7 @@
                     ],
                     "readonly": true,
                     "description": "Members are kept in a consistent state.",
-                    "longDescription": "The value of this property shall be set to true if all members are in a consistent state. The default value for this property is false."
+                    "longDescription": "The value of this property shall be set to true if all members are in a consistent state."
                 },
                 "VolumesAreExposed": {
                     "type": [
@@ -139,8 +139,8 @@
                         "null"
                     ],
                     "readonly": true,
-                    "description": "Storage volumes are exposed to the Client Endpoints.",
-                    "longDescription": "The value of this property shall be set to true if storage volumes are exposed to the initiator endpoints.  The default value for this property is false."
+                    "description": "Storage volumes are exposed to the InitiatorEndpoints.",
+                    "longDescription": "The value of this property shall be set to true if a storage volumes are exposed to the initiator endpoints"
                 },
                 "Status": {
                     "anyOf": [
@@ -201,6 +201,47 @@
                             "readonly": false,
                             "description": "Child StorageGroups.",
                             "longDescription": "An array of references to StorageGroups are incorporated into this StorageGroup"
+                        },
+                        "Volumes": {
+                            "anyOf": [
+                                {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection"},
+                                {"type": "null"}
+                            ],
+                            "readonly": true,
+                            "description": "Volumes in this StorageGroup.",
+                            "longDescription": "An array of references to Volumes managed by this StorageGroup."
+                        },
+                        "InitiatorEndpointGroups@odata.count": {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                        },
+                        "InitiatorEndpointGroups@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "InitiatorEndpointGroups": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/InitiatorEndpointGroup.json#/definitions/InitiatorEndpointGroup"
+                            },
+                            "readonly": false,
+                            "description": "InitiatosrEndpointGroup in this StorageGroup.",
+                            "longDescription": "An array of references to InitiatorEndpointGroup exposed to by this StorageGroup."
+                        },
+                        "TargetEndpointGroups@odata.count": {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                        },
+                        "TargetEndpointGroups@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "TargetEndpointGroups": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/TargetEndpointGroup.json#/definitions/TargetEndpointGroup"
+                            },
+                            "readonly": false,
+                            "description": "TargetEndpointGroups in this StorageGroup.",
+                            "longDescription": "An array of references to TargetEndpointGroup used for exposure by this StorageGroup."
                         },
                         "ClassOfService": {
                             "anyOf": [
@@ -273,33 +314,6 @@
                     "readonly": true,
                     "description": "The available actions for this resource.",
                     "longDescription": "The Actions property shall contain the available actions for this resource."
-                },
-                "ClientEndpointGroups": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
-                        {"type": "null"}
-                    ],
-                    "readonly": false,
-                    "description": "ClientEndpointGroup in this StorageGroup.",
-                    "longDescription": "An array of references to ClientEndpointGroups that contain the Endpoints that may be used by clients to make requests to the storage exposed by this StorageGroup."
-                },
-                "ServerEndpointGroups": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
-                        {"type": "null"}
-                    ],
-                    "readonly": false,
-                    "description": "ServerEndpointGroups in this StorageGroup.",
-                    "longDescription": "An array of references to ServerEndpointGroups that contain the Endpoints that may be used by the storage service to receive requests from clients for storage exposed by this StorageGroup."
-                },
-                "Volumes": {
-                    "anyOf": [
-                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection"},
-                        {"type": "null"}
-                    ],
-                    "readonly": false,
-                    "description": "Volumes in this StorageGroup.",
-                    "longDescription": "An array of references to Volumes managed by this StorageGroup."
                 }
             },
             "required": [
@@ -307,7 +321,7 @@
                 "Name"
             ],
             "description": "Collection of resources that are managed and exposed to hosts as a group.",
-            "longDescription": "A storage group collects a set of related storage entities (volumes, file systems...) The collection should be useful for managing the storage of a set of related client applications."
+            "longDescription": "Collection of resources that the system can make available to one or more host systems.  The collection can contain: block, file, or object storage; local system access points through which the collection is made available; hosts, or host access points to which the collection is made available."
         }
     },
     "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"

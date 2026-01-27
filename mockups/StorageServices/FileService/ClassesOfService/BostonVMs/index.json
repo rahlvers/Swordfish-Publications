@@ -1,22 +1,21 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageServices/FileService/ClassesOfService/BostonVMs",
+  "@SSM.Copyright": "Copyright © 2014-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
   "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonVMs",
   "@odata.type": "#ClassOfService_1_0_0.ClassOfService",
   "Id": "BostonVMs with snaps to Providence",
   "Name": "BostonVMs",
   "Description": "Boston VMs",
   "ClassOfServiceVersion": "01.00.00",
+  "IsDefault": false,
   "LinesOfService": {
       "IOConnectivityLineOfService": {
-        "Name": "FiberChannel",
         "AccessProtocol": "FC",
         "MaxSupportedIoOperationsPerSecond": null
       },
       "IOPerformanceLineOfService": {
-        "Name": "Heavy-OLTP-HDD",
         "IoOperationsPerSecondIsLimitedBoolean": "false",
-        "SamplePeriod": "PT1M",
+        "SamplePeriodSeconds": 60,
         "MaxIoOperationsPerSecondPerTerabyte": 83,
         "AverageIoOperationLatencyMicroseconds": 8000,
         "IOWorkload": {
@@ -25,17 +24,20 @@
       },
       "DataProtectionLineOfService": [
         {
-          "Name": "Providence-Weekly-Snapshot",
+          "@odata.id": "/redfish/v1/StorageServices/FileService/LinesOfService/DataProtectionCollection/Nightly"
+        },
+        {
           "RecoveryGeographicObjective": "Region",
-          "RecoveryPointObjective": "P7D",
+          "RecoveryPointObjectiveSeconds": 604800,
           "RecoveryTimeObjective": "Nearline",
-          "ReplicaType": "Delta",
-          "MinLifetime": "P3M",
+          "ProtectionType": "Delta",
+          "MinLifetimeSeconds": 7948800,
           "IsIsolated": true,
           "Schedule": {
-            "InitialStartTime": "0300-0500",
-            "RecurrenceInterval": "P1W",
-            "EnabledDaysOfWeek": [
+            "EventStartTime": "03:00-05:00",
+            "RecurrenceGranularity": "Weekly",
+            "RecurrenceInterval": 1,
+            "RecurrenceDayOfWeekMask": [
               "Saturday"
             ]
           },
@@ -62,20 +64,20 @@
           }
         },
         {
-          "Name": "Providence-Monthly-Clone",
           "RecoveryGeographicObjective": "Region",
-          "RecoveryPointObjective": "P30D",
+          "RecoveryPointObjectiveSeconds": 2592000,
           "RecoveryTimeObjective": "Nearline",
-          "ReplicaType": "Clone",
-          "MinLifetime": "P4M",
+          "ProtectionType": "Full",
+          "MinLifetimeSeconds": 10627200,
           "IsIsolated": true,
           "Schedule": {
-            "InitialStartTime": "0400-0500",
-            "RecurrenceInterval": "P1M",
-            "EnabledDaysOfWeek": [
+            "EventStartTime": "04:00-05:00",
+            "RecurrenceGranularity": "Monthly",
+            "RecurrenceInterval": "1",
+            "RecurrenceDayOfWeekMask": [
               "Sunday"
             ],
-            "EnabledDaysOfMonth": [
+            "RecurrenceDayOfMonthMask": [
               1,
               2,
               3,
@@ -84,7 +86,7 @@
               6,
               7
              ],
-            "EnabledMonthsOfYear": []
+            "RecurrenceMonthOfYearMask": []
           },
           "ReplicaClassOfService": {
             "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/Silver"
@@ -110,7 +112,6 @@
         }
       ],
       "DataSecurityLineOfService": {
-        "Name": "SecureData",
         "MediaEncryptionStrength": "Bits_256",
         "ChannelEncryptionStrength": "Bits_128",
         "HostAuthenticationType": "Ticket",
@@ -121,7 +122,6 @@
         "DataSanitizationPolicy": "CryptographicErase"
       },
       "DataStorageLineOfService": {
-        "Name": "HA-Thin",
         "RecoveryTimeObjective": 0,
         "ProvisioningPolicy": "Thin",
         "SpaceEfficient": true

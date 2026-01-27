@@ -1,22 +1,21 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageServices/FileService/ClassesOfService/BostonBunker",
+  "@SSM.Copyright": "Copyright © 2014-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
   "@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/BostonBunker",
   "@odata.type": "#ClassOfService_1_0_0.ClassOfService",
   "Id": "BostonBunker",
   "Name": "BostonBunker",
   "Description": "Replica to Dallas and Bunker in Cambridge",
   "ClassOfServiceVersion": "01.00.00",
+  "IsDefault": false,
   "LinesOfService": {
       "IOConnectivityLineOfService": {
-        "Name": "FiberChannel",
         "AccessProtocol": "FC",
         "MaxSupportedIoOperationsPerSecond": null
       },
       "IOPerformanceLineOfService": {
-        "Name": "Heavy-OLTP-HDD",
         "IoOperationsPerSecondIsLimitedBoolean": false,
-        "SamplePeriod": "PT1M",
+        "SamplePeriodSeconds": 60,
         "MaxIoOperationsPerSecondPerTerabyte": 83,
         "AverageIoOperationLatencyMicroseconds": 8000,
         "IOWorkload": {
@@ -25,12 +24,11 @@
       },
       "DataProtectionLineOfService": [
         {
-          "Name": "Cambridge-Synchronous-Mirror",
           "RecoveryGeographicObjective": "Region",
-          "RecoveryPointObjective": "PT0S",
+          "RecoveryPointObjectiveSeconds": 0,
           "RecoveryTimeObjective": "Online",
-          "ReplicaType": "Mirror",
-          "MinLifetime": null,
+          "ProtectionType": "Continuous",
+          "MinLifetimeSeconds": null,
           "IsIsolated": true,
           "Schedule": null,
           "ReplicaClassOfService": {
@@ -56,12 +54,11 @@
           }
         },
         {
-          "Name": "Dallas-Asynchronous-Mirror",
           "RecoveryGeographicObjective": "Region",
-          "RecoveryPointObjective": "PT4S",
+          "RecoveryPointObjectiveSeconds": 4,
           "RecoveryTimeObjective": "Nearline",
-          "ReplicaType": "Mirror",
-          "MinLifetime": null,
+          "ProtectionType": "Continuous",
+          "MinLifetimeSeconds": null,
           "IsIsolated": true,
           "Schedule": null, 
           "ReplicaClassOfService": {
@@ -88,7 +85,6 @@
         }
       ],
       "DataSecurityLineOfService": {
-        "Name": "SecureData",
         "MediaEncryptionStrength": "Bits_256",
         "ChannelEncryptionStrength": "Bits_128",
         "HostAuthenticationType": "Ticket",
@@ -99,7 +95,6 @@
         "DataSanitizationPolicy": "CryptographicErase"
       },
       "DataStorageLineOfService": {
-        "Name": "HA-Thin",
         "RecoveryTimeObjective": 0,
         "ProvisioningPolicy": "Thin",
         "SpaceEfficient": true
