@@ -24,19 +24,18 @@
       "target": "/redfish/v1/StorageServices/FileService/StorageGroups/1/Actions/StorageGroup.HideVolumes"
     }
   },
-
-  "Links": {
-    "ParentStorageGroups": [],
-    "ChildStorageGroups": [],
-    "ServerEndpointGroups": [],
-    "ClientEndpointGroups": [],
-    "Volumes": [
+  "ServerEndpointGroups": [],
+  "ClientEndpointGroups": [],
+  "Volumes": [
       {
         "@odata.id": "/redfish/v1/StorageServices/FileService/Volumes/61001234876545676100123487654567"
       },
       {
         "@odata.id": "/redfish/v1/StorageServices/FileService/Volumes/65456765456761001234876100123487"
       }
-    ]
+    ],
+  "Links": {
+    "ParentStorageGroups": [],
+    "ChildStorageGroups": []
   }
 }

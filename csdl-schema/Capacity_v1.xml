@@ -18,14 +18,14 @@
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService_v1.xml">
     <edmx:Include Namespace="ClassOfService"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/Volume_v1.xml">
-    <edmx:Include Namespace="Volume"/>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/VolumeCollection_v1.xml">
+    <edmx:Include Namespace="VolumeCollection"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/Swordfish/v1/StoragePool_v1.xml">
-    <edmx:Include Namespace="StoragePool"/>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/Swordfish/v1/StoragePoolCollection_v1.xml">
+    <edmx:Include Namespace="StoragePoolCollection"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/Swordfish/v1/drive_v1.xml">
-    <edmx:Include Namespace="Drive"/>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/Swordfish/v1/DriveCollection_v1.xml">
+    <edmx:Include Namespace="DriveCollection"/>
   </edmx:Reference>
   
   <edmx:DataServices>
@@ -90,17 +90,17 @@
           <Annotation Term="OData.LongDescription" String="The value shall reference the provided ClassOfService from the ProvidingDrives, ProvidingVolumes or ProvidingPools."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
-        <NavigationProperty Name="ProvidingVolumes" Type="Collection(Volume.Volume)">
+        <NavigationProperty Name="ProvidingVolumes" Type="VolumeCollection.VolumeCollection" ContainsTarget="true">
           <Annotation Term="OData.Description" String="The volume or volumes that provide this space."/>
           <Annotation Term="OData.LongDescription" String="The value shall be a reference to a contributing volume or volumes."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
-        <NavigationProperty Name="ProvidingPools" Type="Collection(StoragePool.StoragePool)">
+        <NavigationProperty Name="ProvidingPools" Type="StoragePoolCollection.StoragePoolCollection" ContainsTarget="true">
           <Annotation Term="OData.Description" String="The pool or pools that provide this space."/>
           <Annotation Term="OData.LongDescription" String="The value shall be a reference to a contributing storage pool or storage pools."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
-        <NavigationProperty Name="ProvidingDrives" Type="Collection(Drive.Drive)">
+        <NavigationProperty Name="ProvidingDrives" Type="DriveCollection.DriveCollection" ContainsTarget="true">
           <Annotation Term="OData.Description" String="The drive or drives that provide this space."/>
           <Annotation Term="OData.LongDescription" String="The value shall be a reference to a contributing drive or drives."/>
           <Annotation Term="OData.AutoExpandReferences"/>

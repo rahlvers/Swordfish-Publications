@@ -18,16 +18,12 @@
     "Health": "OK",
     "HealthRollUp": "Degraded"
   },
+  "ClassesOfService": [],  
+  "AllocatedPools": [],
+  "AllocatedVolumes": {"@odata.id": "/redfish/v1/StorageServices/Simple1/AllocatedVolumes"},
   "Links": {
-    "AllocatedPools": [],
-    "AllocatedVolumes": [
-      {
-        "@odata.id": "/redfish/v1/StorageServices/Simple1/Volumes/1"
-      }
-    ],
     "SourceDevices": [],
     "SourcePools": [],
-    "SourceVolumes": [],
-    "ClassesOfService": []
+    "SourceVolumes": []
   }
 }

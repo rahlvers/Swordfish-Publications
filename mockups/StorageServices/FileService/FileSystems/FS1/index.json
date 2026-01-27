@@ -43,10 +43,8 @@
                 "ProvisionedBytes": 0
             }
         },
-        "ProvidedClassOfService": 
-            {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"},
-        "ProvidingPool": 
-            {"@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool"}
+        "ProvidedClassOfService": {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"},
+		"ProvidingPools": {"@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool/ProvidingPools"}
     }
   ],
   "LowSpaceWarningThresholdPercents": [ 60, 90 ],
@@ -85,8 +83,8 @@
     "Health": "OK",
     "HealthRollUp": "OK"
   },
-  "Links": {
-    "ClassOfService":  
-        {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"}
-  }
+  "ClassOfService": {
+    "Members": [{"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"}]
+  },
+  "Links": {}
 }

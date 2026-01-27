@@ -1,6 +1,6 @@
 {
   "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageGroup.StorageGroup",
+  "@odata.context": "/redfish/v1/$metadata#StorageServices/1/Storage/StorageGroups/2",
   "@odata.id": "/redfish/v1/StorageServices/1/Storage/StorageGroups/2",
   "@odata.type": "#StorageGroup_1_0_0.StorageGroup",
   "Id": "2",
@@ -21,20 +21,13 @@
 	"ReplicaType": "Snapshot",
 	"ReplicaProgressStatus": "Completed",
     "ReplicaRole": "Source",
-    "Replica": {
-      "@odata.id": "http://hf.contoso.org/redfish/v1/StorageServices/2/StorageGroups/2"
-    }
-       
+    "Replica": {"@odata.id": "http://hf.contoso.org/redfish/v1/StorageServices/2/StorageGroups/2"}   
   }],
+  "ServerEndpointGroups": [],
+  "ClientEndpointGroups": [],
+  "Volumes": {"@odata.id": "/redfish/v1/StorageServices/1/Volumes"},
   "Links": {
     "ParentStorageGroups": [],
-    "ChildStorageGroups": [],
-    "ServerEndpointGroups": [],
-    "ClientEndpointGroups": [],
-    "Volumes": [
-      {
-        "@odata.id": "/redfish/v1/StorageServices/1/Volumes/4"
-      }
-    ]
+    "ChildStorageGroups": []
   }
 }

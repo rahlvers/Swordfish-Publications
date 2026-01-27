@@ -145,48 +145,27 @@
                     "description": "The ClassOfService provided from the ProvidingDrives, ProvidingVolumes or ProvidingPools.",
                     "longDescription": "The value shall reference the provided ClassOfService from the ProvidingDrives, ProvidingVolumes or ProvidingPools."
                 },
-                "ProvidingVolumes@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ProvidingVolumes@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "ProvidingVolumes": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/Volume.json#/definitions/Volume"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/VolumeCollection.json#/definitions/VolumeCollection"},
+                        {"type": "null"}
+                    ],
                     "description": "The volume or volumes that provide this space.",
                     "longDescription": "The value shall be a reference to a contributing volume or volumes."
                 },
-                "ProvidingPools@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ProvidingPools@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "ProvidingPools": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StoragePool.json#/definitions/StoragePool"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StoragePoolCollection.json#/definitions/StoragePoolCollection"},
+                        {"type": "null"}
+                    ],
                     "description": "The pool or pools that provide this space.",
                     "longDescription": "The value shall be a reference to a contributing storage pool or storage pools."
                 },
-                "ProvidingDrives@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ProvidingDrives@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "ProvidingDrives": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/v1/Drive.json#/definitions/Drive"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/DriveCollection.json#/definitions/DriveCollection"},
+                        {"type": "null"}
+                    ],
                     "description": "The drive or drives that provide this space.",
                     "longDescription": "The value shall be a reference to a contributing drive or drives."
                 }

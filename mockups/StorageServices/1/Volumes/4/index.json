@@ -38,7 +38,7 @@
           "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldBoston"
         },
         "ProvidingPool": {
-          "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool"
+            "Members": [{"@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool"}]
         },
         "ProvidingVolume": null
       }

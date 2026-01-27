@@ -205,27 +205,17 @@
                             "readonly": true,
                             "description": "A link to the file system containing the file share.",
                             "longDescription": "The value shall be a link to the file system containing the file share."
-                        },
-                        "EthernetInterfaces@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "EthernetInterfaces@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "EthernetInterfaces": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetInterface.json#/definitions/EthernetInterface"
-                            },
-                            "readonly": true,
-                            "description": "A link to the collection of Ethernet interfaces that provide access to this file share.",
-                            "longDescription": "The value shall be a link to an EthernetInterfaceCollection with members that provide access to the file share."
                         }
                     },
                     "readonly": true,
                     "description": "Contains links to other resources that are related to this resource.",
                     "longDescription": "This property shall contain links to other resources that are related to this resource."
+                },
+                "EthernetInterfaces": {
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/EthernetInterfaceCollection.json#/definitions/EthernetInterfaceCollection",
+                    "readonly": true,
+                    "description": "A link to the collection of Ethernet interfaces that provide access to this file share.",
+                    "longDescription": "The value shall be a link to an EthernetInterfaceCollection with members that provide access to the file share."
                 }
             },
             "required": [

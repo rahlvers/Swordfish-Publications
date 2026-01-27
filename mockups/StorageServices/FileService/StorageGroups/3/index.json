@@ -28,11 +28,11 @@
             "@odata.id": "https://10.23.11.12/redfish/v1/StorageSystems/FileServer/StorageServices/X/StorageGroups/10"
         }
   }],
+  "ServerEndpointGroups": [],
+  "ClientEndpointGroups": [],
   "Links": {
     "ParentStorageGroups": [],
     "ChildStorageGroups": [],
-    "ServerEndpointGroups": [],
-    "ClientEndpointGroups": [],
     "Volumes": [
       {
         "@odata.id": "/redfish/v1/StorageServices/FileService/Volumes/5"

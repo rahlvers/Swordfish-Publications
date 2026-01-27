@@ -9,8 +9,8 @@
     <edmx:Include Namespace="RedfishExtensions.v1_0_0" Alias="Redfish"/>
     <edmx:Include Namespace="Validation.v1_0_0" Alias="Validation"/>
   </edmx:Reference>
-  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterface_v1.xml">
-    <edmx:Include Namespace="EthernetInterface"/>
+  <edmx:Reference Uri="http://redfish.dmtf.org/schemas/v1/EthernetInterfaceCollection_v1.xml">
+    <edmx:Include Namespace="EthernetInterfaceCollection"/>
   </edmx:Reference>
   <edmx:Reference Uri="http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfService_v1.xml">
     <edmx:Include Namespace="ClassOfService"/>
@@ -140,6 +140,12 @@
           <Annotation Term="OData.Description" String="Contains links to other resources that are related to this resource." />
           <Annotation Term="OData.LongDescription" String="This property shall contain links to other resources that are related to this resource." />
         </Property>
+        <NavigationProperty Name="EthernetInterfaces" Type="EthernetInterfaceCollection.EthernetInterfaceCollection" Nullable="false" ContainsTarget="true">
+          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
+          <Annotation Term="OData.Description" String="A link to the collection of Ethernet interfaces that provide access to this file share."/>
+          <Annotation Term="OData.LongDescription" String="The value shall be a link to an EthernetInterfaceCollection with members that provide access to the file share."/>
+          <Annotation Term="OData.AutoExpandReferences"/>
+        </NavigationProperty>
       </EntityType>
     
       <ComplexType Name="Links" BaseType="Resource.Links">
@@ -153,12 +159,6 @@
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
           <Annotation Term="OData.Description" String="A link to the file system containing the file share."/>
           <Annotation Term="OData.LongDescription" String="The value shall be a link to the file system containing the file share."/>
-          <Annotation Term="OData.AutoExpandReferences"/>
-        </NavigationProperty>
-        <NavigationProperty Name="EthernetInterfaces" Type="Collection(EthernetInterface.EthernetInterface)" Nullable="false">
-          <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-          <Annotation Term="OData.Description" String="A link to the collection of Ethernet interfaces that provide access to this file share."/>
-          <Annotation Term="OData.LongDescription" String="The value shall be a link to an EthernetInterfaceCollection with members that provide access to the file share."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>
       </ComplexType>

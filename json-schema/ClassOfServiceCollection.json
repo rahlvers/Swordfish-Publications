@@ -1,101 +1,75 @@
 {
-    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/ClassOfServiceCollection.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "title": "#ClassOfServiceCollection.ClassOfServiceCollection",
     "$ref": "#/definitions/ClassOfServiceCollection",
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
         "ClassOfServiceCollection": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
                 },
                 {
-                    "additionalProperties": false,
-                    "description": "A Collection of ClassOfService or LineofService resource instances.",
-                    "longDescription": "This collection shall contain references to all ClassOfService or LineOfService resource instances sharing the same parent resource.",
+                    "type": "object",
                     "patternProperties": {
-                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message)\\.[a-zA-Z_][a-zA-Z0-9_]*$": {
-                            "description": "This property shall specify a valid odata or Redfish property.",
+                        "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
                             "type": [
                                 "array",
                                 "boolean",
-                                "integer",
                                 "number",
                                 "null",
                                 "object",
                                 "string"
-                            ]
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
                         }
                     },
+                    "additionalProperties": false,
                     "properties": {
                         "@odata.context": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/context"
-                        },
-                        "@odata.etag": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/etag"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/context"
                         },
                         "@odata.id": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/id"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/id"
                         },
                         "@odata.type": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/type"
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/type"
                         },
                         "Description": {
                             "anyOf": [
-                                {
-                                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
-                                },
-                                {
-                                    "type": "null"
-                                }
-                            ],
-                            "readonly": true
-                        },
-                        "Members": {
-                            "description": "The value of each member references a ClassOfService or LineOfService resource.",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/LineOfService.json#/definitions/LineOfService"
-                            },
-                            "longDescription": "The value of each member entry shall reference a ClassOfService or LineOfService resource.",
-                            "readonly": true,
-                            "type": "array"
-                        },
-                        "Members@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/count"
-                        },
-                        "Members@odata.nextLink": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/nextLink"
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
+                                {"type": "null"}
+                            ]
                         },
                         "Name": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
-                            "readonly": true
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"
                         },
                         "Oem": {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
-                            "description": "The OEM extension property.",
-                            "longDescription": "This property shall contain the OEM extensions.  All values for properties contained in this object shall conform to the Redfish Specification-described requirements."
+                            "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
+                            "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                        },
+                        "Members@odata.count": {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                        },
+                        "Members@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "Members": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"
+                            },
+                            "readonly": true,
+                            "description": "The value of each member references a ClassOfService resource.",
+                            "longDescription": "The value of each member entry shall reference a ClassOfService resource."
                         }
-                    },
-                    "required": [
-                        "Members",
-                        "Members@odata.count",
-                        "@odata.id",
-                        "@odata.type",
-                        "Name"
-                    ],
-                    "type": "object"
+                    }
                 }
             ],
-            "deletable": false,
-            "insertable": true,
-            "updatable": false,
-            "uris": [
-                "/redfish/v1/StorageServices/{StorageServiceId}/ClassesOfService",
-                "/redfish/v1/StorageServices/{StorageServiceId}/StoragePools/{StoragePoolId}/ClassesOfService"
-            ]
+            "description": "A Collection of ClassOfService resource instances.",
+            "longDescription": "This collection shall contain references to all ClassOfService resource instances sharing the same parent resource."
         }
     },
-    "language": "en",
-    "owningEntity": "SNIA",
-    "title": "#ClassOfServiceCollection.ClassOfServiceCollection"
+    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

@@ -30,7 +30,7 @@
           "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldBoston"
         },
         "ProvidingPool": {
-          "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool"
+            "Members": [{"@odata.id": "/redfish/v1/StorageServices/1/StoragePools/BasePool"}]
         },
         "ProvidingVolume": null
       }
@@ -46,17 +46,9 @@
     "Health": "OK",
     "HealthRollUp": "Degraded"
   },
+  "ClassOfService": {"@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService"},
+  "AllocatedPools": [],
+  "AllocatedVolumes": {"@odata.id": "/redfish/v1/StorageServices/1/Volumes"},
   "Links": {
-    "AllocatedPools": [],
-    "AllocatedVolumes": [
-      {
-        "@odata.id": "/redfish/v1/StorageServices/1/Volumes/65456765456761001234876100123487"
-      }
-    ],
-    "ClassesOfService": [
-      {
-        "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/GoldBoston"
-      }
-    ]
   }
 }

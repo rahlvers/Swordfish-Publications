@@ -27,11 +27,11 @@
     }
        
   }],
+  "ServerEndpointGroups": [],
+  "ClientEndpointGroups": [],
   "Links": {
     "ParentStorageGroups": [],
     "ChildStorageGroups": [],
-    "ServerEndpointGroups": [],
-    "ClientEndpointGroups": [],
     "Volumes": [
       {
         "@odata.id": "/redfish/v1/StorageServices/FileService/Volumes/4"

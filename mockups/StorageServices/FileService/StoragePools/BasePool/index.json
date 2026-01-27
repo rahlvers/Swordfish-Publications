@@ -44,6 +44,12 @@
     "Health": "OK",
     "HealthRollUp": "Degraded"
   },
+  "ClassesOfService": {
+    "Members":[
+        {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"},
+        {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/SilverBoston"}
+    ]
+  },
   "Links": {
     "AllocatedPools": [],
     "AllocatedVolumes": [

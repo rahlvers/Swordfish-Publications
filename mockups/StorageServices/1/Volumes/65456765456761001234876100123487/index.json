@@ -35,9 +35,11 @@
         "ClassOfService": {
           "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverBoston"
         },
-        "ProvidingPool": {
-          "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool"
-        },
+		"ProvidingPool": {
+			"Members": [{
+				"@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool"
+			}]
+		},
         "ProvidingVolume": null
       }
     }

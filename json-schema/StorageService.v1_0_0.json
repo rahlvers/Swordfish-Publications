@@ -184,22 +184,6 @@
                             "description": "The hosting system.",
                             "longDescription": "The value shall reference the ComputerSystem that hosts this service."
                         },
-                        "ClassesOfService@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                        },
-                        "ClassesOfService@odata.navigationLink": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "ClassesOfService": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"
-                            },
-                            "readonly": false,
-                            "description": "The ClassesOfService that all storage in this StorageService can support.",
-                            "longDescription": "The value of each enty in the array shall reference a ClassOfService supported by this service."
-                        },
                         "DefaultClassOfService": {
                             "anyOf": [
                                 {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
@@ -301,50 +285,29 @@
                     "description": "The available actions for this resource.",
                     "longDescription": "The Actions property shall contain the available actions for this resource."
                 },
-                "StorageGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "StorageGroups@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "StorageGroups": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageAccessGroup.json#/definitions/StorageGroup"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageGroupCollection.json#/definitions/StorageGroupCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": true,
                     "description": "StorageGroups.",
                     "longDescription": "The value of each enty in the array shall reference a StorageGroup."
                 },
-                "ClientEndpointGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ClientEndpointGroups@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "ClientEndpointGroups": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroup.json#/definitions/EndpointGroup"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": false,
                     "description": "Client endpoint groups.",
                     "longDescription": "The value of each entry in the array shall reference an EndpointGroup."
                 },
-                "ServerEndpointGroups@odata.count": {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
-                },
-                "ServerEndpointGroups@odata.navigationLink": {
-                    "type": "string",
-                    "format": "uri"
-                },
                 "ServerEndpointGroups": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroup.json#/definitions/EndpointGroup"
-                    },
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/EndpointGroupCollection.json#/definitions/EndpointGroupCollection"},
+                        {"type": "null"}
+                    ],
                     "readonly": false,
                     "description": "Server endpoint groups.",
                     "longDescription": "The value of each entry in the array shall reference a EndpointGroup."
@@ -396,6 +359,15 @@
                     },
                     "readonly": true,
                     "description": "Redundancy information for the storage subsystem"
+                },
+                "ClassesOfService": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfServiceCollection.json#/definitions/ClassOfServiceCollection"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The ClassesOfService that all storage in this StorageService can support.",
+                    "longDescription": "The value of each enty in the array shall reference a ClassOfService supported by this service."
                 }
             },
             "required": [
