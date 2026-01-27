@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright  2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#Thermal.Thermal",
+  "@Redfish.Copyright": "Copyright � 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/StorageChassis1/Thermal/$entity",
   "@odata.id": "/redfish/v1/Chassis/StorageChassis1/Thermal",
-  "@odata.type": "#Thermal.v1_1_0.Thermal",
+  "@odata.type": "#Thermal.1.0.0.Thermal",
   "Id": "Thermal",
   "Name": "Thermal",
   "Temperatures": [
@@ -30,10 +30,10 @@
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
         },
         {
-          "@odata.id": "/redfish/v1/Systems/Simple"
+          "@odata.id": "/redfish/v1/StorageSystems/Simple"
         },
         {
-          "@odata.id": "/redfish/v1/Systems/Complex"
+          "@odata.id": "/redfish/v1/StorageSystems/Complex"
         }
       ]
     }
@@ -64,10 +64,10 @@
       ],
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/Systems/Simple"
+          "@odata.id": "/redfish/v1/StorageSystems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/Systems/Complex"
+          "@odata.id": "/redfish/v1/StorageSystems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
@@ -99,10 +99,10 @@
       ],
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/Systems/Simple"
+          "@odata.id": "/redfish/v1/StorageSystems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/Systems/Complex"
+          "@odata.id": "/redfish/v1/StorageSystems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"

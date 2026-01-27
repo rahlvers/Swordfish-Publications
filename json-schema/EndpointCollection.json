@@ -1,7 +1,7 @@
 {
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "title": "#EndpointCollection.EndpointCollection",
     "$ref": "#/definitions/EndpointCollection",
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_2_0.json",
-    "copyright": "Copyright 2016-2017 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright",
     "definitions": {
         "EndpointCollection": {
             "anyOf": [
@@ -9,12 +9,9 @@
                     "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
                 },
                 {
-                    "additionalProperties": false,
-                    "description": "A Collection of Endpoint resource instances.",
-                    "longDescription": "An instance of this resource shall reference the set of Endpoint resources known in the scope of its use.",
+                    "type": "object",
                     "patternProperties": {
                         "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
-                            "description": "This property shall specify a valid odata or Redfish property.",
                             "type": [
                                 "array",
                                 "boolean",
@@ -22,9 +19,11 @@
                                 "null",
                                 "object",
                                 "string"
-                            ]
+                            ],
+                            "description": "This property shall specify a valid odata or Redfish property."
                         }
                     },
+                    "additionalProperties": false,
                     "properties": {
                         "@odata.context": {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/context"
@@ -37,41 +36,40 @@
                         },
                         "Description": {
                             "anyOf": [
-                                {
-                                    "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"
-                                },
-                                {
-                                    "type": "null"
-                                }
-                            ],
-                            "readonly": true
-                        },
-                        "Members": {
-                            "description": "The value of each member references an Endpoint resource.",
-                            "items": {
-                                "$ref": "http://redfish.dmtf.org/schemas/v1/Endpoint.json#/definitions/Endpoint"
-                            },
-                            "longDescription": "The value of each member entry shall reference an Endpoint resource.",
-                            "readonly": true,
-                            "type": "array"
-                        },
-                        "Members@odata.count": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                                {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Description"},
+                                {"type": "null"}
+                            ]
                         },
                         "Name": {
-                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name",
-                            "readonly": true
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"
                         },
                         "Oem": {
                             "$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Oem",
                             "description": "This is the manufacturer/provider specific extension moniker used to divide the Oem object into sections.",
                             "longDescription": "The value of this string shall be of the format for the reserved word *Oem*."
+                        },
+                        "Members@odata.count": {
+                            "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/count"
+                        },
+                        "Members@odata.navigationLink": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "Members": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "http://redfish.dmtf.org/schemas/v1/Endpoint.json#/definitions/Endpoint"
+                            },
+                            "readonly": true,
+                            "description": "The value of each member references an Endpoint resource.",
+                            "longDescription": "The value of each member entry shall reference an Endpoint resource."
                         }
-                    },
-                    "type": "object"
+                    }
                 }
-            ]
+            ],
+            "description": "A Collection of Endpoint resource instances.",
+            "longDescription": "An instance of this resource shall reference the set of Endpoint resources known in the scope of its use."
         }
     },
-    "title": "#EndpointCollection.EndpointCollection"
+    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

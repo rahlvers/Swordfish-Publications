@@ -1,22 +1,21 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
+  "@SSM.Copyright": "Copyright © 2014-2016 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#ClassOfService.ClassOfService",
   "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverProvidence",
-  "@odata.type": "#ClassOfService.v1_0_0.ClassOfService",
+  "@odata.type": "#ClassOfService_1_0_0.ClassOfService",
   "Id": "SilverProvidence",
   "Name": "SilverProvidence",
   "Description": "Silver class of service in Providence",
   "ClassOfServiceVersion": "01.00.00",
+  "IsDefault": false,
   "LinesOfService": {
       "IOConnectivityLineOfService": {
-        "Name": "FiberChannel",
         "AccessProtocol": "FC",
         "MaxSupportedIoOperationsPerSecond": null
       },
       "IOPerformanceLineOfService": {
-        "Name": "Heavy-OLTP-HDD",
         "IoOperationsPerSecondIsLimitedBoolean": "false",
-        "SamplePeriod": "PT1M",
+        "SamplePeriodSeconds": 60,
         "MaxIoOperationsPerSecondPerTerabyte": 83,
         "AverageIoOperationLatencyMicroseconds": 8000,
         "IOWorkload": {
@@ -25,7 +24,6 @@
       },
       "DataProtectionLineOfService": [],
       "DataSecurityLineOfService": {
-        "Name": "SecureData",
         "MediaEncryptionStrength": "Bits_256",
         "ChannelEncryptionStrength": "Bits_128",
         "HostAuthenticationType": "Ticket",
@@ -36,7 +34,6 @@
         "DataSanitizationPolicy": "CryptographicErase"
       },
       "DataStorageLineOfService": {
-        "Name": "HA-Thin",
         "RecoveryTimeObjective": 0,
         "ProvisioningPolicy": "Thin",
         "SpaceEfficient": true

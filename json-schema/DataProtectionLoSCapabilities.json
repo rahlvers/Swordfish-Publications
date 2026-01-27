@@ -1,35 +1,122 @@
 {
-    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "title": "#DataProtectionLoSCapabilities.DataProtectionLoSCapabilities",
     "$ref": "#/definitions/DataProtectionLoSCapabilities",
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
+        "DataProtectionLineOfService": {
+            "type": "object",
+            "patternProperties": {
+                "^([a-zA-Z_][a-zA-Z0-9_]*)?@(odata|Redfish|Message|Privileges)\\.[a-zA-Z_][a-zA-Z0-9_.]+$": {
+                    "type": [
+                        "array",
+                        "boolean",
+                        "number",
+                        "null",
+                        "object",
+                        "string"
+                    ],
+                    "description": "This property shall specify a valid odata or Redfish property."
+                }
+            },
+            "additionalProperties": true,
+            "properties": {
+                "RecoveryGeographicObjective": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/FailureDomainScope"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Geographic distribution scopes",
+                    "longDescription": "The value specifies the geograhic scope of the failure domain."
+                },
+                "RecoveryPointObjectiveSeconds": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Time interval defining how much source data that can be lost on failure.",
+                    "longDescription": "The amount of source data that can be lost on failure shall be bound by this time interval."
+                },
+                "RecoveryTimeObjective": {
+                    "anyOf": [
+                        {"$ref": "#/definitions/RecoveryAccessScope"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Time to access an alternate replica.",
+                    "longDescription": "The maximum time required to access an alternate replica shall be less than this time interval."
+                },
+                "ReplicaType": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/StorageReplicaInfo.json#/definitions/ReplicaType"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Type of replica.",
+                    "longDescription": "The type of replica shall conform to this value."
+                },
+                "MinLifetimeSeconds": {
+                    "type": [
+                        "number",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "Minimum lifetime (seconds) that replica must be maintained.",
+                    "longDescription": "Replicas conforming to this line of service shall have at least the specified minimum lifetime (seconds). Note: The maximum number of replicas can be determined using this value together with the replicaSchedule."
+                },
+                "IsIsolated": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "readonly": false,
+                    "description": "The replica is in a separate fault domain.",
+                    "longDescription": "True shall indicate that the replica is in a separate fault domain from its source."
+                },
+                "Schedule": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/Schedule.json#/definitions/Schedule"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "A schedule for making periodic point in time replicas.",
+                    "longDescription": "If a replica is made periodically, the value shall define the schedule."
+                },
+                "ReplicaAccessLocation": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/Location.json#/definitions/Location"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "Location that supplies data access to the replica.",
+                    "longDescription": "This value shall be used if the data access location of the replica is required to be at a specific location.   Note 1: The location value may be granular.  Note 2: A value may be required for some regulatory compliance."
+                },
+                "ReplicaClassOfService": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/ClassOfService.json#/definitions/ClassOfService"},
+                        {"type": "null"}
+                    ],
+                    "readonly": false,
+                    "description": "The replica's class of service.",
+                    "longDescription": "The value shall reference the class of service that defines the required service levels of the replica."
+                }
+            },
+            "description": "Describes a data protection service option.",
+            "longDescription": "This service option describes a replica that protects data from loss. The requirements must be met collectively by the communication path and the replica."
+        },
         "DataProtectionLoSCapabilities": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_0_3.json#/definitions/DataProtectionLoSCapabilities"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_1_3.json#/definitions/DataProtectionLoSCapabilities"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/DataProtectionLoSCapabilities.v1_2_0.json#/definitions/DataProtectionLoSCapabilities"
+                    "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/DataProtectionLoSCapabilities.v1_0_0.json#/definitions/DataProtectionLoSCapabilities"
                 }
-            ],
-            "deletable": false,
-            "description": "The capabilities to protect data from loss by the use of a replica.",
-            "insertable": false,
-            "longDescription": "The capabilities to protect data from loss by the use of a replica. The requirements must be met collectively by the communication path and the replica. There will be one instance associated to a class of service for each replica. Each replica has its own class of service that describes its characteristics.",
-            "updatable": true,
-            "uris": [
-                "/redfish/v1/StorageServices/{StorageServiceId}/DataProtectionLoSCapabilities"
             ]
         },
         "FailureDomainScope": {
-            "description": "Values of this enumeration represent a geographic scope of a failure domain.",
+            "type": "string",
             "enum": [
                 "Server",
                 "Rack",
@@ -39,49 +126,47 @@
                 "Region"
             ],
             "enumDescriptions": {
-                "Datacenter": "A co-located set of servers, including network and storage that share communication, power, or cooling infrastructure.",
+                "Server": "A CPU/memory complex.",
                 "Rack": "A container for Servers, Networking, and Storage.",
                 "RackGroup": "A set of Racks that share common infrastructure.",
-                "Region": "A geographical or politically isolated set of resources.",
                 "Row": "An adjacent set of racks.",
-                "Server": "A CPU/memory complex."
+                "Datacenter": "A co-located set of servers, including network and storage that share communication, power, or cooling infrastructure.",
+                "Region": "A geographical or politically isolated set of resources."
             },
             "enumLongDescriptions": {
-                "Datacenter": "A facility that provides communication, power, or cooling infrastructure to a co-located set of servers, networking and storage.",
+                "Server": "Components of a CPU/memory complex that share the same infrastructure.",
                 "Rack": "A container within a datacenter that provides communication, power, or cooling to a set of components.",
                 "RackGroup": "A set of racks that may share common communication, power, or cooling.",
-                "Region": "A set of resources that are required to be either geographically or politically isolated from resources not in the resources.",
                 "Row": "A set of adjacent racks or rackgroups that may share common communication, power, or cooling.",
-                "Server": "Components of a CPU/memory complex that share the same infrastructure."
+                "Datacenter": "A facility that provides communication, power, or cooling infrastructure to a co-located set of servers, networking and storage.",
+                "Region": "A set of resources that are required to be either geographically or politically isolated from resources not in the resources."
             },
-            "longDescription": "The enumeration literals of this enumeration shall represent a geographic scope in which all components within that scope have similar vulnerabilities.",
-            "type": "string"
+            "description": "Values of this enumeration represent a geographic scope of a failure domain.",
+            "longDescription": "The enumeration literals of this enumeration shall represent a geographic scope in which all components within that scope have similar vulnerabilities."
         },
         "RecoveryAccessScope": {
-            "description": "An enumeration that represents the relative time required to make a replica available as a source.",
+            "type": "string",
             "enum": [
-                "OnlineActive",
-                "OnlinePassive",
+                "Immediate",
+                "Online",
                 "Nearline",
                 "Offline"
             ],
             "enumDescriptions": {
+                "Immediate": "Active access to synchronous replicas.",
+                "Online": "Passive access to replicas via the same front-end interconnect.",
                 "Nearline": "Access to replica via a different front-end interconnect. A restore step is required before recovery can commence.",
-                "Offline": "No direct connection to the replica. (i.e. To a bunker containing backup media).",
-                "OnlineActive": "Active access to synchronous replicas.",
-                "OnlinePassive": "Passive access to replicas via the same front-end interconnect."
+                "Offline": "No direct connection to the replica. (i.e. To a bunker containing backup media.)"
             },
             "enumLongDescriptions": {
+                "Immediate": "Access to synchronous replicas shall be instantaneous.",
+                "Online": "Access to a synchronous replica shall be consistent with switching access to a different path the same front-end interconnect.  A restore step shall not be required.",
                 "Nearline": "Access to a replica shall be consistent with switching access to a different path through a different front-end interconnection infrastructure.  Some inconsistency may occur.  A restore step may be required before recovery can commence.",
-                "Offline": "Access to a replica may take a significant amount of time.  No direct connection to the replica is assumed. Some inconsistency loss may occur.  A restore step is likely to be required.",
-                "OnlineActive": "Access to synchronous replicas shall be instantaneous.",
-                "OnlinePassive": "Access to a synchronous replica shall be consistent with switching access to a different path the same front-end interconnect.  A restore step shall not be required."
+                "Offline": "Access to a replica may take a significant amount of time.  No direct connection to the replica is assumed. Some inconsistency loss may occur.  A restore step is likely to be required."
             },
-            "longDescription": "The enumeration literals shall represent the relative time required to make a replica available as a source.",
-            "type": "string"
+            "description": "An enumeration that represents the relative time required to make a replica available as a source.",
+            "longDescription": "The enumeration literals shall represent the relative time required to make a replica available as a source. "
         }
     },
-    "language": "en",
-    "owningEntity": "SNIA",
-    "title": "#DataProtectionLoSCapabilities.DataProtectionLoSCapabilities"
+    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

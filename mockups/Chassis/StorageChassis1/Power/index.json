@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#Power.Power",
+  "@Redfish.Copyright": "Copyright © 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/1/Power/$entity",
   "@odata.id": "/redfish/v1/Chassis/StorageChassis1/Power",
-  "@odata.type": "#Power.v1_5_0.Power",
+  "@odata.type": "#Power.1.0.0.Power",
   "Id": "Power",
   "Name": "Power",
   "PowerControl": [
@@ -28,10 +28,10 @@
       },
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/Systems/Simple"
+          "@odata.id": "/redfish/v1/StorageSystems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/Systems/Complex"
+          "@odata.id": "/redfish/v1/StorageSystems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
@@ -66,10 +66,10 @@
       "PhysicalContext": "VoltageRegulator",
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/Systems/Simple"
+          "@odata.id": "/redfish/v1/StorageSystems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/Systems/Complex"
+          "@odata.id": "/redfish/v1/StorageSystems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"
@@ -95,10 +95,10 @@
       "PhysicalContext": "VoltageRegulator",
       "RelatedItem": [
         {
-          "@odata.id": "/redfish/v1/Systems/Simple"
+          "@odata.id": "/redfish/v1/StorageSystems/Simple"
         },
 		{
-          "@odata.id": "/redfish/v1/Systems/Complex"
+          "@odata.id": "/redfish/v1/StorageSystems/Complex"
         },
         {
           "@odata.id": "/redfish/v1/Chassis/StorageChassis1"

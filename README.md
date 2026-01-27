@@ -2,7 +2,7 @@
   <img src="https://www.snia.org/sites/default/files/2025-06/sdfishlogo_0.png" alt="SNIA Swordfish" width=180></p>
   
 # Swordfish-Publications
-This repository contains official read-only copies of published SNIA Swordfish schemas, message registries, profiles, and templates.
+This repository contains official read-only copies of published SNIA Swordfish schemas, message registries, profiles, mockups, and templates.
 
 This replicates the contents of official SNIA Swordfish releases (corresponding to the Swordfish Scalable Storage Management API Specification as supporting content) with release tags that match the publication versions.  Tags on this repository also indicate Working Draft vs SNIA Standard (Full Release) versions.
 

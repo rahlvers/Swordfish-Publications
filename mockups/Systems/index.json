@@ -1,24 +1,16 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@Redfish.Copyright": "Copyright © 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#Systems",
   "@odata.id": "/redfish/v1/Systems",
   "@odata.type": "#ComputerSystemCollection.ComputerSystemCollection",
   "Name": "Computer System Collection",
-  "Members@odata.count": 5,
+  "Members@odata.count": 2,
   "Members": [
     {
       "@odata.id": "/redfish/v1/Systems/1"
     },
     {
       "@odata.id": "/redfish/v1/Systems/2"
-    },    {
-      "@odata.id": "/redfish/v1/Systems/Simple"
-    },
-    {
-      "@odata.id": "/redfish/v1/Systems/Complex"
-    },
-    {
-      "@odata.id": "/redfish/v1/Systems/FileServer"
     }
   ]
 }

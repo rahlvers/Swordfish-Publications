@@ -1,12 +1,13 @@
 {
-	"@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+	"@SSM.Copyright": "Copyright © 2014-2016 SNIA. All rights reserved.",
 	"@odata.context": "/redfish/v1/$metadata#IOPerformanceLoSCapabilities.IOPerformanceLoSCapabilities",
 	"@odata.id": "/redfish/v1/StorageServices/1/IOPerformanceLoSCapabilities",
-	"@odata.type": "#IOPerformanceLoSCapabilities.v1_0_0.IOPerformanceLoSCapabilities",
+	"@odata.type": "#IOPerformanceLoSCapabilities_1_0_0.IOPerformanceLoSCapabilities",
 	"Name": "IOPerformanceLoSCapabilities",
 	"IoOperationsPerSecondLimitingIsSupported": true,
-	"MinSamplePeriod": "PT5S",
-	"MaxSamplePeriod": "PT1H",
+	"SupportedSamplePeriodSeconds": [5,
+	60,
+	3600],
 	"MaxIoOperationsPerSecondPerTerabyte": 1000,
 	"MinAverageIoOperationLatencyMicroseconds": 200,
 	"SupportedIOWorkloads": [{
@@ -30,9 +31,9 @@
 			"PercentOfIOPS ": 66
 		}]
 	}],
-	"SupportedLinesOfService": [{
+	"SupportedIOPerformanceLinesOfService": [{
 		"IoOperationsPerSecondIsLimitedBoolean": false,
-		"SamplePeriod": "PT1M",
+		"SamplePeriodSeconds": 60,
 		"MaxIoOperationsPerSecondPerTerabyte": 83,
 		"AverageIoOperationLatencyMicroseconds": 8000,
 		"IOWorkload": {
@@ -41,7 +42,7 @@
 	},
 	{
 		"IoOperationsPerSecondIsLimitedBoolean": "false",
-		"SamplePeriod": "PT1M",
+		"SamplePeriodSeconds": 60,
 		"MaxIoOperationsPerSecondPerTerabyte": 133,
 		"AverageIoOperationLatencyMicroseconds": 5000,
 		"IOWorkload": {

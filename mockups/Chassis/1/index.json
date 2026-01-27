@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#Chassis.Chassis",
+  "@Redfish.Copyright": "Copyright © 2014-2015 Distributed Management Task Force, Inc. (DMTF). All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#Chassis/Members/$entity",
   "@odata.id": "/redfish/v1/Chassis/1",
-  "@odata.type": "#Chassis.v1_6_0.Chassis",
+  "@odata.type": "#Chassis.1.0.0.Chassis",
   "Id": "1",
   "Name": "Computer System Chassis",
   "ChassisType": "RackMount",
@@ -30,11 +30,11 @@
       }
     ],
     "ContainedBy": {
-      "@odata.id": "/redfish/v1/Chassis/1URack"
+      "@odata.id": "/redfish/v1/Chassis/Rack1"
     },
     "ManagedBy": [
       {
-        "@odata.id": "/redfish/v1/Managers/StorageManager1"
+        "@odata.id": "/redfish/v1/Managers/1"
       }
     ],
     "Oem": {}

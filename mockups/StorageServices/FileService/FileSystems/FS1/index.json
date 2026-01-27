@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#FileSystem.FileSystem",
-  "@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1",
-  "@odata.type": "#FileSystem.v1_0_0.FileSystem",
+  "@SSM.Copyright": "Copyright © 2014-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StorageGroup.StorageGroup",
+  "@odata.id": "/redfish/v1/Storage/1/Storage/FileSystems/FS1",
+  "@odata.type": "#FileSystem.FileSystem",
   "Id": "FS1",
   "Name": "Root",
   "Description": "Root FileSystem, not replicated.",
@@ -43,8 +43,10 @@
                 "ProvisionedBytes": 0
             }
         },
-        "ProvidedClassOfService": {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"},
-		"ProvidingPools": {"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ProvidingPools"}
+        "ProvidedClassOfService": 
+            {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"},
+        "ProvidingPool": 
+            {"@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool"}
     }
   ],
   "LowSpaceWarningThresholdPercents": [ 60, 90 ],
@@ -57,14 +59,34 @@
   "FileSystemType": "CIFS",
   "FileSystemPersistenceType": "Persistent",
   "ResizeIncrementBytes": 256,
-  "ExportedShares": {"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1/ExportedFileShares"},
+  "ExportedShares": [{ 
+        "SharedFilePath": "/Shares/MyShare",
+        "Name": "MyShare",
+        "FileSharingProtocols": ["SMBv3_1_1"],
+        "Status": {
+            "State": "Enabled",
+            "Health": "OK",
+            "HealthRollUp": "OK"
+        },
+        "DefaultReadAccess": true,
+        "DefaultWriteAccess": true,
+        "ExecuteSupport": true,
+        "RootAccess": true,
+        "CASupported": true,
+        "Links": {
+		  "EthernetInterfaces": 
+			{"@odata.id": "/redfish/v1/StorageServices/FileServer/EthernetInterfaces/1"},
+		"FileSystem": 
+			{"@odata.id": "/redfish/v1/StorageServices/FileService/FileSystems/FS1"}
+		}
+    }],
   "Status": {
     "State": "Enabled",
     "Health": "OK",
     "HealthRollUp": "OK"
   },
-  "ClassOfService": {
-    "Members": [{"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldDallas"}]
-  },
-  "Links": {}
+  "Links": {
+    "ClassOfService":  
+        {"@odata.id": "/redfish/v1/StorageServices/FileService/ClassesOfService/GoldBoston"}
+  }
 }

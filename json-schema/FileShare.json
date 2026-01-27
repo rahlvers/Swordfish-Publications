@@ -1,40 +1,55 @@
 {
-    "$id": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.json",
+    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema.v1_1_0.json",
+    "title": "#FileShare.FileShare",
     "$ref": "#/definitions/FileShare",
-    "$schema": "http://redfish.dmtf.org/schemas/v1/redfish-schema-v1.json",
-    "copyright": "Copyright 2015-2025 Storage Networking Industry Association (SNIA), USA. All rights reserved.",
     "definitions": {
+        "AccessCapability": {
+            "type": "string",
+            "enum": [
+                "Read",
+                "Write",
+                "Execute"
+            ],
+            "enumDescriptions": {
+                "Read": "Read access is allowed by the file share.",
+                "Write": "Write access is allowed by the file share.",
+                "Execute": "Execute access is allowed by the file share."
+            },
+            "enumLongDescriptions": {
+                "Read": "This value shall indicate that Read access is allowed by the file share.",
+                "Write": "This value shall indicate that Write access is allowed by the file share.",
+                "Execute": "This value shall indicate that Execute access is allowed by the file share."
+            },
+            "description": "Indicates the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute.",
+            "longDescription": "The values shall indicate the types of access allowed by this file share. The types of access allowed can include Read, Write, and/or Execute."
+        },
         "FileShare": {
             "anyOf": [
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata-v4.json#/definitions/idRef"
+                    "$ref": "http://redfish.dmtf.org/schemas/v1/odata.4.0.0.json#/definitions/idRef"
                 },
                 {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_0_2.json#/definitions/FileShare"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_1_3.json#/definitions/FileShare"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_2_0.json#/definitions/FileShare"
-                },
-                {
-                    "$ref": "http://redfish.dmtf.org/schemas/swordfish/v1/FileShare.v1_3_0.json#/definitions/FileShare"
+                    "$ref": "http://redfish.dmtf.org/schemas/Swordfish/v1/FileShare.v1_0_0.json#/definitions/FileShare"
                 }
-            ],
-            "deletable": true,
-            "description": "A shared set of files.",
-            "insertable": false,
-            "longDescription": "This resource shall be used to represent a shared set of files.",
-            "updatable": true,
-            "uris": [
-                "/redfish/v1/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedFileShares/{ExportedFileSharesId}",
-                "/redfish/v1/Systems/{ComputerSystemsId}/Storage/{StorageId}/FileSystems/{FileSystemsId}/ExportedFileShares/{ExportedFileSharesId}",
-                "/redfish/v1/StorageServices/{StorageServiceId}/FileSystems/{FileSystemsId}/ExportedFileShares/{ExportedFileSharesId}"
             ]
+        },
+        "QuotaType": {
+            "type": "string",
+            "enum": [
+                "Soft",
+                "Hard"
+            ],
+            "enumDescriptions": {
+                "Soft": "Quotas are enabled but not enforced.",
+                "Hard": "Quotas are enabled and enforced."
+            },
+            "enumLongDescriptions": {
+                "Soft": "This value shall indicate that quotas are enabled but not enforced.",
+                "Hard": "This value shall indicate that quotas are enabled and enforced."
+            },
+            "description": "Indicates whether quotas are enabled and enforced by this file share. A value of Soft means that quotas are enabled but not enforced, and a value of Hard means that quotas are enabled and enforced.",
+            "longDescription": "The value shall indicate whether quotas are enabled and enforced by this file share. If QuotaType is present, a value of Soft shall mean that quotas are enabled but not enforced, and a value of Hard shall mean that quotas are enabled and enforced."
         }
     },
-    "language": "en",
-    "owningEntity": "SNIA",
-    "title": "#FileShare.FileShare"
+    "copyright": "Copyright 2016 Storage Networking Industry Association (SNIA), USA. All rights reserved. For the full SNIA copyright policy, see http://www.snia.org/about/corporate_info/copyright"
 }

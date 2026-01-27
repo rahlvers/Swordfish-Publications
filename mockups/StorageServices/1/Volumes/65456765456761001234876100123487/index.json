@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+  "@SSM.Copyright": "Copyright � 2014-2016 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#Volume.Volume",
   "@odata.id": "/redfish/v1/StorageServices/1/Volumes/65456765456761001234876100123487",
-  "@odata.type": "#Volume.v1_3_0.Volume",
+  "@odata.type": "#Volume_1_0_0.Volume",
   "Name": "Volume 2",
   "Id": "65456765456761001234876100123487",
   "Description": "Excel Data",
@@ -35,11 +35,9 @@
         "ClassOfService": {
           "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverBoston"
         },
-		"ProvidingPool": {
-			"Members": [{
-				"@odata.id": "/redfish/v1/StorageServices/FileService/StoragePools/SpecialPool"
-			}]
-		},
+        "ProvidingPool": {
+          "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool"
+        },
         "ProvidingVolume": null
       }
     }
@@ -62,5 +60,7 @@
       "ProvisionedBytes": 2199023255552
     }
   },
-  "AllocatedPools": null
+  "Links": {
+    "AllocatedPool": null
+  }
 }

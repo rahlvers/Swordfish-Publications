@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2014-2018 SNIA. All rights reserved.",
+  "@SSM.Copyright": "Copyright 2014-2016 SNIA. All rights reserved.",
   "@odata.context": "/redfish/v1/$metadata#Volume.Volume",
-  "@odata.id": "/redfish/v1/StorageServices/1/Volumes/5",
-  "@odata.type": "#Volume.v1_3_0.Volume",
+  "@odata.id": "/redfish/v1/StorageServices/1/Volumes/4",
+  "@odata.type": "#Volume_1_0_0.Volume",
   "Name": "Volume 5",
   "Id": "5",
   "Description": "",
@@ -36,7 +36,7 @@
           "@odata.id": "/redfish/v1/StorageServices/1/ClassesOfService/SilverBoston"
         },
         "ProvidingPool": {
-            "Members": [{"@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool"}]
+          "@odata.id": "/redfish/v1/StorageServices/1/StoragePools/SpecialPool"
         },
         "ProvidingVolume": null
       }
@@ -61,12 +61,17 @@
     }
   },
   "ReplicaInfos": [{
-    "ReplicaState": "Synchronized",
-    "ReplicaProgressStatus": "Completed",
-    "Replica": {"@odata.id": "https://10.1.22.18/redfish/v1/StorageServices/X/Volume/A1x2"}
+	"ReplicaState": "Synchronized",
+	"ReplicaProgressStatus": "Completed",
+	"ReplicaRole": "Target",
+	"@odata.id": {
+	  "Replica": "https://10.1.22.18/redfish/v1/StorageServices/X/Volume/A1x2"
+	}
   }],
-  "AllocatedPools": null,
-  "StorageGroups": {
-		"@odata.id": "/redfish/v1/StorageServices/1/Volumes/5/StorageGroups"
+  "Links": {
+    "AllocatedPool": null,
+	"StorageGroup": {
+		"@odata.id": "/redfish/v1/StorageServices/1/StorageGroups/3"
+	}
   }
 }

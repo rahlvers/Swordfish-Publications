@@ -1,8 +1,8 @@
 {
-  "@Redfish.Copyright": "Copyright 2015-2018 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StoragePoolCollection.StoragePoolCollection",
+  "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
+  "@odata.context": "/redfish/v1/$metadata#StoragePoolsCollection.StoragePoolsCollection",
   "@odata.id": "/redfish/v1/StorageServices/Simple1/StoragePools",
-  "@odata.type": "#StoragePoolCollection.StoragePoolCollection",
+  "@odata.type": "#StoragePoolsCollection_1_0_0.StoragePoolsCollection",
   "Name": "StoragePools",
   "Members@odata.count": 1,
   "Members": [
