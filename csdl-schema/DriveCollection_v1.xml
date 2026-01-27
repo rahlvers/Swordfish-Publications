@@ -19,10 +19,10 @@
 
       <EntityType Name="DriveCollection" BaseType="Resource.v1_0_0.ResourceCollection">
         <Annotation Term="OData.Description" String="A Collection of Drive resource instances."/>
-        <Annotation Term="OData.LongDescription" String="An instance of this resource shall reference the set of Drive resources known in the scope of its use."/>"/>
+        <Annotation Term="OData.LongDescription" String="An instance of this resource shall reference the set of Drive resources known in the scope of its use."/>
         <NavigationProperty Name="Members" Type="Collection(Drive.Drive)">
           <Annotation Term="OData.Permissions" EnumMember="OData.Permission/Read"/>
-          <Annotation Term="OData.Description" String="Contains the members of this collection."/>
+          <Annotation Term="OData.Description" String="Contains the members of this drive collection."/>
           <Annotation Term="OData.LongDescription" String="The value of each entry of this property shall reference a Drive resource."/>
           <Annotation Term="OData.AutoExpandReferences"/>
         </NavigationProperty>

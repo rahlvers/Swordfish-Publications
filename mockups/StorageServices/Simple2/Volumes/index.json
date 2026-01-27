@@ -1,6 +1,6 @@
 {
   "@Redfish.Copyright": "Copyright 2015-2016 SNIA. All rights reserved.",
-  "@odata.context": "/redfish/v1/$metadata#StorageServices/Simple2/Volumes",
+  "@odata.context": "/redfish/v1/$metadata#VolumeCollection.VolumeCollection",
   "@odata.id": "/redfish/v1/StorageServices/Simple2/Volumes",
   "@odata.type": "#VolumeCollection_1_0_0.VolumeCollection",
   "Name": "Volumes",

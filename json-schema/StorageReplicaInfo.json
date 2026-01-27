@@ -73,15 +73,6 @@
             },
             "additionalProperties": true,
             "properties": {
-                "ReplicaType": {
-                    "anyOf": [
-                        {"$ref": "#/definitions/ReplicaType"},
-                        {"type": "null"}
-                    ],
-                    "readonly": true,
-                    "description": "How the Replica is being maintained.",
-                    "longDescription": "The value shall indicate the type of Replica being maintained."
-                },
                 "ReplicaPriority": {
                     "anyOf": [
                         {"$ref": "#/definitions/ReplicaPriority"},
@@ -116,7 +107,7 @@
                     ],
                     "readonly": true,
                     "description": "The point in time that the Elements were synchronized.",
-                    "longDescription": "The value shall specify the time of day when the elements were synchronized."
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the elements were synchronized."
                 },
                 "SyncMaintained": {
                     "type": [
@@ -125,7 +116,7 @@
                     ],
                     "readonly": true,
                     "description": "Synchronization is maintained.",
-                    "longDescription": "If true, Synchronization shall be maintained."
+                    "longDescription": "If true, Synchronization shall be maintained. The default value for this property is false."
                 },
                 "ReplicaRecoveryMode": {
                     "anyOf": [
@@ -162,7 +153,7 @@
                     ],
                     "readonly": true,
                     "description": "If true, the storage array tells host to stop sending data to source element if copying to a remote element fails.",
-                    "longDescription": "If true, the storage array shall stop receiving data to the source element if copying to a remote element fails."
+                    "longDescription": "If true, the storage array shall stop receiving data to the source element if copying to a remote element fails. The default value for this property is false."
                 },
                 "WhenActivated": {
                     "type": [
@@ -172,7 +163,7 @@
                     "units": "%",
                     "readonly": true,
                     "description": "Specifies when point-in-time copy was taken or when the replication relationship is activated, reactivated, resumed or re-established.",
-                    "longDescription": "The value shall specify the time of day when the point-in-time copy was taken or when the replication relationship is activated, reactivated, resumed or re-established. This property shall be null if the implementation is not capable of providing this information."
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the point-in-time copy was taken or when the replication relationship is activated, reactivated, resumed or re-established. This property shall be null if the implementation is not capable of providing this information."
                 },
                 "WhenDeactivated": {
                     "type": [
@@ -182,7 +173,7 @@
                     "units": "%",
                     "readonly": true,
                     "description": "Specifies when the replication relationship is deactivated.",
-                    "longDescription": "Specifies when the replication relationship is deactivated. Do not instantiate this property if implementation is not capable of providing this information."
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is deactivated. Do not instantiate this property if implementation is not capable of providing this information."
                 },
                 "WhenEstablished": {
                     "type": [
@@ -192,7 +183,7 @@
                     "units": "%",
                     "readonly": true,
                     "description": "Specifies when the replication relationship is established.",
-                    "longDescription": "Specifies when the replication relationship is established. Do not instantiate this property if implementation is not capable of providing this information."
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is established. Do not instantiate this property if implementation is not capable of providing this information."
                 },
                 "WhenSuspended": {
                     "type": [
@@ -202,7 +193,7 @@
                     "units": "%",
                     "readonly": true,
                     "description": "Specifies when the replication relationship is suspended.",
-                    "longDescription": "Specifies when the replication relationship is suspended. Do not instantiate this property if implementation is not capable of providing this information."
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is suspended. Do not instantiate this property if implementation is not capable of providing this information."
                 },
                 "WhenSynchronized": {
                     "type": [
@@ -212,7 +203,7 @@
                     "units": "%",
                     "readonly": true,
                     "description": "Specifies when the replication relationship is synchronized.",
-                    "longDescription": "Specifies when the replication relationship is synchronized. Do not instantiate this property if implementation is not capable of providing this information."
+                    "longDescription": "The value shall be an ISO 8601 conformant time of day that specifies when the replication relationship is synchronized. Do not instantiate this property if implementation is not capable of providing this information."
                 },
                 "ReplicaSkewBytes": {
                     "type": [
@@ -224,14 +215,14 @@
                     "description": "Applies to Adaptive mode and it describes maximum number of bytes the SyncedElement (target) can be out of sync.",
                     "longDescription": "Applies to Adaptive mode and it describes maximum number of bytes the SyncedElement (target) can be out of sync. If the number of out-of-sync bytes exceeds the skew value, ReplicaUpdateMode shall be switched to synchronous."
                 },
-                "ReplicaSyncType": {
+                "ReplicaType": {
                     "anyOf": [
-                        {"$ref": "#/definitions/ReplicaSyncType"},
+                        {"$ref": "#/definitions/ReplicaType"},
                         {"type": "null"}
                     ],
                     "readonly": true,
-                    "description": "ReplicaSyncType describes the intended outcome of the replication.",
-                    "longDescription": "The ReplicaSyncType enumeration literal shall describe the intended outcome of the replication."
+                    "description": "ReplicaType describes the intended outcome of the replication.",
+                    "longDescription": "The ReplicaType enumeration literal shall describe the intended outcome of the replication."
                 },
                 "ReplicaProgressStatus": {
                     "anyOf": [
@@ -267,7 +258,7 @@
                     ],
                     "readonly": true,
                     "description": "True if consistency is enabled.",
-                    "longDescription": "True if consistency is enabled."
+                    "longDescription": "If true, consistency shall be enabled across the source and its associated target replica(s). The default value for this property is false."
                 },
                 "ConsistencyType": {
                     "anyOf": [
@@ -534,7 +525,7 @@
             "description": "Values of ReplicaState describe the state of the relationship with respect to Replication activity.",
             "longDescription": "ReplicaState enumeration literals may be used to describe the state of the relationship with respect to Replication activity."
         },
-        "ReplicaSyncType": {
+        "ReplicaType": {
             "type": "string",
             "enum": [
                 "Mirror",
@@ -554,31 +545,8 @@
                 "Clone": "This enumeration literal shall indicate that replication shall create a point in time, full copy the source.",
                 "TokenizedClone": "This enumeration literal shall indicate that replication shall create a token based clone."
             },
-            "description": "Values of ReplicaSyncType describe the intended outcome of the replication.",
+            "description": "Values of ReplicaType describe the intended outcome of the replication.",
             "longDescription": "The enumeration literals may be used to specify the intended outcome of the replication."
-        },
-        "ReplicaType": {
-            "type": "string",
-            "enum": [
-                "Continuous",
-                "Full",
-                "BeforeDelta",
-                "AfterDelta"
-            ],
-            "enumDescriptions": {
-                "Continuous": "Data for every change is recorded. A replica representing a point in time of the source data can be produced from the journal.",
-                "Full": "Neither replica is dependent on data stored in the other. Each holds a full copy of the data as of some point in time (possibly current).",
-                "BeforeDelta": "The source is maintained as delta data from the replica.  The replica (a snap) provides access to a previous point in time copy of source.",
-                "AfterDelta": "The replica is maintained as delta data from the source. The replica (a snap) provides access to a previous point in time copy of source."
-            },
-            "enumLongDescriptions": {
-                "Continuous": "Data for every change to the source shall be recorded allowing a replica representing any point in time of the source data to be produced.",
-                "Full": "Neither the source or the replica may be dependent on data stored in the other. Each shall hold a full copy of the data as of some point in time (possibly current).",
-                "BeforeDelta": "The source resource shall be maintained as delta data from the replica. The replica (a snap) shall contain a full copy of the source as of the time the replica was created.",
-                "AfterDelta": "The replica shall be maintained as delta data from the source. The source shall contain a full and current copy of the data.  Overwritten  original data shall be contained in replica."
-            },
-            "description": "An enumeration that defines the type of a replica.",
-            "longDescription": "The enumeration literals shall specify the relation of the data in a replica to its source."
         },
         "ReplicaUpdateMode": {
             "type": "string",

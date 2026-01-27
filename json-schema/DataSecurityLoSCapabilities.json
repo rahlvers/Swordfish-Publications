@@ -89,6 +89,14 @@
             },
             "additionalProperties": true,
             "properties": {
+                "Name": {
+                    "anyOf": [
+                        {"$ref": "http://redfish.dmtf.org/schemas/v1/Resource.json#/definitions/Name"},
+                        {"type": "null"}
+                    ],
+                    "description": "A friendly name for this line of service.",
+                    "longDescription": "If present, the name shall be a friendly name for this line of service."
+                },
                 "MediaEncryptionStrength": {
                     "anyOf": [
                         {"$ref": "#/definitions/KeySize"},
